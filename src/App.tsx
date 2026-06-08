@@ -89,6 +89,69 @@ function getExcerpt(text: string, query: string) {
   return `${start > 0 ? '...' : ''}${excerpt}${compactText.length > start + 220 ? '...' : ''}`;
 }
 
+function getNormalizedTextMapping(text: string) {
+  const mapping: number[] = [];
+  const normalized: string[] = [];
+
+  for (let index = 0; index < text.length; index += 1) {
+    const char = text[index];
+    const base = char
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '')
+      .toLocaleLowerCase('ro-RO');
+
+    if (!base) {
+      continue;
+    }
+
+    for (let i = 0; i < base.length; i += 1) {
+      normalized.push(base[i]);
+      mapping.push(index);
+    }
+  }
+
+  return { normalized: normalized.join(''), mapping };
+}
+
+function highlightQuery(text: string, query: string) {
+  const normalizedQuery = normalizeSearch(query.trim());
+
+  if (normalizedQuery.length < 2) {
+    return [text];
+  }
+
+  const { normalized, mapping } = getNormalizedTextMapping(text);
+  const parts: ReactNode[] = [];
+  let currentPosition = 0;
+  let searchIndex = normalized.indexOf(normalizedQuery);
+  let matchIndex = 0;
+
+  while (searchIndex !== -1) {
+    const startIndex = mapping[searchIndex];
+    const endIndex = mapping[searchIndex + normalizedQuery.length - 1] + 1;
+
+    if (currentPosition < startIndex) {
+      parts.push(text.slice(currentPosition, startIndex));
+    }
+
+    parts.push(
+      <mark className="search-result-highlight" key={`highlight-${matchIndex}`}>
+        {text.slice(startIndex, endIndex)}
+      </mark>,
+    );
+
+    currentPosition = endIndex;
+    matchIndex += 1;
+    searchIndex = normalized.indexOf(normalizedQuery, searchIndex + normalizedQuery.length);
+  }
+
+  if (currentPosition < text.length) {
+    parts.push(text.slice(currentPosition));
+  }
+
+  return parts;
+}
+
 function getReferenceChapter(reference: string) {
   return reference.match(/^\d+/)?.[0] ?? '1';
 }
@@ -534,7 +597,7 @@ function App() {
                   <span>
                     {result.book.title} · {result.passage.reference}
                   </span>
-                  <small>{result.excerpt}</small>
+                  <small>{highlightQuery(result.excerpt, query)}</small>
                 </button>
               ))}
             </div>
@@ -572,15 +635,11 @@ function App() {
                           onClick={() => selectBook(book)}
                         >
                           <span>{book.title}</span>
-                          <small>{book.passages.length} pasaje · capitole</small>
+                          <small>{book.passages.length} pasaje · {bookChapterGroups.length} capitole</small>
                         </button>
 
                         {isBookChapterOpen ? (
                           <div className="chapter-popover book-chapter-popover">
-                            <div className="chapter-popover-head">
-                              <p>Capitole</p>
-                              <span>{bookChapterGroups.length} în {book.title}</span>
-                            </div>
                             <div className="chapter-list">
                               {bookChapterGroups.map((chapter) => (
                                 <button
@@ -603,25 +662,6 @@ function App() {
                 </div>
               </div>
 
-              <label className="passage-select">
-                <span>Pasaje din capitolul {activeChapter}</span>
-                <select
-                  value={activePassage.id}
-                  onChange={(event) => {
-                    const passage = activeBook.passages.find((item) => item.id === event.target.value);
-
-                    if (passage) {
-                      selectPassage(activeBook, passage);
-                    }
-                  }}
-                >
-                  {activeChapterPassages.map((passage) => (
-                    <option key={passage.id} value={passage.id}>
-                      {passage.reference} · {passage.title}
-                    </option>
-                  ))}
-                </select>
-              </label>
             </>
           )}
         </aside>
@@ -663,6 +703,21 @@ function App() {
                 <span>
                   Capitolul {activeChapter} · Pasajul {activePassage.number} · {activePassage.reference}
                 </span>
+              </div>
+
+              <div className="reader-passage-menu" aria-label={`Pasaje din capitolul ${activeChapter}`}>
+                <p className="reader-passage-subtitle">Selectează pasajul</p>
+                <div className="reader-passage-list">
+                  {activeChapterPassages.map((passage) => (
+                    <button
+                      key={passage.id}
+                      className={passage.id === activePassage.id ? 'reader-passage-item active' : 'reader-passage-item'}
+                      onClick={() => selectPassage(activeBook, passage)}
+                    >
+                      {passage.reference}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div className="passage-text">

@@ -172,21 +172,18 @@ button:disabled {
   box-shadow: 0 18px 48px rgba(19, 34, 28, 0.08);
 }
 
-.search-field,
-.passage-select {
+.search-field {
   display: grid;
   gap: 8px;
 }
 
-.search-field span,
-.passage-select span {
+.search-field span {
   color: #53615d;
   font-size: 0.82rem;
   font-weight: 800;
 }
 
-.search-field input,
-.passage-select select {
+.search-field input {
   width: 100%;
   min-height: 44px;
   appearance: none;
@@ -198,10 +195,54 @@ button:disabled {
   outline: none;
 }
 
-.search-field input:focus,
-.passage-select select:focus {
+.search-field input:focus {
   border-color: #0f766e;
   box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+}
+
+.reader-passage-menu {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 24px;
+}
+
+.reader-passage-subtitle {
+  margin: 0;
+  color: #53615d;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.reader-passage-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 8px;
+}
+
+.reader-passage-item {
+  min-height: 38px;
+  padding: 10px 12px;
+  border: 1px solid #d6e0dc;
+  border-radius: 999px;
+  background: #f7faf8;
+  color: #17211b;
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: border-color 140ms ease, background-color 140ms ease, transform 140ms ease;
+}
+
+.reader-passage-item:hover {
+  border-color: #7fb3aa;
+  background: #eef7f2;
+  transform: translateY(-1px);
+}
+
+.reader-passage-item.active {
+  border-color: #0f766e;
+  background: #0f766e;
+  color: #ffffff;
 }
 
 .book-list,
@@ -353,6 +394,13 @@ button:disabled {
 
 .result-button small {
   font-size: 0.8rem;
+}
+
+.search-result-highlight {
+  background: rgba(15, 118, 110, 0.18);
+  color: #0f766e;
+  border-radius: 3px;
+  padding: 0 0.15em;
 }
 
 .passage-select {
