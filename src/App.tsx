@@ -278,7 +278,7 @@ function renderPassageParagraph(paragraph: string): ReactNode {
 function App() {
   const [data, setData] = useState<Testament | null>(null);
   const [error, setError] = useState('');
-  const [view, setView] = useState<'intro' | 'reader'>('reader');
+  const [view, setView] = useState<'intro' | 'reader'>('intro');
   const [location, setLocation] = useState<ReaderLocation | null>(null);
   const [query, setQuery] = useState('');
   const [readerScale, setReaderScale] = useState(1);
@@ -304,7 +304,7 @@ function App() {
 
         setData(testament);
         setLocation(getInitialLocation(testament));
-        setView(window.location.hash === '#intro' ? 'intro' : 'reader');
+        setView(window.location.hash && window.location.hash !== '#intro' ? 'reader' : 'intro');
       })
       .catch(() => {
         if (isMounted) {
