@@ -1,0 +1,689 @@
+import { type CSSProperties, type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
+import './App.css';
+
+type Passage = {
+  id: string;
+  number: number;
+  reference: string;
+  title: string;
+  paragraphs: string[];
+};
+
+type Book = {
+  id: string;
+  title: string;
+  passages: Passage[];
+};
+
+type Testament = {
+  title: string;
+  subtitle: string;
+  edition: string;
+  intro: {
+    title: string;
+    heading: string;
+    paragraphs: string[];
+  };
+  books: Book[];
+  stats: {
+    books: number;
+    passages: number;
+    paragraphs: number;
+  };
+};
+
+type ReaderLocation = {
+  bookId: string;
+  passageId: string;
+};
+
+type SearchResult = {
+  book: Book;
+  passage: Passage;
+  excerpt: string;
+};
+
+type VerseSegment = {
+  number: string;
+  text: string;
+};
+
+type PassageBlock =
+  | {
+      type: 'heading';
+      text: string;
+    }
+  | {
+      type: 'text';
+      text: string;
+    };
+
+const DATA_URL = '/noul-testament.json';
+
+function normalizeSearch(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLocaleLowerCase('ro-RO');
+}
+
+function getInitialLocation(data: Testament): ReaderLocation {
+  const [bookId, passageId] = decodeURIComponent(window.location.hash.replace(/^#/, '')).split('/');
+  const book = data.books.find((item) => item.id === bookId) ?? data.books[0];
+  const passage = book.passages.find((item) => item.id === passageId) ?? book.passages[0];
+
+  return {
+    bookId: book.id,
+    passageId: passage.id,
+  };
+}
+
+function getExcerpt(text: string, query: string) {
+  const compactText = text.replace(/\s+/g, ' ').trim();
+  const normalizedText = normalizeSearch(compactText);
+  const normalizedQuery = normalizeSearch(query);
+  const matchIndex = normalizedText.indexOf(normalizedQuery);
+  const start = matchIndex > 80 ? matchIndex - 80 : 0;
+  const excerpt = compactText.slice(start, start + 220);
+
+  return `${start > 0 ? '...' : ''}${excerpt}${compactText.length > start + 220 ? '...' : ''}`;
+}
+
+function getReferenceChapter(reference: string) {
+  return reference.match(/^\d+/)?.[0] ?? '1';
+}
+
+function getBookChapters(book: Book) {
+  return book.passages.reduce<Array<{ chapter: string; passages: Passage[] }>>((chapters, passage) => {
+    const chapter = getReferenceChapter(passage.reference);
+    const existingChapter = chapters.find((item) => item.chapter === chapter);
+
+    if (existingChapter) {
+      existingChapter.passages.push(passage);
+    } else {
+      chapters.push({ chapter, passages: [passage] });
+    }
+
+    return chapters;
+  }, []);
+}
+
+function scrollPageToTop() {
+  window.scrollTo({ top: 0, left: 0 });
+}
+
+function isSectionHeading(paragraph: string) {
+  const text = paragraph.replace(/\n/g, ' ').trim();
+
+  return text.length > 0 && text.length <= 90 && !/^\d/.test(text) && !/[.!?;,]$/.test(text);
+}
+
+function getTextLines(text: string) {
+  return text
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
+function renderIntroLead(heading: string) {
+  const [title, ...paragraphs] = getTextLines(heading);
+
+  return (
+    <>
+      {title ? <h2>{title}</h2> : null}
+      {paragraphs.map((paragraph, index) => (
+        <p className="intro-paragraph" key={`${paragraph}-${index}`}>
+          {paragraph}
+        </p>
+      ))}
+    </>
+  );
+}
+
+function renderIntroSection(section: string, sectionIndex: number) {
+  const [title, ...paragraphs] = getTextLines(section);
+
+  return (
+    <section className="intro-section" key={`${title}-${sectionIndex}`}>
+      {title ? <h3>{title}</h3> : null}
+      {paragraphs.map((paragraph, paragraphIndex) => (
+        <p className="intro-paragraph" key={`${paragraph}-${paragraphIndex}`}>
+          {paragraph}
+        </p>
+      ))}
+    </section>
+  );
+}
+
+function splitVerses(paragraph: string) {
+  const versePattern =
+    /(^|[\n.!?;:,„”"'’`‘´)\]])\s*(\d{1,3})\s*\.?\s*(?=[A-Za-zĂÂÎȘȚŞŢăâîșțşţ„"',(])/gu;
+  const verses: VerseSegment[] = [];
+  let leadingText = '';
+  let currentNumber = '';
+  let currentTextStart = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = versePattern.exec(paragraph)) !== null) {
+    const [fullMatch, prefix, verseNumber] = match;
+    const prefixIndex = match.index;
+    const numberIndex = prefixIndex + prefix.length;
+
+    if (currentNumber) {
+      verses.push({
+        number: currentNumber,
+        text: paragraph.slice(currentTextStart, numberIndex).trim(),
+      });
+    } else {
+      leadingText = paragraph.slice(0, numberIndex).trim();
+    }
+
+    currentNumber = verseNumber;
+    currentTextStart = prefixIndex + fullMatch.length;
+  }
+
+  if (currentNumber) {
+    verses.push({
+      number: currentNumber,
+      text: paragraph.slice(currentTextStart).trim(),
+    });
+  }
+
+  return {
+    leadingText,
+    verses,
+  };
+}
+
+function getPassageBlocks(paragraph: string): PassageBlock[] {
+  const lines = paragraph
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  if (lines.length <= 1) {
+    return [{ type: 'text', text: paragraph }];
+  }
+
+  const blocks: PassageBlock[] = [];
+  const textLines: string[] = [];
+
+  function flushText() {
+    if (textLines.length > 0) {
+      blocks.push({ type: 'text', text: textLines.join(' ') });
+      textLines.length = 0;
+    }
+  }
+
+  lines.forEach((line) => {
+    if (isSectionHeading(line)) {
+      flushText();
+      blocks.push({ type: 'heading', text: line });
+    } else {
+      textLines.push(line);
+    }
+  });
+
+  flushText();
+
+  return blocks;
+}
+
+function renderVerseBlock(paragraph: string): ReactNode {
+  const { leadingText, verses } = splitVerses(paragraph);
+
+  if (verses.length === 0) {
+    return <p className="passage-paragraph">{paragraph}</p>;
+  }
+
+  return (
+    <div className="verse-group">
+      {leadingText ? <p className="inline-section-heading">{leadingText}</p> : null}
+      {verses.map((verse, index) => (
+        <p className="verse-line" key={`${verse.number}-${index}`}>
+          <span className="verse-number" aria-label={`versetul ${verse.number}`}>
+            {verse.number}
+          </span>
+          <span className="verse-text">{verse.text}</span>
+        </p>
+      ))}
+    </div>
+  );
+}
+
+function renderPassageParagraph(paragraph: string): ReactNode {
+  const blocks = getPassageBlocks(paragraph);
+
+  if (blocks.length === 1 && blocks[0].type === 'text') {
+    return renderVerseBlock(blocks[0].text);
+  }
+
+  return (
+    <div className="passage-blocks">
+      {blocks.map((block, index) =>
+        block.type === 'heading' ? (
+          <p className="inline-section-heading" key={`${block.text}-${index}`}>
+            {block.text}
+          </p>
+        ) : (
+          <div className="passage-text-block" key={`${block.text}-${index}`}>
+            {renderVerseBlock(block.text)}
+          </div>
+        ),
+      )}
+    </div>
+  );
+}
+
+function App() {
+  const [data, setData] = useState<Testament | null>(null);
+  const [error, setError] = useState('');
+  const [view, setView] = useState<'intro' | 'reader'>('reader');
+  const [location, setLocation] = useState<ReaderLocation | null>(null);
+  const [query, setQuery] = useState('');
+  const [readerScale, setReaderScale] = useState(1);
+  const [openChapterBookId, setOpenChapterBookId] = useState<string | null>(null);
+  const articleRef = useRef<HTMLElement>(null);
+  const previousViewRef = useRef(view);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    fetch(DATA_URL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Datele nu au putut fi încărcate.');
+        }
+
+        return response.json() as Promise<Testament>;
+      })
+      .then((testament) => {
+        if (!isMounted) {
+          return;
+        }
+
+        setData(testament);
+        setLocation(getInitialLocation(testament));
+        setView(window.location.hash === '#intro' ? 'intro' : 'reader');
+      })
+      .catch(() => {
+        if (isMounted) {
+          setError('Nu am putut încărca textul. Verifică fișierul public/noul-testament.json.');
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const activeBook = useMemo(() => {
+    if (!data || !location) {
+      return null;
+    }
+
+    return data.books.find((book) => book.id === location.bookId) ?? data.books[0];
+  }, [data, location]);
+
+  const activePassage = useMemo(() => {
+    if (!activeBook || !location) {
+      return null;
+    }
+
+    return activeBook.passages.find((passage) => passage.id === location.passageId) ?? activeBook.passages[0];
+  }, [activeBook, location]);
+
+  const allPassages = useMemo(() => {
+    if (!data) {
+      return [];
+    }
+
+    return data.books.flatMap((book) => book.passages.map((passage) => ({ book, passage })));
+  }, [data]);
+
+  const currentIndex = useMemo(() => {
+    if (!activePassage) {
+      return -1;
+    }
+
+    return allPassages.findIndex(({ passage }) => passage.id === activePassage.id);
+  }, [activePassage, allPassages]);
+
+  const activeChapter = activePassage ? getReferenceChapter(activePassage.reference) : '';
+
+  const bookChapters = useMemo(() => {
+    if (!activeBook) {
+      return [];
+    }
+
+    return getBookChapters(activeBook);
+  }, [activeBook]);
+
+  const activeChapterPassages = useMemo(() => {
+    return bookChapters.find((chapter) => chapter.chapter === activeChapter)?.passages ?? activeBook?.passages ?? [];
+  }, [activeBook, activeChapter, bookChapters]);
+
+  const searchResults = useMemo<SearchResult[]>(() => {
+    const trimmedQuery = query.trim();
+
+    if (trimmedQuery.length < 2) {
+      return [];
+    }
+
+    const normalizedQuery = normalizeSearch(trimmedQuery);
+
+    return allPassages
+      .filter(({ book, passage }) => {
+        const searchableText = normalizeSearch(
+          `${book.title} ${passage.title} ${passage.reference} ${passage.paragraphs.join(' ')}`,
+        );
+
+        return searchableText.includes(normalizedQuery);
+      })
+      .slice(0, 24)
+      .map(({ book, passage }) => ({
+        book,
+        passage,
+        excerpt: getExcerpt(`${passage.title} ${passage.paragraphs.join(' ')}`, trimmedQuery),
+      }));
+  }, [allPassages, query]);
+
+  useEffect(() => {
+    if (!data || !location) {
+      return;
+    }
+
+    const hash = view === 'intro' ? '#intro' : `#${location.bookId}/${location.passageId}`;
+
+    if (window.location.hash !== hash) {
+      window.history.replaceState(null, '', hash);
+    }
+  }, [data, location, view]);
+
+  useEffect(() => {
+    if (previousViewRef.current !== view) {
+      previousViewRef.current = view;
+      scrollPageToTop();
+      return;
+    }
+
+    articleRef.current?.scrollIntoView({ block: 'start' });
+  }, [location, view]);
+
+  function selectBook(book: Book) {
+    setView('reader');
+    setOpenChapterBookId((currentBookId) => (currentBookId === book.id ? null : book.id));
+    setLocation((currentLocation) =>
+      currentLocation?.bookId === book.id
+        ? currentLocation
+        : {
+            bookId: book.id,
+            passageId: book.passages[0].id,
+          },
+    );
+  }
+
+  function selectPassage(book: Book, passage: Passage) {
+    setView('reader');
+    setOpenChapterBookId(null);
+    setLocation({
+      bookId: book.id,
+      passageId: passage.id,
+    });
+  }
+
+  function selectChapter(book: Book, chapter: string) {
+    const targetChapter = getBookChapters(book).find((item) => item.chapter === chapter);
+    const firstPassage = targetChapter?.passages[0];
+
+    if (firstPassage) {
+      selectPassage(book, firstPassage);
+    }
+  }
+
+  function goToOffset(offset: number) {
+    const target = allPassages[currentIndex + offset];
+
+    if (target) {
+      selectPassage(target.book, target.passage);
+    }
+  }
+
+  if (error) {
+    return (
+      <main className="app app-state">
+        <p>{error}</p>
+      </main>
+    );
+  }
+
+  if (!data || !location || !activeBook || !activePassage) {
+    return (
+      <main className="app app-state">
+        <p>Se încarcă textul...</p>
+      </main>
+    );
+  }
+
+  return (
+    <main className="app" style={{ '--reader-scale': readerScale } as CSSProperties}>
+      <header className="site-header">
+        <div>
+          <p className="kicker">{data.edition}</p>
+          <h1>{data.title}</h1>
+          <p>{data.subtitle}</p>
+        </div>
+        <div className="header-actions" aria-label="Navigare principală">
+          <button
+            className={view === 'intro' ? 'solid-button' : 'ghost-button'}
+            onClick={() => {
+              setOpenChapterBookId(null);
+              setView('intro');
+              scrollPageToTop();
+            }}
+          >
+            Introducere
+          </button>
+          <button
+            className={view === 'reader' ? 'solid-button' : 'ghost-button'}
+            onClick={() => {
+              setView('reader');
+              scrollPageToTop();
+            }}
+          >
+            Text
+          </button>
+        </div>
+      </header>
+
+      <div className="workspace">
+        <aside className="sidebar" aria-label="Navigare pe cărți și pasaje">
+          <label className="search-field">
+            <span>Caută</span>
+            <input
+              type="search"
+              value={query}
+              onChange={(event) => {
+                setOpenChapterBookId(null);
+                setQuery(event.target.value);
+              }}
+              placeholder="cuvânt, titlu sau referință"
+            />
+          </label>
+
+          {query.trim().length >= 2 ? (
+            <div className="search-results">
+              <p className="panel-label">{searchResults.length} rezultate</p>
+              {searchResults.map((result) => (
+                <button
+                  className="result-button"
+                  key={`${result.book.id}-${result.passage.id}`}
+                  onClick={() => selectPassage(result.book, result.passage)}
+                >
+                  <strong>{result.passage.title}</strong>
+                  <span>
+                    {result.book.title} · {result.passage.reference}
+                  </span>
+                  <small>{result.excerpt}</small>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <>
+              <div className="book-list">
+                <p className="panel-label">{data.stats.books} cărți</p>
+
+                <div
+                  className={openChapterBookId ? 'book-scroll has-open-chapter' : 'book-scroll'}
+                  aria-label="Cărți"
+                >
+                  {data.books.map((book) => {
+                    const isActiveBook = book.id === activeBook.id && view === 'reader';
+                    const bookChapterGroups = getBookChapters(book);
+                    const isBookChapterOpen = openChapterBookId === book.id && view === 'reader';
+                    const bookActiveChapter = isActiveBook
+                      ? activeChapter
+                      : getReferenceChapter(book.passages[0]?.reference ?? '1');
+
+                    return (
+                      <div
+                        className={[
+                          'book-row',
+                          isActiveBook ? 'active' : '',
+                          isBookChapterOpen ? 'open' : '',
+                        ]
+                          .filter(Boolean)
+                          .join(' ')}
+                        key={book.id}
+                      >
+                        <button
+                          className="book-button"
+                          aria-expanded={isBookChapterOpen}
+                          onClick={() => selectBook(book)}
+                        >
+                          <span>{book.title}</span>
+                          <small>{book.passages.length} pasaje · capitole</small>
+                        </button>
+
+                        {isBookChapterOpen ? (
+                          <div className="chapter-popover book-chapter-popover">
+                            <div className="chapter-popover-head">
+                              <p>Capitole</p>
+                              <span>{bookChapterGroups.length} în {book.title}</span>
+                            </div>
+                            <div className="chapter-list">
+                              {bookChapterGroups.map((chapter) => (
+                                <button
+                                  className={
+                                    chapter.chapter === bookActiveChapter ? 'chapter-option active' : 'chapter-option'
+                                  }
+                                  aria-current={chapter.chapter === bookActiveChapter ? 'true' : undefined}
+                                  key={chapter.chapter}
+                                  onClick={() => selectChapter(book, chapter.chapter)}
+                                >
+                                  {chapter.chapter}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <label className="passage-select">
+                <span>Pasaje din capitolul {activeChapter}</span>
+                <select
+                  value={activePassage.id}
+                  onChange={(event) => {
+                    const passage = activeBook.passages.find((item) => item.id === event.target.value);
+
+                    if (passage) {
+                      selectPassage(activeBook, passage);
+                    }
+                  }}
+                >
+                  {activeChapterPassages.map((passage) => (
+                    <option key={passage.id} value={passage.id}>
+                      {passage.reference} · {passage.title}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </>
+          )}
+        </aside>
+
+        <section className="reader-shell">
+          <div className="reader-tools" aria-label="Controale de citire">
+            <div>
+              <span>{data.stats.passages} pasaje</span>
+              <span>{data.stats.paragraphs} paragrafe</span>
+            </div>
+            <div className="scale-controls">
+              <button onClick={() => setReaderScale((value) => Math.max(0.9, value - 0.05))}>A-</button>
+              <button onClick={() => setReaderScale(1)}>A</button>
+              <button onClick={() => setReaderScale((value) => Math.min(1.18, value + 0.05))}>A+</button>
+            </div>
+          </div>
+
+          {view === 'intro' ? (
+            <article className="intro-page" ref={articleRef}>
+              <div className="intro-layout">
+                <aside className="intro-aside" aria-label="Detalii introducere">
+                  <strong>{data.edition}</strong>
+                  <span>{data.stats.books} cărți</span>
+                  <span>{data.stats.passages} pasaje</span>
+                  <span>{data.stats.paragraphs} paragrafe</span>
+                </aside>
+
+                <div className="intro-content">
+                  {renderIntroLead(data.intro.heading)}
+                  {data.intro.paragraphs.map((paragraph, index) => renderIntroSection(paragraph, index))}
+                </div>
+              </div>
+            </article>
+          ) : (
+            <article className="reader" ref={articleRef}>
+              <div className="reader-heading">
+                <p className="kicker">{activeBook.title}</p>
+                <h2>{activePassage.title}</h2>
+                <span>
+                  Capitolul {activeChapter} · Pasajul {activePassage.number} · {activePassage.reference}
+                </span>
+              </div>
+
+              <div className="passage-text">
+                {activePassage.paragraphs.map((paragraph, index) =>
+                  isSectionHeading(paragraph) ? (
+                    <h3 key={`${paragraph}-${index}`}>{paragraph}</h3>
+                  ) : (
+                    <div key={`${paragraph}-${index}`}>{renderPassageParagraph(paragraph)}</div>
+                  ),
+                )}
+              </div>
+
+              <nav className="reader-nav" aria-label="Navigare între pasaje">
+                <button className="ghost-button" disabled={currentIndex <= 0} onClick={() => goToOffset(-1)}>
+                  Anterior
+                </button>
+                <button
+                  className="ghost-button"
+                  disabled={currentIndex === -1 || currentIndex >= allPassages.length - 1}
+                  onClick={() => goToOffset(1)}
+                >
+                  Următor
+                </button>
+              </nav>
+            </article>
+          )}
+        </section>
+      </div>
+
+    </main>
+  );
+}
+
+export default App;
