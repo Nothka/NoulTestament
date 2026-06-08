@@ -407,6 +407,7 @@ function App() {
       return;
     }
 
+    scrollPageToTop();
     articleRef.current?.scrollIntoView({ block: 'start' });
   }, [location, view]);
 
@@ -495,6 +496,15 @@ function App() {
           </button>
         </div>
       </header>
+
+      <button
+        className="back-to-top-button"
+        onClick={scrollPageToTop}
+        title="Înapoi sus"
+        aria-label="Înapoi sus"
+      >
+        ↑
+      </button>
 
       <div className="workspace">
         <aside className="sidebar" aria-label="Navigare pe cărți și pasaje">
