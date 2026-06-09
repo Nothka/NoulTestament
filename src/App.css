@@ -200,54 +200,51 @@ button:disabled {
   box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
 }
 
-.reader-passage-menu {
-  display: grid;
-  gap: 10px;
-  margin: 18px 0 24px;
+.passage-subtitle {
+  margin: 0;
+  color: #0f766e;
+  font-size: 0.92rem;
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.01em;
 }
 
 .reader-passage-subtitle {
+  display: none;
+}
+
+.reader-chapter-passages {
+  display: grid;
+  gap: 34px;
+  margin-top: 18px;
+}
+
+.chapter-passage {
+  display: grid;
+  gap: 18px;
+}
+
+.chapter-passage.active {
+  padding: 16px;
+  border-radius: 18px;
+  background: transparent;
+}
+
+.passage-subtitle {
   margin: 0;
-  color: #53615d;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.reader-passage-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.reader-passage-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  min-width: 96px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: #f1f6f3;
   color: #0f766e;
-  font-size: 0.88rem;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.chapter-passage h4 {
+  margin: 0 0 8px;
+  color: #17211b;
+  font-size: 1rem;
   font-weight: 700;
-  border: none;
-  box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.12);
-  transition: transform 140ms ease, background-color 140ms ease, box-shadow 140ms ease;
-}
-
-.reader-passage-item:hover {
-  background: #e4f1ec;
-  box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.2);
-  transform: translateY(-1px);
-}
-
-.reader-passage-item.active {
-  border-color: #0f766e;
-  background: #0f766e;
-  color: #ffffff;
 }
 
 .book-list,

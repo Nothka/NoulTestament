@@ -262,6 +262,35 @@ function splitVerses(paragraph: string) {
   };
 }
 
+function getFirstVerseNumber(paragraphs: string[]) {
+  for (const paragraph of paragraphs) {
+    const blocks = getPassageBlocks(paragraph);
+    const textBlock = blocks.find((block) => block.type === 'text');
+
+    if (!textBlock) {
+      continue;
+    }
+
+    const firstVerse = splitVerses(textBlock.text).verses[0];
+    const firstVerseNumber = Number(firstVerse?.number);
+
+    if (Number.isFinite(firstVerseNumber)) {
+      return firstVerseNumber;
+    }
+  }
+
+  return 1;
+}
+
+function getPassageVerseShift(passage: Passage) {
+  const referenceVerse = getReferenceVerse(passage.reference);
+  const firstVerseNumber = getFirstVerseNumber(passage.paragraphs);
+
+  return referenceVerse > 1 && firstVerseNumber > 0 && firstVerseNumber < referenceVerse
+    ? referenceVerse - firstVerseNumber
+    : 0;
+}
+
 function getPassageBlocks(paragraph: string): PassageBlock[] {
   const lines = paragraph
     .split(/\n+/)
@@ -296,7 +325,7 @@ function getPassageBlocks(paragraph: string): PassageBlock[] {
   return blocks;
 }
 
-function renderVerseBlock(paragraph: string, verseOffset = 1): ReactNode {
+function renderVerseBlock(paragraph: string, verseShift = 0): ReactNode {
   const { leadingText, verses } = splitVerses(paragraph);
 
   if (verses.length === 0) {
@@ -304,10 +333,10 @@ function renderVerseBlock(paragraph: string, verseOffset = 1): ReactNode {
   }
 
   const displayedVerses =
-    verseOffset > 1 && verses[0]?.number === '1'
+    verseShift > 0
       ? verses.map((verse) => ({
           ...verse,
-          number: String(Number(verse.number) + verseOffset - 1),
+          number: String(Number(verse.number) + verseShift),
         }))
       : verses;
 
@@ -326,11 +355,11 @@ function renderVerseBlock(paragraph: string, verseOffset = 1): ReactNode {
   );
 }
 
-function renderPassageParagraph(paragraph: string, verseOffset = 1): ReactNode {
+function renderPassageParagraph(paragraph: string, verseShift = 0): ReactNode {
   const blocks = getPassageBlocks(paragraph);
 
   if (blocks.length === 1 && blocks[0].type === 'text') {
-    return renderVerseBlock(blocks[0].text, verseOffset);
+    return renderVerseBlock(blocks[0].text, verseShift);
   }
 
   return (
@@ -342,7 +371,7 @@ function renderPassageParagraph(paragraph: string, verseOffset = 1): ReactNode {
           </p>
         ) : (
           <div className="passage-text-block" key={`${block.text}-${index}`}>
-            {renderVerseBlock(block.text, verseOffset)}
+            {renderVerseBlock(block.text, verseShift)}
           </div>
         ),
       )}
@@ -711,35 +740,32 @@ function App() {
             <article className="reader" ref={articleRef}>
               <div className="reader-heading">
                 <p className="kicker">{activeBook.title}</p>
-                <h2>{activePassage.title}</h2>
-                <span>
-                  Capitolul {activeChapter} · Pasajul {activePassage.number} · {activePassage.reference}
-                </span>
+                <h2>Capitolul {activeChapter}</h2>
+                <span>Pasaj selectat: {activePassage.title} · {activePassage.reference}</span>
               </div>
 
-              <div className="reader-passage-menu" aria-label={`Pasaje din capitolul ${activeChapter}`}>
-                <p className="reader-passage-subtitle">Selectează pasajul</p>
-                <div className="reader-passage-list">
-                  {activeChapterPassages.map((passage) => (
-                    <button
-                      key={passage.id}
-                      className={passage.id === activePassage.id ? 'reader-passage-item active' : 'reader-passage-item'}
-                      onClick={() => selectPassage(activeBook, passage)}
-                    >
-                      {passage.reference}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="passage-text">
-                {activePassage.paragraphs.map((paragraph, index) =>
-                  isSectionHeading(paragraph) ? (
-                    <h3 key={`${paragraph}-${index}`}>{paragraph}</h3>
-                  ) : (
-                    <div key={`${paragraph}-${index}`}>{renderPassageParagraph(paragraph, getReferenceVerse(activePassage.reference))}</div>
-                  ),
-                )}
+              <div className="reader-chapter-passages">
+                {activeChapterPassages.map((passage) => (
+                  <section
+                    key={passage.id}
+                    className={
+                      passage.id === activePassage.id ? 'chapter-passage active' : 'chapter-passage'
+                    }
+                  >
+                    <h3 className="passage-subtitle">{passage.title}</h3>
+                    <div className="passage-text">
+                      {passage.paragraphs.map((paragraph, index) =>
+                        isSectionHeading(paragraph) ? (
+                          <h4 key={`${passage.id}-${paragraph}-${index}`}>{paragraph}</h4>
+                        ) : (
+                          <div key={`${passage.id}-${paragraph}-${index}`}>
+                            {renderPassageParagraph(paragraph, getPassageVerseShift(passage))}
+                          </div>
+                        ),
+                      )}
+                    </div>
+                  </section>
+                ))}
               </div>
 
               <nav className="reader-nav" aria-label="Navigare între pasaje">
