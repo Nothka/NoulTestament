@@ -156,6 +156,10 @@ function getReferenceChapter(reference: string) {
   return reference.match(/^\d+/)?.[0] ?? '1';
 }
 
+function getReferenceVerse(reference: string) {
+  return Number(reference.split(':')[1] ?? '1');
+}
+
 function getBookChapters(book: Book) {
   return book.passages.reduce<Array<{ chapter: string; passages: Passage[] }>>((chapters, passage) => {
     const chapter = getReferenceChapter(passage.reference);
@@ -292,17 +296,25 @@ function getPassageBlocks(paragraph: string): PassageBlock[] {
   return blocks;
 }
 
-function renderVerseBlock(paragraph: string): ReactNode {
+function renderVerseBlock(paragraph: string, verseOffset = 1): ReactNode {
   const { leadingText, verses } = splitVerses(paragraph);
 
   if (verses.length === 0) {
     return <p className="passage-paragraph">{paragraph}</p>;
   }
 
+  const displayedVerses =
+    verseOffset > 1 && verses[0]?.number === '1'
+      ? verses.map((verse) => ({
+          ...verse,
+          number: String(Number(verse.number) + verseOffset - 1),
+        }))
+      : verses;
+
   return (
     <div className="verse-group">
       {leadingText ? <p className="inline-section-heading">{leadingText}</p> : null}
-      {verses.map((verse, index) => (
+      {displayedVerses.map((verse, index) => (
         <p className="verse-line" key={`${verse.number}-${index}`}>
           <span className="verse-number" aria-label={`versetul ${verse.number}`}>
             {verse.number}
@@ -314,11 +326,11 @@ function renderVerseBlock(paragraph: string): ReactNode {
   );
 }
 
-function renderPassageParagraph(paragraph: string): ReactNode {
+function renderPassageParagraph(paragraph: string, verseOffset = 1): ReactNode {
   const blocks = getPassageBlocks(paragraph);
 
   if (blocks.length === 1 && blocks[0].type === 'text') {
-    return renderVerseBlock(blocks[0].text);
+    return renderVerseBlock(blocks[0].text, verseOffset);
   }
 
   return (
@@ -330,7 +342,7 @@ function renderPassageParagraph(paragraph: string): ReactNode {
           </p>
         ) : (
           <div className="passage-text-block" key={`${block.text}-${index}`}>
-            {renderVerseBlock(block.text)}
+            {renderVerseBlock(block.text, verseOffset)}
           </div>
         ),
       )}
@@ -725,7 +737,7 @@ function App() {
                   isSectionHeading(paragraph) ? (
                     <h3 key={`${paragraph}-${index}`}>{paragraph}</h3>
                   ) : (
-                    <div key={`${paragraph}-${index}`}>{renderPassageParagraph(paragraph)}</div>
+                    <div key={`${paragraph}-${index}`}>{renderPassageParagraph(paragraph, getReferenceVerse(activePassage.reference))}</div>
                   ),
                 )}
               </div>
