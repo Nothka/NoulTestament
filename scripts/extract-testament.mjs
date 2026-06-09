@@ -272,6 +272,119 @@ function parseIntroduction(lines) {
   };
 }
 
+function decodeXml(value) {
+  return value
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'");
+}
+
+function readDocxXml(entryName, maxBuffer = 20 * 1024 * 1024) {
+  return execFileSync('unzip', ['-p', inputPath, entryName], {
+    encoding: 'utf8',
+    maxBuffer,
+  });
+}
+
+function extractXmlText(fragment) {
+  const parts = [];
+  const tokenPattern = /<w:t\b[^>]*>([\s\S]*?)<\/w:t>|<w:tab\s*\/>|<w:br\s*\/>/g;
+  let match;
+
+  while ((match = tokenPattern.exec(fragment)) !== null) {
+    if (match[1] !== undefined) {
+      parts.push(decodeXml(match[1]));
+    } else if (match[0].includes(':br')) {
+      parts.push('\n');
+    } else {
+      parts.push(' ');
+    }
+  }
+
+  return parts
+    .join('')
+    .replace(/\u00a0/g, ' ')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\s*\n\s*/g, '\n')
+    .trim();
+}
+
+function parseFootnoteDefinitions(xml) {
+  const notes = new Map();
+  const footnotePattern = /<w:footnote\b[^>]*w:id="([^"]+)"[^>]*>([\s\S]*?)<\/w:footnote>/g;
+  let match;
+
+  while ((match = footnotePattern.exec(xml)) !== null) {
+    const [, id, content] = match;
+    const text = extractXmlText(content);
+
+    if (text) {
+      notes.set(id, text);
+    }
+  }
+
+  return notes;
+}
+
+function parseFootnoteReferenceIds(xml) {
+  return [...xml.matchAll(/<w:footnoteReference\b[^>]*w:id="([^"]+)"/g)].map((match) => match[1]);
+}
+
+function extractFootnotes() {
+  try {
+    const footnotesXml = readDocxXml('word/footnotes.xml', 10 * 1024 * 1024);
+    const documentXml = readDocxXml('word/document.xml', 50 * 1024 * 1024);
+    const footnoteDefinitions = parseFootnoteDefinitions(footnotesXml);
+
+    return parseFootnoteReferenceIds(documentXml).map((id, index) => ({
+      id,
+      number: index + 1,
+      text: footnoteDefinitions.get(id) ?? '',
+    }));
+  } catch (error) {
+    console.warn(`Nu am putut extrage notele de subsol: ${error.message}`);
+    return [];
+  }
+}
+
+function countFootnoteMarkers(value) {
+  return (value.match(/\*/g) ?? []).length;
+}
+
+function attachPassageNotes(books, notes) {
+  let noteIndex = 0;
+
+  const booksWithNotes = books.map((book) => ({
+    ...book,
+    passages: book.passages.map((passage) => {
+      const markerCount = passage.paragraphs.reduce(
+        (count, paragraph) => count + countFootnoteMarkers(paragraph),
+        0,
+      );
+
+      if (markerCount === 0) {
+        return passage;
+      }
+
+      const passageNotes = notes.slice(noteIndex, noteIndex + markerCount).filter((note) => note.text);
+      noteIndex += markerCount;
+
+      return {
+        ...passage,
+        notes: passageNotes,
+      };
+    }),
+  }));
+
+  if (notes.length > 0 && noteIndex !== notes.length) {
+    console.warn(`Note asignate: ${noteIndex}/${notes.length}. Verifica marcajele * din document.`);
+  }
+
+  return booksWithNotes;
+}
+
 const rawText = execFileSync('textutil', ['-convert', 'txt', '-stdout', inputPath], {
   encoding: 'utf8',
   maxBuffer: 20 * 1024 * 1024,
@@ -294,11 +407,14 @@ if (bookMarkers.length !== bookDefinitions.length) {
   throw new Error(`Nu am gasit toate cartile. Lipsesc: ${missing.join(', ')}`);
 }
 
-const books = bookMarkers.map((book, index) => {
+const booksWithoutNotes = bookMarkers.map((book, index) => {
   const nextBook = bookMarkers[index + 1];
   const bookLines = lines.slice(book.line + 1, nextBook ? nextBook.line : lines.length);
   return parseBook(book, bookLines);
 });
+
+const notes = extractFootnotes();
+const books = attachPassageNotes(booksWithoutNotes, notes);
 
 const passageCount = books.reduce((count, book) => count + book.passages.length, 0);
 const paragraphCount = books.reduce(
@@ -320,6 +436,7 @@ const testament = {
     books: books.length,
     passages: passageCount,
     paragraphs: paragraphCount,
+    notes: notes.filter((note) => note.text).length,
   },
 };
 
@@ -327,4 +444,6 @@ mkdirSync(dirname(outputPath), { recursive: true });
 writeFileSync(outputPath, `${JSON.stringify(testament, null, 2)}\n`);
 
 console.log(`Generated ${outputPath}`);
-console.log(`${books.length} books, ${passageCount} passages, ${paragraphCount} paragraphs`);
+console.log(
+  `${books.length} books, ${passageCount} passages, ${paragraphCount} paragraphs, ${testament.stats.notes} notes`,
+);

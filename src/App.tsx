@@ -7,6 +7,13 @@ type Passage = {
   reference: string;
   title: string;
   paragraphs: string[];
+  notes?: Footnote[];
+};
+
+type Footnote = {
+  id: string;
+  number: number;
+  text: string;
 };
 
 type Book = {
@@ -29,6 +36,7 @@ type Testament = {
     books: number;
     passages: number;
     paragraphs: number;
+    notes?: number;
   };
 };
 
@@ -41,6 +49,12 @@ type SearchResult = {
   book: Book;
   passage: Passage;
   excerpt: string;
+};
+
+type ChapterTarget = {
+  book: Book;
+  chapter: string;
+  passage: Passage;
 };
 
 type VerseSegment = {
@@ -57,6 +71,10 @@ type PassageBlock =
       type: 'text';
       text: string;
     };
+
+type NoteCursor = {
+  index: number;
+};
 
 const DATA_URL = '/noul-testament.json';
 
@@ -325,11 +343,98 @@ function getPassageBlocks(paragraph: string): PassageBlock[] {
   return blocks;
 }
 
-function renderVerseBlock(paragraph: string, verseShift = 0): ReactNode {
+function renderTextWithNotes(text: string, notes: Footnote[], noteCursor?: NoteCursor): ReactNode {
+  if (!noteCursor || notes.length === 0 || !text.includes('*')) {
+    return text;
+  }
+
+  const parts: ReactNode[] = [];
+  let start = 0;
+  let markerIndex = 0;
+
+  for (const match of text.matchAll(/\*/g)) {
+    const index = match.index ?? 0;
+    const note = notes[noteCursor.index];
+
+    if (start < index) {
+      parts.push(text.slice(start, index));
+    }
+
+    if (note) {
+      const noteNumber = noteCursor.index + 1;
+
+      parts.push(
+        <button
+          type="button"
+          className="note-callout"
+          key={`note-callout-${note.id}-${markerIndex}`}
+          onClick={() => scrollToFootnote(note.id)}
+          aria-label={`Mergi la nota explicativă ${noteNumber}`}
+        >
+          {noteNumber}
+        </button>,
+      );
+    } else {
+      parts.push('*');
+    }
+
+    noteCursor.index += 1;
+    markerIndex += 1;
+    start = index + 1;
+  }
+
+  if (start < text.length) {
+    parts.push(text.slice(start));
+  }
+
+  return parts;
+}
+
+function getFootnoteElementId(noteId: string) {
+  return `chapter-note-${noteId}`;
+}
+
+function scrollToFootnote(noteId: string) {
+  const noteElement = document.getElementById(getFootnoteElementId(noteId));
+
+  if (!noteElement) {
+    return;
+  }
+
+  noteElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  noteElement.focus({ preventScroll: true });
+}
+
+function getFootnoteExplanation(text: string) {
+  return text
+    .replace(/^\s*(?:versetul\s+\d+\s*|[1-9]\d{0,2}:\d{1,3}\s*)/iu, '')
+    .trim();
+}
+
+function renderChapterNotes(notes: Footnote[]) {
+  if (notes.length === 0) {
+    return null;
+  }
+
+  return (
+    <aside className="chapter-notes" aria-label="Note explicative">
+      <h3 className="chapter-notes-title">Note explicative</h3>
+      <ol>
+        {notes.map((note) => (
+          <li id={getFootnoteElementId(note.id)} key={note.id} tabIndex={-1}>
+            <p>{getFootnoteExplanation(note.text)}</p>
+          </li>
+        ))}
+      </ol>
+    </aside>
+  );
+}
+
+function renderVerseBlock(paragraph: string, verseShift = 0, notes: Footnote[] = [], noteCursor?: NoteCursor): ReactNode {
   const { leadingText, verses } = splitVerses(paragraph);
 
   if (verses.length === 0) {
-    return <p className="passage-paragraph">{paragraph}</p>;
+    return <p className="passage-paragraph">{renderTextWithNotes(paragraph, notes, noteCursor)}</p>;
   }
 
   const displayedVerses =
@@ -348,18 +453,18 @@ function renderVerseBlock(paragraph: string, verseShift = 0): ReactNode {
           <span className="verse-number" aria-label={`versetul ${verse.number}`}>
             {verse.number}
           </span>
-          <span className="verse-text">{verse.text}</span>
+          <span className="verse-text">{renderTextWithNotes(verse.text, notes, noteCursor)}</span>
         </p>
       ))}
     </div>
   );
 }
 
-function renderPassageParagraph(paragraph: string, verseShift = 0): ReactNode {
+function renderPassageParagraph(paragraph: string, verseShift = 0, notes: Footnote[] = [], noteCursor?: NoteCursor): ReactNode {
   const blocks = getPassageBlocks(paragraph);
 
   if (blocks.length === 1 && blocks[0].type === 'text') {
-    return renderVerseBlock(blocks[0].text, verseShift);
+    return renderVerseBlock(blocks[0].text, verseShift, notes, noteCursor);
   }
 
   return (
@@ -371,7 +476,7 @@ function renderPassageParagraph(paragraph: string, verseShift = 0): ReactNode {
           </p>
         ) : (
           <div className="passage-text-block" key={`${block.text}-${index}`}>
-            {renderVerseBlock(block.text, verseShift)}
+            {renderVerseBlock(block.text, verseShift, notes, noteCursor)}
           </div>
         ),
       )}
@@ -445,6 +550,20 @@ function App() {
     return data.books.flatMap((book) => book.passages.map((passage) => ({ book, passage })));
   }, [data]);
 
+  const allChapters = useMemo<ChapterTarget[]>(() => {
+    if (!data) {
+      return [];
+    }
+
+    return data.books.flatMap((book) =>
+      getBookChapters(book).flatMap((chapter) => {
+        const firstPassage = chapter.passages[0];
+
+        return firstPassage ? [{ book, chapter: chapter.chapter, passage: firstPassage }] : [];
+      }),
+    );
+  }, [data]);
+
   const currentIndex = useMemo(() => {
     if (!activePassage) {
       return -1;
@@ -454,6 +573,16 @@ function App() {
   }, [activePassage, allPassages]);
 
   const activeChapter = activePassage ? getReferenceChapter(activePassage.reference) : '';
+
+  const activeChapterIndex = useMemo(() => {
+    if (!activeBook || !activeChapter) {
+      return -1;
+    }
+
+    return allChapters.findIndex(
+      (chapter) => chapter.book.id === activeBook.id && chapter.chapter === activeChapter,
+    );
+  }, [activeBook, activeChapter, allChapters]);
 
   const bookChapters = useMemo(() => {
     if (!activeBook) {
@@ -466,6 +595,10 @@ function App() {
   const activeChapterPassages = useMemo(() => {
     return bookChapters.find((chapter) => chapter.chapter === activeChapter)?.passages ?? activeBook?.passages ?? [];
   }, [activeBook, activeChapter, bookChapters]);
+
+  const activeChapterNotes = useMemo(() => {
+    return activeChapterPassages.flatMap((passage) => passage.notes ?? []);
+  }, [activeChapterPassages]);
 
   const searchResults = useMemo<SearchResult[]>(() => {
     const trimmedQuery = query.trim();
@@ -554,6 +687,14 @@ function App() {
     }
   }
 
+  function goToChapterOffset(offset: number) {
+    const target = allChapters[activeChapterIndex + offset];
+
+    if (target) {
+      selectPassage(target.book, target.passage);
+    }
+  }
+
   if (error) {
     return (
       <main className="app app-state">
@@ -569,6 +710,8 @@ function App() {
       </main>
     );
   }
+
+  const chapterNoteCursor = { index: 0 };
 
   return (
     <main className="app" style={{ '--reader-scale': readerScale } as CSSProperties}>
@@ -708,6 +851,29 @@ function App() {
         </aside>
 
         <section className="reader-shell">
+          {view === 'reader' ? (
+            <>
+              <button
+                className="page-turn-zone previous"
+                disabled={activeChapterIndex <= 0}
+                onClick={() => goToChapterOffset(-1)}
+                aria-label="Capitolul anterior"
+                title="Capitolul anterior"
+              >
+                <span>‹</span>
+              </button>
+              <button
+                className="page-turn-zone next"
+                disabled={activeChapterIndex === -1 || activeChapterIndex >= allChapters.length - 1}
+                onClick={() => goToChapterOffset(1)}
+                aria-label="Capitolul următor"
+                title="Capitolul următor"
+              >
+                <span>›</span>
+              </button>
+            </>
+          ) : null}
+
           <div className="reader-tools" aria-label="Controale de citire">
             <div>
               <span>{data.stats.passages} pasaje</span>
@@ -744,28 +910,39 @@ function App() {
               </div>
 
               <div className="reader-chapter-passages">
-                {activeChapterPassages.map((passage) => (
-                  <section
-                    key={passage.id}
-                    className={
-                      passage.id === activePassage.id ? 'chapter-passage active' : 'chapter-passage'
-                    }
-                  >
-                    <h3 className="passage-subtitle">{passage.title}</h3>
-                    <div className="passage-text">
-                      {passage.paragraphs.map((paragraph, index) =>
-                        isSectionHeading(paragraph) ? (
-                          <h4 key={`${passage.id}-${paragraph}-${index}`}>{paragraph}</h4>
-                        ) : (
-                          <div key={`${passage.id}-${paragraph}-${index}`}>
-                            {renderPassageParagraph(paragraph, getPassageVerseShift(passage))}
-                          </div>
-                        ),
-                      )}
-                    </div>
-                  </section>
-                ))}
+                {activeChapterPassages.map((passage) => {
+                  return (
+                    <section
+                      key={passage.id}
+                      className={
+                        passage.id === activePassage.id ? 'chapter-passage active' : 'chapter-passage'
+                      }
+                    >
+                      <h3 className="passage-subtitle">{passage.title}</h3>
+                      <div className="passage-text">
+                        {passage.paragraphs.map((paragraph, index) =>
+                          isSectionHeading(paragraph) ? (
+                            <h4 key={`${passage.id}-${paragraph}-${index}`}>
+                              {renderTextWithNotes(paragraph, activeChapterNotes, chapterNoteCursor)}
+                            </h4>
+                          ) : (
+                            <div key={`${passage.id}-${paragraph}-${index}`}>
+                              {renderPassageParagraph(
+                                paragraph,
+                                getPassageVerseShift(passage),
+                                activeChapterNotes,
+                                chapterNoteCursor,
+                              )}
+                            </div>
+                          ),
+                        )}
+                      </div>
+                    </section>
+                  );
+                })}
               </div>
+
+              {renderChapterNotes(activeChapterNotes)}
 
               <nav className="reader-nav" aria-label="Navigare între pasaje">
                 <button className="ghost-button" disabled={currentIndex <= 0} onClick={() => goToOffset(-1)}>
