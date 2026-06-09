@@ -204,10 +204,11 @@ button:disabled {
   margin: 0;
   color: #0f766e;
   font-size: 0.92rem;
-  font-weight: 700;
+  font-weight: 800;
   font-style: italic;
   text-align: center;
   letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 .reader-passage-subtitle {
@@ -216,28 +217,19 @@ button:disabled {
 
 .reader-chapter-passages {
   display: grid;
-  gap: 34px;
-  margin-top: 18px;
+  gap: 18px;
+  margin-top: 14px;
 }
 
 .chapter-passage {
   display: grid;
-  gap: 18px;
+  gap: 10px;
 }
 
 .chapter-passage.active {
-  padding: 16px;
-  border-radius: 18px;
+  padding: 0;
+  border-radius: 0;
   background: transparent;
-}
-
-.passage-subtitle {
-  margin: 0;
-  color: #0f766e;
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
 .chapter-passage h4 {
@@ -569,6 +561,12 @@ button:disabled {
 
 .passage-text-block .verse-group,
 .passage-text-block .passage-paragraph {
+  margin-bottom: 0;
+}
+
+.chapter-passage .passage-text > div:last-child .verse-group,
+.chapter-passage .passage-text > div:last-child .passage-blocks,
+.chapter-passage .passage-text > div:last-child .passage-paragraph {
   margin-bottom: 0;
 }
 
