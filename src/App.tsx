@@ -242,7 +242,7 @@ function renderIntroSection(section: string, sectionIndex: number) {
 
 function splitVerses(paragraph: string) {
   const versePattern =
-    /(^|[\n.!?;:,„”"'’`‘´)\]])\s*(\d{1,3})\s*\.?\s*(?=[A-Za-zĂÂÎȘȚŞŢăâîșțşţ„"',(])/gu;
+    /(^|[\n.!?;:,„”"'’`‘´)\]\*])\s*(\d{1,3})\s*\.?\s*(?=[A-Za-zĂÂÎȘȚŞŢăâîșțşţ„"',(])/gu;
   const verses: VerseSegment[] = [];
   let leadingText = '';
   let currentNumber = '';
