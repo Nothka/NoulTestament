@@ -201,6 +201,8 @@ button:disabled {
 }
 
 .passage-subtitle {
+  width: 100%;
+  max-width: none;
   margin: 0;
   color: #0f766e;
   font-size: 0.92rem;
@@ -218,6 +220,8 @@ button:disabled {
 .reader-chapter-passages {
   display: grid;
   gap: 18px;
+  width: 100%;
+  max-width: var(--reader-column-width);
   margin-top: 14px;
 }
 
@@ -427,6 +431,7 @@ button:disabled {
 }
 
 .reader {
+  --reader-column-width: 920px;
   min-height: 72vh;
   border: 1px solid #d9e0dc;
   background: #ffffff;
@@ -450,11 +455,6 @@ button:disabled {
   font-size: calc(clamp(2rem, 4vw, 3.6rem) * var(--reader-scale));
   line-height: 1.05;
   letter-spacing: 0;
-}
-
-.reader-heading span {
-  color: #9f1239;
-  font-weight: 800;
 }
 
 .intro-page {
@@ -517,9 +517,7 @@ button:disabled {
   line-height: 1.85;
 }
 
-.passage-paragraph,
-.passage-text p {
-  max-width: 78ch;
+.passage-paragraph {
   margin: 0 0 1.25em;
   white-space: pre-line;
 }
@@ -548,14 +546,16 @@ button:disabled {
 .verse-group {
   display: grid;
   gap: 0.58rem;
-  max-width: 82ch;
+  width: 100%;
+  max-width: none;
   margin-bottom: 1.3em;
 }
 
 .passage-blocks {
   display: grid;
   gap: 0.7rem;
-  max-width: 82ch;
+  width: 100%;
+  max-width: none;
   margin-bottom: 1.3em;
 }
 
@@ -571,6 +571,9 @@ button:disabled {
 }
 
 .inline-section-heading {
+  justify-self: stretch;
+  width: 100%;
+  max-width: none;
   margin: 0.7em 0 0.35em;
   color: #0f766e;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -605,7 +608,7 @@ button:disabled {
 }
 
 .passage-text h3 {
-  max-width: 78ch;
+  max-width: none;
   margin: 2em 0 0.7em;
   color: #0f766e;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -831,11 +834,6 @@ button:disabled {
   .reader h2 {
     font-size: calc(clamp(1.55rem, 9vw, 2.35rem) * var(--reader-scale));
     line-height: 1.1;
-  }
-
-  .reader-heading span {
-    font-size: 0.85rem;
-    line-height: 1.45;
   }
 
   .passage-text {

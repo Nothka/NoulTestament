@@ -741,7 +741,6 @@ function App() {
               <div className="reader-heading">
                 <p className="kicker">{activeBook.title}</p>
                 <h2>Capitolul {activeChapter}</h2>
-                <span>Pasaj selectat: {activePassage.title} · {activePassage.reference}</span>
               </div>
 
               <div className="reader-chapter-passages">
