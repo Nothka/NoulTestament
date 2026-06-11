@@ -493,8 +493,16 @@ function App() {
   const [query, setQuery] = useState('');
   const [readerScale, setReaderScale] = useState(1);
   const [openChapterBookId, setOpenChapterBookId] = useState<string | null>(null);
-  const articleRef = useRef<HTMLElement>(null);
   const previousViewRef = useRef(view);
+
+  useEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
+
+    return () => {
+      window.history.scrollRestoration = previousScrollRestoration;
+    };
+  }, []);
 
   useEffect(() => {
     let isMounted = true;
@@ -641,12 +649,9 @@ function App() {
   useEffect(() => {
     if (previousViewRef.current !== view) {
       previousViewRef.current = view;
-      scrollPageToTop();
-      return;
     }
 
     scrollPageToTop();
-    articleRef.current?.scrollIntoView({ block: 'start' });
   }, [location, view]);
 
   function selectBook(book: Book) {
@@ -899,7 +904,7 @@ function App() {
           </div>
 
           {view === 'intro' ? (
-            <article className="intro-page" ref={articleRef}>
+            <article className="intro-page">
               <div className="intro-layout">
                 <aside className="intro-aside" aria-label="Detalii introducere">
                   <strong>{data.edition}</strong>
@@ -915,7 +920,7 @@ function App() {
               </div>
             </article>
           ) : (
-            <article className="reader" ref={articleRef}>
+            <article className="reader">
               <div className="reader-heading">
                 <p className="kicker">{activeBook.title}</p>
                 <h2>Capitolul {activeChapter}</h2>
