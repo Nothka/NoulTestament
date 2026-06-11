@@ -77,6 +77,7 @@ type NoteCursor = {
 };
 
 const DATA_URL = '/noul-testament.json';
+const DOCUMENT_DOWNLOAD_URL = '/noul-testament.pdf';
 
 function normalizeSearch(value: string) {
   return value
@@ -743,6 +744,17 @@ function App() {
           </button>
         </div>
       </header>
+
+      <section className="document-download" aria-label="Descarcă documentul PDF">
+        <div>
+          <p className="kicker">Document complet</p>
+          <strong>Noul Testament în format PDF</strong>
+          <span>Pentru citire offline, tipărire sau păstrare pe telefon.</span>
+        </div>
+        <a className="document-download-button" href={DOCUMENT_DOWNLOAD_URL} download="Noul Testament.pdf">
+          Descarcă PDF
+        </a>
+      </section>
 
       <button
         className="back-to-top-button"

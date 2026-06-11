@@ -76,7 +76,8 @@
 
 button,
 select,
-input {
+input,
+.document-download-button {
   border-radius: 8px;
 }
 
@@ -92,6 +93,7 @@ button:disabled {
 
 .solid-button,
 .ghost-button,
+.document-download-button,
 .scale-controls button {
   min-height: 40px;
   padding: 0 14px;
@@ -104,6 +106,7 @@ button:disabled {
 }
 
 .ghost-button,
+.document-download-button,
 .scale-controls button {
   border: 1px solid #ccd7d1;
   background: #ffffff;
@@ -148,6 +151,61 @@ button:disabled {
 }
 
 .header-actions button:hover {
+  transform: translateY(-1px);
+}
+
+.document-download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: min(1440px, calc(100% - 32px));
+  margin: 0 auto 8px;
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  background: #ffffff;
+  padding: 16px 18px;
+  box-shadow: 0 14px 32px rgba(19, 34, 28, 0.08);
+}
+
+.document-download div {
+  display: grid;
+  gap: 4px;
+}
+
+.document-download strong {
+  color: #111815;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.document-download span {
+  color: #53615d;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.document-download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  min-height: 52px;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(15, 118, 110, 0.24);
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.document-download-button:hover,
+.document-download-button:focus-visible {
+  background: #115e59;
+  box-shadow: 0 12px 26px rgba(15, 118, 110, 0.3);
+  outline: none;
   transform: translateY(-1px);
 }
 
@@ -407,33 +465,34 @@ button:disabled {
 }
 
 .reader-shell {
-  --page-turn-offset: clamp(36px, 5vw, 72px);
-  --page-turn-width: clamp(84px, 11vw, 132px);
   position: relative;
   min-width: 0;
 }
 
 .page-turn-zone {
-  position: absolute;
-  top: 52px;
-  bottom: 90px;
-  z-index: 12;
+  --workspace-edge: max(16px, calc(50vw - 720px));
+  position: fixed;
+  top: clamp(110px, 12vh, 160px);
+  bottom: 32px;
+  z-index: 25;
   display: grid;
   place-items: center;
-  width: var(--page-turn-width);
+  width: clamp(56px, 7vw, 96px);
   border: 0;
   background: transparent;
   opacity: 0;
+  pointer-events: auto;
+  touch-action: manipulation;
   transition: opacity 160ms ease;
 }
 
 .page-turn-zone.previous {
-  left: calc(-1 * var(--page-turn-offset));
+  left: calc(var(--workspace-edge) + 296px);
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230f766e'/%3E%3Cpath d='M19 9l-7 7 7 7' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 16 16, w-resize;
 }
 
 .page-turn-zone.next {
-  right: calc(-1.5 * var(--page-turn-offset));
+  right: max(0px, calc(var(--workspace-edge) - 48px));
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230f766e'/%3E%3Cpath d='M13 9l7 7-7 7' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 16 16, e-resize;
 }
 
@@ -773,6 +832,10 @@ button:disabled {
     gap: 18px;
   }
 
+  .document-download {
+    align-items: stretch;
+  }
+
   .workspace {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -832,6 +895,7 @@ button:disabled {
 
 @media (max-width: 640px) {
   .site-header,
+  .document-download,
   .workspace {
     width: min(100% - 16px, 1440px);
   }
@@ -869,6 +933,25 @@ button:disabled {
   .header-actions button,
   .scale-controls button {
     flex: 1;
+  }
+
+  .document-download {
+    display: grid;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .document-download strong {
+    font-size: 1.05rem;
+  }
+
+  .document-download span {
+    font-size: 0.9rem;
+  }
+
+  .document-download-button {
+    width: 100%;
+    min-height: 50px;
   }
 
   .reader-tools {
@@ -1019,12 +1102,14 @@ button:disabled {
 
 @media (max-width: 380px) {
   .site-header,
+  .document-download,
   .workspace {
     width: min(100% - 12px, 1440px);
   }
 
   .solid-button,
   .ghost-button,
+  .document-download-button,
   .scale-controls button {
     min-height: 38px;
     padding: 0 10px;
