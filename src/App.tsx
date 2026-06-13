@@ -1,6 +1,7 @@
 import './App.css';
 
 const PDF_URL = '/noul-testament.pdf';
+const PDF_EMBED_URL = `${PDF_URL}#view=FitH&toolbar=0&navpanes=0&scrollbar=1`;
 
 function App() {
   return (
@@ -12,9 +13,6 @@ function App() {
         </div>
 
         <div className="document-actions" aria-label="Acțiuni document">
-          <a className="secondary-action" href={PDF_URL} target="_blank" rel="noreferrer">
-            Deschide PDF
-          </a>
           <a className="primary-action" href={PDF_URL} download="Noul Testament.pdf">
             Descarcă PDF
           </a>
@@ -22,14 +20,11 @@ function App() {
       </header>
 
       <section className="pdf-shell" aria-label="Noul Testament PDF">
-        <object className="pdf-viewer" data={`${PDF_URL}#view=FitH`} type="application/pdf">
-          <div className="pdf-fallback">
-            <p>PDF-ul nu poate fi afișat în acest browser.</p>
-            <a className="primary-action" href={PDF_URL} download="Noul Testament.pdf">
-              Descarcă PDF
-            </a>
-          </div>
-        </object>
+        <iframe
+          className="pdf-viewer"
+          title="Noul Testament PDF"
+          src={PDF_EMBED_URL}
+        />
       </section>
     </main>
   );
