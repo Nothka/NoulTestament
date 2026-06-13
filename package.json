@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json && vite build",
-    "extract:document": "node scripts/extract-testament.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
