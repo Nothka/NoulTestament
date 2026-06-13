@@ -1,5 +1,6 @@
 .app {
   min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background: #eef1ed;
@@ -123,7 +124,7 @@
   border: 0;
   background: #ffffff;
   display: flex;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .pdf-viewer {
