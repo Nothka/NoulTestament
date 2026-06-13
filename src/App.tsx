@@ -1,9 +1,20 @@
+import { useEffect } from 'react';
 import './App.css';
 
 const PDF_URL = '/noul-testament.pdf';
 const PDF_EMBED_URL = `${PDF_URL}#zoom=page-width&toolbar=0&navpanes=0&scrollbar=1`;
 
 function App() {
+  useEffect(() => {
+    const shouldOpenPdfDirectly = window.matchMedia(
+      '(max-width: 760px), (pointer: coarse)',
+    ).matches;
+
+    if (shouldOpenPdfDirectly) {
+      window.location.replace(PDF_URL);
+    }
+  }, []);
+
   return (
     <main className="app">
       <header className="site-header">
