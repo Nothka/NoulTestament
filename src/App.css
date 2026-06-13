@@ -124,7 +124,7 @@
   border: 0;
   background: #ffffff;
   display: flex;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .pdf-viewer {
@@ -132,6 +132,8 @@
   width: 100%;
   min-height: 0;
   border: 0;
+  touch-action: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .pdf-fallback {

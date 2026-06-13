@@ -1,7 +1,7 @@
 import './App.css';
 
 const PDF_URL = '/noul-testament.pdf';
-const PDF_EMBED_URL = `${PDF_URL}#view=FitH&toolbar=0&navpanes=0&scrollbar=1`;
+const PDF_EMBED_URL = `${PDF_URL}#zoom=page-width&toolbar=0&navpanes=0&scrollbar=1`;
 
 function App() {
   return (
