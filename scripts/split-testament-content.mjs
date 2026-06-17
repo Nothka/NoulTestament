@@ -69,6 +69,8 @@ function sanitizeBook(book) {
       number: passage.number,
       reference: passage.reference ?? '',
       title: passage.title,
+      ...(passage.titleStyle ? { titleStyle: passage.titleStyle } : {}),
+      ...(passage.titleSize ? { titleSize: passage.titleSize } : {}),
       ...(passage.pageNumber ? { pageNumber: passage.pageNumber } : {}),
       blocks: passage.blocks ?? [],
       ...(passage.notes?.length ? { notes: passage.notes } : {}),

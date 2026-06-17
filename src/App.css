@@ -200,6 +200,26 @@
   line-height: 1.25;
 }
 
+.passage-title-normal {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.passage-title-italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.passage-title-bold {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.passage-title-bold-italic {
+  font-style: italic;
+  font-weight: 700;
+}
+
 .passage-body {
   color: #222222;
   font-size: 1.02rem;

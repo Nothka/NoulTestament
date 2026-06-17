@@ -23,6 +23,8 @@ type Passage = {
   number: number;
   reference: string;
   title: string;
+  titleSize?: number;
+  titleStyle?: 'normal' | 'italic' | 'bold' | 'bold-italic';
   pageNumber?: number;
   blocks: ContentBlock[];
   notes?: Footnote[];
@@ -35,6 +37,8 @@ type PagePassage = {
   number: number;
   reference: string;
   title: string;
+  titleSize?: number;
+  titleStyle?: Passage['titleStyle'];
   isContinuation: boolean;
   blocks: ContentBlock[];
 };
@@ -317,6 +321,8 @@ function buildEstimatedVisualPages(book: Book): VisualBookPage[] {
         number: passage.number,
         reference: passage.reference,
         title: passage.title,
+        titleSize: passage.titleSize,
+        titleStyle: passage.titleStyle,
         isContinuation: !isFirstSegment,
         blocks: segment.blocks,
       });
@@ -396,6 +402,8 @@ function buildMeasuredVisualPages(book: Book): VisualBookPage[] | null {
           number: passage.number,
           reference: passage.reference,
           title: passage.title,
+          titleSize: passage.titleSize,
+          titleStyle: passage.titleStyle,
           isContinuation: !isFirstSegment,
           blocks: segment.blocks,
         });
@@ -534,7 +542,14 @@ function createMeasuredPassageElement(
     }
 
     const title = document.createElement('h3');
-    title.textContent = passage.title;
+    title.className = getPassageTitleClassName(passage);
+    title.textContent = stripInlineMarkup(passage.title);
+    const titleFontSize = getPassageTitleFontSize(passage);
+
+    if (titleFontSize) {
+      title.style.fontSize = titleFontSize;
+    }
+
     header.append(title);
     article.append(header);
   }
@@ -770,7 +785,9 @@ function PagePassageView({ passage }: { passage: PagePassage }) {
               <span>({passage.reference})</span>
             </p>
           ) : null}
-          <h3>{passage.title}</h3>
+          <h3 className={getPassageTitleClassName(passage)} style={getPassageTitleStyle(passage)}>
+            {renderInlineMarkup(passage.title, `${passage.id}-title`)}
+          </h3>
         </header>
       ) : null}
 
@@ -779,6 +796,33 @@ function PagePassageView({ passage }: { passage: PagePassage }) {
       </div>
     </article>
   );
+}
+
+function getPassageTitleClassName(passage: Pick<PagePassage, 'titleStyle'> | Pick<Passage, 'titleStyle'>) {
+  return [
+    'passage-title',
+    passage.titleStyle ? `passage-title-${passage.titleStyle}` : '',
+  ].filter(Boolean).join(' ');
+}
+
+function getPassageTitleStyle(passage: Pick<PagePassage, 'titleSize'> | Pick<Passage, 'titleSize'>) {
+  const fontSize = getPassageTitleFontSize(passage);
+
+  if (!fontSize) {
+    return undefined;
+  }
+
+  return {
+    fontSize,
+  };
+}
+
+function getPassageTitleFontSize(passage: Pick<PagePassage, 'titleSize'> | Pick<Passage, 'titleSize'>) {
+  if (!passage.titleSize) {
+    return undefined;
+  }
+
+  return `calc(1.05rem * ${passage.titleSize / 100})`;
 }
 
 function PassageBlocks({ blocks, passageId }: { blocks: ContentBlock[]; passageId: string }) {
@@ -982,12 +1026,14 @@ function renderTextWithNotes(text: string, noteRefs: number[] = []) {
 }
 
 function isFootnoteMarker(text: string, index: number) {
-  return text[index] === '*' && text[index - 1] !== '*' && text[index + 1] !== '*';
+  return isSingleAsterisk(text, index)
+    && !isMarkdownItalicOpening(text, index)
+    && !isMarkdownItalicClosing(text, index);
 }
 
 function renderInlineMarkup(text: string, keyPrefix = 'inline'): ReactNode[] {
   const nodes: ReactNode[] = [];
-  const pattern = /(\*\*([^*]+)\*\*|__([^_]+)__|_([^_]+)_|\n)/gu;
+  const pattern = /(\*\*([^*]+)\*\*|\*([^*\n]+)\*|__([^_]+)__|_([^_]+)_|\n)/gu;
   let lastIndex = 0;
   let matchIndex = 0;
 
@@ -1000,10 +1046,10 @@ function renderInlineMarkup(text: string, keyPrefix = 'inline'): ReactNode[] {
 
     if (match[0] === '\n') {
       nodes.push(<br key={`${keyPrefix}-br-${matchIndex}`} />);
-    } else if (match[2] || match[3]) {
-      nodes.push(<strong key={`${keyPrefix}-strong-${matchIndex}`}>{match[2] ?? match[3]}</strong>);
-    } else if (match[4]) {
-      nodes.push(<em key={`${keyPrefix}-em-${matchIndex}`}>{match[4]}</em>);
+    } else if (match[2] || match[4]) {
+      nodes.push(<strong key={`${keyPrefix}-strong-${matchIndex}`}>{match[2] ?? match[4]}</strong>);
+    } else if (match[3] || match[5]) {
+      nodes.push(<em key={`${keyPrefix}-em-${matchIndex}`}>{match[3] ?? match[5]}</em>);
     }
 
     lastIndex = index + match[0].length;
@@ -1016,6 +1062,64 @@ function renderInlineMarkup(text: string, keyPrefix = 'inline'): ReactNode[] {
 
   return nodes.map((node, index) => (
     <Fragment key={`${keyPrefix}-${index}`}>{node}</Fragment>
+  ));
+}
+
+function isSingleAsterisk(text: string, index: number) {
+  return text[index] === '*' && text[index - 1] !== '*' && text[index + 1] !== '*';
+}
+
+function isMarkdownItalicOpening(text: string, index: number) {
+  const nextCharacter = text[index + 1];
+
+  return isSingleAsterisk(text, index)
+    && isOpeningMarkdownBoundary(text[index - 1])
+    && Boolean(nextCharacter)
+    && !/\s/u.test(nextCharacter)
+    && findClosingMarkdownStar(text, index + 1) > index;
+}
+
+function isMarkdownItalicClosing(text: string, index: number) {
+  const previousCharacter = text[index - 1];
+
+  return isSingleAsterisk(text, index)
+    && Boolean(previousCharacter)
+    && !/\s/u.test(previousCharacter)
+    && isClosingMarkdownBoundary(text[index + 1])
+    && findOpeningMarkdownStar(text, index - 1) >= 0;
+}
+
+function isOpeningMarkdownBoundary(character: string | undefined) {
+  return character === undefined || /\s/u.test(character) || /[([{„"']/u.test(character);
+}
+
+function isClosingMarkdownBoundary(character: string | undefined) {
+  return character === undefined || /\s/u.test(character) || /[)\]}.,;:!?„”"']/u.test(character);
+}
+
+function findClosingMarkdownStar(text: string, startIndex: number) {
+  for (let index = startIndex; index < text.length; index += 1) {
+    if (isSingleAsterisk(text, index) && !/\s/u.test(text[index - 1] ?? '') && isClosingMarkdownBoundary(text[index + 1])) {
+      return index;
+    }
+  }
+
+  return -1;
+}
+
+function findOpeningMarkdownStar(text: string, startIndex: number) {
+  for (let index = startIndex; index >= 0; index -= 1) {
+    if (isSingleAsterisk(text, index) && isOpeningMarkdownBoundary(text[index - 1]) && !/\s/u.test(text[index + 1] ?? '')) {
+      return index;
+    }
+  }
+
+  return -1;
+}
+
+function stripInlineMarkup(text: string) {
+  return text.replace(/\*\*([^*]+)\*\*|\*([^*\n]+)\*|__([^_]+)__|_([^_]+)_/gu, (_, boldStar, italicStar, boldUnderscore, italicUnderscore) => (
+    boldStar ?? italicStar ?? boldUnderscore ?? italicUnderscore ?? ''
   ));
 }
 

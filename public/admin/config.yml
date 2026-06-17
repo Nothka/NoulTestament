@@ -60,7 +60,32 @@ collections:
           - { label: ID, name: id, widget: string, hint: "Nu modifica acest câmp." }
           - { label: Număr pasaj, name: number, widget: number, value_type: int }
           - { label: Referință, name: reference, widget: string, required: false }
-          - { label: Titlu pasaj, name: title, widget: string }
+          - label: Titlu pasaj
+            name: title
+            widget: markdown
+            minimal: true
+            buttons: [bold, italic]
+            hint: "Poți folosi bold/italic pentru cuvinte din titlu."
+          - label: Stil titlu
+            name: titleStyle
+            widget: select
+            required: false
+            default: bold-italic
+            options:
+              - { label: Normal, value: normal }
+              - { label: Italic, value: italic }
+              - { label: Bold, value: bold }
+              - { label: Bold italic, value: bold-italic }
+          - label: Dimensiune titlu (%)
+            name: titleSize
+            widget: number
+            required: false
+            default: 100
+            value_type: int
+            min: 70
+            max: 160
+            step: 5
+            hint: "100 este dimensiunea normală. Scade spre 70 sau crește până la 160."
           - { label: Pagină, name: pageNumber, widget: number, value_type: int, required: false }
           - label: Text
             name: blocks
