@@ -1,0 +1,274 @@
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #ffffff;
+  color: #222222;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+}
+
+.reader-shell {
+  width: calc(100% - 40px);
+  max-width: 1120px;
+  margin: 0 auto;
+  border-top: 1px solid #e5e5e5;
+  padding: 58px 0 96px;
+}
+
+.reader-shell h2 {
+  margin: 0 0 46px;
+  color: #595959;
+  font-size: clamp(1.7rem, 2.45vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-align: center;
+}
+
+.page-stack {
+  display: grid;
+  gap: 100px;
+}
+
+.introduction-stack {
+  display: block;
+}
+
+.document-page {
+  display: block;
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.page-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 52px;
+  align-items: start;
+}
+
+.page-column {
+  min-width: 0;
+}
+
+.introduction-page h3 {
+  margin: 0 0 24px;
+  color: #242424;
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.introduction-body {
+  color: #222222;
+  font-size: 1.02rem;
+  line-height: 1.58;
+  text-align: left;
+}
+
+.introduction-body .text-line {
+  margin-bottom: 0.8rem;
+  text-indent: 1.5rem;
+}
+
+.passage {
+  min-width: 0;
+  break-inside: auto;
+  margin: 0 0 1.15rem;
+}
+
+.passage-header {
+  break-after: avoid;
+  margin: 0 0 11px;
+  text-align: center;
+}
+
+.passage-reference {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 3px;
+  color: #222222;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.passage-reference span:first-child {
+  font-size: 1.55rem;
+}
+
+.passage-header h3 {
+  margin: 0;
+  color: #2d2d2d;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.passage-title-normal {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.passage-title-italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.passage-title-bold {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.passage-title-bold-italic {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.passage-body {
+  color: #222222;
+  font-size: 1.02rem;
+  line-height: 1.48;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+.passage-paragraph {
+  margin: 0 0 0.7rem;
+}
+
+.verse-line,
+.text-line {
+  margin: 0 0 0.42rem;
+}
+
+.verse-line sup {
+  position: relative;
+  top: -0.18em;
+  margin-right: 1px;
+  font-size: 0.68em;
+  font-weight: 700;
+  line-height: 0;
+}
+
+.note-callout {
+  position: relative;
+  top: -0.25em;
+  color: #a30f2d;
+  margin-left: 1px;
+  font-size: 0.68em;
+  font-weight: 700;
+  line-height: 0;
+}
+
+.passage-notes {
+  margin: 12px 0 28px;
+  border-top: 2px solid #222222;
+  padding-top: 18px;
+  color: #333333;
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.34;
+}
+
+.passage-notes ol {
+  columns: 2;
+  column-gap: 52px;
+  column-fill: balance;
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.passage-notes li {
+  margin: 0 0 0.25rem;
+  padding-left: 0.15rem;
+}
+
+.inline-heading {
+  margin: 1rem 0 0.5rem;
+  color: #2f2f2f;
+  font-size: 1.02rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.28;
+  text-align: center;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+@media (max-width: 560px) {
+  .reader-shell {
+    width: calc(100% - 32px);
+    max-width: 280px;
+    padding: 34px 0 72px;
+  }
+
+  .reader-shell h2 {
+    margin-bottom: 34px;
+    font-size: clamp(1.08rem, 5vw, 1.28rem);
+    overflow-wrap: anywhere;
+  }
+
+  .page-stack {
+    gap: 34px;
+  }
+
+  .document-page {
+    min-height: 0;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .page-content {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .introduction-page h3 {
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+
+  .introduction-body {
+    font-size: 0.97rem;
+    line-height: 1.55;
+  }
+
+  .passage-body {
+    font-size: 0.97rem;
+    line-height: 1.55;
+  }
+
+  .passage-notes {
+    font-size: 0.76rem;
+    margin: 12px 0 24px;
+  }
+
+  .passage-notes ol {
+    columns: 1;
+    column-gap: normal;
+  }
+}

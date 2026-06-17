@@ -2,19 +2,29 @@ backend:
   name: git-gateway
   branch: main
 
+publish_mode: editorial_workflow
+
+site_url: https://www.noultestament.ro
+display_url: https://www.noultestament.ro
+
 local_backend: true
 
 media_folder: public/uploads
 public_folder: /uploads
 
+editor:
+  preview: true
+
 collections:
   - name: introduction
     label: Introducere
+    preview_path: "/"
     files:
       - name: introduction
         label: Introducere
         file: public/content/introduction.json
         format: json
+        preview_path: "/"
         fields:
           - { label: ID, name: id, widget: string, hint: "Nu modifica acest câmp." }
           - { label: Titlu meniu, name: title, widget: string }
@@ -45,6 +55,7 @@ collections:
     extension: json
     format: json
     create: false
+    preview_path: "/"
     identifier_field: navTitle
     summary: "{{navTitle}}"
     fields:

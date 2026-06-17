@@ -515,3 +515,22 @@
     column-gap: normal;
   }
 }
+.admin-entry {
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+.admin-entry-link {
+  color: #222222;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.admin-entry-link:hover,
+.admin-entry-link:focus-visible {
+  color: #000000;
+  outline: none;
+}

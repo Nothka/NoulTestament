@@ -7,7 +7,427 @@
     <title>Administrare - Noul Testament</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
+
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', function (user) {
+          const hasAuthToken =
+            window.location.hash.includes('invite_token') ||
+            window.location.hash.includes('confirmation_token') ||
+            window.location.hash.includes('recovery_token');
+
+          if (!user && hasAuthToken) {
+            window.netlifyIdentity.open();
+          }
+        });
+
+        window.netlifyIdentity.on('login', function () {
+          window.location.href = '/admin/';
+        });
+
+        window.netlifyIdentity.on('logout', function () {
+          window.location.href = '/admin/';
+        });
+      }
+
+      CMS.registerPreviewStyle('/admin/preview.css');
+
+      const h = window.h;
+      const createClass = window.createClass;
+
+      function getEntryData(entry) {
+        const data = entry.get('data');
+        return data && typeof data.toJS === 'function' ? data.toJS() : {};
+      }
+
+      function asArray(value) {
+        return Array.isArray(value) ? value : [];
+      }
+
+      function isSingleAsterisk(text, index) {
+        return text[index] === '*' && text[index - 1] !== '*' && text[index + 1] !== '*';
+      }
+
+      function isOpeningMarkdownBoundary(character) {
+        return character === undefined || /\s/u.test(character) || /[([{„"']/u.test(character);
+      }
+
+      function isClosingMarkdownBoundary(character) {
+        return character === undefined || /\s/u.test(character) || /[)\]}.,;:!?„”"']/u.test(character);
+      }
+
+      function findClosingMarkdownStar(text, startIndex) {
+        for (let index = startIndex; index < text.length; index += 1) {
+          if (
+            isSingleAsterisk(text, index) &&
+            !/\s/u.test(text[index - 1] || '') &&
+            isClosingMarkdownBoundary(text[index + 1])
+          ) {
+            return index;
+          }
+        }
+
+        return -1;
+      }
+
+      function findOpeningMarkdownStar(text, startIndex) {
+        for (let index = startIndex; index >= 0; index -= 1) {
+          if (
+            isSingleAsterisk(text, index) &&
+            isOpeningMarkdownBoundary(text[index - 1]) &&
+            !/\s/u.test(text[index + 1] || '')
+          ) {
+            return index;
+          }
+        }
+
+        return -1;
+      }
+
+      function isMarkdownItalicOpening(text, index) {
+        const nextCharacter = text[index + 1];
+
+        return (
+          isSingleAsterisk(text, index) &&
+          isOpeningMarkdownBoundary(text[index - 1]) &&
+          Boolean(nextCharacter) &&
+          !/\s/u.test(nextCharacter) &&
+          findClosingMarkdownStar(text, index + 1) > index
+        );
+      }
+
+      function isMarkdownItalicClosing(text, index) {
+        const previousCharacter = text[index - 1];
+
+        return (
+          isSingleAsterisk(text, index) &&
+          Boolean(previousCharacter) &&
+          !/\s/u.test(previousCharacter) &&
+          isClosingMarkdownBoundary(text[index + 1]) &&
+          findOpeningMarkdownStar(text, index - 1) >= 0
+        );
+      }
+
+      function isFootnoteMarker(text, index) {
+        return (
+          isSingleAsterisk(text, index) &&
+          !isMarkdownItalicOpening(text, index) &&
+          !isMarkdownItalicClosing(text, index)
+        );
+      }
+
+      function renderInlineMarkup(text) {
+        const source = String(text || '');
+        const nodes = [];
+        const pattern = /(\*\*([^*]+)\*\*|\*([^*\n]+)\*|__([^_]+)__|_([^_]+)_|\n)/gu;
+
+        let lastIndex = 0;
+        let matchIndex = 0;
+
+        for (const match of source.matchAll(pattern)) {
+          const index = match.index || 0;
+
+          if (index > lastIndex) {
+            nodes.push(source.slice(lastIndex, index));
+          }
+
+          if (match[0] === '\n') {
+            nodes.push(h('br', { key: `br-${matchIndex}` }));
+          } else if (match[2] || match[4]) {
+            nodes.push(h('strong', { key: `strong-${matchIndex}` }, match[2] || match[4]));
+          } else if (match[3] || match[5]) {
+            nodes.push(h('em', { key: `em-${matchIndex}` }, match[3] || match[5]));
+          }
+
+          lastIndex = index + match[0].length;
+          matchIndex += 1;
+        }
+
+        if (lastIndex < source.length) {
+          nodes.push(source.slice(lastIndex));
+        }
+
+        return nodes;
+      }
+
+      function renderTextWithNotes(text, noteRefs) {
+        const source = String(text || '');
+        const refs = asArray(noteRefs);
+        const nodes = [];
+
+        let noteIndex = 0;
+        let textStart = 0;
+
+        for (let index = 0; index < source.length; index += 1) {
+          if (!isFootnoteMarker(source, index)) {
+            continue;
+          }
+
+          nodes.push.apply(nodes, renderInlineMarkup(source.slice(textStart, index)));
+
+          const noteNumber = refs[noteIndex];
+          noteIndex += 1;
+
+          nodes.push(
+            h(
+              'sup',
+              {
+                key: `note-${index}`,
+                className: 'note-callout',
+              },
+              noteNumber || '*',
+            ),
+          );
+
+          textStart = index + 1;
+        }
+
+        nodes.push.apply(nodes, renderInlineMarkup(source.slice(textStart)));
+
+        return nodes;
+      }
+
+      function renderBlock(block, index) {
+        const type = block.type || 'paragraph';
+        const text = block.text || '';
+        const noteRefs = block.noteRefs || [];
+
+        if (type === 'heading') {
+          return h(
+            'h4',
+            {
+              key: `heading-${index}`,
+              className: 'inline-heading',
+            },
+            renderTextWithNotes(text, noteRefs),
+          );
+        }
+
+        if (type === 'verse') {
+          const match = text.match(/^(\d{1,3})(.*)$/u);
+
+          if (match) {
+            return h(
+              'p',
+              {
+                key: `verse-${index}`,
+                className: 'verse-line',
+              },
+              [
+                h('sup', { key: 'number' }, match[1]),
+                ' ',
+                ...renderTextWithNotes(match[2].trimStart(), noteRefs),
+              ],
+            );
+          }
+        }
+
+        return h(
+          'p',
+          {
+            key: `text-${index}`,
+            className: 'text-line',
+          },
+          renderTextWithNotes(text, noteRefs),
+        );
+      }
+
+      function getPassageTitleClassName(passage) {
+        return ['passage-title', passage.titleStyle ? `passage-title-${passage.titleStyle}` : '']
+          .filter(Boolean)
+          .join(' ');
+      }
+
+      function getPassageTitleStyle(passage) {
+        if (!passage.titleSize) {
+          return {};
+        }
+
+        return {
+          fontSize: `calc(1.05rem * ${Number(passage.titleSize) / 100})`,
+        };
+      }
+
+      function renderPassage(passage, index) {
+        const blocks = asArray(passage.blocks);
+        const notes = asArray(passage.notes);
+
+        return h(
+          'article',
+          {
+            key: passage.id || `passage-${index}`,
+            className: 'passage',
+          },
+          [
+            h(
+              'header',
+              {
+                key: 'header',
+                className: 'passage-header',
+              },
+              [
+                passage.reference
+                  ? h(
+                      'p',
+                      {
+                        key: 'reference',
+                        className: 'passage-reference',
+                      },
+                      [
+                        h('span', { key: 'number' }, String(passage.number || '')),
+                        h('span', { key: 'reference-text' }, `(${passage.reference})`),
+                      ],
+                    )
+                  : null,
+
+                h(
+                  'h3',
+                  {
+                    key: 'title',
+                    className: getPassageTitleClassName(passage),
+                    style: getPassageTitleStyle(passage),
+                  },
+                  renderInlineMarkup(passage.title || ''),
+                ),
+              ],
+            ),
+
+            h(
+              'div',
+              {
+                key: 'body',
+                className: 'passage-body',
+              },
+              blocks.map(renderBlock),
+            ),
+
+            notes.length > 0
+              ? h(
+                  'aside',
+                  {
+                    key: 'notes',
+                    className: 'passage-notes',
+                  },
+                  h(
+                    'ol',
+                    {},
+                    notes.map(function (note) {
+                      return h('li', { key: note.number }, renderInlineMarkup(note.text || ''));
+                    }),
+                  ),
+                )
+              : null,
+          ],
+        );
+      }
+
+      const IntroductionPreview = createClass({
+        render: function () {
+          const data = getEntryData(this.props.entry);
+          const blocks = asArray(data.blocks);
+
+          return h(
+            'main',
+            {
+              className: 'reader-shell',
+            },
+            [
+              h('h2', { key: 'title' }, String(data.title || 'INTRODUCERE').toUpperCase()),
+
+              h(
+                'div',
+                {
+                  key: 'stack',
+                  className: 'page-stack introduction-stack',
+                },
+                h(
+                  'section',
+                  {
+                    className: 'document-page introduction-page',
+                  },
+                  [
+                    data.subtitle
+                      ? h('h3', { key: 'subtitle' }, data.subtitle)
+                      : null,
+
+                    h(
+                      'div',
+                      {
+                        key: 'body',
+                        className: 'introduction-body',
+                      },
+                      blocks.map(renderBlock),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          );
+        },
+      });
+
+      const BookPreview = createClass({
+        render: function () {
+          const data = getEntryData(this.props.entry);
+          const passages = asArray(data.passages);
+          const midpoint = Math.ceil(passages.length / 2);
+
+          return h(
+            'main',
+            {
+              className: 'reader-shell',
+            },
+            [
+              h('h2', { key: 'title' }, String(data.title || data.navTitle || '').toUpperCase()),
+
+              h(
+                'div',
+                {
+                  key: 'stack',
+                  className: 'page-stack',
+                },
+                h(
+                  'section',
+                  {
+                    className: 'document-page',
+                  },
+                  h(
+                    'div',
+                    {
+                      className: 'page-content',
+                    },
+                    [
+                      h(
+                        'div',
+                        {
+                          key: 'column-1',
+                          className: 'page-column',
+                        },
+                        passages.slice(0, midpoint).map(renderPassage),
+                      ),
+
+                      h(
+                        'div',
+                        {
+                          key: 'column-2',
+                          className: 'page-column',
+                        },
+                        passages.slice(midpoint).map(renderPassage),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
+      });
+
+      CMS.registerPreviewTemplate('introduction', IntroductionPreview);
+      CMS.registerPreviewTemplate('books', BookPreview);
+    </script>
   </body>
 </html>

@@ -298,6 +298,7 @@ function App() {
             <span>NOUL</span> <span>TESTAMENT</span>
           </button>
         </h1>
+
         <p>- o nouă divizare a textului -</p>
 
         <nav className="book-nav" aria-label="Cărțile Noului Testament">
@@ -314,6 +315,7 @@ function App() {
           ))}
         </nav>
 
+<<<<<<< HEAD
         {isAdmin ? (
           <div className="admin-toolbar">
             <button
@@ -354,6 +356,13 @@ function App() {
             {loginError ? <p className="admin-error">{loginError}</p> : null}
           </form>
         )}
+=======
+        <p className="admin-entry">
+          <a className="admin-entry-link" href="/admin/">
+            Administrare text
+          </a>
+        </p>
+>>>>>>> 84c092a (Configure Decap CMS editing and preview)
       </header>
 
       <section
@@ -390,6 +399,7 @@ async function loadEditableContentData(): Promise<TestamentData> {
     fetchJson<Introduction | null>(CONTENT_INTRODUCTION_URL),
     fetchJson<BookIndexEntry[]>(CONTENT_BOOKS_INDEX_URL),
   ]);
+
   const books = await Promise.all(
     bookIndex.map((book) => fetchJson<Book>(`/content/books/${book.file}`)),
   );
@@ -423,7 +433,8 @@ function IntroductionPages({ introduction }: { introduction: Introduction }) {
     <div className="introduction-stack">
       {pages.map((page, pageIndex) => (
         <article className="document-page introduction-page" key={`introduction-${page.number}`}>
-          {pageIndex === 0 ? <h3>{introduction.subtitle}</h3> : null}
+          {pageIndex === 0 && introduction.subtitle ? <h3>{introduction.subtitle}</h3> : null}
+
           <div className="introduction-body">
             {page.blocks.map((block, index) => (
               <ContentBlockView block={block} key={`introduction-${page.number}-${index}`} />
@@ -507,6 +518,7 @@ function buildEstimatedVisualPages(book: Book): VisualBookPage[] {
         isContinuation: !isFirstSegment,
         blocks: segment.blocks,
       });
+
       addNotesForBlocks(page, passage, segment.blocks);
       columnWeight[columnIndex] += segment.weight;
       remainingBlocks = remainingBlocks.slice(segment.blocks.length);
@@ -588,6 +600,7 @@ function buildMeasuredVisualPages(book: Book): VisualBookPage[] | null {
           isContinuation: !isFirstSegment,
           blocks: segment.blocks,
         });
+
         addNotesForBlocks(page, passage, segment.blocks);
         columnHeight[columnIndex] += segment.height;
         remainingBlocks = remainingBlocks.slice(segment.blocks.length);
@@ -966,6 +979,7 @@ function PagePassageView({ passage }: { passage: PagePassage }) {
               <span>({passage.reference})</span>
             </p>
           ) : null}
+
           <h3 className={getPassageTitleClassName(passage)} style={getPassageTitleStyle(passage)}>
             {renderInlineMarkup(passage.title, `${passage.id}-title`)}
           </h3>
@@ -1188,6 +1202,7 @@ function renderTextWithNotes(text: string, noteRefs: number[] = []) {
 
     const noteNumber = noteRefs[noteIndex];
     noteIndex += 1;
+
     nodes.push(
       <sup
         aria-label={noteNumber ? `Nota ${noteNumber}` : undefined}
@@ -1198,6 +1213,7 @@ function renderTextWithNotes(text: string, noteRefs: number[] = []) {
         *
       </sup>,
     );
+
     textStart = index + 1;
   }
 
@@ -1280,7 +1296,11 @@ function isClosingMarkdownBoundary(character: string | undefined) {
 
 function findClosingMarkdownStar(text: string, startIndex: number) {
   for (let index = startIndex; index < text.length; index += 1) {
-    if (isSingleAsterisk(text, index) && !/\s/u.test(text[index - 1] ?? '') && isClosingMarkdownBoundary(text[index + 1])) {
+    if (
+      isSingleAsterisk(text, index)
+      && !/\s/u.test(text[index - 1] ?? '')
+      && isClosingMarkdownBoundary(text[index + 1])
+    ) {
       return index;
     }
   }
@@ -1290,7 +1310,11 @@ function findClosingMarkdownStar(text: string, startIndex: number) {
 
 function findOpeningMarkdownStar(text: string, startIndex: number) {
   for (let index = startIndex; index >= 0; index -= 1) {
-    if (isSingleAsterisk(text, index) && isOpeningMarkdownBoundary(text[index - 1]) && !/\s/u.test(text[index + 1] ?? '')) {
+    if (
+      isSingleAsterisk(text, index)
+      && isOpeningMarkdownBoundary(text[index - 1])
+      && !/\s/u.test(text[index + 1] ?? '')
+    ) {
       return index;
     }
   }
@@ -1299,9 +1323,12 @@ function findOpeningMarkdownStar(text: string, startIndex: number) {
 }
 
 function stripInlineMarkup(text: string) {
-  return text.replace(/\*\*([^*]+)\*\*|\*([^*\n]+)\*|__([^_]+)__|_([^_]+)_/gu, (_, boldStar, italicStar, boldUnderscore, italicUnderscore) => (
-    boldStar ?? italicStar ?? boldUnderscore ?? italicUnderscore ?? ''
-  ));
+  return text.replace(
+    /\*\*([^*]+)\*\*|\*([^*\n]+)\*|__([^_]+)__|_([^_]+)_/gu,
+    (_, boldStar, italicStar, boldUnderscore, italicUnderscore) => (
+      boldStar ?? italicStar ?? boldUnderscore ?? italicUnderscore ?? ''
+    ),
+  );
 }
 
 export default App;
