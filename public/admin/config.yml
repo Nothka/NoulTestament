@@ -81,7 +81,7 @@ collections:
             name: titleStyle
             widget: select
             required: false
-            default: bold-italic
+            default: normal
             options:
               - { label: Normal, value: normal }
               - { label: Italic, value: italic }
