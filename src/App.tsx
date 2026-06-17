@@ -1020,16 +1020,16 @@ function renderTextWithNotes(text: string, noteRefs: number[] = []) {
     const noteNumber = noteRefs[noteIndex];
     noteIndex += 1;
 
-    nodes.push(
-      <sup
-        aria-label={noteNumber ? `Nota ${noteNumber}` : undefined}
-        className="note-callout"
-        key={`note-${index}-${noteIndex}`}
-        title={noteNumber ? `Nota ${noteNumber}` : undefined}
-      >
-        *
-      </sup>,
-    );
+nodes.push(
+  <sup
+    aria-label={noteNumber ? `Nota ${noteNumber}` : undefined}
+    className="note-callout"
+    key={`note-${index}-${noteIndex}`}
+    title={noteNumber ? `Nota ${noteNumber}` : undefined}
+  >
+    {noteNumber ? `*${noteNumber}` : '*'}
+  </sup>,
+);
 
     textStart = index + 1;
   }

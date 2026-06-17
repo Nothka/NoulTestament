@@ -170,7 +170,7 @@
                 key: `note-${index}`,
                 className: 'note-callout',
               },
-              noteNumber || '*',
+             noteNumber ? `*${noteNumber}` : '*',
             ),
           );
 
