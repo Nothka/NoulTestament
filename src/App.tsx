@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useLayoutEffect, useMemo, useState, type ReactNode } from 'react';
 import './App.css';
 
 const TESTAMENT_DATA_URL = '/testament.json';
@@ -920,7 +920,7 @@ function PassageNotes({ notes }: { notes: Footnote[] }) {
       <ol>
         {notes.map((note) => (
           <li key={note.number} value={note.number}>
-            {note.text}
+            {renderInlineMarkup(note.text)}
           </li>
         ))}
       </ol>
@@ -950,38 +950,73 @@ function ContentBlockView({ block }: { block: ContentBlock }) {
 }
 
 function renderTextWithNotes(text: string, noteRefs: number[] = []) {
-  const parts = text.split('*');
+  const nodes: ReactNode[] = [];
+  let noteIndex = 0;
+  let textStart = 0;
 
-  return parts.map((part, index) => (
-    <FragmentWithNote
-      key={`${part}-${index}`}
-      noteNumber={index < parts.length - 1 ? noteRefs[index] : undefined}
-      showFallbackMarker={index < parts.length - 1 && noteRefs[index] === undefined}
-      text={part}
-    />
-  ));
+  for (let index = 0; index < text.length; index += 1) {
+    if (!isFootnoteMarker(text, index)) {
+      continue;
+    }
+
+    nodes.push(...renderInlineMarkup(text.slice(textStart, index), `text-${index}`));
+
+    const noteNumber = noteRefs[noteIndex];
+    noteIndex += 1;
+    nodes.push(
+      <sup
+        aria-label={noteNumber ? `Nota ${noteNumber}` : undefined}
+        className="note-callout"
+        key={`note-${index}-${noteIndex}`}
+        title={noteNumber ? `Nota ${noteNumber}` : undefined}
+      >
+        *
+      </sup>,
+    );
+    textStart = index + 1;
+  }
+
+  nodes.push(...renderInlineMarkup(text.slice(textStart), `text-end-${text.length}`));
+
+  return nodes;
 }
 
-function FragmentWithNote({
-  noteNumber,
-  showFallbackMarker = false,
-  text,
-}: {
-  noteNumber?: number;
-  showFallbackMarker?: boolean;
-  text: string;
-}) {
-  return (
-    <>
-      {text}
-      {noteNumber ? (
-        <sup className="note-callout" aria-label={`Nota ${noteNumber}`} title={`Nota ${noteNumber}`}>
-          *
-        </sup>
-      ) : null}
-      {showFallbackMarker ? <sup className="note-callout">*</sup> : null}
-    </>
-  );
+function isFootnoteMarker(text: string, index: number) {
+  return text[index] === '*' && text[index - 1] !== '*' && text[index + 1] !== '*';
+}
+
+function renderInlineMarkup(text: string, keyPrefix = 'inline'): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  const pattern = /(\*\*([^*]+)\*\*|__([^_]+)__|_([^_]+)_|\n)/gu;
+  let lastIndex = 0;
+  let matchIndex = 0;
+
+  for (const match of text.matchAll(pattern)) {
+    const index = match.index ?? 0;
+
+    if (index > lastIndex) {
+      nodes.push(text.slice(lastIndex, index));
+    }
+
+    if (match[0] === '\n') {
+      nodes.push(<br key={`${keyPrefix}-br-${matchIndex}`} />);
+    } else if (match[2] || match[3]) {
+      nodes.push(<strong key={`${keyPrefix}-strong-${matchIndex}`}>{match[2] ?? match[3]}</strong>);
+    } else if (match[4]) {
+      nodes.push(<em key={`${keyPrefix}-em-${matchIndex}`}>{match[4]}</em>);
+    }
+
+    lastIndex = index + match[0].length;
+    matchIndex += 1;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex));
+  }
+
+  return nodes.map((node, index) => (
+    <Fragment key={`${keyPrefix}-${index}`}>{node}</Fragment>
+  ));
 }
 
 export default App;
