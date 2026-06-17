@@ -1084,12 +1084,12 @@ function ContentBlockView({ block }: { block: ContentBlock }) {
     const match = block.text.match(/^(\d{1,3})(.*)$/u);
 
     if (match) {
-      return (
-        <p className="verse-line">
-          <sup>{match[1]}</sup>
-          {renderTextWithNotes(match[2].trimStart(), noteRefs)}
-        </p>
-      );
+     return (
+  <p className="verse-line">
+    <sup>{match[1]}</sup>
+    {renderTextWithNotes(match[2].trimStart(), block.noteRefs)}
+  </p>
+);
     }
   }
 
