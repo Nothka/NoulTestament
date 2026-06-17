@@ -41,6 +41,8 @@ type PagePassage = {
   titleStyle?: Passage['titleStyle'];
   isContinuation: boolean;
   blocks: ContentBlock[];
+  allBlocks: ContentBlock[];
+  notes?: Footnote[];
 };
 
 type BookPage = {
@@ -334,6 +336,8 @@ function buildEstimatedVisualPages(book: Book): VisualBookPage[] {
         titleStyle: passage.titleStyle,
         isContinuation: !isFirstSegment,
         blocks: segment.blocks,
+        allBlocks: passage.blocks,
+        notes: passage.notes,
       });
 
       addNotesForBlocks(page, passage, segment.blocks);
@@ -416,6 +420,8 @@ function buildMeasuredVisualPages(book: Book): VisualBookPage[] | null {
           titleStyle: passage.titleStyle,
           isContinuation: !isFirstSegment,
           blocks: segment.blocks,
+          allBlocks: passage.blocks,
+          notes: passage.notes,
         });
 
         addNotesForBlocks(page, passage, segment.blocks);
@@ -760,7 +766,7 @@ function takePassageSegment(
 
 function estimateBlockWeight(block: ContentBlock, passage: Passage) {
   const headingWeight = block.type === 'heading' ? 180 : 0;
-  const noteWeight = (block.noteRefs?.length ?? 0) * 90;
+  const noteWeight = Math.max(block.noteRefs?.length ?? 0, countFootnoteMarkers(block.text)) * 90;
 
   if (passage.id === 'matei-1' && block.type !== 'heading') {
     return splitGenealogyText(block.text).length * 115 + noteWeight + 16;
@@ -774,7 +780,9 @@ function addNotesForBlocks(page: VisualBookPage, passage: Passage, blocks: Conte
     return;
   }
 
-  const noteNumbers = new Set(blocks.flatMap((block) => block.noteRefs ?? []));
+  const noteNumbers = new Set(
+    blocks.flatMap((block) => getResolvedNoteRefsForBlock(block, passage.blocks, passage.notes)),
+  );
   const existingNoteNumbers = new Set(page.notes.map((note) => note.number));
 
   for (const note of passage.notes) {
@@ -783,6 +791,45 @@ function addNotesForBlocks(page: VisualBookPage, passage: Passage, blocks: Conte
       existingNoteNumbers.add(note.number);
     }
   }
+}
+
+function getResolvedNoteRefsForBlock(
+  block: ContentBlock,
+  allBlocks: ContentBlock[],
+  notes: Footnote[] = [],
+) {
+  const markerCount = countFootnoteMarkers(block.text);
+
+  if (markerCount === 0) {
+    return [];
+  }
+
+  if (notes.length > 0) {
+    const blockIndex = allBlocks.indexOf(block);
+    const previousBlocks = blockIndex >= 0 ? allBlocks.slice(0, blockIndex) : [];
+    const previousMarkerCount = previousBlocks.reduce(
+      (total, currentBlock) => total + countFootnoteMarkers(currentBlock.text),
+      0,
+    );
+
+    return notes
+      .slice(previousMarkerCount, previousMarkerCount + markerCount)
+      .map((note) => note.number);
+  }
+
+  return (block.noteRefs ?? []).slice(0, markerCount);
+}
+
+function countFootnoteMarkers(text: string) {
+  let count = 0;
+
+  for (let index = 0; index < text.length; index += 1) {
+    if (isFootnoteMarker(text, index)) {
+      count += 1;
+    }
+  }
+
+  return count;
 }
 
 function PagePassageView({ passage }: { passage: PagePassage }) {
@@ -804,7 +851,12 @@ function PagePassageView({ passage }: { passage: PagePassage }) {
       ) : null}
 
       <div className="passage-body">
-        <PassageBlocks blocks={passage.blocks} passageId={passage.passageId} />
+        <PassageBlocks
+          blocks={passage.blocks}
+          passageId={passage.passageId}
+          allBlocks={passage.allBlocks}
+          notes={passage.notes}
+        />
       </div>
     </article>
   );
@@ -837,9 +889,19 @@ function getPassageTitleFontSize(passage: Pick<PagePassage, 'titleSize'> | Pick<
   return `calc(1.05rem * ${passage.titleSize / 100})`;
 }
 
-function PassageBlocks({ blocks, passageId }: { blocks: ContentBlock[]; passageId: string }) {
+function PassageBlocks({
+  blocks,
+  passageId,
+  allBlocks = blocks,
+  notes = [],
+}: {
+  blocks: ContentBlock[];
+  passageId: string;
+  allBlocks?: ContentBlock[];
+  notes?: Footnote[];
+}) {
   if (passageId === 'matei-1') {
-    return <GenealogyBlocks blocks={blocks} passageId={passageId} />;
+    return <GenealogyBlocks blocks={blocks} passageId={passageId} allBlocks={allBlocks} notes={notes} />;
   }
 
   const groupedBlocks: Array<ContentBlock | ContentBlock[]> = [];
@@ -868,7 +930,11 @@ function PassageBlocks({ blocks, passageId }: { blocks: ContentBlock[]; passageI
       return (
         <p className="passage-paragraph" key={`${passageId}-paragraph-${index}`}>
           {group.map((block, blockIndex) => (
-            <InlineBlock block={block} key={`${passageId}-${index}-${blockIndex}`} />
+            <InlineBlock
+              block={block}
+              noteRefs={getResolvedNoteRefsForBlock(block, allBlocks, notes)}
+              key={`${passageId}-${index}-${blockIndex}`}
+            />
           ))}
         </p>
       );
@@ -876,13 +942,13 @@ function PassageBlocks({ blocks, passageId }: { blocks: ContentBlock[]; passageI
 
     return (
       <h4 className="inline-heading" key={`${passageId}-heading-${index}`}>
-        {renderTextWithNotes(group.text, group.noteRefs)}
+        {renderTextWithNotes(group.text, getResolvedNoteRefsForBlock(group, allBlocks, notes))}
       </h4>
     );
   });
 }
 
-function InlineBlock({ block }: { block: ContentBlock }) {
+function InlineBlock({ block, noteRefs }: { block: ContentBlock; noteRefs?: number[] }) {
   if (block.type === 'verse') {
     const match = block.text.match(/^(\d{1,3})(.*)$/u);
 
@@ -890,7 +956,7 @@ function InlineBlock({ block }: { block: ContentBlock }) {
       return (
         <span className="verse-fragment">
           <sup>{match[1]}</sup>
-          {renderTextWithNotes(match[2].trimStart(), block.noteRefs)}
+          {renderTextWithNotes(match[2].trimStart(), noteRefs)}
         </span>
       );
     }
@@ -898,19 +964,29 @@ function InlineBlock({ block }: { block: ContentBlock }) {
 
   return (
     <span className="text-fragment">
-      {renderTextWithNotes(block.text, block.noteRefs)}
+      {renderTextWithNotes(block.text, noteRefs)}
     </span>
   );
 }
 
-function GenealogyBlocks({ blocks, passageId }: { blocks: ContentBlock[]; passageId: string }) {
+function GenealogyBlocks({
+  blocks,
+  passageId,
+  allBlocks = blocks,
+  notes = [],
+}: {
+  blocks: ContentBlock[];
+  passageId: string;
+  allBlocks?: ContentBlock[];
+  notes?: Footnote[];
+}) {
   return (
     <div className="genealogy-lines">
       {blocks.flatMap((block, blockIndex) => {
         if (block.type === 'heading') {
           return [
             <h4 className="inline-heading" key={`${passageId}-${blockIndex}`}>
-              {renderTextWithNotes(block.text, block.noteRefs)}
+              {renderTextWithNotes(block.text, getResolvedNoteRefsForBlock(block, allBlocks, notes))}
             </h4>,
           ];
         }
@@ -920,7 +996,7 @@ function GenealogyBlocks({ blocks, passageId }: { blocks: ContentBlock[]; passag
         return lines.map((line, lineIndex) => (
           <p className="genealogy-line" key={`${passageId}-${blockIndex}-${lineIndex}`}>
             {lineIndex === 0 ? (
-              <GenealogyLine text={line} noteRefs={block.noteRefs} />
+              <GenealogyLine text={line} noteRefs={getResolvedNoteRefsForBlock(block, allBlocks, notes)} />
             ) : (
               <GenealogyLine text={line} />
             )}
@@ -996,7 +1072,7 @@ function ContentBlockView({ block }: { block: ContentBlock }) {
       return (
         <p className="verse-line">
           <sup>{match[1]}</sup>
-          {renderTextWithNotes(match[2].trimStart(), block.noteRefs)}
+          {renderTextWithNotes(match[2].trimStart(), noteRefs)}
         </p>
       );
     }
