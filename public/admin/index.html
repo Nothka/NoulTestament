@@ -12,26 +12,18 @@
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
     <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('init', function (user) {
-          const hasAuthToken =
-            window.location.hash.includes('invite_token') ||
-            window.location.hash.includes('confirmation_token') ||
-            window.location.hash.includes('recovery_token');
+   if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', function (user) {
+    const hasAuthToken =
+      window.location.hash.includes('invite_token') ||
+      window.location.hash.includes('confirmation_token') ||
+      window.location.hash.includes('recovery_token');
 
-          if (!user && hasAuthToken) {
-            window.netlifyIdentity.open();
-          }
-        });
-
-        window.netlifyIdentity.on('login', function () {
-          window.location.href = '/admin/';
-        });
-
-        window.netlifyIdentity.on('logout', function () {
-          window.location.href = '/admin/';
-        });
-      }
+    if (!user && hasAuthToken) {
+      window.netlifyIdentity.open();
+    }
+  });
+}
 
       CMS.registerPreviewStyle('/admin/preview.css');
 
