@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "node server.js",
     "build": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json && vite build",
     "extract:document": "node scripts/extract-testament.mjs",
     "split:content": "node scripts/split-testament-content.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
+    "express": "^4.22.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },

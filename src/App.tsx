@@ -92,6 +92,15 @@ function App() {
   const [data, setData] = useState<TestamentData | null>(null);
   const [selectedSectionId, setSelectedSectionId] = useState(defaultSectionId);
   const [hasError, setHasError] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [adminToken, setAdminToken] = useState<string | null>(null);
+  const [editedHtml, setEditedHtml] = useState<string | null>(null);
+  const [loginPassword, setLoginPassword] = useState('');
+  const [loginError, setLoginError] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
+  const [saveMessage, setSaveMessage] = useState<string | null>(null);
+
+  const isAdmin = Boolean(adminToken);
 
   useEffect(() => {
     let isMounted = true;
@@ -119,6 +128,22 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const storedToken = window.localStorage.getItem('adminToken');
+
+    if (storedToken) {
+      setAdminToken(storedToken);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (adminToken) {
+      window.localStorage.setItem('adminToken', adminToken);
+    } else {
+      window.localStorage.removeItem('adminToken');
+    }
+  }, [adminToken]);
+
   const selectedBook = useMemo(() => {
     if (!data) {
       return null;
@@ -136,6 +161,113 @@ function App() {
     setSelectedSectionId(bookId);
     window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
+
+  async function loginAdmin(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setLoginError(null);
+
+    try {
+      const response = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ password: loginPassword }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Date de autentificare invalide.');
+      }
+
+      const data = await response.json();
+      setAdminToken(data.token);
+      setLoginPassword('');
+      setLoginError(null);
+    } catch (error) {
+      setLoginError(error instanceof Error ? error.message : 'Eroare de autentificare.');
+    }
+  }
+
+  function logoutAdmin() {
+    setAdminToken(null);
+    setIsEditMode(false);
+    setSaveMessage(null);
+  }
+
+  async function saveEditedContent() {
+    if (!isAdmin) {
+      return;
+    }
+
+    setIsSaving(true);
+    setSaveMessage(null);
+
+    const readerShell = document.querySelector<HTMLElement>('.reader-shell');
+    const html = readerShell?.innerHTML ?? '';
+
+    try {
+      const response = await fetch('/api/admin/save', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${adminToken}`,
+        },
+        body: JSON.stringify({ sectionId: selectedSectionId, html }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText || 'Eroare la salvare.');
+      }
+
+      const result = await response.json();
+      setEditedHtml(html);
+      setSaveMessage(result.message ?? 'Salvare reușită.');
+      setIsEditMode(false);
+    } catch (error) {
+      setSaveMessage(error instanceof Error ? error.message : 'Eroare la salvare.');
+    } finally {
+      setIsSaving(false);
+    }
+  }
+
+  function applyTextFormat(command: string, value?: string) {
+    if (!isAdmin || !isEditMode) {
+      return;
+    }
+
+    document.execCommand('styleWithCSS', false, 'true');
+    document.execCommand(command, false, value);
+  }
+
+  async function loadEditedHtml(sectionId: string) {
+    try {
+      const response = await fetch(`/api/admin/edited-section?sectionId=${encodeURIComponent(sectionId)}`);
+
+      if (response.status === 404) {
+        setEditedHtml(null);
+        return;
+      }
+
+      if (!response.ok) {
+        throw new Error('Eroare la încărcarea conținutului editat.');
+      }
+
+      const content = await response.text();
+      setEditedHtml(content);
+    } catch {
+      setEditedHtml(null);
+    }
+  }
+
+  useEffect(() => {
+    if (!selectedSectionId) {
+      setEditedHtml(null);
+      return;
+    }
+
+    loadEditedHtml(selectedSectionId);
+  }, [selectedSectionId]);
 
   function selectIntroduction() {
     setSelectedSectionId(data?.introduction ? defaultSectionId : data?.books[0]?.id ?? fallbackBookId);
@@ -181,12 +313,61 @@ function App() {
             </button>
           ))}
         </nav>
+
+        {isAdmin ? (
+          <div className="admin-toolbar">
+            <button
+              type="button"
+              className="edit-toggle-button"
+              onClick={() => setIsEditMode((current) => !current)}
+            >
+              {isEditMode ? 'Oprește editarea' : 'Editează textul'}
+            </button>
+
+            {isEditMode ? (
+              <div className="formatting-controls">
+                <button type="button" onClick={() => applyTextFormat('bold')}><strong>B</strong></button>
+                <button type="button" onClick={() => applyTextFormat('italic')}><em>I</em></button>
+                <button type="button" onClick={() => applyTextFormat('fontSize', '5')}>M</button>
+                <button type="button" onClick={() => applyTextFormat('fontSize', '3')}>S</button>
+                <button type="button" onClick={saveEditedContent} disabled={isSaving}>Salvează</button>
+              </div>
+            ) : null}
+
+            <button type="button" className="logout-button" onClick={logoutAdmin}>
+              Deconectare
+            </button>
+            {saveMessage ? <p className="save-message">{saveMessage}</p> : null}
+          </div>
+        ) : (
+          <form className="admin-login-form" onSubmit={loginAdmin}>
+            <label>
+              Parolă admin
+              <input
+                type="password"
+                value={loginPassword}
+                onChange={(event) => setLoginPassword(event.target.value)}
+                placeholder="Parolă"
+              />
+            </label>
+            <button type="submit">Conectare</button>
+            {loginError ? <p className="admin-error">{loginError}</p> : null}
+          </form>
+        )}
       </header>
 
-      <section className="reader-shell" aria-labelledby="selected-book-title">
-        <h2 id="selected-book-title">{selectedTitle.toUpperCase()}</h2>
+      <section
+        className="reader-shell"
+        aria-labelledby={editedHtml ? undefined : 'selected-book-title'}
+        contentEditable={isAdmin && isEditMode}
+        suppressContentEditableWarning={isAdmin && isEditMode}
+        spellCheck={isAdmin && isEditMode}
+      >
+        {!editedHtml ? <h2 id="selected-book-title">{selectedTitle.toUpperCase()}</h2> : null}
 
-        {isIntroductionSelected && data.introduction ? (
+        {editedHtml ? (
+          <div className="edited-content" dangerouslySetInnerHTML={{ __html: editedHtml }} />
+        ) : isIntroductionSelected && data.introduction ? (
           <IntroductionPages introduction={data.introduction} />
         ) : selectedBook ? (
           <BookPages book={selectedBook} />

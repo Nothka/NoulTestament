@@ -94,6 +94,27 @@
   outline: none;
 }
 
+.edit-toggle-button {
+  appearance: none;
+  border: 1px solid #222;
+  background: transparent;
+  color: #222;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 22px;
+  padding: 10px 18px;
+}
+
+.edit-toggle-button:hover,
+.edit-toggle-button:focus-visible {
+  background: #222;
+  color: #fff;
+  outline: none;
+}
+
 .reader-shell {
   width: calc(100vw - 40px);
   max-width: 1120px;
@@ -324,6 +345,87 @@
   font-weight: 700;
   line-height: 1.28;
   text-align: center;
+}
+
+.admin-toolbar,
+.admin-login-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.admin-toolbar {
+  align-items: center;
+}
+
+.formatting-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.formatting-controls button,
+.edit-toggle-button,
+.logout-button,
+.admin-login-form button {
+  appearance: none;
+  border: 1px solid #222;
+  background: transparent;
+  color: #222;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 10px 14px;
+}
+
+.formatting-controls button:hover,
+.edit-toggle-button:hover,
+.logout-button:hover,
+.admin-login-form button:hover,
+.formatting-controls button:focus-visible,
+.edit-toggle-button:focus-visible,
+.logout-button:focus-visible,
+.admin-login-form button:focus-visible {
+  background: #222;
+  color: #fff;
+  outline: none;
+}
+
+.admin-login-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.admin-login-form input {
+  min-width: 220px;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  font: inherit;
+}
+
+.admin-error,
+.save-message {
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+  margin: 0;
+  color: #a30f2d;
+  font-size: 0.95rem;
+}
+
+.save-message {
+  color: #1e5a28;
+}
+
+.reader-shell[contenteditable="true"] {
+  outline: 2px dashed rgba(34, 34, 34, 0.35);
+  padding: 18px;
 }
 
 @media (max-width: 560px) {
