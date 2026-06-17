@@ -1,0 +1,380 @@
+{
+  "id": "2-petru",
+  "navTitle": "2 Petru",
+  "title": "Epistola 2 Petru",
+  "passages": [
+    {
+      "id": "2-petru-1",
+      "number": 1,
+      "reference": "1:1",
+      "title": "Salutare",
+      "pageNumber": 375,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Simon Petru, rob şi apostol al lui Isus Cristos, către cei care au primit o credinţă la fel de prețioasă ca a noastră, prin dreptatea Dumnezeului şi Mântuitorului nostru Isus Cristos:",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Harul şi pacea să vă fie multiplicate prin cunoaşterea lui Dumnezeu şi a Domnului nostru Isus Cristos!",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Chemarea și alegerea credincioșilor",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Puterea lui divină ne-a dăruit tot ce avem nevoie pentru viaţă şi evlavie, prin cunoaşterea celui ce ne-a chemat prin gloria şi puterea lui,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4prin care el ne-a dat prețioasele și mărețele lui promisiuni, pentru ca prin ele să vă faceţi parteneri naturii divine, după ce aţi fugit de corupția care este în lume prin pofte.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Din această cauză, străduiți-vă și voi din toate puterile să uniţi cu credinţa voastră fapta; cu fapta, cunoştinţa;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6cu cunoştinţa, stăpânirea de sine; cu stăpânirea de sine, răbdarea; cu răbdarea, evlavia;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7cu evlavia, dragostea de fraţi; cu dragostea de fraţi, iubirea de oameni.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Căci, dacă aveţi acestea din belșug, ele nu vă vor lăsa să fiţi nici leneşi, nici neroditori în ceea ce priveşte deplina cunoştinţă a Domnului nostru Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Dar cine nu are aceste lucruri este orb, vede numai lucrurile de aproape, şi a uitat că a fost curăţit de vechile lui păcate.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10De aceea, fraţilor, străduiți-vă să întăriţi chemarea şi alegerea voastră, căci, dacă faceţi lucrul acesta, nu veţi cădea niciodată,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11pentru că în felul acesta vi se va acorda intrare deplină în Împărăția veşnică a Domnului şi Mântuitorului nostru Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12De aceea voi fi gata să vă aduc întotdeauna aminte de lucrurile acestea, cu toate că le ştiţi, şi sunteţi statornici în adevărul pe care-l aveţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Dar consider că este drept, cât mai sunt în cortul acesta, să vă fac atenți, prin a vă aminti,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14căci ştiu că dezbrăcarea de cortul meu va veni deodată, după cum mi-a arătat Domnul nostru Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15Așa că eu depun toate eforturile, ca şi după moartea mea, să vă puteţi aminti întotdeauna de aceste lucruri.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-petru-2",
+      "number": 2,
+      "reference": "1:16",
+      "title": "Martori oculari ai gloriei lui Cristos",
+      "pageNumber": 376,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Căci, noi nu ne-am folosit de basme concepute în mod iscusit, pentru a vă înșela, atunci când v-am făcut cunoscute puterea şi venirea Domnului nostru Isus Cristos, pentru că noi am fost martori oculari ai măririi lui.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci el a primit de la Dumnezeu Tatăl cinste şi glorie, atunci când, din Gloria Măreață, s-a auzit vocea care zicea: „Acesta este Fiul meu preaiubit, de care sunt pe deplin mulțumit”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Noi am auzit această voce venind din cer, când eram cu el pe muntele cel sfânt.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Avem și cuvântul sigur al profeției, la care bine faceţi că luaţi aminte, ca la o lumină care străluceşte într-un loc întunecos, până se va crăpa de ziuă şi va răsări luceafărul de dimineaţă în inimile voastre.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Fiindcă, mai întâi de toate, să ştiţi că nicio profeție din Scriptură nu se interpretează după voia vreunui om.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Căci nicio profeție n-a fost adusă prin voia omului; ci oamenii au vorbit de la Dumnezeu, fiind călăuziţi de Duhul Sfânt.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-petru-3",
+      "number": 3,
+      "reference": "2:1",
+      "title": "Profeții falși vor fi pedepsiți",
+      "pageNumber": 376,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1În popor s-au ridicat şi profeți falşi, cum şi între voi vor fi învăţători falşi, care vor introduce pe ascuns erezii distrugătoare, se vor lepăda de Stăpânul care i-a cumpărat şi vor face să cadă asupra lor o pierzare năpraznică.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Mulţi vor urma căile lor imorale, iar ca rezultat, calea adevărului va fi defăimată.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3În lăcomia lor vor căuta să profite de pe urma voastră prin cuvinte înșelătoare, dar condamnarea lor, hotărâtă demult, nu întârzie, iar distrugerea lor nu ațipește.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci dacă n-a cruţat Dumnezeu pe îngerii care au păcătuit, ci i-a aruncat în Adânc* în locuri întunecoase, în lanţuri, ca să fie ținuţi pentru judecată;",
+          "noteRefs": [
+            195
+          ]
+        },
+        {
+          "type": "verse",
+          "text": "5dacă n-a cruţat el lumea antică, ci a scăpat pe Noe, acest vestitor al dreptății, împreună cu alţi şapte, când a trimis potopul peste lumea celor necredincioși;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6dacă a condamnat el la pieire şi a prefăcut în cenuşă cetăţile Sodoma şi Gomora, ca să slujească ca exemplu celor ce vor trăi fără credință,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7şi dacă a scăpat pe dreptul Lot, care era foarte nefericit de viaţa desfrânată a celor păcătoși.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Căci dreptul acesta care locuia în mijlocul lor îşi chinuia în toate zilele sufletul lui drept, când vedea şi auzea faptele lor nelegiuite.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9înseamnă că Domnul ştie să-i salveze din încercare pe cei evlavioși şi să păstreze pe cei nelegiuiţi ca să fie pedepsiţi în ziua judecăţii;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10mai ales pe cei care - în pofta lor necurată - umblă poftind trupul altuia şi dispreţuiesc autoritatea. Sunt îndrăzneţi şi încăpăţânaţi, și nu se tem să batjocorească demnitarii,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11pe când îngerii, care sunt mai mari în tărie şi putere, nu aduc înaintea Domnului nicio judecată batjocoritoare împotriva lor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Dar aceştia - ca nişte creaturi fără judecată, din fire sortite să fie prinse şi nimicite - batjocoresc ce nu cunosc, și vor fi distruși în însăşi stricăciunea lor,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13primind astfel plata nelegiuirii lor. Fericirea lor este să trăiască în plăceri în timpul zilei. Sunt întinaţi şi spurcaţi, și se pun pe chefuit la mesele de dragoste, când ospătează împreună cu voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Au ochii plini de adulter şi nu se pot opri din păcătuit. Ademenesc sufletele nestatornice, au inima deprinsă la lăcomie, sunt ca nişte fii ai blestemului!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15Au părăsit calea cea dreaptă, au rătăcit şi au urmat calea lui Balaam, fiul lui Beor, care a iubit plata fărădelegii,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "16dar a fost mustrat pentru călcarea lui de lege. O măgăriţă necuvântătoare, care a început să vorbească cu glas omenesc, a oprit nebunia profetului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "17Oamenii aceştia sunt nişte fântâni fără apă, nişte nori alungaţi de furtună: cărora le este rezervată pentru întotdeauna negura întunericului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "18Ei rostesc cu mîndrie cuvinte goale, ademenesc cu poftele cărnii şi cu desfrânări, pe cei care de abia au scăpat de cei ce trăiesc în rătăcire;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "19le promit libertatea, în timp ce ei înşişi sunt sclavi ai stricăciunii; căci omul este înrobit de ceea ce este învins.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "20Căci dacă, după ce au scăpat de murdăriile lumii, prin cunoaşterea Domnului şi Mântuitorului Isus Cristos, se încurcă iarăşi",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "şi sunt învinși de ele, starea lor din urmă devine mai rea decât prima.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "21Ar fi fost mai bine pentru ei să nu fi cunoscut calea dreptății decât, după ce au cunoscut-o, să se întoarcă de la porunca sfântă care le-a fost dată.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "22Cu ei s-a întâmplat ce spune proverbul cel adevărat: „Câinele s-a întors la ce a vomitat” şi „scroafa spălată s-a întors să se tăvălească iarăşi în mocirlă”.",
+          "noteRefs": []
+        }
+      ],
+      "notes": [
+        {
+          "number": 195,
+          "text": "3:4 în grecește este Tartarus, și apare doar aici în NT; considerat de greci și de unele scrieri iudaice antice ca fiind un loc subteran, unde se administra pedeapsa divină, și care era plasat mai jos decât Hades"
+        }
+      ]
+    },
+    {
+      "id": "2-petru-4",
+      "number": 4,
+      "reference": "3:1",
+      "title": "Necredința oamenilor",
+      "pageNumber": 378,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Preaiubiţilor, aceasta este a doua scrisoare pe care v-o scriu; în ambele, caut să vă trezesc gândirea curată prin înştiinţări,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2reamintindu-vă cuvintele vestite mai dinainte de sfinţii profeți şi porunca Domnului şi Mântuitorului, dată prin apostolii voştri,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3ținând cont - în primul rând - că în zilele din urmă vor veni batjocoritori, care vor trăi după poftele lor,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4şi vor zice: „Unde este promisiunea venirii lui? Căci de când au adormit părinţii noştri, toate rămân aşa cum erau de la începutul creației!”",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Căci ei cu bună știință ignoră că în vechime erau ceruri şi un pământ format - prin Cuvântul lui Dumnezeu - din apă şi cu ajutorul apei,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6şi că lumea care a existat atunci a fost nimicită - tot prin ele - prin înecarea în apă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Iar cerurile şi pământul care există acum, sunt rezervate prin acelaşi cuvânt, pentru focul din ziua judecății şi a distrugerii oamenilor neevlavioși.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Dar, preaiubiţilor, să nu uitaţi un lucru: că, pentru Domnul, o zi este ca o mie de ani, şi o mie de ani sunt ca o zi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Domnul nu întârzie în împlinirea promisiunii lui cum cred unii, ci are o îndelungă răbdare pentru voi şi doreşte ca niciunul să nu piară, ci toţi să vină la pocăinţă.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-petru-5",
+      "number": 5,
+      "reference": "3:10",
+      "title": "Venirea zilei Domnului",
+      "pageNumber": 378,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Căci ziua Domnului, va veni așa cum vine hoţul noaptea; în ziua aceea, cerurile vor trece cu mare zgomot, astrele cereşti se vor topi de mare căldură, iar pământul și lucrările de pe el, vor arde.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2De aceea, fiindcă toate aceste lucruri vor fi distruse în acest mod, ce fel de oameni ar trebui să fiţi voi, având o comportare sfântă şi evlavioasă,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3aşteptând şi dorind sincer venirea zilei lui Dumnezeu, care va cauza aprinderea și dizolvarea cerurilor, şi topirea astrelor cereşti din cauza căldurii?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Dar noi, după promisiunea lui, aşteptăm ceruri noi şi un pământ nou, în care va locui dreptatea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5De aceea, preaiubiţilor, fiindcă aşteptaţi aceste lucruri, siliţi-vă să fiţi găsiţi înaintea lui în pace, fără defect, fără vină.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Considerați îndelunga răbdare a Domnului nostru ca fiind spre mântuire, cum v-a scris şi preaiubitul nostru frate Pavel, în acord cu înţelepciunea dată lui,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7așa cum este scris în toate scrisorile lui. În ele sunt unele lucruri greu de înţeles, pe care cei neştiutori şi nestatornici le interpretează",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "greșit, după cum fac și cu alte scripturi, spre distrugerea lor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Voi deci, preaiubiţilor - cunoscând mai dinainte aceste lucruri - fiți atenți - ca nu cumva să vă lăsaţi purtaţi de greșelile celor răi, şi să vă pierdeţi statornicia;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9ci creşteţi în harul şi în cunoştinţa Domnului şi Mântuitorului nostru Isus Cristos. A lui să fie gloria, atât acum cât şi pe veci. Amin.",
+          "noteRefs": []
+        }
+      ]
+    }
+  ]
+}

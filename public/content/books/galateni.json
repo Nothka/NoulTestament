@@ -1,0 +1,894 @@
+{
+  "id": "galateni",
+  "navTitle": "Galateni",
+  "title": "Epistola către Galateni",
+  "passages": [
+    {
+      "id": "galateni-1",
+      "number": 1,
+      "reference": "1:1",
+      "title": "Urare",
+      "pageNumber": 304,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Pavel, apostol, nu de la oameni, nici printr-un om, ci prin Isus Cristos şi prin Dumnezeu Tatăl, care l-a înviat din morţi,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2şi toţi fraţii care sunt împreună cu mine, către adunările Galatiei:",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Har şi pace vouă de la Dumnezeu Tatăl şi de la Domnul nostru Isus Cristos! 4 El s-a dat pe sine însuşi pentru păcatele noastre ca să ne scoată din această perioadă rea, după voia Dumnezeului nostru şi Tatăl.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5A lui să fie gloria în vecii vecilor! Amin.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "galateni-2",
+      "number": 2,
+      "reference": "1:6",
+      "title": "Nestatornicia galatenilor",
+      "pageNumber": 304,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Mă mir că părăsiţi aşa de repede pe cel care v-a chemat prin harul lui Cristos, la o altă \"evanghelie\".",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Nu că ar exista o altă evanghelie, dar sunt unii oameni care vă necăjesc şi voiesc să denatureze Evanghelia lui Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Dar chiar dacă noi înşine, sau un înger din cer, ar veni să vă predice o evanghelie diferită de aceea pe care v-am predicat-o noi, să fie blestemat!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Cum am mai spus, o spun şi acum: dacă vă predică cineva o evanghelie diferită de aceea pe care aţi primit-o, să fie blestemat!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Caut eu oare, acum, aprobarea oamenilor sau aprobarea lui Dumnezeu? Sau mă străduiesc să plac oamenilor? Dacă m-aș strădui să plac oamenilor, n-aş fi servitorul lui Cristos.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "galateni-3",
+      "number": 3,
+      "reference": "1:11",
+      "title": "Evanghelia lui Pavel",
+      "pageNumber": 304,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Fraţilor, vă aduc la cunoștință că Evanghelia predicată de mine nu este de origine omenească,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2pentru că n-am primit-o, nici n-am învăţat-o de la vreun om, ci prin descoperirea lui Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Aţi auzit, în adevăr, care era modul meu de viață din trecut, în religia iudeilor; cum eu persecutam peste măsură de mult adunarea lui Dumnezeu şi o devastam,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4şi cum eram mai înaintat în religia iudeilor decât mulţi din neamul meu, de vârsta mea,",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "fiind deosebit de zelos pentru tradițiile strămoşeşti.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Dar, atunci când a fost buna plăcere a lui Dumnezeu - care m-a separat din abdomenul mamei mele, şi m-a chemat prin harul său - care a găsit cu cale",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6să descopere în mine pe Fiul său, ca să-l vestesc între Neamuri, nu m-am consultat imediat cu oamenii,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7nici nu m-am urcat la Ierusalim, la cei care erau apostoli înainte de mine, ci m-am dus în Arabia. Apoi m-am întors din nou la Damasc. 8 După trei ani, m-am urcat* la Ierusalim să fac cunoştinţă cu Chifa şi am rămas la el cincisprezece zile.",
+          "noteRefs": [
+            187
+          ]
+        },
+        {
+          "type": "verse",
+          "text": "9Dar n-am văzut pe niciun alt apostol, decât pe Iacov, fratele Domnului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10În cele ce vă scriu, iată, înaintea lui Dumnezeu, nu mint.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11După aceea m-am dus în ţinuturile Siriei şi Ciliciei.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Şi eram încă necunoscut la faţă adunărilor lui Cristos, care sunt în Iudeea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Ele auzeau doar spunându-se: „Cel ce ne persecuta în trecut, acum predică credinţa pe care încerca mai înainte s-o distrugă”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Şi glorificau pe Dumnezeu datorită mie.",
+          "noteRefs": []
+        }
+      ],
+      "notes": [
+        {
+          "number": 187,
+          "text": "3:8 drumul spre Ierusalim este ascendent, adică urcă"
+        }
+      ]
+    },
+    {
+      "id": "galateni-4",
+      "number": 4,
+      "reference": "2:1",
+      "title": "Încuviinţarea apostolilor",
+      "pageNumber": 305,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Apoi, după o perioadă de 14 ani, m-am urcat din nou la Ierusalim împreună cu Barnaba şi am luat cu mine şi pe Tit.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2M-am urcat, în urma unei descoperiri, şi le-am prezentat, în mod privat, celor respectați, Evanghelia pe care o predic eu între Neamuri, ca nu cumva să alerg, sau să fi alergat degeaba.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Nici chiar Tit, care era cu mine, măcar că era grec, n-a fost constrâns să se circumcidă;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4spun aceasta din cauza fraţilor greșiți, aflați în mod secret printre noi, ca să pândească libertatea pe care o avem în Cristos Isus, cu gând să ne ducă la sclavie;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5noi nu ne-am supus lor nici un moment, pentru ca adevărul Evangheliei să rămână cu voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Cei care sunt consideraţi ca importanți, orice ar fi fost ei înainte, nu contează pentru mine, Dumnezeu nu caută la faţa oamenilor – aceştia, zic, cei respectați, nu mi-au adăugat nimic,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7ba dimpotrivă, când au văzut că mie îmi fusese încredinţată Evanghelia pentru cei necircumciși, după cum lui Petru îi fusese încredinţată Evanghelia pentru cei circumciși –",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8căci cel ce făcuse din Petru apostolul celor circumciși, făcuse şi din mine apostolul Neamurilor –",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9şi când au cunoscut harul care mi-a fost dat, Iacov, Chifa şi Ioan, care sunt priviţi ca",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "stâlpi, mi-au dat mie şi lui Barnaba mâna dreaptă de însoţire, ca să mergem să predicăm: noi la Neamuri, iar ei la cei circumciși.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Ne-au spus numai să ne aducem aminte de cei săraci, acesta fiind tocmai unul din lucrurile pe care am fost râvnitor să îl împlinesc.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "galateni-5",
+      "number": 5,
+      "reference": "2:11",
+      "title": "Pavel înfruntă pe Petru",
+      "pageNumber": 306,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Dar când Petru a venit în Antiohia, m-am împotrivit lui pe faţă, căci era de condamnat.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci, înainte de sosirea unor persoane de la Iacov, el mânca împreună cu neamurile, dar când au venit ei, s-a retras şi a stat deoparte de teama celor tăiaţi împrejur.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Iar ceilalţi iudei i s-au alăturat în această ipocrizie, aşa că până şi Barnaba a fost atras în ipocrizia lor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Când i-am văzut eu că nu umblă drept după adevărul Evangheliei, am spus lui Chifa în faţa tuturor: „Dacă tu, care eşti iudeu, trăieşti ca neamurile, şi nu ca iudeii, cum obligi pe neamuri să trăiască în felul iudeilor?”",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Noi suntem iudei din fire, nu păcătoşi dintre neamuri.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Totuşi, fiindcă ştim că omul nu este considerat îndreptățit prin faptele legii, ci numai prin credinţa în Isus Cristos, am crezut şi noi în Cristos Isus, ca să fim considerați îndreptățiţi prin credinţa în Cristos, iar nu prin faptele legii; pentru că nimeni nu va fi considerat îndreptățit prin faptele legii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Dar, dacă, în timp ce căutăm să fim considerați îndreptățiţi în Cristos, şi noi înşine am fi găsiţi ca păcătoşi, este oare Cristos un slujitor al păcatului? Desigur că nu!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Căci, dacă zidesc iarăşi lucrurile pe care le-am stricat, mă arăt ca un călcător de lege.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Căci eu, prin lege, am murit faţă de lege, ca să trăiesc pentru Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Am fost răstignit împreună cu Cristos şi nu mai trăiesc eu, ci Cristos trăieşte în mine. Iar viaţa pe care o trăiesc acum în trup, o trăiesc în credinţa în Fiul lui Dumnezeu, care m-a iubit şi s-a dat pe sine însuşi pentru mine.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Eu nu resping harul lui Dumnezeu; căci dacă îndreptățirea se primește prin lege, atunci Cristos a murit degeaba.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "galateni-6",
+      "number": 6,
+      "reference": "3:1",
+      "title": "Legea şi credinţa",
+      "pageNumber": 306,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1O, galateni necugetați! Cine v-a fascinat pe voi, ca să nu ascultați de adevăr, căci înaintea ochilor voștri Isus Cristos a fost prezentat pe față, ca răstignit?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Iată numai ce voiesc să ştiu de la voi: prin faptele legii aţi primit voi Duhul ori prin auzirea credinţei?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Sunteţi aşa de necugetaţi? După ce aţi început prin Duhul, vreţi acum să sfârşiţi prin natura pământească?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Aţi suferit voi atât de mult în mod inutil? Dacă, în adevăr, este inutil!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Cel ce vă dă Duhul şi face minuni printre voi le face oare prin faptele legii sau prin auzirea credinţei?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Tot aşa şi „Avraam a crezut pe Dumnezeu, şi credinţa aceasta i-a fost considerată ca îndreptățire”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Să știți şi voi, dar, că cei ce au credință sunt fii ai lui Avraam.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Scriptura, de asemenea, fiindcă prevedea că Dumnezeu va considera îndreptățite pe neamuri prin credinţă, a vestit mai dinainte lui Avraam această veste bună: „Toate neamurile vor fi binecuvântate în tine”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Aşa că cei ce se bazează pe credinţă sunt binecuvântaţi împreună cu Avraam cel credincios.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Căci toţi cei ce se bazează pe faptele legii sunt sub blestem, pentru că este scris: „Blestemat este oricine nu stăruie în toate lucrurile scrise în cartea legii ca să le facă”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Şi că nici un om nu este considerat îndreptățit înaintea lui Dumnezeu prin lege este evident, căci „cel îndreptățit va trăi prin credinţă”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Însă legea nu se bazează pe credinţă, ci ea zice: „Cine va face aceste lucruri va trăi prin ele”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13 Cristos ne-a răscumpărat din blestemul legii, făcându-se blestem pentru noi, fiindcă este scris: „Blestemat este oricine e atârnat pe lemn”,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14pentru ca binecuvântarea vestită lui Avraam să vină peste neamuri în Cristos Isus, aşa ca, prin credinţă, noi să primim Duhul promis.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "galateni-7",
+      "number": 7,
+      "reference": "3:15",
+      "title": "Promisiunea şi legea",
+      "pageNumber": 307,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Fraţilor - vorbind din punct de vedere omenesc - un testament, chiar al unui om, odată semnat, nimeni nu-l anulează, nici nu-i mai adaugă ceva.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Acum, promisiunile au fost făcute „lui Avraam şi seminţei lui”. Nu zice: „Şi seminţelor” - ca şi cum ar fi vorba de mai multe - ci ca şi cum ar fi vorba numai de una: „Şi seminţei tale”, care este Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Iată ce vreau să zic: un testament, pe care l-a dat Dumnezeu mai înainte nu poate fi anulat, de legea dată după patru sute treizeci de ani, așa ca promisiunea să nu mai aibă efect.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci dacă moştenirea ar veni din lege, nu mai vine din promisiune; însă Dumnezeu a dat-o lui Avraam printr-o promisiune. 5 Dar pentru ce este legea? Ea a fost adăugată din pricina călcărilor de lege, până când avea să vină „sămânţa”, căreia îi fusese făcută promisiunea; şi a fost dată prin îngeri, prin mâna unui mediator.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Dar mediatorul nu este al unei singure părţi, pe când Dumnezeu este unul singur. 7 Atunci este oare legea împotriva promisiunilor lui Dumnezeu? Desigur că nu! Dacă s-ar fi dat o lege care să poată da viaţa, într-adevăr, îndreptățirea ar veni din lege.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Dar Scriptura a închis totul sub păcat, pentru ca promisiunea să fie dată celor care au credinţa în Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Înainte de venirea credinţei, noi eram sub paza legii, închişi pentru credinţa care trebuia să fie descoperită.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Astfel, legea ne-a fost un îndrumător spre Cristos, ca să fim considerați îndreptățiţi prin credinţă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11După ce a venit credinţa, nu mai suntem sub îndrumătorul acesta.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Căci toţi sunteţi fii ai lui Dumnezeu prin credinţa în Cristos Isus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Căci toţi cei care aţi fost botezaţi în numele lui Cristos, v-aţi îmbrăcat cu Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Nu mai este nici iudeu, nici grec; nu mai este nici sclav, nici om liber; nu mai este nici parte bărbătească, nici parte femeiască; fiindcă toţi sunteţi una în Cristos Isus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15Şi dacă sunteţi ai lui Cristos, sunteţi „sămânţa” lui Avraam, și moştenitori prin promisiune.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "galateni-8",
+      "number": 8,
+      "reference": "4:1",
+      "title": "Moştenitorul şi credinţa",
+      "pageNumber": 308,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Dar eu spun că atâta timp cât moştenitorul este copil, el nu este diferit de un sclav. Măcar că este stăpân peste toate,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2el este sub gardieni şi administratori până la timpul stabilit de tatăl său.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Tot aşa şi noi, când eram nevârstnici, eram sub robia învăţăturilor elementare ale lumii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Dar când s-a împlinit timpul, Dumnezeu a trimis pe Fiul său, născut din femeie, născut sub lege,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5ca să poată răscumpăra pe cei ce erau sub lege, pentru ca să fim adoptați ca și fii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Şi pentru că sunteţi fii, Dumnezeu v-a trimis în inimă Duhul Fiului său, care strigă: „Ava”* tradus prin: „Tată!”",
+          "noteRefs": [
+            188
+          ]
+        },
+        {
+          "type": "verse",
+          "text": "7Aşa că nu mai eşti sclav, ci fiu; şi dacă eşti fiu, eşti şi moştenitor al lui Dumnezeu, prin Cristos.",
+          "noteRefs": []
+        }
+      ],
+      "notes": [
+        {
+          "number": 188,
+          "text": "8:6 cuvânt cu caracter afectiv, de origine haldeiană/ebraică/aramaică; se traduce prin: tată, tăticule"
+        }
+      ]
+    },
+    {
+      "id": "galateni-9",
+      "number": 9,
+      "reference": "4:8",
+      "title": "Galatenii şi învăţătorii mincinoşi",
+      "pageNumber": 308,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Însă pe timpul acela, când nu cunoşteaţi pe Dumnezeu, eraţi robiţi celor ce, prin natura lor, nu sunt dumnezei.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Dar acum, după ce aţi cunoscut pe Dumnezeu, sau mai bine zis după ce aţi fost cunoscuţi de Dumnezeu, cum vă mai întoarceţi iarăşi la acele învățături vechi, slabe şi mizerabile, cărora vreţi să le fiți robi din nou?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Voi păziţi zile, luni, sezoane şi ani.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Mă tem să nu mă fi obosit degeaba printre voi. 5 Fraţilor, vă rog să fiţi ca mine, căci şi eu sunt ca voi. Nu mi-aţi făcut nicio nedreptate.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Dimpotrivă, ştiţi că, în neputinţa trupului, v-am predicat Evanghelia pentru întâia dată.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Şi n-aţi arătat nici dispreţ, nici dezgust faţă de ceea ce era o ispită pentru voi în trupul meu, dimpotrivă, m-aţi primit ca pe un înger al lui Dumnezeu, ca pe însuşi Cristos Isus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Unde este dar fericirea voastră? Căci vă mărturisesc că, dacă ar fi fost cu putinţă, v-aţi fi scos până şi ochii şi mi i-aţi fi dat.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9M-am făcut oare vrăjmaşul vostru pentru că v-am spus adevărul?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Nu cu gând bun sunt plini de râvnă ei pentru voi, ci vor să vă dezlipească de noi ca să fiţi plini de râvnă faţă de ei.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Este bine să fii plin de râvnă totdeauna pentru bine, nu numai când sunt de faţă la voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Copilaşii mei, pentru care iarăşi simt durerile naşterii până ce Cristos va fi întruchipat în voi!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13O, cum aş vrea să fiu acum de faţă la voi şi să-mi schimb tonul, căci sunt nelămurit cu privire la voi!",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "galateni-10",
+      "number": 10,
+      "reference": "4:21",
+      "title": "Parabola Agarei şi a Sarei",
+      "pageNumber": 309,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Spuneţi-mi voi, care doriţi să fiţi sub lege, n-ascultaţi voi legea?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci este scris că Avraam a avut doi fii: unul din roabă şi unul din femeia liberă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Dar cel din roabă s-a născut în chip firesc, iar cel din femeia liberă s-a născut prin promisiune.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Lucrurile acestea trebuie luate într-alt înţeles – acestea sunt două legăminte. Unul de pe muntele Sinai naşte pentru robie şi este Agar,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5căci Agar este muntele Sinai din Arabia, şi corespunde Ierusalimului de acum, care este în robie împreună cu copiii săi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Dar Ierusalimul cel de sus este liber, el fiind mama noastră.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Fiindcă este scris: „Bucură-te, stearpo, care nu naşti deloc! Izbucneşte de bucurie şi strigă, tu, care nu eşti în durerile naşterii! Căci copiii celei părăsite vor fi în număr mai mare decât copiii celei cu bărbat.” 8",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Şi noi, fraţilor, suntem copii ai promisiunii, cum a fost Isaac",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Şi cum s-a întâmplat atunci, că cel ce se născuse în chip firesc persecuta pe cel ce se născuse prin Duhul, tot aşa se întâmplă şi acum.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Dar ce zice Scriptura? „Izgoneşte pe roabă şi pe fiul ei, căci fiul roabei nu va moşteni împreună cu fiul femeii libere.”",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11De aceea, fraţilor, noi nu suntem copiii celei sclave, ci ai femeii libere. Cristos ne-a izbăvit ca să fim liberi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Rămâneţi dar tari în libertatea pe care ne-a dat-o Cristos, şi nu vă plecaţi iarăşi sub jugul sclaviei.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "galateni-11",
+      "number": 11,
+      "reference": "5:2",
+      "title": "Libertatea creştină",
+      "pageNumber": 309,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Iată, eu, Pavel, vă spun că, dacă vă veţi circumcide, Cristos nu vă va folosi la nimic.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Şi mărturisesc iarăşi încă o dată, oricărui om care primeşte circumcizia, că este dator să împlinească toată legea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Voi, care voiţi să fiţi considerați îndreptățiți prin lege, v-aţi despărţit de Cristos, aţi căzut din har.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci noi, prin Duhul, aşteptăm prin credinţă speranța îndreptățirii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Căci, în Isus Cristos, nici circumcizia, nici necircumcizia n-au vreun preţ, ci credinţa care lucrează prin dragoste.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Voi ați alergat bine: Cine v-a făcut să n-ascultaţi de adevăr?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Înduplecarea aceasta nu vine de la cel ce v-a chemat.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Puţin aluat face să se dospească toată frământătura.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Eu, cu privire la voi, am în Domnul încrederea că nu gândiţi altfel. Dar cel ce vă tulbură va purta condamnarea, oricine ar fi el.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Cât despre mine, fraţilor, dacă mai predic circumcizia, de ce mai sunt prigonit? Atunci, piatra de poticnire a crucii ar fi înlăturată...",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11O, dacă, în cele din urmă, cei care vă tulbură, ar merge până la capăt și s-ar castra complet!",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "galateni-12",
+      "number": 12,
+      "reference": "5:13",
+      "title": "Trăirea în dragoste",
+      "pageNumber": 310,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Fraţilor, voi aţi fost chemaţi la libertate. Numai nu folosiți libertatea voastră ca pretext pentru pornirile naturii pământești, ci slujiţi-vă unii altora în dragoste.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci toată legea se cuprinde într-o singură poruncă: „Să iubeşti pe aproapele tău ca pe tine însuţi”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Dar, dacă vă muşcaţi şi vă devoraţi unii pe alţii, aveți grijă să nu fiţi nimiciţi unii de alţii.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Faptele firii pământești",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Zic dar: umblaţi călăuziţi de Duhul şi atunci nu veți împlini poftele firii pământeşti.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Căci firea pământească pofteşte împotriva Duhului, şi Duhul, împotriva firii pământeşti; sunt lucruri opuse unele altora, aşa că nu puteţi face tot ce vă place.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Dacă sunteţi călăuziţi de Duhul, nu sunteţi sub lege.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Iar faptele firii pământeşti sunt evidente şi sunt acestea: adulterul, curvia, necurăţia, desfrânarea,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8idolatria, vrăjitoria, vrăjbile, dușmăniile, cearta, rivalitățile, neînţelegerile, dezbinările, certurile de partide,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9pizmele, uciderile, beţiile, îmbuibările şi altele ca acestea. Vă spun mai dinainte, cum am mai spus, că cei care fac astfel de lucruri nu vor moşteni Împărăţia lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Roada Duhului",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Roada Duhului, dimpotrivă, este: dragostea, bucuria, pacea, îndelunga răbdare, amabilitatea, generozitatea, credincioşia,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11blândeţea, stăpânirea de sine. Împotriva unor asemenea lucruri nu este lege.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Cei ce sunt ai lui Cristos Isus şi-au răstignit firea pământească împreună cu pasiunile şi dorințele ei. Dacă trăim prin Duhul, să şi umblăm prin Duhul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Să nu umblăm după laude, provocându-ne unii pe alţii şi învidiindu-ne unii pe alţii.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "galateni-13",
+      "number": 13,
+      "reference": "6:1",
+      "title": "Învățături practice",
+      "pageNumber": 310,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Fraţilor, chiar dacă un om ar cădea deodată în vreo greşeală, voi, care sunteţi spirituali, să-l ridicaţi cu duhul blândeţii. Şi ia seama la tine însuţi ca să nu fii ispitit şi tu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Purtaţi-vă sarcinile unii altora şi veţi împlini astfel legea lui Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Dacă vreunul crede că este ceva, măcar că nu este nimic, se înşală singur.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Fiecare să-şi cerceteze fapta lui, şi atunci va avea cu ce să se laude numai în ceea ce-l priveşte pe el, şi nu cu privire la alţii;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5căci fiecare îşi va purta sarcina lui însuşi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Cine primeşte învăţătura în cuvânt să facă parte din toate bunurile lui şi celui ce-l învaţă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Nu vă înşelaţi: „Dumnezeu nu se lasă să fie batjocorit”. Ce seamănă omul, aceea va şi secera.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Cine seamănă în firea lui pământească va secera din firea pământească putrezirea, dar",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "cine seamănă în Duhul va secera din Duhul viaţa veşnică.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Să nu obosim în facerea binelui, căci, la vremea potrivită, vom secera, dacă nu vom cădea de oboseală.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Aşadar, cât avem ocazia, să facem bine la toţi, şi mai ales celor care aparțin de familia credinţei.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Uitaţi-vă cu ce litere mari v-am scris, cu însăşi mâna mea!",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "galateni-14",
+      "number": 14,
+      "reference": "6:12",
+      "title": "Atitudine corectă față de circumcizie",
+      "pageNumber": 311,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Toţi cei care doresc să ofere o impresie firească bună, vă constrâng să primiţi circumcizia, numai ca să nu sufere ei persecuție pentru crucea lui Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci nici ei, care au primit circumcizia, nu păzesc legea, ci voiesc doar ca voi să primiţi circumcizia, pentru ca să se laude ei cu trupul vostru.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3 În ce mă priveşte, departe de mine gândul să mă laud cu altceva decât cu crucea Domnului nostru Isus Cristos, prin care lumea este răstignită faţă de mine şi eu, faţă de lume!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci în Cristos Isus nici circumcizia şi nici necircumcizia nu sunt nimic, ci a fi o creatură nouă.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Încheiere",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Şi peste toţi cei care vor umbla după regula aceasta şi peste Israelul lui Dumnezeu să fie pace şi îndurare!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6De acum încolo nimeni să nu mă mai necăjească, pentru că port semnele Domnului Isus pe trupul meu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Harul Domnului nostru Isus Cristos să fie cu duhul vostru, fraților! Amin.",
+          "noteRefs": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+[
+  {
+    "id": "matei",
+    "navTitle": "Matei",
+    "title": "Evanghelia după Matei",
+    "file": "matei.json"
+  },
+  {
+    "id": "marcu",
+    "navTitle": "Marcu",
+    "title": "Evanghelia după Marcu",
+    "file": "marcu.json"
+  },
+  {
+    "id": "luca",
+    "navTitle": "Luca",
+    "title": "Evanghelia după Luca",
+    "file": "luca.json"
+  },
+  {
+    "id": "ioan",
+    "navTitle": "Ioan",
+    "title": "Evanghelia după Ioan",
+    "file": "ioan.json"
+  },
+  {
+    "id": "fapte",
+    "navTitle": "Fapte",
+    "title": "Faptele Apostolilor",
+    "file": "fapte.json"
+  },
+  {
+    "id": "romani",
+    "navTitle": "Romani",
+    "title": "Epistola către Romani",
+    "file": "romani.json"
+  },
+  {
+    "id": "1-corinteni",
+    "navTitle": "1 Corinteni",
+    "title": "Epistola 1 Corinteni",
+    "file": "1-corinteni.json"
+  },
+  {
+    "id": "2-corinteni",
+    "navTitle": "2 Corinteni",
+    "title": "Epistola 2 Corinteni",
+    "file": "2-corinteni.json"
+  },
+  {
+    "id": "galateni",
+    "navTitle": "Galateni",
+    "title": "Epistola către Galateni",
+    "file": "galateni.json"
+  },
+  {
+    "id": "efeseni",
+    "navTitle": "Efeseni",
+    "title": "Epistola către Efeseni",
+    "file": "efeseni.json"
+  },
+  {
+    "id": "filipeni",
+    "navTitle": "Filipeni",
+    "title": "Epistola către Filipeni",
+    "file": "filipeni.json"
+  },
+  {
+    "id": "coloseni",
+    "navTitle": "Coloseni",
+    "title": "Epistola către Coloseni",
+    "file": "coloseni.json"
+  },
+  {
+    "id": "1-tesaloniceni",
+    "navTitle": "1 Tesaloniceni",
+    "title": "Epistola 1 Tesaloniceni",
+    "file": "1-tesaloniceni.json"
+  },
+  {
+    "id": "2-tesaloniceni",
+    "navTitle": "2 Tesaloniceni",
+    "title": "Epistola 2 Tesaloniceni",
+    "file": "2-tesaloniceni.json"
+  },
+  {
+    "id": "1-timotei",
+    "navTitle": "1 Timotei",
+    "title": "Epistola 1 Timotei",
+    "file": "1-timotei.json"
+  },
+  {
+    "id": "2-timotei",
+    "navTitle": "2 Timotei",
+    "title": "Epistola 2 Timotei",
+    "file": "2-timotei.json"
+  },
+  {
+    "id": "tit",
+    "navTitle": "Tit",
+    "title": "Epistola către Tit",
+    "file": "tit.json"
+  },
+  {
+    "id": "filimon",
+    "navTitle": "Filimon",
+    "title": "Epistola către Filimon",
+    "file": "filimon.json"
+  },
+  {
+    "id": "evrei",
+    "navTitle": "Evrei",
+    "title": "Epistola către Evrei",
+    "file": "evrei.json"
+  },
+  {
+    "id": "iacov",
+    "navTitle": "Iacov",
+    "title": "Epistola lui Iacov",
+    "file": "iacov.json"
+  },
+  {
+    "id": "1-petru",
+    "navTitle": "1 Petru",
+    "title": "Epistola 1 Petru",
+    "file": "1-petru.json"
+  },
+  {
+    "id": "2-petru",
+    "navTitle": "2 Petru",
+    "title": "Epistola 2 Petru",
+    "file": "2-petru.json"
+  },
+  {
+    "id": "1-ioan",
+    "navTitle": "1 Ioan",
+    "title": "Epistola 1 Ioan",
+    "file": "1-ioan.json"
+  },
+  {
+    "id": "2-ioan",
+    "navTitle": "2 Ioan",
+    "title": "Epistola 2 Ioan",
+    "file": "2-ioan.json"
+  },
+  {
+    "id": "3-ioan",
+    "navTitle": "3 Ioan",
+    "title": "Epistola 3 Ioan",
+    "file": "3-ioan.json"
+  },
+  {
+    "id": "iuda",
+    "navTitle": "Iuda",
+    "title": "Epistola lui Iuda",
+    "file": "iuda.json"
+  },
+  {
+    "id": "apocalipsa",
+    "navTitle": "Apocalipsa",
+    "title": "Apocalipsa lui Ioan",
+    "file": "apocalipsa.json"
+  }
+]

@@ -1,0 +1,657 @@
+{
+  "id": "iacov",
+  "navTitle": "Iacov",
+  "title": "Epistola lui Iacov",
+  "passages": [
+    {
+      "id": "iacov-1",
+      "number": 1,
+      "reference": "1:1",
+      "title": "Salutare",
+      "pageNumber": 364,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Iacov, servitor al lui Dumnezeu şi al Domnului Isus Cristos, către cele douăsprezece seminţii care sunt în Diaspora: Salutări!",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Ajutorul este la Dumnezeu",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Fraţii mei, să priviţi ca o mare bucurie când treceţi prin diferite încercări,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3căci ştiţi că testarea credinţei voastre duce la răbdare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Dar răbdarea trebuie să-şi facă lucrarea în mod complet, pentru ca voi să puteți fi perfecţi și întregi şi să nu vă lipsească nimic.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Dacă vreunuia dintre voi îi lipseşte înţelepciunea, s-o ceară de la Dumnezeu, care dă tuturor cu mână largă şi fără reproș, şi ea îi va fi dată.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Numai s-o ceară cu credinţă, fără să se îndoiască de nimic, pentru că cel se îndoieşte seamănă cu valul mării, purtat de vânt și dus încoace şi încolo.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Un asemenea om să nu spere că va primi ceva de la Domnul,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8căci este un om nehotărât şi nestatornic în toate căile sale.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "iacov-2",
+      "number": 2,
+      "reference": "1:9",
+      "title": "Despre smerenie",
+      "pageNumber": 365,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Fratele dintr-o stare mai smerită să se laude cu situația lui,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2iar bogatul, să se laude cu smerirea lui, căci va trece ca floarea din iarbă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Răsare soarele cu vântul arzător şi veștejește iarba, iar floarea din ea cade jos, şi frumuseţea înfăţişării ei piere; tot aşa se va veşteji și bogatul în alergările lui.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Despre ispitire",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Ferice de persoana care rabdă ispita, căci, după ce trece cu bine testul, va primi cununa vieţii pe care a promis-o Dumnezeu celor ce-l iubesc.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Nimeni, când este ispitit, să nu zică: „Sunt ispitit de Dumnezeu”, deoarece Dumnezeu nu poate fi ispitit de rău, şi el însuşi nu ispiteşte pe nimeni.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Ci fiecare este ispitit când este atras de pofta lui însuşi şi ademenit.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Apoi pofta, după ce a conceput, dă naştere păcatului, şi păcatul înfăptuit, aduce moartea.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "iacov-3",
+      "number": 3,
+      "reference": "1:16",
+      "title": "Necesitatea împlinirii Cuvântului",
+      "pageNumber": 365,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Nu vă înşelaţi, preaiubiţii mei fraţi;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2orice dar bun și perfect vine de sus, coborându-se de la Tatăl luminilor, în care nu este nici modificare, nici vreo umbră de schimbare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3El, prin bunăvoia lui, ne-a născut prin cuvântul adevărului, ca să fim un fel de prim rod al creaturilor lui.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Așadar, preaiubiţii mei fraţi, orice om să fie grabnic la ascultare, încet la vorbire, și la mânie,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5căci mânia omului nu produce dreptatea lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6De aceea să lepădaţi orice necurăţie şi orice revărsare de răutate şi să primiţi cu blândeţe cuvântul sădit în voi, care vă poate mântui sufletele.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Fiţi împlinitori ai cuvântului, nu numai ascultători, înşelându-vă singuri.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Căci, dacă cineva este auzitor de cuvânt şi nu împlinitor cu fapta, seamănă cu un om care îşi priveşte faţa fizică într-o oglindă",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9şi, după ce s-a privit, pleacă şi uită îndată cum era.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Dar cine va privi mai aprofundat la legea perfectă a libertății şi se supune ei, nu ca un ascultător care uită, ci ca un împlinitor cu fapta, va fi binecuvântat în ceea ce face.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Dacă cineva dintre voi crede că este religios, şi nu-şi înfrânează limba, ci îşi înşală inima, religia unui astfel de om este fără valoare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Religia curată şi neîntinată, înaintea lui Dumnezeu, Tatăl nostru, este să cercetăm pe orfani şi pe văduve în necazurile lor şi să ne păzim nepătaţi de lume.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "iacov-4",
+      "number": 4,
+      "reference": "2:1",
+      "title": "Dragostea sinceră",
+      "pageNumber": 366,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Fraţii mei, să nu ţineţi credinţa gloriosului nostru Domn Isus Cristos, privind la faţa omului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci, de exemplu, dacă intră în adunarea voastră un om cu un inel de aur şi cu o haină strălucitoare şi intră şi un sărac îmbrăcat cu haine modeste,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3iar voi puneţi ochii pe cel ce poartă haina strălucitoare şi-i ziceţi: „Tu şezi în locul acesta bun!” şi apoi ziceţi săracului: „Tu stai acolo în picioare!” sau: „Şezi jos la picioarele mele!”,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4nu faceţi voi oare o deosebire în voi înşivă şi nu vă faceţi voi judecători cu gânduri rele?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Ascultaţi, preaiubiţii mei fraţi: n-a ales Dumnezeu pe cei ce sunt săraci în lumea acesta ca să-i facă bogaţi în credinţă şi moştenitori ai Împărăţiei, pe care a promis-o celor ce-l iubesc?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Dar voi dezonoraţi pe cel sărac! Oare nu bogaţii vă asupresc şi vă duc la tribunale?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Nu hulesc ei onorabilul nume pe care-l purtaţi?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Dacă împliniţi legea regală, potrivit Scripturii: „Să iubeşti pe aproapele tău ca pe tine însuţi”, bine faceţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Dar, dacă priviți la faţa omului, faceţi un păcat şi sunteţi condamnaţi de lege, ca nişte călcători de lege.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Căci cine păzeşte toată legea şi greşeşte într-un singur punct se face vinovat de toate.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Căci cel ce a zis: „Să nu preacurveşti” a zis şi: „Să nu ucizi”. Acum, dacă nu, comiți adulter, dar ucizi, te faci călcător al legii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Să vorbiţi şi să lucraţi ca nişte oameni care vor fi judecaţi de legea libertății;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13căci judecata este fără milă pentru cel ce n-a avut milă, iar mila triumfă asupra judecății.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "iacov-5",
+      "number": 5,
+      "reference": "2:14",
+      "title": "Credința și faptele",
+      "pageNumber": 366,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Fraţii mei, ce-i foloseşte cuiva să spună că are credinţă, dacă n-are fapte? Poate oare credinţa aceasta să-l mântuiască?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Dacă un frate sau o soră sunt goi şi lipsiţi de hrana de toate zilele",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3şi unul dintre voi le zice: „Duceţi-vă în pace, încălziţi-vă şi săturaţi-vă!” fără să le dea cele necesare trupului, la ce i-ar folosi?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Tot aşa şi credinţa, dacă nu este însoțită de fapte, este moartă în ea însăşi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Dar va zice cineva: „Tu ai credinţa, şi eu am faptele”. „Arată-mi credinţa ta fără fapte, şi eu îţi voi arăta credinţa mea din faptele mele.”",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6 Tu crezi că Dumnezeu este unul, şi bine faci, dar şi dracii cred… și tremură!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Vrei dar să recunoști, om nesocotit, că credinţa fără fapte este zadarnică?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Avraam, părintele nostru, n-a fost el considerat îndreptățit prin fapte când a adus pe fiul său Isaac jertfă pe altar?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Vezi că credinţa lucra împreună cu faptele lui şi, prin fapte, credinţa a ajuns desăvârşită.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Astfel s-a împlinit Scriptura care zice: „Avraam a crezut pe Dumnezeu, şi i s-a considerat ca îndreptățire”, şi el a fost numit „prietenul lui Dumnezeu”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Vedeţi dar că omul este considerat îndreptățit prin fapte, şi nu numai prin credinţă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Tot aşa, curva Rahav n-a fost considerată şi ea îndreptățită prin fapte când a găzduit pe soli şi i-a scos afară pe altă cale?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13După cum trupul fără duh este mort, tot aşa şi credinţa fără fapte este moartă.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "iacov-6",
+      "number": 6,
+      "reference": "3:1",
+      "title": "Curăția în cuvânt și faptă",
+      "pageNumber": 367,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Fraţii mei, să nu fiţi mulţi învăţători, căci ştiţi că vom primi o condamnare mai aspră.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci noi toţi greşim în multe feluri. Dacă nu greşeşte cineva în vorbire, este un om perfect şi poate să-şi înfrâneze chiar întregul trup.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Într-adevăr, dacă punem frâul în gura cailor, ca să ne asculte, le conducem tot trupul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Iată, şi corăbiile, deși sunt atât de mari, şi, măcar că sunt mișcate de vânturi puternice, totuşi sunt ghidate de o cârmă foarte mică, după dorința cârmaciului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Tot aşa, şi limba este un mic mădular dar se mândrește cu lucruri mari. Vedeți cum un foc mic aprinde o pădure mare!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Limba este şi ea un foc, o lume a nedreptății, printre organele noastre, care întinează tot trupul. Ea este aceea care, fiind aprinsă de focul Gheenei, aprinde,,roata vieții,,.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Toate soiurile de fiare, de păsări, de târâtoare, de vieţuitoare de mare, se îmblânzesc şi au fost îmblânzite de neamul omenesc,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8dar nimeni nu poate îmblânzi limba. Ea este un rău care nu se poate înfrâna, este plină de otravă mortală.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Cu ea binecuvântăm pe Domnul, şi Tatăl nostru, şi tot cu ea blestemăm pe oameni care sunt făcuţi după imaginea lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Din aceeaşi gură iese şi binecuvântarea, şi blestemul! Nu trebuie să fie aşa, fraţii mei!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Oare din aceeaşi vână a izvorului ţâşneşte şi apă dulce, şi apă amară?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Fraţii mei, poate oare un smochin să facă măsline sau o viţă să facă smochine? Nici un izvor nu dă și apă sărată, și apă dulce.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Cine dintre voi este înţelept şi priceput? Să-şi arate, prin buna comportare, faptele făcute cu blândeţea înţelepciunii!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Dar, dacă aveţi în inima voastră gelozie amară şi ambiție egoistă, să nu vă lăudaţi şi să nu minţiţi împotriva adevărului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15Înţelepciunea aceasta nu vine de sus, ci este pământească, firească, demonică.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "16Căci, acolo unde este gelozie şi ambiție egoistă, este tulburare şi tot felul de fapte rele.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "17Înţelepciunea care vine de sus este întâi curată, apoi paşnică, blândă, uşor de înduplecat, plină de îndurare şi de roduri bune, fără părtinire, și fără prefăcătorie.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "18Iar roada corectitudinii este semănată în pace de către cei ce fac pace.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "iacov-7",
+      "number": 7,
+      "reference": "4:1",
+      "title": "Ascultare constantă de Cuvânt",
+      "pageNumber": 368,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1De unde vin războaiele şi luptele dintre voi? Nu vin oare din plăcerile voastre, care se luptă în mădularele voastre?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Voi poftiţi şi nu aveţi; ucideţi, invidiaţi şi nu reușiţi să primiţi; vă luptaţi, faceți război şi nu aveţi, pentru că nu cereţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Sau cereţi şi nu primiţi, pentru că cereţi rău, cu gând să risipiţi în plăcerile voastre.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Preacurvarilor, nu ştiţi că prietenia cu lumea este dușmănie cu Dumnezeu? Aşa că cine vrea să fie prieten cu lumea se face dușman cu Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Sau credeţi că degeaba spune Scriptura: Duhul, pe care l-a pus Dumnezeu să locuiască în noi, ne vrea cu gelozie.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Dar, în schimb, ne dă un har şi mai mare. De aceea spune Scriptura:„Dumnezeu este împotriva celor mândri, dar dă har celor smeriţi”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7De aceea fiți supuși lui Dumnezeu. Împotriviţi-vă diavolului, şi el va fugi de la voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Apropiaţi-vă de Dumnezeu, şi el se va apropia de voi. Curăţiţi-vă mâinile, păcătoşilor; curăţiţi-vă inima, oameni cu inima împărţită!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Simţiţi-vă ticăloşia; tânguiţi-vă şi plângeţi! Râsul vostru să se prefacă în tânguire, şi bucuria voastră, în întristare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Smeriţi-vă înaintea Domnului, şi el vă va înălţa.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Nu vorbiți de rău pe aproapele vostru",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "(4:11)",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Nu vorbiţi unii împotriva altora, fraţilor! Cine vorbeşte de rău pe un frate sau judecă pe fratele său vorbeşte de rău legea sau judecă legea. Şi, dacă judeci legea, nu eşti împlinitor al legii, ci judecător.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Unul singur este dătătorul şi judecătorul legii: Acela care are putere să mântuiască şi să distrugă. Dar cine ești tu ca să judeci pe altul?",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "iacov-8",
+      "number": 8,
+      "reference": "4:13",
+      "title": "Nu faceți planuri fără Dumnezeu",
+      "pageNumber": 368,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Ascultaţi, acum, voi care ziceţi: „Astăzi sau mâine ne vom duce în cutare oraș, vom sta acolo un an, vom face comerț şi vom câştiga!”",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Şi nu ştiţi ce va aduce ziua de mâine! Căci ce este viaţa voastră? Nu sunteţi decât un abur, care se arată puţintel, şi apoi piere.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Voi, dimpotrivă, ar trebui să ziceţi: „Dacă va voi Domnul, vom trăi şi vom face cutare sau cutare lucru”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Pe când acum voi vă lăudaţi cu intențiile voastre arogante! Orice laudă de felul acesta este rea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Deci cine ştie să facă binele şi nu-l face, comite un păcat!",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "iacov-9",
+      "number": 9,
+      "reference": "5:1",
+      "title": "Invățături pentru bogați",
+      "pageNumber": 368,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Ascultaţi acum voi, bogaţilor! Plângeţi şi tânguiţi-vă din cauza necazurilor care vor veni peste voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Bogăţiile voastre au putrezit şi hainele voastre sunt mâncate de molii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Aurul şi argintul vostru au ruginit; şi rugina lor va fi o mărturie împotriva voastră: vă va mânca carnea precum focul! V-aţi strâns comori în zilele din urmă!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Iată că plata lucrătorilor care v-au secerat terenurile şi pe care le-aţi reținut-o prin înşelăciune, strigă! Şi strigătele secerătorilor au ajuns la urechile Domnului oştirilor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Aţi trăit pe pământ în lux și plăceri. V-aţi săturat inimile chiar într-o zi de măcel.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Aţi condamnat și aţi ucis pe cel drept, fără ca el să vi se împotrivească!",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "iacov-10",
+      "number": 10,
+      "reference": "5:7",
+      "title": "Învățături pentru toți",
+      "pageNumber": 369,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Fiţi dar îndelung răbdători, fraţilor, până la venirea Domnului. Iată că fermierul aşteaptă cu răbdare roada scumpă a pământului, până primeşte ploaie timpurie şi târzie.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Fiţi şi voi îndelung răbdători, întăriţi-vă inimile, căci venirea Domnului este aproape.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Nu vă plângeţi unii împotriva altora, fraţilor, ca să nu fiţi judecaţi; iată că Judecătorul este chiar la uşă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Fraţii mei, luaţi ca exemplu de suferinţă şi de răbdare pe profeții care au vorbit în numele Domnului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Iată, noi numim fericiţi pe cei ce au răbdat. Aţi auzit despre răbdarea lui Iov şi aţi văzut ce sfârşit i-a dat Domnul şi cum Domnul este plin de milă şi de îndurare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Mai presus de toate, fraţii mei, să nu vă juraţi nici pe cer, nici pe pământ, nici cu vreun altfel de jurământ. Ci „da” al vostru să fie „da”, şi „nu” să fie „nu”, ca să nu cădeţi sub judecată.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Este vreunul printre voi în suferinţă? Să se roage! Este vreunul cu inimă bună? Să cânte cântări de laudă!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Este vreunul printre voi bolnav? Să cheme pe bătrânii adunării şi să se roage pentru el, după ce-l vor unge cu untdelemn în numele Domnului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Rugăciunea făcută cu credinţă va mântui pe cel bolnav şi Domnul îl va însănătoşi şi, dacă a făcut păcate, îi vor fi iertate.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Mărturisiţi-vă unii altora păcatele şi rugaţi-vă unii pentru alţii, ca să fiţi vindecaţi. Mare putere are rugăciunea fierbinte a celui drept.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Ilie era un om supus aceloraşi slăbiciuni ca şi noi şi s-a rugat cu insistenţă să nu plouă, şi n-a plouat deloc în ţară 3 ani şi 6 luni.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Apoi s-a rugat din nou, şi cerul a dat ploaie şi pământul şi-a dat rodul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Fraţilor, dacă s-a rătăcit vreunul dintre voi de la adevăr şi-l întoarce un altul,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14să ştiţi că cine întoarce pe un păcătos de la greșeala căii lui va mântui un suflet de la moarte şi va acoperi o mulțime de păcate.",
+          "noteRefs": []
+        }
+      ]
+    }
+  ]
+}

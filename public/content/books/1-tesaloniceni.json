@@ -1,0 +1,534 @@
+{
+  "id": "1-tesaloniceni",
+  "navTitle": "1 Tesaloniceni",
+  "title": "Epistola 1 Tesaloniceni",
+  "passages": [
+    {
+      "id": "1-tesaloniceni-1",
+      "number": 1,
+      "reference": "1:1",
+      "title": "Urare",
+      "pageNumber": 329,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Pavel, Silvan şi Timotei, către adunarea tesalonicenilor, care este în Dumnezeu Tatăl şi în Domnul Isus Cristos: Har şi pace de la Dumnezeu, Tatăl nostru, şi de la Domnul Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Credința tesalonicenilor",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Îi mulţumim întotdeauna lui Dumnezeu pentru voi toţi, pe care vă menționăm în rugăciunile noastre;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3căci ne aducem aminte în mod constant, înaintea lui Dumnezeu, Tatăl nostru, de lucrarea credinţei voastre, de munca voastră din dragoste şi de statornicia speranței voastre în Domnul nostru Isus Cristos! 4 Cunoaștem fraţi preaiubiţi de Dumnezeu, că sunteți aleși,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5și că Evanghelia v-a fost vestită nu numai prin cuvinte, ci și cu putere, cu Duhul Sfânt, şi cu multă convingere. Căci ştiţi ce fel de oameni ne-am arătat noi față de voi, și pentru voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Voi înşivă aţi devenit imitatori ai noștri și ai Domnului, și aţi primit cuvântul în multe necazuri, cu bucuria care vine de la Duhul Sfânt;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7aşa că aţi ajuns un exemplu pentru toţi credincioşii din Macedonia şi Ahaia. 8 Căci de la voi cuvântul Domnului a fost declarat nu numai în Macedonia şi Ahaia, ci în toate locurile în care s-a auzit despre credinţa voastră în Dumnezeu, aşa că n-avem nevoie să o mai vestim.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Căci ei înşişi istorisesc ce primire ne-aţi făcut şi cum de la idoli v-aţi întors la Dumnezeu, ca să slujiţi Dumnezeului cel viu şi adevărat",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10şi să aşteptaţi din ceruri pe Fiul său, pe care l-a înviat din morţi: pe Isus, care ne salvează de mânia viitoare.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-tesaloniceni-2",
+      "number": 2,
+      "reference": "2:1",
+      "title": "Vestirea lui Pavel în Tesalonic",
+      "pageNumber": 329,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Voi înşivă ştiţi, fraţilor, că venirea noastră la voi n-a fost fără rost,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2ci, așa cum știți, după ce am suferit şi am fost tratați scandalos în Filipi, am venit plini de încredere în Dumnezeul nostru să vă vestim Evanghelia lui Dumnezeu în mijlocul multor lupte.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Căci vestirea noastră nu se bazează nici pe rătăcire, nici pe necurăţie, nici pe înșelăciune.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Ci, fiindcă Dumnezeu ne-a acceptat să vestim Evanghelia, căutăm să vorbim aşa ca să plăcem nu oamenilor, ci lui Dumnezeu, care ne cercetează inimile.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5După cum bine ştiţi, n-am folosit niciodată cuvinte lingușitoare, nici haina lăcomiei; martor este Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6N-am căutat glorie de la oameni: nici de la voi, nici de la alţii, deşi, ca apostoli ai lui Cristos, am fi putut să pretindem autoritate,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7și ne-am arătat blânzi în mijlocul vostru, ca o mamă care alăptează, şi-și creşte cu drag proprii copii.",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "8 Astfel, în dragostea noastră fierbinte pentru voi, eram gata să vă împărtășim nu numai Evanghelia lui Dumnezeu, dar chiar şi sufletele noastre, atât de dragi ne-ați devenit.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Vă aduceţi aminte, fraţilor, de munca și oboseala noastră; cum lucram zi şi noapte ca să nu fim sarcină niciunuia din voi şi vă predicam Evanghelia lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Voi sunteţi martori şi Dumnezeu, de asemenea, că am avut o comportare sfântă, dreaptă şi corectă faţă de voi care credeţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11După cum știţi, v-am sfătuit, v-am mângâiat, și v-am implorat pe fiecare din voi, cum face un tată cu copiii lui,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12având scopul ca voi să vă comportaţi într-un mod plăcut lui Dumnezeu, care vă cheamă la propria sa Împărăţie şi glorie.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-tesaloniceni-3",
+      "number": 3,
+      "reference": "2:13",
+      "title": "Primirea sinceră a Evangheliei",
+      "pageNumber": 330,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Acesta este motivul pentru care noi mulţumim neîncetat lui Dumnezeu, că atunci când voi aţi primit de la noi Cuvântul lui Dumnezeu, l-aţi acceptat nu ca pe cuvântul oamenilor, ci, aşa cum este el în adevăr, Cuvântul lui Dumnezeu, care lucrează şi în voi care credeţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci, voi fraţilor ați devenit imitatori ai adunărilor lui Dumnezeu, din Iudeea, care sunt în Cristos Isus; căci şi voi aţi suferit din partea celor de un neam cu voi, aceleaşi rele, pe care le-au suferit ele din partea iudeilor,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3care au omorât atât pe Domnul Isus cât şi pe profeți, pe noi ne-au prigonit, nu plac lui Dumnezeu şi se împotrivesc tuturor oamenilor,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4căci ne interzic să vorbim Neamurilor ca să fie mântuite; astfel ei întotdeauna întregesc măsura păcatelor lor. Dar, la urmă, mânie mare a venit peste ei.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-tesaloniceni-4",
+      "number": 4,
+      "reference": "2:17",
+      "title": "Dorința de reîntâlnire a lui Pavel",
+      "pageNumber": 330,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Noi, fraţilor, fiind despărțiţi de voi un scurt timp – în persoană, dar nu cu inima – am încercat cu atât mai mult să vă vedem fața, având o mare dorință, deoarece, într-adevăr am dorit să venim la voi;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2astfel, o dată şi chiar de două ori, am dorit – eu Pavel, cel puţin – să venim la voi, dar ne-a împiedicat Satana.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Căci cine este, în adevăr, speranța sau bucuria, sau cununa bucuriei noastre? Nu sunteţi chiar voi, înaintea Domnului nostru Isus Cristos, la venirea lui?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci voi sunteţi gloria şi bucuria noastră.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5De aceea, fiindcă nu mai puteam răbda, am considerat că este mai bine să fim lăsaţi singuri în Atena,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6şi v-am trimis pe Timotei, fratele nostru şi slujitorul lui Dumnezeu în Evanghelia lui Cristos, ca să vă întărească şi să vă îmbărbăteze în credinţa voastră,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7pentru ca nimeni din voi să nu se clatine în aceste necazuri. Căci ştiţi singuri că ni s-a dat această datorie.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Când eram la voi, v-am spus mai dinainte că vom suferi necazuri, ceea ce s-a şi întâmplat, cum bine ştiţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Astfel, în nerăbdarea mea, am trimis să-mi aducă ştiri despre credinţa voastră de teamă ca nu cumva să vă fi ispitit ispititorul, şi oboseala noastră să fi fost degeaba.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10 Dar chiar acum a venit Timotei de la voi la noi, şi ne-a adus veşti bune despre credinţa",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "şi dragostea voastră, că întotdeauna păstraţi o plăcută amintire despre noi, şi că doriţi să ne vedeţi, cum dorim şi noi să vă vedem pe voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Așa că, fraţilor, în toate strâmtorările şi necazurile noastre, am fost mângâiaţi cu privire la voi prin credinţa voastră.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Acum da, trăim, fiindcă voi staţi tari în Domnul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13 Ce altă recunoștință am putea noi oare să arătăm lui Dumnezeu cu privire la voi, pentru toată bucuria pe care o avem din partea voastră înaintea Dumnezeului nostru,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14pe care îl rugăm în mod deosebit, zi şi noapte, să vă putem vedea faţa şi să putem împlini ce mai lipseşte credinţei voastre.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15Însuşi Dumnezeu, Tatăl nostru, şi Domnul nostru Isus Cristos să ne deschidă calea către voi!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "16Domnul să vă facă să creşteţi tot mai mult în dragoste unii faţă de alţii şi faţă de toţi oamenii, cum facem şi noi înşine pentru voi,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "17ca să vi se întărească inimile, ca ele să fie fără vină, și sfinte, înaintea lui Dumnezeu, Tatăl nostru, la venirea Domnului nostru Isus Cristos împreună cu toţi sfinţii săi.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-tesaloniceni-5",
+      "number": 5,
+      "reference": "4:1",
+      "title": "Reguli de urmat",
+      "pageNumber": 331,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1În încheiere deci, fraţilor, vă implorăm şi vă sfătuim în Domnul Isus, ca așa cum ați primit de la noi, privitor la comportarea voastră, care să fie plăcută lui Dumnezeu, vă îndemnăm să sporiţi tot mai mult în privinţa aceasta.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Ştiţi, în adevăr, ce înstrucțiuni v-am dat prin Domnul Isus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Căci aceasta este voia lui Dumnezeu: să vă sfințiți, să vă feriţi de curvie;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4fiecare din voi să ştie să-şi stăpânească vasul în sfinţenie şi cinste,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5nu în aprinderea poftei, ca Neamurile, care nu cunosc pe Dumnezeu;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6nimeni să nu fie cu vicleşug şi cu nedreptate faţă de fratele sau sora sa, pentru că Domnul pedepseşte toate aceste lucruri, după cum v-am spus şi v-am adeverit.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Căci Dumnezeu nu ne-a chemat la necurăţie, ci la sfinţire.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8De aceea, cine refuză aceste învăţături, refuză nu pe un om, ci pe Dumnezeu, care v-a dat şi Duhul său cel Sfânt.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Cât despre dragostea frăţească, n-aveţi nevoie ca cineva să vă scrie. Căci voi înșivă sunteți învăţaţi de Dumnezeu să vă iubiţi unii pe alţii,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10 şi voi într-adevăr iubiţi pe toţi fraţii care sunt în toată Macedonia. Dar vă sfătuim, fraţilor, să sporiţi tot mai mult în ea;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11dorința voastră să fie să trăiţi liniştiţi, să vă vedeţi de lucrul vostru, şi să lucraţi cu mâinile voastre, așa cum v-am sfătuit.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Şi astfel, să vă purtaţi cuviincios cu cei de afară şi să n-aveţi nevoie de nimic de la alții.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-tesaloniceni-6",
+      "number": 6,
+      "reference": "4:13",
+      "title": "Despre venirea Domnului",
+      "pageNumber": 331,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Nu voim, fraţilor, să fiţi neinformați cu privire la cei care au adormit, ca să nu vă întristaţi ca ceilalţi, care n-au nici o speranță.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci dacă credem că Isus a murit şi a înviat, credem şi că Dumnezeu va aduce înapoi împreună cu Isus pe cei ce au adormit în el.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Iată, ce vă spunem prin cuvântul Domnului: noi cei vii, care vom rămâne până la venirea",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Domnului, nu vom lua-o nicidecum înaintea celor adormiţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci însuşi Domnul, se va coborî din cer cu un strigăt, cu glasul unui arhanghel şi cu trâmbiţa lui Dumnezeu. Morții în Cristos vor învia primii;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5apoi, noi cei vii, care vom fi rămas, vom fi răpiţi toţi împreună cu ei în nori, ca să întâmpinăm pe Domnul în aer; şi astfel vom fi întotdeauna cu Domnul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Astfel dar, mângâiaţi-vă unii pe alţii cu aceste cuvinte.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-tesaloniceni-7",
+      "number": 7,
+      "reference": "5:1",
+      "title": "Despre timpuri și termene",
+      "pageNumber": 332,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Cât despre timpuri şi termene, nu aveți nevoie să vi se scrie, fraţilor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Pentru că voi înşivă ştiţi bine că ziua Domnului va veni ca un hoţ noaptea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Când vor zice: „pace şi siguranță!”, atunci o distrugere bruscă va veni peste ei, ca durerile naşterii peste femeia însărcinată. Atunci nu vor scăpa nicidecum.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Dar voi, fraţilor, nu sunteţi în întuneric, pentru ca ziua aceea să vă surprindă ca un hoţ.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Voi toţi sunteţi copii ai luminii şi copii ai zilei. Noi nu aparținem nopţii, nici întunericului,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6de aceea să nu dormim ca ceilalţi, ci să veghem şi să fim cumpătați.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Căci cei ce dorm, dorm noaptea şi cei ce se îmbată, se îmbată noaptea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Dar, deoarece noi aparținem zilei, să fim cumpătați, să ne îmbrăcăm cu platoşa credinţei şi a dragostei şi să avem drept coif speranța mântuirii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Fiindcă Dumnezeu nu ne-a rânduit la mânie, ci la obținerea mântuirii prin Domnul nostru Isus Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10care a murit pentru noi, pentru ca, fie că veghem, fie că dormim, să trăim împreună cu el.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11De aceea, mângâiaţi-vă şi întăriţi-vă unii pe alţii, după cum şi faceţi.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-tesaloniceni-8",
+      "number": 8,
+      "reference": "5:12",
+      "title": "Învățături practice",
+      "pageNumber": 332,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Vă rugăm, fraţilor, să apreciați pe cei ce muncesc între voi, care vă cârmuiesc în Domnul şi vă sfătuiesc;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2să-i respectați și să-i cinstiți, cu dragoste, din cauza lucrării lor. Trăiți în pace între voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Vă mai rugăm fraţilor: să mustraţi pe cei ce trăiesc în dezordine, să încurajaţi pe cei descurajaţi, să sprijiniţi pe cei slabi, și să fiţi răbdători cu toţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Aveți grijă ca nimeni să nu întoarcă altuia rău pentru rău, ci căutaţi întotdeauna să faceţi ce este bine, atât între voi, cât şi faţă de toţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Bucuraţi-vă întotdeauna.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Rugaţi-vă fără încetare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Aduceți mulţumiri lui Dumnezeu în toate lucrurile, căci aceasta este voia lui Dumnezeu, în Cristos Isus, cu privire la voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Nu stingeţi Duhul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Nu dispreţuiţi profețiile.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Ci cercetaţi toate lucrurile şi ţineți-vă de cele bune.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Feriţi-vă de orice formă a răului.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Încheiere",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Dumnezeul păcii să vă sfinţească el însuşi pe deplin. Duhul vostru, sufletul vostru, și trupul vostru să fie păstrate nepătate, până la venirea Domnului nostru Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Cel ce v-a chemat este credincios şi va face lucrul acesta.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Fraţilor, rugaţi-vă pentru noi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15Salutați pe toți fraţii cu o sărutare sfântă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "16În Domnul vă rog, în mod solemn, ca epistola aceasta să fie citită tuturor fraţilor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "17Harul Domnului nostru Isus Cristos să fie cu voi! Amin.",
+          "noteRefs": []
+        }
+      ]
+    }
+  ]
+}

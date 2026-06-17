@@ -1,0 +1,881 @@
+{
+  "id": "efeseni",
+  "navTitle": "Efeseni",
+  "title": "Epistola către Efeseni",
+  "passages": [
+    {
+      "id": "efeseni-1",
+      "number": 1,
+      "reference": "1:1",
+      "title": "Urare",
+      "pageNumber": 311,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Pavel, apostol al lui Isus Cristos, prin voia lui Dumnezeu, către sfinţii care sunt în Efes şi credincioşii în Cristos Isus:",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Har şi pace de la Dumnezeu, Tatăl nostru, şi de la Domnul Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Mântuirea prin Cristos",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Binecuvântat să fie Dumnezeu, Tatăl Domnului nostru, Isus Cristos, care ne-a binecuvântat cu toate binecuvântările spirituale, în locurile cereşti, în Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4În el, Dumnezeu ne-a ales înainte de fondarea lumii, ca să fim sfinţi şi fără defect înaintea lui, după ce, în dragostea lui,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5ne-a predestinat să fim adoptaţi prin Isus Cristos, după buna plăcere a voii sale,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6spre lauda slavei harului său, pe care ni l-a dat în preaiubitul lui.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7În el avem răscumpărarea, prin sângele lui, iertarea păcatelor, după bogăţiile harului său",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8pe care l-a răspândit din belşug peste noi prin orice fel de înţelepciune şi de cunoștință;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9căci a binevoit să ne descopere secretul voii sale după planul pe care-l alcătuise în sine însuşi,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10ca să-l aducă la îndeplinire la timpul potrivit, pentru a uni iarăşi într-unul, în Cristos, toate lucrurile: cele din ceruri şi cele de pe pământ.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Prin el ni s-a repartizat o moștenire, fiind rânduiţi mai dinainte, după hotărârea aceluia care face toate după sfatul voii sale,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12având scopul ca noi să fim lauda gloriei sale, noi, care mai dinainte am sperat în Cristos.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "efeseni-2",
+      "number": 2,
+      "reference": "1:13",
+      "title": "Rezultatele credinței",
+      "pageNumber": 312,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Voi, după ce aţi auzit cuvântul adevărului – Evanghelia mântuirii voastre - aţi crezut în el şi aţi fost sigilaţi cu Duhul Sfânt, care fusese promis",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2şi care este o garanție a moştenirii noastre, pentru răscumpărarea proprietății lui Dumnezeu, spre lauda gloriei lui.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3De aceea şi eu, de când am auzit despre credinţa în Domnul Isus care este în voi şi despre dragostea voastră pentru toţi sfinţii,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4nu încetez să aduc mulţumiri pentru voi, când vă menționez în rugăciunile mele;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5și mă rog ca Dumnezeul Domnului nostru Isus Cristos, Tatăl gloriei, să vă dea un duh de înţelepciune şi de descoperire în cunoaşterea lui",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6şi să vă lumineze ochii inimii, ca să înțelegeți care este speranța chemării lui, care sunt bogăţiile gloriei moştenirii lui în sfinţi",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7şi care este faţă de noi, credincioşii, nelimitata mărime a puterii sale, după lucrarea puterii tăriei lui,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8pe care a desfăşurat-o în Cristos, prin faptul că l-a înviat din morţi şi l-a pus să stea la dreapta sa, în locurile cereşti,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9mai presus de orice domnie, stăpânire, putere, dregătorie şi de orice nume, care se poate numi, nu numai în epoca aceasta, ci şi în cea viitoare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10El i-a supus totul sub picioare şi l-a făcut conducător peste toate, pentru adunare,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11care este trupul lui, plinătatea celui ce împlineşte totul în toţi.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "efeseni-3",
+      "number": 3,
+      "reference": "2:1",
+      "title": "Starea omului fără Cristos",
+      "pageNumber": 312,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Voi ați fost aduși la viață, atunci când eraţi morţi în greşelile şi în păcatele voastre,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2în care ați umblat în trecut, după mersul lumii acesteia, după prințul puterii din aer, a duhului care lucrează acum în fiii neascultării.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Între ei eram şi noi toţi înainte, când trăiam în poftele firii noastre pământeşti, când",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "făceam voile firii pământeşti şi ale gândurilor noastre, şi eram prin natura noastră copii ai mâniei, ca şi ceilalţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Dar Dumnezeu, care este bogat în îndurare, prin dragostea cea mare cu care ne-a iubit,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5deși eram morţi în greşelile noastre, ne-a adus la viaţă împreună cu Cristos – prin har ați fost mântuiţi –",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6ne-a înviat împreună cu el, şi ne-a pus să stăm împreună în locurile cereşti, în Cristos Isus,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7ca să arate în timpurile viitoare deosebita bogăţie a harului său, în bunătatea lui faţă de noi în Cristos Isus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Căci prin har aţi fost mântuiţi, prin credinţă, aceasta nefiind lucrarea voastră, ci darul lui Dumnezeu;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9nu prin fapte, ca nimeni să nu se laude.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Căci noi suntem lucrarea lui şi am fost zidiţi în Cristos Isus pentru faptele bune pe care le-a pregătit Dumnezeu mai dinainte, ca să umblăm în ele.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11 De aceea, amintiți-vă că voi, care altădată eraţi neamuri din naştere, numiţi necircumciși de către aceia care se cheamă circumciși şi care sunt circumciși în trup de mâna omului,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12în timpul acela eraţi separați de Cristos, fără drept de cetăţenie în Israel, străini de legămintele promisiunii, fără speranță, şi fără Dumnezeu în lume.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "efeseni-4",
+      "number": 4,
+      "reference": "2:13",
+      "title": "Rezultatele apropierii de Dumnezeu",
+      "pageNumber": 313,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Dar acum, în Cristos Isus, voi, care mai înainte eraţi depărtaţi, aţi fost apropiaţi prin sângele lui Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci el este pacea noastră, care din doi a făcut unul şi a demolat zidul de separare de la mijloc",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3şi, în trupul lui, a înlăturat ostilitatea dintre ei, legea poruncilor cu rânduielile ei, ca să facă pe cei doi să fie, în el însuşi, un singur om nou, făcând astfel pace,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4şi a împăcând pe cei doi cu Dumnezeu într-un singur trup, prin cruce, prin care a nimicit ostilitatea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5El a venit să predice vestea bună a păcii vouă, celor ce eraţi departe, dar şi celor ce erau aproape.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Căci prin el şi unii, şi alţii avem intrare la Tatăl, prin același Duh.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Aşadar, voi nu mai sunteţi nici străini, nici oaspeţi ai casei, ci sunteţi împreună-cetăţeni cu sfinţii din casa lui Dumnezeu,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8fiind zidiţi pe fundația apostolilor şi profeților, piatra din capul unghiului fiind Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9În el toată clădirea, bine închegată, creşte ca să fie un templu sfânt în Domnul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Şi prin el şi voi sunteţi zidiţi împreună, ca să fiţi un locaş al lui Dumnezeu, prin Duhul.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "efeseni-5",
+      "number": 5,
+      "reference": "3:1",
+      "title": "Secretul lui Cristos: neamurile sunt chemate la mântuire",
+      "pageNumber": 313,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Din această cauză, eu, Pavel, deținutul lui Isus Cristos pentru voi, Neamurilor…,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2dacă cel puţin aţi auzit de administrarea harului lui Dumnezeu, care mi-a fost dată faţă de voi,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3cum prin descoperire dumnezeiască mi s-a descoperit secretul acesta, despre care v-am scris mai înainte în puţine cuvinte,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4pe care, citindu-le, vă puteţi închipui înțelegerea pe care o am eu despre secretul lui Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5care n-a fost făcut cunoscut fiilor oamenilor în celelalte perioade, în felul cum a fost descoperit acum sfinţilor apostoli şi profeți ai lui Cristos, prin Duhul,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6că adică Neamurile sunt împreună moştenitoare cu noi, alcătuiesc un singur trup cu noi şi au parte cu noi la aceeaşi promisiune în Cristos Isus, prin Evanghelia aceea,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7al cărei servitor am fost făcut eu, după darul harului lui Dumnezeu, dat mie prin lucrarea puterii lui.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Mie, care sunt cel mai mic dintre toţi sfinţii, mi-a fost dat harul acesta să vestesc Neamurilor bogăţiile nepătrunse ale lui Cristos",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9şi să fac pe toți oamenii să vadă acest secret ascuns de secole în Dumnezeu, care a făcut toate lucrurile prin Isus Cristos 10. pentru ca domniile şi puterile din locurile cereşti să cunoască azi, prin adunare, înţelepciunea nespus de felurită a lui Dumnezeu,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11după scopul veşnic, pe care l-a avut în Cristos Isus, Domnul nostru.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12El avem îndrăzneala și accesul la Dumnezeu prin credință.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Vă rog să nu vă pierdeţi echilibrul din cauza necazurilor mele pentru voi: aceasta este gloria voastră.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14…Din această cauză îmi plec genunchii înaintea Tatălui Domnului nostru Isus Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15din care îşi trage numele orice familie, în ceruri şi pe pământ,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "16şi-l rog ca, potrivit cu bogăţia gloriei sale, să vă facă să vă întăriţi în putere, prin Duhul lui, în ființa interioară,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "17aşa încât Cristos să locuiască în inimile voastre prin credinţă; pentru ca, având rădăcina şi temelia puse în dragoste,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "18să fiți întăriți pentru a înțelege împreună cu toţi sfinţii care sunt lățimea, lungimea, înălțimea și adâncimea,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "19și să cunoaşteţi dragostea lui Cristos, care depășește cunoştinţa, ca să fiți umpluți de toată plinătatea lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "20 Iar a celui ce, prin puterea care lucrează în noi, poate să facă mult mai mult decât cerem sau gândim noi,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "21a lui să fie gloria în adunare şi în Cristos Isus, din generație în generație, în vecii vecilor! Amin.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "efeseni-6",
+      "number": 6,
+      "reference": "4:1",
+      "title": "Păstrarea unității după modelul ceresc",
+      "pageNumber": 314,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1De aceea dar, eu, deținutul Domnului, vă rog să vă purtaţi într-un mod demn de chemarea pe care aţi primit-o,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2cu toată politețea şi umilința, cu răbdare; acceptaţi-vă unii pe alţii în dragoste",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3căutând să păstraţi unirea Duhului prin legătura păcii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Este un singur trup, un singur Duh, după cum şi voi aţi fost chemaţi la o singură speranță a chemării voastre.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Este un singur Domn, o singură credinţă, un singur botez.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Este un singur Dumnezeu şi Tată al tuturor, care este mai presus de toţi, care lucrează prin toţi şi care este în noi toţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Dar fiecăruia din noi harul i-a fost dat după măsura darului lui Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "8 De aceea este zis: „S-a urcat sus, a luat robia roabă şi a dat daruri oamenilor”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Şi acest: „S-a urcat”, ce înseamnă decât că înainte se coborâse în părţile mai de jos ale pământului?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Cel ce s-a coborât este acelaşi cu cel ce s-a urcat mai presus de toate cerurile, ca să umple toate lucrurile.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11 El a făcut pe unii apostoli, pe alţii profeți, pe alţii evanghelişti, pe alţii păstori şi învăţători,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12pentru perfecționarea sfinţilor, în vederea lucrării de slujire, pentru edificarea trupului lui Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13până vom ajunge toţi la unirea credinţei şi a cunoașterii Fiului lui Dumnezeu, la starea de om mare, la înălţimea staturii plinătăţii lui Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14ca să nu mai fim copii, aruncați încoace şi încolo, purtaţi de orice vânt de învăţătură, prin viclenia oamenilor şireți care folosesc vicleșuguri;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15ci, spunând adevărul în dragoste, să creştem în toate privinţele, ca să ajungem la cel ce este capul, Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "16din care, tot trupul, bine închegat şi strâns legat prin ceea ce oferă fiecare încheietură, îşi primeşte creşterea potrivit cu lucrarea fiecărei părţi, în măsura ei, şi se edifică în dragoste.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "efeseni-7",
+      "number": 7,
+      "reference": "4:17",
+      "title": "Învățături practice",
+      "pageNumber": 315,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Iată dar, ce vă spun şi mărturisesc eu, în Domnul: să nu mai trăiţi cum trăiesc ceilalți dintre Neamuri, în gândirea lor ușuratică,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2având mintea întunecată, fiind străini de viaţa lui Dumnezeu, din cauza ignoranţei în care se află, datorită insensibilității inimii lor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Deoarece sunt insensibili, s-au dedat la desfrânare şi îndeplinesc cu lăcomie orice fel de necurăţie. 4 Dar voi n-aţi învăţat aşa pe Cristos;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5dacă, cel puţin, l-aţi ascultat şi dacă, în acord cu adevărul care este în Isus, aţi fost învăţaţi",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6cu privire la felul vostru de viaţă din trecut, să vă eliberaţi de omul cel vechi, care se strică după poftele înşelătoare,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7să vă înnoiţi în duhul minţii voastre,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8şi să vă îmbrăcaţi în omul cel nou, creat în asemănare cu Dumnezeu, prin corectitudinea şi sfinţenia, care provin din adevăr.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9De aceea, lăsaţi-vă de falsitate; să spuneți adevărul aproapelui vostru, fiecare, pentru că suntem părți unii altora.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10„Dacă vă mâniaţi, să nu păcătuiţi.” Nu lăsați soarele să apună peste mânia voastră",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11şi să nu daţi ocazie diavolului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Cine fură să nu mai fure, ci mai degrabă să lucreze cu mâinile lui la ceva bun, ca să aibă ce să dea celui lipsit.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Niciun cuvânt nesănătos să nu vă iasă din gură, ci unul bun, pentru edificare, după cum e nevoie, ca să dea har celor ce-l aud.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Să nu întristaţi pe Duhul Sfânt al lui Dumnezeu prin care aţi fost sigilaţi pentru ziua răscumpărării.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15Orice amărăciune, iuţime, mânie, strigare, și clevetire, să dispară din mijlocul vostru, și de asemenea orice fel de răutate.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "16Fiţi buni unii cu alţii, miloşi şi iertaţi-vă unul pe altul, cum v-a iertat şi Dumnezeu pe voi, prin Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "17Imitaţi dar exemplul lui Dumnezeu ca nişte copii preaiubiţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "18Trăiţi în dragoste, după cum şi Cristos ne-a iubit şi s-a dat pe sine pentru noi, ca un dar şi ca un sacrificiu cu aromă plăcută înaintea lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "19 Iar curvia, sau orice altfel de necurăţie, sau lăcomia de avere, nici să nu fie menționate printre voi, aşa cum se cuvine unor sfinţi;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "20să nu se audă nici cuvinte indecente, nici cuvinte nechibzuite, nici glume murdare, care nu sunt potrivite, ci mai degrabă cuvinte de mulţumire.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "21Să ştiţi bine că niciun curvar, niciun necurat, niciun lacom de avere, care este un închinător la idoli, n-are parte de moştenire în Împărăţia lui Cristos şi a lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "22 Nimeni să nu vă înşele prin cuvinte goale, căci din cauza acestor lucruri vine mânia lui Dumnezeu peste copiii neascultării.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "23Să nu luați parte dar, deloc cu ei.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "24În trecut eraţi întuneric, dar acum sunteţi lumină în Domnul. Să umblaţi deci ca nişte copii ai luminii,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "25căci roada Duhului stă în orice bunătate, în corectitudine şi în adevăr,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "26arătând astfel ceea ce este plăcut înaintea Domnului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "27 Nu luaţi deloc parte la lucrările neroditoare ale întunericului, ci mai degrabă condamnaţi-le.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "28Căci e ruşine numai să spunem ce fac ei în ascuns.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "29Dar toate acestea, sunt condamnate de lumină, cînd sunt date pe față; căci tot ce este dat pe față, este iluminat.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "30De aceea zice: „Deşteaptă-te tu, care dormi, scoală-te din morţi, şi Cristos te va lumina”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "31Luaţi seama deci să umblaţi cu grijă, nu ca nişte neînţelepţi, ci ca nişte înţelepţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "32Răscumpăraţi timpul, căci zilele sunt rele.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "33De aceea nu fiţi nesocotiţi, ci înţelegeţi care este voia Domnului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "34Nu vă îmbătaţi de vin, căci aceasta este desfrânare, ci dimpotrivă, fiţi plini de Duh,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "35vorbind între voi cu psalmi, cu cântări de laudă şi cu cântări spirituale, cântând şi aducând din toată inima laudă Domnului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "36Mulţumiți totdeauna lui Dumnezeu Tatăl pentru toate lucrurile în numele Domnului nostru Isus Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "37și supunându-vă unii altora în frica lui Cristos.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "efeseni-8",
+      "number": 8,
+      "reference": "5:22",
+      "title": "Învățături pentru soții și soți",
+      "pageNumber": 316,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Soțiilor, fiţi supuse soţilor voştri ca Domnului,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2căci soțul este capul soției, după cum şi Cristos este capul adunării, el, mântuitorul trupului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Şi, după cum adunarea este supusă lui Cristos, tot aşa şi soțiile să fie supuse soţilor lor în toate lucrurile.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Soţilor, iubiţi-vă soțiile cum a iubit şi Cristos adunarea şi s-a dat pe sine pentru ea,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5ca s-o sfinţească, după ce a curăţit-o prin spălarea cu apă, prin cuvânt,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6ca să prezinte această adunare înaintea lui însuși, glorificată, fără pată, fără zbârcitură",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "sau altceva de felul acesta, ci sfântă şi fără defect.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Tot aşa trebuie să-şi iubească şi soţii soțiile, ca pe trupurile lor. Cine îşi iubeşte soția se iubeşte pe sine însuşi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Căci nimeni nu şi-a urât vreodată trupul lui, ci îl hrăneşte, îl îngrijeşte cu drag, ca şi Cristos adunarea;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9pentru că noi suntem organe ale trupului lui, carne din carnea lui şi os din oasele lui.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10„De aceea va lăsa omul pe tatăl său şi pe mamă-sa şi se va lipi de soția sa, şi cei doi vor fi un singur trup.”",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Secretul acesta este mare; vorbesc despre Cristos şi despre adunare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Încolo, fiecare din voi să-şi iubească soția ca pe sine; şi soția să fie atentă să-și respecte bărbatul.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "efeseni-9",
+      "number": 9,
+      "reference": "6:1",
+      "title": "Învățături pentru copii și părinți",
+      "pageNumber": 317,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Copii, ascultaţi în Domnul de părinţii voştri, căci este corect.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2„Să cinsteşti pe tatăl tău şi pe mama ta” – este cea dintâi poruncă însoţită de o promisiune –",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3„ca să fii fericit şi să trăieşti mult timp pe pământ”. 4 Şi voi, părinţilor, nu întărâtaţi la mânie pe copiii voştri, ci creşteţi-i în mustrarea şi învăţătura Domnului.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "efeseni-10",
+      "number": 10,
+      "reference": "6:5",
+      "title": "Învățături pentru robi și stăpâni",
+      "pageNumber": 317,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Robilor, ascultaţi de stăpânii voştri pământeşti cu frică şi cutremur, în curăţie de inimă, ca de Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2nu doar din obligație, când sunteţi sub ochii lor, doar ca să fiți pe placul oamenilor, ci ca nişte robi ai lui Cristos, care fac din inimă voia lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Slujiţi-le cu bucurie, ca Domnului, iar nu oamenilor,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4căci ştiţi că fiecare, fie sclav, fie liber, va primi răsplată de la Domnul, după binele pe care-l va fi făcut.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Şi voi, stăpânilor, purtaţi-vă la fel cu ei, renunțați la ameninţări, ca unii care ştiţi că Stăpânul lor şi al vostru este în cer şi că înaintea lui nu se are în vedere faţa omului.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "efeseni-11",
+      "number": 11,
+      "reference": "6:10",
+      "title": "Războiul spiritual și armele spirituale",
+      "pageNumber": 317,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1În încheiere, fraţilor, fiți tari în Domnul şi în puterea tăriei lui.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Îmbrăcaţi-vă cu toată armătura lui Dumnezeu, ca să puteţi ţine piept împotriva vicleșugurilor diavolului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Căci noi n-avem de luptat împotriva cărnii şi sângelui, ci împotriva autorităților, împotriva domniilor, împotriva conducătorilor întunericului acestei perioade de timp, împotriva duhurilor răutății, din locurile cereşti. 4 De aceea, luaţi toată armătura lui Dumnezeu, ca să vă puteţi împotrivi în ziua cea rea şi să rămâneţi în picioare, după ce veţi fi biruit totul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Staţi gata dar, având mijlocul încins cu centura adevărului, îmbrăcaţi cu platoşa dreptății,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6și având picioarele încălţate cu râvna Evangheliei păcii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Pe deasupra tuturor acestora, luaţi scutul credinţei cu care veţi putea stinge toate săgeţile arzătoare ale celui rău.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Luaţi şi coiful mântuirii şi sabia Duhului, care este Cuvântul lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Faceţi în toată vremea, prin Duhul, tot felul de rugăciuni şi cereri. Vegheaţi la aceasta cu toată stăruinţa şi rugăciune pentru toţi sfinţii",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10şi pentru mine, ca, ori de câte ori îmi deschid gura, să mi se dea cuvânt, ca să fac cunoscut cu îndrăzneală misterul Evangheliei,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11al cărei ambasador în lanţuri sunt; și pentru ca să vorbesc cu îndrăzneală, așa după cum trebuie să vorbesc.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Încheiere",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "1Iar ca să ştiţi şi voi despre situația mea, ce fac eu, Tihic preaiubitul frate şi slujitor credincios în Domnul, vă va face cunoscut totul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Vi l-am trimis, tocmai cu acest scop, ca să luaţi cunoştinţă despre starea noastră şi să vă mângâie inimile. 3 Pace fraţilor, şi dragoste, împreună cu credinţa, din partea lui Dumnezeu Tatăl şi din partea Domnului Isus Cristos!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Harul să fie cu toţi cei ce iubesc pe Domnul nostru Isus Cristos cu dragoste curată. Amin.",
+          "noteRefs": []
+        }
+      ]
+    }
+  ]
+}

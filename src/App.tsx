@@ -2,6 +2,8 @@ import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import './App.css';
 
 const TESTAMENT_DATA_URL = '/testament.json';
+const CONTENT_BOOKS_INDEX_URL = '/content/books-index.json';
+const CONTENT_INTRODUCTION_URL = '/content/introduction.json';
 const defaultSectionId = 'introduction';
 const fallbackBookId = 'matei';
 
@@ -75,6 +77,13 @@ type TestamentData = {
   books: Book[];
 };
 
+type BookIndexEntry = {
+  id: string;
+  navTitle: string;
+  title: string;
+  file: string;
+};
+
 function App() {
   const [data, setData] = useState<TestamentData | null>(null);
   const [selectedSectionId, setSelectedSectionId] = useState(defaultSectionId);
@@ -83,14 +92,7 @@ function App() {
   useEffect(() => {
     let isMounted = true;
 
-    fetch(TESTAMENT_DATA_URL)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Nu am putut încărca textul.');
-        }
-
-        return response.json() as Promise<TestamentData>;
-      })
+    loadTestamentData()
       .then((nextData) => {
         if (!isMounted) {
           return;
@@ -188,6 +190,43 @@ function App() {
       </section>
     </main>
   );
+}
+
+async function loadTestamentData() {
+  try {
+    return await loadEditableContentData();
+  } catch {
+    return loadLegacyTestamentData();
+  }
+}
+
+async function loadEditableContentData(): Promise<TestamentData> {
+  const [introduction, bookIndex] = await Promise.all([
+    fetchJson<Introduction | null>(CONTENT_INTRODUCTION_URL),
+    fetchJson<BookIndexEntry[]>(CONTENT_BOOKS_INDEX_URL),
+  ]);
+  const books = await Promise.all(
+    bookIndex.map((book) => fetchJson<Book>(`/content/books/${book.file}`)),
+  );
+
+  return {
+    introduction,
+    books,
+  };
+}
+
+async function loadLegacyTestamentData() {
+  return fetchJson<TestamentData>(TESTAMENT_DATA_URL);
+}
+
+async function fetchJson<T>(url: string): Promise<T> {
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`Nu am putut încărca ${url}`);
+  }
+
+  return response.json() as Promise<T>;
 }
 
 function IntroductionPages({ introduction }: { introduction: Introduction }) {

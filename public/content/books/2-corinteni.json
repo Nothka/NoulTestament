@@ -1,0 +1,1460 @@
+{
+  "id": "2-corinteni",
+  "navTitle": "2 Corinteni",
+  "title": "Epistola 2 Corinteni",
+  "passages": [
+    {
+      "id": "2-corinteni-1",
+      "number": 1,
+      "reference": "1:1",
+      "title": "Urare",
+      "pageNumber": 290,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Pavel, apostol al lui Isus Cristos, prin voia lui Dumnezeu, şi fratele nostru Timotei, către adunarea lui Dumnezeu care este în Corint şi către toţi sfinţii, care sunt în toată Ahaia:",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Har şi pace vouă de la Dumnezeu, Tatăl nostru, şi de la Domnul Isus Cristos!",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Mângâierile apostolului",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Binecuvântat să fie Dumnezeu, Tatăl Domnului nostru Isus Cristos, Părintele îndurărilor şi Dumnezeul tuturor mângâierilor,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4care ne mângâie în toate necazurile noastre, pentru ca, prin mângâierea cu care noi înşine suntem mângâiaţi de Dumnezeu, să putem mângâia pe cei ce se află în vreun necaz!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Căci, după cum avem parte din belşug de suferinţele lui Cristos, tot aşa, prin Cristos avem parte din belşug şi de mângâiere.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Dar, dacă suntem în necaz, suntem pentru mângâierea şi mântuirea voastră. Dacă suntem mângâiaţi, suntem pentru mângâierea voastră, care se arată prin faptul că răbdaţi aceleaşi suferinţe ca şi noi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Speranța noastră pentru voi este neclintită, știind că, dacă aveţi parte de suferinţe, aveţi parte şi de mângâiere. 8 Căci nu dorim fraţilor, să fiți neinformați despre necazul care ne-a lovit în Asia, de care am fost apăsaţi cu mult peste puterea noastră, aşa că nici nu mai trăgeam speranță de viaţă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Într-adevăr, se părea că aveam sentința de condamnare la moarte, pentru ca să ne punem încrederea nu în noi înşine, ci în Dumnezeu care învie morţii,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10care ne-a salvat dintr-un pericol de moarte așa de mare, căci el într-adevăr salvează, și avem speranță că încă ne va mai salva.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Voi înşivă ne veţi ajuta cu rugăciunile voastre, pentru ca binefacerea făcută nouă prin rugăciunile multora, să fie pentru mulţi alții, o ocazie de mulțumire lui Dumnezeu pentru noi.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-2",
+      "number": 2,
+      "reference": "1:12",
+      "title": "Mărturia conștiinței apostolului",
+      "pageNumber": 291,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Lauda noastră este aceasta: mărturia pe care ne-o dă conștiința noastră că ne-am purtat în lume, şi mai ales faţă de voi, cu o sfinţenie şi curăţie de inimă date de Dumnezeu, bizuindu-ne nu pe o înţelepciune lumească, ci pe harul lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Nu vă scriem altceva decât ceea ce citiţi şi înțelegeţi, și sper că veţi înțelege până la sfârșit,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3după cum aţi şi înțeles în parte, că noi suntem lauda voastră, după cum şi voi veţi fi lauda noastră în ziua Domnului Isus. 4 Cu această încredinţare voiam să vin întâi la voi, ca să aveţi al doilea beneficiu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Voiam să trec pe la voi ca să merg în Macedonia; apoi din Macedonia să mă întorc la voi şi să fiu petrecut de voi în Iudeea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Când am luat eu hotărârea aceasta, am luat-o în mod nestatornic? Sau hotărârile mele sunt nişte hotărâri pe care le iau în felul lumii, ca să fie în mine „Da, da” şi „Nu, nu”?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Credincios este Dumnezeu că vorbirea noastră faţă de voi n-a fost şi „da”, şi „nu”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Căci Fiul lui Dumnezeu, Isus Cristos, care a fost predicat de noi în mijlocul vostru, prin mine, prin Silvan şi prin Timotei, n-a fost „da” şi „nu”, ci în el nu este decât „da”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9În adevăr, promisiunile lui Dumnezeu, oricâte ar fi ele, toate în el sunt „da”; de aceea şi „Amin” pe care-l spunem noi, prin el, este spre gloria lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Cel ce ne întăreşte împreună cu voi, în Cristos, şi care ne-a uns este Dumnezeu,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11care ne-a şi sigilat şi ne-a dat în inimă Duhul său ca garanție.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-3",
+      "number": 3,
+      "reference": "1:23",
+      "title": "Motivul amânării venirii",
+      "pageNumber": 291,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Iau pe Dumnezeu martor pentru sufletul meu că n-am mai venit până acum la Corint tocmai ca să vă cruţ.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Nu că am avea stăpânire peste credinţa voastră, dar vrem să lucrăm şi noi împreună la bucuria voastră, căci staţi tari în credinţă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Am hotărât dar, eu personal, să nu mă întorc la voi cu întristare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci, dacă vă întristez, de la cine să mă aştept la bucurie, dacă nu de la cel întristat de mine?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Şi v-am scris cum v-am scris, ca la venirea mea, să n-am întristare din partea celor ce trebuiau să-mi facă bucurie şi sunt încredinţat, cu privire la voi toţi, că bucuria mea este bucuria voastră a tuturor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6V-am scris cu multă mâhnire şi strângere de inimă, cu ochii scăldaţi în lacrimi, nu ca să vă întristaţi, ci ca să vedeţi dragostea nespus de mare pe care o am faţă de voi.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-4",
+      "number": 4,
+      "reference": "2:5",
+      "title": "Iertarea celui pedepsit",
+      "pageNumber": 292,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Iar dacă cineva a cauzat întristare, nu m-a întristat numai pe mine, ci pe voi toţi; cel puţin în parte, ca să nu spun prea mult.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Este destul pentru omul acesta pedeapsa care i-a fost dată de cei mai mulţi;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3aşa că acum - pe de altă parte - este mai bine să-l iertaţi şi să-l mângâiaţi, ca să nu fie copleșit de prea multă întristare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4De aceea, vă implor să vă arătaţi iarăşi dragostea faţă de el.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Căci v-am scris şi cu gândul de a vă pune la încercare ca să văd dacă sunteţi ascultători în totul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Dar pe cine iertaţi voi, îl iert şi eu. În adevăr, ce am iertat eu – dacă am iertat ceva – am iertat pentru voi, în faţa lui Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7pentru ca Satana să nu aibă un câştig de la noi, căci nu suntem ignoranți în ce privește planurile lui. 8 Când am ajuns la Troa pentru Evanghelia lui Cristos, măcar că mi s-a deschis acolo o uşă în Domnul,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9n-am avut linişte în duhul meu, fiindcă n-am găsit pe fratele meu Tit, de aceea mi-am luat rămas bun de la fraţi şi am plecat în Macedonia.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-5",
+      "number": 5,
+      "reference": "2:14",
+      "title": "Slujba apostolului",
+      "pageNumber": 292,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Mulţumiri fie aduse lui Dumnezeu, care ne conduce întotdeauna la victorie în Cristos, şi care răspândeşte prin noi aroma dulce a cunoştinţei lui în toate locurile.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci noi suntem aroma dulce a lui Cristos, înaintea lui Dumnezeu, printre cei care sunt pe calea mântuirii şi printre cei care sunt pe calea pierzării: 3 pentru aceştia, un miros greu, de la moarte spre moarte; pentru aceia, o aromă dulce de la viaţă spre viaţă. Şi cine este capabil să facă aceste lucruri?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci noi nu comercializăm Cuvântul lui Dumnezeu, cum fac mulţi, ci vorbim cu inimă curată, din partea lui Dumnezeu, înaintea lui Dumnezeu, în Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Destoinicia apostolului",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Începem noi din nou să ne recomandăm pe noi înșine? Sau nu cumva avem nevoie, ca unii, de scrisori de laudă către voi sau de la voi?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Voi sunteţi scrisoarea noastră, scrisă în inimile noastre, cunoscută şi citită de toţi oamenii,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7voi fiind prezentaţi ca fiind scrisoarea lui Cristos, voi fiind slujiți de noi, ca slujitori ai lui, însă nu cu cerneală, ci cu Duhul",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Dumnezeului celui viu; nu pe table de piatră, ci pe table care sunt inimi de carne.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Avem încrederea aceasta în Dumnezeu, prin Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Nu că noi, am avea autoritatea să considerăm ceva ca venind de la noi; capacitatea noastră, dimpotrivă, vine de la Dumnezeu,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10care ne-a şi făcut în stare să fim slujitori ai unui legământ nou, nu al literei, ci al Duhului. Căci litera ucide, dar Duhul dă viaţă.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-6",
+      "number": 6,
+      "reference": "3:7",
+      "title": "Legământul cel nou şi cel vechi",
+      "pageNumber": 293,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Dar dacă slujba aducătoare de moarte, scrisă prin îngravare pe pietre, s-a arătat glorioasă, fiii lui Israel neputând să-şi fixeze ochii asupra feţei lui Moise din cauza strălucirii feţei lui, cu toate că strălucirea aceasta era trecătoare,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2cum n-ar avea mai multă glorie slujba Duhului?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Dacă slujba aducătoare de condamnare a fost glorificată, slujba aducătoare de îndreptățire o întrece cu mult mai mult în glorie.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Şi în privinţa aceasta, putem spune că ceea ce a fost glorificat - prin comparare cu adevărata glorie, care o depășește - nici n-a fost glorificat.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Căci dacă, ce era trecător era glorios, cu cât mai mult va fi glorios ce este netrecător! 6 Fiindcă avem dar o astfel de speranță, noi lucrăm cu multă îndrăzneală în vorbire,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7şi nu facem ca Moise care îşi punea un văl peste faţă, pentru ca fii lui Israel să nu-şi fixeze ochii la sfârşitul a ceea ce era trecător.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Dar gândirea lor a rămas insensibilă, căci până astăzi, la citirea Vechiului Testament, acest văl rămâne neridicat, fiindcă vălul este înlăturat în Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Da, până astăzi, când se citeşte Moise, rămâne un văl peste inimile lor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Dar ori de câte ori vreunul se întoarce la Domnul, vălul este luat.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Căci Domnul este Duhul, şi unde este Duhul Domnului, acolo este libertate.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Noi toţi cu faţa neacoperită, privim la gloria Domnului ca într-o oglindă, şi suntem schimbaţi în aceeași imagine a lui, din glorie în glorie, prin Duhul Domnului.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-7",
+      "number": 7,
+      "reference": "4:1",
+      "title": "Predicarea Evangheliei",
+      "pageNumber": 293,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1De aceea, fiindcă avem slujba acesta, după îndurarea pe care am primit-o, noi nu cădem de oboseală.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Ci am renunțat la lucrurile ruşinoase şi ascunse, și nu umblăm cu vicleşug şi nu predicăm Cuvântul lui Dumnezeu în mod înșelător, ci prin arătarea adevărului ne recomandăm noi înșine fiecărei conștiințe omenești, înaintea lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Şi dacă Evanghelia noastră este acoperită, este acoperită pentru cei ce sunt pe calea cea rea,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4a căror minte necredincioasă a orbit-o dumnezeul lumii acesteia, ca lumina Evangheliei gloriei lui Cristos, care este imaginea lui Dumnezeu, să nu fie văzută de ei.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Căci noi nu ne predicăm pe noi înşine, ci pe Cristos Isus, Domnul, noi fiind servitorii voştri, pentru Isus,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6cunoscând că Dumnezeu, care a zis: „Să lumineze lumina din întuneric”, ne-a luminat inimile, ca să ne dea lumina cunoştinţei gloriei lui Dumnezeu, pe faţa lui Isus Cristos.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-8",
+      "number": 8,
+      "reference": "4:7",
+      "title": "Greutăţile slujbei",
+      "pageNumber": 294,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Comoara aceasta o avem în vase de lut, pentru ca măreția extraordinară a puterii să fie de la Dumnezeu, şi nu de la noi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Suntem presaţi din toate părțile, dar nu la zdrobiți; nedumeriți, dar nu fără speranță;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3urmăriţi, dar nu părăsiţi; trântiţi jos, dar nu uciși;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4purtăm întotdeauna, în trup, omorârea Domnului Isus, pentru ca viaţa lui Isus să se arate în trupul nostru.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Căci noi cei care trăim suntem întotdeauna daţi la moarte din cauza lui Isus, pentru ca şi viaţa lui Isus să se arate în trupul nostru muritor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Astfel că în noi lucrează moartea, iar în voi, viaţa.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Însă fiindcă avem acelaşi duh de credinţă, potrivit cu ceea ce este scris: „Am crezut, de aceea am vorbit!” şi noi credem şi de aceea vorbim.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Şi ştim că cel ce a înviat pe Domnul Isus ne va învia şi pe noi împreună cu Isus şi ne va face să ne prezentăm împreună cu voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Căci toate aceste lucruri se petrec în folosul vostru, pentru ca harul, multiplicat prin cei mulţi care l-au primit, să producă multă mulţumire, spre gloria lui Dumnezeu.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-9",
+      "number": 9,
+      "reference": "4:16",
+      "title": "Trupul pământesc și trupul ceresc",
+      "pageNumber": 294,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1De aceea, noi nu disperăm, ci chiar dacă ființa noastră exterioară trece, totuşi ființa noastră interioară se înnoieşte din zi în zi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci întristările noastre uşoare, momentane, ne vor aduce tot mai mult o mare glorie veșnică,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3deoarece noi nu privim la lucrurile care se văd, ci la cele care nu se văd. Căci lucrurile care se văd sunt temporare, iar cele care nu se văd sunt veşnice.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci noi știm, că dacă se desface casa pământească a cortului nostru trupesc, avem în cer o clădire de la Dumnezeu, o casă cerească, eternă, nefăcută de mână.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Şi gemem în cortul acesta, dorind foarte mult să ne îmbrăcăm peste el, cu locaşul nostru ceresc,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6dacă cu adevărat atunci când vom fi îmbrăcaţi nu vom fi găsiţi dezbrăcaţi de el.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Căci într-adevăr noi care suntem în cortul acesta, fiind împovărați, suspinăm greu, nu că dorim să fim dezbrăcaţi de trupul acesta, ci să fim îmbrăcaţi cu trupul celălalt peste acesta, pentru ca ce este muritor în noi să fie înghiţit de viaţă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Şi cel ce ne-a făcut pentru aceasta este Dumnezeu, care ne-a și dat garanția Duhului. 9 Aşadar noi întotdeauna suntem încrezători, căci ştim că, dacă suntem acasă în trup, pribegim departe de Domnul,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10pentru că umblăm prin credinţă, nu prin vedere.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Da, suntem curajoși, şi mai degrabă dorim să părăsim trupul, ca să fim acasă cu Domnul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12De aceea - fie că suntem acasă, fie că suntem departe de casă - scopul nostru este să-i fim plăcuţi lui.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Căci toţi trebuie să ne prezentăm înaintea scaunului de judecată al lui Cristos, pentru ca fiecare să-şi primească ceea ce merită, după binele sau răul pe care la făcut, pe când trăia în trup.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-10",
+      "number": 10,
+      "reference": "5:11",
+      "title": "Făptura cea nouă",
+      "pageNumber": 295,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Cunoscând astfel frica de Domnul, căutăm să-i convingem pe oameni, iar Dumnezeu, ne cunoaşte bine şi sper că şi voi, în cugetele voastre, ne cunoaşteţi bine.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Noi nu ne recomandăm iarăşi înaintea voastră, ci vă dăm ocazia să vă lăudați voi cu noi, ca să aveţi cu ce răspunde celor care se laudă cu înfăţişarea, şi nu cu inima.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3În adevăr, dacă ne-am ieşit din minţi, pentru Dumnezeu ne-am ieşit. Sau dacă suntem întregi la minte, pentru voi suntem.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci dragostea lui Cristos ne obligă, fiindcă socotim așa: dacă unul singur a murit pentru toţi, toţi deci au murit.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5El a murit pentru toţi, pentru ca cei ce trăiesc să nu mai trăiască pentru ei înşişi, ci pentru cel ce a murit şi a înviat pentru ei. 6 Aşa că, nu mai cunoaştem pe nimeni în mod firesc, de acum înainte. Și chiar dacă am cunoscut pe Cristos în mod firesc, totuşi acum nu-l mai cunoaştem în modul acesta.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Deci, dacă este cineva în Cristos, este o ființă nouă. Cele vechi s-au dus. Iată că toate lucrurile s-au făcut noi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Şi toate lucrurile acestea sunt de la Dumnezeu, care ne-a împăcat cu el prin Isus Cristos şi ne-a încredinţat slujba împăcării;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9că adică, Dumnezeu era în Cristos, împăcând lumea cu sine, neţinând cont de păcatele lor şi ne-a încredinţat nouă mesajul împăcării.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10 Noi dar, suntem ambasadori ai lui Cristos; şi, ca şi cum Dumnezeu ar îndemna prin noi, vă implorăm, în numele lui Cristos, să vă împăcaţi cu Dumnezeu!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Pe cel ce n-a cunoscut niciun păcat, el l-a făcut păcat pentru noi, ca noi, prin el, să devenim dreptatea lui Dumnezeu.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-11",
+      "number": 11,
+      "reference": "6:1",
+      "title": "Râvna lui Pavel pentru slujba lui",
+      "pageNumber": 295,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Deoarece lucrăm împreună cu Dumnezeu, insistăm să aveți grijă să nu cumva să fi primit harul lui Dumnezeu degeaba.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci el zice: „La vremea potrivită, te-am ascultat; în ziua mântuirii, te-am ajutat. Iată că acum este vremea potrivită; iată că acum este ziua mântuirii.”",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Noi nu oferim nimănui nici o ocazie de poticnire, pentru ca slujba noastră să nu fie defăimată,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4ci, în toate privinţele, ne recomandăm ca servitori ai lui Dumnezeu: prin multă răbdare, în necazuri, în nevoi, în strâmtorări,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5în bătăi, în temniţe, în răscoale, în osteneli, în vegheri, în posturi;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6prin curăţie, prin cunoștință, prin perseverență, prin bunătate, prin Duhul Sfânt, printr-o dragoste sinceră,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7prin cuvântul adevărului, prin puterea lui Dumnezeu, prin armura dreptății pe mâna dreaptă și pe cea stângă;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8în glorie şi în dispreț, în vorbire de rău şi în vorbire de bine, ca nişte înşelători, măcar că suntem cinstiți; 9. ca nişte necunoscuţi, măcar că suntem bine cunoscuţi; ca unii care murim şi iată că trăim; ca nişte pedepsiţi, măcar că nu suntem omorâţi;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10ca nişte întristaţi şi totdeauna suntem veseli; ca nişte săraci, şi totuşi îmbogăţim pe mulţi; ca neavând nimic, şi totuşi posedând toate lucrurile.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Ni s-a deschis gura faţă de voi, corintenilor! Ni s-a lărgit inima.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Voi nu sunteți restricționați de noi, dar noi suntem restricționați de propriile voastre afecțiuni.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Acum în schimb - vă vorbesc ca unor copii ai mei – deschideţi-vă inimile şi voi!",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-12",
+      "number": 12,
+      "reference": "6:14",
+      "title": "Credincioşii şi necredincioşii nu se pot asocia",
+      "pageNumber": 296,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Nu vă asociaţi într-un mod nepotrivit cu cei necredincioşi, căci ce părtășie poate exista între dreptate şi nedreptate? Sau ce uniune poate exista între lumină și întuneric?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Ce acord poate exista între Cristos şi Belial?* Sau ce parte are cel credincios cu cel necredincios?",
+          "noteRefs": [
+            185
+          ]
+        },
+        {
+          "type": "verse",
+          "text": "3Cum se împacă Templul lui Dumnezeu cu idolii? Căci voi sunteți templul Dumnezeului celui viu. Așa cum a zis Dumnezeu: „Eu voi locui şi voi umbla în mijlocul lor; eu voi fi Dumnezeul lor şi ei vor fi poporul meu”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4De aceea: „Ieşiţi din mijlocul lor şi despărţiţi-vă de ei, zice Domnul. Nu vă atingeţi de ce este necurat şi vă voi primi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Eu vă voi fi Tată, şi voi îmi veţi fi fii şi fiice, zice Domnul cel Atotputernic.”",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Deci, fiindcă avem astfel de promisiuni, preaiubiţilor, să ne curăţim de orice întinare a cărnii şi a duhului şi să completăm sfinţirea noastră până la sfârșit, în frică de Dumnezeu.",
+          "noteRefs": []
+        }
+      ],
+      "notes": [
+        {
+          "number": 185,
+          "text": "12:2 un alt termen de proveniență ebraică/aramaică pentru Satana"
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-13",
+      "number": 13,
+      "reference": "7:2",
+      "title": "Bucuria lui Pavel",
+      "pageNumber": 296,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Deschideți-vă inimile față de noi! N-am nedreptățit pe nimeni. N-am corupt pe nimeni. N-am profitat de nimeni.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Nu spun aceste lucruri ca să vă condamn, căci am spus mai înainte că sunteţi în inimile noastre pe viaţă şi pe moarte.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Am mare curaj de a vă vorbi. Am tot dreptul să mă laud cu voi. Sunt mângâiat din plin. Mă bucur foarte mult în toate necazurile noastre. 4 Căci şi după venirea noastră în Macedonia, trupul nostru n-a avut nicio odihnă, ci am fost loviți din toate părțile. Erau lupte din afară. Dinăuntru era temere.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Dar Dumnezeu, care mângâie pe cei smeriţi, ne-a mângâiat prin venirea lui Tit,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6și nu numai prin venirea lui, ci şi prin mângâierea cu care a fost mângâiat şi el de voi, căci el ne-a relatat despre dorinţa voastră arzătoare, despre lacrimile voastre, despre râvna voastră pentru mine, aşa că m-am bucurat şi mai mult.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Deși v-am întristat prin epistola mea, nu regret şi chiar dacă aș fi regretat – căci văd că epistola aceea v-a întristat, cel puțin pentru puţin timp –",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8totuşi acum mă bucur, nu pentru că aţi fost întristaţi, ci pentru că întristarea voastră v-a adus la pocăinţă. Căci aţi fost întristaţi după voia lui Dumnezeu, ca să n-aveţi nicio pierdere din cauza noastră.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Căci întristarea după voia lui Dumnezeu, aduce pocăinţă, care duce la mântuire şi pe care nimeni nu o regretă niciodată, pe când întristarea lumii aduce moartea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Căci uite tocmai întristarea aceasta a voastră după voia lui Dumnezeu ce frământare a trezit în voi! Şi ce cuvinte de dezvinovăţire! Ce mânie! Ce frică! Ce dorinţă aprinsă! Ce zel! Ce răzbunare față de rău! În toate voi aţi arătat că sunteţi curaţi în privinţa aceasta.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Aşa că, dacă v-am scris, nu v-am scris nici din cauza celui care a făcut nedreptatea, nici din cauza celui ce a suferit nedreptatea, ci ca să se arate marea noastră purtare de grijă pentru voi înaintea lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12De aceea am fost mângâiaţi. Dar, pe lângă mângâierea aceasta a noastră, ne-am bucurat şi mai mult de bucuria lui Tit, al cărui duh a fost înviorat de voi toţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Şi dacă m-am lăudat puţin cu voi înaintea lui, n-am fost dat de ruşine. Ci, după cum în orice lucru v-am spus adevărul, tot aşa şi lauda noastră cu voi înaintea lui Tit s-a adeverit.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14El are o şi mai mare dragoste pentru voi, când îşi aduce aminte de ascultarea voastră a tuturor şi de primirea pe care i-aţi făcut-o, cu frică şi cutremur.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15Mă bucur că pot avea încredere în voi în toate privinţele.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-14",
+      "number": 14,
+      "reference": "8:1",
+      "title": "Dărnicia macedonenilor",
+      "pageNumber": 297,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Mai mult fraţilor, vă facem cunoscut harul pe care l-a dat Dumnezeu în adunările Macedoniei,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2cum în necazurile mari prin care au trecut, bucuria lor peste măsură de mare şi sărăcia lor lucie, au dus la un belşug de dărnicie din partea lor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Da, vă mărturisesc că au dat de bunăvoie, după puterea lor şi chiar peste puterea lor,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4rugându-ne stăruitor să primim acest har, şi părtăşia la acest serviciu pentru sfinţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5A fost mai mult decât ne-am așteptat noi, căci s-au dat mai întâi pe ei înşişi Domnului, şi apoi nouă, prin voia lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Noi dar, am rugat pe Tit, ca așa după cum a făcut mai înainte, să finalizeze această strângere de ajutoare pe care o începuse.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7După cum sporiţi în toate lucrurile: în credinţă, în cuvânt, în cunoştinţă, în orice zel, şi în dragostea voastră pentru noi, încercaţi să sporiţi şi în această binefacere. 8 Nu spun lucrul acesta ca să vă dau o poruncă, ci prin râvna altora, pun la încercare curăţia dragostei voastre.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Căci cunoaşteţi harul Domnului nostru Isus Cristos, căci el, deși era bogat, s-a făcut",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "sărac pentru voi, pentru ca, prin sărăcia lui, voi să deveniți bogaţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10În această privinţă vă dau un sfat; este folositor pentru voi, care, acum un an, aţi început primii nu numai să faceţi, ci să şi voiţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Terminaţi dar acum ce ați început, pentru ca, după voinţă să fie şi ducerea la bun sfârșit, potrivit cu mijloacele voastre.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Pentru că, dacă este bunăvoinţă, darul este primit, avându-se în vedere ce are cineva, nu ce n-are.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Aici nu este vorba ca alţii să fie uşuraţi, iar voi strâmtoraţi,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14 ci este vorba de o potrivire: în împrejurarea de acum, surplusul vostru să acopere nevoile lor, pentru ca şi surplusul lor să acopere, la rândul lui, nevoile voastre, aşa ca să fie o potrivire,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15după cum este scris: „Cel ce strânsese mult n-avea nimic de prisos, şi cel ce strânsese puţin nu ducea lipsă”.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-15",
+      "number": 15,
+      "reference": "8:16",
+      "title": "A doua trimitere a lui Tit",
+      "pageNumber": 298,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Mulţumiri fie aduse lui Dumnezeu, care a pus în inima lui Tit aceeaşi grijă față de voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci el a primit îndemnul nostru, ba încă, condus de o grijă arzătoare, a pornit de bunăvoie spre voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Am trimis cu el şi pe fratele a cărui laudă în Evanghelie este cunoscută în toate adunările.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Mai mult, el a fost ales de adunări să călătorească împreună cu noi în această lucrare de binefacere, pe care o îndeplinim spre gloria Domnului însuși, şi ca o dovadă a bunăvoinţei noastre.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5În felul acesta, noi căutăm să evităm posibila defăimare a noastră din cauza acestui acest belşug de ajutoare, de care îngrijim,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6deoarece noi căutăm să lucrăm cinstit nu numai înaintea Domnului, ci şi înaintea oamenilor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Am trimis cu ei pe fratele nostru, a cărui râvnă am încercat-o de atâtea ori în multe împrejurări şi care, de data aceasta, arată și mai multă râvnă din cauza marii lui încrederi în voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Cât despre Tit, el este partenerul şi tovarăşul meu de lucru în mijlocul vostru. Ceilalți fraţi ai noştri, sunt trimişii adunărilor, gloria lui Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9De aceea arătați-le în fața adunărilor dovada dragostei voastre şi a faptului că putem să ne lăudăm cu voi.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-16",
+      "number": 16,
+      "reference": "9:1",
+      "title": "Răsplata dărniciei",
+      "pageNumber": 298,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Într-adevăr nu este necesar să vă mai scriu cu privire la strângerea de ajutoare pentru sfinţi,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2căci cunosc, bunăvoinţa voastră, cu care mă laud către macedoneni şi le spun că Ahaia este gata de anul trecut. Zelul vostru a încurajat pe mulţi din ei.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Am trimis totuşi pe fraţi, pentru ca lauda noastră cu voi în această privință să nu fie în zadar, ci să fiţi gata, cum am spus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4ca nu cumva dacă va veni cineva din Macedonia cu mine şi nu vă vor găsi pregătiți, n-aş vrea ca noi, ca să nu zicem nimic de voi, să fim dezamăgiți în încrederea aceasta.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5De aceea, am considerat necesar să rog pe fraţi să vină mai dinainte la voi şi să pregătească strângerea darurilor promise de voi, ca ele să fie gata, făcute cu generozitate, nu cu zgârcenie.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Amintiți-vă acest lucru: cine seamănă puţin, puţin va secera. Iar cel care seamănă mult, mult va secera.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Fiecare să dea după cum a hotărât în inima lui: nu cu părere de rău sau de obligație, căci „Dumnezeu iubeşte pe dătătorul voios”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Şi Dumnezeu poate să vă dea orice har, pentru ca, având întotdeauna suficient din toate lucrurile, să puteți împlini orice faptă bună.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9După cum este scris: „A împrăştiat, a dat săracilor, dreptatea lui rămâne în veac”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Fie ca cel ce dă sămânţă semănătorului şi pâine pentru hrană, să vă dea şi să vă înmulţească şi vouă sămânţa de semănat şi să înmulțească roadele corectitudinii voastre;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11astfel voi veţi fi îmbogăţiţi în toate privinţele, pentru toată generozitatea, care va produce mulțumiri lui Dumnezeu, prin noi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Căci această dărnicie, îndeplinită de voi, nu numai că satisface nevoile sfinţilor, dar este şi cauza multor mulţumiri aduse lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Aşa că dovada dată de voi, prin ajutorul acesta, îi face să laude pe Dumnezeu, pentru ascultarea pe care dovediţi că o aveţi faţă de Evanghelia lui Cristos şi pentru generozitatea ajutorului vostru faţă de ei şi faţă de toţi,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14şi-i face să se roage pentru voi şi să vă iubească din inimă, pentru harul nespus de mare al lui Dumnezeu faţă de voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15Mulţumiri fie aduse lui Dumnezeu pentru darul lui nespus de mare!",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-17",
+      "number": 17,
+      "reference": "10:1",
+      "title": "Pavel îşi apără slujba lui",
+      "pageNumber": 299,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1. Eu, Pavel, vă rog, prin smerenia şi bunătatea lui Cristos – eu, cel „smerit când sunt de faţă în mijlocul vostru şi curajos împotriva voastră când sunt departe” –",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2vă rog, dar, să nu mă determinați ca, atunci când voi fi de faţă, să-mi arăt cu hotărâre îndrăzneala aceea pe care gândesc că o voi folosi împotriva unora, care îşi imaginează că noi suntem conduși de natura omenească.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Cu toate că trăim în natura omenească, totuşi nu luptăm călăuziţi de natura omenească.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci armele noastre de luptă nu sunt de natură omenească, ci sunt puternice, înaintea lui Dumnezeu, ca să demoleze întăriturile.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Noi răsturnăm imaginațiile, şi orice înălţime care se ridică împotriva cunoştinţei de Dumnezeu, şi orice gând îl facem captiv ascultării de Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6fiind gata să pedepsim orice neascultare, îndată ce va exista ascultare din partea voastră. 7 Priviți la lucruri doar asa cum apar ele în fața voastră? Dacă cineva se încrede în sine că el este al lui Cristos, trebuie să țină cont că, după cum el este al lui Cristos, tot aşa suntem şi noi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Şi chiar dacă m-aş lăuda ceva mai mult cu autoritatea pe care mi-a dat-o Domnul spre edificarea voastră, iar nu spre distrugerea voastră, tot nu mi-ar fi ruşine",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Nu vreau să se pară că vreau să vă înfricoşez prin epistolele mele.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10„Căci”, zic ei, „epistolele lui sunt cu greutate şi pline de putere, dar prezența sa trupească este moale, iar vorbirea lui este disprețuită”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11O asemenea persoană trebuie să țină cont că, aşa cum suntem în cuvintele epistolelor noastre, când nu suntem de faţă, tot aşa vom fi şi în faptă, când vom fi de faţă!",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-18",
+      "number": 18,
+      "reference": "10:12",
+      "title": "Pavel şi împotrivitorii lui",
+      "pageNumber": 300,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Căci noi n-avem îndrăzneala să ne numărăm, sau să ne comparăm, cu cei care se laudă singuri. Dar ei, prin faptul că se măsoară cu ei înşişi şi se pun alături, ei cu ei înşişi, sunt fără pricepere.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Noi însă nu ne vom lăuda dincolo de zona noastră, ci în măsura limitelor pe care le-a însemnat Dumnezeu zonei noastre, care vă include și pe voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Căci noi nu ne întindem prea mult, ca și cum n-am fi ajuns până la voi. Deoarece noi am ajuns până la voi cu Evanghelia lui Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4fără să ne lăudăm dincolo de limitele noastre, cu munca altora, ci sperând că, dacă credinţa voastră creşte, câmpul nostru de lucru se va lărgi mult, prin voi, în sfera noastră de influență,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5ca să predicăm Evanghelia şi dincolo de zona voastră, fără să ne lăudăm cu lucruri făcute de-a gata de altcineva.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Ci „oricine se laudă să se laude în Domnul”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Pentru că nu cine se laudă singur va fi acceptat, ci acela pe care Domnul îl laudă.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-19",
+      "number": 19,
+      "reference": "11:1",
+      "title": "Apostolii mincinoşi",
+      "pageNumber": 300,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Doresc ca voi să acceptați din partea mea puţină nebunie! Haideți, acceptaţi-mă!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci sunt gelos pentru voi cu o gelozie după voia lui Dumnezeu, pentru că v-am promis în căsătorie unui bărbat, ca să vă prezint înaintea lui Cristos, ca pe o fecioară curată.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Dar mă tem ca, nu cumva, după cum şarpele a amăgit pe Eva cu vicleșugul lui, tot aşa şi gândirea voastră să se abată de la simplitatea şi puritatea care vin de la Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci, dacă vine cineva, să vă predice un alt Isus, pe care noi nu l-am predicat, sau dacă ar fi să primiţi un alt duh pe care nu l-aţi primit, sau o altă evanghelie, pe care n-aţi primit-o, voi permiteți acest lucru! 5 Eu însă consider că nu sunt nicidecum în urma apostolilor considerați ca fiind cei mai buni.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Chiar dacă sunt neîndemânatic în vorbire, nu sunt însă şi în cunoştinţă. Am arătat lucrul acesta printre voi, în tot felul şi în toate privinţele. 7 Sau am făcut un păcat smerindu-mă pe mine însumi ca să fiţi înălţaţi voi şi v-am vestit fără plată Evanghelia lui Dumnezeu?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Am despuiat alte adunări, primind de la ele o plată, ca să vă pot sluji vouă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Şi când eram la voi şi m-am găsit în nevoie, n-am fost sarcină nimănui, căci frații au îngrijit de nevoile mele, când au venit din Macedonia. În toate m-am ferit şi mă voi feri să vă îngreunez cu ceva.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Așa cum adevărul lui Cristos este în mine, nimeni nu mă va opri din această laudă în ţinuturile Ahaiei!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11De ce? Pentru că nu vă iubesc? Ştie Dumnezeu!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12 Dar lucrez şi voi continua să lucrez astfel, ca să nu dau ocazie celor care o caută, de a putea putea fi găsiţi deopotrivă cu noi în lucrurile cu care se laudă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Oamenii aceştia sunt nişte apostoli falşi, nişte lucrători înşelători, care se prefac în apostoli ai lui Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Şi nu este de mirare, căci chiar Satana se preface într-un înger de lumină.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15De aceea nu este mare lucru, dacă şi slujitorii lui se prefac în slujitori ai corectitudinii, a căror sfârşit lor va fi după faptele lor.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-20",
+      "number": 20,
+      "reference": "11:16",
+      "title": "Necazurile apostolului",
+      "pageNumber": 301,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Spun din nou: să nu mă creadă cineva fără minte. Sau dacă nu, acceptați-mă ca fiind fără minte, ca să mă laud şi eu puţin.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Ceea ce spun, în acest curaj de a mă lăuda, nu spun de la Domnul, ci ca şi cum aş spune din nebunie.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Deoarece mulţi se laudă sub impulsul naturii pământești, mă voi lăuda şi eu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Doar voi suferiţi cu plăcere pe nebuni, voi, care sunteţi înţelepţi!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Dacă vă face cineva sclavi, dacă vă devorează cineva, dacă vă ia cineva captivi, dacă vă priveşte cineva de sus, dacă vă lovește cineva peste față, suferiţi! 6 Spre ruşinea mea trebuie să spun, ne-am prezentat ca și cum am fi fost slabi! Totuşi în orice fel ar putea cineva să se prezinte - vorbesc în nebunie - pot şi eu să mă prezint.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Sunt ei evrei? Şi eu sunt! Sunt ei israelieni? Şi eu sunt! Sunt ei urmașii lui Avraam? Şi eu sunt!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Sunt ei servitorii lui Cristos? Vorbesc ca un ieşit din minţi; eu sunt şi mai mult. În osteneli şi mai mult; în temniţe şi mai mult; în lovituri, fără număr; adesea în pericol de moarte!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9De cinci ori am primit de la iudei patruzeci de lovituri minus una.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10De trei ori am fost bătut cu nuiele. O dată am fost lovit cu pietre. De trei ori a naufragiat corabia cu mine. O noapte şi o zi am fost în largul mării.*",
+          "noteRefs": [
+            186
+          ]
+        },
+        {
+          "type": "verse",
+          "text": "11Deseori, am fost în călătorii, în pericole pe râuri, în pericole din partea tâlharilor, în pericole din partea celor din neamul meu, în pericole din partea păgânilor, în pericole în orașe, în pericole în pustie, în pericole pe mare, în pericole între fraţi falşi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12În osteneli şi necazuri, în priveghiuri adesea, în foame şi sete, în posturi adesea, și în frig şi lipsă de îmbrăcăminte!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13 Pe lângă lucrurile din afară, în fiecare zi mă apasă grija pentru toate adunările.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Cine este slab şi să nu fiu şi eu slab? Cine cade în păcat şi eu să nu fiu profund interesat?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15Dacă trebuie să mă laud, mă voi lăuda numai cu aspectele privitoare la slăbiciunea mea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "16Dumnezeu şi Tatăl Domnului nostru Isus Cristos, care este binecuvântat în veci, ştie că nu mint.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "17În Damasc, guvernatorul regelui Areta păzea orașul, ca să mă aresteze.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "18Dar am fost coborât prin zid, pe o fereastră, într-un coș, şi am scăpat din mâinile lui.",
+          "noteRefs": []
+        }
+      ],
+      "notes": [
+        {
+          "number": 186,
+          "text": "20:10 posibil că au plutit în derivă"
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-21",
+      "number": 21,
+      "reference": "12:1",
+      "title": "Descoperirile lui Pavel",
+      "pageNumber": 302,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Fără îndoială că nu este folositor pentru mine să mă laud, însă voi recurge totuși la viziunile şi descoperirile Domnului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Cunosc un om în Cristos care, acum paisprezece ani, a fost răpit până în al treilea cer; dacă a fost în trup nu ştiu, dacă a fost în afara trupului, nu ştiu, Dumnezeu ştie.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Şi ştiu că omul acesta - dacă a fost în trup sau în afara trupului, nu ştiu – Dumnezeu ştie,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4a fost dus în Paradis şi a auzit cuvinte care nu se pot spune şi pe care nu-i este permis omului să le rostească.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Cu un astfel de om mă voi lăuda, dar, întrucât mă priveşte pe mine însumi, nu mă voi lăuda decât cu slăbiciunile mele.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Chiar dacă aş dori să mă laud, n-aş fi nebun, căci aș vorbi adevărul. Însă mă abțin, ca să n-aibă nimeni despre mine o părere mai înaltă decât ce vede în mine sau ce aude de la mine. 7 Din cauza marii și deosebitei străluciri a acestor descoperiri, ca eu să nu mă înalț pe mine în mod deosebit, mi-a fost pus un ţepuş în trup, un mesager al Satanei, care să mă tortureze, pentru a nu mă îngâmfa.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8De trei ori am rugat pe Domnul să-l îndepărteze de la mine.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Şi el mi-a zis: „Harul meu îţi este de ajuns, căci puterea mea este desăvârșită în slăbiciune”. Deci mă voi lăuda mult mai bucuros cu slăbiciunile mele, pentru ca puterea lui Cristos să se odihnească peste mine.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10De aceea simt plăcere în slăbiciuni, în nedreptăți, în nevoi, în persecuții, și în suferințe pentru Cristos, căci, când sunt slab, atunci sunt puternic.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-22",
+      "number": 22,
+      "reference": "12:11",
+      "title": "Slujba lui Pavel",
+      "pageNumber": 302,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Am ajuns nebun prin a mă lăuda, căci voi m-aţi obligat. Dar voi trebuia să mă lăudaţi, căci, măcar că nu sunt nimic, totuşi n-am fost cu nimic inferior în comparație cu aceşti apostoli aşa de deosebiți.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Într-adevăr semnele unui apostol au fost îndeplinite printre voi, cu toată tăria, prin semne, minuni, și lucrări mari.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Căci, prin ce aţi fost voi inferiori celorlalte adunări, afară doar că numai eu singur nu v-am fost o sarcină? O, iertaţi-mi nedreptatea aceasta!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Iată că sunt gata să vin a treia oară la voi, şi tot nu vă voi fi o sarcină, căci nu caut posesiunile voastre, ci pe voi înşivă; ce-i drept, nu copiii sunt datori să economisească pentru părinţii lor, ci părinţii pentru copii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Şi eu voi cheltui foarte bucuros din ale mele şi mă voi cheltui în totul şi pe mine însumi",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "pentru sufletele voastre. Dacă vă iubesc mai mult, sunt iubit cu atât mai puţin?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Fie şi-aşa! Nu v-am fost sarcină deloc. Dar, voi ați putea spune că eu fiind un om iscusit, v-am prins prin înșelăciune.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Am tras eu oare vreun folos de la voi prin vreunul din aceia pe care i-am trimis la voi?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Am rugat pe Tit să vină să vă vadă şi împreună cu el am trimis şi pe fratele – a cerut Tit ceva de la voi? N-am fost noi călăuziţi de acelaşi Duh? N-am călcat noi pe aceleaşi urme? 9 De multă vreme voi gândiți că noi dorim să ne scuzăm înaintea voastră! Noi vorbim înaintea lui Dumnezeu în Cristos şi toate aceste lucruri le spunem, preaiubiţilor, pentru edificarea voastră.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Fiindcă mă tem ca nu cumva, atunci când vin, să vă găsesc aşa cum n-aş vrea să vă găsesc, şi eu însumi să fiu găsit de voi aşa cum n-aţi vrea, în caz că voi găsi gâlceavă, invidie, mânii, dezbinări, vorbiri de rău, bârfeli, îngâmfări, tulburări,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11ca nu cumva, la venirea mea la voi, Dumnezeul meu să mă smerească față de voi, și să plâng pe mulţi din cei ce au păcătuit mai înainte şi nu s-au pocăit de necurăţia, curvia şi poftirea trupească pe care le-au comis.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-corinteni-23",
+      "number": 23,
+      "reference": "13:1",
+      "title": "Cele din urmă înştiinţări",
+      "pageNumber": 303,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Aceasta este a treia mea venire la voi. „Orice chestiune să fie sprijinită pe mărturia a doi sau trei martori.”",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Am prevenit mai dinainte, la a doua vizită, și previn din nou, în absență, și în avans, pe cei care au păcătuit înainte, și pe toți ceilalți, că dacă vin din nou, nu voi menaja,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3văzând că voi căutați o dovadă că prin mine vorbește Cristos, el care nu este slab, ci este puternic între voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci, el a fost răstignit prin slăbiciune, dar trăieşte totuși prin puterea lui Dumnezeu. Tot astfel, şi noi suntem slabi în el, dar totuși vom trăi cu el, din cauza puterii lui Dumnezeu, direcționată către voi. 5 Examinați-vă pe voi înşivă dacă sunteţi în credinţă. Testați-vă pe voi înşivă. Nu recunoaşteţi voi că Isus Cristos este în voi? Afară numai dacă sunteţi descalificaţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Dar sper că veţi recunoaşte că noi nu suntem descalificaţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Totuşi ne rugăm lui Dumnezeu să nu faceţi nimic rău; nu pentru ca să ne putem arăta noi înşine primiţi, ci ca să faceţi ceea ce este onorabil, chiar dacă noi părem a fi descalificaţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Căci noi nu putem face nimic împotriva adevărului, ci pentru adevăr.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Ne bucurăm când noi suntem slabi, iar voi sunteţi tari. Noi de asemenea ne rugăm pentru desăvârşirea voastră.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Tocmai de aceea vă scriu aceste lucruri când nu sunt de faţă, pentru ca, atunci când voi fi de faţă, să nu mă port cu asprime, potrivit cu puterea pe care mi-a dat-o Domnul pentru edificare, nu pentru distrugere.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Urări de sănătate",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11În încheiere fraţilor, fiţi sănătoşi, desăvârşiţi-vă, îmbărbătaţi-vă, aveți aceeași gândire, trăiţi în pace şi Dumnezeul dragostei şi al păcii va fi cu voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Salutați-vă unii pe alții, cu o sărutare sfântă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Toţi sfinţii vă trimit sănătate.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Harul Domnului Isus Cristos, dragostea lui Dumnezeu, şi împărtăşirea Sfântului Duh să fie cu voi cu toţi! Amin.",
+          "noteRefs": []
+        }
+      ]
+    }
+  ]
+}

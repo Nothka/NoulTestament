@@ -1,0 +1,598 @@
+{
+  "id": "filipeni",
+  "navTitle": "Filipeni",
+  "title": "Epistola către Filipeni",
+  "passages": [
+    {
+      "id": "filipeni-1",
+      "number": 1,
+      "reference": "1:1",
+      "title": "Urare",
+      "pageNumber": 318,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Pavel şi Timotei, servitori ai lui Isus Cristos, către toţi sfinţii în Cristos Isus care sunt în Filipi, inclusiv episcopii şi diaconii:",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Har vouă şi pace de la Dumnezeu, Tatăl nostru, şi de la Domnul Isus Cristos!",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Pavel și slujba lui",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Mulţumesc Dumnezeului meu oridecîteori îmi amintesc de voi,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4căci întotdeauna, în fiecare rugăciune a mea pentru voi toți, mă rog cu bucurie,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5pentru parteneriatul vostru în răspândirea Evangheliei, din cea dintâi zi până acum;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6fiind încredinţat de faptul că acela care a început în voi această bună lucrare o va continua până în ziua lui Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Este chiar corect să gândesc astfel despre voi toţi, fiindcă vă port în inima mea, întrucât, atât în lanţurile mele, cât şi în apărarea şi întărirea Evangheliei, voi sunteţi toţi părtaşi cu mine al aceluiaşi har.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Căci Dumnezeu este martor că vă iubesc pe toţi cu o afecțiune mare în Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Şi mă rog ca dragostea voastră să crească tot mai mult în cunoştinţă şi orice discernere,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10ca să deosebiţi lucrurile cele bune, și să fiţi astfel curați şi fără pată până în ziua venirii lui Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11plini de roadele dreptății, prin Isus Cristos, spre gloria şi lauda lui Dumnezeu.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "filipeni-2",
+      "number": 2,
+      "reference": "1:12",
+      "title": "Progresul Evangheliei",
+      "pageNumber": 319,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Doresc să știţi, fraţilor, că lucrurile care mi s-au întâmplat mie, au lucrat mai degrabă la progresul Evangheliei,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2așa încât a devenit evident pentru toată garda pretoriană, și pentru toți ceilalți, că sunt pus în lanţuri din cauza lui Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Şi cei mai mulţi din fraţii în Domnul, încurajaţi de lanţurile mele, au şi mai multă îndrăzneală să vestească fără frică cuvântul lui Dumnezeu. 4 Unii, este adevărat, predică pe Cristos din invidie şi din duh de ceartă, dar alţii din bunăvoinţă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Primii predică pe Cristos din ambiție egoistă, crezând că adaugă suferință la lanțurile mele;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6dar cei din urmă lucrează din dragoste, știind că eu sunt numit cu apărarea Evangheliei;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Ce contează? Oricum: fie de ochii lumii, fie din toată inima, Cristos este proclamat. Da, eu mă bucur de lucrul acesta şi mă voi bucura.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Căci ştiu că lucrul acesta se va întoarce spre mântuirea mea prin rugăciunile voastre şi prin ajutorul Duhului lui Isus Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9conform celor mai arzătoare așteptări și speranțe ale mele, că nu voi fi nicidecum dezamăgit, ci cu toată îndrăzneala, ca întotdeauna, Cristos va fi din nou glorificat în trupul meu, fie prin viață, fie prin moarte.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10 Căci, pentru mine, a trăi este Cristos, şi a muri este un câştig.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Dar, dacă trebuie să mai trăiesc în trup, aceasta va aduce roadă prin munca mea; așa că nu ştiu ce să aleg.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Sunt presat tare din două părţi; am dorința să mă mut şi să fiu împreună cu Cristos, căci ar fi cu mult mai bine.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Totuși, pentru voi, este mai necesar să rămân în trup.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Am această încredere şi ştiu că voi rămâne şi voi trăi cu voi toţi pentru progresul şi bucuria credinţei voastre,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15pentru ca, prin întoarcerea mea din nou la voi, să aveţi în mine un mare motiv de laudă în Isus Cristos.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "filipeni-3",
+      "number": 3,
+      "reference": "1:27",
+      "title": "Îndemnuri la unitate",
+      "pageNumber": 319,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Însă modul vostru de viață să fie demn de Evanghelia lui Cristos, pentru ca, fie că voi veni să vă văd, fie că voi fi absent, să",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "aud despre voi că rămâneţi fermi în acelaşi duh şi că luptaţi cu un suflet pentru credinţa Evangheliei,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2fără să vă lăsaţi înspăimântaţi de adversari; lucrul acesta este pentru ei o dovadă de distrugere, iar pentru voi de mântuire, şi aceasta este de la Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Căci, vouă vi s-a dat harul nu numai să credeţi în Cristos, ci să şi suferiţi pentru el,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4şi să duceţi aceeaşi luptă interioară pe care aţi văzut-o la mine, şi pe care auziţi că o duc şi acum.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Deci, dacă este vreo îndemnare în Cristos, dacă este vreo consolare a dragostei, dacă este vreo părtășie a Duhului, dacă este vreo milostivire şi vreo îndurare,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6faceţi-mi bucuria deplină şi aveţi aceeași gândire, aceeași dragoste, aceleași păreri, şi același gând;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7nu faceţi nimic din rivalitate sau prin înșelăciune, ci, în umilință fiecare să privească pe altul mai presus de el însuşi;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8fiecare din voi să urmărească nu doar foloasele lui, ci şi foloasele altora. 9 Să aveţi gândirea aceasta, care era şi în Cristos Isus;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10el, deși a fost ca Dumnezeu, totuşi n-a considerat egalitatea cu Dumnezeu ca o chestiune ordinară, ci s-a smerit, luând chip de servitor, și făcându-se asemenea oamenilor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12La înfăţişare a fost găsit ca un om, s-a smerit şi s-a făcut ascultător până la moarte, şi încă moarte de cruce.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13De aceea şi Dumnezeu l-a înălţat nespus de mult şi i-a dat numele care este mai presus de orice nume;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14pentru ca, în numele lui Isus, să se plece orice genunchi, al celor din ceruri, de pe pământ, şi de sub pământ,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15şi orice limbă să mărturisească că Isus Cristos este Domnul, spre gloria lui Dumnezeu Tatăl.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "filipeni-4",
+      "number": 4,
+      "reference": "2:12",
+      "title": "Mîntuirea mai presus de toate",
+      "pageNumber": 320,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Astfel dar, preaiubiţilor, după cum întotdeauna aţi fost ascultători, duceţi până la capăt mântuirea voastră, cu frică şi cutremur, nu numai când eu sunt prezent, ci cu mult mai mult acum, în absența mea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci cel ce lucrează în voi este Dumnezeu, care vă dă atât voința cât și înfăptuirea, spre plăcerea lui. 3 Faceţi toate lucrurile fără plângeri şi argumentări,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4ca să fiţi fără vină şi curaţi, copii ai lui Dumnezeu, fără defect, în mijlocul unui neam ticălos şi stricat, în care străluciţi ca nişte lumini în lume,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5ţinând sus cuvântul vieţii, aşa ca, în ziua lui Cristos, să mă pot lăuda că n-am alergat, nici nu m-am obosit fără rost.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "filipeni-5",
+      "number": 5,
+      "reference": "2:17",
+      "title": "Situația personală a apostolului",
+      "pageNumber": 320,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Şi chiar dacă va trebui să fiu turnat ca o jertfă de băutură peste jertfa şi slujba credinţei voastre, eu mă bucur, şi mă bucur cu voi toţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Tot aşa şi voi, bucuraţi-vă, şi bucuraţi-vă împreună cu mine.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Sper în Domnul Isus să vă trimit în curând pe Timotei, ca să fiu şi eu încurajat când o să am ştiri despre voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci n-am pe nimeni care să-mi împărtăşească simţirile ca el şi să se îngrijească într-adevăr de starea voastră.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Ce-i drept, toţi umblă după foloasele lor, şi nu după ale lui Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Voi știţi râvna pe care el a dovedit-o. Așa cum un copil îl slujește pe tatăl lui, el a lucrat ca un servitor împreună cu mine pentru progresul Evangheliei.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7De aceea sper să vi-l trimit, imediat ce voi vedea ce va fi cu mine.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Insă, mă încred în Domnul că în curând voi veni şi eu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Am considerat necesar să vă trimit pe Epafrodit, fratele şi tovarăşul meu de lucru, şi de luptă, trimisul şi slujitorul vostru pentru nevoile mele.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Căci dorea fierbinte să vă vadă pe toţi şi era foarte mâhnit pentru că ați aflat că a fost bolnav.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Într-adevăr, a fost bolnav şi foarte aproape de moarte, dar Dumnezeu a avut milă de el. Şi nu numai de el, ci şi de mine, ca să n-am întristare peste întristare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12L-am trimis dar, mai degrabă, ca să-l vedeţi şi să vă bucuraţi iarăşi, şi să fiu şi eu mai puţin întristat.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Primiţi-l deci în Domnul, cu toată bucuria şi apreciaţi pe astfel de oameni.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Căci pentru lucrul lui Cristos a fost el aproape de moarte şi şi-a pus viaţa în joc, ca să împlinească ce lipsea slujbei voastre pentru mine.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "filipeni-6",
+      "number": 6,
+      "reference": "3:1",
+      "title": "Pavel și tăierea împrejur",
+      "pageNumber": 321,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Mai departe, fraţii mei, bucuraţi-vă în Domnul! Mie nu-mi este greu să vă scriu mereu aceleaşi lucruri, iar pentru voi este util.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Păziţi-vă de câinii aceia; păziţi-vă de lucrătorii aceia răi; păziţi-vă de falsa circumcizie!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Căci noi suntem circumcizia, cei care ne închinăm lui Dumnezeu prin Duhul lui Dumnezeu, care ne bucurăm în Cristos Isus, şi care nu ne punem încrederea în trup,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4deși eu personal aş avea motiv de încredere chiar în aspectul trupesc. Dacă altul crede că se poate încrede în aspectul trupesc, eu şi mai mult;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5eu, care sunt tăiat împrejur a opta zi, din neamul lui Israel, din seminţia lui Beniamin, evreu din evrei; în ceea ce priveşte legea, fariseu;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6în ceea ce priveşte râvna, prigonitor al adunării; cu privire la îndreptățirea pe care o dă legea, nevinovat.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "filipeni-7",
+      "number": 7,
+      "reference": "3:7",
+      "title": "Întâietatea mântuirii aduse de Domnul Cristos",
+      "pageNumber": 321,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Însă acele lucruri care pentru mine erau câştig, eu le consider ca o pierdere din cauza lui Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Da, desigur, consider toate aceste lucruri ca o pierdere, comparativ cu importanța mult mai mare a cunoaşterii lui Cristos Isus, Domnul meu, pentru care am pierdut toate, şi le consider ca un gunoi, ca să câştig pe Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3şi să fiu găsit în el, nu având o îndreptățire a mea proprie, pe care mi-o dă legea, ci aceea care se primește prin credinţa în Cristos, îndreptățirea pe care o dă Dumnezeu prin credinţă,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4ca să-l cunosc pe el şi puterea învierii lui şi părtăşia cu suferinţele lui şi să mă fac asemenea cu el în moartea lui;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5ca să ajung cu orice preț, dacă voi putea, la învierea din morţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Nu că am câştigat deja premiul, sau că am ajuns deja perfect, dar alerg înainte, căutând să-l apuc, deoarece şi eu am fost apucat de Cristos Isus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Fraţilor, eu nu mă consider că deja îl am, dar fac un singur lucru: uitând de cele ce sunt în urma mea şi alergând spre cele din față,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8înaintez spre ţel, care este premiul marii chemări a lui Dumnezeu, în Cristos Isus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9De aceea, noi toţi care suntem perfecţi să gândim la fel; şi, dacă în vreo privinţă sunteţi de altă părere, Dumnezeu vă va lumina şi în această privinţă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Dar în lucrurile în care am ajuns de aceeaşi părere, să umblăm după aceeași regulă, și să avem aceeași gândire.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Fraților, imitați-mă pe mine, şi urmați pe cei care se comportă după exemplul pe care-l aveţi în noi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Căci v-am spus de multe ori şi vă mai spun şi acum, plângând: sunt mulţi, care se comportă ca dușmani ai crucii lui Cristos;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13sfârşitul lor va fi pierzarea, zeul lor este pântecul, gloria lor este în ruşinea lor, şi se gândesc la lucrurile de pe pământ.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Dar cetăţenia noastră este în ceruri, de unde şi aşteptăm un Mântuitor, pe Domnul Isus Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15care va transforma trupul stării noastre smerite, ca să corespundă trupului gloriei sale, prin exercitarea puterii pe care o are de a-și supune toate lucrurile.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "filipeni-8",
+      "number": 8,
+      "reference": "4:1",
+      "title": "Învățături practice",
+      "pageNumber": 322,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1De aceea, preaiubiţii şi mult doriţii mei fraţi, bucuria şi cununa mea, rămâneţi astfel puternici în Domnul, preaiubiţilor!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Sfătuiesc pe Evodia şi sfătuiesc pe Sintichia să gîndească la fel în Domnul.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Şi pe tine, adevărat partener, te mai rog să vii în ajutorul femeilor acestora, care au lucrat împreună cu mine pentru Evanghelie, cu Clement şi cu ceilalţi tovarăşi de lucru ai mei, ale căror nume sunt scrise în cartea vieţii. 4 Bucuraţi-vă totdeauna în Domnul! Spun din nou: Bucuraţi-vă!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Blândeţea voastră să fie cunoscută de toţi oamenii. Domnul este aproape.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Nu vă îngrijoraţi de nimic, ci, în orice lucru, aduceţi cererile voastre la cunoştinţa lui Dumnezeu, prin rugăciuni şi cereri, cu mulţumiri.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Şi pacea lui Dumnezeu, care întrece orice pricepere, vă va păzi inimile şi gândurile în Cristos Isus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Mai departe fraţii mei, tot ce este adevărat, tot ce merită să fie cinstit, tot ce este drept, tot ce este curat, tot ce este vrednic de iubit, tot ce este vrednic de primit, orice faptă bună şi orice laudă, aceea să vă stimuleze.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Faceți ceea ce ați învăţat, ce aţi primit, ce ați auzit, şi ce aţi văzut în mine, și Dumnezeul păcii va fi cu voi.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "filipeni-9",
+      "number": 9,
+      "reference": "4:10",
+      "title": "Recunoaștere pentru darurile trimise",
+      "pageNumber": 323,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Am avut o mare bucurie în Domnul, că, în cele din urmă, aţi putut să vă reînnoiți sentimentele voastre faţă de mine. Vă gândeaţi voi la aşa ceva, dar vă lipsea ocazia.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Nu zic lucrul acesta având în vedere nevoile mele; căci m-am deprins să fiu mulţumit cu starea în care mă găsesc.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Ştiu să trăiesc smerit şi ştiu să trăiesc în belşug. În toate situațiile m-am deprins să fiu atât sătul, cât şi flămând, atât în belşug, cât şi în lipsă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Pot face toate lucrurile prin Cristos, care mă întăreşte.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Dar bine aţi făcut că aţi luat parte la nevoia mea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Ştiţi voi înşivă, filipenilor, că, la începutul Evangheliei, când am plecat din Macedonia, nicio adunare n-a avut legătură cu mine în ceea ce priveşte darea şi primirea, ci doar voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Căci mi-aţi trimis în Tesalonic, o dată şi chiar de două ori, ceva pentru nevoia mea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Nu că umblu după daruri. Dimpotrivă, umblu după roada care să vă rămână vouă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Am de toate şi sunt în belşug. Sunt bogat de când am primit prin Epafrodit ce mi-aţi trimis, o aromă plăcut mirositoare, un sacrificiu bine primit şi plăcut lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Şi Dumnezeul meu să îngrijească de toate nevoile voastre după bogăţia sa, în glorie, în Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Încheiere",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11A lui Dumnezeu şi Tatăl nostru să fie gloria în vecii vecilor! Amin.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Salutați pe fiecare sfânt în Cristos Isus. Fraţii care sunt cu mine vă trimit sănătate.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Toţi sfinţii vă trimit sănătate, mai ales cei din casa Cezarului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Harul Domnului Isus Cristos să fie cu voi cu toţi! Amin.",
+          "noteRefs": []
+        }
+      ]
+    }
+  ]
+}

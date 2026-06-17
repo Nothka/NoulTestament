@@ -1,0 +1,648 @@
+{
+  "id": "1-petru",
+  "navTitle": "1 Petru",
+  "title": "Epistola 1 Petru",
+  "passages": [
+    {
+      "id": "1-petru-1",
+      "number": 1,
+      "reference": "1:1",
+      "title": "Urare",
+      "pageNumber": 370,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Petru, apostol al lui Isus Cristos, către aleşii care trăiesc ca străini în Diaspora, prin Pont, Galatia, Capadocia, Asia şi Bitinia,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2conform preștiinței lui Dumnezeu Tatăl, prin sfinţirea lucrată de Duhul, spre ascultarea de Isus Cristos şi stropirea cu sângele său: Harul şi pacea să vă fie înmulţite!",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Mântuirea lui Dumnezeu",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Binecuvântat să fie Dumnezeu, Tatăl Domnului nostru Isus Cristos, care, prin mila sa cea mare, ne-a născut din nou, prin învierea lui Isus Cristos din morţi, pentru o speranță vie",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4şi o moştenire nepieritoare şi neîntinată, care nu se vestejește, păstrată în ceruri pentru voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Voi sunteţi păziţi de puterea lui Dumnezeu prin credinţă pentru mântuirea gata să fie arătată în perioada de apoi!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6În ea voi vă bucuraţi mult, măcar că acum, dacă trebuie, sunteţi întristaţi pentru puţin timp prin diferite încercări,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7pentru ca dovada credinţei voastre, cu mult mai scumpă decât aurul, care piere, şi care totuşi este încercat prin foc, să aibă ca urmare lauda, gloria şi cinstea, la descoperirea lui Isus Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8pe care voi îl iubiţi fără să-l fi văzut, credeţi în el fără să-l vedeţi şi vă bucuraţi cu o nespusă și strălucită bucurie,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9pentru că veţi dobândi, ca rezultat al credinţei voastre, mântuirea sufletelor voastre.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Profeții au căutat și au cercetat insistent această mântuire. Ei au profețit despre harul care vă va fi dat,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11și au căutat să afle pentru cine era acesta și care era timpul pe care îl indica Duhul lui Cristos care era în ei, și care prezicea suferințele lui Cristos și gloria care le va urma.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Lor le-a fost descoperit că nu pentru ei înşişi, ci pentru voi, spuneau ei aceste lucruri pe care vi le-au vestit cei ce v-au predicat Evanghelia prin Duhul Sfânt trimis din cer, lucruri la care chiar și îngerii doresc să privească.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-petru-2",
+      "number": 2,
+      "reference": "1:13",
+      "title": "Necesitatea ascultării de Dumnezeu",
+      "pageNumber": 370,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1De aceea pregătiți-vă gândirea pentru acțiune. Fiți veghetori, şi puneţi-vă toată speranța în harul, care vă va fi adus la arătarea lui Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Ca nişte copii ascultători, nu vă conformați poftelor din trecut, când nu aveați cunoştinţă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Ci, după cum cel ce v-a chemat este sfânt, fiţi şi voi sfinţi în toată comportarea voastră,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4deoarece este scris: „Fiţi sfinţi, căci eu sunt sfânt”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Şi dacă numiți Tată pe cel care judecă fără părtinire pe fiecare, după faptele lui, comportaţi-vă cu frică în timpul pribegiei voastre;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6căci ştiţi că nu cu lucruri pieritoare, cu argint sau cu aur, aţi fost răscumpăraţi din",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "felul deşert de vieţuire pe care l-ați moştenit de la părinţii voştri,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7ci cu sângele prețios al lui Cristos, care se aseamănă cu un miel fără defect şi fără pată.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8El într-adevăr a fost cunoscut mai înainte de întemeierea lumii şi a fost arătat la sfârşitul timpurilor pentru voi,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9care, prin el, sunteţi credincioşi în Dumnezeu, care l-a înviat din morţi şi i-a dat glorie, pentru ca credinţa şi speranța voastră să fie în Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Deoarece prin ascultarea de adevăr, voi v-aţi curăţit sufletele prin Duhul ca să aveţi o dragoste de fraţi neprefăcută, iubiţi-vă cu căldură unii pe alţii, din toată inima,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11fiindcă aţi fost născuţi din nou nu dintr-o sămânţă care poate putrezi, ci dintr-una care nu poate putrezi, prin Cuvântul lui Dumnezeu, care este viu şi care rămâne în veac.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12\"Căci orice făptură este ca iarba şi toată gloria ei, ca florile din iarbă. Iarba se usucă şi floarea cade jos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13dar cuvântul Domnului rămâne în veac\". Şi acesta este cuvântul Evangheliei care v-a fost vestit.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-petru-3",
+      "number": 3,
+      "reference": "2:1",
+      "title": "Viața trăită în acord cu alegerea",
+      "pageNumber": 371,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Daţi deci la o parte orice răutate, orice înşelăciune, ipocrizie, gelozie şi orice fel de calomnii!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Ca nişte copii nou-născuţi, să doriţi laptele duhovnicesc, cel curat, pentru ca prin el să puteţi creşte,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3dacă aţi gustat într-adevăr că Domnul este bun.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Veniţi la el, Piatra vie respinsă de oameni, dar aleasă şi preţioasă înaintea lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Iar voi, ca nişte pietre vii, sunteţi zidiţi ca o casă duhovnicească, pentru a fi o preoţie sfântă, ca să aduceţi jertfe spirituale plăcute lui Dumnezeu, prin Isus Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Căci în Scriptură este spus: „Iată, pun în Sion o Piatră, din capul unghiului, aleasă şi preţioasă! Oricine crede în el nu va fi făcut de ruşine.“",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Aşadar, cinstea este pentru voi, cei ce credeţi, dar pentru cei ce nu cred, „Piatra pe care au respins-o zidarii, a devenit Piatra din capul unghiului!“",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8şi o piatră de poticnire şi o stâncă de cădere.“ Ei se poticnesc pentru că n-au ascultat cuvântul fiind chiar rânduiţi pentru neascultare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Însă voi sunteţi o spiţă aleasă, o preoţie regală, un neam sfânt, un popor care este posesiunea lui Dumnezeu, ca să puteţi proclama faptele măreţe ale celui ce v-a chemat din întuneric la lumina sa minunată.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10În trecut voi nu eraţi un popor, dar acum sunteţi poporul lui Dumnezeu. În trecut nu ați primit îndurare, dar acum aţi primit-o.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Preaiubiţilor, vă îndemn, ca pe nişte străini şi peregrini, să vă abțineţi de la poftele carnale, care se luptă împotriva sufletului!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Să aveţi o comportare bună printre neamuri, pentru ca - deşi ei vă vorbesc de rău ca pe nişte răufăcători - totuşi, văzând faptele voastre bune, să-l glorifice pe Dumnezeu în ziua cercetării.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-petru-4",
+      "number": 4,
+      "reference": "2:13",
+      "title": "Supunerea față de autoritățile pământești",
+      "pageNumber": 372,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Fiţi supuşi oricărei stăpâniri omeneşti, din cauza Domnului: atât regelui, ca înalt conducător,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2cât şi guvernatorilor, ca unii care sunt trimişi de el să pedepsească pe făcătorii de rele şi să laude pe cei ce fac bine.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Căci voia lui Dumnezeu este ca, făcând ce este bine, să reduceți la tăcere pe oamenii ignoranți și nejudecați.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Comportaţi-vă ca nişte oameni liberi, fără să faceţi din libertatea aceasta un pretext al răutăţii, fiind ca nişte robi ai lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Cinstiţi pe toţi oamenii; iubiţi pe fraţi; temeţi-vă de Dumnezeu; daţi cinste regelui!",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Supunerea slujitorilor față de stăpâni",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Slugilor, fiţi supuse stăpânilor voştri cu tot respectul, nu numai celor ce sunt buni şi blânzi, ci şi celor dificili.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Căci este un lucru plăcut dacă cineva, pentru conștiința lui faţă de Dumnezeu, suferă întristare şi suferă pe nedrept.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8În adevăr, ce merit aveți dacă suferiţi cu răbdare să fiţi pălmuiţi când aţi făcut rău? Dar, dacă suferiţi cu răbdare, când aţi făcut ce este bine, lucrul acesta este plăcut lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Şi la aceasta aţi fost chemaţi, fiindcă şi Cristos a suferit pentru voi şi v-a lăsat un exemplu, ca să călcaţi pe urmele lui.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10El n-a făcut păcat,\"nici nu s-a găsit înșelăciune în gura lui.”",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Când era blestemat, nu răspundea cu blesteme. Când era chinuit, nu ameninţa, ci se supunea celui ce judecă corect.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12El a purtat păcatele noastre în trupul său pe lemn, pentru ca noi, fiind morţi faţă de păcate, să trăim pentru dreptate. Prin rănile lui aţi fost vindecaţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Căci eraţi ca nişte oi rătăcite; dar acum v-aţi întors la Păstorul şi Episcopul sufletelor voastre.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-petru-5",
+      "number": 5,
+      "reference": "3:1",
+      "title": "Relațiile dintre soți și soții",
+      "pageNumber": 372,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1La fel şi voi, soţiilor, supuneţi-vă soţilor voştri, astfel încât, chiar dacă unii dintre ei sunt neascultători față de cuvânt, să fie câştigaţi fără cuvânt, prin purtarea soţiilor lor,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2văzând felul vostru de viaţă curat şi respectuos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Frumuseţea voastră să nu constea în împodobirea exterioară prin împletirea părului, purtarea de bijuterii de aur, sau îmbrăcarea de haine scumpe,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4ci în omul ascuns al inimii, în caracterul nepieritor al unui duh blând şi liniştit, care este foarte preţios înaintea lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Căci astfel se împodobeau odinioară sfintele femei, care sperau în Dumnezeu, fiind supuse soţilor lor,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6precum Sara, care a ascultat de Avraam şi l-a numit „domn“. Fiicele ei aţi devenit voi, dacă faceţi binele şi nu vă este frică de nici o intimidare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7În același fel, voi soţilor, comportați-vă cu înţelepciune cu soțiile voastre, onorând femeia, ca pe un vas mai slab, căci și ele vor fi moştenitoare ale harului vieţii împreună cu voi, pentru a nu fi împiedicate rugăciunile voastre.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Despre relații în general",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "(3:8)",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8În concluzie, să aveţi toți aceeaşi gândire, să simţiţi unii cu alţii, să aveţi dragoste de fraţi, să fiţi plini de compasiune, să aveţi o gândire smerită,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9să nu întoarceţi rău pentru rău sau insultă pentru insultă, ci, dimpotrivă, binecuvântaţi, pentru că la aceasta aţi fost chemaţi, să moşteniţi binecuvântarea!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10„Căci cel ce iubește viaţa şi vrea să vadă zile bune să-şi păzească limba de rău, şi buzele de cuvinte înşelătoare!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Să se îndepărteze de rău şi să facă binele! Să caute pacea şi s-o urmărească!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Căci ochii Domnului sunt peste cei drepţi, iar urechile lui sunt deschise la rugăciunea lor. Faţa Domnului însă este împotriva celor ce fac răul!“",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Şi cine vă va face rău, dacă voi sunteţi plini de râvnă pentru bine?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Dar, chiar dacă aţi suferi din cauza dreptăţii, este ferice de voi! „Să nu vă temeţi de ce se tem ei şi nu vă tulburaţi“,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15ci sfinţiţi-l în inimile voastre pe Domnul Dumnezeu! Fiţi întotdeauna pregătiţi să răspundeţi oricui vă întreabă despre motivul speranței care este în voi,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "16dar cu blândeţe şi cu teamă, având o conştiinţă bună, pentru ca, în ceea ce sunteţi vorbiţi de rău, cei ce vă defăimează să fie făcuţi de ruşine datorită purtării voastre bune în Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "17Căci este mai bine, dacă aşa este voia lui Dumnezeu, să suferiţi pentru că faceţi binele, decât pentru că faceţi răul.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-petru-6",
+      "number": 6,
+      "reference": "3:18",
+      "title": "Exemplul lui Cristos",
+      "pageNumber": 373,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Cristos, de asemenea, a suferit odată pentru păcate, el, cel drept, pentru cei nelegiuiţi, ca să ne aducă la Dumnezeu. El a fost ucis în trup, dar a fost înviat în duh,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2în care s-a dus să vestească duhurilor din închisoare,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3care au fost neascultătoare în trecut, când Dumnezeu a așteptat cu răbdare, în zilele lui Noe, când se construia corabia, prin care au fost scăpate din apă un mic număr de suflete, şi anume opt.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Iar botezul pe care potopul îl prefigurează - și care nu este o curăţire de murdăria trupului - ci un apel către Dumnezeu, pentru o conștiință curată, vă mântuiește acum, prin învierea lui Isus Cristos,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5care s-a înălțat la cer și stă la dreapta lui Dumnezeu, - îngerii, autoritățile, şi puterile, fiind puse sub stăpânirea lui.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-petru-7",
+      "number": 7,
+      "reference": "4:1",
+      "title": "Viețuirea după voia lui Dumnezeu",
+      "pageNumber": 373,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Astfel dar, fiindcă Cristos a suferit pentru noi, în trup, înarmaţi-vă şi voi cu acelaşi fel de gândire. Căci cel ce a suferit în trup a sfârşit-o cu păcatul;",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2pentru ca, timpul care-i mai rămâne de trăit în trup, să nu-l mai trăiască după poftele oamenilor, ci după voia lui Dumnezeu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Ajunge, în adevăr, că în trecut aţi făcut voia neamurilor şi aţi trăit în destrăbălări, în pofte, în beţii, în ospeţe, în chefuri şi în slujiri idoleşti respingătoare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4De aceea se miră ei că nu alergaţi împreună cu ei la acelaşi exces de desfrânare şi vă batjocoresc.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Dar o să răspundă în fața celui ce este gata să judece viii şi morţii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Căci tocmai cu scopul acesta a fost vestită Evanghelia chiar şi celor morţi, pentru ca să fie judecaţi ca oameni în trup, dar să trăiască după Dumnezeu în duh.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Sfârşitul tuturor lucrurilor este aproape. Fiţi înţelepţi dar şi vegheaţi în vederea rugăciunii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Mai presus de toate, să aveţi o dragoste fierbinte unii pentru alţii, căci dragostea acoperă o mulțime de păcate.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Fiţi primitori de oaspeţi între voi, fără cârtire.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Deoarece fiecare din voi a primit un dar, folosiți-l la slujirea altora, fiind buni administratori ai harului lui Dumnezeu în diferitele lui forme.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Dacă vorbeşte cineva, să vorbească ca și cum acelea ar fi chiar cuvintele lui Dumnezeu. Dacă slujeşte cineva, să slujească după puterea pe care i-o dă Dumnezeu, pentru ca în toate lucrurile să fie glorificat Dumnezeu prin Isus Cristos, ale căruia sunt gloria şi autoritatea în vecii vecilor! Amin.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-petru-8",
+      "number": 8,
+      "reference": "4:12",
+      "title": "Acceptarea cu bucurie a suferințelor pentru Cristos",
+      "pageNumber": 374,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Preaiubiţilor, nu vă miraţi de suferința fierbinte din mijlocul vostru, care a venit peste voi, ca să vă încerce, ca de ceva ciudat, care a dat peste voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Ci, deoarece, aveţi parte de suferințele lui Cristos, bucuraţi-vă pentru ca la arătarea gloriei lui, să aveți din nou o bucurie nespus de mare.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Dacă sunteţi insultaţi pentru numele lui Cristos, ferice de voi! Fiindcă Duhul gloriei, Duhul lui Dumnezeu, se odihneşte peste voi. Din partea lor el este vorbit de rău, iar din partea voastră el este glorificat.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Nimeni din voi să nu sufere ca ucigaş sau ca hoţ, sau ca făcător de rele, sau ca unul care se amestecă în treburile altuia.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Dimpotrivă, dacă suferă pentru că este creştin, să nu-i fie ruşine, ci să glorifice pe Dumnezeu pentru numele acesta.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Căci suntem în momentul în care judecata este gata să înceapă de la casa lui Dumnezeu. Şi, dacă începe cu noi, ce se va întâmpla cu cei care nu ascultă de Evanghelia lui Dumnezeu?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Şi, dacă este greu ca cel drept să fie mântuit, ce se va întâmpla cu cel nelegiuit şi cu cel păcătos?",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Aşa că cei ce suferă în acord cu voia lui Dumnezeu să-şi încredinţeze sufletele celui care este Creatorul fidel.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "1-petru-9",
+      "number": 9,
+      "reference": "5:1",
+      "title": "Sfaturi pentru cei în vârstă",
+      "pageNumber": 374,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Sfătuiesc pe bătrânii voștri, eu, care sunt un confrate bătrân ca şi ei, un martor al suferințelor lui Cristos şi părtaş al gloriei care va fi descoperită:",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2păstoriţi turma lui Dumnezeu care este sub paza voastră, nu de obligație, ci de bunăvoie, după voia lui Dumnezeu; nu pentru un câştig necinstit, ci cu bucurie.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Nu ca şi cum aţi stăpâni peste cei ce v-au căzut la împărţeală, ci dându-vă exemple turmei.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Iar când se va arăta Păstorul cel mare, veţi primi cununa gloriei, care nu se veştejește.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Sfaturi pentru cei tineri",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Tot aşa şi voi, tinerilor, fiţi supuşi celor bătrâni. Şi toţi în legăturile voastre să fiţi împodobiţi cu smerenie. Căci „Dumnezeu este împotriva celor mândri, dar celor smeriţi le dă har”.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Smeriţi-vă dar sub mâna puternică a lui Dumnezeu, pentru ca, la timpul lui, el să vă înalţe.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Şi aruncaţi asupra lui toate îngrijorările voastre, căci el însuşi îngrijeşte de voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Fiţi treji şi vegheaţi! Pentru că potrivnicul vostru, diavolul, dă târcoale ca un leu care răcneşte şi caută pe cine să înghită.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Împotriviţi-vă lui, prin credința voastră, ştiind că şi fraţii voştri în lume trec prin aceleaşi suferinţe ca și voi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Dumnezeul oricărui har, care v-a chemat în Cristos Isus la gloria sa veşnică, după ce veţi suferi puţină vreme, vă va face perfecți, vă va întări, vă va da putere şi vă va face neclintiţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Ale lui să fie gloria şi puterea în vecii vecilor! Amin.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Încheiere",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12V-am scris aceste puţine rânduri prin Silvan, care cred că este un frate credincios, ca să vă sfătuiesc şi să vă adeveresc că adevăratul har al lui Dumnezeu este harul acesta, de care v-aţi alipit.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Biserica aleasă, ca și voi, care este în Babilon, vă trimite sănătate. Tot aşa şi Marcu, fiul meu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Spuneţi-vă sănătate unii altora cu o sărutare din dragoste. Pacea să fie cu voi, cu toţi, care sunteţi în Cristos Isus! Amin!",
+          "noteRefs": []
+        }
+      ]
+    }
+  ]
+}

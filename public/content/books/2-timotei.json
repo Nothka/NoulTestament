@@ -1,0 +1,521 @@
+{
+  "id": "2-timotei",
+  "navTitle": "2 Timotei",
+  "title": "Epistola 2 Timotei",
+  "passages": [
+    {
+      "id": "2-timotei-1",
+      "number": 1,
+      "reference": "1:1",
+      "title": "Urare",
+      "pageNumber": 341,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Pavel, apostol al lui Cristos Isus, prin voia lui Dumnezeu, după promisiunea vieţii care este în Cristos Isus,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2către Timotei, copilul meu preaiubit: Har, îndurare şi pace de la Dumnezeu Tatăl şi de la Cristos Isus, Domnul nostru!",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Recunoștință pentru Timotei",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Mulţumesc lui Dumnezeu, pe care îl servesc cu o conștiință curată, la fel ca strămoşii mei, că te amintesc fără încetare în rugăciunile mele, zi şi noapte.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Căci îmi amintesc de lacrimile tale și abia aștept să te văd, ca să mă umplu de bucurie.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Îmi amintesc de credinţa ta neprefăcută, pe care a avut-o întâi bunica ta Lois, şi mama ta Eunice, şi sunt convins că o ai şi tu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6De aceea îţi amintesc să înflăcărezi darul lui Dumnezeu care este în tine prin punerea mâinilor mele.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Căci Dumnezeu nu ne-a dat un duh de frică, ci de putere, de dragoste şi de disciplină.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-timotei-2",
+      "number": 2,
+      "reference": "1:8",
+      "title": "Necesitatea atașamentului față de Evanghelie",
+      "pageNumber": 342,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Așa că să nu-ţi fie ruşine de mărturisirea Domnului nostru, nici de mine, deținutul lui; ci suferă pentru Evanghelie, prin puterea lui Dumnezeu,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2care ne-a mântuit şi ne-a dat o chemare sfântă, nu pentru faptele noastre, ci după hotărârea lui şi după harul care ne-a fost dat în Cristos Isus, înainte de veşnicii,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3și care a fost descoperit acum prin arătarea Mântuitorului nostru Cristos Isus, care a desființat moartea şi a adus la lumină viaţa şi neputrezirea, prin Evanghelie.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Predicatorul şi apostolul ei am fost pus eu, şi învăţător al Neamurilor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Şi din cauza aceasta sufăr aceste lucruri, dar nu mi-e ruşine, căci ştiu în cine am crezut. Şi sunt convins că el are putere să păzească ce i-am încredinţat până în ziua aceea.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Rămâi la standardul învăţăturilor sănătoase pe care le-ai auzit de la mine, împreună cu credinţa şi dragostea care sunt în Cristos Isus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Lucrul acesta bun care ţi s-a încredinţat păzeşte-l prin Duhul Sfânt, care locuieşte în noi.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Apostolul părăsit de unii frați",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8După cum știi, toți cei din Asia* m-au părăsit; printre alţii şi Figel şi Ermogen.",
+          "noteRefs": [
+            192
+          ]
+        },
+        {
+          "type": "verse",
+          "text": "9Domnul să-şi arate îndurarea peste casa lui Onisifor, căci de multe ori m-a mângâiat şi nu i-a fost ruşine de lanţul meu.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Nu numai atât, dar, când a fost în Roma, m-a căutat cu multă grijă şi m-a găsit.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Domnul să se îndure de el „în ziua aceea”. Tu ştii bine cât de mult mi-a slujit el în Efes.",
+          "noteRefs": []
+        }
+      ],
+      "notes": [
+        {
+          "number": 192,
+          "text": "2:8 Asia mică de azi, sau doar partea de vest a ei"
+        }
+      ]
+    },
+    {
+      "id": "2-timotei-3",
+      "number": 3,
+      "reference": "2:1",
+      "title": "Prețul vestirii Evangheliei",
+      "pageNumber": 342,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Tu dar, copilul meu, întăreşte-te în harul care este în Cristos Isus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Şi ce ai auzit de la mine în faţa multor martori, încredinţează la oameni credincioși, care să fie în stare să înveţe şi pe alţii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Suferă împreună cu mine, ca un bun soldat al lui Cristos.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Niciun soldat nu se încurcă cu problemele vieţii, dacă vrea să placă celui ce l-a înscris ca soldat.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Tot așa cine luptă la jocuri nu este încununat, dacă nu s-a luptat după rânduieli.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Plugarul trebuie să muncească înainte ca să strângă roadele.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Ia în considerare ceea ce îţi spun, și Domnul să îţi dea pricepere în toate lucrurile.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Adu-ţi aminte de Domnul Isus Cristos din sămânţa lui David, înviat din morţi, după Evanghelia mea,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9pentru care sufăr până acolo că sunt legat ca un criminal. Dar Cuvântul lui Dumnezeu nu este legat.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10De aceea rabd totul de dragul celor aleşi, pentru ca şi ei să primească mântuirea care este în Cristos Isus, împreună cu gloria veşnică.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Răsplata vestirii Evangheliei",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Adevărată este afirmația aceasta:,,Dacă am murit împreună cu el, vom şi trăi împreună cu el.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Dacă răbdăm, vom şi domni împreună cu el. Dacă ne lepădăm de el, şi el se va lepăda de noi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Dacă suntem necredincioşi, totuşi el rămâne credincios, căci nu se poate nega pe el însuși,,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Adu-le aminte de aceste lucruri şi roagă-i fierbinte înaintea lui Dumnezeu să se ferească de certurile nefolositoare de cuvinte, care duc la distrugerea celor ce le ascultă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15 Străduiește-te să te prezinți înaintea lui Dumnezeu ca un om încercat, ca un lucrător care n-are de ce să-i fie ruşine, şi care mânuiește corect Cuvântul Adevărului.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-timotei-4",
+      "number": 4,
+      "reference": "2:16",
+      "title": "Separarea de lucrurile lumești",
+      "pageNumber": 343,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Însă evită vorbăriile goale şi lumeşti; căci cei ce se țin de ele vor duce la și mai multă necinstire de Dumnezeu,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2și vor roade ca cangrena. Din numărul acestora sunt Imeneu şi Filet,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3care s-au abătut de la adevăr. Ei zic că a şi venit învierea şi răstoarnă credinţa unora.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Totuşi temelia tare a lui Dumnezeu stă nezguduită, având sigiliul acesta: „Domnul cunoaşte pe cei ce sunt ai lui” şi „Oricine rosteşte numele Domnului să se depărteze de fărădelege!”",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Căci într-o casă mare nu sunt numai vase de aur şi de argint, ci şi de lemn şi de pământ. Unele sunt pentru o întrebuinţare de cinste, iar altele, pentru o întrebuinţare de ocară.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Deci, dacă cineva se curăţă de acestea, va fi un vas de cinste, sfinţit, folositor stăpânului său, capabil pentru orice lucrare bună.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Fugi de poftele tinereţii şi urmăreşte corectitudinea, credinţa, dragostea, pacea, împreună cu cei ce cheamă pe Domnul dintr-o inimă curată.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8Fereşte-te de întrebările nebune şi nefolositoare, căci ştii că dau naştere la certuri.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Şi robul Domnului nu trebuie să se certe; ci să fie blând cu toţi, în stare să înveţe pe toţi, plin de îngăduinţă răbdătoare,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10să îndrepte cu blândeţe pe împotrivitori, cu speranța că Dumnezeu le va da pocăinţa ca să ajungă la cunoştinţa adevărului,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11şi, venindu-şi în fire, să se desprindă din cursa diavolului, în care au fost prinşi ca să-i facă voia.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-timotei-5",
+      "number": 5,
+      "reference": "3:1",
+      "title": "Dificultățile vestirii Evangheliei",
+      "pageNumber": 344,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Să ştii aceasta: în zilele din urmă vor fi timpuri dificile.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2Căci oamenii vor fi iubitori de sine, iubitori de bani, lăudăroşi, trufaşi, hulitori, neascultători de părinţi, nemulţumitori, fără evlavie,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3fără dragoste firească, neînduplecaţi, clevetitori, neînfrânaţi, neîmblânziţi, neiubitori de bine,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4vânzători, obraznici, îngâmfaţi; iubitori mai mult de plăceri decât iubitori de Dumnezeu,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5având doar o formă de evlavie, dar ignorând puterea acesteia. Îndepărtează-te și de oamenii aceştia.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Sunt printre ei unii care intră prin case şi momesc pe femeile uşuratice îngreunate de păcate şi frământate de felurite pofte,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7care învaţă întotdeauna şi nu pot ajunge niciodată la deplina cunoştinţă a adevărului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8După cum Iane şi Iambre s-au împotrivit lui Moise, tot aşa şi oamenii aceştia se împotrivesc adevărului, ca unii care au mintea stricată, care nu au trecut testul credinţei.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Dar nu vor mai înainta căci nebunia lor va fi arătată tuturor, cum a fost arătată şi a celor doi oameni.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Tu, însă, ai urmărit de aproape învăţătura mea, comportarea mea, hotărârea mea, credinţa mea, îndelunga mea răbdare, dragostea mea, statornicia mea,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11persecuțiile şi suferinţele - acele lucruri care mi s-au întâmplat în Antiohia, în Iconia şi în Listra. Ce persecuții am îndurat! Dar Domnul m-a scăpat din toate.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12De altfel, toţi cei ce voiesc să trăiască cu evlavie în Cristos Isus vor fi persecutaţi.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Dar oamenii răi şi înşelători vor merge din rău în mai rău, vor amăgi pe alţii şi ei înșiși vor fi amăgiți.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Tu să rămâi în lucrurile pe care le-ai învăţat şi de care eşti deplin încredinţat, căci ştii de la cine le-ai învăţat:",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "15cunoşti Sfintele Scripturi din copilărie, iar ele te pot face înţelept în privința mântuirii prin credinţa în Cristos Isus.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "16Toată Scriptura este insuflată de Dumnezeu şi este utilă ca să înveţe, să mustre, să îndrepte, și să instruiască în corectitudine,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "17pentru ca fiecare persoană care aparține lui Dumnezeu să fie perfectă, complet echipată pentru orice lucrare bună.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-timotei-6",
+      "number": 6,
+      "reference": "4:1",
+      "title": "Insistență în vestirea Evangheliei",
+      "pageNumber": 344,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1De aceea îți poruncesc înaintea lui Dumnezeu şi înaintea lui Cristos Isus, care are să judece viii şi morţii, la arătarea sa şi a Împărăţiei sale:",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2vesteşte cuvântul, insistă asupra lui la timp şi ne la timp, mustră, ceartă, îndeamnă cu toată blândeţea şi învăţătura.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "3Căci va veni timpul când oamenii nu vor asculta de învăţătura sănătoasă, ci având urechi selective pentru lucruri plăcute lor, îşi vor aduce învăţători după poftele lor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Îşi vor întoarce urechea de la adevăr şi se vor îndrepta spre istorisiri închipuite.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Dar tu fii treaz în toate lucrurile, rabdă suferinţele, fă lucrul unui evanghelist şi împlineşte-ţi bine slujba.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "6Căci eu sunt turnat deja ca o jertfă de băutură şi timpul plecării mele a sosit.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7M-am luptat lupta cea bună. Mi-am isprăvit alergarea. Am păzit credinţa.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8De acum mă aşteaptă cununa dreptății, pe care mi-o va da în ziua aceea Domnul, judecătorul cel drept; și nu numai mie, ci şi tuturor celor ce iubesc venirea lui.",
+          "noteRefs": []
+        }
+      ]
+    },
+    {
+      "id": "2-timotei-7",
+      "number": 7,
+      "reference": "4:9",
+      "title": "Problemele personale ale lui Pavel",
+      "pageNumber": 345,
+      "blocks": [
+        {
+          "type": "verse",
+          "text": "1Străduiește-te să vii curând la mine,",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "2căci Dima, iubind lumea aceasta, m-a părăsit, şi a plecat la Tesalonic. Crescens s-a dus în Galatia, iar Tit în Dalmația*",
+          "noteRefs": [
+            193
+          ]
+        },
+        {
+          "type": "verse",
+          "text": "3Numai Luca este cu mine. Ia pe Marcu şi adu-l cu tine, căci el îmi este de folos pentru slujbă.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "4Pe Tihic l-am trimis la Efes.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "5Când vei veni, adu-mi mantaua, pe care am lăsat-o în Troa la Carp şi cărţile, mai ales pe cele de piele. 6 Alexandru, meșterul arămar, mi-a făcut mult rău. Domnul îi va răsplăti după faptele lui.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "7Păzeşte-te şi tu de el, pentru că este cu totul împotriva cuvintelor noastre.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "8La primul meu răspuns de apărare, nimeni n-a fost cu mine, ci toţi m-au părăsit. Să nu li se considere împotriva lor acest lucru!",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "9Însă Domnul a stat lângă mine şi m-a întărit, pentru ca prin mine mesajul să fie predicat pe deplin, și să-l audă toate neamurile, așa că am scăpat din gura leului.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "10Domnul mă va scăpa de orice lucru rău şi mă va păstra, pentru Împărăţia lui cerească. A lui să fie gloria în vecii vecilor! Amin.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "Încheiere",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "(4:19)",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "11Salută pe Priscila și Aquila, şi casa lui Onisifor.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "12Erast a rămas în Corint, iar pe Trofim l-am lăsat bolnav în Milet.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "13Străduiește-te să vii înainte de iarnă. Eubul te salută, la fel Pudens, Linus, Claudia şi toţi fraţii.",
+          "noteRefs": []
+        },
+        {
+          "type": "verse",
+          "text": "14Domnul Isus Cristos să fie cu duhul tău! Harul să fie cu voi! Amin.",
+          "noteRefs": []
+        }
+      ],
+      "notes": [
+        {
+          "number": 193,
+          "text": "7:2 zona de coastă a Croației, pe țărmul Adriaticii, care în antichitate a fost locuită de dalmațieni; apare doar aici în NT"
+        }
+      ]
+    }
+  ]
+}

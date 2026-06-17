@@ -1,0 +1,87 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: introduction
+    label: Introducere
+    files:
+      - name: introduction
+        label: Introducere
+        file: public/content/introduction.json
+        format: json
+        fields:
+          - { label: ID, name: id, widget: string, hint: "Nu modifica acest câmp." }
+          - { label: Titlu meniu, name: title, widget: string }
+          - { label: Subtitlu, name: subtitle, widget: string, required: false }
+          - label: Paragrafe
+            name: blocks
+            widget: list
+            collapsed: true
+            summary: "{{fields.text}}"
+            fields:
+              - label: Tip
+                name: type
+                widget: select
+                options:
+                  - { label: Titlu, value: heading }
+                  - { label: Paragraf, value: paragraph }
+                  - { label: Verset, value: verse }
+              - { label: Text, name: text, widget: text }
+
+  - name: books
+    label: Cărți
+    folder: public/content/books
+    extension: json
+    format: json
+    create: false
+    identifier_field: navTitle
+    summary: "{{navTitle}}"
+    fields:
+      - { label: ID, name: id, widget: string, hint: "Nu modifica acest câmp." }
+      - { label: Titlu în meniu, name: navTitle, widget: string }
+      - { label: Titlu complet, name: title, widget: string }
+      - label: Pasaje
+        name: passages
+        widget: list
+        collapsed: true
+        summary: "{{fields.number}}. {{fields.title}}"
+        fields:
+          - { label: ID, name: id, widget: string, hint: "Nu modifica acest câmp." }
+          - { label: Număr pasaj, name: number, widget: number, value_type: int }
+          - { label: Referință, name: reference, widget: string, required: false }
+          - { label: Titlu pasaj, name: title, widget: string }
+          - { label: Pagină, name: pageNumber, widget: number, value_type: int, required: false }
+          - label: Text
+            name: blocks
+            widget: list
+            collapsed: true
+            summary: "{{fields.text}}"
+            fields:
+              - label: Tip
+                name: type
+                widget: select
+                options:
+                  - { label: Subtitlu, value: heading }
+                  - { label: Paragraf, value: paragraph }
+                  - { label: Verset, value: verse }
+              - { label: Text, name: text, widget: text }
+              - label: Referințe note
+                name: noteRefs
+                widget: list
+                required: false
+                field: { label: Număr notă, name: noteRef, widget: number, value_type: int }
+          - label: Note de subsol
+            name: notes
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.number}}. {{fields.text}}"
+            fields:
+              - { label: Număr, name: number, widget: number, value_type: int }
+              - { label: Text, name: text, widget: text }
