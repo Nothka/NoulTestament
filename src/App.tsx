@@ -160,24 +160,9 @@ function App() {
     );
   }
 
- return (
-  <main className="app">
-    <div
-      className="maintenance-overlay"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="maintenance-title"
-    >
-      <div className="maintenance-modal">
-        <h2 id="maintenance-title">Site în lucru</h2>
-        <p>Acest website este în lucru și nu reprezintă varianta finală.</p>
-        <a className="maintenance-login-button" href="/admin/">
-          Login
-        </a>
-      </div>
-    </div>
-
-    <header className="document-header">
+  return (
+    <main className="app">
+      <header className="document-header">
         <h1>
           <button className="brand-title-button" onClick={selectIntroduction} type="button">
             <span>NOUL</span> <span>TESTAMENT</span>
@@ -199,12 +184,6 @@ function App() {
             </button>
           ))}
         </nav>
-
-        <p className="admin-entry">
-          <a className="admin-entry-link" href="/admin/">
-            Administrare text
-          </a>
-        </p>
       </header>
 
       <section className="reader-shell" aria-labelledby="selected-book-title">
@@ -1110,17 +1089,16 @@ function renderTextWithNotes(text: string, noteRefs: number[] = []) {
 
     const noteNumber = noteRefs[noteIndex];
     noteIndex += 1;
-
-nodes.push(
-  <sup
-    aria-label={noteNumber ? `Nota ${noteNumber}` : undefined}
-    className="note-callout"
-    key={`note-${index}-${noteIndex}`}
-    title={noteNumber ? `Nota ${noteNumber}` : undefined}
-  >
-    {noteNumber ? `*${noteNumber}` : '*'}
-  </sup>,
-);
+    nodes.push(
+      <sup
+        aria-label={noteNumber ? `Nota ${noteNumber}` : undefined}
+        className="note-callout"
+        key={`note-${index}-${noteIndex}`}
+        title={noteNumber ? `Nota ${noteNumber}` : undefined}
+      >
+        {noteNumber ? `*${noteNumber}` : '*'}
+      </sup>,
+    );
 
     textStart = index + 1;
   }
