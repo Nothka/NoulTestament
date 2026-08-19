@@ -11,7 +11,6 @@ import {
 } from './editing';
 import './App.css';
 
-const TESTAMENT_DATA_URL = '/testament.json';
 const CONTENT_BOOKS_INDEX_URL = '/content/books-index.json';
 const CONTENT_INTRODUCTION_URL = '/content/introduction.json';
 const defaultSectionId = 'introduction';
@@ -33,8 +32,6 @@ type Passage = {
   number: number;
   reference: string;
   title: string;
-  titleSize?: number;
-  titleStyle?: 'normal' | 'italic' | 'bold' | 'bold-italic';
   pageNumber?: number;
   blocks: ContentBlock[];
   notes?: Footnote[];
@@ -47,18 +44,10 @@ type PagePassage = {
   number: number;
   reference: string;
   title: string;
-  titleSize?: number;
-  titleStyle?: Passage['titleStyle'];
   isContinuation: boolean;
   blocks: ContentBlock[];
   allBlocks: ContentBlock[];
   notes?: Footnote[];
-};
-
-type BookPage = {
-  number: number;
-  passages: PagePassage[];
-  notes: Footnote[];
 };
 
 type VisualBookPage = {
@@ -71,20 +60,13 @@ type Book = {
   id: string;
   navTitle: string;
   title: string;
-  pages?: BookPage[];
   passages: Passage[];
-};
-
-type IntroductionPage = {
-  number: number;
-  blocks: ContentBlock[];
 };
 
 type Introduction = {
   id: string;
   title: string;
   subtitle: string;
-  pages?: IntroductionPage[];
   blocks: ContentBlock[];
 };
 
@@ -372,15 +354,7 @@ function App() {
   );
 }
 
-async function loadTestamentData() {
-  try {
-    return await loadEditableContentData();
-  } catch {
-    return loadLegacyTestamentData();
-  }
-}
-
-async function loadEditableContentData(): Promise<TestamentData> {
+async function loadTestamentData(): Promise<TestamentData> {
   const [introduction, bookIndex] = await Promise.all([
     fetchJson<Introduction | null>(CONTENT_INTRODUCTION_URL),
     fetchJson<BookIndexEntry[]>(CONTENT_BOOKS_INDEX_URL),
@@ -396,10 +370,6 @@ async function loadEditableContentData(): Promise<TestamentData> {
   };
 }
 
-async function loadLegacyTestamentData() {
-  return fetchJson<TestamentData>(TESTAMENT_DATA_URL);
-}
-
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url);
 
@@ -411,9 +381,7 @@ async function fetchJson<T>(url: string): Promise<T> {
 }
 
 function IntroductionPages({ introduction }: { introduction: Introduction }) {
-  const pages = introduction.pages?.length
-    ? introduction.pages
-    : [{ number: 1, blocks: introduction.blocks }];
+  const pages = [{ number: 1, blocks: introduction.blocks }];
 
   return (
     <div className="introduction-stack">
@@ -499,8 +467,6 @@ function buildEstimatedVisualPages(book: Book): VisualBookPage[] {
         number: passage.number,
         reference: passage.reference,
         title: passage.title,
-        titleSize: passage.titleSize,
-        titleStyle: passage.titleStyle,
         isContinuation: !isFirstSegment,
         blocks: segment.blocks,
         allBlocks: passage.blocks,
@@ -583,8 +549,6 @@ function buildMeasuredVisualPages(book: Book): VisualBookPage[] | null {
           number: passage.number,
           reference: passage.reference,
           title: passage.title,
-          titleSize: passage.titleSize,
-          titleStyle: passage.titleStyle,
           isContinuation: !isFirstSegment,
           blocks: segment.blocks,
           allBlocks: passage.blocks,
@@ -726,14 +690,8 @@ function createMeasuredPassageElement(
     }
 
     const title = document.createElement('h3');
-    title.className = getPassageTitleClassName(passage);
+    title.className = 'passage-title';
     title.textContent = stripInlineMarkup(passage.title);
-    const titleFontSize = getPassageTitleFontSize(passage);
-
-    if (titleFontSize) {
-      title.style.fontSize = titleFontSize;
-    }
-
     header.append(title);
     article.append(header);
   }
@@ -1009,7 +967,7 @@ function PagePassageView({ passage }: { passage: PagePassage }) {
             </p>
           ) : null}
 
-          <h3 className={getPassageTitleClassName(passage)} style={getPassageTitleStyle(passage)}>
+          <h3 className="passage-title">
             {renderInlineMarkup(passage.title, `${passage.id}-title`)}
           </h3>
         </header>
@@ -1025,33 +983,6 @@ function PagePassageView({ passage }: { passage: PagePassage }) {
       </div>
     </article>
   );
-}
-
-function getPassageTitleClassName(passage: Pick<PagePassage, 'titleStyle'> | Pick<Passage, 'titleStyle'>) {
-  return [
-    'passage-title',
-    passage.titleStyle ? `passage-title-${passage.titleStyle}` : '',
-  ].filter(Boolean).join(' ');
-}
-
-function getPassageTitleStyle(passage: Pick<PagePassage, 'titleSize'> | Pick<Passage, 'titleSize'>) {
-  const fontSize = getPassageTitleFontSize(passage);
-
-  if (!fontSize) {
-    return undefined;
-  }
-
-  return {
-    fontSize,
-  };
-}
-
-function getPassageTitleFontSize(passage: Pick<PagePassage, 'titleSize'> | Pick<Passage, 'titleSize'>) {
-  if (!passage.titleSize) {
-    return undefined;
-  }
-
-  return `calc(1.05rem * ${passage.titleSize / 100})`;
 }
 
 function PassageBlocks({

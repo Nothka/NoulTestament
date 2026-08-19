@@ -6,8 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/validate-content.mjs && tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json && vite build",
-    "extract:document": "node scripts/extract-testament.mjs",
-    "split:content": "node scripts/split-testament-content.mjs",
     "preview": "vite preview",
     "validate:content": "node scripts/validate-content.mjs"
   },
