@@ -1,4 +1,6 @@
 import { Fragment, useEffect, useLayoutEffect, useMemo, useState, type ReactNode } from 'react';
+
+import { countFootnoteMarkers, isFootnoteMarker } from './footnote-markers.js';
 import './App.css';
 
 const TESTAMENT_DATA_URL = '/testament.json';
@@ -94,6 +96,7 @@ function App() {
   const [data, setData] = useState<TestamentData | null>(null);
   const [selectedSectionId, setSelectedSectionId] = useState(defaultSectionId);
   const [hasError, setHasError] = useState(false);
+  const [isNoticeVisible, setIsNoticeVisible] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
@@ -162,6 +165,24 @@ function App() {
 
   return (
     <main className="app">
+      {isNoticeVisible ? (
+        <aside aria-live="polite" className="site-notice" role="status">
+          <p>
+            Vă rugăm să ne scuzați, aranjarea notițelor și a textului este încă în lucru, lucrăm la
+            finalizarea aranjării textului pentru a ajunge la un aspect satisfăcător
+          </p>
+
+          <button
+            aria-label="Închide notificarea"
+            className="site-notice-close"
+            onClick={() => setIsNoticeVisible(false)}
+            type="button"
+          >
+            ×
+          </button>
+        </aside>
+      ) : null}
+
       <header className="document-header">
         <h1>
           <button className="brand-title-button" onClick={selectIntroduction} type="button">
@@ -814,18 +835,6 @@ function getResolvedNoteRefsForBlock(
   return (block.noteRefs ?? []).slice(0, markerCount);
 }
 
-function countFootnoteMarkers(text: string) {
-  let count = 0;
-
-  for (let index = 0; index < text.length; index += 1) {
-    if (isFootnoteMarker(text, index)) {
-      count += 1;
-    }
-  }
-
-  return count;
-}
-
 function PagePassageView({ passage }: { passage: PagePassage }) {
   return (
     <article className={passage.isContinuation ? 'passage passage-continuation' : 'passage'}>
@@ -1108,12 +1117,6 @@ function renderTextWithNotes(text: string, noteRefs: number[] = []) {
   return nodes;
 }
 
-function isFootnoteMarker(text: string, index: number) {
-  return isSingleAsterisk(text, index)
-    && !isMarkdownItalicOpening(text, index)
-    && !isMarkdownItalicClosing(text, index);
-}
-
 function renderInlineMarkup(text: string, keyPrefix = 'inline'): ReactNode[] {
   const nodes: ReactNode[] = [];
   const pattern = /(\*\*([^*]+)\*\*|\*([^*\n]+)\*|__([^_]+)__|_([^_]+)_|\n)/gu;
@@ -1146,66 +1149,6 @@ function renderInlineMarkup(text: string, keyPrefix = 'inline'): ReactNode[] {
   return nodes.map((node, index) => (
     <Fragment key={`${keyPrefix}-${index}`}>{node}</Fragment>
   ));
-}
-
-function isSingleAsterisk(text: string, index: number) {
-  return text[index] === '*' && text[index - 1] !== '*' && text[index + 1] !== '*';
-}
-
-function isMarkdownItalicOpening(text: string, index: number) {
-  const nextCharacter = text[index + 1];
-
-  return isSingleAsterisk(text, index)
-    && isOpeningMarkdownBoundary(text[index - 1])
-    && Boolean(nextCharacter)
-    && !/\s/u.test(nextCharacter)
-    && findClosingMarkdownStar(text, index + 1) > index;
-}
-
-function isMarkdownItalicClosing(text: string, index: number) {
-  const previousCharacter = text[index - 1];
-
-  return isSingleAsterisk(text, index)
-    && Boolean(previousCharacter)
-    && !/\s/u.test(previousCharacter)
-    && isClosingMarkdownBoundary(text[index + 1])
-    && findOpeningMarkdownStar(text, index - 1) >= 0;
-}
-
-function isOpeningMarkdownBoundary(character: string | undefined) {
-  return character === undefined || /\s/u.test(character) || /[([{„"']/u.test(character);
-}
-
-function isClosingMarkdownBoundary(character: string | undefined) {
-  return character === undefined || /\s/u.test(character) || /[)\]}.,;:!?„”"']/u.test(character);
-}
-
-function findClosingMarkdownStar(text: string, startIndex: number) {
-  for (let index = startIndex; index < text.length; index += 1) {
-    if (
-      isSingleAsterisk(text, index)
-      && !/\s/u.test(text[index - 1] ?? '')
-      && isClosingMarkdownBoundary(text[index + 1])
-    ) {
-      return index;
-    }
-  }
-
-  return -1;
-}
-
-function findOpeningMarkdownStar(text: string, startIndex: number) {
-  for (let index = startIndex; index >= 0; index -= 1) {
-    if (
-      isSingleAsterisk(text, index)
-      && isOpeningMarkdownBoundary(text[index - 1])
-      && !/\s/u.test(text[index + 1] ?? '')
-    ) {
-      return index;
-    }
-  }
-
-  return -1;
 }
 
 function stripInlineMarkup(text: string) {

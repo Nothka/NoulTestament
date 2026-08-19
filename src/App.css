@@ -188,14 +188,21 @@
 }
 
 .passage-reference span:first-child {
-  font-size: 1.55rem;
+  font-size: 1.85rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.passage-reference span:last-child {
+  font-style: italic;
+  font-weight: 400;
 }
 
 .passage-header h3 {
   margin: 0;
   color: #2d2d2d;
   font-size: 1.05rem;
-  font-style: normal;
+  font-style: italic;
   font-weight: 400;
   line-height: 1.25;
 }
@@ -283,12 +290,14 @@
   line-height: 0;
 }
 
-.note-callout {
-  position: relative;
-  top: -0.25em;
-  color: #a30f2d;
-  margin-left: 1px;
-  font-size: 0.68em;
+/* Written as `sup.note-callout` so it outweighs the `.verse-line sup` and
+   `.verse-fragment sup` rules above, which would otherwise set the size. */
+sup.note-callout {
+  position: static;
+  top: auto;
+  color: #cc5500;
+  margin-left: 2px;
+  font-size: 0.85em;
   font-weight: 700;
   line-height: 0;
 }
@@ -316,12 +325,19 @@
   padding-left: 0.15rem;
 }
 
+.passage-notes li::marker {
+  color: #cc5500;
+  font-size: 1.25em;
+  font-style: normal;
+  font-weight: 700;
+}
+
 .inline-heading {
   margin: 1rem 0 0.5rem;
   color: #2f2f2f;
   font-size: 1.02rem;
   font-style: italic;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.28;
   text-align: center;
 }
@@ -411,5 +427,84 @@
   .passage-notes ol {
     columns: 1;
     column-gap: normal;
+  }
+}
+
+.site-notice {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: min(calc(100vw - 40px), 360px);
+  border: 1px solid #e2c9a8;
+  border-left: 4px solid #cc5500;
+  border-radius: 4px;
+  background: #fffaf3;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+  padding: 14px 14px 14px 16px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  animation: site-notice-in 0.32s ease-out;
+}
+
+.site-notice p {
+  margin: 0;
+  color: #3a2c1c;
+  font-size: 0.86rem;
+  line-height: 1.42;
+}
+
+.site-notice-close {
+  appearance: none;
+  flex: none;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: #8a6a45;
+  cursor: pointer;
+  padding: 0 2px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.site-notice-close:hover,
+.site-notice-close:focus-visible {
+  color: #cc5500;
+  outline: none;
+}
+
+@keyframes site-notice-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-notice {
+    animation: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-notice {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    width: auto;
+    padding: 12px 12px 12px 14px;
+  }
+
+  .site-notice p {
+    font-size: 0.8rem;
   }
 }
