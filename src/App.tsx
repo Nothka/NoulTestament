@@ -1,6 +1,14 @@
 import { Fragment, useEffect, useLayoutEffect, useMemo, useState, type ReactNode } from 'react';
 
 import { countFootnoteMarkers, isFootnoteMarker } from './footnote-markers.js';
+import {
+  BlockEditor,
+  EditorBar,
+  EditorLogin,
+  readStoredSession,
+  storeSession,
+  type BlockDraft,
+} from './editing';
 import './App.css';
 
 const TESTAMENT_DATA_URL = '/testament.json';
@@ -98,6 +106,19 @@ function App() {
   const [hasError, setHasError] = useState(false);
   const [isNoticeVisible, setIsNoticeVisible] = useState(true);
 
+  const isEditorRoute = typeof window !== 'undefined' && window.location.pathname.startsWith('/edit');
+  const [session, setSession] = useState<string | null>(() => (isEditorRoute ? readStoredSession() : null));
+  const [draft, setDraft] = useState<BlockDraft | null>(null);
+  const [dirtyBookIds, setDirtyBookIds] = useState<string[]>([]);
+  const [publishing, setPublishing] = useState(false);
+  const [publishStatus, setPublishStatus] = useState<{
+    kind: 'idle' | 'ok' | 'error';
+    message: string;
+    problems?: string[];
+  }>({ kind: 'idle', message: '' });
+
+  const isEditing = isEditorRoute && Boolean(session);
+
   useEffect(() => {
     let isMounted = true;
 
@@ -137,6 +158,98 @@ function App() {
     ? data?.introduction?.title
     : selectedBook?.title;
 
+  function openBlockEditor(address: string) {
+    const [passageId, rawIndex] = address.split(':');
+    const blockIndex = Number(rawIndex);
+    const book = data?.books.find((candidate) => candidate.passages.some((passage) => passage.id === passageId));
+    const passage = book?.passages.find((candidate) => candidate.id === passageId);
+    const block = passage?.blocks[blockIndex];
+
+    if (!book || !block) {
+      return;
+    }
+
+    // The verse number lives at the front of the text, so split it off and keep
+    // it out of the editable field entirely.
+    const match = block.type === 'verse' ? block.text.match(/^(\d{1,3})(.*)$/u) : null;
+
+    setDraft({
+      address,
+      bookId: book.id,
+      kind: block.type,
+      text: match ? match[2] : block.text,
+      verseNumber: match ? match[1] : '',
+    });
+  }
+
+  function confirmBlockEdit(nextText: string) {
+    if (!draft || !data) {
+      return;
+    }
+
+    const [passageId, rawIndex] = draft.address.split(':');
+    const blockIndex = Number(rawIndex);
+
+    setData({
+      ...data,
+      books: data.books.map((book) => (book.id !== draft.bookId ? book : {
+        ...book,
+        passages: book.passages.map((passage) => (passage.id !== passageId ? passage : {
+          ...passage,
+          blocks: passage.blocks.map((block, index) => (index !== blockIndex ? block : {
+            ...block,
+            text: `${draft.verseNumber}${nextText}`,
+          })),
+        })),
+      })),
+    });
+
+    setDirtyBookIds((current) => (current.includes(draft.bookId) ? current : [...current, draft.bookId]));
+    setPublishStatus({ kind: 'idle', message: '' });
+    setDraft(null);
+  }
+
+  async function publishChanges() {
+    if (!data || dirtyBookIds.length === 0) {
+      return;
+    }
+
+    setPublishing(true);
+    setPublishStatus({ kind: 'idle', message: '' });
+
+    try {
+      const response = await fetch('/.netlify/functions/save', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', authorization: `Bearer ${session}` },
+        body: JSON.stringify({
+          files: dirtyBookIds.map((bookId) => ({
+            path: `public/content/books/${bookId}.json`,
+            content: data.books.find((book) => book.id === bookId),
+          })),
+        }),
+      });
+      const body = await response.json();
+
+      if (response.status === 401) {
+        storeSession(null);
+        setSession(null);
+        return;
+      }
+
+      if (!response.ok) {
+        setPublishStatus({ kind: 'error', message: body.error ?? 'Salvarea a eșuat.', problems: body.problems });
+        return;
+      }
+
+      setDirtyBookIds([]);
+      setPublishStatus({ kind: 'ok', message: 'Salvat. Site-ul se actualizează în ~1 minut.' });
+    } catch {
+      setPublishStatus({ kind: 'error', message: 'Nu am putut contacta serverul.' });
+    } finally {
+      setPublishing(false);
+    }
+  }
+
   function selectBook(bookId: string) {
     setSelectedSectionId(bookId);
     window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
@@ -145,6 +258,17 @@ function App() {
   function selectIntroduction() {
     setSelectedSectionId(data?.introduction ? defaultSectionId : data?.books[0]?.id ?? fallbackBookId);
     window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  if (isEditorRoute && !session) {
+    return (
+      <EditorLogin
+        onLogin={(token) => {
+          storeSession(token);
+          setSession(token);
+        }}
+      />
+    );
   }
 
   if (hasError) {
@@ -164,8 +288,36 @@ function App() {
   }
 
   return (
-    <main className="app">
-      {isNoticeVisible ? (
+    <main
+      className={isEditing ? 'app app-editing' : 'app'}
+      onClick={isEditing ? (event) => {
+        const target = (event.target as HTMLElement).closest('[data-block]');
+        const address = target instanceof HTMLElement ? target.dataset.block : undefined;
+
+        if (address) {
+          event.preventDefault();
+          openBlockEditor(address);
+        }
+      } : undefined}
+    >
+      {isEditing ? (
+        <EditorBar
+          busy={publishing}
+          dirtyCount={dirtyBookIds.length}
+          onLogout={() => {
+            storeSession(null);
+            setSession(null);
+          }}
+          onPublish={publishChanges}
+          status={publishStatus}
+        />
+      ) : null}
+
+      {draft ? (
+        <BlockEditor draft={draft} onCancel={() => setDraft(null)} onConfirm={confirmBlockEdit} />
+      ) : null}
+
+      {isNoticeVisible && !isEditing ? (
         <aside aria-live="polite" className="site-notice" role="status">
           <p>
             Vă rugăm să ne scuzați, aranjarea notițelor și a textului este încă în lucru, lucrăm la
@@ -808,6 +960,16 @@ function addNotesForBlocks(page: VisualBookPage, passage: Passage, blocks: Conte
   }
 }
 
+/**
+ * Identifies a block as `<passageId>:<indexInPassage>` so edit mode can map a
+ * click in the rendered page back to the block it came from.
+ */
+function blockAddress(passageId: string, allBlocks: ContentBlock[], block: ContentBlock) {
+  const index = allBlocks.indexOf(block);
+
+  return index >= 0 ? `${passageId}:${index}` : undefined;
+}
+
 function getResolvedNoteRefsForBlock(
   block: ContentBlock,
   allBlocks: ContentBlock[],
@@ -934,6 +1096,7 @@ function PassageBlocks({
         <p className="passage-paragraph" key={`${passageId}-paragraph-${index}`}>
           {group.map((block, blockIndex) => (
             <InlineBlock
+              address={blockAddress(passageId, allBlocks, block)}
               block={block}
               noteRefs={getResolvedNoteRefsForBlock(block, allBlocks, notes)}
               key={`${passageId}-${index}-${blockIndex}`}
@@ -944,20 +1107,24 @@ function PassageBlocks({
     }
 
     return (
-      <h4 className="inline-heading" key={`${passageId}-heading-${index}`}>
+      <h4
+        className="inline-heading"
+        data-block={blockAddress(passageId, allBlocks, group)}
+        key={`${passageId}-heading-${index}`}
+      >
         {renderTextWithNotes(group.text, getResolvedNoteRefsForBlock(group, allBlocks, notes))}
       </h4>
     );
   });
 }
 
-function InlineBlock({ block, noteRefs }: { block: ContentBlock; noteRefs?: number[] }) {
+function InlineBlock({ block, noteRefs, address }: { block: ContentBlock; noteRefs?: number[]; address?: string }) {
   if (block.type === 'verse') {
     const match = block.text.match(/^(\d{1,3})(.*)$/u);
 
     if (match) {
       return (
-        <span className="verse-fragment">
+        <span className="verse-fragment" data-block={address}>
           <sup>{match[1]}</sup>
           {renderTextWithNotes(match[2].trimStart(), noteRefs)}
         </span>
@@ -966,7 +1133,7 @@ function InlineBlock({ block, noteRefs }: { block: ContentBlock; noteRefs?: numb
   }
 
   return (
-    <span className="text-fragment">
+    <span className="text-fragment" data-block={address}>
       {renderTextWithNotes(block.text, noteRefs)}
     </span>
   );
@@ -988,7 +1155,11 @@ function GenealogyBlocks({
       {blocks.flatMap((block, blockIndex) => {
         if (block.type === 'heading') {
           return [
-            <h4 className="inline-heading" key={`${passageId}-${blockIndex}`}>
+            <h4
+              className="inline-heading"
+              data-block={blockAddress(passageId, allBlocks, block)}
+              key={`${passageId}-${blockIndex}`}
+            >
               {renderTextWithNotes(block.text, getResolvedNoteRefsForBlock(block, allBlocks, notes))}
             </h4>,
           ];
@@ -997,7 +1168,11 @@ function GenealogyBlocks({
         const lines = splitGenealogyText(block.text);
 
         return lines.map((line, lineIndex) => (
-          <p className="genealogy-line" key={`${passageId}-${blockIndex}-${lineIndex}`}>
+          <p
+            className="genealogy-line"
+            data-block={blockAddress(passageId, allBlocks, block)}
+            key={`${passageId}-${blockIndex}-${lineIndex}`}
+          >
             {lineIndex === 0 ? (
               <GenealogyLine text={line} noteRefs={getResolvedNoteRefsForBlock(block, allBlocks, notes)} />
             ) : (
