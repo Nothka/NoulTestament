@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { renderTextWithNotes } from './markup';
+
 const SESSION_KEY = 'nt-editor-session';
 
 export type BlockDraft = {
@@ -11,6 +13,10 @@ export type BlockDraft = {
   verseNumber: string;
   text: string;
   size: number;
+  /** Footnote numbers for this text, so the preview matches the page. */
+  noteRefs: number[];
+  hasPrevious: boolean;
+  hasNext: boolean;
 };
 
 const SIZES = [70, 80, 90, 100, 110, 125, 140, 160];
@@ -138,10 +144,12 @@ export function BlockEditor({
   draft,
   onCancel,
   onConfirm,
+  onNavigate,
 }: {
   draft: BlockDraft;
   onCancel: () => void;
   onConfirm: (text: string, size: number) => void;
+  onNavigate: (direction: -1 | 1, text: string, size: number) => void;
 }) {
   const [text, setText] = useState(draft.text);
   const [size, setSize] = useState(draft.size);
@@ -153,11 +161,8 @@ export function BlockEditor({
     areaRef.current?.focus();
   }, [draft.address, draft.text, draft.size]);
 
-  /**
-   * Wraps the selection in markup the reader already understands. Italic uses
-   * `_` rather than `*` so it can never be mistaken for a footnote marker.
-   */
-  function wrap(marker: string) {
+  /** Replaces the selection, keeping it selected so edits can be stacked. */
+  function replaceSelection(build: (selected: string) => string) {
     const area = areaRef.current;
 
     if (!area) {
@@ -171,13 +176,48 @@ export function BlockEditor({
       return;
     }
 
-    const next = `${text.slice(0, start)}${marker}${selected}${marker}${text.slice(end)}`;
-    setText(next);
+    const replacement = build(selected);
+    setText(`${text.slice(0, start)}${replacement}${text.slice(end)}`);
 
     requestAnimationFrame(() => {
       area.focus();
-      area.setSelectionRange(start + marker.length, end + marker.length);
+      area.setSelectionRange(start, start + replacement.length);
     });
+  }
+
+  /** Italic uses `_` so it can never be mistaken for a footnote marker. */
+  const wrap = (open: string, close = open) => replaceSelection((selected) => `${open}${selected}${close}`);
+
+  /** Only paired markup is removed; a lone `*` is a footnote marker. */
+  const clearFormatting = () => replaceSelection((selected) => selected
+    .replace(/\*\*([^*]+)\*\*/gu, '$1')
+    .replace(/__([^_]+)__/gu, '$1')
+    .replace(/_([^_\n]+)_/gu, '$1'));
+
+  function onKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
+    const modifier = event.metaKey || event.ctrlKey;
+
+    if (event.key === 'Escape') {
+      onCancel();
+      return;
+    }
+
+    if (modifier && event.key === 'Enter') {
+      event.preventDefault();
+      onConfirm(text, size);
+      return;
+    }
+
+    if (modifier && (event.key === 'b' || event.key === 'B')) {
+      event.preventDefault();
+      wrap('**');
+      return;
+    }
+
+    if (modifier && (event.key === 'i' || event.key === 'I')) {
+      event.preventDefault();
+      wrap('_');
+    }
   }
 
   const markersBefore = countMarkers(draft.text);
@@ -189,18 +229,36 @@ export function BlockEditor({
       <div className="block-editor" onClick={(event) => event.stopPropagation()}>
         <header>
           <span className="block-editor-verse">{draft.label}</span>
-          {draft.verseNumber ? (
-            <span className="block-editor-locked">numărul versetului este protejat</span>
-          ) : null}
+
+          <span className="block-editor-nav">
+            <button
+              disabled={!draft.hasPrevious}
+              onClick={() => onNavigate(-1, text, size)}
+              title="Textul dinainte"
+              type="button"
+            >
+              ←
+            </button>
+            <button
+              disabled={!draft.hasNext}
+              onClick={() => onNavigate(1, text, size)}
+              title="Textul următor"
+              type="button"
+            >
+              →
+            </button>
+          </span>
         </header>
 
         <div className="block-toolbar">
-          <button onClick={() => wrap('**')} title="Îngroșat (selectează textul întâi)" type="button">
-            <strong>B</strong>
-          </button>
+          <button onClick={() => wrap('**')} title="Îngroșat (Ctrl+B)" type="button"><strong>B</strong></button>
+          <button onClick={() => wrap('_')} title="Înclinat (Ctrl+I)" type="button"><em>I</em></button>
 
-          <button onClick={() => wrap('_')} title="Înclinat (selectează textul întâi)" type="button">
-            <em>I</em>
+          <span className="block-toolbar-divider" />
+
+          <button onClick={() => wrap('„', '”')} title="Ghilimele românești" type="button">„ ”</button>
+          <button className="block-toolbar-clear" onClick={clearFormatting} title="Șterge formatarea" type="button">
+            Șterge formatarea
           </button>
 
           <span className="block-toolbar-divider" />
@@ -208,31 +266,30 @@ export function BlockEditor({
           <label className="block-toolbar-size">
             Mărime
             <select onChange={(event) => setSize(Number(event.target.value))} value={size}>
-              {SIZES.map((option) => (
-                <option key={option} value={option}>{option}%</option>
-              ))}
+              {SIZES.map((option) => <option key={option} value={option}>{option}%</option>)}
             </select>
           </label>
 
           {size !== 100 ? (
-            <button className="block-toolbar-reset" onClick={() => setSize(100)} type="button">
-              Normal
-            </button>
+            <button className="block-toolbar-reset" onClick={() => setSize(100)} type="button">Normal</button>
           ) : null}
         </div>
 
         <textarea
           onChange={(event) => setText(event.target.value)}
-          onKeyDown={(event) => {
-            if (event.key === 'Escape') {
-              onCancel();
-            }
-          }}
+          onKeyDown={onKeyDown}
           ref={areaRef}
-          rows={7}
-          style={{ fontSize: `${size}%` }}
+          rows={6}
           value={text}
         />
+
+        <div className="block-preview">
+          <span className="block-preview-label">Cum va arăta</span>
+          <p className="block-preview-body" style={{ fontSize: `calc(1.02rem * ${size / 100})` }}>
+            {draft.verseNumber ? <sup>{draft.verseNumber}</sup> : null}
+            {renderTextWithNotes(draft.verseNumber ? text.trimStart() : text, draft.noteRefs)}
+          </p>
+        </div>
 
         {markersChanged ? (
           <p className="block-editor-warning">
@@ -242,6 +299,9 @@ export function BlockEditor({
         ) : null}
 
         <footer>
+          {draft.verseNumber ? (
+            <span className="block-editor-locked">numărul versetului este protejat</span>
+          ) : null}
           <button onClick={onCancel} type="button">Anulează</button>
           <button className="block-editor-confirm" onClick={() => onConfirm(text, size)} type="button">
             Gata

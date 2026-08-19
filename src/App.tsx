@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useLayoutEffect, useMemo, useState, type ReactNode } from 'react';
 
-import { countFootnoteMarkers, isFootnoteMarker } from './footnote-markers.js';
+import { countFootnoteMarkers } from './footnote-markers.js';
+import { renderInlineMarkup, renderTextWithNotes } from './markup';
 import {
   BlockEditor,
   EditorBar,
@@ -166,7 +167,15 @@ function App() {
         return;
       }
 
-      setDraft(draftForText(address, INTRODUCTION_PATH, 'Paragraf (introducere)', block.text, block.size, block.type === 'verse'));
+      setDraft(draftForText({
+        address,
+        path: INTRODUCTION_PATH,
+        label: 'Paragraf (introducere)',
+        rawText: block.text,
+        size: block.size,
+        isVerse: block.type === 'verse',
+        noteRefs: block.noteRefs,
+      }));
       return;
     }
 
@@ -180,7 +189,9 @@ function App() {
     const path = `public/content/books/${book.id}.json`;
 
     if (kind === 'title') {
-      setDraft(draftForText(address, path, 'Titlul pasajului', passage.title, passage.titleSize, false));
+      setDraft(draftForText({
+        address, path, label: 'Titlul pasajului', rawText: passage.title, size: passage.titleSize, isVerse: false,
+      }));
       return;
     }
 
@@ -191,7 +202,9 @@ function App() {
         return;
       }
 
-      setDraft(draftForText(address, path, `Nota ${note.number}`, note.text, note.size, false));
+      setDraft(draftForText({
+        address, path, label: `Nota ${note.number}`, rawText: note.text, size: note.size, isVerse: false,
+      }));
       return;
     }
 
@@ -203,10 +216,41 @@ function App() {
 
     const label = block.type === 'heading' ? 'Subtitlu' : block.type === 'verse' ? 'Verset' : 'Paragraf';
 
-    setDraft(draftForText(address, path, label, block.text, block.size, block.type === 'verse'));
+    setDraft(draftForText({
+      address,
+      path,
+      label,
+      rawText: block.text,
+      size: block.size,
+      isVerse: block.type === 'verse',
+      noteRefs: getResolvedNoteRefsForBlock(block, passage.blocks, passage.notes ?? []),
+    }));
   }
 
   function confirmBlockEdit(nextText: string, nextSize: number) {
+    commitDraft(nextText, nextSize);
+    setDraft(null);
+  }
+
+  /** Saves the open draft, then opens its neighbour in reading order. */
+  function navigateDraft(direction: -1 | 1, nextText: string, nextSize: number) {
+    if (!draft) {
+      return;
+    }
+
+    commitDraft(nextText, nextSize);
+
+    const addresses = editableAddresses();
+    const target = addresses[addresses.indexOf(draft.address) + direction];
+
+    if (target) {
+      openBlockEditor(target);
+    } else {
+      setDraft(null);
+    }
+  }
+
+  function commitDraft(nextText: string, nextSize: number) {
     if (!draft || !data) {
       return;
     }
@@ -261,7 +305,6 @@ function App() {
 
     setDirtyPaths((current) => (current.includes(draft.path) ? current : [...current, draft.path]));
     setPublishStatus({ kind: 'idle', message: '' });
-    setDraft(null);
   }
 
   async function publishChanges() {
@@ -371,7 +414,12 @@ function App() {
       ) : null}
 
       {draft ? (
-        <BlockEditor draft={draft} onCancel={() => setDraft(null)} onConfirm={confirmBlockEdit} />
+        <BlockEditor
+          draft={draft}
+          onCancel={() => setDraft(null)}
+          onConfirm={confirmBlockEdit}
+          onNavigate={navigateDraft}
+        />
       ) : null}
 
       {isNoticeVisible && !isEditing ? (
@@ -456,24 +504,47 @@ async function fetchJson<T>(url: string): Promise<T> {
 }
 
 /** Builds a draft, splitting a leading verse number out of editable text. */
-function draftForText(
-  address: string,
-  path: string,
-  label: string,
-  rawText: string,
-  size: number | undefined,
-  isVerse: boolean,
-): BlockDraft {
-  const match = isVerse ? rawText.match(/^(\d{1,3})(.*)$/u) : null;
+function draftForText(options: {
+  address: string;
+  path: string;
+  label: string;
+  rawText: string;
+  size?: number;
+  isVerse: boolean;
+  noteRefs?: number[];
+}): BlockDraft {
+  const match = options.isVerse ? options.rawText.match(/^(\d{1,3})(.*)$/u) : null;
+  const addresses = editableAddresses();
+  const position = addresses.indexOf(options.address);
 
   return {
-    address,
-    path,
-    label: match ? `${label} ${match[1]}` : label,
-    size: size ?? 100,
-    text: match ? match[2] : rawText,
+    address: options.address,
+    path: options.path,
+    label: match ? `${options.label} ${match[1]}` : options.label,
+    size: options.size ?? 100,
+    text: match ? match[2] : options.rawText,
     verseNumber: match ? match[1] : '',
+    noteRefs: options.noteRefs ?? [],
+    hasPrevious: position > 0,
+    hasNext: position >= 0 && position < addresses.length - 1,
   };
+}
+
+/**
+ * Editable addresses in reading order, so the arrows in the editor step through
+ * the page the way the eye does. One block can render as several lines, so
+ * duplicates are collapsed.
+ */
+function editableAddresses() {
+  const seen = new Set<string>();
+
+  for (const element of document.querySelectorAll<HTMLElement>('[data-edit]')) {
+    if (element.dataset.edit) {
+      seen.add(element.dataset.edit);
+    }
+  }
+
+  return [...seen];
 }
 
 function IntroductionPages({ introduction }: { introduction: Introduction }) {
@@ -1320,73 +1391,6 @@ function ContentBlockView({ block, address }: { block: ContentBlock; address?: s
       {renderTextWithNotes(block.text, block.noteRefs)}
     </p>
   );
-}
-
-function renderTextWithNotes(text: string, noteRefs: number[] = []) {
-  const nodes: ReactNode[] = [];
-  let noteIndex = 0;
-  let textStart = 0;
-
-  for (let index = 0; index < text.length; index += 1) {
-    if (!isFootnoteMarker(text, index)) {
-      continue;
-    }
-
-    nodes.push(...renderInlineMarkup(text.slice(textStart, index), `text-${index}`));
-
-    const noteNumber = noteRefs[noteIndex];
-    noteIndex += 1;
-    nodes.push(
-      <sup
-        aria-label={noteNumber ? `Nota ${noteNumber}` : undefined}
-        className="note-callout"
-        key={`note-${index}-${noteIndex}`}
-        title={noteNumber ? `Nota ${noteNumber}` : undefined}
-      >
-        {noteNumber ? `*${noteNumber}` : '*'}
-      </sup>,
-    );
-
-    textStart = index + 1;
-  }
-
-  nodes.push(...renderInlineMarkup(text.slice(textStart), `text-end-${text.length}`));
-
-  return nodes;
-}
-
-function renderInlineMarkup(text: string, keyPrefix = 'inline'): ReactNode[] {
-  const nodes: ReactNode[] = [];
-  const pattern = /(\*\*([^*]+)\*\*|\*([^*\n]+)\*|__([^_]+)__|_([^_]+)_|\n)/gu;
-  let lastIndex = 0;
-  let matchIndex = 0;
-
-  for (const match of text.matchAll(pattern)) {
-    const index = match.index ?? 0;
-
-    if (index > lastIndex) {
-      nodes.push(text.slice(lastIndex, index));
-    }
-
-    if (match[0] === '\n') {
-      nodes.push(<br key={`${keyPrefix}-br-${matchIndex}`} />);
-    } else if (match[2] || match[4]) {
-      nodes.push(<strong key={`${keyPrefix}-strong-${matchIndex}`}>{match[2] ?? match[4]}</strong>);
-    } else if (match[3] || match[5]) {
-      nodes.push(<em key={`${keyPrefix}-em-${matchIndex}`}>{match[3] ?? match[5]}</em>);
-    }
-
-    lastIndex = index + match[0].length;
-    matchIndex += 1;
-  }
-
-  if (lastIndex < text.length) {
-    nodes.push(text.slice(lastIndex));
-  }
-
-  return nodes.map((node, index) => (
-    <Fragment key={`${keyPrefix}-${index}`}>{node}</Fragment>
-  ));
 }
 
 function stripInlineMarkup(text: string) {

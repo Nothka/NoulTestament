@@ -737,3 +737,70 @@ sup.note-callout {
 .block-toolbar-reset {
   font-size: 0.78rem !important;
 }
+
+.block-editor-nav {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.block-editor-nav button {
+  border: 1px solid #c9bda8;
+  background: #ffffff;
+  color: #5b4a36;
+  min-width: 30px;
+  padding: 3px 8px;
+  font-size: 0.95rem;
+}
+
+.block-editor-nav button:disabled {
+  border-color: #e6ded1;
+  color: #c3b7a5;
+  cursor: not-allowed;
+}
+
+.block-toolbar-clear,
+.block-toolbar-reset {
+  font-size: 0.78rem !important;
+}
+
+.block-preview {
+  margin-top: 12px;
+  border: 1px dashed #ddd3c2;
+  border-radius: 5px;
+  background: #fffdf9;
+  padding: 10px 12px;
+}
+
+.block-preview-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #8a7a66;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.block-preview-body {
+  margin: 0;
+  color: #222222;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 1.5;
+}
+
+.block-preview-body sup {
+  position: relative;
+  top: -0.18em;
+  margin-right: 1px;
+  font-size: 0.68em;
+  font-weight: 700;
+  line-height: 0;
+}
+
+.block-editor footer {
+  align-items: center;
+}
+
+.block-editor footer .block-editor-locked {
+  margin-right: auto;
+}
