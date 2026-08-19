@@ -48,6 +48,7 @@ collections:
                 widget: list
                 required: false
                 field: { label: Număr notă, name: noteRef, widget: number, value_type: int }
+              - { label: Mărime (%), name: size, widget: number, value_type: int, required: false, hint: "Se schimbă din pagina de editare." }
 
   - name: books
     label: Cărți
@@ -75,6 +76,7 @@ collections:
             name: title
             widget: string
             hint: "Italic: _text_. Bold: **text**."
+          - { label: Mărime titlu (%), name: titleSize, widget: number, value_type: int, required: false, hint: "Se schimbă din pagina de editare." }
           - { label: Pagină, name: pageNumber, widget: number, value_type: int, required: false }
           - label: Text
             name: blocks
@@ -98,6 +100,7 @@ collections:
                 widget: list
                 required: false
                 field: { label: Număr notă, name: noteRef, widget: number, value_type: int }
+              - { label: Mărime (%), name: size, widget: number, value_type: int, required: false, hint: "Se schimbă din pagina de editare." }
           - label: Note de subsol
             name: notes
             widget: list
@@ -110,3 +113,4 @@ collections:
                 name: text
                 widget: text
                 hint: "Italic: _text_. Bold: **text**."
+              - { label: Mărime (%), name: size, widget: number, value_type: int, required: false, hint: "Se schimbă din pagina de editare." }

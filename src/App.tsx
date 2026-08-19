@@ -12,6 +12,7 @@ import {
 import './App.css';
 
 const CONTENT_BOOKS_INDEX_URL = '/content/books-index.json';
+const INTRODUCTION_PATH = 'public/content/introduction.json';
 const CONTENT_INTRODUCTION_URL = '/content/introduction.json';
 const defaultSectionId = 'introduction';
 const fallbackBookId = 'matei';
@@ -20,11 +21,20 @@ type ContentBlock = {
   type: 'heading' | 'paragraph' | 'verse';
   text: string;
   noteRefs?: number[];
+  /** Font size as a percentage of the normal size, set from edit mode. */
+  size?: number;
 };
 
 type Footnote = {
   number: number;
   text: string;
+  size?: number;
+};
+
+/** A footnote plus where it lives, so edit mode can address it. */
+type PageFootnote = Footnote & {
+  passageId: string;
+  noteIndex: number;
 };
 
 type Passage = {
@@ -32,6 +42,7 @@ type Passage = {
   number: number;
   reference: string;
   title: string;
+  titleSize?: number;
   pageNumber?: number;
   blocks: ContentBlock[];
   notes?: Footnote[];
@@ -40,6 +51,7 @@ type Passage = {
 type PagePassage = {
   id: string;
   passageId: string;
+  titleSize?: number;
   bookId: string;
   number: number;
   reference: string;
@@ -53,7 +65,7 @@ type PagePassage = {
 type VisualBookPage = {
   number: number;
   columns: [PagePassage[], PagePassage[]];
-  notes: Footnote[];
+  notes: PageFootnote[];
 };
 
 type Book = {
@@ -91,7 +103,7 @@ function App() {
   const isEditorRoute = typeof window !== 'undefined' && window.location.pathname.startsWith('/edit');
   const [session, setSession] = useState<string | null>(() => (isEditorRoute ? readStoredSession() : null));
   const [draft, setDraft] = useState<BlockDraft | null>(null);
-  const [dirtyBookIds, setDirtyBookIds] = useState<string[]>([]);
+  const [dirtyPaths, setDirtyPaths] = useState<string[]>([]);
   const [publishing, setPublishing] = useState(false);
   const [publishStatus, setPublishStatus] = useState<{
     kind: 'idle' | 'ok' | 'error';
@@ -141,58 +153,119 @@ function App() {
     : selectedBook?.title;
 
   function openBlockEditor(address: string) {
-    const [passageId, rawIndex] = address.split(':');
-    const blockIndex = Number(rawIndex);
-    const book = data?.books.find((candidate) => candidate.passages.some((passage) => passage.id === passageId));
-    const passage = book?.passages.find((candidate) => candidate.id === passageId);
-    const block = passage?.blocks[blockIndex];
-
-    if (!book || !block) {
+    if (!data) {
       return;
     }
 
-    // The verse number lives at the front of the text, so split it off and keep
-    // it out of the editable field entirely.
-    const match = block.type === 'verse' ? block.text.match(/^(\d{1,3})(.*)$/u) : null;
+    const [kind, first, second] = address.split(':');
 
-    setDraft({
-      address,
-      bookId: book.id,
-      kind: block.type,
-      text: match ? match[2] : block.text,
-      verseNumber: match ? match[1] : '',
-    });
+    if (kind === 'intro') {
+      const block = data.introduction?.blocks[Number(first)];
+
+      if (!block) {
+        return;
+      }
+
+      setDraft(draftForText(address, INTRODUCTION_PATH, 'Paragraf (introducere)', block.text, block.size, block.type === 'verse'));
+      return;
+    }
+
+    const book = data.books.find((candidate) => candidate.passages.some((passage) => passage.id === first));
+    const passage = book?.passages.find((candidate) => candidate.id === first);
+
+    if (!book || !passage) {
+      return;
+    }
+
+    const path = `public/content/books/${book.id}.json`;
+
+    if (kind === 'title') {
+      setDraft(draftForText(address, path, 'Titlul pasajului', passage.title, passage.titleSize, false));
+      return;
+    }
+
+    if (kind === 'note') {
+      const note = passage.notes?.[Number(second)];
+
+      if (!note) {
+        return;
+      }
+
+      setDraft(draftForText(address, path, `Nota ${note.number}`, note.text, note.size, false));
+      return;
+    }
+
+    const block = passage.blocks[Number(second)];
+
+    if (!block) {
+      return;
+    }
+
+    const label = block.type === 'heading' ? 'Subtitlu' : block.type === 'verse' ? 'Verset' : 'Paragraf';
+
+    setDraft(draftForText(address, path, label, block.text, block.size, block.type === 'verse'));
   }
 
-  function confirmBlockEdit(nextText: string) {
+  function confirmBlockEdit(nextText: string, nextSize: number) {
     if (!draft || !data) {
       return;
     }
 
-    const [passageId, rawIndex] = draft.address.split(':');
-    const blockIndex = Number(rawIndex);
+    const [kind, first, second] = draft.address.split(':');
+    const size = nextSize === 100 ? undefined : nextSize;
+    const text = `${draft.verseNumber}${nextText}`;
 
-    setData({
-      ...data,
-      books: data.books.map((book) => (book.id !== draft.bookId ? book : {
-        ...book,
-        passages: book.passages.map((passage) => (passage.id !== passageId ? passage : {
-          ...passage,
-          blocks: passage.blocks.map((block, index) => (index !== blockIndex ? block : {
-            ...block,
-            text: `${draft.verseNumber}${nextText}`,
-          })),
+    if (kind === 'intro' && data.introduction) {
+      setData({
+        ...data,
+        introduction: {
+          ...data.introduction,
+          blocks: data.introduction.blocks.map((block, index) => (
+            index !== Number(first) ? block : { ...block, text, size }
+          )),
+        },
+      });
+    } else {
+      setData({
+        ...data,
+        books: data.books.map((book) => (!book.passages.some((passage) => passage.id === first) ? book : {
+          ...book,
+          passages: book.passages.map((passage) => {
+            if (passage.id !== first) {
+              return passage;
+            }
+
+            if (kind === 'title') {
+              return { ...passage, title: text, titleSize: size };
+            }
+
+            if (kind === 'note') {
+              return {
+                ...passage,
+                notes: passage.notes?.map((note, index) => (
+                  index !== Number(second) ? note : { ...note, text, size }
+                )),
+              };
+            }
+
+            return {
+              ...passage,
+              blocks: passage.blocks.map((block, index) => (
+                index !== Number(second) ? block : { ...block, text, size }
+              )),
+            };
+          }),
         })),
-      })),
-    });
+      });
+    }
 
-    setDirtyBookIds((current) => (current.includes(draft.bookId) ? current : [...current, draft.bookId]));
+    setDirtyPaths((current) => (current.includes(draft.path) ? current : [...current, draft.path]));
     setPublishStatus({ kind: 'idle', message: '' });
     setDraft(null);
   }
 
   async function publishChanges() {
-    if (!data || dirtyBookIds.length === 0) {
+    if (!data || dirtyPaths.length === 0) {
       return;
     }
 
@@ -204,9 +277,11 @@ function App() {
         method: 'POST',
         headers: { 'content-type': 'application/json', authorization: `Bearer ${session}` },
         body: JSON.stringify({
-          files: dirtyBookIds.map((bookId) => ({
-            path: `public/content/books/${bookId}.json`,
-            content: data.books.find((book) => book.id === bookId),
+          files: dirtyPaths.map((path) => ({
+            path,
+            content: path === INTRODUCTION_PATH
+              ? data.introduction
+              : data.books.find((book) => `public/content/books/${book.id}.json` === path),
           })),
         }),
       });
@@ -223,7 +298,7 @@ function App() {
         return;
       }
 
-      setDirtyBookIds([]);
+      setDirtyPaths([]);
       setPublishStatus({ kind: 'ok', message: 'Salvat. Site-ul se actualizează în ~1 minut.' });
     } catch {
       setPublishStatus({ kind: 'error', message: 'Nu am putut contacta serverul.' });
@@ -273,8 +348,8 @@ function App() {
     <main
       className={isEditing ? 'app app-editing' : 'app'}
       onClick={isEditing ? (event) => {
-        const target = (event.target as HTMLElement).closest('[data-block]');
-        const address = target instanceof HTMLElement ? target.dataset.block : undefined;
+        const target = (event.target as HTMLElement).closest('[data-edit]');
+        const address = target instanceof HTMLElement ? target.dataset.edit : undefined;
 
         if (address) {
           event.preventDefault();
@@ -285,7 +360,7 @@ function App() {
       {isEditing ? (
         <EditorBar
           busy={publishing}
-          dirtyCount={dirtyBookIds.length}
+          dirtyCount={dirtyPaths.length}
           onLogout={() => {
             storeSession(null);
             setSession(null);
@@ -380,6 +455,27 @@ async function fetchJson<T>(url: string): Promise<T> {
   return response.json() as Promise<T>;
 }
 
+/** Builds a draft, splitting a leading verse number out of editable text. */
+function draftForText(
+  address: string,
+  path: string,
+  label: string,
+  rawText: string,
+  size: number | undefined,
+  isVerse: boolean,
+): BlockDraft {
+  const match = isVerse ? rawText.match(/^(\d{1,3})(.*)$/u) : null;
+
+  return {
+    address,
+    path,
+    label: match ? `${label} ${match[1]}` : label,
+    size: size ?? 100,
+    text: match ? match[2] : rawText,
+    verseNumber: match ? match[1] : '',
+  };
+}
+
 function IntroductionPages({ introduction }: { introduction: Introduction }) {
   const pages = [{ number: 1, blocks: introduction.blocks }];
 
@@ -391,7 +487,11 @@ function IntroductionPages({ introduction }: { introduction: Introduction }) {
 
           <div className="introduction-body">
             {page.blocks.map((block, index) => (
-              <ContentBlockView block={block} key={`introduction-${page.number}-${index}`} />
+              <ContentBlockView
+                address={`intro:${index}`}
+                block={block}
+                key={`introduction-${page.number}-${index}`}
+              />
             ))}
           </div>
         </article>
@@ -467,6 +567,7 @@ function buildEstimatedVisualPages(book: Book): VisualBookPage[] {
         number: passage.number,
         reference: passage.reference,
         title: passage.title,
+        titleSize: passage.titleSize,
         isContinuation: !isFirstSegment,
         blocks: segment.blocks,
         allBlocks: passage.blocks,
@@ -549,6 +650,7 @@ function buildMeasuredVisualPages(book: Book): VisualBookPage[] | null {
           number: passage.number,
           reference: passage.reference,
           title: passage.title,
+          titleSize: passage.titleSize,
           isContinuation: !isFirstSegment,
           blocks: segment.blocks,
           allBlocks: passage.blocks,
@@ -910,22 +1012,30 @@ function addNotesForBlocks(page: VisualBookPage, passage: Passage, blocks: Conte
   );
   const existingNoteNumbers = new Set(page.notes.map((note) => note.number));
 
-  for (const note of passage.notes) {
+  for (const [noteIndex, note] of passage.notes.entries()) {
     if (noteNumbers.has(note.number) && !existingNoteNumbers.has(note.number)) {
-      page.notes.push(note);
+      page.notes.push({ ...note, passageId: passage.id, noteIndex });
       existingNoteNumbers.add(note.number);
     }
   }
 }
 
 /**
- * Identifies a block as `<passageId>:<indexInPassage>` so edit mode can map a
- * click in the rendered page back to the block it came from.
+ * Addresses an editable element so a click in the rendered page maps back to
+ * the field it came from. Shapes: `block:<passageId>:<i>`, `title:<passageId>`,
+ * `note:<passageId>:<i>`, `intro:<i>`.
  */
 function blockAddress(passageId: string, allBlocks: ContentBlock[], block: ContentBlock) {
   const index = allBlocks.indexOf(block);
 
-  return index >= 0 ? `${passageId}:${index}` : undefined;
+  return index >= 0 ? `block:${passageId}:${index}` : undefined;
+}
+
+/** Inline style carrying a per-element font scale, or nothing when unset. */
+function sizeStyle(size?: number) {
+  return size && size !== 100
+    ? ({ '--size-scale': String(size / 100) } as React.CSSProperties)
+    : undefined;
 }
 
 function getResolvedNoteRefsForBlock(
@@ -967,7 +1077,11 @@ function PagePassageView({ passage }: { passage: PagePassage }) {
             </p>
           ) : null}
 
-          <h3 className="passage-title">
+          <h3
+            className="passage-title"
+            data-edit={`title:${passage.passageId}`}
+            style={sizeStyle(passage.titleSize)}
+          >
             {renderInlineMarkup(passage.title, `${passage.id}-title`)}
           </h3>
         </header>
@@ -1040,8 +1154,9 @@ function PassageBlocks({
     return (
       <h4
         className="inline-heading"
-        data-block={blockAddress(passageId, allBlocks, group)}
+        data-edit={blockAddress(passageId, allBlocks, group)}
         key={`${passageId}-heading-${index}`}
+        style={sizeStyle(group.size)}
       >
         {renderTextWithNotes(group.text, getResolvedNoteRefsForBlock(group, allBlocks, notes))}
       </h4>
@@ -1055,7 +1170,7 @@ function InlineBlock({ block, noteRefs, address }: { block: ContentBlock; noteRe
 
     if (match) {
       return (
-        <span className="verse-fragment" data-block={address}>
+        <span className="verse-fragment" data-edit={address} style={sizeStyle(block.size)}>
           <sup>{match[1]}</sup>
           {renderTextWithNotes(match[2].trimStart(), noteRefs)}
         </span>
@@ -1064,7 +1179,7 @@ function InlineBlock({ block, noteRefs, address }: { block: ContentBlock; noteRe
   }
 
   return (
-    <span className="text-fragment" data-block={address}>
+    <span className="text-fragment" data-edit={address} style={sizeStyle(block.size)}>
       {renderTextWithNotes(block.text, noteRefs)}
     </span>
   );
@@ -1088,8 +1203,9 @@ function GenealogyBlocks({
           return [
             <h4
               className="inline-heading"
-              data-block={blockAddress(passageId, allBlocks, block)}
+              data-edit={blockAddress(passageId, allBlocks, block)}
               key={`${passageId}-${blockIndex}`}
+              style={sizeStyle(block.size)}
             >
               {renderTextWithNotes(block.text, getResolvedNoteRefsForBlock(block, allBlocks, notes))}
             </h4>,
@@ -1101,8 +1217,9 @@ function GenealogyBlocks({
         return lines.map((line, lineIndex) => (
           <p
             className="genealogy-line"
-            data-block={blockAddress(passageId, allBlocks, block)}
+            data-edit={blockAddress(passageId, allBlocks, block)}
             key={`${passageId}-${blockIndex}-${lineIndex}`}
+            style={sizeStyle(block.size)}
           >
             {lineIndex === 0 ? (
               <GenealogyLine text={line} noteRefs={getResolvedNoteRefsForBlock(block, allBlocks, notes)} />
@@ -1155,12 +1272,17 @@ function splitGenealogyText(text: string) {
   return parts.map((part, index) => (index === 0 ? `${verseNumber}${part}` : part));
 }
 
-function PassageNotes({ notes }: { notes: Footnote[] }) {
+function PassageNotes({ notes }: { notes: PageFootnote[] }) {
   return (
     <footer className="passage-notes" aria-label="Note de subsol">
       <ol>
         {notes.map((note) => (
-          <li key={note.number} value={note.number}>
+          <li
+            data-edit={`note:${note.passageId}:${note.noteIndex}`}
+            key={note.number}
+            style={sizeStyle(note.size)}
+            value={note.number}
+          >
             {renderInlineMarkup(note.text)}
           </li>
         ))}
@@ -1169,25 +1291,35 @@ function PassageNotes({ notes }: { notes: Footnote[] }) {
   );
 }
 
-function ContentBlockView({ block }: { block: ContentBlock }) {
+function ContentBlockView({ block, address }: { block: ContentBlock; address?: string }) {
+  const style = sizeStyle(block.size);
+
   if (block.type === 'heading') {
-    return <h4 className="inline-heading">{renderTextWithNotes(block.text, block.noteRefs)}</h4>;
+    return (
+      <h4 className="inline-heading" data-edit={address} style={style}>
+        {renderTextWithNotes(block.text, block.noteRefs)}
+      </h4>
+    );
   }
 
   if (block.type === 'verse') {
     const match = block.text.match(/^(\d{1,3})(.*)$/u);
 
     if (match) {
-     return (
-  <p className="verse-line">
-    <sup>{match[1]}</sup>
-    {renderTextWithNotes(match[2].trimStart(), block.noteRefs)}
-  </p>
-);
+      return (
+        <p className="verse-line" data-edit={address} style={style}>
+          <sup>{match[1]}</sup>
+          {renderTextWithNotes(match[2].trimStart(), block.noteRefs)}
+        </p>
+      );
     }
   }
 
-  return <p className="text-line">{renderTextWithNotes(block.text, block.noteRefs)}</p>;
+  return (
+    <p className="text-line" data-edit={address} style={style}>
+      {renderTextWithNotes(block.text, block.noteRefs)}
+    </p>
+  );
 }
 
 function renderTextWithNotes(text: string, noteRefs: number[] = []) {

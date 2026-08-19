@@ -201,7 +201,7 @@
 .passage-header h3 {
   margin: 0;
   color: #2d2d2d;
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--size-scale, 1));
   font-style: italic;
   font-weight: 400;
   line-height: 1.25;
@@ -240,6 +240,7 @@
 .verse-fragment,
 .text-fragment {
   display: inline;
+  font-size: calc(1.02rem * var(--size-scale, 1));
 }
 
 .verse-fragment:not(:first-child)::before,
@@ -259,6 +260,7 @@
 .verse-line,
 .text-line {
   margin: 0 0 0.42rem;
+  font-size: calc(1.02rem * var(--size-scale, 1));
 }
 
 .verse-line sup {
@@ -303,6 +305,7 @@ sup.note-callout {
 .passage-notes li {
   margin: 0 0 0.25rem;
   padding-left: 0.15rem;
+  font-size: calc(1em * var(--size-scale, 1));
 }
 
 .passage-notes li::marker {
@@ -315,7 +318,7 @@ sup.note-callout {
 .inline-heading {
   margin: 1rem 0 0.5rem;
   color: #2f2f2f;
-  font-size: 1.02rem;
+  font-size: calc(1.02rem * var(--size-scale, 1));
   font-style: italic;
   font-weight: 400;
   line-height: 1.28;
@@ -397,6 +400,14 @@ sup.note-callout {
   .passage-body {
     font-size: 0.97rem;
     line-height: 1.55;
+  }
+
+  .verse-fragment,
+  .text-fragment,
+  .verse-line,
+  .text-line,
+  .inline-heading {
+    font-size: calc(0.97rem * var(--size-scale, 1));
   }
 
   .passage-notes {
@@ -596,13 +607,13 @@ sup.note-callout {
 }
 
 /* Make editable text visibly clickable without disturbing the reading layout. */
-.app-editing [data-block] {
+.app-editing [data-edit] {
   cursor: pointer;
   border-radius: 2px;
   box-shadow: inset 0 -1px 0 rgba(204, 85, 0, 0.18);
 }
 
-.app-editing [data-block]:hover {
+.app-editing [data-edit]:hover {
   background: rgba(204, 85, 0, 0.1);
   box-shadow: inset 0 -1px 0 rgba(204, 85, 0, 0.9);
 }
@@ -677,4 +688,52 @@ sup.note-callout {
   border-color: #b8a892;
   background: transparent;
   color: #5b4a36;
+}
+
+.block-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.block-toolbar button {
+  border: 1px solid #c9bda8;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #3a2c1c;
+  cursor: pointer;
+  min-width: 34px;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+}
+
+.block-toolbar button:hover {
+  border-color: #cc5500;
+  color: #cc5500;
+}
+
+.block-toolbar-divider {
+  width: 1px;
+  height: 20px;
+  background: #ddd3c2;
+}
+
+.block-toolbar-size {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #5b4a36;
+  font-size: 0.8rem;
+}
+
+.block-toolbar-size select {
+  border: 1px solid #c9bda8;
+  border-radius: 4px;
+  padding: 5px 6px;
+  font-size: 0.85rem;
+}
+
+.block-toolbar-reset {
+  font-size: 0.78rem !important;
 }
