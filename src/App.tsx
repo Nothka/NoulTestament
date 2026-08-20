@@ -117,6 +117,7 @@ function App() {
   const [hasError, setHasError] = useState(false);
   const [isNoticeVisible, setIsNoticeVisible] = useState(true);
 
+  const isMobile = useIsMobile();
   const isEditorRoute = typeof window !== 'undefined' && window.location.pathname.startsWith('/edit');
   const [session, setSession] = useState<string | null>(() => (isEditorRoute ? readStoredSession() : null));
   const [draft, setDraft] = useState<BlockDraft | null>(null);
@@ -463,14 +464,41 @@ function App() {
     }
   }
 
+  /**
+   * On a phone the book menu is taller than the screen, so scrolling back to the
+   * top after a choice leaves the reader looking at the same menu and nothing
+   * seems to have happened. Bring the book's title into view instead. On wider
+   * screens the title is already visible from the top, and going to the top
+   * keeps the menu within reach.
+   */
+  function revealSelection() {
+    window.requestAnimationFrame(() => {
+      const heading = document.getElementById('selected-book-title');
+
+      if (!isMobile || !heading) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        return;
+      }
+
+      // The edit bar is sticky, so leave room for it rather than scrolling the
+      // title underneath.
+      const bar = document.querySelector('.editor-bar');
+      const offset = (bar ? bar.getBoundingClientRect().height : 0) + 12;
+      const top = heading.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    });
+  }
+
   function selectBook(bookId: string) {
     setSelectedSectionId(bookId);
-    window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    revealSelection();
   }
 
   function selectIntroduction() {
     setSelectedSectionId(data?.introduction ? defaultSectionId : data?.books[0]?.id ?? fallbackBookId);
-    window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    revealSelection();
   }
 
   if (isEditorRoute && !session) {
