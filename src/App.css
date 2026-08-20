@@ -353,8 +353,14 @@ sup.note-callout {
   }
 
   .book-nav-button {
-    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: stretch;
+    /* Comfortable thumb target: the links are otherwise about 20px tall. */
+    min-height: 44px;
     min-width: 0;
+    padding: 0 6px;
     overflow-wrap: anywhere;
     font-size: 0.82rem;
   }
@@ -684,14 +690,16 @@ sup.note-callout {
   margin-top: 14px;
 }
 
-.block-editor footer button:first-child {
-  border-color: #b8a892;
-  background: transparent;
-  color: #5b4a36;
+/* Keyed to a class, not :first-child — the locked-verse note shares this row. */
+.block-editor-cancel {
+  border-color: #b8a892 !important;
+  background: transparent !important;
+  color: #5b4a36 !important;
 }
 
 .block-toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   margin-bottom: 10px;
@@ -1042,4 +1050,28 @@ sup.note-callout {
   padding: 1px 8px;
   font-size: 0.68rem;
   font-weight: 700;
+}
+
+
+@media (max-width: 560px) {
+  .block-editor,
+  .changes-panel {
+    padding: 14px;
+  }
+
+  .block-editor-backdrop {
+    padding: 10px;
+  }
+
+  .changes-item-head {
+    flex-wrap: wrap;
+  }
+
+  .changes-published li {
+    flex-wrap: wrap;
+  }
+
+  .changes-when {
+    width: auto;
+  }
 }

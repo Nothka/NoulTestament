@@ -17,6 +17,7 @@ import {
 import { removeBlock } from './passage-edits.js';
 import './App.css';
 
+const MOBILE_QUERY = '(max-width: 560px)';
 const CONTENT_BOOKS_INDEX_URL = '/content/books-index.json';
 const INTRODUCTION_PATH = 'public/content/introduction.json';
 const CONTENT_INTRODUCTION_URL = '/content/introduction.json';
@@ -795,6 +796,7 @@ function IntroductionPages({ introduction }: { introduction: Introduction }) {
 }
 
 function BookPages({ book }: { book: Book }) {
+  const isMobile = useIsMobile();
   const [pages, setPages] = useState<VisualBookPage[]>(() => buildEstimatedVisualPages(book));
 
   useLayoutEffect(() => {
@@ -817,18 +819,57 @@ function BookPages({ book }: { book: Book }) {
           <div className="page-content">
             {page.columns.map((column, columnIndex) => (
               <div className="page-column" key={`${book.id}-${page.number}-${columnIndex}`}>
-                {column.map((passage) => (
+                {column.map((passage) => (isMobile ? (
+                  <Fragment key={passage.id}>
+                    <PagePassageView passage={passage} />
+                    {passage.notes?.length ? <PassageNotes notes={passageFootnotes(passage)} /> : null}
+                  </Fragment>
+                ) : (
                   <PagePassageView passage={passage} key={passage.id} />
-                ))}
+                )))}
               </div>
             ))}
           </div>
 
-          {page.notes.length > 0 ? <PassageNotes notes={page.notes} /> : null}
+          {!isMobile && page.notes.length > 0 ? <PassageNotes notes={page.notes} /> : null}
         </section>
       ))}
     </div>
   );
+}
+
+/**
+ * A passage's own notes, tagged with where they live so edit mode can address
+ * them. Used on phones, where the notes follow their passage directly.
+ */
+function passageFootnotes(passage: PagePassage): PageFootnote[] {
+  return (passage.notes ?? []).map((note, noteIndex) => ({
+    ...note,
+    passageId: passage.passageId,
+    noteIndex,
+  }));
+}
+
+/**
+ * Tracks the phone breakpoint. Pagination gives a phone a single unbounded
+ * column, so without this every footnote in the book would collect in one
+ * block at the very end instead of following the passage it belongs to.
+ */
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia(MOBILE_QUERY).matches,
+  );
+
+  useEffect(() => {
+    const query = window.matchMedia(MOBILE_QUERY);
+    const update = () => setIsMobile(query.matches);
+
+    query.addEventListener('change', update);
+
+    return () => query.removeEventListener('change', update);
+  }, []);
+
+  return isMobile;
 }
 
 function buildEstimatedVisualPages(book: Book): VisualBookPage[] {
@@ -903,7 +944,7 @@ function buildMeasuredVisualPages(book: Book): VisualBookPage[] | null {
     return null;
   }
 
-  const isMobile = window.matchMedia('(max-width: 560px)').matches;
+  const isMobile = window.matchMedia(MOBILE_QUERY).matches;
   const columnGap = isMobile ? 0 : 52;
   const columnWidth = isMobile
     ? readerShell.clientWidth

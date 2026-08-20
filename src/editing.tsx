@@ -435,7 +435,7 @@ export function BlockEditor({
 
         <footer>
           {draft.verseNumber ? <span className="block-editor-locked">numărul versetului este protejat</span> : null}
-          <button onClick={onCancel} type="button">Anulează</button>
+          <button className="block-editor-cancel" onClick={onCancel} type="button">Anulează</button>
           <button className="block-editor-confirm" onClick={() => onConfirm(edit())} type="button">Gata</button>
         </footer>
       </div>
