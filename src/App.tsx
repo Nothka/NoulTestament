@@ -4,14 +4,17 @@ import { countFootnoteMarkers } from './footnote-markers.js';
 import { renderInlineMarkup, renderTextWithNotes } from './markup';
 import {
   BlockEditor,
+  ChangesPanel,
   EditorBar,
   EditorLogin,
   readStoredSession,
   storeSession,
   type BlockDraft,
   type BlockEdit,
+  type PendingChange,
+  type PublishedChange,
 } from './editing';
-import { insertBlock, moveBlock, removeBlock } from './passage-edits.js';
+import { removeBlock } from './passage-edits.js';
 import './App.css';
 
 const CONTENT_BOOKS_INDEX_URL = '/content/books-index.json';
@@ -116,8 +119,12 @@ function App() {
   const isEditorRoute = typeof window !== 'undefined' && window.location.pathname.startsWith('/edit');
   const [session, setSession] = useState<string | null>(() => (isEditorRoute ? readStoredSession() : null));
   const [draft, setDraft] = useState<BlockDraft | null>(null);
-  const [dirtyPaths, setDirtyPaths] = useState<string[]>([]);
+  const [changes, setChanges] = useState<PendingChange[]>([]);
   const [pendingAddress, setPendingAddress] = useState<string | null>(null);
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  const [published, setPublished] = useState<PublishedChange[] | null>(null);
+  const [loadingPublished, setLoadingPublished] = useState(false);
+  const dirtyPaths = [...new Set(changes.map((change) => change.path))];
   const [publishing, setPublishing] = useState(false);
   const [publishStatus, setPublishStatus] = useState<{
     kind: 'idle' | 'ok' | 'error';
@@ -275,7 +282,7 @@ function App() {
       return;
     }
 
-    applyChange(applyTextEdit(data, draft, edit));
+    applyChange(applyTextEdit(data, draft, edit), describeDraft(draft, edit));
     setDraft(null);
   }
 
@@ -285,7 +292,7 @@ function App() {
       return;
     }
 
-    applyChange(applyTextEdit(data, draft, edit));
+    applyChange(applyTextEdit(data, draft, edit), describeDraft(draft, edit));
 
     const addresses = editableAddresses();
     const target = addresses[addresses.indexOf(draft.address) + direction];
@@ -311,34 +318,100 @@ function App() {
     const [, passageId] = draft.address.split(':');
     const base = edit ? applyTextEdit(data, draft, edit) : data;
 
-    applyChange(applyPassageChange(base, passageId, change));
+    applyChange(
+      applyPassageChange(base, passageId, change),
+      { label: draft.label, where: passageId, current: '(șters)' },
+    );
     setPendingAddress(nextIndex === null ? null : `block:${passageId}:${nextIndex}`);
     setDraft(null);
   }
 
-  function applyChange(next: TestamentData) {
+  /**
+   * Applies new data and records what changed, keeping the first value seen for
+   * an element so "Anulează" always restores the original rather than an
+   * intermediate edit.
+   */
+  function applyChange(next: TestamentData, record?: { label: string; where: string; current: string }) {
     if (!draft) {
       return;
     }
 
     setData(next);
-    setDirtyPaths((current) => (current.includes(draft.path) ? current : [...current, draft.path]));
     setPublishStatus({ kind: 'idle', message: '' });
+
+    if (!record) {
+      return;
+    }
+
+    setChanges((current) => {
+      const existing = current.find((change) => change.address === draft.address);
+      const entry: PendingChange = {
+        address: draft.address,
+        path: draft.path,
+        label: record.label,
+        where: record.where,
+        original: existing ? existing.original : `${draft.verseNumber}${draft.text}`,
+        current: record.current,
+        at: Date.now(),
+      };
+
+      if (entry.original === entry.current) {
+        return current.filter((change) => change.address !== draft.address);
+      }
+
+      return [entry, ...current.filter((change) => change.address !== draft.address)];
+    });
+  }
+
+  /** Puts one element back to the value it had before this session's edits. */
+  function undoChange(address: string) {
+    const change = changes.find((entry) => entry.address === address);
+
+    if (!change || !data) {
+      return;
+    }
+
+    const [kind] = address.split(':');
+    const isVerse = kind === 'block' && /^\d/u.test(change.original);
+    const match = isVerse ? change.original.match(/^(\d{1,3})(.*)$/u) : null;
+
+    setData(applyTextEdit(
+      data,
+      {
+        ...(draft ?? ({} as BlockDraft)),
+        address,
+        verseNumber: match ? match[1] : '',
+        text: '',
+      },
+      {
+        text: match ? match[2] : change.original,
+        size: 100,
+        align: '',
+        spaceBefore: 0,
+        spaceAfter: 0,
+      },
+    ));
+
+    setChanges((current) => current.filter((entry) => entry.address !== address));
+  }
+
+  async function loadPublished() {
+    setLoadingPublished(true);
+
+    try {
+      const response = await fetch('/.netlify/functions/history', {
+        headers: { authorization: `Bearer ${session}` },
+      });
+      const body = await response.json();
+      setPublished(response.ok ? body.commits ?? [] : null);
+    } catch {
+      setPublished(null);
+    } finally {
+      setLoadingPublished(false);
+    }
   }
 
   const draftBlockIndex = () => Number(draft?.address.split(':')[2]);
-
-  const moveDraftBlock = (direction: -1 | 1, edit: BlockEdit) => restructure(
-    edit,
-    (passage) => moveBlock(passage, draftBlockIndex(), direction) as Passage,
-    draftBlockIndex() + direction,
-  );
-
-  const addDraftBlock = (type: 'heading' | 'paragraph', edit: BlockEdit) => restructure(
-    edit,
-    (passage) => insertBlock(passage, draftBlockIndex(), type) as Passage,
-    draftBlockIndex() + 1,
-  );
 
   const deleteDraftBlock = () => restructure(
     null,
@@ -380,7 +453,7 @@ function App() {
         return;
       }
 
-      setDirtyPaths([]);
+      setChanges([]);
       setPublishStatus({ kind: 'ok', message: 'Salvat. Site-ul se actualizează în ~1 minut.' });
     } catch {
       setPublishStatus({ kind: 'error', message: 'Nu am putut contacta serverul.' });
@@ -442,13 +515,31 @@ function App() {
       {isEditing ? (
         <EditorBar
           busy={publishing}
-          dirtyCount={dirtyPaths.length}
+          changeCount={changes.length}
           onLogout={() => {
             storeSession(null);
             setSession(null);
           }}
           onPublish={publishChanges}
+          onShowChanges={() => {
+            setIsHistoryOpen(true);
+            loadPublished();
+          }}
           status={publishStatus}
+        />
+      ) : null}
+
+      {isEditing && isHistoryOpen ? (
+        <ChangesPanel
+          loadingPublished={loadingPublished}
+          onClose={() => setIsHistoryOpen(false)}
+          onOpen={(address) => {
+            setIsHistoryOpen(false);
+            openBlockEditor(address);
+          }}
+          onUndo={undoChange}
+          pending={changes}
+          published={published}
         />
       ) : null}
 
@@ -458,8 +549,6 @@ function App() {
           onCancel={() => setDraft(null)}
           onConfirm={confirmBlockEdit}
           onNavigate={navigateDraft}
-          onMove={moveDraftBlock}
-          onAdd={addDraftBlock}
           onDelete={deleteDraftBlock}
         />
       ) : null}
@@ -543,6 +632,15 @@ async function fetchJson<T>(url: string): Promise<T> {
   }
 
   return response.json() as Promise<T>;
+}
+
+/** Summarises a saved edit for the changes panel. */
+function describeDraft(draft: BlockDraft, edit: BlockEdit) {
+  return {
+    label: draft.label,
+    where: draft.address.split(':')[1] ?? '',
+    current: `${draft.verseNumber}${edit.text}`,
+  };
 }
 
 /** Returns new data with one passage replaced. */
@@ -651,8 +749,6 @@ function draftForText(options: {
     hasNext: position >= 0 && position < addresses.length - 1,
     canLayout: options.canLayout,
     canStructure,
-    canMoveUp: canStructure && options.blockIndex! > 0,
-    canMoveDown: canStructure && options.blockIndex! < options.blockCount! - 1,
     canDelete: canStructure && options.blockCount! > 1,
   };
 }

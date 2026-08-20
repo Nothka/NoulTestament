@@ -24,12 +24,27 @@ export type BlockDraft = {
   canLayout: boolean;
   /** Titles and footnotes have a fixed place; only blocks can be restructured. */
   canStructure: boolean;
-  canMoveUp: boolean;
-  canMoveDown: boolean;
   canDelete: boolean;
 };
 
 export type Align = 'left' | 'center' | 'right' | '';
+
+/** One element the editor has changed but not yet published. */
+export type PendingChange = {
+  address: string;
+  path: string;
+  label: string;
+  where: string;
+  original: string;
+  current: string;
+  at: number;
+};
+
+export type PublishedChange = {
+  sha: string;
+  message: string;
+  date: string;
+};
 
 export type BlockEdit = {
   text: string;
@@ -123,15 +138,17 @@ export function EditorLogin({ onLogin }: { onLogin: (token: string) => void }) {
 }
 
 export function EditorBar({
-  dirtyCount,
+  changeCount,
   onPublish,
   onLogout,
+  onShowChanges,
   status,
   busy,
 }: {
-  dirtyCount: number;
+  changeCount: number;
   onPublish: () => void;
   onLogout: () => void;
+  onShowChanges: () => void;
   status: { kind: 'idle' | 'ok' | 'error'; message: string; problems?: string[] };
   busy: boolean;
 }) {
@@ -140,8 +157,8 @@ export function EditorBar({
       <span className="editor-bar-title">Mod editare</span>
 
       <span className="editor-bar-hint">
-        {dirtyCount > 0
-          ? `${dirtyCount} modificare${dirtyCount === 1 ? '' : 'i'} nepublicate`
+        {changeCount > 0
+          ? `${changeCount} ${changeCount === 1 ? 'modificare nepublicată' : 'modificări nepublicate'}`
           : 'Apasă pe un text ca să îl modifici'}
       </span>
 
@@ -151,8 +168,12 @@ export function EditorBar({
         </span>
       ) : null}
 
-      <button className="editor-bar-publish" disabled={busy || dirtyCount === 0} onClick={onPublish} type="button">
-        {busy ? 'Se publică...' : `Publică${dirtyCount > 0 ? ` (${dirtyCount})` : ''}`}
+      <button className="editor-bar-changes" onClick={onShowChanges} type="button">
+        Modificări{changeCount > 0 ? ` (${changeCount})` : ''}
+      </button>
+
+      <button className="editor-bar-publish" disabled={busy || changeCount === 0} onClick={onPublish} type="button">
+        {busy ? 'Se publică...' : `Publică${changeCount > 0 ? ` (${changeCount})` : ''}`}
       </button>
 
       <button className="editor-bar-logout" onClick={onLogout} type="button">Ieși</button>
@@ -171,16 +192,12 @@ export function BlockEditor({
   onCancel,
   onConfirm,
   onNavigate,
-  onMove,
-  onAdd,
   onDelete,
 }: {
   draft: BlockDraft;
   onCancel: () => void;
   onConfirm: (edit: BlockEdit) => void;
   onNavigate: (direction: -1 | 1, edit: BlockEdit) => void;
-  onMove: (direction: -1 | 1, edit: BlockEdit) => void;
-  onAdd: (type: 'heading' | 'paragraph', edit: BlockEdit) => void;
   onDelete: () => void;
 }) {
   const [text, setText] = useState(draft.text);
@@ -227,8 +244,55 @@ export function BlockEditor({
     });
   }
 
-  /** Italic uses `_` so it can never be mistaken for a footnote marker. */
-  const wrap = (open: string, close = open) => replaceSelection((selected) => `${open}${selected}${close}`);
+  /**
+   * Applies or removes markup around the selection, so pressing the button a
+   * second time undoes it instead of nesting another pair. Handles both the
+   * case where the markers are inside the selection and where they sit just
+   * outside it. Italic uses `_` so it can never be read as a footnote marker.
+   */
+  function toggle(open: string, close = open) {
+    const area = areaRef.current;
+
+    if (!area) {
+      return;
+    }
+
+    const { selectionStart: start, selectionEnd: end } = area;
+    const selected = text.slice(start, end);
+
+    if (!selected) {
+      return;
+    }
+
+    // Markers included in the selection: **word** with all of it highlighted.
+    if (
+      selected.length >= open.length + close.length
+      && selected.startsWith(open)
+      && selected.endsWith(close)
+    ) {
+      const inner = selected.slice(open.length, selected.length - close.length);
+      setText(`${text.slice(0, start)}${inner}${text.slice(end)}`);
+      restoreSelection(area, start, start + inner.length);
+      return;
+    }
+
+    // Markers just outside the selection: **word** with only `word` highlighted.
+    if (text.slice(start - open.length, start) === open && text.slice(end, end + close.length) === close) {
+      setText(`${text.slice(0, start - open.length)}${selected}${text.slice(end + close.length)}`);
+      restoreSelection(area, start - open.length, start - open.length + selected.length);
+      return;
+    }
+
+    setText(`${text.slice(0, start)}${open}${selected}${close}${text.slice(end)}`);
+    restoreSelection(area, start, start + open.length + selected.length + close.length);
+  }
+
+  function restoreSelection(area: HTMLTextAreaElement, start: number, end: number) {
+    requestAnimationFrame(() => {
+      area.focus();
+      area.setSelectionRange(start, end);
+    });
+  }
 
   /** Only paired markup is removed; a lone `*` is a footnote marker. */
   const clearFormatting = () => replaceSelection((selected) => selected
@@ -252,13 +316,13 @@ export function BlockEditor({
 
     if (modifier && (event.key === 'b' || event.key === 'B')) {
       event.preventDefault();
-      wrap('**');
+      toggle('**');
       return;
     }
 
     if (modifier && (event.key === 'i' || event.key === 'I')) {
       event.preventDefault();
-      wrap('_');
+      toggle('_');
     }
   }
 
@@ -285,9 +349,9 @@ export function BlockEditor({
         </header>
 
         <div className="block-toolbar">
-          <button onClick={() => wrap('**')} title="Îngroșat (Ctrl+B)" type="button"><strong>B</strong></button>
-          <button onClick={() => wrap('_')} title="Înclinat (Ctrl+I)" type="button"><em>I</em></button>
-          <button onClick={() => wrap('„', '”')} title="Ghilimele românești" type="button">„ ”</button>
+          <button onClick={() => toggle('**')} title="Îngroșat (Ctrl+B)" type="button"><strong>B</strong></button>
+          <button onClick={() => toggle('_')} title="Înclinat (Ctrl+I)" type="button"><em>I</em></button>
+          <button onClick={() => toggle('„', '”')} title="Ghilimele românești" type="button">„ ”</button>
           <button className="block-toolbar-clear" onClick={clearFormatting} type="button">Șterge formatarea</button>
 
           <span className="block-toolbar-divider" />
@@ -356,11 +420,6 @@ export function BlockEditor({
           <div className="block-structure">
             <span className="block-toolbar-caption">Structură</span>
 
-            <button disabled={!draft.canMoveUp} onClick={() => onMove(-1, edit())} type="button">↑ Mută mai sus</button>
-            <button disabled={!draft.canMoveDown} onClick={() => onMove(1, edit())} type="button">↓ Mută mai jos</button>
-            <button onClick={() => onAdd('heading', edit())} type="button">+ Subtitlu</button>
-            <button onClick={() => onAdd('paragraph', edit())} type="button">+ Paragraf</button>
-
             <button
               className={confirmingDelete ? 'block-delete is-confirming' : 'block-delete'}
               disabled={!draft.canDelete}
@@ -393,4 +452,107 @@ function countMarkers(text: string) {
   }
 
   return count;
+}
+
+
+function shorten(text: string, limit = 90) {
+  const clean = text.replace(/\s+/gu, ' ').trim();
+
+  return clean.length > limit ? `${clean.slice(0, limit)}…` : clean || '(gol)';
+}
+
+function formatWhen(value: string) {
+  const date = new Date(value);
+
+  return Number.isNaN(date.getTime()) ? value : date.toLocaleString('ro-RO', {
+    day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit',
+  });
+}
+
+/**
+ * Everything the editor has changed: what is still waiting to be published,
+ * with a way to put any of it back, and what has already gone live.
+ */
+export function ChangesPanel({
+  pending,
+  published,
+  loadingPublished,
+  onUndo,
+  onClose,
+  onOpen,
+}: {
+  pending: PendingChange[];
+  published: PublishedChange[] | null;
+  loadingPublished: boolean;
+  onUndo: (address: string) => void;
+  onClose: () => void;
+  onOpen: (address: string) => void;
+}) {
+  return (
+    <div aria-modal="true" className="block-editor-backdrop" role="dialog" onClick={onClose}>
+      <div className="changes-panel" onClick={(event) => event.stopPropagation()}>
+        <header>
+          <h2>Modificările tale</h2>
+          <button onClick={onClose} title="Închide" type="button">✕</button>
+        </header>
+
+        <section>
+          <h3>
+            Nepublicate
+            <span className="changes-count">{pending.length}</span>
+          </h3>
+
+          {pending.length === 0 ? (
+            <p className="changes-empty">Nu ai modificări nepublicate.</p>
+          ) : (
+            <ul className="changes-list">
+              {pending.map((change) => (
+                <li key={change.address}>
+                  <div className="changes-item-head">
+                    <span className="changes-item-label">{change.label}</span>
+                    <span className="changes-item-where">{change.where}</span>
+
+                    <button className="changes-open" onClick={() => onOpen(change.address)} type="button">
+                      Vezi
+                    </button>
+                    <button className="changes-undo" onClick={() => onUndo(change.address)} type="button">
+                      Anulează
+                    </button>
+                  </div>
+
+                  <p className="changes-before">{shorten(change.original)}</p>
+                  <p className="changes-after">{shorten(change.current)}</p>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+
+        <section>
+          <h3>Publicate</h3>
+
+          {loadingPublished ? <p className="changes-empty">Se încarcă...</p> : null}
+
+          {!loadingPublished && published && published.length === 0 ? (
+            <p className="changes-empty">Nicio modificare publicată încă.</p>
+          ) : null}
+
+          {!loadingPublished && published === null ? (
+            <p className="changes-empty">Nu am putut încărca istoricul.</p>
+          ) : null}
+
+          {published && published.length > 0 ? (
+            <ul className="changes-published">
+              {published.map((entry) => (
+                <li key={entry.sha}>
+                  <span className="changes-when">{formatWhen(entry.date)}</span>
+                  <span>{entry.message}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </section>
+      </div>
+    </div>
+  );
 }

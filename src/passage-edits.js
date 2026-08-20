@@ -1,5 +1,5 @@
 /**
- * Structural edits to a passage: moving, adding and removing blocks.
+ * Structural edits to a passage: removing a block along with its footnotes.
  *
  * Footnotes are matched to text by position — a block owns the notes that fall
  * after every marker preceding it — so any change to block order or membership
@@ -52,42 +52,6 @@ function withNotes(passage, blocks, groups) {
   }
 
   return { ...passage, blocks, notes: renumber(groups.flat(), notes) };
-}
-
-/**
- * Moves a block one place earlier or later, taking its footnotes with it.
- *
- * @param {number} direction -1 to move earlier, 1 to move later
- */
-export function moveBlock(passage, index, direction) {
-  const blocks = [...(passage.blocks ?? [])];
-  const target = index + direction;
-
-  if (index < 0 || index >= blocks.length || target < 0 || target >= blocks.length) {
-    return passage;
-  }
-
-  const groups = notesByBlock(blocks, passage.notes ?? []);
-
-  [blocks[index], blocks[target]] = [blocks[target], blocks[index]];
-  [groups[index], groups[target]] = [groups[target], groups[index]];
-
-  return withNotes(passage, blocks, groups);
-}
-
-/**
- * Inserts an empty block after the given one. Only headings and paragraphs can
- * be added: a verse has to start with its number, which is not something an
- * editor should have to invent.
- *
- * @param {'heading' | 'paragraph'} type
- */
-export function insertBlock(passage, index, type) {
-  const blocks = [...(passage.blocks ?? [])];
-  blocks.splice(index + 1, 0, { type, text: '', noteRefs: [] });
-
-  // A new block has no markers, so the notes are untouched.
-  return { ...passage, blocks };
 }
 
 /** Removes a block along with any footnotes belonging to it. */
