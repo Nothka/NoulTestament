@@ -1,5 +1,28 @@
 import { isValidSession, json } from './_session.mjs';
 
+/**
+ * Commit messages are permanent, and the older ones were written in English by
+ * the previous CMS and during development. The panel is read by the editor, so
+ * describe each change in Romanian rather than showing the raw message.
+ */
+function describe(message) {
+  const first = (message ?? '').split('\n')[0].trim();
+
+  if (/^Editare text/u.test(first)) {
+    return { text: first, byEditor: true };
+  }
+
+  if (/^Update Cărți/u.test(first)) {
+    return { text: 'Actualizare text (editorul vechi)', byEditor: false };
+  }
+
+  if (/^Delete Cărți/u.test(first)) {
+    return { text: 'Ștergere carte (editorul vechi)', byEditor: false };
+  }
+
+  return { text: 'Modificare tehnică', byEditor: false };
+}
+
 /** Recent commits that touched the content, for the editor's history panel. */
 export async function handler(event) {
   const secret = process.env.SESSION_SECRET;
@@ -34,11 +57,16 @@ export async function handler(event) {
     const commits = await response.json();
 
     return json(200, {
-      commits: commits.map((commit) => ({
-        sha: commit.sha,
-        message: (commit.commit?.message ?? '').split('\n')[0],
-        date: commit.commit?.author?.date ?? '',
-      })),
+      commits: commits.map((commit) => {
+        const described = describe(commit.commit?.message);
+
+        return {
+          sha: commit.sha,
+          message: described.text,
+          byEditor: described.byEditor,
+          date: commit.commit?.author?.date ?? '',
+        };
+      }),
     });
   } catch {
     return json(502, { error: 'Nu am putut încărca istoricul.' });

@@ -44,6 +44,8 @@ export type PublishedChange = {
   sha: string;
   message: string;
   date: string;
+  /** True when the change came from this editor rather than from development. */
+  byEditor?: boolean;
 };
 
 export type BlockEdit = {
@@ -544,9 +546,10 @@ export function ChangesPanel({
           {published && published.length > 0 ? (
             <ul className="changes-published">
               {published.map((entry) => (
-                <li key={entry.sha}>
+                <li className={entry.byEditor ? 'is-editor' : undefined} key={entry.sha}>
                   <span className="changes-when">{formatWhen(entry.date)}</span>
                   <span>{entry.message}</span>
+                  {entry.byEditor ? <span className="changes-tag">tu</span> : null}
                 </li>
               ))}
             </ul>

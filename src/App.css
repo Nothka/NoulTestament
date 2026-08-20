@@ -1028,3 +1028,18 @@ sup.note-callout {
   width: 118px;
   color: #a0917d;
 }
+
+.changes-published li.is-editor {
+  color: #222222;
+  font-weight: 600;
+}
+
+.changes-tag {
+  margin-left: auto;
+  border-radius: 9px;
+  background: #fff1e3;
+  color: #cc5500;
+  padding: 1px 8px;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
