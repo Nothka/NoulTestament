@@ -9,7 +9,9 @@ import {
   readStoredSession,
   storeSession,
   type BlockDraft,
+  type BlockEdit,
 } from './editing';
+import { insertBlock, moveBlock, removeBlock } from './passage-edits.js';
 import './App.css';
 
 const CONTENT_BOOKS_INDEX_URL = '/content/books-index.json';
@@ -24,6 +26,10 @@ type ContentBlock = {
   noteRefs?: number[];
   /** Font size as a percentage of the normal size, set from edit mode. */
   size?: number;
+  align?: 'left' | 'center' | 'right';
+  /** Extra space above and below, in rem. */
+  spaceBefore?: number;
+  spaceAfter?: number;
 };
 
 type Footnote = {
@@ -44,6 +50,9 @@ type Passage = {
   reference: string;
   title: string;
   titleSize?: number;
+  titleAlign?: ContentBlock['align'];
+  titleSpaceBefore?: number;
+  titleSpaceAfter?: number;
   pageNumber?: number;
   blocks: ContentBlock[];
   notes?: Footnote[];
@@ -53,6 +62,9 @@ type PagePassage = {
   id: string;
   passageId: string;
   titleSize?: number;
+  titleAlign?: ContentBlock['align'];
+  titleSpaceBefore?: number;
+  titleSpaceAfter?: number;
   bookId: string;
   number: number;
   reference: string;
@@ -105,6 +117,7 @@ function App() {
   const [session, setSession] = useState<string | null>(() => (isEditorRoute ? readStoredSession() : null));
   const [draft, setDraft] = useState<BlockDraft | null>(null);
   const [dirtyPaths, setDirtyPaths] = useState<string[]>([]);
+  const [pendingAddress, setPendingAddress] = useState<string | null>(null);
   const [publishing, setPublishing] = useState(false);
   const [publishStatus, setPublishStatus] = useState<{
     kind: 'idle' | 'ok' | 'error';
@@ -140,6 +153,15 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!pendingAddress) {
+      return;
+    }
+
+    openBlockEditor(pendingAddress);
+    setPendingAddress(null);
+  }, [pendingAddress, data]);
+
   const selectedBook = useMemo(() => {
     if (!data) {
       return null;
@@ -173,8 +195,12 @@ function App() {
         label: 'Paragraf (introducere)',
         rawText: block.text,
         size: block.size,
+        align: block.align,
+        spaceBefore: block.spaceBefore,
+        spaceAfter: block.spaceAfter,
         isVerse: block.type === 'verse',
         noteRefs: block.noteRefs,
+        canLayout: true,
       }));
       return;
     }
@@ -190,7 +216,16 @@ function App() {
 
     if (kind === 'title') {
       setDraft(draftForText({
-        address, path, label: 'Titlul pasajului', rawText: passage.title, size: passage.titleSize, isVerse: false,
+        address,
+        path,
+        label: 'Titlul pasajului',
+        rawText: passage.title,
+        size: passage.titleSize,
+        align: passage.titleAlign,
+        spaceBefore: passage.titleSpaceBefore,
+        spaceAfter: passage.titleSpaceAfter,
+        isVerse: false,
+        canLayout: true,
       }));
       return;
     }
@@ -203,7 +238,7 @@ function App() {
       }
 
       setDraft(draftForText({
-        address, path, label: `Nota ${note.number}`, rawText: note.text, size: note.size, isVerse: false,
+        address, path, label: `Nota ${note.number}`, rawText: note.text, size: note.size, isVerse: false, canLayout: false,
       }));
       return;
     }
@@ -222,90 +257,94 @@ function App() {
       label,
       rawText: block.text,
       size: block.size,
+      align: block.align,
+      spaceBefore: block.spaceBefore,
+      spaceAfter: block.spaceAfter,
       isVerse: block.type === 'verse',
       noteRefs: getResolvedNoteRefsForBlock(block, passage.blocks, passage.notes ?? []),
+      // Verses and paragraphs are inline fragments sharing a paragraph, so only
+      // a heading occupies a line of its own.
+      canLayout: block.type === 'heading',
+      blockIndex: Number(second),
+      blockCount: passage.blocks.length,
     }));
   }
 
-  function confirmBlockEdit(nextText: string, nextSize: number) {
-    commitDraft(nextText, nextSize);
-    setDraft(null);
-  }
-
-  /** Saves the open draft, then opens its neighbour in reading order. */
-  function navigateDraft(direction: -1 | 1, nextText: string, nextSize: number) {
-    if (!draft) {
-      return;
-    }
-
-    commitDraft(nextText, nextSize);
-
-    const addresses = editableAddresses();
-    const target = addresses[addresses.indexOf(draft.address) + direction];
-
-    if (target) {
-      openBlockEditor(target);
-    } else {
-      setDraft(null);
-    }
-  }
-
-  function commitDraft(nextText: string, nextSize: number) {
+  function confirmBlockEdit(edit: BlockEdit) {
     if (!draft || !data) {
       return;
     }
 
-    const [kind, first, second] = draft.address.split(':');
-    const size = nextSize === 100 ? undefined : nextSize;
-    const text = `${draft.verseNumber}${nextText}`;
+    applyChange(applyTextEdit(data, draft, edit));
+    setDraft(null);
+  }
 
-    if (kind === 'intro' && data.introduction) {
-      setData({
-        ...data,
-        introduction: {
-          ...data.introduction,
-          blocks: data.introduction.blocks.map((block, index) => (
-            index !== Number(first) ? block : { ...block, text, size }
-          )),
-        },
-      });
-    } else {
-      setData({
-        ...data,
-        books: data.books.map((book) => (!book.passages.some((passage) => passage.id === first) ? book : {
-          ...book,
-          passages: book.passages.map((passage) => {
-            if (passage.id !== first) {
-              return passage;
-            }
-
-            if (kind === 'title') {
-              return { ...passage, title: text, titleSize: size };
-            }
-
-            if (kind === 'note') {
-              return {
-                ...passage,
-                notes: passage.notes?.map((note, index) => (
-                  index !== Number(second) ? note : { ...note, text, size }
-                )),
-              };
-            }
-
-            return {
-              ...passage,
-              blocks: passage.blocks.map((block, index) => (
-                index !== Number(second) ? block : { ...block, text, size }
-              )),
-            };
-          }),
-        })),
-      });
+  /** Saves the open draft, then opens its neighbour in reading order. */
+  function navigateDraft(direction: -1 | 1, edit: BlockEdit) {
+    if (!draft || !data) {
+      return;
     }
 
+    applyChange(applyTextEdit(data, draft, edit));
+
+    const addresses = editableAddresses();
+    const target = addresses[addresses.indexOf(draft.address) + direction];
+
+    setPendingAddress(target ?? null);
+    setDraft(null);
+  }
+
+  /**
+   * Structural changes apply the pending text edit first, in one pass, so the
+   * two cannot overwrite each other. passage-edits keeps footnotes attached to
+   * the blocks they belong to.
+   */
+  function restructure(
+    edit: BlockEdit | null,
+    change: (passage: Passage) => Passage,
+    nextIndex: number | null,
+  ) {
+    if (!draft || !data) {
+      return;
+    }
+
+    const [, passageId] = draft.address.split(':');
+    const base = edit ? applyTextEdit(data, draft, edit) : data;
+
+    applyChange(applyPassageChange(base, passageId, change));
+    setPendingAddress(nextIndex === null ? null : `block:${passageId}:${nextIndex}`);
+    setDraft(null);
+  }
+
+  function applyChange(next: TestamentData) {
+    if (!draft) {
+      return;
+    }
+
+    setData(next);
     setDirtyPaths((current) => (current.includes(draft.path) ? current : [...current, draft.path]));
     setPublishStatus({ kind: 'idle', message: '' });
   }
+
+  const draftBlockIndex = () => Number(draft?.address.split(':')[2]);
+
+  const moveDraftBlock = (direction: -1 | 1, edit: BlockEdit) => restructure(
+    edit,
+    (passage) => moveBlock(passage, draftBlockIndex(), direction) as Passage,
+    draftBlockIndex() + direction,
+  );
+
+  const addDraftBlock = (type: 'heading' | 'paragraph', edit: BlockEdit) => restructure(
+    edit,
+    (passage) => insertBlock(passage, draftBlockIndex(), type) as Passage,
+    draftBlockIndex() + 1,
+  );
+
+  const deleteDraftBlock = () => restructure(
+    null,
+    (passage) => removeBlock(passage, draftBlockIndex()) as Passage,
+    null,
+  );
 
   async function publishChanges() {
     if (!data || dirtyPaths.length === 0) {
@@ -419,6 +458,9 @@ function App() {
           onCancel={() => setDraft(null)}
           onConfirm={confirmBlockEdit}
           onNavigate={navigateDraft}
+          onMove={moveDraftBlock}
+          onAdd={addDraftBlock}
+          onDelete={deleteDraftBlock}
         />
       ) : null}
 
@@ -503,6 +545,76 @@ async function fetchJson<T>(url: string): Promise<T> {
   return response.json() as Promise<T>;
 }
 
+/** Returns new data with one passage replaced. */
+function applyPassageChange(
+  data: TestamentData,
+  passageId: string,
+  change: (passage: Passage) => Passage,
+): TestamentData {
+  return {
+    ...data,
+    books: data.books.map((book) => (!book.passages.some((passage) => passage.id === passageId) ? book : {
+      ...book,
+      passages: book.passages.map((passage) => (passage.id === passageId ? change(passage) : passage)),
+    })),
+  };
+}
+
+/** Returns new data with the edited text, size and layout written back. */
+function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit): TestamentData {
+  const [kind, first, second] = draft.address.split(':');
+  const size = edit.size === 100 ? undefined : edit.size;
+  const align = edit.align || undefined;
+  const spaceBefore = edit.spaceBefore || undefined;
+  const spaceAfter = edit.spaceAfter || undefined;
+  const text = `${draft.verseNumber}${edit.text}`;
+
+  if (kind === 'intro') {
+    if (!data.introduction) {
+      return data;
+    }
+
+    return {
+      ...data,
+      introduction: {
+        ...data.introduction,
+        blocks: data.introduction.blocks.map((block, index) => (
+          index !== Number(first) ? block : { ...block, text, size, align, spaceBefore, spaceAfter }
+        )),
+      },
+    };
+  }
+
+  return applyPassageChange(data, first, (passage) => {
+    if (kind === 'title') {
+      return {
+        ...passage,
+        title: text,
+        titleSize: size,
+        titleAlign: align,
+        titleSpaceBefore: spaceBefore,
+        titleSpaceAfter: spaceAfter,
+      };
+    }
+
+    if (kind === 'note') {
+      return {
+        ...passage,
+        notes: passage.notes?.map((note, index) => (
+          index !== Number(second) ? note : { ...note, text, size }
+        )),
+      };
+    }
+
+    return {
+      ...passage,
+      blocks: passage.blocks.map((block, index) => (
+        index !== Number(second) ? block : { ...block, text, size, align, spaceBefore, spaceAfter }
+      )),
+    };
+  });
+}
+
 /** Builds a draft, splitting a leading verse number out of editable text. */
 function draftForText(options: {
   address: string;
@@ -510,23 +622,38 @@ function draftForText(options: {
   label: string;
   rawText: string;
   size?: number;
+  align?: ContentBlock['align'];
+  spaceBefore?: number;
+  spaceAfter?: number;
   isVerse: boolean;
   noteRefs?: number[];
+  canLayout: boolean;
+  blockCount?: number;
+  blockIndex?: number;
 }): BlockDraft {
   const match = options.isVerse ? options.rawText.match(/^(\d{1,3})(.*)$/u) : null;
   const addresses = editableAddresses();
   const position = addresses.indexOf(options.address);
+  const canStructure = options.blockIndex !== undefined && options.blockCount !== undefined;
 
   return {
     address: options.address,
     path: options.path,
     label: match ? `${options.label} ${match[1]}` : options.label,
     size: options.size ?? 100,
+    align: options.align ?? '',
+    spaceBefore: options.spaceBefore ?? 0,
+    spaceAfter: options.spaceAfter ?? 0,
     text: match ? match[2] : options.rawText,
     verseNumber: match ? match[1] : '',
     noteRefs: options.noteRefs ?? [],
     hasPrevious: position > 0,
     hasNext: position >= 0 && position < addresses.length - 1,
+    canLayout: options.canLayout,
+    canStructure,
+    canMoveUp: canStructure && options.blockIndex! > 0,
+    canMoveDown: canStructure && options.blockIndex! < options.blockCount! - 1,
+    canDelete: canStructure && options.blockCount! > 1,
   };
 }
 
@@ -639,6 +766,9 @@ function buildEstimatedVisualPages(book: Book): VisualBookPage[] {
         reference: passage.reference,
         title: passage.title,
         titleSize: passage.titleSize,
+        titleAlign: passage.titleAlign,
+        titleSpaceBefore: passage.titleSpaceBefore,
+        titleSpaceAfter: passage.titleSpaceAfter,
         isContinuation: !isFirstSegment,
         blocks: segment.blocks,
         allBlocks: passage.blocks,
@@ -722,6 +852,9 @@ function buildMeasuredVisualPages(book: Book): VisualBookPage[] | null {
           reference: passage.reference,
           title: passage.title,
           titleSize: passage.titleSize,
+          titleAlign: passage.titleAlign,
+          titleSpaceBefore: passage.titleSpaceBefore,
+          titleSpaceAfter: passage.titleSpaceAfter,
           isContinuation: !isFirstSegment,
           blocks: segment.blocks,
           allBlocks: passage.blocks,
@@ -1109,6 +1242,34 @@ function sizeStyle(size?: number) {
     : undefined;
 }
 
+/**
+ * Font scale plus alignment and spacing, for elements that occupy a line of
+ * their own. Verses and paragraphs in the reader are inline fragments sharing a
+ * paragraph, so only the scale applies to them.
+ */
+function blockStyle(layout: {
+  size?: number;
+  align?: ContentBlock['align'];
+  spaceBefore?: number;
+  spaceAfter?: number;
+}) {
+  const style: React.CSSProperties = { ...sizeStyle(layout.size) };
+
+  if (layout.align) {
+    style.textAlign = layout.align;
+  }
+
+  if (layout.spaceBefore) {
+    style.marginTop = `${layout.spaceBefore}rem`;
+  }
+
+  if (layout.spaceAfter) {
+    style.marginBottom = `${layout.spaceAfter}rem`;
+  }
+
+  return Object.keys(style).length > 0 ? style : undefined;
+}
+
 function getResolvedNoteRefsForBlock(
   block: ContentBlock,
   allBlocks: ContentBlock[],
@@ -1151,7 +1312,12 @@ function PagePassageView({ passage }: { passage: PagePassage }) {
           <h3
             className="passage-title"
             data-edit={`title:${passage.passageId}`}
-            style={sizeStyle(passage.titleSize)}
+            style={blockStyle({
+              size: passage.titleSize,
+              align: passage.titleAlign,
+              spaceBefore: passage.titleSpaceBefore,
+              spaceAfter: passage.titleSpaceAfter,
+            })}
           >
             {renderInlineMarkup(passage.title, `${passage.id}-title`)}
           </h3>
@@ -1227,7 +1393,7 @@ function PassageBlocks({
         className="inline-heading"
         data-edit={blockAddress(passageId, allBlocks, group)}
         key={`${passageId}-heading-${index}`}
-        style={sizeStyle(group.size)}
+        style={blockStyle(group)}
       >
         {renderTextWithNotes(group.text, getResolvedNoteRefsForBlock(group, allBlocks, notes))}
       </h4>
@@ -1276,7 +1442,7 @@ function GenealogyBlocks({
               className="inline-heading"
               data-edit={blockAddress(passageId, allBlocks, block)}
               key={`${passageId}-${blockIndex}`}
-              style={sizeStyle(block.size)}
+              style={blockStyle(block)}
             >
               {renderTextWithNotes(block.text, getResolvedNoteRefsForBlock(block, allBlocks, notes))}
             </h4>,
@@ -1290,7 +1456,7 @@ function GenealogyBlocks({
             className="genealogy-line"
             data-edit={blockAddress(passageId, allBlocks, block)}
             key={`${passageId}-${blockIndex}-${lineIndex}`}
-            style={sizeStyle(block.size)}
+            style={blockStyle(block)}
           >
             {lineIndex === 0 ? (
               <GenealogyLine text={line} noteRefs={getResolvedNoteRefsForBlock(block, allBlocks, notes)} />
@@ -1363,7 +1529,7 @@ function PassageNotes({ notes }: { notes: PageFootnote[] }) {
 }
 
 function ContentBlockView({ block, address }: { block: ContentBlock; address?: string }) {
-  const style = sizeStyle(block.size);
+  const style = blockStyle(block);
 
   if (block.type === 'heading') {
     return (

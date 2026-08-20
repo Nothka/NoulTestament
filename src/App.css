@@ -804,3 +804,74 @@ sup.note-callout {
 .block-editor footer .block-editor-locked {
   margin-right: auto;
 }
+
+.block-toolbar-layout {
+  padding-top: 2px;
+}
+
+.block-toolbar-caption {
+  color: #8a7a66;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.block-align-group {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.block-align-group button.is-active {
+  border-color: #cc5500;
+  background: #fff1e3;
+  color: #cc5500;
+}
+
+.block-structure {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  border-top: 1px solid #eee7dc;
+  padding-top: 12px;
+}
+
+.block-structure button {
+  border: 1px solid #c9bda8;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #3a2c1c;
+  cursor: pointer;
+  padding: 6px 10px;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.78rem;
+}
+
+.block-structure button:hover:not(:disabled) {
+  border-color: #cc5500;
+  color: #cc5500;
+}
+
+.block-structure button:disabled {
+  border-color: #eee7dc;
+  color: #c3b7a5;
+  cursor: not-allowed;
+}
+
+.block-delete {
+  margin-left: auto;
+  color: #a30f2d !important;
+}
+
+.block-delete:hover:not(:disabled) {
+  border-color: #a30f2d !important;
+  color: #a30f2d !important;
+}
+
+.block-delete.is-confirming {
+  border-color: #a30f2d !important;
+  background: #a30f2d !important;
+  color: #ffffff !important;
+}
