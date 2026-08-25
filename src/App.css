@@ -544,6 +544,23 @@ sup.note-callout {
   font-size: 1rem;
 }
 
+.editor-login .editor-password-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.editor-login .editor-password-toggle input {
+  width: auto;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  accent-color: #cc5500;
+}
+
 .editor-login button,
 .editor-bar button,
 .block-editor button {

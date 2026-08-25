@@ -86,6 +86,7 @@ export function storeSession(token: string | null) {
 
 export function EditorLogin({ onLogin }: { onLogin: (token: string) => void }) {
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
 
@@ -100,7 +101,15 @@ export function EditorLogin({ onLogin }: { onLogin: (token: string) => void }) {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ password }),
       });
-      const body = await response.json();
+      // A reply that is not JSON means the request never reached the function —
+      // in local development, `/.netlify/functions/*` only exists once the dev
+      // server mounts it — so say that rather than blaming the network.
+      const body = await response.json().catch(() => null);
+
+      if (!body) {
+        setError(`Serverul a răspuns ${response.status}, fără un mesaj pe care să îl pot citi.`);
+        return;
+      }
 
       if (!response.ok) {
         setError(body.error ?? 'Nu am putut intra.');
@@ -125,9 +134,19 @@ export function EditorLogin({ onLogin }: { onLogin: (token: string) => void }) {
           autoFocus
           id="editor-password"
           onChange={(event) => setPassword(event.target.value)}
-          type="password"
+          type={showPassword ? 'text' : 'password'}
           value={password}
         />
+
+        <label className="editor-password-toggle" htmlFor="editor-show-password">
+          <input
+            checked={showPassword}
+            id="editor-show-password"
+            onChange={(event) => setShowPassword(event.target.checked)}
+            type="checkbox"
+          />
+          Arată parola
+        </label>
 
         {error ? <p className="editor-error">{error}</p> : null}
 
