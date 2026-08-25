@@ -52,6 +52,8 @@ collections:
               - { label: Aliniere, name: align, widget: string, required: false, hint: "Se schimbă din pagina de editare." }
               - { label: Spațiu deasupra, name: spaceBefore, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
               - { label: Spațiu dedesubt, name: spaceAfter, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+              - { label: Deplasare pe orizontală (%), name: offsetX, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+              - { label: Deplasare pe verticală (rem), name: offsetY, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
 
   - name: books
     label: Cărți
@@ -83,6 +85,8 @@ collections:
           - { label: Aliniere titlu, name: titleAlign, widget: string, required: false, hint: "Se schimbă din pagina de editare." }
           - { label: Spațiu deasupra titlului, name: titleSpaceBefore, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
           - { label: Spațiu sub titlu, name: titleSpaceAfter, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Deplasare titlu pe orizontală (%), name: titleOffsetX, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Deplasare titlu pe verticală (rem), name: titleOffsetY, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
           - { label: Pagină, name: pageNumber, widget: number, value_type: int, required: false }
           - label: Text
             name: blocks
@@ -110,6 +114,8 @@ collections:
               - { label: Aliniere, name: align, widget: string, required: false, hint: "Se schimbă din pagina de editare." }
               - { label: Spațiu deasupra, name: spaceBefore, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
               - { label: Spațiu dedesubt, name: spaceAfter, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+              - { label: Deplasare pe orizontală (%), name: offsetX, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+              - { label: Deplasare pe verticală (rem), name: offsetY, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
           - label: Note de subsol
             name: notes
             widget: list

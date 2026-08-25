@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { renderTextWithNotes } from './markup';
 
 const SESSION_KEY = 'nt-editor-session';
+const WORK_KEY = 'nt-editor-work';
 
 export type BlockDraft = {
   address: string;
@@ -25,6 +26,10 @@ export type BlockDraft = {
   /** Titles and footnotes have a fixed place; only blocks can be restructured. */
   canStructure: boolean;
   canDelete: boolean;
+  /** Free position set by dragging, as a share of the element's own width. */
+  offsetX: number;
+  /** Free position set by dragging, in rem. */
+  offsetY: number;
 };
 
 export type Align = 'left' | 'center' | 'right' | '';
@@ -37,8 +42,35 @@ export type PendingChange = {
   where: string;
   original: string;
   current: string;
+  /**
+   * Size, alignment, spacing and position, before and after. Without these a
+   * change that only moved or restyled an element compared equal to no change
+   * at all, and was dropped before it could ever be published. Keeping the
+   * values rather than a signature also lets "Anulează" put the old look back.
+   */
+  originalLook: Look;
+  currentLook: Look;
   at: number;
 };
+
+/** Everything about an element except its words. */
+export type Look = {
+  size: number;
+  align: Align;
+  spaceBefore: number;
+  spaceAfter: number;
+  offsetX: number;
+  offsetY: number;
+};
+
+export function sameLook(a: Look, b: Look) {
+  return a.size === b.size
+    && a.align === b.align
+    && a.spaceBefore === b.spaceBefore
+    && a.spaceAfter === b.spaceAfter
+    && a.offsetX === b.offsetX
+    && a.offsetY === b.offsetY;
+}
 
 export type PublishedChange = {
   sha: string;
@@ -54,6 +86,8 @@ export type BlockEdit = {
   align: Align;
   spaceBefore: number;
   spaceAfter: number;
+  offsetX: number;
+  offsetY: number;
 };
 
 const SIZES = [70, 80, 90, 100, 110, 125, 140, 160];
@@ -84,7 +118,56 @@ export function storeSession(token: string | null) {
   }
 }
 
-export function EditorLogin({ onLogin }: { onLogin: (token: string) => void }) {
+/**
+ * Edits that have not been published yet, kept so closing the tab, a refresh or
+ * a crash does not throw away an afternoon of work. The changed files are
+ * stored whole rather than replayed from `changes`, because a replay cannot
+ * reproduce a deleted block or the layout fields.
+ */
+export type StoredWork = {
+  at: number;
+  changes: PendingChange[];
+  files: Record<string, unknown>;
+};
+
+export function readStoredWork(): StoredWork | null {
+  try {
+    const raw = window.localStorage.getItem(WORK_KEY);
+    const work = raw ? JSON.parse(raw) : null;
+
+    if (!work || !Array.isArray(work.changes) || !work.files || work.changes.length === 0) {
+      return null;
+    }
+
+    return work as StoredWork;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Returns false when the work could not be stored — a full or disabled store —
+ * so the editor can warn that the page must stay open until it is published.
+ */
+export function storeWork(work: StoredWork | null): boolean {
+  try {
+    if (work) {
+      window.localStorage.setItem(WORK_KEY, JSON.stringify(work));
+    } else {
+      window.localStorage.removeItem(WORK_KEY);
+    }
+
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function EditorLogin({ notice, onLogin }: {
+  /** Why the login screen appeared, when it was not the editor's own doing. */
+  notice?: string;
+  onLogin: (token: string) => void;
+}) {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
@@ -129,6 +212,8 @@ export function EditorLogin({ onLogin }: { onLogin: (token: string) => void }) {
       <form onSubmit={submit}>
         <h1>Editare text</h1>
 
+        {notice ? <p className="editor-notice">{notice}</p> : null}
+
         <label htmlFor="editor-password">Parolă</label>
         <input
           autoFocus
@@ -158,8 +243,13 @@ export function EditorLogin({ onLogin }: { onLogin: (token: string) => void }) {
   );
 }
 
+/** What a click on the page does: open the text dialog, or pick a thing up. */
+export type EditorMode = 'text' | 'layout';
+
 export function EditorBar({
   changeCount,
+  mode,
+  onMode,
   onPublish,
   onLogout,
   onShowChanges,
@@ -167,6 +257,8 @@ export function EditorBar({
   busy,
 }: {
   changeCount: number;
+  mode: EditorMode;
+  onMode: (mode: EditorMode) => void;
   onPublish: () => void;
   onLogout: () => void;
   onShowChanges: () => void;
@@ -175,12 +267,26 @@ export function EditorBar({
 }) {
   return (
     <div className="editor-bar">
-      <span className="editor-bar-title">Mod editare</span>
+      <span className="editor-mode">
+        {([['text', 'Editez textul'], ['layout', 'Așez în pagină']] as const).map(([value, label]) => (
+          <button
+            aria-pressed={mode === value}
+            className={mode === value ? 'is-active' : undefined}
+            key={value}
+            onClick={() => onMode(value)}
+            type="button"
+          >
+            {label}
+          </button>
+        ))}
+      </span>
 
       <span className="editor-bar-hint">
-        {changeCount > 0
-          ? `${changeCount} ${changeCount === 1 ? 'modificare nepublicată' : 'modificări nepublicate'}`
-          : 'Apasă pe un text ca să îl modifici'}
+        {mode === 'layout'
+          ? 'Trage cu mouse-ul orice vrei să muți. Le pui la loc din Modificări.'
+          : changeCount > 0
+            ? `${changeCount} ${changeCount === 1 ? 'modificare nepublicată' : 'modificări nepublicate'}`
+            : 'Apasă pe un text ca să îl modifici'}
       </span>
 
       {status.message ? (
@@ -239,7 +345,17 @@ export function BlockEditor({
     areaRef.current?.focus();
   }, [draft.address, draft.text, draft.size, draft.align, draft.spaceBefore, draft.spaceAfter]);
 
-  const edit = (): BlockEdit => ({ text, size, align, spaceBefore, spaceAfter });
+  // The position belongs to the layout mode; carry it through so saving a text
+  // edit does not put a moved element back where it started.
+  const edit = (): BlockEdit => ({
+    text,
+    size,
+    align,
+    spaceBefore,
+    spaceAfter,
+    offsetX: draft.offsetX,
+    offsetY: draft.offsetY,
+  });
 
   /** Replaces the selection, keeping it selected so edits can be stacked. */
   function replaceSelection(build: (selected: string) => string) {
@@ -541,8 +657,14 @@ export function ChangesPanel({
                     </button>
                   </div>
 
-                  <p className="changes-before">{shorten(change.original)}</p>
-                  <p className="changes-after">{shorten(change.current)}</p>
+                  {change.original === change.current ? (
+                    <p className="changes-look">Aspectul a fost schimbat, textul a rămas la fel.</p>
+                  ) : (
+                    <>
+                      <p className="changes-before">{shorten(change.original)}</p>
+                      <p className="changes-after">{shorten(change.current)}</p>
+                    </>
+                  )}
                 </li>
               ))}
             </ul>

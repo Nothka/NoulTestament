@@ -587,6 +587,92 @@ sup.note-callout {
   font-size: 0.85rem;
 }
 
+.editor-notice {
+  margin: 0 0 4px;
+  border-left: 3px solid #cc5500;
+  background: #fdf1e4;
+  padding: 8px 10px;
+  color: #5b4636;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/*
+ * Layout mode: everything with a place in the text can be picked up. The page
+ * holds over a thousand of them, so outlining all of them at once would bury
+ * the text under boxes. The cursor says the whole page is grabbable, and only
+ * the element under the pointer draws itself.
+ */
+.app-arranging [data-edit] {
+  cursor: grab;
+  touch-action: none;
+}
+
+.app-arranging [data-edit]:hover {
+  outline: 1px dashed #cc5500;
+  outline-offset: 3px;
+  background: #fff3e6;
+}
+
+/*
+ * Shown only while something is being dragged past the edge of the column, and
+ * kept to a hairline: it is a hint, not a ruler.
+ */
+.arrange-guides span {
+  position: fixed;
+  top: 0;
+  width: 1px;
+  height: 100vh;
+  background: #cc5500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease;
+  z-index: 950;
+}
+
+.arrange-guides span.is-on {
+  opacity: 0.35;
+}
+
+.app-arranging [data-edit].is-dragging {
+  outline-style: solid;
+  cursor: grabbing;
+  opacity: 0.9;
+  /* Above the neighbours it travels over, so it never slides underneath. */
+  position: relative;
+  z-index: 10;
+}
+
+.editor-mode {
+  display: inline-flex;
+  border: 1px solid #cc5500;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.editor-mode button {
+  border: 0;
+  border-radius: 0;
+  background: #fffaf3;
+  color: #cc5500;
+  cursor: pointer;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.editor-mode button.is-active {
+  background: #cc5500;
+  color: #ffffff;
+}
+
+.changes-look {
+  margin: 4px 0 0;
+  color: #6b5b4a;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
 .editor-bar {
   position: sticky;
   top: 0;

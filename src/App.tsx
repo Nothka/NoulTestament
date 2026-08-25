@@ -8,11 +8,18 @@ import {
   EditorBar,
   EditorLogin,
   readStoredSession,
+  readStoredWork,
   storeSession,
+  storeWork,
+  sameLook,
+  type Align,
+  type EditorMode,
   type BlockDraft,
   type BlockEdit,
+  type Look,
   type PendingChange,
   type PublishedChange,
+  type StoredWork,
 } from './editing';
 import { removeBlock } from './passage-edits.js';
 import './App.css';
@@ -34,12 +41,22 @@ type ContentBlock = {
   /** Extra space above and below, in rem. */
   spaceBefore?: number;
   spaceAfter?: number;
+  /**
+   * Free position, set by dragging in layout mode. X is a share of the
+   * element's own width and Y is in rem, so a position chosen on a wide screen
+   * still holds on a narrow one. The element keeps its place in the flow, so
+   * moving one thing never shuffles everything below it.
+   */
+  offsetX?: number;
+  offsetY?: number;
 };
 
 type Footnote = {
   number: number;
   text: string;
   size?: number;
+  offsetX?: number;
+  offsetY?: number;
 };
 
 /** A footnote plus where it lives, so edit mode can address it. */
@@ -57,6 +74,8 @@ type Passage = {
   titleAlign?: ContentBlock['align'];
   titleSpaceBefore?: number;
   titleSpaceAfter?: number;
+  titleOffsetX?: number;
+  titleOffsetY?: number;
   pageNumber?: number;
   blocks: ContentBlock[];
   notes?: Footnote[];
@@ -69,6 +88,8 @@ type PagePassage = {
   titleAlign?: ContentBlock['align'];
   titleSpaceBefore?: number;
   titleSpaceAfter?: number;
+  titleOffsetX?: number;
+  titleOffsetY?: number;
   bookId: string;
   number: number;
   reference: string;
@@ -120,8 +141,14 @@ function App() {
   const isMobile = useIsMobile();
   const isEditorRoute = typeof window !== 'undefined' && window.location.pathname.startsWith('/edit');
   const [session, setSession] = useState<string | null>(() => (isEditorRoute ? readStoredSession() : null));
+  const [signedOutNotice, setSignedOutNotice] = useState('');
   const [draft, setDraft] = useState<BlockDraft | null>(null);
-  const [changes, setChanges] = useState<PendingChange[]>([]);
+  // Read before the first render so the save effect below cannot clear the
+  // store while the content is still being fetched.
+  const [storedWork] = useState<StoredWork | null>(() => (isEditorRoute ? readStoredWork() : null));
+  const [changes, setChanges] = useState<PendingChange[]>(() => storedWork?.changes ?? []);
+  const [isWorkStored, setIsWorkStored] = useState(true);
+  const [editorMode, setEditorMode] = useState<EditorMode>('text');
   const [pendingAddress, setPendingAddress] = useState<string | null>(null);
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
   const [published, setPublished] = useState<PublishedChange[] | null>(null);
@@ -145,7 +172,18 @@ function App() {
           return;
         }
 
-        setData(nextData);
+        setData(storedWork ? withStoredFiles(nextData, storedWork.files) : nextData);
+
+        if (storedWork) {
+          const count = storedWork.changes.length;
+
+          setPublishStatus({
+            kind: 'ok',
+            message: count === 1
+              ? 'Am păstrat modificarea pe care nu ai publicat-o.'
+              : `Am păstrat cele ${count} modificări pe care nu le-ai publicat.`,
+          });
+        }
 
         if (!nextData.introduction) {
           setSelectedSectionId(nextData.books[0]?.id ?? fallbackBookId);
@@ -161,6 +199,42 @@ function App() {
       isMounted = false;
     };
   }, []);
+
+  /**
+   * Unpublished edits otherwise live only in React state, so a refresh, a closed
+   * tab or a flat battery threw away the whole session's work without a word.
+   */
+  useEffect(() => {
+    if (!isEditing || !data) {
+      return;
+    }
+
+    setIsWorkStored(storeWork(
+      changes.length === 0
+        ? null
+        : {
+          at: Date.now(),
+          changes,
+          files: Object.fromEntries(dirtyPaths.map((path) => [path, fileContent(data, path)])),
+        },
+    ));
+  }, [isEditing, data, changes]);
+
+  /**
+   * Only warn on the way out when the work could not be stored, since that is
+   * the one case where leaving really does lose it.
+   */
+  useEffect(() => {
+    if (!isEditing || isWorkStored || changes.length === 0) {
+      return;
+    }
+
+    const warn = (event: BeforeUnloadEvent) => event.preventDefault();
+
+    window.addEventListener('beforeunload', warn);
+
+    return () => window.removeEventListener('beforeunload', warn);
+  }, [isEditing, isWorkStored, changes.length]);
 
   useEffect(() => {
     if (!pendingAddress) {
@@ -185,8 +259,17 @@ function App() {
     : selectedBook?.title;
 
   function openBlockEditor(address: string) {
+    setDraft(draftFor(address));
+  }
+
+  /**
+   * Everything the editor needs about one element. Both the text dialog and a
+   * drag in layout mode start here, so a drag records its change through the
+   * same path as a typed edit.
+   */
+  function draftFor(address: string): BlockDraft | null {
     if (!data) {
-      return;
+      return null;
     }
 
     const [kind, first, second] = address.split(':');
@@ -195,10 +278,10 @@ function App() {
       const block = data.introduction?.blocks[Number(first)];
 
       if (!block) {
-        return;
+        return null;
       }
 
-      setDraft(draftForText({
+      return draftForText({
         address,
         path: INTRODUCTION_PATH,
         label: 'Paragraf (introducere)',
@@ -210,21 +293,22 @@ function App() {
         isVerse: block.type === 'verse',
         noteRefs: block.noteRefs,
         canLayout: true,
-      }));
-      return;
+        offsetX: block.offsetX,
+        offsetY: block.offsetY,
+      });
     }
 
     const book = data.books.find((candidate) => candidate.passages.some((passage) => passage.id === first));
     const passage = book?.passages.find((candidate) => candidate.id === first);
 
     if (!book || !passage) {
-      return;
+      return null;
     }
 
     const path = `public/content/books/${book.id}.json`;
 
     if (kind === 'title') {
-      setDraft(draftForText({
+      return draftForText({
         address,
         path,
         label: 'Titlul pasajului',
@@ -235,32 +319,40 @@ function App() {
         spaceAfter: passage.titleSpaceAfter,
         isVerse: false,
         canLayout: true,
-      }));
-      return;
+        offsetX: passage.titleOffsetX,
+        offsetY: passage.titleOffsetY,
+      });
     }
 
     if (kind === 'note') {
       const note = passage.notes?.[Number(second)];
 
       if (!note) {
-        return;
+        return null;
       }
 
-      setDraft(draftForText({
-        address, path, label: `Nota ${note.number}`, rawText: note.text, size: note.size, isVerse: false, canLayout: false,
-      }));
-      return;
+      return draftForText({
+        address,
+        path,
+        label: `Nota ${note.number}`,
+        rawText: note.text,
+        size: note.size,
+        isVerse: false,
+        canLayout: false,
+        offsetX: note.offsetX,
+        offsetY: note.offsetY,
+      });
     }
 
     const block = passage.blocks[Number(second)];
 
     if (!block) {
-      return;
+      return null;
     }
 
     const label = block.type === 'heading' ? 'Subtitlu' : block.type === 'verse' ? 'Verset' : 'Paragraf';
 
-    setDraft(draftForText({
+    return draftForText({
       address,
       path,
       label,
@@ -274,9 +366,11 @@ function App() {
       // Verses and paragraphs are inline fragments sharing a paragraph, so only
       // a heading occupies a line of its own.
       canLayout: block.type === 'heading',
+      offsetX: block.offsetX,
+      offsetY: block.offsetY,
       blockIndex: Number(second),
       blockCount: passage.blocks.length,
-    }));
+    });
   }
 
   function confirmBlockEdit(edit: BlockEdit) {
@@ -284,8 +378,94 @@ function App() {
       return;
     }
 
-    applyChange(applyTextEdit(data, draft, edit), describeDraft(draft, edit));
+    applyChange(draft, applyTextEdit(data, draft, edit), describeDraft(draft, edit));
     setDraft(null);
+  }
+
+  /**
+   * Dragging in layout mode. The element is offset relative to where the flow
+   * put it, so it keeps its place and nothing around it shifts while it moves.
+   * X is stored as a share of the column width and Y in rem, so a position
+   * chosen on this screen still holds on a narrower one.
+   */
+  function startDrag(event: React.PointerEvent) {
+    const element = (event.target as HTMLElement).closest('[data-edit]');
+
+    if (!(element instanceof HTMLElement) || !element.dataset.edit || !data) {
+      return;
+    }
+
+    const target = draftFor(element.dataset.edit);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const rem = Number.parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    const fromX = event.clientX;
+    const fromY = event.clientY;
+    const guides = openGuides();
+    let offsetX = target.offsetX;
+    let offsetY = target.offsetY;
+    let pointer = { x: fromX, y: fromY };
+    let frame = 0;
+
+    element.classList.add('is-dragging');
+
+    /**
+     * Styles are written and measured once per frame. Doing both on every
+     * pointer event would force the browser to lay the page out again each
+     * time, which on a page of this length is visibly jerky.
+     */
+    const draw = () => {
+      frame = 0;
+
+      // Percentages resolve against the containing block, so that is what the
+      // pointer's travel has to be measured against.
+      const column = element.parentElement?.getBoundingClientRect().width || element.offsetWidth || 1;
+
+      offsetX = clamp(target.offsetX + ((pointer.x - fromX) / column) * 100, -40, 40);
+      offsetY = clamp(target.offsetY + (pointer.y - fromY) / rem, -20, 20);
+
+      element.style.position = 'relative';
+      element.style.left = `${round(offsetX)}%`;
+      element.style.top = `${round(offsetY)}rem`;
+
+      guides.update(element);
+    };
+
+    const move = (event: PointerEvent) => {
+      pointer = { x: event.clientX, y: event.clientY };
+
+      if (!frame) {
+        frame = requestAnimationFrame(draw);
+      }
+    };
+
+    const drop = () => {
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', drop);
+      cancelAnimationFrame(frame);
+      element.classList.remove('is-dragging');
+      guides.close();
+
+      const edit: BlockEdit = {
+        text: target.text,
+        size: target.size,
+        align: target.align,
+        spaceBefore: target.spaceBefore,
+        spaceAfter: target.spaceAfter,
+        offsetX: round(offsetX),
+        offsetY: round(offsetY),
+      };
+
+      applyChange(target, applyTextEdit(data, target, edit), describeDraft(target, edit));
+    };
+
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', drop);
   }
 
   /** Saves the open draft, then opens its neighbour in reading order. */
@@ -294,7 +474,7 @@ function App() {
       return;
     }
 
-    applyChange(applyTextEdit(data, draft, edit), describeDraft(draft, edit));
+    applyChange(draft, applyTextEdit(data, draft, edit), describeDraft(draft, edit));
 
     const addresses = editableAddresses();
     const target = addresses[addresses.indexOf(draft.address) + direction];
@@ -321,8 +501,9 @@ function App() {
     const base = edit ? applyTextEdit(data, draft, edit) : data;
 
     applyChange(
+      draft,
       applyPassageChange(base, passageId, change),
-      { label: draft.label, where: passageId, current: '(șters)' },
+      { label: draft.label, where: passageId, current: '(șters)', currentLook: lookOf(draft) },
     );
     setPendingAddress(nextIndex === null ? null : `block:${passageId}:${nextIndex}`);
     setDraft(null);
@@ -333,11 +514,11 @@ function App() {
    * an element so "Anulează" always restores the original rather than an
    * intermediate edit.
    */
-  function applyChange(next: TestamentData, record?: { label: string; where: string; current: string }) {
-    if (!draft) {
-      return;
-    }
-
+  function applyChange(
+    target: BlockDraft,
+    next: TestamentData,
+    record?: { label: string; where: string; current: string; currentLook: Look },
+  ) {
     setData(next);
     setPublishStatus({ kind: 'idle', message: '' });
 
@@ -346,22 +527,26 @@ function App() {
     }
 
     setChanges((current) => {
-      const existing = current.find((change) => change.address === draft.address);
+      const existing = current.find((change) => change.address === target.address);
       const entry: PendingChange = {
-        address: draft.address,
-        path: draft.path,
+        address: target.address,
+        path: target.path,
         label: record.label,
         where: record.where,
-        original: existing ? existing.original : `${draft.verseNumber}${draft.text}`,
+        original: existing ? existing.original : `${target.verseNumber}${target.text}`,
+        originalLook: existing ? existing.originalLook : lookOf(target),
         current: record.current,
+        currentLook: record.currentLook,
         at: Date.now(),
       };
 
-      if (entry.original === entry.current) {
-        return current.filter((change) => change.address !== draft.address);
+      // An element is back to how it started only when both its words and its
+      // look match; moving it and typing nothing is still a change to publish.
+      if (entry.original === entry.current && sameLook(entry.originalLook, entry.currentLook)) {
+        return current.filter((change) => change.address !== target.address);
       }
 
-      return [entry, ...current.filter((change) => change.address !== draft.address)];
+      return [entry, ...current.filter((change) => change.address !== target.address)];
     });
   }
 
@@ -385,16 +570,17 @@ function App() {
         verseNumber: match ? match[1] : '',
         text: '',
       },
-      {
-        text: match ? match[2] : change.original,
-        size: 100,
-        align: '',
-        spaceBefore: 0,
-        spaceAfter: 0,
-      },
+      { text: match ? match[2] : change.original, ...change.originalLook },
     ));
 
     setChanges((current) => current.filter((entry) => entry.address !== address));
+  }
+
+  /** Ends the session, saying why so the login screen is not a dead end. */
+  function signOut(notice: string) {
+    storeSession(null);
+    setSession(null);
+    setSignedOutNotice(notice);
   }
 
   async function loadPublished() {
@@ -404,6 +590,12 @@ function App() {
       const response = await fetch('/.netlify/functions/history', {
         headers: { authorization: `Bearer ${session}` },
       });
+
+      if (response.status === 401) {
+        signOut('Sesiunea a expirat, dar modificările tale sunt păstrate. Intră din nou.');
+        return;
+      }
+
       const body = await response.json();
       setPublished(response.ok ? body.commits ?? [] : null);
     } catch {
@@ -434,19 +626,13 @@ function App() {
         method: 'POST',
         headers: { 'content-type': 'application/json', authorization: `Bearer ${session}` },
         body: JSON.stringify({
-          files: dirtyPaths.map((path) => ({
-            path,
-            content: path === INTRODUCTION_PATH
-              ? data.introduction
-              : data.books.find((book) => `public/content/books/${book.id}.json` === path),
-          })),
+          files: dirtyPaths.map((path) => ({ path, content: fileContent(data, path) })),
         }),
       });
       const body = await response.json();
 
       if (response.status === 401) {
-        storeSession(null);
-        setSession(null);
+        signOut('Sesiunea a expirat, dar modificările tale sunt păstrate. Intră din nou și apasă Publică.');
         return;
       }
 
@@ -504,9 +690,11 @@ function App() {
   if (isEditorRoute && !session) {
     return (
       <EditorLogin
+        notice={signedOutNotice}
         onLogin={(token) => {
           storeSession(token);
           setSession(token);
+          setSignedOutNotice('');
         }}
       />
     );
@@ -528,10 +716,12 @@ function App() {
     );
   }
 
+  const isArranging = isEditing && editorMode === 'layout';
+
   return (
     <main
-      className={isEditing ? 'app app-editing' : 'app'}
-      onClick={isEditing ? (event) => {
+      className={`app${isEditing ? ' app-editing' : ''}${isArranging ? ' app-arranging' : ''}`}
+      onClick={isEditing && !isArranging ? (event) => {
         const target = (event.target as HTMLElement).closest('[data-edit]');
         const address = target instanceof HTMLElement ? target.dataset.edit : undefined;
 
@@ -540,14 +730,23 @@ function App() {
           openBlockEditor(address);
         }
       } : undefined}
+      onPointerDown={isArranging ? startDrag : undefined}
     >
       {isEditing ? (
         <EditorBar
           busy={publishing}
           changeCount={changes.length}
+          mode={editorMode}
+          onMode={(next) => {
+            setEditorMode(next);
+            setDraft(null);
+          }}
           onLogout={() => {
-            storeSession(null);
-            setSession(null);
+            if (changes.length > 0 && !window.confirm('Ai modificări nepublicate. Ele te așteaptă când intri din nou. Ieși acum?')) {
+              return;
+            }
+
+            signOut('');
           }}
           onPublish={publishChanges}
           onShowChanges={() => {
@@ -653,6 +852,21 @@ async function loadTestamentData(): Promise<TestamentData> {
   };
 }
 
+/** The content of one editable file, for publishing and for the local backup. */
+function fileContent(data: TestamentData, path: string) {
+  return path === INTRODUCTION_PATH
+    ? data.introduction
+    : data.books.find((book) => `public/content/books/${book.id}.json` === path);
+}
+
+/** Puts locally kept edits back over the freshly loaded content. */
+function withStoredFiles(data: TestamentData, files: Record<string, unknown>): TestamentData {
+  return {
+    introduction: (files[INTRODUCTION_PATH] as Introduction) ?? data.introduction,
+    books: data.books.map((book) => (files[`public/content/books/${book.id}.json`] as Book) ?? book),
+  };
+}
+
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url);
 
@@ -669,6 +883,93 @@ function describeDraft(draft: BlockDraft, edit: BlockEdit) {
     label: draft.label,
     where: draft.address.split(':')[1] ?? '',
     current: `${draft.verseNumber}${edit.text}`,
+    currentLook: lookOf(edit),
+  };
+}
+
+/**
+ * A hairline at the column edge, shown only while an element is being dragged
+ * past it. It answers the one question dragging free text raises — "have I
+ * pushed this out of the column?" — and says nothing the rest of the time.
+ */
+function openGuides() {
+  const layer = document.createElement('div');
+  const left = document.createElement('span');
+  const right = document.createElement('span');
+
+  layer.className = 'arrange-guides';
+  layer.append(left, right);
+  document.body.append(layer);
+
+  return {
+    update(element: HTMLElement) {
+      const column = element.parentElement?.getBoundingClientRect();
+      const box = textBounds(element);
+
+      if (!column || !box) {
+        return;
+      }
+
+      for (const [guide, edge, crossed] of [
+        [left, column.left, box.left < column.left - 1],
+        [right, column.right, box.right > column.right + 1],
+      ] as const) {
+        guide.style.left = `${edge}px`;
+        guide.classList.toggle('is-on', crossed);
+      }
+    },
+    close() {
+      layer.remove();
+    },
+  };
+}
+
+/**
+ * How far the words themselves reach, rather than the box around them. A
+ * heading fills the column whatever its text says, so measuring its box would
+ * report it out of bounds the moment it was nudged an inch to the right.
+ */
+function textBounds(element: HTMLElement) {
+  const range = document.createRange();
+  range.selectNodeContents(element);
+
+  const lines = [...range.getClientRects()].filter((rect) => rect.width > 0);
+
+  if (lines.length === 0) {
+    return element.getBoundingClientRect();
+  }
+
+  return {
+    left: Math.min(...lines.map((line) => line.left)),
+    right: Math.max(...lines.map((line) => line.right)),
+  };
+}
+
+function clamp(value: number, low: number, high: number) {
+  return Math.min(high, Math.max(low, value));
+}
+
+/** Two decimals is finer than the eye can see and keeps the JSON readable. */
+function round(value: number) {
+  return Math.round(value * 100) / 100;
+}
+
+/** Pulls the look out of a draft or an edit, which carry the same fields. */
+function lookOf(layout: {
+  size: number;
+  align: Align;
+  spaceBefore: number;
+  spaceAfter: number;
+  offsetX: number;
+  offsetY: number;
+}): Look {
+  return {
+    size: layout.size,
+    align: layout.align,
+    spaceBefore: layout.spaceBefore,
+    spaceAfter: layout.spaceAfter,
+    offsetX: layout.offsetX,
+    offsetY: layout.offsetY,
   };
 }
 
@@ -694,6 +995,8 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
   const align = edit.align || undefined;
   const spaceBefore = edit.spaceBefore || undefined;
   const spaceAfter = edit.spaceAfter || undefined;
+  const offsetX = edit.offsetX || undefined;
+  const offsetY = edit.offsetY || undefined;
   const text = `${draft.verseNumber}${edit.text}`;
 
   if (kind === 'intro') {
@@ -706,7 +1009,7 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
       introduction: {
         ...data.introduction,
         blocks: data.introduction.blocks.map((block, index) => (
-          index !== Number(first) ? block : { ...block, text, size, align, spaceBefore, spaceAfter }
+          index !== Number(first) ? block : { ...block, text, size, align, spaceBefore, spaceAfter, offsetX, offsetY }
         )),
       },
     };
@@ -721,6 +1024,8 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
         titleAlign: align,
         titleSpaceBefore: spaceBefore,
         titleSpaceAfter: spaceAfter,
+        titleOffsetX: offsetX,
+        titleOffsetY: offsetY,
       };
     }
 
@@ -728,7 +1033,7 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
       return {
         ...passage,
         notes: passage.notes?.map((note, index) => (
-          index !== Number(second) ? note : { ...note, text, size }
+          index !== Number(second) ? note : { ...note, text, size, offsetX, offsetY }
         )),
       };
     }
@@ -736,7 +1041,7 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
     return {
       ...passage,
       blocks: passage.blocks.map((block, index) => (
-        index !== Number(second) ? block : { ...block, text, size, align, spaceBefore, spaceAfter }
+        index !== Number(second) ? block : { ...block, text, size, align, spaceBefore, spaceAfter, offsetX, offsetY }
       )),
     };
   });
@@ -755,6 +1060,8 @@ function draftForText(options: {
   isVerse: boolean;
   noteRefs?: number[];
   canLayout: boolean;
+  offsetX?: number;
+  offsetY?: number;
   blockCount?: number;
   blockIndex?: number;
 }): BlockDraft {
@@ -779,6 +1086,8 @@ function draftForText(options: {
     canLayout: options.canLayout,
     canStructure,
     canDelete: canStructure && options.blockCount! > 1,
+    offsetX: options.offsetX ?? 0,
+    offsetY: options.offsetY ?? 0,
   };
 }
 
@@ -934,6 +1243,8 @@ function buildEstimatedVisualPages(book: Book): VisualBookPage[] {
         titleAlign: passage.titleAlign,
         titleSpaceBefore: passage.titleSpaceBefore,
         titleSpaceAfter: passage.titleSpaceAfter,
+        titleOffsetX: passage.titleOffsetX,
+        titleOffsetY: passage.titleOffsetY,
         isContinuation: !isFirstSegment,
         blocks: segment.blocks,
         allBlocks: passage.blocks,
@@ -1020,6 +1331,8 @@ function buildMeasuredVisualPages(book: Book): VisualBookPage[] | null {
           titleAlign: passage.titleAlign,
           titleSpaceBefore: passage.titleSpaceBefore,
           titleSpaceAfter: passage.titleSpaceAfter,
+          titleOffsetX: passage.titleOffsetX,
+          titleOffsetY: passage.titleOffsetY,
           isContinuation: !isFirstSegment,
           blocks: segment.blocks,
           allBlocks: passage.blocks,
@@ -1408,6 +1721,34 @@ function sizeStyle(size?: number) {
 }
 
 /**
+ * A free position, as set by dragging in layout mode.
+ *
+ * Relative positioning rather than a transform, because a transform does
+ * nothing at all to an inline element, and verses and paragraphs in the reader
+ * are inline fragments sharing a paragraph. Relative offsets move the element
+ * visually while leaving its place in the flow alone, so a verse still wraps
+ * across lines and nothing around it shifts.
+ */
+function offsetStyle(layout: { offsetX?: number; offsetY?: number }): React.CSSProperties {
+  if (!layout.offsetX && !layout.offsetY) {
+    return {};
+  }
+
+  return {
+    position: 'relative',
+    left: `${layout.offsetX ?? 0}%`,
+    top: `${layout.offsetY ?? 0}rem`,
+  };
+}
+
+/** Scale plus position, for the inline fragments that carry no other layout. */
+function fragmentStyle(layout: { size?: number; offsetX?: number; offsetY?: number }) {
+  const style = { ...sizeStyle(layout.size), ...offsetStyle(layout) };
+
+  return Object.keys(style).length > 0 ? style : undefined;
+}
+
+/**
  * Font scale plus alignment and spacing, for elements that occupy a line of
  * their own. Verses and paragraphs in the reader are inline fragments sharing a
  * paragraph, so only the scale applies to them.
@@ -1417,6 +1758,8 @@ function blockStyle(layout: {
   align?: ContentBlock['align'];
   spaceBefore?: number;
   spaceAfter?: number;
+  offsetX?: number;
+  offsetY?: number;
 }) {
   const style: React.CSSProperties = { ...sizeStyle(layout.size) };
 
@@ -1431,6 +1774,8 @@ function blockStyle(layout: {
   if (layout.spaceAfter) {
     style.marginBottom = `${layout.spaceAfter}rem`;
   }
+
+  Object.assign(style, offsetStyle(layout));
 
   return Object.keys(style).length > 0 ? style : undefined;
 }
@@ -1482,6 +1827,8 @@ function PagePassageView({ passage }: { passage: PagePassage }) {
               align: passage.titleAlign,
               spaceBefore: passage.titleSpaceBefore,
               spaceAfter: passage.titleSpaceAfter,
+              offsetX: passage.titleOffsetX,
+              offsetY: passage.titleOffsetY,
             })}
           >
             {renderInlineMarkup(passage.title, `${passage.id}-title`)}
@@ -1572,7 +1919,7 @@ function InlineBlock({ block, noteRefs, address }: { block: ContentBlock; noteRe
 
     if (match) {
       return (
-        <span className="verse-fragment" data-edit={address} style={sizeStyle(block.size)}>
+        <span className="verse-fragment" data-edit={address} style={fragmentStyle(block)}>
           <sup>{match[1]}</sup>
           {renderTextWithNotes(match[2].trimStart(), noteRefs)}
         </span>
@@ -1581,7 +1928,7 @@ function InlineBlock({ block, noteRefs, address }: { block: ContentBlock; noteRe
   }
 
   return (
-    <span className="text-fragment" data-edit={address} style={sizeStyle(block.size)}>
+    <span className="text-fragment" data-edit={address} style={fragmentStyle(block)}>
       {renderTextWithNotes(block.text, noteRefs)}
     </span>
   );
@@ -1682,7 +2029,7 @@ function PassageNotes({ notes }: { notes: PageFootnote[] }) {
           <li
             data-edit={`note:${note.passageId}:${note.noteIndex}`}
             key={note.number}
-            style={sizeStyle(note.size)}
+            style={fragmentStyle(note)}
             value={note.number}
           >
             {renderInlineMarkup(note.text)}
