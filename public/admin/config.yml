@@ -25,7 +25,19 @@ collections:
         fields:
           - { label: ID, name: id, widget: string, hint: "Nu modifica acest câmp." }
           - { label: Titlu meniu, name: title, widget: string }
+          - { label: Mărime titlu (%), name: titleSize, widget: number, value_type: int, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Aliniere titlu, name: titleAlign, widget: string, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Spațiu deasupra titlu, name: titleSpaceBefore, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Spațiu sub titlu, name: titleSpaceAfter, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Deplasare titlu pe orizontală (%), name: titleOffsetX, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Deplasare titlu pe verticală (rem), name: titleOffsetY, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
           - { label: Subtitlu, name: subtitle, widget: string, required: false }
+          - { label: Mărime subtitlu (%), name: subtitleSize, widget: number, value_type: int, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Aliniere subtitlu, name: subtitleAlign, widget: string, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Spațiu deasupra subtitlu, name: subtitleSpaceBefore, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Spațiu sub subtitlu, name: subtitleSpaceAfter, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Deplasare subtitlu pe orizontală (%), name: subtitleOffsetX, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Deplasare subtitlu pe verticală (rem), name: subtitleOffsetY, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
           - label: Paragrafe
             name: blocks
             widget: list
@@ -68,6 +80,12 @@ collections:
       - { label: ID, name: id, widget: string, hint: "Nu modifica acest câmp." }
       - { label: Titlu în meniu, name: navTitle, widget: string }
       - { label: Titlu complet, name: title, widget: string }
+      - { label: Mărime nume carte (%), name: titleSize, widget: number, value_type: int, required: false, hint: "Se schimbă din pagina de editare." }
+      - { label: Aliniere nume carte, name: titleAlign, widget: string, required: false, hint: "Se schimbă din pagina de editare." }
+      - { label: Spațiu deasupra nume carte, name: titleSpaceBefore, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+      - { label: Spațiu sub nume carte, name: titleSpaceAfter, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+      - { label: Deplasare nume carte pe orizontală (%), name: titleOffsetX, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+      - { label: Deplasare nume carte pe verticală (rem), name: titleOffsetY, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
       - label: Pasaje
         name: passages
         widget: list
@@ -77,6 +95,12 @@ collections:
           - { label: ID, name: id, widget: string, hint: "Nu modifica acest câmp." }
           - { label: Număr pasaj, name: number, widget: number, value_type: int }
           - { label: Referință, name: reference, widget: string, required: false }
+          - { label: Mărime referință (%), name: referenceSize, widget: number, value_type: int, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Aliniere referință, name: referenceAlign, widget: string, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Spațiu deasupra referință, name: referenceSpaceBefore, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Spațiu sub referință, name: referenceSpaceAfter, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Deplasare referință pe orizontală (%), name: referenceOffsetX, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Deplasare referință pe verticală (rem), name: referenceOffsetY, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
           - label: Titlu pasaj
             name: title
             widget: string

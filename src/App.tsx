@@ -76,6 +76,13 @@ type Passage = {
   titleSpaceAfter?: number;
   titleOffsetX?: number;
   titleOffsetY?: number;
+  /** Layout of the "1 (Matei 1:1-17)" line above the title. */
+  referenceSize?: number;
+  referenceAlign?: ContentBlock['align'];
+  referenceSpaceBefore?: number;
+  referenceSpaceAfter?: number;
+  referenceOffsetX?: number;
+  referenceOffsetY?: number;
   pageNumber?: number;
   blocks: ContentBlock[];
   notes?: Footnote[];
@@ -90,6 +97,12 @@ type PagePassage = {
   titleSpaceAfter?: number;
   titleOffsetX?: number;
   titleOffsetY?: number;
+  referenceSize?: number;
+  referenceAlign?: ContentBlock['align'];
+  referenceSpaceBefore?: number;
+  referenceSpaceAfter?: number;
+  referenceOffsetX?: number;
+  referenceOffsetY?: number;
   bookId: string;
   number: number;
   reference: string;
@@ -110,13 +123,31 @@ type Book = {
   id: string;
   navTitle: string;
   title: string;
+  titleSize?: number;
+  titleAlign?: ContentBlock['align'];
+  titleSpaceBefore?: number;
+  titleSpaceAfter?: number;
+  titleOffsetX?: number;
+  titleOffsetY?: number;
   passages: Passage[];
 };
 
 type Introduction = {
   id: string;
   title: string;
+  titleSize?: number;
+  titleAlign?: ContentBlock['align'];
+  titleSpaceBefore?: number;
+  titleSpaceAfter?: number;
+  titleOffsetX?: number;
+  titleOffsetY?: number;
   subtitle: string;
+  subtitleSize?: number;
+  subtitleAlign?: ContentBlock['align'];
+  subtitleSpaceBefore?: number;
+  subtitleSpaceAfter?: number;
+  subtitleOffsetX?: number;
+  subtitleOffsetY?: number;
   blocks: ContentBlock[];
 };
 
@@ -274,6 +305,54 @@ function App() {
 
     const [kind, first, second] = address.split(':');
 
+    if (kind === 'introtitle' || kind === 'introsubtitle') {
+      const introduction = data.introduction;
+
+      if (!introduction) {
+        return null;
+      }
+
+      const isTitle = kind === 'introtitle';
+
+      return draftForText({
+        address,
+        path: INTRODUCTION_PATH,
+        label: isTitle ? 'Titlul introducerii' : 'Subtitlul introducerii',
+        rawText: isTitle ? introduction.title : introduction.subtitle,
+        size: isTitle ? introduction.titleSize : introduction.subtitleSize,
+        align: isTitle ? introduction.titleAlign : introduction.subtitleAlign,
+        spaceBefore: isTitle ? introduction.titleSpaceBefore : introduction.subtitleSpaceBefore,
+        spaceAfter: isTitle ? introduction.titleSpaceAfter : introduction.subtitleSpaceAfter,
+        offsetX: isTitle ? introduction.titleOffsetX : introduction.subtitleOffsetX,
+        offsetY: isTitle ? introduction.titleOffsetY : introduction.subtitleOffsetY,
+        isVerse: false,
+        canLayout: true,
+      });
+    }
+
+    if (kind === 'booktitle') {
+      const book = data.books.find((candidate) => candidate.id === first);
+
+      if (!book) {
+        return null;
+      }
+
+      return draftForText({
+        address,
+        path: `public/content/books/${book.id}.json`,
+        label: 'Numele cărții',
+        rawText: book.title,
+        size: book.titleSize,
+        align: book.titleAlign,
+        spaceBefore: book.titleSpaceBefore,
+        spaceAfter: book.titleSpaceAfter,
+        offsetX: book.titleOffsetX,
+        offsetY: book.titleOffsetY,
+        isVerse: false,
+        canLayout: true,
+      });
+    }
+
     if (kind === 'intro') {
       const block = data.introduction?.blocks[Number(first)];
 
@@ -306,6 +385,25 @@ function App() {
     }
 
     const path = `public/content/books/${book.id}.json`;
+
+    if (kind === 'reference') {
+      return draftForText({
+        address,
+        path,
+        // The number beside it belongs to the structure of the book and is not
+        // the editor's to retype; only the traditional reference is text.
+        label: 'Referința capitolului',
+        rawText: passage.reference,
+        size: passage.referenceSize,
+        align: passage.referenceAlign,
+        spaceBefore: passage.referenceSpaceBefore,
+        spaceAfter: passage.referenceSpaceAfter,
+        offsetX: passage.referenceOffsetX,
+        offsetY: passage.referenceOffsetY,
+        isVerse: false,
+        canLayout: true,
+      });
+    }
 
     if (kind === 'title') {
       return draftForText({
@@ -824,7 +922,29 @@ function App() {
       </header>
 
       <section className="reader-shell" aria-labelledby="selected-book-title">
-        <h2 id="selected-book-title">{selectedTitle.toUpperCase()}</h2>
+        <h2
+          data-edit={isIntroductionSelected ? 'introtitle' : selectedBook ? `booktitle:${selectedBook.id}` : undefined}
+          id="selected-book-title"
+          style={blockStyle(isIntroductionSelected
+            ? {
+              size: data.introduction?.titleSize,
+              align: data.introduction?.titleAlign,
+              spaceBefore: data.introduction?.titleSpaceBefore,
+              spaceAfter: data.introduction?.titleSpaceAfter,
+              offsetX: data.introduction?.titleOffsetX,
+              offsetY: data.introduction?.titleOffsetY,
+            }
+            : {
+              size: selectedBook?.titleSize,
+              align: selectedBook?.titleAlign,
+              spaceBefore: selectedBook?.titleSpaceBefore,
+              spaceAfter: selectedBook?.titleSpaceAfter,
+              offsetX: selectedBook?.titleOffsetX,
+              offsetY: selectedBook?.titleOffsetY,
+            })}
+        >
+          {selectedTitle.toUpperCase()}
+        </h2>
 
         {isIntroductionSelected && data.introduction ? (
           <IntroductionPages introduction={data.introduction} />
@@ -999,6 +1119,53 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
   const offsetY = edit.offsetY || undefined;
   const text = `${draft.verseNumber}${edit.text}`;
 
+  if (kind === 'introtitle' || kind === 'introsubtitle') {
+    if (!data.introduction) {
+      return data;
+    }
+
+    return {
+      ...data,
+      introduction: kind === 'introtitle'
+        ? {
+          ...data.introduction,
+          title: text,
+          titleSize: size,
+          titleAlign: align,
+          titleSpaceBefore: spaceBefore,
+          titleSpaceAfter: spaceAfter,
+          titleOffsetX: offsetX,
+          titleOffsetY: offsetY,
+        }
+        : {
+          ...data.introduction,
+          subtitle: text,
+          subtitleSize: size,
+          subtitleAlign: align,
+          subtitleSpaceBefore: spaceBefore,
+          subtitleSpaceAfter: spaceAfter,
+          subtitleOffsetX: offsetX,
+          subtitleOffsetY: offsetY,
+        },
+    };
+  }
+
+  if (kind === 'booktitle') {
+    return {
+      ...data,
+      books: data.books.map((book) => (book.id !== first ? book : {
+        ...book,
+        title: text,
+        titleSize: size,
+        titleAlign: align,
+        titleSpaceBefore: spaceBefore,
+        titleSpaceAfter: spaceAfter,
+        titleOffsetX: offsetX,
+        titleOffsetY: offsetY,
+      })),
+    };
+  }
+
   if (kind === 'intro') {
     if (!data.introduction) {
       return data;
@@ -1016,6 +1183,19 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
   }
 
   return applyPassageChange(data, first, (passage) => {
+    if (kind === 'reference') {
+      return {
+        ...passage,
+        reference: text,
+        referenceSize: size,
+        referenceAlign: align,
+        referenceSpaceBefore: spaceBefore,
+        referenceSpaceAfter: spaceAfter,
+        referenceOffsetX: offsetX,
+        referenceOffsetY: offsetY,
+      };
+    }
+
     if (kind === 'title') {
       return {
         ...passage,
@@ -1115,7 +1295,21 @@ function IntroductionPages({ introduction }: { introduction: Introduction }) {
     <div className="introduction-stack">
       {pages.map((page, pageIndex) => (
         <article className="document-page introduction-page" key={`introduction-${page.number}`}>
-          {pageIndex === 0 && introduction.subtitle ? <h3>{introduction.subtitle}</h3> : null}
+          {pageIndex === 0 && introduction.subtitle ? (
+            <h3
+              data-edit="introsubtitle"
+              style={blockStyle({
+                size: introduction.subtitleSize,
+                align: introduction.subtitleAlign,
+                spaceBefore: introduction.subtitleSpaceBefore,
+                spaceAfter: introduction.subtitleSpaceAfter,
+                offsetX: introduction.subtitleOffsetX,
+                offsetY: introduction.subtitleOffsetY,
+              })}
+            >
+              {introduction.subtitle}
+            </h3>
+          ) : null}
 
           <div className="introduction-body">
             {page.blocks.map((block, index) => (
@@ -1245,6 +1439,12 @@ function buildEstimatedVisualPages(book: Book): VisualBookPage[] {
         titleSpaceAfter: passage.titleSpaceAfter,
         titleOffsetX: passage.titleOffsetX,
         titleOffsetY: passage.titleOffsetY,
+        referenceSize: passage.referenceSize,
+        referenceAlign: passage.referenceAlign,
+        referenceSpaceBefore: passage.referenceSpaceBefore,
+        referenceSpaceAfter: passage.referenceSpaceAfter,
+        referenceOffsetX: passage.referenceOffsetX,
+        referenceOffsetY: passage.referenceOffsetY,
         isContinuation: !isFirstSegment,
         blocks: segment.blocks,
         allBlocks: passage.blocks,
@@ -1333,6 +1533,12 @@ function buildMeasuredVisualPages(book: Book): VisualBookPage[] | null {
           titleSpaceAfter: passage.titleSpaceAfter,
           titleOffsetX: passage.titleOffsetX,
           titleOffsetY: passage.titleOffsetY,
+          referenceSize: passage.referenceSize,
+          referenceAlign: passage.referenceAlign,
+          referenceSpaceBefore: passage.referenceSpaceBefore,
+          referenceSpaceAfter: passage.referenceSpaceAfter,
+          referenceOffsetX: passage.referenceOffsetX,
+          referenceOffsetY: passage.referenceOffsetY,
           isContinuation: !isFirstSegment,
           blocks: segment.blocks,
           allBlocks: passage.blocks,
@@ -1813,7 +2019,18 @@ function PagePassageView({ passage }: { passage: PagePassage }) {
       {!passage.isContinuation ? (
         <header className="passage-header">
           {passage.reference ? (
-            <p className="passage-reference">
+            <p
+              className="passage-reference"
+              data-edit={`reference:${passage.passageId}`}
+              style={blockStyle({
+                size: passage.referenceSize,
+                align: passage.referenceAlign,
+                spaceBefore: passage.referenceSpaceBefore,
+                spaceAfter: passage.referenceSpaceAfter,
+                offsetX: passage.referenceOffsetX,
+                offsetY: passage.referenceOffsetY,
+              })}
+            >
               <span>{passage.number}</span>
               <span>({passage.reference})</span>
             </p>
