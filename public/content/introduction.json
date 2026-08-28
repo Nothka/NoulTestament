@@ -11,7 +11,9 @@
     {
       "type": "paragraph",
       "text": "Divizarea/împărțirea textului biblic în pasaje este prima care și-a făcut apariția, ea fiind cea mai importantă divizare, din cele 3 menționate. Deoarece considerăm pasajul ca fiind cea mai importantă componentă a divizării textului biblic, importanța și utilitatea lui nu trebuie subestimată. Parcurgerea textului biblic este mult mai ușoară, dacă acesta este împărțit în pasaje, delimitate în mod natural, logic. Este mult mai greu să parcurgi textul biblic dacă acesta nu are unele delimitări ajutătoare.",
-      "noteRefs": []
+      "noteRefs": [],
+      "offsetX": -0.03,
+      "offsetY": -0.63
     },
     {
       "type": "paragraph",
@@ -66,7 +68,8 @@
     {
       "type": "paragraph",
       "text": "Împărțirea în pasaje a Vechiului Testament",
-      "noteRefs": []
+      "noteRefs": [],
+      "align": "center"
     },
     {
       "type": "paragraph",
