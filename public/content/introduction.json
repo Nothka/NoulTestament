@@ -67,7 +67,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Împărțirea în pasaje a Vechiului Testament",
+      "text": "**Împărțirea în pasaje a Vechiului Testament**",
       "noteRefs": [],
       "align": "center"
     },
@@ -88,8 +88,9 @@
     },
     {
       "type": "paragraph",
-      "text": "Împărțirea în pasaje a Noului Testament",
-      "noteRefs": []
+      "text": "**Împărțirea în pasaje a Noului Testament**",
+      "noteRefs": [],
+      "align": "center"
     },
     {
       "type": "paragraph",
@@ -114,12 +115,15 @@
     {
       "type": "paragraph",
       "text": "prezent - întregi sau fragmentare - în limba greacă, dar și în alte limbi vechi, se numără cu miile.",
-      "noteRefs": []
+      "noteRefs": [],
+      "offsetX": -2.18,
+      "offsetY": -0.25
     },
     {
       "type": "paragraph",
-      "text": "Împărțirea în capitole a întregii Biblii",
-      "noteRefs": []
+      "text": "**Împărțirea în capitole a întregii Biblii**",
+      "noteRefs": [],
+      "align": "center"
     },
     {
       "type": "paragraph",
@@ -133,8 +137,9 @@
     },
     {
       "type": "paragraph",
-      "text": "Împărțirea în versete a Vechiului Testament",
-      "noteRefs": []
+      "text": "**Împărțirea în versete a Vechiului Testament**",
+      "noteRefs": [],
+      "align": "center"
     },
     {
       "type": "paragraph",
@@ -158,8 +163,9 @@
     },
     {
       "type": "paragraph",
-      "text": "Împărțirea în versete a Noului Testament",
-      "noteRefs": []
+      "text": "**Împărțirea în versete a Noului Testament**",
+      "noteRefs": [],
+      "align": "center"
     },
     {
       "type": "paragraph",
@@ -178,8 +184,9 @@
     },
     {
       "type": "paragraph",
-      "text": "O nouă divizare a textului",
-      "noteRefs": []
+      "text": "**O nouă divizare a textului**",
+      "noteRefs": [],
+      "align": "center"
     },
     {
       "type": "paragraph",
@@ -281,5 +288,6 @@
       "text": "Iunie 2026",
       "noteRefs": []
     }
-  ]
+  ],
+  "subtitleSize": 140
 }
