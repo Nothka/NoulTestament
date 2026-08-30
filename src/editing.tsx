@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { renderTextWithNotes } from './markup';
+import { renderTextWithNotes, trimVerseTextStart } from './markup';
 
 const SESSION_KEY = 'nt-editor-session';
 const WORK_KEY = 'nt-editor-work';
@@ -19,9 +19,12 @@ export type BlockDraft = {
   hasPrevious: boolean;
   hasNext: boolean;
   align: Align;
-  spaceBefore: number;
-  spaceAfter: number;
-  /** Verses share a paragraph, so alignment and spacing only apply to some. */
+  /** null means to use the normal spacing from the page stylesheet. */
+  spaceBefore: number | null;
+  spaceAfter: number | null;
+  /** Soft-deleted rows stay addressable so Undo remains reliable. */
+  hidden: boolean;
+  /** Some fixed elements, such as footnotes, do not expose layout controls. */
   canLayout: boolean;
   /** Titles and footnotes have a fixed place; only blocks can be restructured. */
   canStructure: boolean;
@@ -32,7 +35,7 @@ export type BlockDraft = {
   offsetY: number;
 };
 
-export type Align = 'left' | 'center' | 'right' | '';
+export type Align = 'left' | 'center' | 'right' | 'justify' | '';
 
 /** One element the editor has changed but not yet published. */
 export type PendingChange = {
@@ -57,8 +60,9 @@ export type PendingChange = {
 export type Look = {
   size: number;
   align: Align;
-  spaceBefore: number;
-  spaceAfter: number;
+  spaceBefore: number | null;
+  spaceAfter: number | null;
+  hidden: boolean;
   offsetX: number;
   offsetY: number;
 };
@@ -68,6 +72,7 @@ export function sameLook(a: Look, b: Look) {
     && a.align === b.align
     && a.spaceBefore === b.spaceBefore
     && a.spaceAfter === b.spaceAfter
+    && a.hidden === b.hidden
     && a.offsetX === b.offsetX
     && a.offsetY === b.offsetY;
 }
@@ -84,18 +89,28 @@ export type BlockEdit = {
   text: string;
   size: number;
   align: Align;
-  spaceBefore: number;
-  spaceAfter: number;
+  spaceBefore: number | null;
+  spaceAfter: number | null;
+  hidden: boolean;
   offsetX: number;
   offsetY: number;
 };
 
 const SIZES = [70, 80, 90, 100, 110, 125, 140, 160];
 const SPACES = [
-  { value: 0, label: 'Fără' },
-  { value: 0.5, label: 'Puțin' },
-  { value: 1, label: 'Mediu' },
-  { value: 1.75, label: 'Mult' },
+  { value: 'auto', amount: null, label: 'Normal' },
+  { value: '0', amount: 0, label: 'Fără' },
+  { value: '0.75', amount: 0.75, label: '½ rând' },
+  { value: '1.5', amount: 1.5, label: '1 rând' },
+  { value: '3', amount: 3, label: '2 rânduri' },
+] as const;
+
+const ALIGNMENTS: Array<{ value: Align; label: string; title: string }> = [
+  { value: '', label: 'Normal', title: 'Alinierea normală a paginii' },
+  { value: 'left', label: 'Stânga', title: 'Aliniere la stânga' },
+  { value: 'center', label: 'Centru', title: 'Aliniere la mijloc' },
+  { value: 'right', label: 'Dreapta', title: 'Aliniere la dreapta' },
+  { value: 'justify', label: 'Margini egale', title: 'Aliniere la ambele margini (text justificat)' },
 ];
 
 export function readStoredSession() {
@@ -125,6 +140,7 @@ export function storeSession(token: string | null) {
  * reproduce a deleted block or the layout fields.
  */
 export type StoredWork = {
+  version?: number;
   at: number;
   changes: PendingChange[];
   files: Record<string, unknown>;
@@ -139,10 +155,33 @@ export function readStoredWork(): StoredWork | null {
       return null;
     }
 
-    return work as StoredWork;
+    const stored = work as StoredWork;
+
+    if (stored.version !== 2) {
+      // In the old editor zero meant "use the normal stylesheet spacing"; it
+      // could not represent an explicit zero. Migrate that unambiguously to the
+      // new null sentinel before Undo or another save can reinterpret it.
+      stored.changes = stored.changes.map((change) => ({
+        ...change,
+        originalLook: migrateLegacyLook(change.originalLook),
+        currentLook: migrateLegacyLook(change.currentLook),
+      }));
+      stored.version = 2;
+    }
+
+    return stored;
   } catch {
     return null;
   }
+}
+
+function migrateLegacyLook(look: Look): Look {
+  return {
+    ...look,
+    spaceBefore: look.spaceBefore === 0 ? null : look.spaceBefore,
+    spaceAfter: look.spaceAfter === 0 ? null : look.spaceAfter,
+    hidden: look.hidden ?? false,
+  };
 }
 
 /**
@@ -325,7 +364,7 @@ export function BlockEditor({
   onCancel: () => void;
   onConfirm: (edit: BlockEdit) => void;
   onNavigate: (direction: -1 | 1, edit: BlockEdit) => void;
-  onDelete: () => void;
+  onDelete: (edit: BlockEdit) => void;
 }) {
   const [text, setText] = useState(draft.text);
   const [size, setSize] = useState(draft.size);
@@ -353,6 +392,7 @@ export function BlockEditor({
     align,
     spaceBefore,
     spaceAfter,
+    hidden: draft.hidden,
     offsetX: draft.offsetX,
     offsetY: draft.offsetY,
   });
@@ -379,6 +419,54 @@ export function BlockEditor({
       area.focus();
       area.setSelectionRange(start, start + replacement.length);
     });
+  }
+
+  /** Inserts text at the caret and leaves the caret immediately after it. */
+  function insertAtCaret(inserted: string) {
+    const area = areaRef.current;
+
+    if (!area) {
+      return;
+    }
+
+    const { selectionStart: start, selectionEnd: end } = area;
+    const nextText = `${text.slice(0, start)}${inserted}${text.slice(end)}`;
+    const nextCaret = start + inserted.length;
+
+    setText(nextText);
+
+    requestAnimationFrame(() => {
+      area.focus();
+      area.setSelectionRange(nextCaret, nextCaret);
+    });
+  }
+
+  /**
+   * At an edge, spacing moves the whole element (including a protected verse
+   * number). Inside the text, two newlines create one visibly blank row.
+   */
+  function addBlankRow() {
+    const area = areaRef.current;
+
+    if (!area) {
+      return;
+    }
+
+    const { selectionStart: start, selectionEnd: end } = area;
+
+    if (draft.canLayout && start === end && start === 0) {
+      setSpaceBefore(1.5);
+      area.focus();
+      return;
+    }
+
+    if (draft.canLayout && start === end && end === text.length) {
+      setSpaceAfter(1.5);
+      area.focus();
+      return;
+    }
+
+    insertAtCaret('\n\n');
   }
 
   /**
@@ -473,11 +561,25 @@ export function BlockEditor({
     previewStyle.textAlign = align;
   }
 
+  if (draft.canLayout && spaceBefore !== null) {
+    previewStyle.marginTop = `${spaceBefore}rem`;
+  }
+
+  if (draft.canLayout && spaceAfter !== null) {
+    previewStyle.marginBottom = `${spaceAfter}rem`;
+  }
+
   return (
-    <div aria-modal="true" className="block-editor-backdrop" role="dialog" onClick={onCancel}>
+    <div
+      aria-labelledby="block-editor-title"
+      aria-modal="true"
+      className="block-editor-backdrop"
+      role="dialog"
+      onClick={onCancel}
+    >
       <div className="block-editor" onClick={(event) => event.stopPropagation()}>
         <header>
-          <span className="block-editor-verse">{draft.label}</span>
+          <span className="block-editor-verse" id="block-editor-title">{draft.label}</span>
 
           <span className="block-editor-nav">
             <button disabled={!draft.hasPrevious} onClick={() => onNavigate(-1, edit())} title="Textul dinainte" type="button">←</button>
@@ -489,6 +591,9 @@ export function BlockEditor({
           <button onClick={() => toggle('**')} title="Îngroșat (Ctrl+B)" type="button"><strong>B</strong></button>
           <button onClick={() => toggle('_')} title="Înclinat (Ctrl+I)" type="button"><em>I</em></button>
           <button onClick={() => toggle('„', '”')} title="Ghilimele românești" type="button">„ ”</button>
+          <button onClick={addBlankRow} title="Lasă un rând gol la poziția cursorului" type="button">
+            + Rând liber
+          </button>
           <button className="block-toolbar-clear" onClick={clearFormatting} type="button">Șterge formatarea</button>
 
           <span className="block-toolbar-divider" />
@@ -503,46 +608,67 @@ export function BlockEditor({
 
         {draft.canLayout ? (
           <div className="block-toolbar block-toolbar-layout">
-            <span className="block-toolbar-caption">Așezare</span>
+            <span className="block-toolbar-caption">Aliniere</span>
 
             <span className="block-align-group">
-              {([['left', '⟵'], ['center', '↔'], ['right', '⟶']] as const).map(([value, glyph]) => (
+              {ALIGNMENTS.map((option) => (
                 <button
-                  aria-pressed={align === value}
-                  className={align === value ? 'is-active' : undefined}
-                  key={value}
-                  onClick={() => setAlign(align === value ? '' : value)}
-                  title={value === 'left' ? 'La stânga' : value === 'center' ? 'La mijloc' : 'La dreapta'}
+                  aria-pressed={align === option.value}
+                  className={align === option.value ? 'is-active' : undefined}
+                  key={option.value || 'normal'}
+                  onClick={() => setAlign(option.value)}
+                  title={option.title}
                   type="button"
                 >
-                  {glyph}
+                  {option.label}
                 </button>
               ))}
             </span>
 
             <label className="block-toolbar-size">
-              Spațiu deasupra
-              <select onChange={(event) => setSpaceBefore(Number(event.target.value))} value={spaceBefore}>
+              Spațiu înainte
+              <select
+                onChange={(event) => setSpaceBefore(
+                  SPACES.find((option) => option.value === event.target.value)?.amount ?? null,
+                )}
+                value={spaceBefore === null ? 'auto' : String(spaceBefore)}
+              >
                 {SPACES.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
               </select>
             </label>
 
             <label className="block-toolbar-size">
-              dedesubt
-              <select onChange={(event) => setSpaceAfter(Number(event.target.value))} value={spaceAfter}>
+              Spațiu după
+              <select
+                onChange={(event) => setSpaceAfter(
+                  SPACES.find((option) => option.value === event.target.value)?.amount ?? null,
+                )}
+                value={spaceAfter === null ? 'auto' : String(spaceAfter)}
+              >
                 {SPACES.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
               </select>
             </label>
+
+            <p className="block-layout-help">
+              „1 rând” coboară textul. „Margini egale” aliniază întregul paragraf la ambele margini.
+            </p>
           </div>
         ) : null}
 
-        <textarea onChange={(event) => setText(event.target.value)} onKeyDown={onKeyDown} ref={areaRef} rows={5} value={text} />
+        <textarea
+          aria-label="Text de modificat"
+          onChange={(event) => setText(event.target.value)}
+          onKeyDown={onKeyDown}
+          ref={areaRef}
+          rows={5}
+          value={text}
+        />
 
         <div className="block-preview">
           <span className="block-preview-label">Cum va arăta</span>
           <p className="block-preview-body" style={previewStyle}>
             {draft.verseNumber ? <sup>{draft.verseNumber}</sup> : null}
-            {renderTextWithNotes(draft.verseNumber ? text.trimStart() : text, draft.noteRefs)}
+            {renderTextWithNotes(draft.verseNumber ? trimVerseTextStart(text) : text, draft.noteRefs)}
           </p>
         </div>
 
@@ -560,10 +686,14 @@ export function BlockEditor({
             <button
               className={confirmingDelete ? 'block-delete is-confirming' : 'block-delete'}
               disabled={!draft.canDelete}
-              onClick={() => (confirmingDelete ? onDelete() : setConfirmingDelete(true))}
+              onClick={() => (confirmingDelete ? onDelete(edit()) : setConfirmingDelete(true))}
               type="button"
             >
-              {confirmingDelete ? 'Sigur? Apasă din nou' : 'Șterge textul'}
+              {confirmingDelete
+                ? 'Sigur? Apasă din nou'
+                : text.trim()
+                  ? 'Șterge textul'
+                  : 'Șterge rândul gol'}
             </button>
           </div>
         ) : null}

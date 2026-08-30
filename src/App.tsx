@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useLayoutEffect, useMemo, useState, type ReactNode } from 'react';
 
 import { countFootnoteMarkers } from './footnote-markers.js';
-import { renderInlineMarkup, renderTextWithNotes } from './markup';
+import { renderInlineMarkup, renderTextWithNotes, trimVerseTextStart } from './markup';
 import {
   BlockEditor,
   ChangesPanel,
@@ -37,10 +37,12 @@ type ContentBlock = {
   noteRefs?: number[];
   /** Font size as a percentage of the normal size, set from edit mode. */
   size?: number;
-  align?: 'left' | 'center' | 'right';
+  align?: 'left' | 'center' | 'right' | 'justify';
   /** Extra space above and below, in rem. */
   spaceBefore?: number;
   spaceAfter?: number;
+  /** A reversible deletion used for empty introduction rows. */
+  hidden?: boolean;
   /**
    * Free position, set by dragging in layout mode. X is a share of the
    * element's own width and Y is in rem, so a position chosen on a wide screen
@@ -244,6 +246,7 @@ function App() {
       changes.length === 0
         ? null
         : {
+          version: 2,
           at: Date.now(),
           changes,
           files: Object.fromEntries(dirtyPaths.map((path) => [path, fileContent(data, path)])),
@@ -369,11 +372,14 @@ function App() {
         align: block.align,
         spaceBefore: block.spaceBefore,
         spaceAfter: block.spaceAfter,
+        hidden: block.hidden,
         isVerse: block.type === 'verse',
         noteRefs: block.noteRefs,
         canLayout: true,
         offsetX: block.offsetX,
         offsetY: block.offsetY,
+        blockIndex: Number(first),
+        blockCount: data.introduction?.blocks.length ?? 0,
       });
     }
 
@@ -456,14 +462,17 @@ function App() {
       label,
       rawText: block.text,
       size: block.size,
-      align: block.align,
+      align: block.type === 'heading'
+        ? block.align
+        : effectiveParagraphAlign(passage.blocks, Number(second)),
       spaceBefore: block.spaceBefore,
       spaceAfter: block.spaceAfter,
+      hidden: block.hidden,
       isVerse: block.type === 'verse',
       noteRefs: getResolvedNoteRefsForBlock(block, passage.blocks, passage.notes ?? []),
-      // Verses and paragraphs are inline fragments sharing a paragraph, so only
-      // a heading occupies a line of its own.
-      canLayout: block.type === 'heading',
+      // Paragraph grouping below turns spacing/alignment on any selected block
+      // into a real paragraph boundary, so these controls work for verses too.
+      canLayout: true,
       offsetX: block.offsetX,
       offsetY: block.offsetY,
       blockIndex: Number(second),
@@ -555,6 +564,7 @@ function App() {
         align: target.align,
         spaceBefore: target.spaceBefore,
         spaceAfter: target.spaceAfter,
+        hidden: target.hidden,
         offsetX: round(offsetX),
         offsetY: round(offsetY),
       };
@@ -658,7 +668,7 @@ function App() {
 
     const [kind] = address.split(':');
     const isVerse = kind === 'block' && /^\d/u.test(change.original);
-    const match = isVerse ? change.original.match(/^(\d{1,3})(.*)$/u) : null;
+    const match = isVerse ? change.original.match(/^(\d{1,3})(.*)$/su) : null;
 
     setData(applyTextEdit(
       data,
@@ -705,11 +715,33 @@ function App() {
 
   const draftBlockIndex = () => Number(draft?.address.split(':')[2]);
 
-  const deleteDraftBlock = () => restructure(
-    null,
-    (passage) => removeBlock(passage, draftBlockIndex()) as Passage,
-    null,
-  );
+  function deleteDraftBlock(edit: BlockEdit) {
+    if (!draft || !data) {
+      return;
+    }
+
+    const [kind] = draft.address.split(':');
+
+    if (kind === 'intro') {
+      // Keep the array position stable so every other pending edit keeps its
+      // address and can still be undone. Empty rows are hidden by the reader.
+      const cleared = { ...edit, text: '', spaceBefore: 0, spaceAfter: 0, hidden: true };
+
+      applyChange(
+        draft,
+        applyTextEdit(data, draft, cleared),
+        { label: draft.label, where: 'introducere', current: '(șters)', currentLook: lookOf(cleared) },
+      );
+      setDraft(null);
+      return;
+    }
+
+    restructure(
+      null,
+      (passage) => removeBlock(passage, draftBlockIndex()) as Passage,
+      null,
+    );
+  }
 
   async function publishChanges() {
     if (!data || dirtyPaths.length === 0) {
@@ -1078,8 +1110,9 @@ function round(value: number) {
 function lookOf(layout: {
   size: number;
   align: Align;
-  spaceBefore: number;
-  spaceAfter: number;
+  spaceBefore: number | null;
+  spaceAfter: number | null;
+  hidden: boolean;
   offsetX: number;
   offsetY: number;
 }): Look {
@@ -1088,6 +1121,7 @@ function lookOf(layout: {
     align: layout.align,
     spaceBefore: layout.spaceBefore,
     spaceAfter: layout.spaceAfter,
+    hidden: layout.hidden,
     offsetX: layout.offsetX,
     offsetY: layout.offsetY,
   };
@@ -1113,10 +1147,13 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
   const [kind, first, second] = draft.address.split(':');
   const size = edit.size === 100 ? undefined : edit.size;
   const align = edit.align || undefined;
-  const spaceBefore = edit.spaceBefore || undefined;
-  const spaceAfter = edit.spaceAfter || undefined;
+  // null restores the page's normal stylesheet value; numeric zero is kept so
+  // "Fără" can genuinely remove the built-in paragraph gap.
+  const spaceBefore = edit.spaceBefore === null ? undefined : edit.spaceBefore;
+  const spaceAfter = edit.spaceAfter === null ? undefined : edit.spaceAfter;
   const offsetX = edit.offsetX || undefined;
   const offsetY = edit.offsetY || undefined;
+  const hidden = edit.hidden || undefined;
   const text = `${draft.verseNumber}${edit.text}`;
 
   if (kind === 'introtitle' || kind === 'introsubtitle') {
@@ -1176,7 +1213,9 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
       introduction: {
         ...data.introduction,
         blocks: data.introduction.blocks.map((block, index) => (
-          index !== Number(first) ? block : { ...block, text, size, align, spaceBefore, spaceAfter, offsetX, offsetY }
+          index !== Number(first)
+            ? block
+            : { ...block, text, size, align, spaceBefore, spaceAfter, hidden, offsetX, offsetY }
         )),
       },
     };
@@ -1218,11 +1257,30 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
       };
     }
 
+    const targetIndex = Number(second);
+    const targetBlock = passage.blocks[targetIndex];
+    const [runStart, runEnd] = textRunBounds(passage.blocks, targetIndex);
+
     return {
       ...passage,
-      blocks: passage.blocks.map((block, index) => (
-        index !== Number(second) ? block : { ...block, text, size, align, spaceBefore, spaceAfter, offsetX, offsetY }
-      )),
+      blocks: passage.blocks.map((block, index) => {
+        let nextBlock = block;
+
+        // Alignment belongs to the real paragraph (the run between headings),
+        // not to one inline verse. Store it once at the run's first block so it
+        // survives page/column splits and opening any verse shows the same value.
+        if (targetBlock?.type !== 'heading' && index >= runStart && index <= runEnd) {
+          nextBlock = { ...nextBlock, align: index === runStart ? align : undefined };
+        }
+
+        if (index !== targetIndex) {
+          return nextBlock;
+        }
+
+        return targetBlock?.type === 'heading'
+          ? { ...nextBlock, text, size, align, spaceBefore, spaceAfter, hidden, offsetX, offsetY }
+          : { ...nextBlock, text, size, spaceBefore, spaceAfter, hidden, offsetX, offsetY };
+      }),
     };
   });
 }
@@ -1237,6 +1295,7 @@ function draftForText(options: {
   align?: ContentBlock['align'];
   spaceBefore?: number;
   spaceAfter?: number;
+  hidden?: boolean;
   isVerse: boolean;
   noteRefs?: number[];
   canLayout: boolean;
@@ -1245,7 +1304,7 @@ function draftForText(options: {
   blockCount?: number;
   blockIndex?: number;
 }): BlockDraft {
-  const match = options.isVerse ? options.rawText.match(/^(\d{1,3})(.*)$/u) : null;
+  const match = options.isVerse ? options.rawText.match(/^(\d{1,3})(.*)$/su) : null;
   const addresses = editableAddresses();
   const position = addresses.indexOf(options.address);
   const canStructure = options.blockIndex !== undefined && options.blockCount !== undefined;
@@ -1256,8 +1315,9 @@ function draftForText(options: {
     label: match ? `${options.label} ${match[1]}` : options.label,
     size: options.size ?? 100,
     align: options.align ?? '',
-    spaceBefore: options.spaceBefore ?? 0,
-    spaceAfter: options.spaceAfter ?? 0,
+    spaceBefore: options.spaceBefore ?? null,
+    spaceAfter: options.spaceAfter ?? null,
+    hidden: options.hidden ?? false,
     text: match ? match[2] : options.rawText,
     verseNumber: match ? match[1] : '',
     noteRefs: options.noteRefs ?? [],
@@ -1280,7 +1340,11 @@ function editableAddresses() {
   const seen = new Set<string>();
 
   for (const element of document.querySelectorAll<HTMLElement>('[data-edit]')) {
-    if (element.dataset.edit) {
+    if (
+      element.dataset.edit
+      && !element.classList.contains('hidden-text-line')
+      && !element.classList.contains('hidden-text-fragment')
+    ) {
       seen.add(element.dataset.edit);
     }
   }
@@ -1676,12 +1740,24 @@ function createMeasuredPassageElement(
       const traditionalReference = document.createElement('span');
       traditionalReference.textContent = `(${passage.reference})`;
       reference.append(number, traditionalReference);
+      applyMeasuredBlockStyle(reference, {
+        size: passage.referenceSize,
+        align: passage.referenceAlign,
+        spaceBefore: passage.referenceSpaceBefore,
+        spaceAfter: passage.referenceSpaceAfter,
+      });
       header.append(reference);
     }
 
     const title = document.createElement('h3');
     title.className = 'passage-title';
-    title.textContent = stripInlineMarkup(passage.title);
+    appendMeasuredText(title, passage.title);
+    applyMeasuredBlockStyle(title, {
+      size: passage.titleSize,
+      align: passage.titleAlign,
+      spaceBefore: passage.titleSpaceBefore,
+      spaceAfter: passage.titleSpaceAfter,
+    });
     header.append(title);
     article.append(header);
   }
@@ -1690,9 +1766,9 @@ function createMeasuredPassageElement(
   body.className = 'passage-body';
 
   if (passage.id === 'matei-1') {
-    appendMeasuredGenealogyBlocks(body, blocks);
+    appendMeasuredGenealogyBlocks(body, blocks, passage.blocks);
   } else {
-    appendMeasuredPassageBlocks(body, blocks);
+    appendMeasuredPassageBlocks(body, blocks, passage.blocks);
   }
 
   article.append(body);
@@ -1700,32 +1776,25 @@ function createMeasuredPassageElement(
   return article;
 }
 
-function appendMeasuredPassageBlocks(container: HTMLElement, blocks: ContentBlock[]) {
-  const groupedBlocks: Array<ContentBlock | ContentBlock[]> = [];
-  let textGroup: ContentBlock[] = [];
+function appendMeasuredPassageBlocks(
+  container: HTMLElement,
+  blocks: ContentBlock[],
+  allBlocks: ContentBlock[],
+) {
+  const groupedBlocks = groupPassageBlocks(blocks);
 
-  for (const block of blocks) {
-    if (block.type === 'heading') {
-      if (textGroup.length > 0) {
-        groupedBlocks.push(textGroup);
-        textGroup = [];
-      }
-
-      groupedBlocks.push(block);
-      continue;
-    }
-
-    textGroup.push(block);
-  }
-
-  if (textGroup.length > 0) {
-    groupedBlocks.push(textGroup);
-  }
-
-  for (const group of groupedBlocks) {
+  for (const [groupIndex, group] of groupedBlocks.entries()) {
     if (Array.isArray(group)) {
       const paragraph = document.createElement('p');
       paragraph.className = 'passage-paragraph';
+      applyMeasuredBlockStyle(
+        paragraph,
+        paragraphLayoutForBlocks(
+          group,
+          allBlocks,
+          textContinuesAfterGroup(group, groupIndex, groupedBlocks, allBlocks),
+        ),
+      );
 
       for (const block of group) {
         appendMeasuredInlineBlock(paragraph, block);
@@ -1737,51 +1806,119 @@ function appendMeasuredPassageBlocks(container: HTMLElement, blocks: ContentBloc
 
     const heading = document.createElement('h4');
     heading.className = 'inline-heading';
-    heading.textContent = group.text;
+    appendMeasuredText(heading, group.text);
+    applyMeasuredBlockStyle(heading, group);
     container.append(heading);
+  }
+}
+
+/** Applies the flow-affecting part of blockStyle to the DOM measurer. */
+function applyMeasuredBlockStyle(
+  element: HTMLElement,
+  layout: {
+    size?: number;
+    align?: ContentBlock['align'];
+    spaceBefore?: number;
+    spaceAfter?: number;
+  },
+  includeLayout = true,
+) {
+  if (layout.size && layout.size !== 100) {
+    element.style.setProperty('--size-scale', String(layout.size / 100));
+  }
+
+  if (!includeLayout) {
+    return;
+  }
+
+  if (layout.align) {
+    element.style.textAlign = layout.align;
+  }
+
+  if (layout.spaceBefore !== undefined) {
+    element.style.marginTop = `${layout.spaceBefore}rem`;
+  }
+
+  if (layout.spaceAfter !== undefined) {
+    element.style.marginBottom = `${layout.spaceAfter}rem`;
   }
 }
 
 function appendMeasuredInlineBlock(container: HTMLElement, block: ContentBlock) {
   const span = document.createElement('span');
-  const match = block.type === 'verse' ? block.text.match(/^(\d{1,3})(.*)$/u) : null;
+  const match = block.type === 'verse' ? block.text.match(/^(\d{1,3})(.*)$/su) : null;
   span.className = block.type === 'verse' ? 'verse-fragment' : 'text-fragment';
+  applyMeasuredBlockStyle(span, block, false);
 
   if (match) {
     const sup = document.createElement('sup');
     sup.textContent = match[1];
-    span.append(sup, document.createTextNode(match[2].trimStart()));
+    span.append(sup);
+    appendMeasuredText(span, trimVerseTextStart(match[2]));
   } else {
-    span.textContent = block.text;
+    appendMeasuredText(span, block.text);
   }
 
   container.append(span);
 }
 
-function appendMeasuredGenealogyBlocks(container: HTMLElement, blocks: ContentBlock[]) {
+/** Mirrors the reader's explicit newline rendering inside the hidden measurer. */
+function appendMeasuredText(container: HTMLElement, text: string) {
+  const lines = stripInlineMarkup(text).split('\n');
+
+  lines.forEach((line, index) => {
+    if (index > 0) {
+      container.append(document.createElement('br'));
+    }
+
+    if (line) {
+      container.append(document.createTextNode(line));
+    }
+  });
+}
+
+function appendMeasuredGenealogyBlocks(
+  container: HTMLElement,
+  blocks: ContentBlock[],
+  allBlocks: ContentBlock[],
+) {
   const wrapper = document.createElement('div');
   wrapper.className = 'genealogy-lines';
 
   for (const block of blocks) {
+    if (block.hidden) {
+      continue;
+    }
+
     if (block.type === 'heading') {
       const heading = document.createElement('h4');
       heading.className = 'inline-heading';
-      heading.textContent = block.text;
+      appendMeasuredText(heading, block.text);
+      applyMeasuredBlockStyle(heading, block);
       wrapper.append(heading);
       continue;
     }
 
-    for (const line of splitGenealogyText(block.text)) {
+    const lines = splitGenealogyText(block.text);
+
+    for (const [lineIndex, line] of lines.entries()) {
       const paragraph = document.createElement('p');
       paragraph.className = 'genealogy-line';
-      const match = line.match(/^(\d{1,3})(.*)$/u);
+      const match = line.match(/^(\d{1,3})(.*)$/su);
+      const layout = genealogyLineLayout(block, allBlocks, lineIndex, lines.length);
+      applyMeasuredBlockStyle(paragraph, layout);
+
+      if (layout.align === 'justify') {
+        paragraph.style.textAlignLast = 'justify';
+      }
 
       if (match) {
         const sup = document.createElement('sup');
         sup.textContent = match[1];
-        paragraph.append(sup, document.createTextNode(match[2].trimStart()));
+        paragraph.append(sup);
+        appendMeasuredText(paragraph, trimVerseTextStart(match[2]));
       } else {
-        paragraph.textContent = line;
+        appendMeasuredText(paragraph, line);
       }
 
       wrapper.append(paragraph);
@@ -1954,11 +2091,7 @@ function fragmentStyle(layout: { size?: number; offsetX?: number; offsetY?: numb
   return Object.keys(style).length > 0 ? style : undefined;
 }
 
-/**
- * Font scale plus alignment and spacing, for elements that occupy a line of
- * their own. Verses and paragraphs in the reader are inline fragments sharing a
- * paragraph, so only the scale applies to them.
- */
+/** Font scale, alignment, spacing and free position for a block-level box. */
 function blockStyle(layout: {
   size?: number;
   align?: ContentBlock['align'];
@@ -1973,11 +2106,11 @@ function blockStyle(layout: {
     style.textAlign = layout.align;
   }
 
-  if (layout.spaceBefore) {
+  if (layout.spaceBefore !== undefined) {
     style.marginTop = `${layout.spaceBefore}rem`;
   }
 
-  if (layout.spaceAfter) {
+  if (layout.spaceAfter !== undefined) {
     style.marginBottom = `${layout.spaceAfter}rem`;
   }
 
@@ -2080,31 +2213,20 @@ function PassageBlocks({
     return <GenealogyBlocks blocks={blocks} passageId={passageId} allBlocks={allBlocks} notes={notes} />;
   }
 
-  const groupedBlocks: Array<ContentBlock | ContentBlock[]> = [];
-  let textGroup: ContentBlock[] = [];
-
-  for (const block of blocks) {
-    if (block.type === 'heading') {
-      if (textGroup.length > 0) {
-        groupedBlocks.push(textGroup);
-        textGroup = [];
-      }
-
-      groupedBlocks.push(block);
-      continue;
-    }
-
-    textGroup.push(block);
-  }
-
-  if (textGroup.length > 0) {
-    groupedBlocks.push(textGroup);
-  }
+  const groupedBlocks = groupPassageBlocks(blocks);
 
   return groupedBlocks.map((group, index) => {
     if (Array.isArray(group)) {
       return (
-        <p className="passage-paragraph" key={`${passageId}-paragraph-${index}`}>
+        <p
+          className="passage-paragraph"
+          key={`${passageId}-paragraph-${index}`}
+          style={blockStyle(paragraphLayoutForBlocks(
+            group,
+            allBlocks,
+            textContinuesAfterGroup(group, index, groupedBlocks, allBlocks),
+          ))}
+        >
           {group.map((block, blockIndex) => (
             <InlineBlock
               address={blockAddress(passageId, allBlocks, block)}
@@ -2130,22 +2252,144 @@ function PassageBlocks({
   });
 }
 
+/**
+ * Normal verses flow together. Explicit spacing creates a paragraph boundary
+ * so it has a real margin box; alignment is handled at the whole-run level.
+ */
+function groupPassageBlocks(blocks: ContentBlock[]): Array<ContentBlock | ContentBlock[]> {
+  const groups: Array<ContentBlock | ContentBlock[]> = [];
+  let textGroup: ContentBlock[] = [];
+
+  const flushText = () => {
+    if (textGroup.length > 0) {
+      groups.push(textGroup);
+      textGroup = [];
+    }
+  };
+
+  for (const block of blocks) {
+    if (block.hidden) {
+      continue;
+    }
+
+    if (block.type === 'heading') {
+      flushText();
+      groups.push(block);
+      continue;
+    }
+
+    if (textGroup.length > 0 && block.spaceBefore !== undefined) {
+      flushText();
+    }
+
+    textGroup.push(block);
+
+    if (block.spaceAfter !== undefined) {
+      flushText();
+    }
+  }
+
+  flushText();
+
+  return groups;
+}
+
+function paragraphLayoutForBlocks(
+  blocks: ContentBlock[],
+  allBlocks: ContentBlock[],
+  continues: boolean,
+) {
+  const first = blocks[0];
+  const last = blocks[blocks.length - 1];
+
+  return {
+    align: first ? effectiveParagraphAlign(allBlocks, allBlocks.indexOf(first)) : undefined,
+    spaceBefore: first?.spaceBefore,
+    // Synthetic groups should not inherit .7rem between them. Only a chosen
+    // space-after, or the true end of the paragraph, gets a bottom gap.
+    spaceAfter: last?.spaceAfter ?? (continues ? 0 : undefined),
+  };
+}
+
+function textContinuesAfterGroup(
+  group: ContentBlock[],
+  groupIndex: number,
+  groups: Array<ContentBlock | ContentBlock[]>,
+  allBlocks: ContentBlock[],
+) {
+  if (Array.isArray(groups[groupIndex + 1])) {
+    return true;
+  }
+
+  const lastIndex = allBlocks.indexOf(group[group.length - 1]);
+
+  for (let index = lastIndex + 1; index < allBlocks.length; index += 1) {
+    const block = allBlocks[index];
+
+    if (block.type === 'heading') {
+      return false;
+    }
+
+    if (!block.hidden) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function textRunBounds(blocks: ContentBlock[], index: number): [number, number] {
+  if (index < 0 || index >= blocks.length || blocks[index]?.type === 'heading') {
+    return [index, index];
+  }
+
+  let start = index;
+  let end = index;
+
+  while (start > 0 && blocks[start - 1]?.type !== 'heading') {
+    start -= 1;
+  }
+
+  while (end < blocks.length - 1 && blocks[end + 1]?.type !== 'heading') {
+    end += 1;
+  }
+
+  return [start, end];
+}
+
+function effectiveParagraphAlign(blocks: ContentBlock[], index: number): ContentBlock['align'] {
+  const [start, end] = textRunBounds(blocks, index);
+
+  for (let position = start; position <= end; position += 1) {
+    if (blocks[position]?.align) {
+      return blocks[position].align;
+    }
+  }
+
+  return undefined;
+}
+
 function InlineBlock({ block, noteRefs, address }: { block: ContentBlock; noteRefs?: number[]; address?: string }) {
   if (block.type === 'verse') {
-    const match = block.text.match(/^(\d{1,3})(.*)$/u);
+    const match = block.text.match(/^(\d{1,3})(.*)$/su);
 
     if (match) {
       return (
         <span className="verse-fragment" data-edit={address} style={fragmentStyle(block)}>
           <sup>{match[1]}</sup>
-          {renderTextWithNotes(match[2].trimStart(), noteRefs)}
+          {renderTextWithNotes(trimVerseTextStart(match[2]), noteRefs)}
         </span>
       );
     }
   }
 
   return (
-    <span className="text-fragment" data-edit={address} style={fragmentStyle(block)}>
+    <span
+      aria-label={block.text.trim() ? undefined : 'Rând gol — apasă pentru a-l modifica'}
+      className={`text-fragment${block.text.trim() ? '' : ' empty-text-fragment'}${block.hidden ? ' hidden-text-fragment' : ''}`}
+      data-edit={address}
+      style={fragmentStyle(block)}
+    >
       {renderTextWithNotes(block.text, noteRefs)}
     </span>
   );
@@ -2165,6 +2409,10 @@ function GenealogyBlocks({
   return (
     <div className="genealogy-lines">
       {blocks.flatMap((block, blockIndex) => {
+        if (block.hidden) {
+          return [];
+        }
+
         if (block.type === 'heading') {
           return [
             <h4
@@ -2185,7 +2433,7 @@ function GenealogyBlocks({
             className="genealogy-line"
             data-edit={blockAddress(passageId, allBlocks, block)}
             key={`${passageId}-${blockIndex}-${lineIndex}`}
-            style={blockStyle(block)}
+            style={genealogyLineStyle(block, allBlocks, lineIndex, lines.length)}
           >
             {lineIndex === 0 ? (
               <GenealogyLine text={line} noteRefs={getResolvedNoteRefsForBlock(block, allBlocks, notes)} />
@@ -2199,8 +2447,40 @@ function GenealogyBlocks({
   );
 }
 
+function genealogyLineLayout(
+  block: ContentBlock,
+  allBlocks: ContentBlock[],
+  lineIndex: number,
+  lineCount: number,
+) {
+  return {
+    ...block,
+    align: effectiveParagraphAlign(allBlocks, allBlocks.indexOf(block)),
+    // One stored verse can produce several genealogy lines. Its gap belongs
+    // around the verse, not around every semicolon clause.
+    spaceBefore: lineIndex === 0 ? block.spaceBefore : undefined,
+    spaceAfter: lineIndex === lineCount - 1 ? block.spaceAfter : undefined,
+  };
+}
+
+function genealogyLineStyle(
+  block: ContentBlock,
+  allBlocks: ContentBlock[],
+  lineIndex: number,
+  lineCount: number,
+) {
+  const layout = genealogyLineLayout(block, allBlocks, lineIndex, lineCount);
+  const style = blockStyle(layout) ?? {};
+
+  if (layout.align === 'justify') {
+    style.textAlignLast = 'justify';
+  }
+
+  return Object.keys(style).length > 0 ? style : undefined;
+}
+
 function GenealogyLine({ noteRefs = [], text }: { noteRefs?: number[]; text: string }) {
-  const match = text.match(/^(\d{1,3})(.*)$/u);
+  const match = text.match(/^(\d{1,3})(.*)$/su);
 
   if (!match) {
     return renderTextWithNotes(text, noteRefs);
@@ -2209,33 +2489,58 @@ function GenealogyLine({ noteRefs = [], text }: { noteRefs?: number[]; text: str
   return (
     <>
       <sup>{match[1]}</sup>
-      {renderTextWithNotes(match[2].trimStart(), noteRefs)}
+      {renderTextWithNotes(trimVerseTextStart(match[2]), noteRefs)}
     </>
   );
 }
 
 function splitGenealogyText(text: string) {
-  const normalizedText = text.trim();
-  const verseMatch = normalizedText.match(/^(\d{1,3})(.*)$/u);
+  // Keep leading/interior newlines: the editor uses two of them for one blank
+  // row. Splitting on `;\s*` used to consume the exact break the customer had
+  // inserted between two genealogy clauses.
+  const normalizedText = text.trimEnd();
+  const verseMatch = normalizedText.match(/^(\d{1,3})(.*)$/su);
 
   if (!verseMatch) {
-    return normalizedText
-      .split(/;\s*/u)
-      .map((line, index, lines) => (index < lines.length - 1 ? `${line};` : line))
-      .filter(Boolean);
+    return splitAtSemicolons(normalizedText);
   }
 
   const [, verseNumber, verseText] = verseMatch;
-  const parts = verseText.trim()
-    .split(/;\s*/u)
-    .map((line, index, lines) => (index < lines.length - 1 ? `${line};` : line))
-    .filter(Boolean);
+  const parts = splitAtSemicolons(verseText);
 
   if (parts.length === 0) {
     return [normalizedText];
   }
 
   return parts.map((part, index) => (index === 0 ? `${verseNumber}${part}` : part));
+}
+
+function splitAtSemicolons(text: string) {
+  return text
+    .split(';')
+    .map((line, index, lines) => {
+      const content = index === 0 ? line : genealogyContinuationStart(line);
+
+      return index < lines.length - 1 ? `${content};` : content;
+    })
+    .filter((line) => line.replace(/;$/u, '').trim().length > 0);
+}
+
+/**
+ * A semicolon already starts the next genealogy clause on a new rendered line.
+ * Therefore the first typed newline represents that normal break; only further
+ * newlines become visibly blank rows.
+ */
+function genealogyContinuationStart(text: string) {
+  const leading = text.match(/^[\t ]*((?:\r?\n[\t ]*)+)/u);
+
+  if (!leading) {
+    return trimVerseTextStart(text);
+  }
+
+  const newlineCount = leading[1].match(/\r?\n/gu)?.length ?? 0;
+
+  return `${'\n'.repeat(Math.max(0, newlineCount - 1))}${text.slice(leading[0].length)}`;
 }
 
 function PassageNotes({ notes }: { notes: PageFootnote[] }) {
@@ -2259,6 +2564,7 @@ function PassageNotes({ notes }: { notes: PageFootnote[] }) {
 
 function ContentBlockView({ block, address }: { block: ContentBlock; address?: string }) {
   const style = blockStyle(block);
+  const isEmpty = block.text.trim().length === 0;
 
   if (block.type === 'heading') {
     return (
@@ -2269,20 +2575,25 @@ function ContentBlockView({ block, address }: { block: ContentBlock; address?: s
   }
 
   if (block.type === 'verse') {
-    const match = block.text.match(/^(\d{1,3})(.*)$/u);
+    const match = block.text.match(/^(\d{1,3})(.*)$/su);
 
     if (match) {
       return (
         <p className="verse-line" data-edit={address} style={style}>
           <sup>{match[1]}</sup>
-          {renderTextWithNotes(match[2].trimStart(), block.noteRefs)}
+          {renderTextWithNotes(trimVerseTextStart(match[2]), block.noteRefs)}
         </p>
       );
     }
   }
 
   return (
-    <p className="text-line" data-edit={address} style={style}>
+    <p
+      aria-label={isEmpty ? 'Rând gol — apasă pentru a-l modifica' : undefined}
+      className={`text-line${isEmpty ? ' empty-text-line' : ''}${block.hidden ? ' hidden-text-line' : ''}`}
+      data-edit={address}
+      style={style}
+    >
       {renderTextWithNotes(block.text, block.noteRefs)}
     </p>
   );

@@ -55,6 +55,7 @@ collections:
                 name: text
                 widget: text
                 hint: "Italic: _text_. Bold: **text**. Nu șterge semnele * folosite pentru note."
+              - { label: Rând ascuns, name: hidden, widget: boolean, required: false, hint: "Se schimbă din pagina de editare." }
               - label: Referințe note
                 name: noteRefs
                 widget: list
@@ -129,6 +130,7 @@ collections:
                 name: text
                 widget: text
                 hint: "Numărul versetului este prima cifră din text - nu îl șterge. Nu șterge semnele * folosite pentru note."
+              - { label: Rând ascuns, name: hidden, widget: boolean, required: false, hint: "Se schimbă din pagina de editare." }
               - label: Referințe note
                 name: noteRefs
                 widget: list

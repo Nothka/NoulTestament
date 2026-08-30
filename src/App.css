@@ -162,6 +162,13 @@
 .introduction-body .text-line {
   margin-bottom: 0.8rem;
   text-indent: 1.5rem;
+  hyphens: auto;
+}
+
+/* Soft-deleted content remains in JSON only so the editor can undo it. */
+.hidden-text-line,
+.hidden-text-fragment {
+  display: none;
 }
 
 .passage {
@@ -217,6 +224,7 @@
 
 .passage-paragraph {
   margin: 0 0 0.7rem;
+  hyphens: auto;
 }
 
 .genealogy-lines {
@@ -727,18 +735,55 @@ sup.note-callout {
   box-shadow: inset 0 -1px 0 rgba(204, 85, 0, 0.9);
 }
 
+/* Keep an emptied row reachable in edit mode so it can never become stranded. */
+.app-editing .empty-text-line {
+  display: block;
+  min-height: 1.7rem;
+  border: 1px dashed rgba(204, 85, 0, 0.55);
+  background: #fff8ef;
+  text-indent: 0;
+}
+
+/* A soft-deleted row is reachable from Modificări, not from the page itself. */
+.app-editing .hidden-text-line,
+.app-editing .hidden-text-fragment {
+  display: none;
+}
+
+.app-editing .empty-text-fragment {
+  display: inline-block;
+  min-width: 11rem;
+  min-height: 1.4rem;
+  border: 1px dashed rgba(204, 85, 0, 0.55);
+  background: #fff8ef;
+}
+
+.app-editing .empty-text-line::before,
+.app-editing .empty-text-fragment::before {
+  content: "Rând gol — apasă pentru a-l modifica";
+  color: #8a6a45;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-style: italic;
+}
+
 .block-editor-backdrop {
   position: fixed;
   inset: 0;
   z-index: 1000;
   display: grid;
   place-items: center;
+  overflow-y: auto;
   background: rgba(20, 14, 8, 0.42);
   padding: 20px;
 }
 
 .block-editor {
   width: min(100%, 620px);
+  max-height: calc(100vh - 40px);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   border-radius: 8px;
   background: #ffffff;
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
@@ -774,6 +819,8 @@ sup.note-callout {
   font-size: 1rem;
   line-height: 1.5;
   resize: vertical;
+  max-height: 35vh;
+  max-height: 35dvh;
 }
 
 .block-editor-warning {
@@ -787,10 +834,16 @@ sup.note-callout {
 }
 
 .block-editor footer {
+  position: sticky;
+  bottom: -20px;
+  z-index: 1;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px;
-  margin-top: 14px;
+  margin: 14px -20px -20px;
+  background: #ffffff;
+  padding: 0 20px 20px;
 }
 
 /* Keyed to a class, not :first-child — the locked-verse note shares this row. */
@@ -893,7 +946,8 @@ sup.note-callout {
 }
 
 .block-preview-body {
-  margin: 0;
+  /* A visible normal gap lets the preview distinguish Normal from Fără. */
+  margin: 0.45rem 0 0.7rem;
   color: #222222;
   font-family: Georgia, "Times New Roman", Times, serif;
   line-height: 1.5;
@@ -930,13 +984,29 @@ sup.note-callout {
 
 .block-align-group {
   display: inline-flex;
+  flex-wrap: wrap;
   gap: 4px;
+}
+
+.block-align-group button {
+  min-width: auto;
+  padding-right: 8px;
+  padding-left: 8px;
+  font-size: 0.76rem;
 }
 
 .block-align-group button.is-active {
   border-color: #cc5500;
   background: #fff1e3;
   color: #cc5500;
+}
+
+.block-layout-help {
+  flex-basis: 100%;
+  margin: 0;
+  color: #786854;
+  font-size: 0.74rem;
+  line-height: 1.35;
 }
 
 .block-structure {
@@ -1162,8 +1232,23 @@ sup.note-callout {
     padding: 14px;
   }
 
+  .block-editor {
+    max-height: calc(100vh - 20px);
+    max-height: calc(100dvh - 20px);
+  }
+
   .block-editor-backdrop {
     padding: 10px;
+  }
+
+  .block-editor footer {
+    bottom: -14px;
+    margin-right: -14px;
+    margin-bottom: -14px;
+    margin-left: -14px;
+    padding-right: 14px;
+    padding-bottom: 14px;
+    padding-left: 14px;
   }
 
   .changes-item-head {

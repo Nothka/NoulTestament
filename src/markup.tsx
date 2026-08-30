@@ -3,6 +3,14 @@ import { Fragment, type ReactNode } from 'react';
 import { isFootnoteMarker } from './footnote-markers.js';
 
 /**
+ * Removes the ordinary separator after a protected verse number without
+ * swallowing intentional line breaks placed at the start of the verse text.
+ */
+export function trimVerseTextStart(text: string) {
+  return text.replace(/^[^\S\r\n]+/u, '');
+}
+
+/**
  * Renders block text the way the reader does: bold and italic markup resolved,
  * and each lone `*` turned into its numbered footnote callout. Shared with the
  * editor so its preview cannot drift from the page.
@@ -56,9 +64,17 @@ export function renderInlineMarkup(text: string, keyPrefix = 'inline'): ReactNod
     if (match[0] === '\n') {
       nodes.push(<br key={`${keyPrefix}-br-${matchIndex}`} />);
     } else if (match[2] || match[4]) {
-      nodes.push(<strong key={`${keyPrefix}-strong-${matchIndex}`}>{match[2] ?? match[4]}</strong>);
+      nodes.push(
+        <strong key={`${keyPrefix}-strong-${matchIndex}`}>
+          {renderInlineMarkup(match[2] ?? match[4], `${keyPrefix}-strong-${matchIndex}`)}
+        </strong>,
+      );
     } else if (match[3] || match[5]) {
-      nodes.push(<em key={`${keyPrefix}-em-${matchIndex}`}>{match[3] ?? match[5]}</em>);
+      nodes.push(
+        <em key={`${keyPrefix}-em-${matchIndex}`}>
+          {renderInlineMarkup(match[3] ?? match[5], `${keyPrefix}-em-${matchIndex}`)}
+        </em>,
+      );
     }
 
     lastIndex = index + match[0].length;
