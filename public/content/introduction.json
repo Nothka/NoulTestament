@@ -5,65 +5,87 @@
   "blocks": [
     {
       "type": "paragraph",
-      "text": "În rândurile care urmează prezentăm o scurtă istorie a divizării/împărțirii în pasaje, capitole și versete a textului biblic. De-a lungul timpului s-a realizat această divizare/împărțire triplă a textului biblic în secțiuni mai mici. Unitățile de text folosite la realizarea acestei divizări sunt: capitolul, pasajul (care se mai numește pericopă, paragraf, secțiune), și versetul. Definim pasajul ca fiind o anumită porțiune de text care tratează un singur subiect. Divizarea/împărțirea textului biblic în pasaje este prima care și-a făcut apariția, ea fiind cea mai importantă divizare, din cele 3 menționate. Deoarece considerăm pasajul ca fiind cea mai importantă componentă a divizării textului biblic, importanța și utilitatea lui nu trebuie subestimată. Parcurgerea textului biblic este mult mai ușoară, dacă acesta este împărțit în pasaje, delimitate în mod natural, logic. Este mult mai greu să parcurgi textul biblic dacă acesta nu are unele delimitări ajutătoare.",
-      "noteRefs": []
+      "text": "În rândurile care urmează prezentăm o scurtă istorie a divizării/împărțirii în pasaje, capitole și versete a textului biblic. De-a lungul timpului s-a realizat această divizare/împărțire triplă a textului biblic în secțiuni mai mici. Unitățile de text folosite la realizarea acestei divizări sunt: capitolul, pasajul (care se mai numește pericopă, paragraf, secțiune), și versetul. Definim pasajul ca fiind o anumită porțiune de text care tratează un singur subiect. Divizarea/împărțirea textului biblic în pasaje este prima care și-a făcut apariția, ea fiind cea mai importantă divizare, din cele 3 menționate. Deoarece considerăm pasajul ca fiind cea mai importantă componentă a divizării textului biblic, importanța și utilitatea lui nu trebuie subestimată. Parcurgerea textului biblic este mult mai ușoară, dacă acesta este împărțit în pasaje, delimitate în mod natural, logic. Este mult mai greu să parcurgi textul biblic dacă acesta nu are unele delimitări ajutătoare. Cu tot respectul pe care îl avem față de traducerea/versiunea englezească King James, publicată în 1611, care este una din cele mai apreciate traduceri/versiuni, sau chiar cea mai apreciată, cu influență mare asupra multor altor traduceri/versiuni, în diverse limbi, și care, datorită cerințelor de pe timpul acela, de a nu adăuga nimic textului biblic (s-a adăugat totuși divizarea în capitole și versete), nu a delimitat pasajele și nu le-a dat titluri, prezentând astfel un text continuu, fără delimitări, suntem obligați să tragem concluzia că un astfel de text, neîmpărțit în pasaje, cere cititorului eforturi de identificare a pasajului, de delimitare a lui, de citire, și de înțelegere, mult mai mari. Și alte traduceri/versiuni se găsesc în aceeași situație.",
+      "noteRefs": [],
+      "align": "justify"
     },
     {
       "type": "paragraph",
       "text": "",
       "noteRefs": [],
       "offsetX": -0.03,
-      "offsetY": -0.63
+      "offsetY": -0.63,
+      "spaceBefore": 0,
+      "spaceAfter": 0,
+      "hidden": true
     },
     {
       "type": "paragraph",
       "text": "Cu tot respectul pe care îl avem față de traducerea/versiunea englezească King James, publicată în 1611, care este una din cele mai apreciate traduceri/versiuni, sau chiar cea mai apreciată, cu influență mare asupra multor altor traduceri/versiuni, în diverse limbi, și care, datorită cerințelor de pe timpul acela, de a nu adăuga nimic textului biblic (s-a adăugat totuși divizarea în capitole și versete), nu a delimitat pasajele și nu le-a dat titluri, prezentând astfel un text continuu, fără delimitări, suntem obligați să tragem concluzia că un astfel de text, neîmpărțit în pasaje, cere cititorului eforturi de identificare a pasajului, de delimitare a lui, de citire, și de înțelegere, mult mai mari. Și alte traduceri/versiuni se găsesc în aceeași situație.",
-      "noteRefs": []
+      "noteRefs": [],
+      "align": "justify"
     },
     {
       "type": "paragraph",
       "text": "Deci prima divizare a textului, realizată in antichitate, a fost divizarea in pasaje. Nu a existat o singură divizare in pasaje, ci mai multe divizări, diferite intre ele, căci au fost realizate în perioade de timp diferite, de persoane diferite, și în locuri diferite. La început separarea pasajelor era indicată doar de existența unui spațiu liber între ele, dar apoi au fost plasate titluri/intertitluri de pasaje care să prezinte conținutul lor.. Titlurile/intertitlurile au fost plasate de către editorii versiunii respective, având scop ajutător, și nefăcând parte din textul biblic original. Și în prezent există unele ediții ale Bibliei, la care nu există titluri/intertitluri de pasaje, ci doar spații libere între ele.",
-      "noteRefs": []
+      "noteRefs": [],
+      "align": "justify"
     },
     {
       "type": "paragraph",
       "text": "În antichitate nu s-a pus problema numerotării unităților de text biblic, adică nu au existat capitole și versete numerotate. Această idee a apărut mai târziu, cam prin sec. al X-lea d. Cr. fiind considerată un pas înainte în studiul Bibliei, și o chestiune foarte utilă și indicată. Faptul că la origine textul biblic nu a fost împărțit în pasaje, capitole sau versete, rezultă și din observația că citatele din Vechiul Testament (VT) existente în Noul Testament (NT) nu sunt însoțite de vreo referință, numerică – adică nu sunt indicate, capitolul și versetul de proveniență, așa cum se face în prezent – și aceasta din simplul motiv că pe timpul scrierii NT, textul biblic nu era împărțit în capitole și versete. Observăm doar că unele citate din VT, prezentate în NT au indicată cartea de proveniență.",
-      "noteRefs": []
+      "noteRefs": [],
+      "align": "justify"
     },
     {
       "type": "paragraph",
       "text": "",
-      "noteRefs": []
+      "noteRefs": [],
+      "spaceBefore": 0,
+      "spaceAfter": 0,
+      "hidden": true
     },
     {
       "type": "paragraph",
       "text": "",
-      "noteRefs": []
+      "noteRefs": [],
+      "spaceBefore": 0,
+      "spaceAfter": 0,
+      "hidden": true
     },
     {
       "type": "paragraph",
       "text": "Mai mult decât atât, în urmă cu 2000 de ani, sau mai mult, nu exista nici un sistem de punctuație. Nu avem decât să privim unele fotografii (facsimile) ale vechilor manuscrise biblice ca să ne convingem de acest lucru. Există cărți care conțin fotocopii ale paginilor biblice antice, sau le putem vizualiza în prezent, pe internet, accesând de ex. codexsinaiticus.org, archive.org, academia.edu, pemptousia.ro, sau diverse alte adrese, deoarece mai multe instituții, printre care și biblioteca Vaticanului, au procedat în ultimul timp la digitalizarea si publicarea online a vechilor texte biblice.",
-      "noteRefs": []
+      "noteRefs": [],
+      "align": "justify"
     },
     {
       "type": "paragraph",
       "text": "Așadar, după cum fiecare personal poate observa, textul biblic antic - la fel ca celelalte scrieri antice - a fost scris fără spațiu între cuvinte, punct, virgulă, 2 puncte, punct și virgulă, liniuță orizontală sau oblică, semnul întrebării, semnul exclamării, aliniate, inițială mare, etc. Scrierea era continuă, neîntreruptă, neexistând nici măcar spațiu liber între cuvinte, chestiune considerată astăzi atât de necesară. Din punctul nostru de vedere era într-adevăr o provocare să citești un asemenea text, mai ales în public. Toate semnele de punctuație pe care le vedem astăzi în textul biblic nu au existat de la început, ci au fost înserate în decursul timpului. Iar în ce privește divizarea textului biblic în capitole, aceasta s-a făcut mai târziu (sec. al XIII-lea d. Cr.), iar divizarea în versete a apărut și mai târziu (sec. al XVI-lea d. Cr.).",
-      "noteRefs": []
+      "noteRefs": [],
+      "align": "justify"
     },
     {
       "type": "paragraph",
       "text": "",
-      "noteRefs": []
+      "noteRefs": [],
+      "spaceBefore": 0,
+      "spaceAfter": 0,
+      "hidden": true
     },
     {
       "type": "paragraph",
       "text": "În privința mărimii caracterelor vechilor manuscrise, dorim să mentionăm doar câteva cuvinte. Cele mai vechi manuscrise, adică cele scrise înainte de sec. al X- lea d. Cr., sunt scrise în întregime cu caractere mari, ele numindu-se majuscule sau unciale, dar există și manuscrise mai noi, adică cele scrise după sec. al X-lea d. Cr., numite minuscule sau cursive, care sunt realizate în întregime cu caractere mici. Aș mai dori să accentuez faptul că împărțirea textului biblic în pasaje, capitole, și versete nu face parte din textul biblic inspirat, ci este o adăugare umană, ulterioară, având scopul de a ușura parcurgerea și înțelegerea acestuia, și de a face posibilă oferirea de referințe, iar referințele numerice sunt cele mai indicate.",
-      "noteRefs": []
+      "noteRefs": [],
+      "align": "justify"
     },
     {
       "type": "paragraph",
       "text": "",
-      "noteRefs": []
+      "noteRefs": [],
+      "spaceBefore": 0,
+      "spaceAfter": 0,
+      "hidden": true
     },
     {
       "type": "paragraph",
@@ -74,17 +96,22 @@
     {
       "type": "paragraph",
       "text": "Așa cum am spus, încă din antichitate s-a făcut simțită nevoia ca textul biblic să fie împărțit în pasaje (pericope, paragrafe, secțiuni). Astfel încă în perioada de dinaintea erei creștine s-a trecut treptat la divizarea textului Vechiului Testament ebraic. Una din dovezile în această privință este textul sulului antic al cărții Isaia recuperat din zona Mării Moarte în jurul anului 1948, care este împărțit în pasaje. Deci nu este vorba de o împărțire în capitole și versete, ci doar în pasaje tematice, nenumerotate. Acest sul este datat ca fiind scris în secolul al II-lea sau I înainte de era creștină, deci împărțirea textului acestuia în pasaje este specifică acelui timp. Pasajele din ziua de azi nu sunt identice cu cele din antichitate. Și creștinii din primele secole creștine, au divizat textul VT în pasaje. Un bun exemplu este textul VT al manuscrisului Codex Vaticanus, care se păstrează la Vatican, și care este divizat în pasaje, care sunt asemănătoare cu pasajele din VT ebraic.",
-      "noteRefs": []
+      "noteRefs": [],
+      "align": "justify"
     },
     {
       "type": "paragraph",
       "text": "",
-      "noteRefs": []
+      "noteRefs": [],
+      "spaceBefore": 0,
+      "spaceAfter": 0,
+      "hidden": true
     },
     {
       "type": "paragraph",
-      "text": "Deci sunt cunoscute mai multe diviziuni antice în pasaje ale textului Vechiului Testament ebraic, diferite între ele. Acele diviziuni aveau rolul de a ușura citirea publică în sinagogă a cărților sfinte. Diviziunile antice ale textului VT ebraic au fost realizate de specialiști proveniți din poporul Israel. În multe cazuri s-a căutat să nu se adauge absolut nimic textului biblic, astfel că unele pasaje antice nu aveau titlu, (de numerotare ca în ziua de azi, nici nu mai amintim) trecerea de la un pasaj la altul fiind marcată doar de existența unui spațiu liber între acestea. Mai târziu s-au adăugat titluri pasajelor biblice. Cu trecerea timpului diferitele împărțiri antice în pasaje a textului VT ebraic s-au unificat, astfel că în Evul mediu s-a ajuns la o împărțire unică în pasaje, a textului VT ebraic, care a fost recunoscută aproape de toate comunitățile ebraice.0",
-      "noteRefs": []
+      "text": "Deci sunt cunoscute mai multe diviziuni antice în pasaje ale textului Vechiului Testament ebraic, diferite între ele. Acele diviziuni aveau rolul de a ușura citirea publică în sinagogă a cărților sfinte. Diviziunile antice ale textului VT ebraic au fost realizate de specialiști proveniți din poporul Israel. În multe cazuri s-a căutat să nu se adauge absolut nimic textului biblic, astfel că unele pasaje antice nu aveau titlu, (de numerotare ca în ziua de azi, nici nu mai amintim) trecerea de la un pasaj la altul fiind marcată doar de existența unui spațiu liber între acestea. Mai târziu s-au adăugat titluri pasajelor biblice. Cu trecerea timpului diferitele împărțiri antice în pasaje a textului VT ebraic s-au unificat, astfel că în Evul mediu s-a ajuns la o împărțire unică în pasaje, a textului VT ebraic, care a fost recunoscută aproape de toate comunitățile ebraice.\n",
+      "noteRefs": [],
+      "align": "justify"
     },
     {
       "type": "paragraph",
