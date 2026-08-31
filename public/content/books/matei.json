@@ -68,7 +68,8 @@
         {
           "type": "verse",
           "text": "12După deportarea în Babilon Iehonia a fost tatăl lui Salatiel; Salatiel a fost tatăl lui Zorobabel;",
-          "noteRefs": []
+          "noteRefs": [],
+          "spaceBefore": 0.75
         },
         {
           "type": "verse",
