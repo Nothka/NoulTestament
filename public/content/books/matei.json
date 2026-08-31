@@ -3721,7 +3721,7 @@
         },
         {
           "type": "verse",
-          "text": "7El le-a răspuns: „Din cauza necredinței voastre”. „Adevărat vă spun că, dacă aţi avea credinţă cât un grăunte de muştar, aţi zice muntelui acestuia:,Mută-te de aici dincolo`, şi s-ar muta; nimic nu v-ar fi imposibil.",
+          "text": "7El le-a răspuns: „Din cauza necredinței voastre”. „Adevărat vă spun că, dacă aţi avea credinţă cât un grăunte de muştar, aţi zice muntelui acestuia:,Mută-te de aici dincolo', şi s-ar muta; nimic nu v-ar fi imposibil.",
           "noteRefs": []
         },
         {
@@ -3966,7 +3966,7 @@
         },
         {
           "type": "verse",
-          "text": "6Robul s-a aruncat la pământ, i s-a închinat, şi a zis:,Doamne, mai îngăduieşte-mă, şi-ţi voi plăti tot.`",
+          "text": "6Robul s-a aruncat la pământ, i s-a închinat, şi a zis:,Doamne, mai îngăduieşte-mă, şi-ţi voi plăti tot'.",
           "noteRefs": []
         },
         {
@@ -6704,7 +6704,8 @@
         {
           "type": "verse",
           "text": "1După sabat, când începea să se lumineze spre ziua dintâi a săptămînii, Maria Magdalena şi cealaltă Marie au mers la mormânt.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "center"
         },
         {
           "type": "verse",
@@ -6733,7 +6734,7 @@
         },
         {
           "type": "verse",
-          "text": "7Mergeți repede și spuneţi ucenicilor lui că a înviat din morţi și iată că merge înaintea voastră în Galileea; acolo îl veţi vedea. Iată că v-am spus lucrul acesta”. Domnul Isus se arată femeilor (duminică dimineața)",
+          "text": "7Mergeți repede și spuneţi ucenicilor lui că a înviat din morţi și iată că merge înaintea voastră în Galileea; acolo îl veţi vedea. Iată că v-am spus lucrul acesta”. \n\n_Domnul Isus se arată femeilor (duminică dimineața)_",
           "noteRefs": []
         },
         {
