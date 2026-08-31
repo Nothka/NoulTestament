@@ -9,3 +9,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 *.tsbuildinfo
+
+# graphify generated output
+graphify-out/

@@ -3,6 +3,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { findBookProblems, findIntroductionProblems } from '../src/content-validation.js';
+import { findCmsSchemaProblems } from './cms-schema.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(__dirname, '..');
@@ -10,6 +11,10 @@ const contentRoot = resolve(projectRoot, 'public/content');
 const booksRoot = resolve(contentRoot, 'books');
 
 const problems = [];
+
+// The CMS commits straight to GitHub, so this is the only gate that notices
+// public/admin/config.yml drifting away from the shape of the content.
+problems.push(...findCmsSchemaProblems(projectRoot));
 
 function readJson(path) {
   try {

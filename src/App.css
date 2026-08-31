@@ -216,6 +216,7 @@
 
 .passage-body {
   color: #222222;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.02rem;
   line-height: 1.48;
   overflow-wrap: break-word;
@@ -239,7 +240,7 @@
 .genealogy-line sup {
   position: relative;
   top: -0.32em;
-  margin-right: 1px;
+  margin-right: var(--verse-number-gap, 1px);
   font-size: 0.62em;
   font-weight: 700;
   line-height: 0;
@@ -259,7 +260,7 @@
 .verse-fragment sup {
   position: relative;
   top: -0.32em;
-  margin-right: 1px;
+  margin-right: var(--verse-number-gap, 1px);
   font-size: 0.62em;
   font-weight: 700;
   line-height: 0;
@@ -274,7 +275,7 @@
 .verse-line sup {
   position: relative;
   top: -0.18em;
-  margin-right: 1px;
+  margin-right: var(--verse-number-gap, 1px);
   font-size: 0.68em;
   font-weight: 700;
   line-height: 0;
@@ -571,7 +572,8 @@ sup.note-callout {
 
 .editor-login button,
 .editor-bar button,
-.block-editor button {
+.block-editor button,
+.passage-editor button {
   border: 1px solid #cc5500;
   border-radius: 4px;
   background: #cc5500;
@@ -674,6 +676,28 @@ sup.note-callout {
   color: #ffffff;
 }
 
+/* A site-wide setting rather than an action, so it is deliberately quieter
+   than the mode buttons and the publish button beside it. */
+.editor-bar-setting {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #7a6a58;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.editor-bar-setting select {
+  border: 1px solid #e0d5c6;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #4a3f33;
+  padding: 4px 6px;
+  font-family: inherit;
+  font-size: 0.78rem;
+}
+
 .changes-look {
   margin: 4px 0 0;
   color: #6b5b4a;
@@ -731,6 +755,17 @@ sup.note-callout {
 }
 
 .app-editing [data-edit]:hover {
+  background: rgba(204, 85, 0, 0.1);
+  box-shadow: inset 0 -1px 0 rgba(204, 85, 0, 0.9);
+}
+
+/*
+ * A verse, paragraph or heading opens the whole passage, not just itself —
+ * so hovering any one of them highlights every block of that passage
+ * (title and reference excluded; those stay their own separate edit),
+ * making that grouping visible before you even click.
+ */
+.app-editing .passage:hover [data-edit^="block:"] {
   background: rgba(204, 85, 0, 0.1);
   box-shadow: inset 0 -1px 0 rgba(204, 85, 0, 0.9);
 }
@@ -803,11 +838,6 @@ sup.note-callout {
   color: #cc5500;
   font-size: 0.95rem;
   font-weight: 800;
-}
-
-.block-editor-locked {
-  color: #8a7a66;
-  font-size: 0.75rem;
 }
 
 .block-editor textarea {
@@ -935,6 +965,34 @@ sup.note-callout {
   padding: 10px 12px;
 }
 
+/*
+ * A preview is a picture of the finished page, not a second copy of it to
+ * work in. Edit mode dresses the real page's text in click affordances —
+ * a pointer cursor, an underline, a highlight on hover, a dashed box where a
+ * row is empty — and every one of those would be a lie inside the preview,
+ * which nothing can be clicked in. The addresses themselves are already
+ * withheld there (PassageBlocks' `editable={false}`); this covers the rules
+ * that key off a class rather than [data-edit].
+ */
+.block-preview,
+.block-preview * {
+  cursor: default;
+}
+
+.app-editing .block-preview .empty-text-fragment,
+.app-editing .block-preview .empty-text-line {
+  display: inline;
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+  background: none;
+}
+
+.app-editing .block-preview .empty-text-fragment::before,
+.app-editing .block-preview .empty-text-line::before {
+  content: none;
+}
+
 .block-preview-label {
   display: block;
   margin-bottom: 5px;
@@ -943,6 +1001,30 @@ sup.note-callout {
   font-size: 0.7rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+/* The passage-wide preview is a full-height column, not a small box under
+   one textarea — it keeps .block-preview's look (dashed border, cream
+   background) but takes its sizing from the split-pane layout instead. */
+.passage-editor-preview-pane {
+  flex: 1;
+  min-width: 0;
+  margin-top: 0;
+  overflow-y: auto;
+}
+
+/* The preview renders through the same .passage/.passage-body markup as the
+   real page (see PassageBlocks in passage-render.tsx), so it inherits that
+   typography wholesale instead of a hand-kept copy that can drift from it.
+   Doubled up as .passage-editor .passage-body because .passage-editor's own
+   Inter override sits later in this file and would otherwise win the tie
+   against the single-class .passage-body rule above. */
+.passage-editor-preview-article {
+  margin: 0;
+}
+
+.passage-editor .passage-editor-preview-article .passage-body {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .block-preview-body {
@@ -956,7 +1038,7 @@ sup.note-callout {
 .block-preview-body sup {
   position: relative;
   top: -0.18em;
-  margin-right: 1px;
+  margin-right: var(--verse-number-gap, 1px);
   font-size: 0.68em;
   font-weight: 700;
   line-height: 0;
@@ -966,8 +1048,197 @@ sup.note-callout {
   align-items: center;
 }
 
-.block-editor footer .block-editor-locked {
-  margin-right: auto;
+/*
+ * The whole-passage editor. Wider than .block-editor since it holds many
+ * verses at once, and its fields are borderless until focused so the passage
+ * reads as one continuous piece of text rather than a stack of form boxes —
+ * closer to a document, with the field boundary only showing up once you're
+ * actually working in it.
+ *
+ * Header, toolbar rows and footer are fixed chrome (flex: 0 0 auto by
+ * default); only .passage-editor-body flexes and scrolls, so the toolbar
+ * and Salvează/Anulează stay reachable no matter how far you've scrolled
+ * through a long passage or its preview.
+ */
+.passage-editor {
+  width: min(100%, 1160px);
+  max-height: calc(100vh - 40px);
+  max-height: calc(100dvh - 40px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+  padding: 20px;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.passage-editor header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.passage-editor-help {
+  margin: 0 0 14px;
+  color: #8a7a66;
+  font-size: 0.78rem;
+  font-style: italic;
+}
+
+.passage-editor-body-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0 4px;
+}
+
+.passage-editor-select-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #8a7a66;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+/* Two classes to outweigh the base `.passage-editor button` fill (0,1,1) —
+   see the note on .block-preview-label below for why this needs it. */
+.passage-editor-body-controls .passage-editor-preview-toggle {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: #a0917d;
+  cursor: pointer;
+  padding: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+
+.passage-editor-body-controls .passage-editor-preview-toggle:hover {
+  color: #cc5500;
+  text-decoration: underline;
+}
+
+/*
+ * The scrollable split: verses on the left, live preview on the right, each
+ * scrolling on its own — so checking how verse 12 will look doesn't require
+ * losing your place editing verse 3. Falls back to stacked (below, not
+ * beside) under the narrow-viewport rule further down, where two columns
+ * would be too tight to read.
+ */
+.passage-editor-body {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+  min-height: 0;
+}
+
+.passage-editor-fields {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/*
+ * Every row gets the same baseline gap regardless of its own spacing, so
+ * the passage always reads as evenly spaced by default. A row with its own
+ * "Spațiu înainte/după" set (an intentional larger break, e.g. before a new
+ * movement within a genealogy) adds on top of this rather than replacing
+ * it — the deliberate exception stays visible without the ordinary rows
+ * looking uneven.
+ */
+.passage-editor-field {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.passage-editor-input {
+  flex: 1;
+  resize: none;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  padding: 3px 6px;
+  color: #222222;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.passage-editor-input.is-heading {
+  text-align: center;
+  font-style: italic;
+}
+
+.passage-editor-input:hover {
+  border-color: #e6ded1;
+}
+
+.passage-editor-input:focus,
+.passage-editor-input.is-active {
+  outline: none;
+  border-color: #cc5500;
+  background: #fff8ef;
+}
+
+/* A flowing group of several verses shares one box, so it reads and edits
+   like running text instead of one row per verse — the free-typing surface
+   the split-pane preview is designed to be checked against. Verse numbers
+   sit inline as plain digits here (a textarea cannot style one character
+   differently from the rest); the preview pane shows them as they will
+   really look, as superscripts. */
+.passage-editor-flow-field {
+  margin-bottom: 4px;
+}
+
+.passage-editor-flow {
+  padding: 6px 8px;
+}
+
+/* No position: sticky here — .passage-editor itself no longer scrolls (only
+   .passage-editor-body does), so the footer is already fixed at the bottom
+   of the flex column by construction. The negative margin still spans it
+   edge-to-edge against the dialog's own padding. */
+.passage-editor footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 14px -20px -20px;
+  background: #ffffff;
+  padding: 12px 20px 20px;
+}
+
+/* Two columns need real width to stay readable; below that, stack the
+   preview beneath the fields instead of squeezing both into narrow panes. */
+@media (max-width: 900px) {
+  .passage-editor-body {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .passage-editor-fields,
+  .passage-editor-preview-pane {
+    overflow-y: visible;
+  }
+
+  .passage-editor-preview-pane {
+    margin-top: 12px;
+  }
 }
 
 .block-toolbar-layout {
@@ -989,6 +1260,9 @@ sup.note-callout {
 }
 
 .block-align-group button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   min-width: auto;
   padding-right: 8px;
   padding-left: 8px;
@@ -999,6 +1273,11 @@ sup.note-callout {
   border-color: #cc5500;
   background: #fff1e3;
   color: #cc5500;
+}
+
+.align-icon rect {
+  fill: currentColor;
+  opacity: 0.75;
 }
 
 .block-layout-help {
@@ -1116,6 +1395,23 @@ sup.note-callout {
   color: #ffffff;
   padding: 1px 8px;
   font-size: 0.72rem;
+}
+
+.changes-undo-all {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: #a0917d;
+  cursor: pointer;
+  padding: 2px 0;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.75rem;
+}
+
+.changes-undo-all:hover {
+  color: #a30f2d;
+  text-decoration: underline;
 }
 
 .changes-empty {

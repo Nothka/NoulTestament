@@ -38,6 +38,7 @@ collections:
           - { label: Spațiu sub subtitlu, name: subtitleSpaceAfter, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
           - { label: Deplasare subtitlu pe orizontală (%), name: subtitleOffsetX, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
           - { label: Deplasare subtitlu pe verticală (rem), name: subtitleOffsetY, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
+          - { label: Spațiu după numărul versetului (em), name: verseNumberSpacing, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare. Se aplică tuturor versetelor din toate cărțile." }
           - label: Paragrafe
             name: blocks
             widget: list

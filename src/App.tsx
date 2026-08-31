@@ -7,11 +7,13 @@ import {
   ChangesPanel,
   EditorBar,
   EditorLogin,
+  PassageEditor,
   readStoredSession,
   readStoredWork,
   storeSession,
   storeWork,
   sameLook,
+  VERSE_NUMBER_SPACES,
   type Align,
   type EditorMode,
   type BlockDraft,
@@ -22,6 +24,23 @@ import {
   type StoredWork,
 } from './editing';
 import { removeBlock } from './passage-edits.js';
+import {
+  blockAddress,
+  blockStyle,
+  effectiveParagraphAlign,
+  fragmentStyle,
+  genealogyLineLayout,
+  GenealogyBlocks,
+  getResolvedNoteRefsForBlock,
+  groupPassageBlocks,
+  paragraphLayoutForBlocks,
+  PassageBlocks,
+  splitGenealogyText,
+  textContinuesAfterGroup,
+  textRunBounds,
+  type ContentBlock,
+  type Footnote,
+} from './passage-render';
 import './App.css';
 
 const MOBILE_QUERY = '(max-width: 560px)';
@@ -30,36 +49,6 @@ const INTRODUCTION_PATH = 'public/content/introduction.json';
 const CONTENT_INTRODUCTION_URL = '/content/introduction.json';
 const defaultSectionId = 'introduction';
 const fallbackBookId = 'matei';
-
-type ContentBlock = {
-  type: 'heading' | 'paragraph' | 'verse';
-  text: string;
-  noteRefs?: number[];
-  /** Font size as a percentage of the normal size, set from edit mode. */
-  size?: number;
-  align?: 'left' | 'center' | 'right' | 'justify';
-  /** Extra space above and below, in rem. */
-  spaceBefore?: number;
-  spaceAfter?: number;
-  /** A reversible deletion used for empty introduction rows. */
-  hidden?: boolean;
-  /**
-   * Free position, set by dragging in layout mode. X is a share of the
-   * element's own width and Y is in rem, so a position chosen on a wide screen
-   * still holds on a narrow one. The element keeps its place in the flow, so
-   * moving one thing never shuffles everything below it.
-   */
-  offsetX?: number;
-  offsetY?: number;
-};
-
-type Footnote = {
-  number: number;
-  text: string;
-  size?: number;
-  offsetX?: number;
-  offsetY?: number;
-};
 
 /** A footnote plus where it lives, so edit mode can address it. */
 type PageFootnote = Footnote & {
@@ -150,6 +139,13 @@ type Introduction = {
   subtitleSpaceAfter?: number;
   subtitleOffsetX?: number;
   subtitleOffsetY?: number;
+  /**
+   * The gap between every verse number and its first word, in em. Site-wide
+   * rather than per-verse, and kept here because introduction.json is the one
+   * global file the editor can publish. Undefined keeps the stylesheet's own
+   * hairline gap.
+   */
+  verseNumberSpacing?: number;
   blocks: ContentBlock[];
 };
 
@@ -176,6 +172,7 @@ function App() {
   const [session, setSession] = useState<string | null>(() => (isEditorRoute ? readStoredSession() : null));
   const [signedOutNotice, setSignedOutNotice] = useState('');
   const [draft, setDraft] = useState<BlockDraft | null>(null);
+  const [passageId, setPassageId] = useState<string | null>(null);
   // Read before the first render so the save effect below cannot clear the
   // store while the content is still being fetched.
   const [storedWork] = useState<StoredWork | null>(() => (isEditorRoute ? readStoredWork() : null));
@@ -294,8 +291,129 @@ function App() {
 
   function openBlockEditor(address: string) {
     setDraft(draftFor(address));
+    setPassageId(null);
   }
 
+  function openPassageEditor(id: string) {
+    setPassageId(id);
+    setDraft(null);
+  }
+
+  /**
+   * Every block of the open passage, resolved fresh from `data` each render
+   * so the "⋯" escape hatch and Prev/Next passage never hand PassageEditor a
+   * stale draft. Built from the same draftFor used for a single block, just
+   * once per block in the passage instead of once for the clicked address.
+   */
+  const passagePanel = useMemo(() => {
+    if (!passageId || !data) {
+      return null;
+    }
+
+    const book = data.books.find((candidate) => candidate.passages.some((p) => p.id === passageId));
+    const passage = book?.passages.find((p) => p.id === passageId);
+
+    if (!book || !passage) {
+      return null;
+    }
+
+    const drafts = passage.blocks
+      .map((_, index) => draftFor(`block:${passageId}:${index}`))
+      .filter((entry): entry is BlockDraft => entry !== null);
+
+    if (drafts.length === 0) {
+      return null;
+    }
+
+    const passageIndex = book.passages.findIndex((p) => p.id === passageId);
+
+    return {
+      drafts,
+      passageId,
+      passageLabel: `Pasajul ${passage.number} (${passage.reference})`,
+      previousPassageId: passageIndex > 0 ? book.passages[passageIndex - 1].id : null,
+      nextPassageId: passageIndex >= 0 && passageIndex < book.passages.length - 1
+        ? book.passages[passageIndex + 1].id
+        : null,
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [passageId, data]);
+
+  /**
+   * Folds freshly-built change records into the pending list, exactly the
+   * way applyChange already does for one block — shared so the batched
+   * passage save and the passage delete path (which also has to record
+   * whatever else was pending) don't each carry their own copy.
+   */
+  function mergeChangeRecords(
+    current: PendingChange[],
+    records: Array<{ target: BlockDraft; record: { label: string; where: string; current: string; currentLook: Look } }>,
+  ) {
+    let updated = current;
+
+    for (const { target, record } of records) {
+      const existing = updated.find((change) => change.address === target.address);
+      const entry: PendingChange = {
+        address: target.address,
+        path: target.path,
+        label: record.label,
+        where: record.where,
+        original: existing ? existing.original : target.text,
+        originalLook: existing ? existing.originalLook : lookOf(target),
+        current: record.current,
+        currentLook: record.currentLook,
+        at: Date.now(),
+      };
+
+      updated = entry.original === entry.current && sameLook(entry.originalLook, entry.currentLook)
+        ? updated.filter((change) => change.address !== target.address)
+        : [entry, ...updated.filter((change) => change.address !== target.address)];
+    }
+
+    return updated;
+  }
+
+  /**
+   * Commits every changed field of a passage in one pass. Threads the
+   * updated TestamentData through each block's applyTextEdit manually,
+   * because chaining applyChange calls in a loop would build every edit
+   * from the same stale `data` closure and silently drop all but the last.
+   */
+  function applyPassageChanges(edits: Array<{ draft: BlockDraft; edit: BlockEdit }>) {
+    if (!data || edits.length === 0) {
+      return;
+    }
+
+    let next = data;
+    const records = edits.map(({ draft, edit }) => {
+      next = applyTextEdit(next, draft, edit);
+      return { target: draft, record: describeDraft(draft, edit) };
+    });
+
+    setData(next);
+    setPublishStatus({ kind: 'idle', message: '' });
+    setChanges((current) => mergeChangeRecords(current, records));
+  }
+
+  function savePassage(edits: Array<{ draft: BlockDraft; edit: BlockEdit }>) {
+    applyPassageChanges(edits);
+    setPassageId(null);
+  }
+
+  function navigatePassage(direction: -1 | 1, edits: Array<{ draft: BlockDraft; edit: BlockEdit }>) {
+    applyPassageChanges(edits);
+
+    const target = direction === -1 ? passagePanel?.previousPassageId : passagePanel?.nextPassageId;
+
+    setPassageId(target ?? null);
+  }
+
+  /**
+   * Removes one block from the passage screen, reusing the exact same
+   * removeBlock/applyPassageChange path the single-block editor's delete
+   * already uses (footnotes stay attached to the blocks they belong to).
+   * Saves every other field's pending edit first, same as Prev/Next.
+   */
   /**
    * Everything the editor needs about one element. Both the text dialog and a
    * drag in layout mode start here, so a drag records its change through the
@@ -641,7 +759,7 @@ function App() {
         path: target.path,
         label: record.label,
         where: record.where,
-        original: existing ? existing.original : `${target.verseNumber}${target.text}`,
+        original: existing ? existing.original : target.text,
         originalLook: existing ? existing.originalLook : lookOf(target),
         current: record.current,
         currentLook: record.currentLook,
@@ -659,6 +777,52 @@ function App() {
   }
 
   /** Puts one element back to the value it had before this session's edits. */
+  /**
+   * The one site-wide typography setting the editor can change. Recorded as
+   * an ordinary pending change against introduction.json so it publishes,
+   * appears in Modificări and can be undone exactly like a text edit.
+   */
+  function setVerseNumberSpacing(amount: number | null) {
+    if (!data?.introduction) {
+      return;
+    }
+
+    const previous = data.introduction.verseNumberSpacing;
+    const current = amount === null ? '' : String(amount);
+    const address = 'versespace';
+    const neutralLook: Look = {
+      size: 100, align: '', spaceBefore: null, spaceAfter: null, hidden: false, offsetX: 0, offsetY: 0,
+    };
+
+    setData(applyTextEdit(
+      data,
+      { ...(draft ?? ({} as BlockDraft)), address, text: '' },
+      { text: current, ...neutralLook },
+    ));
+    setPublishStatus({ kind: 'idle', message: '' });
+
+    setChanges((changesNow) => {
+      const existing = changesNow.find((change) => change.address === address);
+      const original = existing ? existing.original : (previous === undefined ? '' : String(previous));
+      const label = VERSE_NUMBER_SPACES.find((option) => option.amount === amount)?.label ?? 'Normal';
+      const entry: PendingChange = {
+        address,
+        path: INTRODUCTION_PATH,
+        label: 'Spațiu după numărul versetului',
+        where: `Toate cărțile — ${label}`,
+        original,
+        originalLook: existing ? existing.originalLook : neutralLook,
+        current,
+        currentLook: neutralLook,
+        at: Date.now(),
+      };
+
+      return entry.original === entry.current
+        ? changesNow.filter((change) => change.address !== address)
+        : [entry, ...changesNow.filter((change) => change.address !== address)];
+    });
+  }
+
   function undoChange(address: string) {
     const change = changes.find((entry) => entry.address === address);
 
@@ -666,22 +830,38 @@ function App() {
       return;
     }
 
-    const [kind] = address.split(':');
-    const isVerse = kind === 'block' && /^\d/u.test(change.original);
-    const match = isVerse ? change.original.match(/^(\d{1,3})(.*)$/su) : null;
-
     setData(applyTextEdit(
       data,
-      {
-        ...(draft ?? ({} as BlockDraft)),
-        address,
-        verseNumber: match ? match[1] : '',
-        text: '',
-      },
-      { text: match ? match[2] : change.original, ...change.originalLook },
+      { ...(draft ?? ({} as BlockDraft)), address, text: '' },
+      { text: change.original, ...change.originalLook },
     ));
 
     setChanges((current) => current.filter((entry) => entry.address !== address));
+  }
+
+  /**
+   * Puts every unpublished change back at once. Threads `data` through each
+   * revert manually rather than calling undoChange in a loop, for the same
+   * reason applyPassageChanges does: looped setData calls from the same
+   * stale closure would silently drop all but the last one.
+   */
+  function undoAllChanges() {
+    if (!data || changes.length === 0) {
+      return;
+    }
+
+    let next = data;
+
+    for (const change of changes) {
+      next = applyTextEdit(
+        next,
+        { ...(draft ?? ({} as BlockDraft)), address: change.address, text: '' },
+        { text: change.original, ...change.originalLook },
+      );
+    }
+
+    setData(next);
+    setChanges([]);
   }
 
   /** Ends the session, saying why so the login screen is not a dead end. */
@@ -855,18 +1035,38 @@ function App() {
         const target = (event.target as HTMLElement).closest('[data-edit]');
         const address = target instanceof HTMLElement ? target.dataset.edit : undefined;
 
-        if (address) {
-          event.preventDefault();
+        if (!address) {
+          return;
+        }
+
+        event.preventDefault();
+
+        // A verse/paragraph/heading belongs to a passage — edit the whole
+        // passage on one screen. Everything else (title, reference, note,
+        // introduction) keeps its own single-field dialog, unchanged.
+        const [kind, passageIdFromAddress] = address.split(':');
+
+        if (kind === 'block') {
+          openPassageEditor(passageIdFromAddress);
+        } else {
           openBlockEditor(address);
         }
       } : undefined}
       onPointerDown={isArranging ? startDrag : undefined}
+      // One custom property drives the gap after every verse number, in the
+      // reader and in each editor's preview alike, so the setting is applied
+      // in exactly one place.
+      style={data.introduction?.verseNumberSpacing !== undefined
+        ? ({ '--verse-number-gap': `${data.introduction.verseNumberSpacing}em` } as React.CSSProperties)
+        : undefined}
     >
       {isEditing ? (
         <EditorBar
           busy={publishing}
           changeCount={changes.length}
           mode={editorMode}
+          onVerseNumberSpacing={setVerseNumberSpacing}
+          verseNumberSpacing={data.introduction?.verseNumberSpacing ?? null}
           onMode={(next) => {
             setEditorMode(next);
             setDraft(null);
@@ -896,6 +1096,7 @@ function App() {
             openBlockEditor(address);
           }}
           onUndo={undoChange}
+          onUndoAll={undoAllChanges}
           pending={changes}
           published={published}
         />
@@ -908,6 +1109,23 @@ function App() {
           onConfirm={confirmBlockEdit}
           onNavigate={navigateDraft}
           onDelete={deleteDraftBlock}
+        />
+      ) : null}
+
+      {passagePanel ? (
+        <PassageEditor
+          // Remounts on a passage switch — a fresh passage's `drafts` must
+          // never be read against local field state staged for a different
+          // one, or a different-length one, for even one render.
+          key={passageId}
+          drafts={passagePanel.drafts}
+          hasNextPassage={passagePanel.nextPassageId !== null}
+          hasPreviousPassage={passagePanel.previousPassageId !== null}
+          onCancel={() => setPassageId(null)}
+          onNavigatePassage={navigatePassage}
+          onSave={savePassage}
+          passageId={passagePanel.passageId}
+          passageLabel={passagePanel.passageLabel}
         />
       ) : null}
 
@@ -1034,7 +1252,7 @@ function describeDraft(draft: BlockDraft, edit: BlockEdit) {
   return {
     label: draft.label,
     where: draft.address.split(':')[1] ?? '',
-    current: `${draft.verseNumber}${edit.text}`,
+    current: edit.text,
     currentLook: lookOf(edit),
   };
 }
@@ -1154,7 +1372,27 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
   const offsetX = edit.offsetX || undefined;
   const offsetY = edit.offsetY || undefined;
   const hidden = edit.hidden || undefined;
-  const text = `${draft.verseNumber}${edit.text}`;
+  // The whole text, verse number included: the number is the first characters
+  // of the block, editable like any other word rather than held aside and
+  // stitched back on here.
+  const text = edit.text;
+
+  // A single site-wide number, not a block of text. Routed through the same
+  // function as every other edit so undoing it — one change or "Anulează
+  // tot" — needs no special case of its own.
+  if (kind === 'versespace') {
+    if (!data.introduction) {
+      return data;
+    }
+
+    return {
+      ...data,
+      introduction: {
+        ...data.introduction,
+        verseNumberSpacing: edit.text === '' ? undefined : Number(edit.text),
+      },
+    };
+  }
 
   if (kind === 'introtitle' || kind === 'introsubtitle') {
     if (!data.introduction) {
@@ -1285,7 +1523,11 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
   });
 }
 
-/** Builds a draft, splitting a leading verse number out of editable text. */
+/**
+ * Builds a draft. The verse number stays inside the editable text — it is read
+ * off the front only to name the row ("Versetul 5") and to anchor the flowing
+ * editor's split, never to withhold it from being retyped.
+ */
 function draftForText(options: {
   address: string;
   path: string;
@@ -1318,7 +1560,7 @@ function draftForText(options: {
     spaceBefore: options.spaceBefore ?? null,
     spaceAfter: options.spaceAfter ?? null,
     hidden: options.hidden ?? false,
-    text: match ? match[2] : options.rawText,
+    text: options.rawText,
     verseNumber: match ? match[1] : '',
     noteRefs: options.noteRefs ?? [],
     hasPrevious: position > 0,
@@ -2045,107 +2287,6 @@ function addNotesForBlocks(page: VisualBookPage, passage: Passage, blocks: Conte
   }
 }
 
-/**
- * Addresses an editable element so a click in the rendered page maps back to
- * the field it came from. Shapes: `block:<passageId>:<i>`, `title:<passageId>`,
- * `note:<passageId>:<i>`, `intro:<i>`.
- */
-function blockAddress(passageId: string, allBlocks: ContentBlock[], block: ContentBlock) {
-  const index = allBlocks.indexOf(block);
-
-  return index >= 0 ? `block:${passageId}:${index}` : undefined;
-}
-
-/** Inline style carrying a per-element font scale, or nothing when unset. */
-function sizeStyle(size?: number) {
-  return size && size !== 100
-    ? ({ '--size-scale': String(size / 100) } as React.CSSProperties)
-    : undefined;
-}
-
-/**
- * A free position, as set by dragging in layout mode.
- *
- * Relative positioning rather than a transform, because a transform does
- * nothing at all to an inline element, and verses and paragraphs in the reader
- * are inline fragments sharing a paragraph. Relative offsets move the element
- * visually while leaving its place in the flow alone, so a verse still wraps
- * across lines and nothing around it shifts.
- */
-function offsetStyle(layout: { offsetX?: number; offsetY?: number }): React.CSSProperties {
-  if (!layout.offsetX && !layout.offsetY) {
-    return {};
-  }
-
-  return {
-    position: 'relative',
-    left: `${layout.offsetX ?? 0}%`,
-    top: `${layout.offsetY ?? 0}rem`,
-  };
-}
-
-/** Scale plus position, for the inline fragments that carry no other layout. */
-function fragmentStyle(layout: { size?: number; offsetX?: number; offsetY?: number }) {
-  const style = { ...sizeStyle(layout.size), ...offsetStyle(layout) };
-
-  return Object.keys(style).length > 0 ? style : undefined;
-}
-
-/** Font scale, alignment, spacing and free position for a block-level box. */
-function blockStyle(layout: {
-  size?: number;
-  align?: ContentBlock['align'];
-  spaceBefore?: number;
-  spaceAfter?: number;
-  offsetX?: number;
-  offsetY?: number;
-}) {
-  const style: React.CSSProperties = { ...sizeStyle(layout.size) };
-
-  if (layout.align) {
-    style.textAlign = layout.align;
-  }
-
-  if (layout.spaceBefore !== undefined) {
-    style.marginTop = `${layout.spaceBefore}rem`;
-  }
-
-  if (layout.spaceAfter !== undefined) {
-    style.marginBottom = `${layout.spaceAfter}rem`;
-  }
-
-  Object.assign(style, offsetStyle(layout));
-
-  return Object.keys(style).length > 0 ? style : undefined;
-}
-
-function getResolvedNoteRefsForBlock(
-  block: ContentBlock,
-  allBlocks: ContentBlock[],
-  notes: Footnote[] = [],
-) {
-  const markerCount = countFootnoteMarkers(block.text);
-
-  if (markerCount === 0) {
-    return [];
-  }
-
-  if (notes.length > 0) {
-    const blockIndex = allBlocks.indexOf(block);
-    const previousBlocks = blockIndex >= 0 ? allBlocks.slice(0, blockIndex) : [];
-    const previousMarkerCount = previousBlocks.reduce(
-      (total, currentBlock) => total + countFootnoteMarkers(currentBlock.text),
-      0,
-    );
-
-    return notes
-      .slice(previousMarkerCount, previousMarkerCount + markerCount)
-      .map((note) => note.number);
-  }
-
-  return (block.noteRefs ?? []).slice(0, markerCount);
-}
-
 function PagePassageView({ passage }: { passage: PagePassage }) {
   return (
     <article className={passage.isContinuation ? 'passage passage-continuation' : 'passage'}>
@@ -2196,351 +2337,6 @@ function PagePassageView({ passage }: { passage: PagePassage }) {
       </div>
     </article>
   );
-}
-
-function PassageBlocks({
-  blocks,
-  passageId,
-  allBlocks = blocks,
-  notes = [],
-}: {
-  blocks: ContentBlock[];
-  passageId: string;
-  allBlocks?: ContentBlock[];
-  notes?: Footnote[];
-}) {
-  if (passageId === 'matei-1') {
-    return <GenealogyBlocks blocks={blocks} passageId={passageId} allBlocks={allBlocks} notes={notes} />;
-  }
-
-  const groupedBlocks = groupPassageBlocks(blocks);
-
-  return groupedBlocks.map((group, index) => {
-    if (Array.isArray(group)) {
-      return (
-        <p
-          className="passage-paragraph"
-          key={`${passageId}-paragraph-${index}`}
-          style={blockStyle(paragraphLayoutForBlocks(
-            group,
-            allBlocks,
-            textContinuesAfterGroup(group, index, groupedBlocks, allBlocks),
-          ))}
-        >
-          {group.map((block, blockIndex) => (
-            <InlineBlock
-              address={blockAddress(passageId, allBlocks, block)}
-              block={block}
-              noteRefs={getResolvedNoteRefsForBlock(block, allBlocks, notes)}
-              key={`${passageId}-${index}-${blockIndex}`}
-            />
-          ))}
-        </p>
-      );
-    }
-
-    return (
-      <h4
-        className="inline-heading"
-        data-edit={blockAddress(passageId, allBlocks, group)}
-        key={`${passageId}-heading-${index}`}
-        style={blockStyle(group)}
-      >
-        {renderTextWithNotes(group.text, getResolvedNoteRefsForBlock(group, allBlocks, notes))}
-      </h4>
-    );
-  });
-}
-
-/**
- * Normal verses flow together. Explicit spacing creates a paragraph boundary
- * so it has a real margin box; alignment is handled at the whole-run level.
- */
-function groupPassageBlocks(blocks: ContentBlock[]): Array<ContentBlock | ContentBlock[]> {
-  const groups: Array<ContentBlock | ContentBlock[]> = [];
-  let textGroup: ContentBlock[] = [];
-
-  const flushText = () => {
-    if (textGroup.length > 0) {
-      groups.push(textGroup);
-      textGroup = [];
-    }
-  };
-
-  for (const block of blocks) {
-    if (block.hidden) {
-      continue;
-    }
-
-    if (block.type === 'heading') {
-      flushText();
-      groups.push(block);
-      continue;
-    }
-
-    if (textGroup.length > 0 && block.spaceBefore !== undefined) {
-      flushText();
-    }
-
-    textGroup.push(block);
-
-    if (block.spaceAfter !== undefined) {
-      flushText();
-    }
-  }
-
-  flushText();
-
-  return groups;
-}
-
-function paragraphLayoutForBlocks(
-  blocks: ContentBlock[],
-  allBlocks: ContentBlock[],
-  continues: boolean,
-) {
-  const first = blocks[0];
-  const last = blocks[blocks.length - 1];
-
-  return {
-    align: first ? effectiveParagraphAlign(allBlocks, allBlocks.indexOf(first)) : undefined,
-    spaceBefore: first?.spaceBefore,
-    // Synthetic groups should not inherit .7rem between them. Only a chosen
-    // space-after, or the true end of the paragraph, gets a bottom gap.
-    spaceAfter: last?.spaceAfter ?? (continues ? 0 : undefined),
-  };
-}
-
-function textContinuesAfterGroup(
-  group: ContentBlock[],
-  groupIndex: number,
-  groups: Array<ContentBlock | ContentBlock[]>,
-  allBlocks: ContentBlock[],
-) {
-  if (Array.isArray(groups[groupIndex + 1])) {
-    return true;
-  }
-
-  const lastIndex = allBlocks.indexOf(group[group.length - 1]);
-
-  for (let index = lastIndex + 1; index < allBlocks.length; index += 1) {
-    const block = allBlocks[index];
-
-    if (block.type === 'heading') {
-      return false;
-    }
-
-    if (!block.hidden) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
-function textRunBounds(blocks: ContentBlock[], index: number): [number, number] {
-  if (index < 0 || index >= blocks.length || blocks[index]?.type === 'heading') {
-    return [index, index];
-  }
-
-  let start = index;
-  let end = index;
-
-  while (start > 0 && blocks[start - 1]?.type !== 'heading') {
-    start -= 1;
-  }
-
-  while (end < blocks.length - 1 && blocks[end + 1]?.type !== 'heading') {
-    end += 1;
-  }
-
-  return [start, end];
-}
-
-function effectiveParagraphAlign(blocks: ContentBlock[], index: number): ContentBlock['align'] {
-  const [start, end] = textRunBounds(blocks, index);
-
-  for (let position = start; position <= end; position += 1) {
-    if (blocks[position]?.align) {
-      return blocks[position].align;
-    }
-  }
-
-  return undefined;
-}
-
-function InlineBlock({ block, noteRefs, address }: { block: ContentBlock; noteRefs?: number[]; address?: string }) {
-  if (block.type === 'verse') {
-    const match = block.text.match(/^(\d{1,3})(.*)$/su);
-
-    if (match) {
-      return (
-        <span className="verse-fragment" data-edit={address} style={fragmentStyle(block)}>
-          <sup>{match[1]}</sup>
-          {renderTextWithNotes(trimVerseTextStart(match[2]), noteRefs)}
-        </span>
-      );
-    }
-  }
-
-  return (
-    <span
-      aria-label={block.text.trim() ? undefined : 'Rând gol — apasă pentru a-l modifica'}
-      className={`text-fragment${block.text.trim() ? '' : ' empty-text-fragment'}${block.hidden ? ' hidden-text-fragment' : ''}`}
-      data-edit={address}
-      style={fragmentStyle(block)}
-    >
-      {renderTextWithNotes(block.text, noteRefs)}
-    </span>
-  );
-}
-
-function GenealogyBlocks({
-  blocks,
-  passageId,
-  allBlocks = blocks,
-  notes = [],
-}: {
-  blocks: ContentBlock[];
-  passageId: string;
-  allBlocks?: ContentBlock[];
-  notes?: Footnote[];
-}) {
-  return (
-    <div className="genealogy-lines">
-      {blocks.flatMap((block, blockIndex) => {
-        if (block.hidden) {
-          return [];
-        }
-
-        if (block.type === 'heading') {
-          return [
-            <h4
-              className="inline-heading"
-              data-edit={blockAddress(passageId, allBlocks, block)}
-              key={`${passageId}-${blockIndex}`}
-              style={blockStyle(block)}
-            >
-              {renderTextWithNotes(block.text, getResolvedNoteRefsForBlock(block, allBlocks, notes))}
-            </h4>,
-          ];
-        }
-
-        const lines = splitGenealogyText(block.text);
-
-        return lines.map((line, lineIndex) => (
-          <p
-            className="genealogy-line"
-            data-edit={blockAddress(passageId, allBlocks, block)}
-            key={`${passageId}-${blockIndex}-${lineIndex}`}
-            style={genealogyLineStyle(block, allBlocks, lineIndex, lines.length)}
-          >
-            {lineIndex === 0 ? (
-              <GenealogyLine text={line} noteRefs={getResolvedNoteRefsForBlock(block, allBlocks, notes)} />
-            ) : (
-              <GenealogyLine text={line} />
-            )}
-          </p>
-        ));
-      })}
-    </div>
-  );
-}
-
-function genealogyLineLayout(
-  block: ContentBlock,
-  allBlocks: ContentBlock[],
-  lineIndex: number,
-  lineCount: number,
-) {
-  return {
-    ...block,
-    align: effectiveParagraphAlign(allBlocks, allBlocks.indexOf(block)),
-    // One stored verse can produce several genealogy lines. Its gap belongs
-    // around the verse, not around every semicolon clause.
-    spaceBefore: lineIndex === 0 ? block.spaceBefore : undefined,
-    spaceAfter: lineIndex === lineCount - 1 ? block.spaceAfter : undefined,
-  };
-}
-
-function genealogyLineStyle(
-  block: ContentBlock,
-  allBlocks: ContentBlock[],
-  lineIndex: number,
-  lineCount: number,
-) {
-  const layout = genealogyLineLayout(block, allBlocks, lineIndex, lineCount);
-  const style = blockStyle(layout) ?? {};
-
-  if (layout.align === 'justify') {
-    style.textAlignLast = 'justify';
-  }
-
-  return Object.keys(style).length > 0 ? style : undefined;
-}
-
-function GenealogyLine({ noteRefs = [], text }: { noteRefs?: number[]; text: string }) {
-  const match = text.match(/^(\d{1,3})(.*)$/su);
-
-  if (!match) {
-    return renderTextWithNotes(text, noteRefs);
-  }
-
-  return (
-    <>
-      <sup>{match[1]}</sup>
-      {renderTextWithNotes(trimVerseTextStart(match[2]), noteRefs)}
-    </>
-  );
-}
-
-function splitGenealogyText(text: string) {
-  // Keep leading/interior newlines: the editor uses two of them for one blank
-  // row. Splitting on `;\s*` used to consume the exact break the customer had
-  // inserted between two genealogy clauses.
-  const normalizedText = text.trimEnd();
-  const verseMatch = normalizedText.match(/^(\d{1,3})(.*)$/su);
-
-  if (!verseMatch) {
-    return splitAtSemicolons(normalizedText);
-  }
-
-  const [, verseNumber, verseText] = verseMatch;
-  const parts = splitAtSemicolons(verseText);
-
-  if (parts.length === 0) {
-    return [normalizedText];
-  }
-
-  return parts.map((part, index) => (index === 0 ? `${verseNumber}${part}` : part));
-}
-
-function splitAtSemicolons(text: string) {
-  return text
-    .split(';')
-    .map((line, index, lines) => {
-      const content = index === 0 ? line : genealogyContinuationStart(line);
-
-      return index < lines.length - 1 ? `${content};` : content;
-    })
-    .filter((line) => line.replace(/;$/u, '').trim().length > 0);
-}
-
-/**
- * A semicolon already starts the next genealogy clause on a new rendered line.
- * Therefore the first typed newline represents that normal break; only further
- * newlines become visibly blank rows.
- */
-function genealogyContinuationStart(text: string) {
-  const leading = text.match(/^[\t ]*((?:\r?\n[\t ]*)+)/u);
-
-  if (!leading) {
-    return trimVerseTextStart(text);
-  }
-
-  const newlineCount = leading[1].match(/\r?\n/gu)?.length ?? 0;
-
-  return `${'\n'.repeat(Math.max(0, newlineCount - 1))}${text.slice(leading[0].length)}`;
 }
 
 function PassageNotes({ notes }: { notes: PageFootnote[] }) {

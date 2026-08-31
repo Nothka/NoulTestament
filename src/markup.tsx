@@ -48,6 +48,22 @@ export function renderTextWithNotes(text: string, noteRefs: number[] = []) {
   return nodes;
 }
 
+/**
+ * HTML collapses any run of spaces down to one, so spacing the editor typed
+ * on purpose — indenting a line, pushing a word across, separating two
+ * phrases — would silently vanish between the editing box and the published
+ * page. Every space but the last in a run becomes a non-breaking space, which
+ * renders exactly as typed while leaving that final ordinary space as a place
+ * the line may still wrap, so long runs cannot push text off the page.
+ *
+ * Done here rather than with `white-space: pre-wrap` on the containers,
+ * because newlines are already turned into explicit <br> elements below;
+ * pre-wrap would render each of those a second time and double every break.
+ */
+function preserveSpaceRuns(text: string) {
+  return text.replace(/ {2,}/gu, (run) => `${'\u00A0'.repeat(run.length - 1)} `);
+}
+
 export function renderInlineMarkup(text: string, keyPrefix = 'inline'): ReactNode[] {
   const nodes: ReactNode[] = [];
   const pattern = /(\*\*([^*]+)\*\*|\*([^*\n]+)\*|__([^_]+)__|_([^_]+)_|\n)/gu;
@@ -58,7 +74,7 @@ export function renderInlineMarkup(text: string, keyPrefix = 'inline'): ReactNod
     const index = match.index ?? 0;
 
     if (index > lastIndex) {
-      nodes.push(text.slice(lastIndex, index));
+      nodes.push(preserveSpaceRuns(text.slice(lastIndex, index)));
     }
 
     if (match[0] === '\n') {
@@ -82,7 +98,7 @@ export function renderInlineMarkup(text: string, keyPrefix = 'inline'): ReactNod
   }
 
   if (lastIndex < text.length) {
-    nodes.push(text.slice(lastIndex));
+    nodes.push(preserveSpaceRuns(text.slice(lastIndex)));
   }
 
   return nodes.map((node, index) => (
