@@ -345,7 +345,8 @@
     {
       "type": "paragraph",
       "text": "Această traducere a Noului Testament în limba română este realizată - în mare măsură - după versiunea englezească World English Bible (WEB), ediție tipărită 2022, care este plasată în domeniul public. Spunând acest lucru ne referim în mod exclusiv la partea de text a NT. Pe de altă parte, în ceea ce privește noua divizare a textului în pasaje, capitole și versete, și formularea titlurilor de pasaje, practicate în prezenta versiune, acestea sunt realizate de editor. În unele locuri mai greu de înțeles sunt inserate note de subsol ale editorului. Sperăm ca acestea să clarifice pasajele mai dificile. Propun ca această nouă versiune să poarte denumirea NTND 2026.",
-      "noteRefs": []
+      "noteRefs": [],
+      "align": "justify"
     },
     {
       "type": "paragraph",
