@@ -2141,7 +2141,8 @@
         {
           "type": "verse",
           "text": "1Ioan a auzit din închisoare despre lucrările lui Cristos,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2171,7 +2172,8 @@
         {
           "type": "verse",
           "text": "6Pe când aceștia plecau, Isus a început să vorbească mulțimii despre Ioan: „Ce aţi ieşit să vedeţi în pustiu? O trestie clătinată de vânt?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2225,7 +2227,8 @@
         {
           "type": "verse",
           "text": "1Cu ce voi compara generația aceasta? Ea se aseamănă cu nişte copilaşi, care stau în pieţe, şi strigă la tovarăşii lor:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2250,7 +2253,8 @@
         {
           "type": "verse",
           "text": "5Atunci Isus a început să mustre orașele în care fuseseră făcute cele mai multe din marile lui minuni, pentru că nu s-au pocăit.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2282,7 +2286,8 @@
         {
           "type": "verse",
           "text": "10Pe timpul acela, Isus a zis: „Îți mulțumesc, Tată, Doamne al cerului şi al pământului, pentru că ai ascuns aceste lucruri de cei înţelepţi şi pricepuţi, şi le-ai descoperit copiilor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2302,7 +2307,8 @@
         {
           "type": "verse",
           "text": "13Veniţi la mine, toţi cei obosiţi şi împovăraţi, şi eu vă voi da odihnă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2331,8 +2337,9 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1În timpul acela, într-o zi de Sabat, Isus trecea prin lanurile de grâu. Ucenicii lui, care erau flămânzi, au început să smulgă spice de grâu şi să le mănânce.",
-          "noteRefs": []
+          "text": "1În timpul acela, într-o zi de sabat, Isus trecea prin lanurile de grâu. Ucenicii lui, care erau flămânzi, au început să smulgă spice de grâu şi să le mănânce.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2366,7 +2373,7 @@
         },
         {
           "type": "verse",
-          "text": "8Căci Fiul omului este Domn şi al sabatului.„",
+          "text": "8Căci Fiul omului este Domn şi al sabatului.",
           "noteRefs": []
         }
       ]
@@ -2381,7 +2388,8 @@
         {
           "type": "verse",
           "text": "1Isus a plecat de acolo, şi a intrat în sinagogă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2390,7 +2398,7 @@
         },
         {
           "type": "verse",
-          "text": "3El le-a răspuns: „Cine este omul acela dintre voi care, dacă are o oaie, şi-i cade într-o groapă, în ziua Sabatului, să n-o apuce şi s-o scoată afară?",
+          "text": "3El le-a răspuns: „Cine este omul acela dintre voi care, dacă are o oaie, şi-i cade într-o groapă, în ziua de sabat, să n-o apuce şi s-o scoată afară?",
           "noteRefs": []
         },
         {
