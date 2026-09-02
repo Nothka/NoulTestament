@@ -88,12 +88,12 @@
         },
         {
           "type": "verse",
-          "text": "16Iacov a fost tatăl lui Iosif, bărbatul Mariei, din care s-a născut Isus, care se numește Cristos.",
+          "text": "16Iacov a fost tatăl lui Iosif, bărbatul Mariei, din care s-a născut Isus, care se numește Cristos.\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "17Deci, toate generațiile de la Avraam până la David, sunt patrusprezece; apoi, de la David până la deportarea în Babilon sunt patrusprezece generații; şi dela deportarea în Babilon până la Cristos, sunt patrusprezece generații.",
+          "text": "17Deci, toate generațiile de la Avraam până la David, sunt patrusprezece; apoi, de la David până la deportarea în Babilon sunt patrusprezece generații; şi de la deportarea în Babilon până la Cristos, sunt patrusprezece generații.",
           "noteRefs": []
         }
       ]
@@ -108,7 +108,9 @@
         {
           "type": "verse",
           "text": "1Iar naşterea lui Isus Cristos a fost aşa: după ce mama lui, Maria, s-a logodit cu",
-          "noteRefs": []
+          "noteRefs": [],
+          "offsetX": -0.23,
+          "offsetY": 0.06
         },
         {
           "type": "paragraph",
@@ -173,7 +175,7 @@
         },
         {
           "type": "verse",
-          "text": "3Când regele Irod a auzit acest lucru s-a tulburat, el, şi tot Ierusalimul s-a tulburat împreună cu el.",
+          "text": "3Când regele Irod a auzit acest lucru s-a tulburat, şi tot Ierusalimul s-a tulburat împreună cu el.",
           "noteRefs": []
         },
         {
@@ -248,7 +250,7 @@
         },
         {
           "type": "verse",
-          "text": "3Acolo a rămas până la moartea lui Irod, ca să se împlinească ce fusese vestit de Domnul prin profetul care zice: „Am chemat pe Fiul meu din Egipt.”",
+          "text": "3Acolo a rămas până la moartea lui Irod, ca să se împlinească ce fusese vestit de Domnul prin profetul care zice: „Am chemat pe Fiul meu din Egipt”.",
           "noteRefs": []
         },
         {
