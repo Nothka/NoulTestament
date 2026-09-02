@@ -259,12 +259,14 @@
         {
           "type": "heading",
           "text": "Uciderea copiilor",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "center"
         },
         {
           "type": "verse",
           "text": "4Atunci, când Irod a văzut că fusese înşelat de înțelepți, s-a mâniat foarte tare, şi a trimis să ucidă pe toţi copiii de parte bărbătească, de la doi ani în jos, care erau în Betleem şi în toată zona înconjurătoare, potrivit cu timpul, pe care îl aflase întocmai de la înțelepți.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -279,12 +281,14 @@
         {
           "type": "heading",
           "text": "Întoarcerea din Egipt",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "center"
         },
         {
           "type": "verse",
           "text": "7După ce a murit Irod, un înger al Domnului s-a arătat în vis lui Iosif, în Egipt,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -541,7 +545,8 @@
         {
           "type": "verse",
           "text": "1Pe când trecea pe lângă marea Galileei, Isus a văzut doi fraţi: pe Simon, zis și Petru, şi pe Andrei fratele său, care aruncau plasa în mare, căci erau pescari.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1650,7 +1655,8 @@
         {
           "type": "verse",
           "text": "1Pe când Isus pleca de acolo a văzut pe un om, numit Matei, şezând la vamă. Şi i-a zis: „Vino după mine„. Omul acela s-a sculat, şi l-a urmat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1684,7 +1690,8 @@
         {
           "type": "verse",
           "text": "1Atunci ucenicii lui Ioan au venit la Isus, şi i-au zis: „De ce noi şi fariseii postim des, iar ucenicii tăi nu postesc de loc?„",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1699,7 +1706,8 @@
         {
           "type": "verse",
           "text": "3Nimeni nu pune un petec de postav nou la o haină veche; pentru că şi-ar lua umplutura din haină, şi ruptura ar fi mai rea.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1718,7 +1726,8 @@
         {
           "type": "verse",
           "text": "1Pe când Isus le spunea aceste lucruri, iată că a venit unul din conducători, i s-a închinat, şi i-a zis: „Fiica mea tocmai a murit; dar vino și pune-ți mâinile peste ea, şi va învia.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1733,7 +1742,8 @@
         {
           "type": "verse",
           "text": "3Şi iată, o femeie, care de doisprezece ani avea o scurgere de sânge, a venit pe dinapoi, şi s-a atins de marginea hainei lui.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1753,7 +1763,8 @@
         {
           "type": "verse",
           "text": "6Când Isus a ajuns în casa conducătorului, şi când a văzut pe cei ce cântau din fluier, şi mulțimea agitată,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1782,7 +1793,8 @@
         {
           "type": "verse",
           "text": "1Când a plecat de acolo, doi orbi s-au luat după Isus; ei strigau şi ziceau: „Ai milă de noi, Fiul lui David!„",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1836,7 +1848,8 @@
         {
           "type": "verse",
           "text": "1Isus străbătea toate orașele şi satele, învăţând pe popor în sinagogi, predicând Evanghelia Împărăţiei, şi vindecând orice fel de boală şi orice fel de suferinţă, care era în popor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1949,7 +1962,8 @@
         {
           "type": "verse",
           "text": "1Iată, eu vă trimit ca pe nişte oi în mijlocul lupilor. Fiţi dar înţelepţi ca şerpii, şi fără răutate ca porumbeii.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2141,7 +2155,7 @@
         },
         {
           "type": "verse",
-          "text": "4Orbii îşi primesc vederea, şchiopii umblă, leproşii sînt curăţiţi, surzii aud, morţii înviză, şi săracilor li se predică Evanghelia.",
+          "text": "4Orbii îşi primesc vederea, şchiopii umblă, leproşii sînt curăţiţi, surzii aud, morţii înviază, şi săracilor li se predică Evanghelia.",
           "noteRefs": []
         },
         {

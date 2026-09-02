@@ -370,7 +370,10 @@
     {
       "type": "paragraph",
       "text": "",
-      "noteRefs": []
+      "noteRefs": [],
+      "spaceBefore": 0,
+      "spaceAfter": 0,
+      "hidden": true
     },
     {
       "type": "paragraph",
