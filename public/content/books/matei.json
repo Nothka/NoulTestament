@@ -1165,7 +1165,8 @@
         {
           "type": "verse",
           "text": "1Nu judecaţi, ca să nu fiţi judecaţi.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1245,7 +1246,8 @@
         {
           "type": "verse",
           "text": "7Intraţi pe poarta cea strâmtă. Căci largă este poarta, și lată este calea care duce la distrugere, şi mulţi sunt cei ce intră pe ea.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1264,7 +1266,8 @@
         {
           "type": "verse",
           "text": "1Păziţi-vă de profeții falşi. Ei vin la voi îmbrăcaţi în haine de oi, dar pe dinlăuntru sunt nişte lupi răpitori.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1303,7 +1306,8 @@
         {
           "type": "verse",
           "text": "1Nu toți care-mi spun: „Doamne, Doamne!„ vor intra în Împărăţia cerurilor, ci doar cei care fac voia Tatălui meu care este în ceruri.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1323,7 +1327,8 @@
         {
           "type": "verse",
           "text": "4”De aceea, pe oricine aude aceste cuvinte ale mele, şi le face, îl voi asemăna cu un om înțelept, care şi-a zidit casa pe stâncă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1362,7 +1367,8 @@
         {
           "type": "verse",
           "text": "1Când Isus s-a coborât de pe munte, o mare mulțime l-a urmat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1389,7 +1395,8 @@
           "text": "5Când Isus a intrat în Capernaum, a venit la el un centurion,* cerându-i ajutorul",
           "noteRefs": [
             9
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1474,7 +1481,8 @@
         {
           "type": "verse",
           "text": "1Isus a văzut o mulțime mare împrejurul său, şi a poruncit să treacă de cealaltă parte.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1508,7 +1516,8 @@
         {
           "type": "verse",
           "text": "1Isus s-a urcat într-o corabie, şi ucenicii lui l-au urmat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1542,7 +1551,8 @@
         {
           "type": "verse",
           "text": "1Când Isus a ajuns de partea cealaltă, în zona gadarenilor, l-au întâmpinat doi demonizaţi, care ieşeau din morminte. Erau aşa de fioroși, că nimeni nu putea trece pe drumul acela.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1582,7 +1592,8 @@
         {
           "type": "verse",
           "text": "8Isus s-a urcat într-o corabie, a trecut marea, şi a mers în orașul său.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
