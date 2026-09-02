@@ -109,6 +109,7 @@
           "type": "verse",
           "text": "1Iar naşterea lui Isus Cristos a fost aşa: după ce mama lui, Maria, s-a logodit cu",
           "noteRefs": [],
+          "align": "justify",
           "offsetX": -0.23,
           "offsetY": 0.06
         },
@@ -166,7 +167,8 @@
           "text": "1După ce s-a născut Isus în Betleemul din Iudeea, în zilele regelui Irod, iată că au venit la Ierusalim nişte oameni înțelepți din est,*",
           "noteRefs": [
             1
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -241,7 +243,8 @@
         {
           "type": "verse",
           "text": "1După ce au plecat înțelepții, un înger al Domnului i-a apărut în vis lui Iosif, şi i-a zis: „Scoală-te, ia copilul şi pe mama lui, fugi în Egipt, şi rămâi acolo până îţi voi spune eu; căci Irod are să caute copilul, ca să-l ucidă”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -315,7 +318,8 @@
         {
           "type": "verse",
           "text": "1În zilele acelea a venit Ioan Botezătorul, şi predica în pustiul Iudeii.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -324,7 +328,7 @@
         },
         {
           "type": "verse",
-          "text": "3Ioan acesta, este acela care fusese vestit prin profetul Isaia, când zice: „Iată glasul celui ce strigă în pustie:,Pregătiţi calea Domnului, neteziţi-i cărările.”",
+          "text": "3Ioan acesta este acela care fusese vestit prin profetul Isaia, când zice: „Iată glasul celui ce strigă în pustie:,Pregătiţi calea Domnului, neteziţi-i cărările.”",
           "noteRefs": []
         },
         {
@@ -389,7 +393,8 @@
         {
           "type": "verse",
           "text": "1Atunci Isus a mers din Galileea, la Iordan, la Ioan, ca să fie botezat de el.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -431,7 +436,8 @@
         {
           "type": "verse",
           "text": "1Atunci Isus a fost condus de Duhul în pustiu, ca să fie ispitit de diavolul.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -495,7 +501,8 @@
         {
           "type": "verse",
           "text": "1Când a auzit Isus că Ioan fusese închis, s-a retras în Galileea.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -595,7 +602,8 @@
         {
           "type": "verse",
           "text": "1Când Isus a văzut mulțimea, s-a urcat pe munte; şi după ce a şezut jos, ucenicii lui s-au apropiat de el.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -672,7 +680,8 @@
         {
           "type": "verse",
           "text": "1Voi sunteţi sarea pământului. Dar dacă sarea îşi pierde aroma, prin ce îşi va căpăta iarăşi puterea de a săra? Atunci nu mai este bună la nimic decît să fie aruncată afară, şi călcată în picioare de oameni.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -706,7 +715,8 @@
         {
           "type": "verse",
           "text": "1Să nu credeţi că am venit să distrug legea sau profeții; am venit nu să distrug, ci să împlinesc.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -743,7 +753,8 @@
         {
           "type": "verse",
           "text": "1Aţi auzit că s-a zis celor din vechime: ‘Să nu ucizi; oricine ucide, va fi în pericol de a fi judecat.’",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -796,7 +807,8 @@
         {
           "type": "verse",
           "text": "1„Aţi auzit că s-a spus: „Să nu comiți adulter.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -835,7 +847,8 @@
         {
           "type": "verse",
           "text": "1Aţi mai auzit iarăși că s-a spus: „Să nu juri strâmb; ci să împlineşti faţă de Domnul jurămintele tale”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -877,7 +890,8 @@
         {
           "type": "verse",
           "text": "1Aţi auzit că s-a zis: „Ochi pentru ochi, şi dinte pentru dinte”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -941,7 +955,8 @@
         {
           "type": "verse",
           "text": "1Aveți grijă să nu îndepliniţi milostenia voastră înaintea oamenilor, ca să fiţi văzuţi de ei; in acest caz, nu veţi avea răsplată dela Tatăl vostru care este în ceruri.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -970,7 +985,8 @@
         {
           "type": "verse",
           "text": "1Când vă rugaţi, să nu fiţi ca ipocriții, cărora le place să se roage stând în picioare în sinagogi şi la colţurile străzilor, pentru ca să fie văzuţi de oameni. Adevărat vă spun, că şi-au luat răsplata.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1034,7 +1050,8 @@
         {
           "type": "verse",
           "text": "1Mai mult, când postiţi, să nu vă luaţi o înfăţişare tristă, ca ipocriții, care îşi desfigurează feţele, ca să se arate oamenilor că postesc. Adevărat vă spun, că şi-au luat răsplata.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1058,7 +1075,8 @@
         {
           "type": "verse",
           "text": "1Nu vă strângeţi comori pe pământ, unde le mănâncă moliile şi rugina, şi unde le sapă şi le fură hoţii;",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1191,7 +1209,8 @@
         {
           "type": "verse",
           "text": "1Cereţi, şi vi se va da; căutaţi şi veţi găsi; bateţi, şi vi se va deschide.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
