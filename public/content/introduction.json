@@ -21,9 +21,12 @@
     },
     {
       "type": "paragraph",
-      "text": "Cu tot respectul pe care îl avem față de traducerea/versiunea englezească King James, publicată în 1611, care este una din cele mai apreciate traduceri/versiuni, sau chiar cea mai apreciată, cu influență mare asupra multor altor traduceri/versiuni, în diverse limbi, și care, datorită cerințelor de pe timpul acela, de a nu adăuga nimic textului biblic (s-a adăugat totuși divizarea în capitole și versete), nu a delimitat pasajele și nu le-a dat titluri, prezentând astfel un text continuu, fără delimitări, suntem obligați să tragem concluzia că un astfel de text, neîmpărțit în pasaje, cere cititorului eforturi de identificare a pasajului, de delimitare a lui, de citire, și de înțelegere, mult mai mari. Și alte traduceri/versiuni se găsesc în aceeași situație.",
+      "text": "",
       "noteRefs": [],
-      "align": "justify"
+      "align": "justify",
+      "spaceBefore": 0,
+      "spaceAfter": 0,
+      "hidden": true
     },
     {
       "type": "paragraph",
