@@ -88,7 +88,7 @@
         },
         {
           "type": "verse",
-          "text": "16Iacov a fost tatăl lui Iosif, bărbatul Mariei, din care s-a născut Isus, care se numește Cristos.\n",
+          "text": "16Iacov a fost tatăl lui Iosif, bărbatul Mariei, din care s-a născut Isus, care se numește Cristos.\n\n",
           "noteRefs": []
         },
         {
@@ -2428,7 +2428,8 @@
         {
           "type": "verse",
           "text": "1Isus, a înțeles lucrul acesta, și a plecat de acolo. După el a mers o mare mulțime. El a vindecat pe toţi bolnavii,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2489,7 +2490,8 @@
           "text": "3Când au auzit Fariseii lucrul acesta, au zis: „Omul acesta nu scoate demonii decât cu Beelzebul,* prințul demonilor!”",
           "noteRefs": [
             14
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2574,7 +2576,8 @@
         {
           "type": "verse",
           "text": "1Atunci unii din cărturari şi din farisei i-au spus: „Învăţătorule, am vrea să vedem un semn dela tine!”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2604,7 +2607,8 @@
         {
           "type": "verse",
           "text": "6Duhul necurat, când a ieşit dintr-un om, umblă prin locuri fără apă, căutând odihnă, şi n-o găseşte.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2628,7 +2632,8 @@
         {
           "type": "verse",
           "text": "1Pe când Isus vorbea încă mulțimilor, iată că mama şi fraţii lui stăteau afară şi doreau să vorbească cu el.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2647,7 +2652,7 @@
         },
         {
           "type": "verse",
-          "text": "5Căci oricine face voia Tatălui meu care este în ceruri, acela îmi este frate, soră şi mamă.”",
+          "text": "5Căci oricine face voia Tatălui meu care este în ceruri, acela îmi este frate, soră şi mamă”.",
           "noteRefs": []
         }
       ]
@@ -2662,7 +2667,8 @@
         {
           "type": "verse",
           "text": "1În aceeaşi zi, Isus a ieşit din casă, şi şedea lângă mare.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2840,7 +2846,8 @@
         {
           "type": "verse",
           "text": "1Isus le-a prezentat o altă parabolă, şi le-a zis: „Împărăţia cerurilor se aseamănă cu un grăunte de muştar, pe care l-a luat un om şi l-a semănat în ogorul său.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2855,7 +2862,8 @@
         {
           "type": "verse",
           "text": "3Le-a spus o altă parabolă, şi anume: ”Împărăţia cerurilor se aseamănă cu un aluat, pe care l-a luat o femeie şi l-a pus în trei măsuri de făină de grâu, până s-a dospit toată frământătura”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2879,7 +2887,8 @@
         {
           "type": "verse",
           "text": "1Apoi Isus a eliberat mulțimea, şi a intrat în casă. Ucenicii lui s-au apropiat de el, şi i-au zis: Explică-ne parabola cu neghina din ogor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2928,7 +2937,8 @@
         {
           "type": "verse",
           "text": "1Împărăţia cerurilor se mai aseamănă cu o comoară ascunsă într-un teren, pe care un om o găseşte, și o ascunde. În bucuria lui, se duce şi vinde tot ce are, şi cumpără terenul acela.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "heading",
@@ -2938,7 +2948,8 @@
         {
           "type": "verse",
           "text": "2Împărăţia cerurilor se mai aseamănă cu un negustor care caută perle frumoase.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2957,7 +2968,8 @@
         {
           "type": "verse",
           "text": "1Împărăţia cerurilor se mai aseamănă cu o plasă aruncată în mare, care prinde tot felul de peşti.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2996,7 +3008,8 @@
         {
           "type": "verse",
           "text": "1După ce Isus a terminat de rostit parabolele acestea, a plecat de acolo.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3037,7 +3050,8 @@
           "text": "1Pe timpul acela, tetrarhul Irod* a auzit vorbindu-se despre Isus, şi a zis slujitorilor săi: ”Acesta este Ioan Botezătorul! A înviat din morţi, de aceea acționează aceste puteri prin el.”",
           "noteRefs": [
             15
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3102,7 +3116,8 @@
         {
           "type": "verse",
           "text": "1Isus, când a auzit vestea aceasta, a plecat de acolo într-o corabie, ca să se ducă singur la o parte, într-un loc pustiu. Când mulțimile, au auzit lucrul acesta, au ieşit din orașe şi s-au luat după el pe jos.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3156,7 +3171,8 @@
         {
           "type": "verse",
           "text": "1Imediat după aceea, Isus a obligat pe ucenicii săi să intre în corabie, şi să treacă înaintea lui de partea cealaltă, până va da drumul mulțimii.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3248,7 +3264,8 @@
         {
           "type": "verse",
           "text": "1Atunci nişte Farisei şi cărturari din Ierusalim au venit la Isus, şi i-au zis:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3310,7 +3327,8 @@
         {
           "type": "verse",
           "text": "1Isus a chemat mulţimea, şi a zis: „Ascultaţi, şi înţelegeţi:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3324,7 +3342,7 @@
         },
         {
           "type": "verse",
-          "text": "4El le-a zis: „Orice răsad, pe care nu l-a sădit Tatăl meu cel ceresc, va fi smuls dinrădăcină.",
+          "text": "4El le-a zis: „Orice răsad, pe care nu l-a sădit Tatăl meu cel ceresc, va fi smuls din rădăcină.",
           "noteRefs": []
         },
         {
@@ -3354,7 +3372,8 @@
         {
           "type": "verse",
           "text": "1Isus, a plecat de acolo, și s-a retras în zona Tirului şi a Sidonului.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3403,7 +3422,8 @@
         {
           "type": "verse",
           "text": "1Isus a plecat din locurile acelea, şi a venit lângă marea Galileei; s-a urcat pe munte, şi a şezut jos, acolo.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3423,7 +3443,8 @@
         {
           "type": "verse",
           "text": "4Isus a chemat pe ucenicii săi, şi le-a zis: „Mi-este milă de mulțimea aceasta; căci iată că de trei zile aşteaptă lângă mine, şi n-au ce mânca. Nu vreau să le dau drumul flămânzi, ca nu cumva să leşine de foame pe drum”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3548,7 +3569,8 @@
           "text": "1Isus a mers în zona Cezareii lui Filip* şi a întrebat pe ucenicii săi: „Cine zic oamenii că sunt eu, Fiul omului?”",
           "noteRefs": [
             18
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3614,7 +3636,8 @@
         {
           "type": "verse",
           "text": "1De atunci încolo, Isus a început să spună ucenicilor săi că el trebuie să meargă la Ierusalim, să sufere mult din partea bătrânilor, din partea preoţilor de frunte şi din partea cărturarilor; că are să fie ucis, şi că a treia zi are să învieze.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3638,7 +3661,8 @@
         {
           "type": "verse",
           "text": "1Atunci Isus a zis ucenicilor săi: „Dacă voieşte cineva să vină după mine, să se lepede de sine, să-şi ia crucea, şi să mă urmeze.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3672,7 +3696,8 @@
         {
           "type": "verse",
           "text": "1După şase zile, Isus a luat cu El pe Petru, Iacov şi Ioan, fratele lui, şi i-a dus numai pe ei, pe un munte înalt.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3746,7 +3771,8 @@
         {
           "type": "verse",
           "text": "1Când au venit la mulțime, a venit un om, care a căzut în genunchi înaintea lui Isus, şi i-a zis:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3795,7 +3821,8 @@
         {
           "type": "verse",
           "text": "1Pe când stăteau în Galileea, Isus le-a zis: „Fiul omului va fi dat în mâinile oamenilor,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3812,7 +3839,8 @@
           "text": "3Când au ajuns în Capernaum, cei ce strângeau didrahma* au venit la Petru, şi i-au zis: „Învăţătorul vostru nu plăteşte didrahma?”",
           "noteRefs": [
             21
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3858,7 +3886,8 @@
         {
           "type": "verse",
           "text": "1În ceasul acela, ucenicii s-au apropiat de Isus, şi l-au întrebat: „Deci cine este cel mai mare în Împărăţia cerurilor?„",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3897,7 +3926,8 @@
         {
           "type": "verse",
           "text": "1Vai de lume, din pricina ocaziilor de poticnire! Fiindcă nu se poate să nu apară ocazii de poticnire; dar vai de omul acela prin care vine ocazia!",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3931,7 +3961,8 @@
         {
           "type": "verse",
           "text": "1Ce credeţi? Dacă un om are o sută de oi, şi se rătăceşte una din ele, nu lasă el pe cele nouăzeci şi nouă pe munţi, şi se duce să caute pe cea rătăcită?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3955,7 +3986,8 @@
         {
           "type": "verse",
           "text": "1Dacă fratele tău păcătuiește împotriva ta, du-te şi mustră-l între tine şi el singur. Dacă te ascultă, ai câştigat pe fratele tău.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3994,7 +4026,8 @@
         {
           "type": "verse",
           "text": "1Atunci Petru s-a apropiat de el, şi i-a zis: „Doamne de câte ori să iert pe fratele meu când păcătuiește împotriva mea? Până la şapte ori?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
