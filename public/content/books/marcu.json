@@ -3380,7 +3380,8 @@
         {
           "type": "verse",
           "text": "1„Când veţi vedea, ‘urâciunea pustiirii’ despre care a vorbit profetul Daniel, stând acolo unde nu se cade să fie - cine citeşte să înţeleagă - atunci cei ce vor fi în Iudeea, să fugă la munţi,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3484,7 +3485,8 @@
         {
           "type": "verse",
           "text": "1Vegheați, fiți atenți, şi rugaţi-vă; căci nu ştiţi când va veni timpul acela.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3535,7 +3537,8 @@
           "text": "3Pe când şedea Isus la masă, în Betania, în casa lui Simon leprosul, a venit o femeie, care avea un vas de alabastru* cu parfum de nard curat, foarte scump; ea a spart vasul, și a turnat parfumul pe capul lui Isus.",
           "noteRefs": [
             61
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
