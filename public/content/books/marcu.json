@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Acesta este începutul Evangheliei lui Isus Cristos, Fiul lui Dumnezeu.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -62,7 +63,8 @@
         {
           "type": "verse",
           "text": "1În zilele acelea, a venit Isus din Nazaretul Galileei, şi a fost botezat de Ioan în Iordan.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -82,7 +84,8 @@
         {
           "type": "verse",
           "text": "4Imediat Duhul a condus pe Isus în pustiu.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -150,7 +153,8 @@
         {
           "type": "verse",
           "text": "1Au mers la Capernaum. În ziua de sabat Isus a intrat de îndată în sinagogă, şi a început să înveţe pe popor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -199,7 +203,8 @@
         {
           "type": "verse",
           "text": "1Îndată după ieşirea din sinagogă, au intrat împreună cu Iacov şi Ioan, în casa lui Simon şi a lui Andrei.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -268,7 +273,8 @@
         {
           "type": "verse",
           "text": "1Un lepros a venit la el, s-a aruncat în genunchi înaintea lui, îl ruga şi-i zicea: „Dacă dorești, poţi să mă curăţeşti.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -372,7 +378,8 @@
         {
           "type": "verse",
           "text": "1Isus a ieşit iarăşi la mare. Toată mulţimea venea la el; şi el îi învăţa.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -387,7 +394,8 @@
         {
           "type": "verse",
           "text": "3Pe când Isus stătea la masă în casa lui Levi, mulţi vameşi şi păcătoşi au ştat şi ei la masă cu el şi cu ucenicii lui; căci erau mulţi care mergeau după el.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -419,7 +427,8 @@
         {
           "type": "verse",
           "text": "1Ucenicii lui Ioan şi Fariseii obișnuiau să postească. Ei au venit şi au zis lui Isus: „De ce ucenicii lui Ioan şi ai Fariseilor postesc, iar ucenicii tăi nu postesc?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -439,7 +448,8 @@
         {
           "type": "verse",
           "text": "4Nimeni nu coase un petic de postav nou la o haină veche; altfel, peticul de postav nou rupe o parte din cel vechi, şi se face o gaură mai rea.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -457,8 +467,9 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Într-o zi de Sabat, Isus trecea prin lanurile de grâu, iar ucenicii lui, pe când mergeau, au început să smulgă spice de grâu.",
-          "noteRefs": []
+          "text": "1Într-o zi de sabat, Isus trecea prin lanurile de grâu, iar ucenicii lui, pe când mergeau, au început să smulgă spice de grâu.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -497,11 +508,12 @@
         {
           "type": "verse",
           "text": "1Isus a intrat din nou în sinagogă, iar acolo se afla un om cu mâna uscată.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
-          "text": "2Ei îl pândeau să vadă dacă-l va vindeca în ziua sabatului, ca să-l poată acuza.",
+          "text": "2Ei îl pândeau să vadă dacă-l va vindeca în ziua de sabat, ca să-l poată acuza.",
           "noteRefs": []
         },
         {
@@ -544,7 +556,8 @@
         {
           "type": "verse",
           "text": "1Isus s-a retras cu ucenicii săi spre mare; l-a urmat o mare mulţime de oameni din Galileea, din Iudeea,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -583,7 +596,8 @@
         {
           "type": "verse",
           "text": "1Isus s-a urcat pe munte, a chemat la el pe cine a vrut, şi ei au venit la el.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -635,11 +649,12 @@
         {
           "type": "verse",
           "text": "1Mulțimea s-a adunat din nou, aşa că nu puteau nici măcar să mănânce pâine.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
-          "text": "2Când prietenii lui, au auzit ce se petrecea, au venit să pună mâna pe el. Căci ziceau; „Şi-a pierdut minţile.``",
+          "text": "2Când prietenii lui, au auzit ce se petrecea, au venit să pună mâna pe el. Căci ziceau; „Şi-a pierdut minţile”.",
           "noteRefs": []
         },
         {
@@ -707,7 +722,8 @@
         {
           "type": "verse",
           "text": "1Atunci au venit mama şi fraţii lui, şi, stând afară, au trimis să-l cheme.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -741,7 +757,8 @@
         {
           "type": "verse",
           "text": "1Isus a început iarăşi să înveţe lângă mare. O mare mulțime s-a adunat la el, așa că s-a urcat şi a stat într-o corabie, pe mare. Iar toată mulțimea stătea pe ţărm lângă mare.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -791,7 +808,8 @@
         {
           "type": "verse",
           "text": "10Când a fost singur, cei ce erau în jurul lui împreună cu cei doisprezece, l-au întrebat despre parabole.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -810,8 +828,9 @@
         },
         {
           "type": "verse",
-          "text": "13El le-a mai zis: „Nu înţelegeţi parabola aceasta? Cum veţi înţelege atunci toate celelalte parabole?”",
-          "noteRefs": []
+          "text": "13El le-a mai zis: „Nu înţelegeţi parabola aceasta? Cum veţi înţelege atunci toate celelalte parabole?",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -845,7 +864,7 @@
         },
         {
           "type": "verse",
-          "text": "20Alţii apoi sunt înfăţişaţi prin sămânţa căzută în pământ bun. Aceştia sunt cei ce aud cuvântul, îl primesc, şi fac rod: unul de treizeci de ori mai mult, altul de şaizeci de ori şi altul de o sută de ori.``",
+          "text": "20Alţii apoi sunt înfăţişaţi prin sămânţa căzută în pământ bun. Aceştia sunt cei ce aud cuvântul, îl primesc, şi fac rod: unul de treizeci de ori mai mult, altul de şaizeci de ori şi altul de o sută de ori.”",
           "noteRefs": []
         }
       ]
@@ -899,7 +918,8 @@
         {
           "type": "verse",
           "text": "1El a mai zis: „Cu Împărăţia lui Dumnezeu este ca și atunci când aruncă un om sămânţa în pământ; fie că doarme noaptea,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -928,7 +948,8 @@
         {
           "type": "verse",
           "text": "1El a zis: „Cu ce vom asemăna Împărăția lui Dumnezeu? Sau prin ce parabolă îl vom prezenta?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -962,7 +983,8 @@
         {
           "type": "verse",
           "text": "1În aceeași zi, la sosirea serii, Isus le-a zis: „Să trecem de cealaltă parte.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -986,12 +1008,12 @@
         },
         {
           "type": "verse",
-          "text": "6Apoi le-a zis: „Pentru ce sunteţi aşa de fricoşi? Cum de nu aveţi credinţă?”",
+          "text": "6Apoi le-a zis: „De ce sunteţi aşa de fricoşi? Cum de nu aveţi credinţă?”",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "7I-a apucat o mare frică, şi ziceau unii către alţii: „Cine este oare acesta de îl ascultă chiar şi vântul şi marea?``",
+          "text": "7I-a apucat o mare frică, şi ziceau unii către alţii: „Cine este oare acesta de îl ascultă chiar şi vântul şi marea?”",
           "noteRefs": []
         }
       ]
@@ -1008,7 +1030,8 @@
           "text": "1Au ajuns de cealaltă parte a mării, în zona gherasenilor.*",
           "noteRefs": [
             47
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1129,7 +1152,8 @@
         {
           "type": "verse",
           "text": "1După ce Isus a trecut iarăşi de cealaltă parte, cu corabia, s-a adunat o mare mulțime în jurul lui; el era lângă mare.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1138,7 +1162,7 @@
         },
         {
           "type": "verse",
-          "text": "3şi i-a făcut următoarea rugăminte stăruitoare: „Fetiţa mea este aproape de moarte; rogu-te, vino de-ți pune mâinile peste ea, ca să se facă sănătoasă şi să trăiască.”",
+          "text": "3şi i-a făcut următoarea rugăminte stăruitoare: „Fetiţa mea este aproape de moarte; te rog, vino de-ți pune mâinile peste ea, ca să se facă sănătoasă şi să trăiască.”",
           "noteRefs": []
         },
         {
@@ -1154,7 +1178,8 @@
         {
           "type": "verse",
           "text": "5Acolo se afla și o femeie, care de doisprezece ani avea o scurgere de sânge. Ea a suferit multe, de la mulţi doctori; a cheltuit tot ce avea, şi nu a simţit nici o uşurare; ba încă îi era mai rău.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1203,8 +1228,9 @@
         },
         {
           "type": "verse",
-          "text": "15Pe când vorbea el încă, iată că au venit nişte oameni de la fruntaşul sinagogii, și i-au spus: „Fiica ta a murit; de ce mai superi pe Învăţătorul?``",
-          "noteRefs": []
+          "text": "15Pe când vorbea el încă, iată că au venit nişte oameni de la fruntaşul sinagogii, și i-au spus: „Fiica ta a murit; de ce mai superi pe Învăţătorul?”",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1266,7 +1292,8 @@
         {
           "type": "verse",
           "text": "1Isus a plecat de acolo. S-a dus în zona lui, iar ucenicii lui l-au urmat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1305,7 +1332,8 @@
         {
           "type": "verse",
           "text": "1Atunci a chemat la sine pe cei doisprezece, şi a început să-i trimită doi câte doi, dându-le autoritate asupra duhurilor necurate.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1349,7 +1377,8 @@
         {
           "type": "verse",
           "text": "1Regele Irod a auzit vorbindu-se despre Isus, al cărui nume a ajuns cunoscut; şi a zis: „Ioan Botezătorul a înviat din morţi, şi de aceea lucrează aceste puteri prin el.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1410,7 +1439,7 @@
         },
         {
           "type": "verse",
-          "text": "13Regele s-a întristat deosebit de mult; dar, din pricina jurămintelor sale şi din pricina oaspeţilor, n-a vrut să zică nu.",
+          "text": "13Regele s-a întristat deosebit de mult; dar, din cauza jurămintelor sale şi din cauza oaspeţilor, n-a vrut să zică nu.",
           "noteRefs": []
         },
         {
@@ -1543,7 +1572,8 @@
         {
           "type": "verse",
           "text": "1Imediat Isus le-a cerut ucenicilor săi să se urce în corabie, şi să treacă înaintea lui de cealaltă parte, spre Betsaida. În timpul acesta, el avea să dea drumul poporului.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1600,7 +1630,8 @@
         {
           "type": "verse",
           "text": "1După ce au trecut marea, au venit în zona Ghenezaretului, şi au ancorat la țărm.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1629,7 +1660,8 @@
         {
           "type": "verse",
           "text": "1Fariseii şi unii cărturari, veniţi din Ierusalim, s-au adunat la Isus.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1716,7 +1748,8 @@
         {
           "type": "verse",
           "text": "1El a chemat din nou toată mulțimea la sine, şi le-a zis: „Ascultaţi-mă toţi şi înţelegeţi.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
