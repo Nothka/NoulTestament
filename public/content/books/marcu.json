@@ -309,7 +309,8 @@
         {
           "type": "verse",
           "text": "7Isus s-a întors din nou în Capernaum, după câteva zile, și s-a auzit că este în casă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2033,7 +2034,8 @@
         {
           "type": "verse",
           "text": "1A venit la Betsaida; au adus la el un orb, şi l-au rugat să se atingă de el.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2063,7 +2065,8 @@
         {
           "type": "verse",
           "text": "6Isus a plecat cu ucenicii săi în satele Cezareii lui Filip. Pe drum i-a întrebat pe ucenici: „Cine zic oamenii că sunt eu?``",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2120,7 +2123,8 @@
         {
           "type": "verse",
           "text": "4Apoi a chemat mulțimea la el, împreună cu ucenicii săi, şi le-a zis: „Dacă voieşte cineva să vină după mine, să se lepede de sine însuşi, să-şi ia crucea, şi să mă urmeze.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2229,7 +2233,8 @@
         {
           "type": "verse",
           "text": "1Când au ajuns la ucenici, au văzut o mare mulțime împrejurul lor şi pe cărturari întrebându-se cu ei.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2253,7 +2258,7 @@
         },
         {
           "type": "verse",
-          "text": "6„O neam necredincios!`` le-a zis Isus. „Până când voi fi cu voi? Până când vă voi suporta? Aduceţi-l la mine.”",
+          "text": "6„O neam necredincios!” le-a zis Isus. „Până când voi fi cu voi? Până când vă voi suporta? Aduceţi-l la mine.”",
           "noteRefs": []
         },
         {
@@ -2273,7 +2278,7 @@
         },
         {
           "type": "verse",
-          "text": "10Isus a răspuns: „Tu zici:,Dacă poţi!`... Toate lucrurile sunt posibile celui ce crede!``",
+          "text": "10Isus a răspuns: „Tu zici:,Dacă poţi!`... „Toate lucrurile sunt posibile celui ce crede!”",
           "noteRefs": []
         },
         {
@@ -2283,7 +2288,7 @@
         },
         {
           "type": "verse",
-          "text": "12Când a văzut Isus că poporul vine în fuga mare spre el, a mustrat duhul necurat, şi i-a zis: „Duh mut şi surd, îţi poruncesc să ieşi afară din copilul acesta, şi să nu mai intri în el.``",
+          "text": "12Când a văzut Isus că poporul vine în fuga mare spre el, a mustrat duhul necurat, şi i-a zis: „Duh mut şi surd, îţi poruncesc să ieşi afară din copilul acesta, şi să nu mai intri în el”.",
           "noteRefs": []
         },
         {
@@ -2298,7 +2303,7 @@
         },
         {
           "type": "verse",
-          "text": "15Când a intrat Isus în casă, ucenicii lui l-au întrebat deoparte: „Noi de ce n-am putut să scoatem duhul acesta?``",
+          "text": "15Când a intrat Isus în casă, ucenicii lui l-au întrebat deoparte: „Noi de ce n-am putut să scoatem duhul acesta?”",
           "noteRefs": []
         },
         {
@@ -2555,7 +2560,8 @@
         {
           "type": "verse",
           "text": "1Pe când era gata să pornească la drum, a alergat la el un om, care a îngenuncheat înaintea lui, şi l-a întrebat: „Bunule Învăţător, ce să fac ca să moştenesc viaţa veșnică?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2614,8 +2620,9 @@
         },
         {
           "type": "verse",
-          "text": "12Petru a început să-i zică: „Iată că noi am lăsat totul, şi te-am urmat.``",
-          "noteRefs": []
+          "text": "12Petru a început să-i zică: „Iată că noi am lăsat totul, şi te-am urmat”.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2644,7 +2651,8 @@
         {
           "type": "verse",
           "text": "1Ei erau pe drum mergând la Ierusalim; şi Isus mergea înaintea lor. Ucenicii erau uimiţi; iar cei care îi urmau erau temători. Isus a luat din nou la el pe cei doisprezece şi a început să le vorbească despre lucrurile care aveau să i se întâmple.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2668,7 +2676,8 @@
         {
           "type": "verse",
           "text": "1Fiii lui Zebedei, Iacov şi Ioan, au venit aproape de el şi i-au zis: „Învăţătorule, am dori să faci pentru noi ce-ți vom cere”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2727,7 +2736,8 @@
         {
           "type": "verse",
           "text": "1Au venit la Ierihon. Şi pe când ieşea Isus din Ierihon cu ucenicii săi, şi cu o mare mulţime de oameni, fiul lui Timeu, Bartimeu, un cerşetor orb, şedea jos lângă drum.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2779,7 +2789,8 @@
         {
           "type": "verse",
           "text": "1Când s-au apropiat de Ierusalim, şi au fost lângă Betfaghe şi Betania, lângă Muntele Măslinilor, Isus a trimis pe doi din ucenicii săi,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2871,7 +2882,8 @@
         {
           "type": "verse",
           "text": "1Au ajuns în Ierusalim, iar Isus a intrat în templu, și a început să scoată afară pe cei ce vindeau şi cumpărau în templu; a răsturnat mesele schimbătorilor de bani, şi scaunele celor ce vindeau porumbei.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2905,7 +2917,8 @@
         {
           "type": "verse",
           "text": "1Dimineaţa, când treceau pe lângă smochin, ucenicii l-au văzut uscat din rădăcini.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2949,7 +2962,8 @@
         {
           "type": "verse",
           "text": "1S-au dus din nou în Ierusalim, și pe când Isus umbla prin templu, au venit la el preoţii de frunte, cărturarii şi bătrânii,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2993,7 +3007,8 @@
         {
           "type": "verse",
           "text": "1Isus a început să le vorbească în parabole. „Un om a sădit o vie. A împrejmuit-o cu un gard, a săpat un teasc în ea, şi a zidit un turn; apoi a arendat-o unui fermier şi a plecat din ţară.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3012,7 +3027,7 @@
         },
         {
           "type": "verse",
-          "text": "5A mai trimis un altul, pe care l-au omorât; apoi a trimis mulţi alţii, dintre care, pe unii i-au bătut, iar pe alţii i-au omorât.",
+          "text": "5A mai trimis un altul, pe care l-au ucis; apoi a trimis mulţi alţii, dintre care, pe unii i-au bătut, iar pe alţii i-au ucis.",
           "noteRefs": []
         },
         {
@@ -3062,7 +3077,8 @@
         {
           "type": "verse",
           "text": "1Au trimis la Isus pe unii din farisei şi din irodieni, ca să-l prindă cu vorba.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
