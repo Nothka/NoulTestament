@@ -1710,7 +1710,7 @@
         },
         {
           "type": "verse",
-          "text": "11Voi, dimpotrivă, ziceţi: „Dacă un om va spune tatălui său sau mamei sale:,Ori cu ce te-aş putea ajuta, este,corban`",
+          "text": "11Voi, dimpotrivă, ziceţi: „Dacă un om va spune tatălui său sau mamei sale: ,Ori cu ce te-aş putea ajuta, este „corban”",
           "noteRefs": []
         },
         {
@@ -1808,7 +1808,8 @@
         {
           "type": "verse",
           "text": "1De acolo Isus s-a ridicat și a plecat în zona Tirului şi a Sidonului. A intrat într-o casă, dorind să nu ştie nimeni că este acolo; dar n-a putut să rămână neobservat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1848,7 +1849,8 @@
         {
           "type": "verse",
           "text": "8Isus a părăsit din nou zona Tirului, şi a Sidonului și a venit la marea Galileii, trecând prin mijlocul zonei Decapolis.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1904,17 +1906,17 @@
         },
         {
           "type": "verse",
-          "text": "3Dacă le voi da drumul acasă flămînzi, au să leşine de foame pe drum, fiindcă unii din ei au venit de departe.``",
+          "text": "3Dacă le voi da drumul acasă flămînzi, au să leşine de foame pe drum, fiindcă unii din ei au venit de departe.”",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "4Ucenicii i-au răspuns: „Cum ar putea cineva să sature cu pâine pe oamenii aceştia, aici într-un loc pustiu?``",
+          "text": "4Ucenicii i-au răspuns: Cum ar putea cineva să sature cu pâine pe oamenii aceştia, aici într-un loc pustiu?",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "5„Câte pâini aveţi?`` i-a întrebat Isus. Ei i-au răspuns: șapte.",
+          "text": "5„Câte pâini aveţi?” i-a întrebat Isus. Ei i-au răspuns: șapte.",
           "noteRefs": []
         },
         {
@@ -2157,7 +2159,8 @@
         {
           "type": "verse",
           "text": "1După şase zile, Isus a luat cu el pe Petru, pe Iacov şi pe Ioan, şi i-a dus singuri la o parte pe un munte înalt. Acolo s-a schimbat la faţă înaintea lor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2171,7 +2174,7 @@
         },
         {
           "type": "verse",
-          "text": "4Petru a zis lui Isus: „Învăţătorule, este bine să stăm aici; să facem trei colibi: una pentru tine, una pentru Moise, şi una pentru Ilie.``",
+          "text": "4Petru a zis lui Isus: „Învăţătorule, este bine să stăm aici; să facem trei colibi: una pentru tine, una pentru Moise, şi una pentru Ilie”.",
           "noteRefs": []
         },
         {
@@ -2201,7 +2204,7 @@
         },
         {
           "type": "verse",
-          "text": "10Ucenicii i-au pus următoarea întrebare: „Pentru ce zic cărturarii că trebuie să vină întâi Ilie?”",
+          "text": "10Ucenicii i-au pus următoarea întrebare: „De ce zic cărturarii că trebuie să vină întâi Ilie?”",
           "noteRefs": []
         },
         {
@@ -2315,11 +2318,12 @@
         {
           "type": "verse",
           "text": "1Au plecat de acolo, şi au trecut prin Galileea. Isus nu voia să ştie nimeni că trece.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
-          "text": "2Căci învăţa pe ucenicii săi, şi zicea: „Fiul omului va fi dat în mâinile oamenilor; ei îl vor ucide, dar a treia zi după ce-l vor ucide, va învia.``",
+          "text": "2Căci învăţa pe ucenicii săi, şi zicea: „Fiul omului va fi dat în mâinile oamenilor; ei îl vor ucide, dar a treia zi după ce-l vor ucide, va învia.”",
           "noteRefs": []
         },
         {
@@ -2335,7 +2339,8 @@
         {
           "type": "verse",
           "text": "4Apoi au venit la Capernaum. Când era în casă, Isus i-a întrebat: „Despre ce ați discutat unul cu altul pe drum?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2369,7 +2374,8 @@
         {
           "type": "verse",
           "text": "1Ioan i-a zis: „Învăţătorule, noi am văzut pe un om scoţând demoni în numele tău; şi l-am oprit, pentru că nu venea după noi”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2394,7 +2400,8 @@
         {
           "type": "verse",
           "text": "5Dar, dacă va face cineva să păcătuiască pe unul din aceşti micuţi, care cred în mine, ar fi mai bine pentru el să i se lege de gât o piatră mare de moară şi să fie aruncat în mare.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2448,7 +2455,8 @@
         {
           "type": "verse",
           "text": "1Isus a plecat de acolo, şi a mers în zona Iudeei, și dincolo de Iordan. Mulțimea s-a adunat din nou la el. El a început iarăşi să-i înveţe, după cum obișnuia.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2457,7 +2465,7 @@
         },
         {
           "type": "verse",
-          "text": "3El le-a răspuns: „Ce v-a poruncit Moise?``",
+          "text": "3El le-a răspuns: „Ce v-a poruncit Moise?”",
           "noteRefs": []
         },
         {
@@ -2517,7 +2525,8 @@
         {
           "type": "verse",
           "text": "1I-au adus nişte copilaşi, ca să se atingă de ei, dar ucenicii au mustrat pe cei ce îi aduceau.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2526,7 +2535,7 @@
         },
         {
           "type": "verse",
-          "text": "3Adevărat vă spun că, oricine nu va primi Împărăţia lui Dumnezeu ca un copilaş, cu nici un chip nu va intra în ea!``",
+          "text": "3Adevărat vă spun că, oricine nu va primi Împărăţia lui Dumnezeu ca un copilaş, cu nici un chip nu va intra în ea!”",
           "noteRefs": []
         },
         {
