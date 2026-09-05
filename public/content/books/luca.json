@@ -1545,7 +1545,8 @@
         {
           "type": "verse",
           "text": "1Ei i-au zis: „Ucenicii lui Ioan, ca şi ai fariseilor, postesc des şi fac rugăciuni, pe când ai tăi mănâncă şi beau.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1565,7 +1566,8 @@
         {
           "type": "verse",
           "text": "4Le-a spus şi o parabolă: „Nimeni nu rupe un petec dintr-o haină nouă, ca să-l pună la o haină veche; căci în felul acesta, rupe şi haina cea nouă, şi nici petecul luat de la ea nu se potriveşte la cea veche.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1593,8 +1595,9 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1În Sabatul următor, Isus trecea prin lanurile de grâu. Ucenicii lui smulgeau spice de grâu, le frecau în mâini şi le mâncau.",
-          "noteRefs": []
+          "text": "1În sabatul următor, Isus trecea prin lanurile de grâu. Ucenicii lui smulgeau spice de grâu, le frecau în mâini şi le mâncau.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1624,7 +1627,8 @@
         {
           "type": "verse",
           "text": "6În altă zi de Sabat, s-a întâmplat că Isus a intrat în sinagogă şi îi învăţa. Acolo era un om care avea mâna dreaptă uscată.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1663,7 +1667,8 @@
         {
           "type": "verse",
           "text": "1În zilele acelea, Isus s-a dus la munte să se roage şi a petrecut toată noaptea în rugăciune către Dumnezeu.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1693,7 +1698,8 @@
         {
           "type": "verse",
           "text": "6S-a coborât împreună cu ei şi s-a oprit într-un podiş unde se aflau mulţi ucenici de-ai lui şi o mare mulţime de oameni, din toată Iudeea, din Ierusalim şi de pe lângă marea Tirului şi a Sidonului veniți să-l asculte şi să fie vindecaţi de bolile lor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1717,7 +1723,8 @@
         {
           "type": "verse",
           "text": "1Atunci Isus și-a ridicat ochii spre ucenicii săi şi a zis: „Ferice de voi care sunteţi săraci, pentru că Împărăţia lui Dumnezeu este a voastră!",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1761,7 +1768,8 @@
         {
           "type": "verse",
           "text": "1Dar eu vă spun vouă care mă ascultaţi: Iubiţi pe vrăjmaşii voştri, faceţi bine celor ce vă urăsc,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1820,7 +1828,8 @@
         {
           "type": "verse",
           "text": "1Nu judecaţi, şi nu veţi fi judecaţi; nu condamnaţi, şi nu veţi fi condamnaţi; iertaţi, şi vi se va ierta.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1879,7 +1888,8 @@
         {
           "type": "verse",
           "text": "1De ce-mi ziceţi: „Doamne, Doamne!”, şi nu faceţi ce spun eu?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1893,7 +1903,7 @@
         },
         {
           "type": "verse",
-          "text": "4Dar cine aude, şi nu face, se aseamănă cu un om care a zidit o casă pe pământ, fără fundație. Torentul a izbit-o, și ea s-a prăbuşit imediat, și a fost distrusă complet.”",
+          "text": "4Dar cine aude, şi nu face, se aseamănă cu un om care a zidit o casă pe pământ, fără fundație. Torentul a izbit-o, și ea s-a prăbuşit imediat, și a fost distrusă complet”.",
           "noteRefs": []
         }
       ]
@@ -1908,7 +1918,8 @@
         {
           "type": "verse",
           "text": "1După ce a terminat de vorbit înaintea oamenilor, Isus a intrat în Capernaum.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1977,7 +1988,8 @@
           "text": "1La scurt timp după aceea, Isus mergea către un oraș numit Nain.* Împreună cu el mergeau unii din ucenicii lui şi o mulțime mare.",
           "noteRefs": [
             81
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2027,7 +2039,8 @@
         {
           "type": "verse",
           "text": "1Ucenicii lui Ioan i-au spus învăţătorului lor despre toate aceste lucruri.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2061,8 +2074,9 @@
         },
         {
           "type": "verse",
-          "text": "7După ce au plecat trimişii lui Ioan, Isus a început să vorbească mulțimii despre Ioan: „Ce aţi ieşit să vedeţi în pustiu? O trestie clătinată de vânt?",
-          "noteRefs": []
+          "text": "7După ce trimişii lui Ioan au plecat, Isus a început să vorbească mulțimii despre Ioan: „Ce aţi ieşit să vedeţi în pustiu? O trestie clătinată de vânt?",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2102,7 +2116,8 @@
         {
           "type": "verse",
           "text": "14Cu cine voi asemăna, dar, pe oamenii din generația aceasta? Şi cu cine seamănă ei?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2121,7 +2136,7 @@
         },
         {
           "type": "verse",
-          "text": "18Totuşi înţelepciunea este îndreptățită de toţi copiii ei.”",
+          "text": "18Totuşi înţelepciunea este îndreptățită de toţi copiii ei”.",
           "noteRefs": []
         }
       ]
@@ -2138,7 +2153,8 @@
           "text": "1Unul din farisei a rugat pe Isus să mănânce la el. Isus a intrat în casa fariseului şi stătea rezemat la masă*",
           "noteRefs": [
             82
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2209,7 +2225,7 @@
         },
         {
           "type": "verse",
-          "text": "15Dar Isus a zis femeii: „Credinţa ta te-a mântuit; du-te în pace.”",
+          "text": "15Dar Isus a zis femeii: „Credinţa ta te-a mântuit; du-te în pace”.",
           "noteRefs": []
         }
       ],
@@ -2234,7 +2250,8 @@
         {
           "type": "verse",
           "text": "1Curând după aceea, Isus umbla din oraș în oraș şi din sat în sat predicând şi vestind Evanghelia Împărăţiei lui Dumnezeu. Cei doisprezece erau cu el;",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2268,7 +2285,7 @@
         },
         {
           "type": "verse",
-          "text": "8O altă parte a căzut pe pământ bun, a crescut şi a făcut rod însutit.” După ce a spus aceste lucruri, Isus a strigat: „Cine are urechi de auzit să audă.”",
+          "text": "8O altă parte a căzut pe pământ bun, a crescut şi a făcut rod însutit.” După ce a spus aceste lucruri, Isus a strigat: „Cine are urechi de auzit să audă”.",
           "noteRefs": []
         },
         {
@@ -2279,7 +2296,8 @@
         {
           "type": "verse",
           "text": "9Ucenicii lui l-au întrebat ce înţeles are parabola aceasta.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2323,7 +2341,8 @@
         {
           "type": "verse",
           "text": "1Nimeni, după ce a aprins o lumină, n-o acoperă cu un vas, nici n-o pune sub pat, ci o pune pe un suport, pentru ca cei ce intră să vadă lumina.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2332,7 +2351,7 @@
         },
         {
           "type": "verse",
-          "text": "3Luaţi seama, dar, la felul cum ascultaţi; căci celui ce are, i se va da; dar celui ce n-are, i se va lua şi ce i se pare că are.”",
+          "text": "3Luaţi seama, dar, la felul cum ascultaţi; căci celui ce are, i se va da; dar celui ce n-are, i se va lua şi ce i se pare că are”.",
           "noteRefs": []
         }
       ]
@@ -2356,7 +2375,7 @@
         },
         {
           "type": "verse",
-          "text": "3Dar el le-a răspuns: „Mama mea şi fraţii mei sunt cei care ascultă Cuvântul lui Dumnezeu şi-l împlinesc.”",
+          "text": "3Dar el le-a răspuns: „Mama mea şi fraţii mei sunt cei care ascultă Cuvântul lui Dumnezeu şi-l împlinesc”.",
           "noteRefs": []
         },
         {
@@ -2367,7 +2386,8 @@
         {
           "type": "verse",
           "text": "4Într-una din acele zile, Isus s-a urcat într-o corabie împreună cu ucenicii lui. El le-a zis: „Haidem să trecem dincolo, de cealaltă parte a lacului.” Şi au plecat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2396,7 +2416,8 @@
         {
           "type": "verse",
           "text": "1Au venit cu corabia în ţinutul gherasenilor, care este în dreptul Galileei.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2483,7 +2504,8 @@
         {
           "type": "verse",
           "text": "1La întoarcere, Isus a fost primit cu bucurie de mulţime, căci toţi îl aşteptau.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2503,7 +2525,8 @@
         {
           "type": "verse",
           "text": "4Şi era o femeie care de doisprezece ani avea o scurgere de sânge; ea îşi cheltuise toată averea cu doctorii, fără s-o fi putut vindeca vreunul.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2527,7 +2550,7 @@
         },
         {
           "type": "verse",
-          "text": "9Isus i-a zis: „Îndrăzneşte, fiică. Credinţa ta te-a mântuit. Du-te în pace.”",
+          "text": "9Isus i-a zis: „Îndrăzneşte, fiică. Credinţa ta te-a mântuit. Du-te în pace”.",
           "noteRefs": []
         },
         {
@@ -2538,7 +2561,8 @@
         {
           "type": "verse",
           "text": "10Pe când vorbea el încă, a venit cineva din casa conducătorului sinagogii şi i-a spus: „Fiica ta a murit, nu mai supăra pe Învăţătorul.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2587,7 +2611,8 @@
         {
           "type": "verse",
           "text": "1Isus a chemat pe cei doisprezece, și le-a dat putere şi autoritate peste toţi demonii, şi să vindece bolile.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2622,7 +2647,8 @@
         {
           "type": "verse",
           "text": "7Tetrarhul Irod a auzit vorbindu-se despre toate lucrurile făcute de Isus, şi era foarte nelămurit, deoarece unii spuneau că Ioan înviat din morţi,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2646,7 +2672,8 @@
         {
           "type": "verse",
           "text": "1Apostolii, când s-au întors, au istorisit lui Isus tot ce au făcut. El i-a luat cu sine şi s-a dus la o parte, lângă un oraș numit Betsaida.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2730,7 +2757,8 @@
         {
           "type": "verse",
           "text": "6Apoi a zis tuturor: „Dacă voieşte cineva să vină după mine, să renunțe la sine, să-şi ia crucea în fiecare zi şi să mă urmeze.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2749,10 +2777,11 @@
         },
         {
           "type": "verse",
-          "text": "10Adevărat vă spun, că sunt unii din cei ce stau aici, care nu vor gusta nicidecum moartea, până nu vor vedea Împărăţia lui Dumnezeu.”",
+          "text": "10Adevărat vă spun, că sunt unii din cei ce stau aici, care nu vor gusta nicidecum moartea, până nu vor vedea Împărăţia lui Dumnezeu”.",
           "noteRefs": []
         }
-      ]
+      ],
+      "titleSpaceBefore": 0.75
     },
     {
       "id": "luca-37",
@@ -2764,7 +2793,8 @@
         {
           "type": "verse",
           "text": "1Cam la opt zile după cuvintele acestea, Isus a luat cu el pe Petru, pe Ioan şi pe Iacov şi s-a urcat pe munte să se roage.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2818,7 +2848,8 @@
         {
           "type": "verse",
           "text": "1A doua zi, când s-au coborât de pe munte, o mulțime mare a întâmpinat pe Isus.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2858,7 +2889,8 @@
         {
           "type": "verse",
           "text": "8Dar în timp ce toţi se minunau de tot ce făcea Isus, el a zis ucenicilor săi: „Să țineți minte bine ce vă spun: Fiul omului va fi dat în mâinile oamenilor!”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2877,7 +2909,8 @@
         {
           "type": "verse",
           "text": "1Apoi a apărut o discuție între ei ca să ştie care dintre ei ar fi cel mai mare.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2896,7 +2929,7 @@
         },
         {
           "type": "verse",
-          "text": "5„Nu-l opriţi”, i-a răspuns Isus, „fiindcă cine nu este împotriva noastră este pentru noi.”",
+          "text": "5„Nu-l opriţi”, i-a răspuns Isus, „fiindcă cine nu este împotriva noastră este pentru noi”.",
           "noteRefs": []
         }
       ]
@@ -2911,7 +2944,8 @@
         {
           "type": "verse",
           "text": "1S-a întâmplat că atunci când s-a apropiat timpul ca Isus să fie luat în cer, el și-a îndreptat faţa hotărât să meargă la Ierusalim.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2950,7 +2984,8 @@
         {
           "type": "verse",
           "text": "1Pe când erau pe drum, un om i-a zis: „Doamne, te voi urma oriunde vei merge.” 2. Isus i-a răspuns: „Vulpile au vizuini, şi păsările cerului au cuiburi; dar Fiul omului n-are unde-și odihni capul.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2969,7 +3004,7 @@
         },
         {
           "type": "verse",
-          "text": "6Isus i-a răspuns: „Oricine pune mâna pe plug, şi se uită înapoi, nu este destoinic pentru Împărăţia lui Dumnezeu.”",
+          "text": "6Isus i-a răspuns: „Oricine pune mâna pe plug, şi se uită înapoi, nu este destoinic pentru Împărăţia lui Dumnezeu”.",
           "noteRefs": []
         }
       ]
@@ -3083,7 +3118,8 @@
         {
           "type": "verse",
           "text": "1Cei şaptezeci s-au întors plini de bucurie şi au zis: „Doamne, chiar şi demonii ne sunt supuşi în numele tău.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3107,7 +3143,7 @@
         },
         {
           "type": "verse",
-          "text": "6Toate lucrurile mi-au fost date în mâini de Tatăl meu; şi nimeni nu ştie cine este Fiul, afară de Tatăl, nici cine este Tatăl, afară de Fiul şi acela căruia vrea Fiul să i-l descopere.”",
+          "text": "6Toate lucrurile mi-au fost date în mâini de Tatăl meu; şi nimeni nu ştie cine este Fiul, afară de Tatăl, nici cine este Tatăl, afară de Fiul şi acela căruia vrea Fiul să i-l descopere”.",
           "noteRefs": []
         },
         {
@@ -3117,7 +3153,7 @@
         },
         {
           "type": "verse",
-          "text": "8Căci vă spun că mulţi profeți şi regi au voit să vadă ce vedeţi voi, şi n-au văzut, să audă ce auziţi voi, şi n-au auzit.”",
+          "text": "8Căci vă spun că mulţi profeți şi regi au voit să vadă ce vedeţi voi, şi n-au văzut, să audă ce auziţi voi, şi n-au auzit”.",
           "noteRefs": []
         }
       ]
