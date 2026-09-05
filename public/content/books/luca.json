@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Deoarece mulţi au început să alcătuiască o expunere despre lucrurile care s-au desfășurat printre noi,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -165,7 +166,8 @@
         {
           "type": "verse",
           "text": "1În luna a şasea, îngerul Gabriel a fost trimis de Dumnezeu într-un oraș din Galileea, numit Nazaret,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -239,7 +241,8 @@
         {
           "type": "verse",
           "text": "1Maria s-a ridicat în zilele acelea şi a plecat în grabă spre munţi, într-un oraș a lui Iuda.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -268,7 +271,7 @@
         },
         {
           "type": "verse",
-          "text": "7Ferice de aceea care a crezut; pentru că lucrurile care i-au fost spuse din partea Domnului se vor împlini.”",
+          "text": "7Ferice de aceea care a crezut; pentru că lucrurile care i-au fost spuse din partea Domnului se vor împlini”.",
           "noteRefs": []
         },
         {
@@ -279,7 +282,8 @@
         {
           "type": "verse",
           "text": "8Maria a zis: „Sufletul meu laudă pe Domnul",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -343,7 +347,8 @@
         {
           "type": "verse",
           "text": "1A sosit timpul ca Elisabeta să nască, şi a născut un fiu.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -372,7 +377,7 @@
         },
         {
           "type": "verse",
-          "text": "7Zaharia a cerut o tăbliţă de scris, şi a scris: „Numele lui este Ioan.” Toţi s-au minunat.",
+          "text": "7Zaharia a cerut o tăbliţă de scris, şi a scris: „Numele lui este Ioan”. Toţi s-au minunat.",
           "noteRefs": []
         },
         {
@@ -402,7 +407,8 @@
         {
           "type": "verse",
           "text": "1Zaharia, tatăl lui, s-a umplut de Duhul Sfânt, a profețit şi a zis:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -446,7 +452,7 @@
         },
         {
           "type": "verse",
-          "text": "10Şi tu, pruncule, vei fi numit profet al Celui Preaînalt. Căci vei merge înaintea feței Domnului, ca să pregăteşti căile lui,",
+          "text": "10Şi tu, copilașule, vei fi numit profet al Celui Preaînalt. Căci vei merge înaintea feței Domnului, ca să pregăteşti căile lui,",
           "noteRefs": []
         },
         {
@@ -483,7 +489,8 @@
           "text": "1În zilele acelea s-a dat un decret de la Cezar August* să se înregistreze toată lumea.",
           "noteRefs": [
             70
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -539,7 +546,8 @@
         {
           "type": "verse",
           "text": "1În ţinutul acela erau nişte păstori care stăteau noaptea afară în câmp, şi vegheau turma lor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -621,7 +629,8 @@
         {
           "type": "verse",
           "text": "1După trecerea celor opt zile, când copilul trebuia tăiat împrejur, i-au pus numele Isus, nume care fusese spus de înger înainte ca să fi fost el conceput în abdomen.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -753,7 +762,8 @@
         {
           "type": "verse",
           "text": "1Părinţii lui Isus se duceau la Ierusalim în fiecare an, la sărbătoarea Paştilor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -833,7 +843,8 @@
           "noteRefs": [
             75,
             76
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -969,7 +980,8 @@
         {
           "type": "verse",
           "text": "1După ce a fost botezat tot poporul, a fost botezat şi Isus; şi pe când se ruga, s-a deschis cerul,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1078,7 +1090,8 @@
         {
           "type": "verse",
           "text": "1Isus, plin de Duhul Sfânt, s-a întors de la Iordan şi a fost condus de Duhul în pustiu,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1152,7 +1165,8 @@
         {
           "type": "verse",
           "text": "1Isus, aflându-se sub puterea Duhului, s-a întors în Galileea şi i s-a dus vestea în toată zona dimprejur.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1246,7 +1260,8 @@
         {
           "type": "verse",
           "text": "1S-a coborât la Capernaum, un oraș din Galileea. Acolo îi învăţa pe oameni în ziua de sabat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1286,7 +1301,8 @@
         {
           "type": "verse",
           "text": "8După ce a ieşit din sinagogă, a intrat în casa lui Simon. Soacra lui Simon era cuprinsă de febră mare, şi l-au rugat pentru ea.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1330,7 +1346,8 @@
         {
           "type": "verse",
           "text": "1Pe când mulțimea se înghesuia să audă Cuvântul lui Dumnezeu,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1394,7 +1411,8 @@
         {
           "type": "verse",
           "text": "1În timp ce Isus era într-un oraș, iată, că acolo era un om plin de lepră. Când l-a văzut pe Isus, s-a aruncat cu faţa la pământ, și l-a rugat zicând: „Doamne, dacă vrei, poţi să mă cureţi.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1424,7 +1442,8 @@
         {
           "type": "verse",
           "text": "6Într-una din acele zile, Isus învăţa; acolo erau și nişte farisei şi învăţători ai legii, care veniseră din toate satele Galileii şi Iudeii şi din Ierusalim; iar puterea Domnului era cu el, ca să vindece.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1491,7 +1510,8 @@
         {
           "type": "verse",
           "text": "1După aceste lucruri el a ieşit afară şi a văzut pe un vameş, numit Levi, şezând la vamă. Şi i-a zis: „Urmează-mă!”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
