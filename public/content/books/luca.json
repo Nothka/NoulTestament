@@ -3168,7 +3168,8 @@
         {
           "type": "verse",
           "text": "1Iată că un învăţător al legii s-a sculat să ispitească pe Isus şi i-a zis: „Învăţătorule, ce să fac ca să moştenesc viaţa veşnică?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3256,7 +3257,8 @@
         {
           "type": "verse",
           "text": "1Pe când era pe drum, cu ucenicii săi, Isus a intrat într-un sat. Şi o femeie, numită Marta, l-a primit în casa ei.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3275,7 +3277,7 @@
         },
         {
           "type": "verse",
-          "text": "5dar un singur lucru trebuie. Maria şi-a ales partea cea bună, care nu i se va lua.”",
+          "text": "5dar un singur lucru trebuie. Maria şi-a ales partea cea bună, care nu i se va lua”.",
           "noteRefs": []
         }
       ]
@@ -3290,11 +3292,12 @@
         {
           "type": "verse",
           "text": "1Odată, pe când Isus se afla într-un anumit loc, și și-a terminat rugăciunea, unul din ucenicii lui i-a zis: „Doamne, învaţă-ne să ne rugăm, cum a învăţat şi Ioan pe ucenicii lui.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
-          "text": "2El le-a zis: „Când vă rugaţi, să ziceţi: Tatăl nostru care eşti în ceruri! Sfinţească-se Numele tău; vie Împărăţia ta; facă-se voia ta, precum în cer, aşa şi pe pământ. 3. Pâinea noastră cea de toate zilele dă-ne-o nouă în fiecare zi; 4. şi ne iartă nouă păcatele noastre, fiindcă şi noi iertăm oricui ne este dator; şi nu ne duce în ispită, ci izbăveşte-ne de cel rău.”",
+          "text": "2El le-a zis: „Când vă rugaţi, să ziceţi: Tatăl nostru care eşti în ceruri! Sfinţească-se Numele tău; vie Împărăţia ta; facă-se voia ta, precum în cer, aşa şi pe pământ. 3. Pâinea noastră cea de toate zilele dă-ne-o nouă în fiecare zi; 4. şi ne iartă nouă păcatele noastre, fiindcă şi noi iertăm oricui ne este dator; şi nu ne duce în ispită, ci izbăveşte-ne de cel rău”.",
           "noteRefs": []
         },
         {
@@ -3305,7 +3308,8 @@
         {
           "type": "verse",
           "text": "6Apoi le-a mai zis: „Dacă unul dintre voi are un prieten şi se duce la el la miezul nopţii şi-i zice: „Prietene, împrumută-mi trei pâini,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3359,7 +3363,8 @@
         {
           "type": "verse",
           "text": "1Isus a scos afară un demon care era mut. După ce a ieşit demonul, mutul a vorbit, şi mulțimea s-a minunat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3440,12 +3445,12 @@
         },
         {
           "type": "paragraph",
-          "text": "„Ferice de abdomenul care te-a purtat şi de pieptul pe care le-ai supt!”",
+          "text": "„Ferice de abdomenul care te-a purtat şi de pieptul pe care l-ai supt!”",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "15Şi el a răspuns: „Ferice mai degrabă de cei ce ascultă cuvântul lui Dumnezeu şi-l împlinesc!",
+          "text": "15Şi el a răspuns: „Ferice mai degrabă de cei ce ascultă cuvântul lui Dumnezeu şi-l împlinesc!”",
           "noteRefs": []
         }
       ],
@@ -3466,7 +3471,8 @@
         {
           "type": "paragraph",
           "text": "le-au înțeles",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3500,7 +3506,8 @@
         {
           "type": "verse",
           "text": "1Nimeni, după ce aprinde o lumină, nu o pune într-un loc ascuns, sau sub coș; ci o pune pe suport, pentru ca cei ce intră să vadă lumina.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3514,7 +3521,7 @@
         },
         {
           "type": "verse",
-          "text": "4Aşa că, dacă tot trupul tău este plin de lumină, fără să aibă vreo parte întunecată, va fi luminat cu totul, ca și când te-ar lumina o lampă cu lumina ei strălucitoare.”",
+          "text": "4Aşa că, dacă tot trupul tău este plin de lumină, fără să aibă vreo parte întunecată, va fi luminat cu totul, ca și când te-ar lumina o lampă cu lumina ei strălucitoare”.",
           "noteRefs": []
         }
       ]
