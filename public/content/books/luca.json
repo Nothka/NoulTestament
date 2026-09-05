@@ -3536,7 +3536,8 @@
         {
           "type": "verse",
           "text": "1Pe când vorbea Isus, un anumit fariseu l-a rugat să prânzească la el. El a intrat şi a şezut la masă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3631,7 +3632,8 @@
         {
           "type": "verse",
           "text": "19Între timp, mulțimea s-a adunat cu miile, așa încât se călcau unii pe alții, iar Isus a început să spună ucenicilor săi: „Mai întâi de toate, feriţi-vă de aluatul fariseilor, care este prefăcătoria.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3655,7 +3657,8 @@
         {
           "type": "verse",
           "text": "1Vă spun vouă, prietenii mei: să nu vă temeţi de cei ce ucid trupul, şi după aceea nu mai pot face nimic.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3728,7 +3731,8 @@
         {
           "type": "verse",
           "text": "1Unul din mulţime a zis lui Isus: „Învăţătorule, spune fratelui meu să împartă cu mine moştenirea noastră.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3767,7 +3771,7 @@
         },
         {
           "type": "verse",
-          "text": "9Tot aşa este şi cu cel ce îşi adună comori pentru el, şi nu se îmbogăţeşte faţă de Dumnezeu.”",
+          "text": "9Tot aşa este şi cu cel ce îşi adună comori pentru el, şi nu se îmbogăţeşte faţă de Dumnezeu”.",
           "noteRefs": []
         }
       ]
@@ -3782,7 +3786,8 @@
         {
           "type": "verse",
           "text": "1El a zis apoi ucenicilor săi: „De aceea vă spun: nu vă îngrijoraţi cu privire la viaţa voastră, gândindu-vă ce veţi mânca, nici cu privire la trupul vostru, gândindu-vă cu ce vă veţi îmbrăca.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3846,7 +3851,8 @@
         {
           "type": "verse",
           "text": "1Mijlocul să vă fie încins, şi lămpile aprinse.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3899,7 +3905,8 @@
         {
           "type": "verse",
           "text": "1Petru i-a zis: „Doamne pentru noi spui parabola aceasta sau pentru toţi?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3948,7 +3955,8 @@
         {
           "type": "verse",
           "text": "1Eu am venit să arunc un foc pe pământ. Aș dori să fie aprins deja!",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3967,7 +3975,7 @@
         },
         {
           "type": "verse",
-          "text": "5Tatăl va fi împotriva fiului, şi fiul împotriva tatălui; mama împotriva fiicei, şi fiica împotriva mamei; soacra împotriva nurorii, şi nora împotriva soacrei.”",
+          "text": "5Tatăl va fi împotriva fiului, şi fiul împotriva tatălui; mama împotriva fiicei, şi fiica împotriva mamei; soacra împotriva nurorii, şi nora împotriva soacrei”.",
           "noteRefs": []
         }
       ]
@@ -3982,7 +3990,8 @@
         {
           "type": "verse",
           "text": "1El a mai zis apoi mulțimii: „Când vedeţi un nor ridicându-se la apus, îndată ziceţi: „Vine ploaia.” Şi aşa se întâmplă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4029,7 +4038,8 @@
         {
           "type": "verse",
           "text": "1În vremea aceea au venit unii şi au istorisit lui Isus ce s-a întâmplat unor galileeni, al căror sânge a fost amestecat de Pilat cu sacrificiile lor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4063,11 +4073,12 @@
         {
           "type": "verse",
           "text": "1El a spus şi parabola aceasta: „Un om avea un smochin sădit în via sa. A venit să caute rod în el, şi n-a găsit.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
-          "text": "2Atunci a zis vierului: „Iată că sunt trei ani de când vin şi caut rod în smochinul acesta, şi nu găsesc. Taie-l. De ce să risipim terenul?”",
+          "text": "2Atunci a zis viticultorului: „Iată că sunt trei ani de când vin şi caut rod în smochinul acesta, şi nu găsesc. Taie-l. De ce să risipim terenul?”",
           "noteRefs": []
         },
         {
@@ -4077,7 +4088,7 @@
         },
         {
           "type": "verse",
-          "text": "4Poate că de acum înainte va face rod; dacă nu, după aceea, îl poți tăia.”",
+          "text": "4Poate că de acum înainte va face rod; dacă nu, după aceea, îl poți tăia”.",
           "noteRefs": []
         }
       ]
@@ -4091,8 +4102,9 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Isus învăţa pe popor într-o sinagogă în ziua Sabatului.",
-          "noteRefs": []
+          "text": "1Isus învăţa pe popor într-o sinagogă în ziua de sabat.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4116,7 +4128,7 @@
         },
         {
           "type": "verse",
-          "text": "6De aceea Domnul i-a răspuns: „Făţarnicilor, oare în ziua Sabatului nu-şi dezleagă fiecare din voi boul sau măgarul de la iesle şi-l duce de-l adapă?",
+          "text": "6De aceea Domnul i-a răspuns: „Făţarnicilor, oare în ziua de sabat nu-şi dezleagă fiecare din voi boul sau măgarul de la iesle şi-l duce de-l adapă?",
           "noteRefs": []
         },
         {
@@ -4141,7 +4153,8 @@
         {
           "type": "verse",
           "text": "1El a mai zis: „Cum este Împărăţia lui Dumnezeu? Cu ce o voi asemăna?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4156,11 +4169,12 @@
         {
           "type": "verse",
           "text": "3El a zis iarăşi: „Cu ce voi asemăna Împărăţia lui Dumnezeu?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
-          "text": "4Se aseamănă cu aluatul pe care l-a luat o femeie şi l-a amestecat în trei măsuri de făină, și astfel s-a dospit toată frământătura.”",
+          "text": "4Se aseamănă cu aluatul pe care l-a luat o femeie şi l-a amestecat în trei măsuri de făină, și astfel s-a dospit toată frământătura”.",
           "noteRefs": []
         }
       ]
@@ -4175,7 +4189,8 @@
         {
           "type": "verse",
           "text": "1Isus trecea prin orașe şi prin sate, învăţând pe popor şi călătorind spre Ierusalim.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4214,7 +4229,7 @@
         },
         {
           "type": "verse",
-          "text": "9Iată că unii din cei de pe urmă, vor fi cei dintâi, şi unii din cei dintâi, vor fi cei de pe urmă.”",
+          "text": "9Iată că unii din cei de pe urmă, vor fi cei dintâi, şi unii din cei dintâi, vor fi cei de pe urmă”.",
           "noteRefs": []
         }
       ]
@@ -4229,7 +4244,8 @@
         {
           "type": "verse",
           "text": "1În aceeaşi zi, au venit câţiva farisei şi i-au zis: „Pleacă şi du-te de aici, căci Irod vrea să te ucidă.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4302,7 +4318,8 @@
         {
           "type": "verse",
           "text": "1Apoi, a rostit o parabolă în fața celor invitați la masă, când i-a văzut că alegeau locurile cele mai bune, spunându-le:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4321,7 +4338,7 @@
         },
         {
           "type": "verse",
-          "text": "5„Căci oricine se înalţă pe el însuși va fi smerit; şi cine se smereşte va fi înălţat.”",
+          "text": "5„Căci oricine se înalţă pe el însuși va fi smerit; şi cine se smereşte va fi înălţat”.",
           "noteRefs": []
         },
         {
@@ -4332,7 +4349,8 @@
         {
           "type": "verse",
           "text": "6A zis şi celui ce-l invitase: „Când servești un prânz sau o cină, să nu chemi pe prietenii tăi, nici pe fraţii tăi, nici pe neamurile tale, nici pe vecinii bogaţi, ca nu cumva ei să-ți întoarcă favoarea, şi să-ți răsplătească.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4341,7 +4359,7 @@
         },
         {
           "type": "verse",
-          "text": "8Şi va fi ferice de tine, pentru că ei n-au cu ce să-ţi răsplătească; dar ţi se va răsplăti la învierea celor drepţi.”",
+          "text": "8Şi va fi ferice de tine, pentru că ei n-au cu ce să-ţi răsplătească; dar ţi se va răsplăti la învierea celor drepţi”.",
           "noteRefs": []
         }
       ]
@@ -4356,7 +4374,8 @@
         {
           "type": "verse",
           "text": "1Unul din cei ce stăteau la masă cu el, când a auzit aceste lucruri, i-a zis: „Ferice de acela care va prânzi în Împărăţia lui Dumnezeu!”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4400,7 +4419,7 @@
         },
         {
           "type": "verse",
-          "text": "10Căci vă spun că niciunul din cei invitaţi nu va gusta din cina mea.”",
+          "text": "10Căci vă spun că niciunul din cei invitaţi nu va gusta din cina mea”.",
           "noteRefs": []
         }
       ]
@@ -4415,7 +4434,8 @@
         {
           "type": "verse",
           "text": "1O mare mulțime de oameni mergea cu Isus. El s-a întors şi le-a zis:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4479,7 +4499,8 @@
         {
           "type": "verse",
           "text": "1Toţi vameşii şi păcătoşii se apropiau de el ca să-l asculte.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
