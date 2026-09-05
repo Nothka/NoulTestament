@@ -3520,7 +3520,8 @@
         {
           "type": "verse",
           "text": "1Era cu două zile înainte de sărbătoarea Paştelor şi a Azimilor, iar preoţii de frunte şi cărturarii căutau cum să prindă pe Isus cu viclenie, şi să-l ucidă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3609,7 +3610,8 @@
         {
           "type": "verse",
           "text": "1În prima zi a sărbătorii Azimelor, când jertfeau Paştele, ucenicii lui Isus i-au zis: Unde dorești să mergem să-ți pregătim să mănânci Paștele?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3668,7 +3670,8 @@
         {
           "type": "verse",
           "text": "1Pe când mâncau, Isus a luat o pâine; şi, după ce a binecuvântat, a frânt-o, şi le-a dat, zicând: „Luaţi, mâncaţi, acesta este trupul meu.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3727,7 +3730,8 @@
         {
           "type": "verse",
           "text": "1Au mers apoi într-un loc numit Ghetsimani. El a zis ucenicilor săi: „Şedeţi aici până mă voi ruga.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3799,7 +3803,8 @@
         {
           "type": "verse",
           "text": "1Îndată, pe cînd vorbea el încă, a venit Iuda, unul din cei doisprezece, şi împreună cu el a venit o mulţime de oameni cu săbii şi cu ciomege, trimişi de preoţii de frunte, de cărturari şi de bătrâni.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3857,8 +3862,9 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Pe Isus l-au dus la marele preot, unde s-au adunat toţi preoţii de frunte, bătrânii şi cărturarii.",
-          "noteRefs": []
+          "text": "1L-au dus pe Isus   la marele preot, unde se adunaseră toţi preoţii de frunte, bătrânii şi cărturarii.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3940,7 +3946,8 @@
         {
           "type": "verse",
           "text": "1Pe când stătea Petru jos în curte, a venit una din servitoarele marelui preot.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3984,11 +3991,12 @@
         {
           "type": "verse",
           "text": "1Dimineaţa, preoţii de frunte au ținut îndată consfătuire cu bătrânii, cărturarii şi tot consiliul. După ce au legat pe Isus, l-au dus şi l-au predat lui Pilat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
-          "text": "2Pilat l-a întrebat: „Eşti tu Regele Iudeilor?`` „Este așa cum spui``, i-a răspuns Isus.",
+          "text": "2Pilat l-a întrebat: „Eşti tu Regele Iudeilor?” „Este așa cum spui”, i-a răspuns Isus.",
           "noteRefs": []
         },
         {
@@ -4018,7 +4026,8 @@
         {
           "type": "verse",
           "text": "1La sărbătoarea Paştelor, Pilat le elibera un deținut, pe care-l cereau ei.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4109,7 +4118,8 @@
           "text": "1Au obligat pe un trecător, care se întorcea de la țară, numit Simon din Cirene,* tatăl lui Alexandru și al lui Ruf, să meargă cu ei, ca să ducă crucea.",
           "noteRefs": [
             65
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4190,7 +4200,8 @@
         {
           "type": "verse",
           "text": "1La ora 12 ziua s-a făcut întuneric peste toată ţara, până la ora 3 după masa.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4252,7 +4263,8 @@
         {
           "type": "verse",
           "text": "1Când s-a înserat - fiindcă era ziua Pregătirii, adică, ziua dinaintea sabatului, -",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4290,8 +4302,9 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1După ce a trecut Sabatul, Maria Magdalena, Maria, mama lui Iacov, şi Salome, au cumpărat miresme, ca să se ducă să ungă trupul lui.",
-          "noteRefs": []
+          "text": "1După ce a trecut sabatul, Maria Magdalena, Maria, mama lui Iacov, şi Salome, au cumpărat miresme, ca să se ducă să ungă trupul lui.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4320,7 +4333,7 @@
         },
         {
           "type": "verse",
-          "text": "7Duceţi-vă dar, de spuneţi ucenicilor lui, şi lui Petru, că merge înaintea voastră în Galileea: acolo îl veţi vedea, cum v-a spus.”",
+          "text": "7Mergeți dar, de spuneţi ucenicilor lui, şi lui Petru, că merge înaintea voastră în Galileea: acolo îl veţi vedea, cum v-a spus.”",
           "noteRefs": []
         },
         {
@@ -4342,7 +4355,8 @@
           "text": "1(După* ce Isus a înviat, dimineaţa devreme în prima zi a săptămânii, s-a arătat mai întâi Mariei Magdalena, din care scosese şapte demoni.",
           "noteRefs": [
             68
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4371,8 +4385,9 @@
         },
         {
           "type": "verse",
-          "text": "7El le-a zis: „Mergeți în toată lumea, şi predicaţi Evanghelia la toată creația.",
-          "noteRefs": []
+          "text": "7El le-a zis: Mergeți în toată lumea, şi predicaţi Evanghelia la toate creaturile.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4386,7 +4401,7 @@
         },
         {
           "type": "verse",
-          "text": "10vor lua în mână şerpi; dacă vor bea ceva de moarte, nu le va face nici un rău; îşi vor pune mâinile peste bolnavi, şi aceștia își vor reveni.``",
+          "text": "10vor lua în mână şerpi; dacă vor bea ceva de moarte, nu le va face nici un rău; îşi vor pune mâinile peste bolnavi, şi aceștia își vor reveni.",
           "noteRefs": []
         },
         {
@@ -4397,7 +4412,8 @@
         {
           "type": "verse",
           "text": "11Domnul Isus, după ce a vorbit cu ei, a fost primit în cer, şi s-a așezat la dreapta lui Dumnezeu.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
