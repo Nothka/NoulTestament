@@ -96,7 +96,7 @@
 
 .reader-shell {
   width: calc(100vw - 40px);
-  max-width: 1120px;
+  max-width: var(--reading-width, 36rem);
   margin: 0 auto;
   border-top: 1px solid #e5e5e5;
   padding: 58px 0 96px;
@@ -114,9 +114,14 @@
   text-align: center;
 }
 
-.page-stack {
+.book-stack {
   display: grid;
-  gap: 100px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.75rem;
+}
+
+.book-stack > .passage {
+  margin: 0;
 }
 
 .introduction-stack {
@@ -130,17 +135,6 @@
   background: transparent;
   box-shadow: none;
   padding: 0;
-}
-
-.page-content {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 52px;
-  align-items: start;
-}
-
-.page-column {
-  min-width: 0;
 }
 
 .introduction-page h3 {
@@ -218,7 +212,7 @@
   color: #222222;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.02rem;
-  line-height: 1.48;
+  line-height: 1.6;
   overflow-wrap: break-word;
   text-align: left;
 }
@@ -294,19 +288,16 @@ sup.note-callout {
 }
 
 .passage-notes {
-  margin: 12px 0 28px;
-  border-top: 2px solid #222222;
-  padding-top: 18px;
+  margin: 1.25rem 0 0;
+  border-top: 1px solid #d8d5d0;
+  padding-top: 1rem;
   color: #333333;
   font-size: 0.82rem;
   font-style: italic;
-  line-height: 1.34;
+  line-height: 1.5;
 }
 
 .passage-notes ol {
-  columns: 2;
-  column-gap: 52px;
-  column-fill: balance;
   margin: 0;
   padding-left: 1.35rem;
 }
@@ -376,7 +367,6 @@ sup.note-callout {
 
   .reader-shell {
     width: calc(100vw - 32px);
-    max-width: 280px;
     padding: 34px 0 72px;
   }
 
@@ -386,8 +376,8 @@ sup.note-callout {
     overflow-wrap: anywhere;
   }
 
-  .page-stack {
-    gap: 34px;
+  .book-stack {
+    gap: 2rem;
   }
 
   .document-page {
@@ -395,11 +385,6 @@ sup.note-callout {
     border: 0;
     box-shadow: none;
     padding: 0;
-  }
-
-  .page-content {
-    grid-template-columns: 1fr;
-    gap: 0;
   }
 
   .introduction-page h3 {
@@ -427,12 +412,6 @@ sup.note-callout {
 
   .passage-notes {
     font-size: 0.76rem;
-    margin: 12px 0 24px;
-  }
-
-  .passage-notes ol {
-    columns: 1;
-    column-gap: normal;
   }
 }
 
@@ -696,6 +675,52 @@ sup.note-callout {
   padding: 4px 6px;
   font-family: inherit;
   font-size: 0.78rem;
+}
+
+.editor-width-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  color: #7a6a58;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.editor-width-control label {
+  white-space: nowrap;
+}
+
+.editor-width-control input {
+  width: 90px;
+  min-width: 48px;
+  min-height: 32px;
+  margin: 0;
+  accent-color: #cc5500;
+  cursor: pointer;
+}
+
+.editor-width-control output {
+  min-width: 4ch;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.editor-width-control .editor-width-reset {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-color: #e0d5c6;
+  background: #ffffff;
+  color: #7a6a58;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.editor-width-control input:focus-visible,
+.editor-width-control button:focus-visible {
+  outline: 2px solid #cc5500;
+  outline-offset: 3px;
 }
 
 .changes-look {

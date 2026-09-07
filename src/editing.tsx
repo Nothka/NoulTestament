@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { renderTextWithNotes, trimVerseTextStart } from './markup';
 import { PassageBlocks, type ContentBlock } from './passage-render';
+import { DEFAULT_READING_WIDTH, MIN_READING_WIDTH, MAX_READING_WIDTH, resolveReadingWidth } from './reading-layout.js';
 
 const SESSION_KEY = 'nt-editor-session';
 const WORK_KEY = 'nt-editor-work';
@@ -340,6 +341,8 @@ export function EditorBar({
   busy,
   verseNumberSpacing,
   onVerseNumberSpacing,
+  readingWidth,
+  onReadingWidth,
 }: {
   changeCount: number;
   mode: EditorMode;
@@ -351,7 +354,12 @@ export function EditorBar({
   busy: boolean;
   verseNumberSpacing: number | null;
   onVerseNumberSpacing: (amount: number | null) => void;
+  readingWidth: number | null;
+  onReadingWidth: (amount: number | null) => void;
 }) {
+  const width = resolveReadingWidth(readingWidth);
+  const widthPercent = Math.round(width / DEFAULT_READING_WIDTH * 100);
+
   return (
     <div className="editor-bar">
       <span className="editor-mode">
@@ -373,6 +381,7 @@ export function EditorBar({
       <label className="editor-bar-setting">
         Spațiu după număr
         <select
+          id="verse-number-spacing"
           onChange={(event) => onVerseNumberSpacing(
             VERSE_NUMBER_SPACES.find((option) => option.value === event.target.value)?.amount ?? null,
           )}
@@ -384,6 +393,35 @@ export function EditorBar({
           ))}
         </select>
       </label>
+
+      <div className="editor-width-control">
+        <label htmlFor="reading-width">Lățime coloană</label>
+        <input
+          aria-valuetext={`${widthPercent}% din lățimea standard`}
+          id="reading-width"
+          max={MAX_READING_WIDTH}
+          min={MIN_READING_WIDTH}
+          onChange={(event) => {
+            const next = event.currentTarget.valueAsNumber;
+            onReadingWidth(next === DEFAULT_READING_WIDTH ? null : next);
+          }}
+          step={0.5}
+          title="Lățimea textului pe întregul site. Pe telefon, coloana se adaptează ecranului."
+          type="range"
+          value={width}
+        />
+        <output htmlFor="reading-width">{widthPercent}%</output>
+        <button
+          aria-label="Revino la lățimea standard"
+          className="editor-width-reset"
+          disabled={readingWidth === null}
+          onClick={() => onReadingWidth(null)}
+          title="Revino la lățimea standard"
+          type="button"
+        >
+          ↺
+        </button>
+      </div>
 
       <span className="editor-bar-hint">
         {mode === 'layout'

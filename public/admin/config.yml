@@ -39,6 +39,7 @@ collections:
           - { label: Deplasare subtitlu pe orizontală (%), name: subtitleOffsetX, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
           - { label: Deplasare subtitlu pe verticală (rem), name: subtitleOffsetY, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare." }
           - { label: Spațiu după numărul versetului (em), name: verseNumberSpacing, widget: number, value_type: float, required: false, hint: "Se schimbă din pagina de editare. Se aplică tuturor versetelor din toate cărțile." }
+          - { label: Lățime coloană (rem), name: readingWidth, widget: number, value_type: float, min: 32, max: 42, step: 0.5, required: false, hint: "Standard: 36. Se aplică întregului site. Poți ajusta vizual lățimea din pagina /edit." }
           - label: Paragrafe
             name: blocks
             widget: list

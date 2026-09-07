@@ -1,6 +1,6 @@
-import { Fragment, useEffect, useLayoutEffect, useMemo, useState, type ReactNode } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
-import { countFootnoteMarkers } from './footnote-markers.js';
+import { DEFAULT_READING_WIDTH, resolveReadingWidth } from './reading-layout.js';
 import { renderInlineMarkup, renderTextWithNotes, trimVerseTextStart } from './markup';
 import {
   BlockEditor,
@@ -25,18 +25,11 @@ import {
 } from './editing';
 import { removeBlock } from './passage-edits.js';
 import {
-  blockAddress,
   blockStyle,
   effectiveParagraphAlign,
   fragmentStyle,
-  genealogyLineLayout,
-  GenealogyBlocks,
   getResolvedNoteRefsForBlock,
-  groupPassageBlocks,
-  paragraphLayoutForBlocks,
   PassageBlocks,
-  splitGenealogyText,
-  textContinuesAfterGroup,
   textRunBounds,
   type ContentBlock,
   type Footnote,
@@ -79,37 +72,6 @@ type Passage = {
   notes?: Footnote[];
 };
 
-type PagePassage = {
-  id: string;
-  passageId: string;
-  titleSize?: number;
-  titleAlign?: ContentBlock['align'];
-  titleSpaceBefore?: number;
-  titleSpaceAfter?: number;
-  titleOffsetX?: number;
-  titleOffsetY?: number;
-  referenceSize?: number;
-  referenceAlign?: ContentBlock['align'];
-  referenceSpaceBefore?: number;
-  referenceSpaceAfter?: number;
-  referenceOffsetX?: number;
-  referenceOffsetY?: number;
-  bookId: string;
-  number: number;
-  reference: string;
-  title: string;
-  isContinuation: boolean;
-  blocks: ContentBlock[];
-  allBlocks: ContentBlock[];
-  notes?: Footnote[];
-};
-
-type VisualBookPage = {
-  number: number;
-  columns: [PagePassage[], PagePassage[]];
-  notes: PageFootnote[];
-};
-
 type Book = {
   id: string;
   navTitle: string;
@@ -146,6 +108,8 @@ type Introduction = {
    * hairline gap.
    */
   verseNumberSpacing?: number;
+  /** Site-wide reading column width in rem. Omitted uses the standard width. */
+  readingWidth?: number | null;
   blocks: ContentBlock[];
 };
 
@@ -776,20 +740,18 @@ function App() {
     });
   }
 
-  /** Puts one element back to the value it had before this session's edits. */
   /**
-   * The one site-wide typography setting the editor can change. Recorded as
-   * an ordinary pending change against introduction.json so it publishes,
-   * appears in Modificări and can be undone exactly like a text edit.
+   * Site-wide reading settings share the content editor's publish and undo
+   * path, including local recovery of changes that have not been published.
    */
-  function setVerseNumberSpacing(amount: number | null) {
+  function setReadingSetting(address: 'versespace' | 'readingwidth', amount: number | null) {
     if (!data?.introduction) {
       return;
     }
 
-    const previous = data.introduction.verseNumberSpacing;
+    const isWidth = address === 'readingwidth';
+    const previous = isWidth ? data.introduction.readingWidth : data.introduction.verseNumberSpacing;
     const current = amount === null ? '' : String(amount);
-    const address = 'versespace';
     const neutralLook: Look = {
       size: 100, align: '', spaceBefore: null, spaceAfter: null, hidden: false, offsetX: 0, offsetY: 0,
     };
@@ -803,13 +765,15 @@ function App() {
 
     setChanges((changesNow) => {
       const existing = changesNow.find((change) => change.address === address);
-      const original = existing ? existing.original : (previous === undefined ? '' : String(previous));
-      const label = VERSE_NUMBER_SPACES.find((option) => option.amount === amount)?.label ?? 'Normal';
+      const original = existing ? existing.original : (previous == null ? '' : String(previous));
+      const label = isWidth
+        ? `${Math.round(resolveReadingWidth(amount) / DEFAULT_READING_WIDTH * 100)}%`
+        : VERSE_NUMBER_SPACES.find((option) => option.amount === amount)?.label ?? 'Normal';
       const entry: PendingChange = {
         address,
         path: INTRODUCTION_PATH,
-        label: 'Spațiu după numărul versetului',
-        where: `Toate cărțile — ${label}`,
+        label: isWidth ? 'Lățime coloană' : 'Spațiu după numărul versetului',
+        where: `${isWidth ? 'Întregul site' : 'Toate cărțile'} — ${label}`,
         original,
         originalLook: existing ? existing.originalLook : neutralLook,
         current,
@@ -1053,20 +1017,21 @@ function App() {
         }
       } : undefined}
       onPointerDown={isArranging ? startDrag : undefined}
-      // One custom property drives the gap after every verse number, in the
-      // reader and in each editor's preview alike, so the setting is applied
-      // in exactly one place.
-      style={data.introduction?.verseNumberSpacing !== undefined
-        ? ({ '--verse-number-gap': `${data.introduction.verseNumberSpacing}em` } as React.CSSProperties)
-        : undefined}
+      style={{
+        '--reading-width': `${resolveReadingWidth(data.introduction?.readingWidth)}rem`,
+        '--verse-number-gap': data.introduction?.verseNumberSpacing !== undefined
+          ? `${data.introduction.verseNumberSpacing}em` : undefined,
+      } as React.CSSProperties}
     >
       {isEditing ? (
         <EditorBar
           busy={publishing}
           changeCount={changes.length}
           mode={editorMode}
-          onVerseNumberSpacing={setVerseNumberSpacing}
+          onVerseNumberSpacing={(amount) => setReadingSetting('versespace', amount)}
           verseNumberSpacing={data.introduction?.verseNumberSpacing ?? null}
+          onReadingWidth={(amount) => setReadingSetting('readingwidth', amount)}
+          readingWidth={data.introduction?.readingWidth ?? null}
           onMode={(next) => {
             setEditorMode(next);
             setDraft(null);
@@ -1093,6 +1058,12 @@ function App() {
           onClose={() => setIsHistoryOpen(false)}
           onOpen={(address) => {
             setIsHistoryOpen(false);
+            if (address === 'readingwidth' || address === 'versespace') {
+              requestAnimationFrame(() => {
+                document.getElementById(address === 'readingwidth' ? 'reading-width' : 'verse-number-spacing')?.focus();
+              });
+              return;
+            }
             openBlockEditor(address);
           }}
           onUndo={undoChange}
@@ -1199,7 +1170,7 @@ function App() {
         {isIntroductionSelected && data.introduction ? (
           <IntroductionPages introduction={data.introduction} />
         ) : selectedBook ? (
-          <BookPages book={selectedBook} />
+          <BookPassages book={selectedBook} />
         ) : null}
       </section>
     </main>
@@ -1377,10 +1348,9 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
   // stitched back on here.
   const text = edit.text;
 
-  // A single site-wide number, not a block of text. Routed through the same
-  // function as every other edit so undoing it — one change or "Anulează
-  // tot" — needs no special case of its own.
-  if (kind === 'versespace') {
+  // Route reading settings through the same function as text edits so both
+  // individual undo and "Anulează tot" restore their original values.
+  if (kind === 'versespace' || kind === 'readingwidth') {
     if (!data.introduction) {
       return data;
     }
@@ -1389,7 +1359,8 @@ function applyTextEdit(data: TestamentData, draft: BlockDraft, edit: BlockEdit):
       ...data,
       introduction: {
         ...data.introduction,
-        verseNumberSpacing: edit.text === '' ? undefined : Number(edit.text),
+        [kind === 'readingwidth' ? 'readingWidth' : 'verseNumberSpacing']:
+          edit.text === '' ? undefined : Number(edit.text),
       },
     };
   }
@@ -1632,66 +1603,15 @@ function IntroductionPages({ introduction }: { introduction: Introduction }) {
   );
 }
 
-function BookPages({ book }: { book: Book }) {
-  const isMobile = useIsMobile();
-  const [pages, setPages] = useState<VisualBookPage[]>(() => buildEstimatedVisualPages(book));
-
-  useLayoutEffect(() => {
-    function updatePages() {
-      setPages(buildMeasuredVisualPages(book) ?? buildEstimatedVisualPages(book));
-    }
-
-    updatePages();
-    window.addEventListener('resize', updatePages);
-
-    return () => {
-      window.removeEventListener('resize', updatePages);
-    };
-  }, [book]);
-
+function BookPassages({ book }: { book: Book }) {
   return (
-    <div className="page-stack">
-      {pages.map((page) => (
-        <section className="document-page" key={`${book.id}-${page.number}`} aria-label={`Pagina ${page.number}`}>
-          <div className="page-content">
-            {page.columns.map((column, columnIndex) => (
-              <div className="page-column" key={`${book.id}-${page.number}-${columnIndex}`}>
-                {column.map((passage) => (isMobile ? (
-                  <Fragment key={passage.id}>
-                    <PagePassageView passage={passage} />
-                    {passage.notes?.length ? <PassageNotes notes={passageFootnotes(passage)} /> : null}
-                  </Fragment>
-                ) : (
-                  <PagePassageView passage={passage} key={passage.id} />
-                )))}
-              </div>
-            ))}
-          </div>
-
-          {!isMobile && page.notes.length > 0 ? <PassageNotes notes={page.notes} /> : null}
-        </section>
-      ))}
+    <div className="book-stack">
+      {book.passages.map((passage) => <PassageView key={passage.id} passage={passage} />)}
     </div>
   );
 }
 
-/**
- * A passage's own notes, tagged with where they live so edit mode can address
- * them. Used on phones, where the notes follow their passage directly.
- */
-function passageFootnotes(passage: PagePassage): PageFootnote[] {
-  return (passage.notes ?? []).map((note, noteIndex) => ({
-    ...note,
-    passageId: passage.passageId,
-    noteIndex,
-  }));
-}
-
-/**
- * Tracks the phone breakpoint. Pagination gives a phone a single unbounded
- * column, so without this every footnote in the book would collect in one
- * block at the very end instead of following the passage it belongs to.
- */
+/** Tracks the phone breakpoint for navigation and the site notice. */
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(
     () => typeof window !== 'undefined' && window.matchMedia(MOBILE_QUERY).matches,
@@ -1709,632 +1629,60 @@ function useIsMobile() {
   return isMobile;
 }
 
-function buildEstimatedVisualPages(book: Book): VisualBookPage[] {
-  const columnLimit = 3600;
-  const pages: VisualBookPage[] = [];
-  let page = createVisualPage(1);
-  let columnIndex: 0 | 1 = 0;
-  let columnWeight = [0, 0];
-
-  for (const passage of book.passages) {
-    let remainingBlocks = passage.blocks;
-    let isFirstSegment = true;
-
-    while (remainingBlocks.length > 0) {
-      const availableWeight = Math.max(columnLimit - columnWeight[columnIndex], 0);
-      const segment = takePassageSegment(passage, remainingBlocks, availableWeight, isFirstSegment);
-
-      if (segment.blocks.length === 0) {
-        const nextLayout = advanceColumnOrPage(page, pages, columnIndex, columnWeight);
-        page = nextLayout.page;
-        columnIndex = nextLayout.columnIndex;
-        columnWeight = nextLayout.columnWeight;
-        continue;
-      }
-
-      page.columns[columnIndex].push({
-        id: `${passage.id}-${isFirstSegment ? 'start' : 'continue'}-${remainingBlocks.length}`,
-        passageId: passage.id,
-        bookId: book.id,
-        number: passage.number,
-        reference: passage.reference,
-        title: passage.title,
-        titleSize: passage.titleSize,
-        titleAlign: passage.titleAlign,
-        titleSpaceBefore: passage.titleSpaceBefore,
-        titleSpaceAfter: passage.titleSpaceAfter,
-        titleOffsetX: passage.titleOffsetX,
-        titleOffsetY: passage.titleOffsetY,
-        referenceSize: passage.referenceSize,
-        referenceAlign: passage.referenceAlign,
-        referenceSpaceBefore: passage.referenceSpaceBefore,
-        referenceSpaceAfter: passage.referenceSpaceAfter,
-        referenceOffsetX: passage.referenceOffsetX,
-        referenceOffsetY: passage.referenceOffsetY,
-        isContinuation: !isFirstSegment,
-        blocks: segment.blocks,
-        allBlocks: passage.blocks,
-        notes: passage.notes,
-      });
-
-      addNotesForBlocks(page, passage, segment.blocks);
-      columnWeight[columnIndex] += segment.weight;
-      remainingBlocks = remainingBlocks.slice(segment.blocks.length);
-      isFirstSegment = false;
-
-      if (remainingBlocks.length > 0) {
-        const nextLayout = advanceColumnOrPage(page, pages, columnIndex, columnWeight);
-        page = nextLayout.page;
-        columnIndex = nextLayout.columnIndex;
-        columnWeight = nextLayout.columnWeight;
-      }
-    }
-  }
-
-  if (page.columns[0].length > 0 || page.columns[1].length > 0 || page.notes.length > 0) {
-    pages.push(page);
-  }
-
-  return pages;
-}
-
-function buildMeasuredVisualPages(book: Book): VisualBookPage[] | null {
-  if (typeof document === 'undefined') {
-    return null;
-  }
-
-  const readerShell = document.querySelector<HTMLElement>('.reader-shell');
-
-  if (!readerShell) {
-    return null;
-  }
-
-  const isMobile = window.matchMedia(MOBILE_QUERY).matches;
-  const columnGap = isMobile ? 0 : 52;
-  const columnWidth = isMobile
-    ? readerShell.clientWidth
-    : Math.max(260, Math.floor((readerShell.clientWidth - columnGap) / 2));
-  const columnLimit = isMobile
-    ? Number.POSITIVE_INFINITY
-    : Math.max(760, Math.min(980, Math.round(columnWidth * 1.65)));
-  const measurer = createMeasurementRoot(columnWidth);
-  const pages: VisualBookPage[] = [];
-  let page = createVisualPage(1);
-  let columnIndex: 0 | 1 = 0;
-  let columnHeight = [0, 0];
-
-  try {
-    for (const passage of book.passages) {
-      let remainingBlocks = passage.blocks;
-      let isFirstSegment = true;
-
-      while (remainingBlocks.length > 0) {
-        const availableHeight = columnLimit - columnHeight[columnIndex];
-        const segment = takeMeasuredPassageSegment(
-          passage,
-          remainingBlocks,
-          measurer,
-          availableHeight,
-          isFirstSegment,
-        );
-
-        if (segment.blocks.length === 0) {
-          const nextLayout = advanceColumnOrPage(page, pages, columnIndex, columnHeight);
-          page = nextLayout.page;
-          columnIndex = nextLayout.columnIndex;
-          columnHeight = nextLayout.columnWeight;
-          continue;
-        }
-
-        page.columns[columnIndex].push({
-          id: `${passage.id}-${isFirstSegment ? 'start' : 'continue'}-${remainingBlocks.length}`,
-          passageId: passage.id,
-          bookId: book.id,
-          number: passage.number,
-          reference: passage.reference,
-          title: passage.title,
-          titleSize: passage.titleSize,
-          titleAlign: passage.titleAlign,
-          titleSpaceBefore: passage.titleSpaceBefore,
-          titleSpaceAfter: passage.titleSpaceAfter,
-          titleOffsetX: passage.titleOffsetX,
-          titleOffsetY: passage.titleOffsetY,
-          referenceSize: passage.referenceSize,
-          referenceAlign: passage.referenceAlign,
-          referenceSpaceBefore: passage.referenceSpaceBefore,
-          referenceSpaceAfter: passage.referenceSpaceAfter,
-          referenceOffsetX: passage.referenceOffsetX,
-          referenceOffsetY: passage.referenceOffsetY,
-          isContinuation: !isFirstSegment,
-          blocks: segment.blocks,
-          allBlocks: passage.blocks,
-          notes: passage.notes,
-        });
-
-        addNotesForBlocks(page, passage, segment.blocks);
-        columnHeight[columnIndex] += segment.height;
-        remainingBlocks = remainingBlocks.slice(segment.blocks.length);
-        isFirstSegment = false;
-
-        if (remainingBlocks.length > 0) {
-          const nextLayout = advanceColumnOrPage(page, pages, columnIndex, columnHeight);
-          page = nextLayout.page;
-          columnIndex = nextLayout.columnIndex;
-          columnHeight = nextLayout.columnWeight;
-        }
-      }
-    }
-
-    if (page.columns[0].length > 0 || page.columns[1].length > 0 || page.notes.length > 0) {
-      pages.push(page);
-    }
-
-    return pages;
-  } finally {
-    measurer.remove();
-  }
-}
-
-function takeMeasuredPassageSegment(
-  passage: Passage,
-  blocks: ContentBlock[],
-  measurer: HTMLElement,
-  availableHeight: number,
-  includeHeader: boolean,
-) {
-  const minimumUsefulHeight = 120;
-
-  if (availableHeight < minimumUsefulHeight && blocks.length > 1) {
-    return {
-      blocks: [],
-      height: 0,
-    };
-  }
-
-  let selectedBlocks: ContentBlock[] = [];
-  let selectedHeight = 0;
-
-  for (let index = 0; index < blocks.length; index += 1) {
-    const candidateBlocks = blocks.slice(0, index + 1);
-    const candidateHeight = measurePassageSegment(
-      passage,
-      candidateBlocks,
-      measurer,
-      !includeHeader,
-    );
-
-    if (selectedBlocks.length > 0 && candidateHeight > availableHeight) {
-      break;
-    }
-
-    selectedBlocks = candidateBlocks;
-    selectedHeight = candidateHeight;
-
-    if (candidateHeight >= availableHeight) {
-      break;
-    }
-  }
-
-  if (
-    selectedBlocks.length > 0
-    && selectedBlocks[selectedBlocks.length - 1]?.type === 'heading'
-    && blocks.length > selectedBlocks.length
-  ) {
-    selectedBlocks = selectedBlocks.slice(0, -1);
-    selectedHeight = selectedBlocks.length > 0
-      ? measurePassageSegment(passage, selectedBlocks, measurer, !includeHeader)
-      : 0;
-  }
-
-  if (selectedBlocks.length === 0 && blocks.length > 0) {
-    selectedBlocks = [blocks[0]];
-    selectedHeight = measurePassageSegment(passage, selectedBlocks, measurer, !includeHeader);
-  }
-
-  return {
-    blocks: selectedBlocks,
-    height: selectedHeight,
-  };
-}
-
-function createMeasurementRoot(columnWidth: number) {
-  const root = document.createElement('div');
-  root.style.position = 'absolute';
-  root.style.left = '-10000px';
-  root.style.top = '0';
-  root.style.visibility = 'hidden';
-  root.style.pointerEvents = 'none';
-  root.style.width = `${columnWidth}px`;
-  root.style.fontFamily = 'Georgia, "Times New Roman", Times, serif';
-  document.body.appendChild(root);
-
-  return root;
-}
-
-function measurePassageSegment(
-  passage: Passage,
-  blocks: ContentBlock[],
-  measurer: HTMLElement,
-  isContinuation: boolean,
-) {
-  measurer.replaceChildren(createMeasuredPassageElement(passage, blocks, isContinuation));
-
-  return measurer.scrollHeight;
-}
-
-function createMeasuredPassageElement(
-  passage: Passage,
-  blocks: ContentBlock[],
-  isContinuation: boolean,
-) {
-  const article = document.createElement('article');
-  article.className = isContinuation ? 'passage passage-continuation' : 'passage';
-
-  if (!isContinuation) {
-    const header = document.createElement('header');
-    header.className = 'passage-header';
-
-    if (passage.reference) {
-      const reference = document.createElement('p');
-      reference.className = 'passage-reference';
-      const number = document.createElement('span');
-      number.textContent = String(passage.number);
-      const traditionalReference = document.createElement('span');
-      traditionalReference.textContent = `(${passage.reference})`;
-      reference.append(number, traditionalReference);
-      applyMeasuredBlockStyle(reference, {
-        size: passage.referenceSize,
-        align: passage.referenceAlign,
-        spaceBefore: passage.referenceSpaceBefore,
-        spaceAfter: passage.referenceSpaceAfter,
-      });
-      header.append(reference);
-    }
-
-    const title = document.createElement('h3');
-    title.className = 'passage-title';
-    appendMeasuredText(title, passage.title);
-    applyMeasuredBlockStyle(title, {
-      size: passage.titleSize,
-      align: passage.titleAlign,
-      spaceBefore: passage.titleSpaceBefore,
-      spaceAfter: passage.titleSpaceAfter,
-    });
-    header.append(title);
-    article.append(header);
-  }
-
-  const body = document.createElement('div');
-  body.className = 'passage-body';
-
-  if (passage.id === 'matei-1') {
-    appendMeasuredGenealogyBlocks(body, blocks, passage.blocks);
-  } else {
-    appendMeasuredPassageBlocks(body, blocks, passage.blocks);
-  }
-
-  article.append(body);
-
-  return article;
-}
-
-function appendMeasuredPassageBlocks(
-  container: HTMLElement,
-  blocks: ContentBlock[],
-  allBlocks: ContentBlock[],
-) {
-  const groupedBlocks = groupPassageBlocks(blocks);
-
-  for (const [groupIndex, group] of groupedBlocks.entries()) {
-    if (Array.isArray(group)) {
-      const paragraph = document.createElement('p');
-      paragraph.className = 'passage-paragraph';
-      applyMeasuredBlockStyle(
-        paragraph,
-        paragraphLayoutForBlocks(
-          group,
-          allBlocks,
-          textContinuesAfterGroup(group, groupIndex, groupedBlocks, allBlocks),
-        ),
-      );
-
-      for (const block of group) {
-        appendMeasuredInlineBlock(paragraph, block);
-      }
-
-      container.append(paragraph);
-      continue;
-    }
-
-    const heading = document.createElement('h4');
-    heading.className = 'inline-heading';
-    appendMeasuredText(heading, group.text);
-    applyMeasuredBlockStyle(heading, group);
-    container.append(heading);
-  }
-}
-
-/** Applies the flow-affecting part of blockStyle to the DOM measurer. */
-function applyMeasuredBlockStyle(
-  element: HTMLElement,
-  layout: {
-    size?: number;
-    align?: ContentBlock['align'];
-    spaceBefore?: number;
-    spaceAfter?: number;
-  },
-  includeLayout = true,
-) {
-  if (layout.size && layout.size !== 100) {
-    element.style.setProperty('--size-scale', String(layout.size / 100));
-  }
-
-  if (!includeLayout) {
-    return;
-  }
-
-  if (layout.align) {
-    element.style.textAlign = layout.align;
-  }
-
-  if (layout.spaceBefore !== undefined) {
-    element.style.marginTop = `${layout.spaceBefore}rem`;
-  }
-
-  if (layout.spaceAfter !== undefined) {
-    element.style.marginBottom = `${layout.spaceAfter}rem`;
-  }
-}
-
-function appendMeasuredInlineBlock(container: HTMLElement, block: ContentBlock) {
-  const span = document.createElement('span');
-  const match = block.type === 'verse' ? block.text.match(/^(\d{1,3})(.*)$/su) : null;
-  span.className = block.type === 'verse' ? 'verse-fragment' : 'text-fragment';
-  applyMeasuredBlockStyle(span, block, false);
-
-  if (match) {
-    const sup = document.createElement('sup');
-    sup.textContent = match[1];
-    span.append(sup);
-    appendMeasuredText(span, trimVerseTextStart(match[2]));
-  } else {
-    appendMeasuredText(span, block.text);
-  }
-
-  container.append(span);
-}
-
-/** Mirrors the reader's explicit newline rendering inside the hidden measurer. */
-function appendMeasuredText(container: HTMLElement, text: string) {
-  const lines = stripInlineMarkup(text).split('\n');
-
-  lines.forEach((line, index) => {
-    if (index > 0) {
-      container.append(document.createElement('br'));
-    }
-
-    if (line) {
-      container.append(document.createTextNode(line));
-    }
-  });
-}
-
-function appendMeasuredGenealogyBlocks(
-  container: HTMLElement,
-  blocks: ContentBlock[],
-  allBlocks: ContentBlock[],
-) {
-  const wrapper = document.createElement('div');
-  wrapper.className = 'genealogy-lines';
-
-  for (const block of blocks) {
-    if (block.hidden) {
-      continue;
-    }
-
-    if (block.type === 'heading') {
-      const heading = document.createElement('h4');
-      heading.className = 'inline-heading';
-      appendMeasuredText(heading, block.text);
-      applyMeasuredBlockStyle(heading, block);
-      wrapper.append(heading);
-      continue;
-    }
-
-    const lines = splitGenealogyText(block.text);
-
-    for (const [lineIndex, line] of lines.entries()) {
-      const paragraph = document.createElement('p');
-      paragraph.className = 'genealogy-line';
-      const match = line.match(/^(\d{1,3})(.*)$/su);
-      const layout = genealogyLineLayout(block, allBlocks, lineIndex, lines.length);
-      applyMeasuredBlockStyle(paragraph, layout);
-
-      if (layout.align === 'justify') {
-        paragraph.style.textAlignLast = 'justify';
-      }
-
-      if (match) {
-        const sup = document.createElement('sup');
-        sup.textContent = match[1];
-        paragraph.append(sup);
-        appendMeasuredText(paragraph, trimVerseTextStart(match[2]));
-      } else {
-        appendMeasuredText(paragraph, line);
-      }
-
-      wrapper.append(paragraph);
-    }
-  }
-
-  container.append(wrapper);
-}
-
-function advanceColumnOrPage(
-  page: VisualBookPage,
-  pages: VisualBookPage[],
-  columnIndex: 0 | 1,
-  columnWeight: number[],
-) {
-  if (columnIndex === 0) {
-    return {
-      page,
-      columnIndex: 1 as const,
-      columnWeight,
-    };
-  }
-
-  pages.push(page);
-
-  return {
-    page: createVisualPage(pages.length + 1),
-    columnIndex: 0 as const,
-    columnWeight: [0, 0],
-  };
-}
-
-function createVisualPage(number: number): VisualBookPage {
-  return {
-    number,
-    columns: [[], []],
-    notes: [],
-  };
-}
-
-function takePassageSegment(
-  passage: Passage,
-  blocks: ContentBlock[],
-  availableWeight: number,
-  includeHeader: boolean,
-) {
-  const headerWeight = includeHeader ? passage.title.length + 150 : 60;
-  const minimumUsefulSpace = 360;
-
-  if (availableWeight < minimumUsefulSpace && blocks.length > 1) {
-    return {
-      blocks: [],
-      weight: 0,
-    };
-  }
-
-  const selectedBlocks: ContentBlock[] = [];
-  let weight = headerWeight;
-
-  for (const block of blocks) {
-    const blockWeight = estimateBlockWeight(block, passage);
-
-    if (
-      selectedBlocks.length > 0
-      && weight + blockWeight > availableWeight
-    ) {
-      break;
-    }
-
-    selectedBlocks.push(block);
-    weight += blockWeight;
-
-    if (weight >= availableWeight) {
-      break;
-    }
-  }
-
-  if (selectedBlocks.length === 0 && blocks.length > 0) {
-    selectedBlocks.push(blocks[0]);
-    weight += estimateBlockWeight(blocks[0], passage);
-  }
-
-  if (
-    selectedBlocks.length > 0
-    && selectedBlocks[selectedBlocks.length - 1]?.type === 'heading'
-    && blocks.length > selectedBlocks.length
-  ) {
-    const orphanHeading = selectedBlocks.pop();
-    weight -= orphanHeading ? estimateBlockWeight(orphanHeading, passage) : 0;
-  }
-
-  return {
-    blocks: selectedBlocks,
-    weight,
-  };
-}
-
-function estimateBlockWeight(block: ContentBlock, passage: Passage) {
-  const headingWeight = block.type === 'heading' ? 180 : 0;
-  const noteWeight = Math.max(block.noteRefs?.length ?? 0, countFootnoteMarkers(block.text)) * 90;
-
-  if (passage.id === 'matei-1' && block.type !== 'heading') {
-    return splitGenealogyText(block.text).length * 115 + noteWeight + 16;
-  }
-
-  return block.text.length + headingWeight + noteWeight + 24;
-}
-
-function addNotesForBlocks(page: VisualBookPage, passage: Passage, blocks: ContentBlock[]) {
-  if (!passage.notes?.length) {
-    return;
-  }
-
-  const noteNumbers = new Set(
-    blocks.flatMap((block) => getResolvedNoteRefsForBlock(block, passage.blocks, passage.notes)),
-  );
-  const existingNoteNumbers = new Set(page.notes.map((note) => note.number));
-
-  for (const [noteIndex, note] of passage.notes.entries()) {
-    if (noteNumbers.has(note.number) && !existingNoteNumbers.has(note.number)) {
-      page.notes.push({ ...note, passageId: passage.id, noteIndex });
-      existingNoteNumbers.add(note.number);
-    }
-  }
-}
-
-function PagePassageView({ passage }: { passage: PagePassage }) {
+function PassageView({ passage }: { passage: Passage }) {
   return (
-    <article className={passage.isContinuation ? 'passage passage-continuation' : 'passage'}>
-      {!passage.isContinuation ? (
-        <header className="passage-header">
-          {passage.reference ? (
-            <p
-              className="passage-reference"
-              data-edit={`reference:${passage.passageId}`}
-              style={blockStyle({
-                size: passage.referenceSize,
-                align: passage.referenceAlign,
-                spaceBefore: passage.referenceSpaceBefore,
-                spaceAfter: passage.referenceSpaceAfter,
-                offsetX: passage.referenceOffsetX,
-                offsetY: passage.referenceOffsetY,
-              })}
-            >
-              <span>{passage.number}</span>
-              <span>({passage.reference})</span>
-            </p>
-          ) : null}
-
-          <h3
-            className="passage-title"
-            data-edit={`title:${passage.passageId}`}
+    <article className="passage">
+      <header className="passage-header">
+        {passage.reference ? (
+          <p
+            className="passage-reference"
+            data-edit={`reference:${passage.id}`}
             style={blockStyle({
-              size: passage.titleSize,
-              align: passage.titleAlign,
-              spaceBefore: passage.titleSpaceBefore,
-              spaceAfter: passage.titleSpaceAfter,
-              offsetX: passage.titleOffsetX,
-              offsetY: passage.titleOffsetY,
+              size: passage.referenceSize,
+              align: passage.referenceAlign,
+              spaceBefore: passage.referenceSpaceBefore,
+              spaceAfter: passage.referenceSpaceAfter,
+              offsetX: passage.referenceOffsetX,
+              offsetY: passage.referenceOffsetY,
             })}
           >
-            {renderInlineMarkup(passage.title, `${passage.id}-title`)}
-          </h3>
-        </header>
-      ) : null}
+            <span>{passage.number}</span>
+            <span>({passage.reference})</span>
+          </p>
+        ) : null}
+
+        <h3
+          className="passage-title"
+          data-edit={`title:${passage.id}`}
+          style={blockStyle({
+            size: passage.titleSize,
+            align: passage.titleAlign,
+            spaceBefore: passage.titleSpaceBefore,
+            spaceAfter: passage.titleSpaceAfter,
+            offsetX: passage.titleOffsetX,
+            offsetY: passage.titleOffsetY,
+          })}
+        >
+          {renderInlineMarkup(passage.title, `${passage.id}-title`)}
+        </h3>
+      </header>
 
       <div className="passage-body">
         <PassageBlocks
           blocks={passage.blocks}
-          passageId={passage.passageId}
-          allBlocks={passage.allBlocks}
+          passageId={passage.id}
+          allBlocks={passage.blocks}
           notes={passage.notes}
         />
       </div>
+
+      {passage.notes?.length ? (
+        <PassageNotes notes={passage.notes.map((note, noteIndex) => ({
+          ...note,
+          passageId: passage.id,
+          noteIndex,
+        }))} />
+      ) : null}
     </article>
   );
 }
@@ -2392,15 +1740,6 @@ function ContentBlockView({ block, address }: { block: ContentBlock; address?: s
     >
       {renderTextWithNotes(block.text, block.noteRefs)}
     </p>
-  );
-}
-
-function stripInlineMarkup(text: string) {
-  return text.replace(
-    /\*\*([^*]+)\*\*|\*([^*\n]+)\*|__([^_]+)__|_([^_]+)_/gu,
-    (_, boldStar, italicStar, boldUnderscore, italicUnderscore) => (
-      boldStar ?? italicStar ?? boldUnderscore ?? italicUnderscore ?? ''
-    ),
   );
 }
 

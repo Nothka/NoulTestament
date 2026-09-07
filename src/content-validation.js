@@ -7,6 +7,7 @@
  */
 
 import { countFootnoteMarkers } from './footnote-markers.js';
+import { isValidReadingWidth, MIN_READING_WIDTH, MAX_READING_WIDTH } from './reading-layout.js';
 
 /**
  * @param {{ id?: string, number?: number, blocks?: Array<{ type: string, text: string }>, notes?: Array<unknown> }} passage
@@ -65,10 +66,16 @@ export function findBookProblems(book, location) {
 }
 
 /**
- * @param {{ id?: string, blocks?: Array<any> }} introduction
+ * @param {{ id?: string, blocks?: Array<any>, readingWidth?: number | null }} introduction
  * @param {string} location
  * @returns {string[]}
  */
 export function findIntroductionProblems(introduction, location) {
-  return findPassageProblems({ id: introduction.id, blocks: introduction.blocks, notes: [] }, location);
+  const problems = findPassageProblems({ id: introduction.id, blocks: introduction.blocks, notes: [] }, location);
+
+  if (introduction.readingWidth != null && !isValidReadingWidth(introduction.readingWidth)) {
+    problems.push(`${location}: lățimea coloanei trebuie să fie un număr între ${MIN_READING_WIDTH} și ${MAX_READING_WIDTH} rem.`);
+  }
+
+  return problems;
 }
