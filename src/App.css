@@ -96,7 +96,7 @@
 
 .reader-shell {
   width: calc(100vw - 40px);
-  max-width: var(--reading-width, 36rem);
+  max-width: var(--reading-width, 44rem);
   margin: 0 auto;
   border-top: 1px solid #e5e5e5;
   padding: 58px 0 96px;

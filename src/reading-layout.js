@@ -1,7 +1,7 @@
 // Widths in rem keep the reading column proportional to the reader's text size.
-export const DEFAULT_READING_WIDTH = 36;
+export const DEFAULT_READING_WIDTH = 44;
 export const MIN_READING_WIDTH = 32;
-export const MAX_READING_WIDTH = 42;
+export const MAX_READING_WIDTH = 44;
 
 /** @param {unknown} width */
 export function isValidReadingWidth(width) {
