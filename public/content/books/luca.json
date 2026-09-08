@@ -6334,7 +6334,8 @@
         {
           "type": "verse",
           "text": "1Când a sosit ora, Isus a şezut la masă cu cei doisprezece apostoli.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6393,7 +6394,8 @@
         {
           "type": "verse",
           "text": "1Între apostoli s-a iscat şi o discuție, ca să știe care din ei era considerat cel mai mare.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
