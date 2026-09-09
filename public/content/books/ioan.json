@@ -15,7 +15,8 @@
           "text": "1La început era Cuvântul,* şi Cuvântul era cu Dumnezeu, şi Cuvântul era Dumnezeu.",
           "noteRefs": [
             105
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -120,7 +121,8 @@
         {
           "type": "verse",
           "text": "1Iată mărturisirea făcută de Ioan, când iudeii au trimis din Ierusalim preoţi şi leviţi ca să-l întrebe: „Tu cine eşti?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -179,7 +181,8 @@
         {
           "type": "verse",
           "text": "1În ziua următoare, Ioan a văzut pe Isus venind la el şi a zis: „Iată Mielul lui Dumnezeu care înlătură păcatul lumii!",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -218,7 +221,8 @@
         {
           "type": "verse",
           "text": "1Apoi în ziua următoare, Ioan stătea cu doi din ucenicii lui.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -332,7 +336,8 @@
         {
           "type": "verse",
           "text": "1A treia zi a fost o nuntă în Cana din Galileea. Mama lui Isus era acolo.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -358,7 +363,7 @@
         },
         {
           "type": "verse",
-          "text": "6Acolo erau așezate şase vase de piatră, după obiceiul de curăţare al iudeilor; şi în fiecare vas încăpeau câte două sau trei găleți.",
+          "text": "6Acolo erau așezate şase vase de piatră, după obiceiul de curăţire al iudeilor; şi în fiecare vas încăpeau câte două sau trei găleți.",
           "noteRefs": []
         },
         {
@@ -411,7 +416,8 @@
           "text": "1Paştele iudeilor era aproape, iar Isus s-a urcat* la Ierusalim.",
           "noteRefs": [
             110
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -466,7 +472,8 @@
         {
           "type": "verse",
           "text": "11Pe când Isus era în Ierusalim, la sărbătoarea Paştelor, mulţi au crezut în numele lui; căci vedeau semnele pe care le făcea.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -482,7 +489,7 @@
       "notes": [
         {
           "number": 110,
-          "text": "6:1 drumul spre Ierusalim este ascendent, deci urcă"
+          "text": "6:1 drumul spre Ierusalim este ascendent, adică urcă"
         }
       ]
     },
@@ -495,8 +502,9 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Între farisei era un om cu numele Nicodim, un conducător al iudeilor.",
-          "noteRefs": []
+          "text": "1Între farisei era un om numit Nicodim, un conducător al iudeilor.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -610,7 +618,8 @@
         {
           "type": "verse",
           "text": "1După aceste lucruri, Isus şi ucenicii lui au venit în Iudeea; şi stătea acolo cu ei şi boteza.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -694,7 +703,8 @@
         {
           "type": "verse",
           "text": "1Când Domnul a aflat că fariseii au auzit că el face şi botează mai mulţi ucenici decât Ioan,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -847,7 +857,8 @@
         {
           "type": "verse",
           "text": "1Chiar atunci au venit ucenicii lui şi se mirau că vorbea cu o femeie. Totuşi niciunul nu i-a zis: „Ce cauţi?” sau: „De ce vorbeşti cu ea?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -936,7 +947,8 @@
         {
           "type": "verse",
           "text": "1După cele două zile, Isus a plecat de acolo, și a mers în Galileea.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1007,7 +1019,8 @@
           "text": "1După aceste lucruri a fost o sărbătoare a iudeilor, şi Isus s-a urcat* la Ierusalim.",
           "noteRefs": [
             113
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1108,7 +1121,8 @@
         {
           "type": "verse",
           "text": "1Dar Isus le-a răspuns: „Tatăl meu lucrează până acum, şi eu, de asemenea, lucrez.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1186,8 +1200,9 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Dacă eu mărturisesc despre mine însumi, mărturia mea nu este validă.",
-          "noteRefs": []
+          "text": "1Dacă eu mărturisesc despre mine însumi, mărturia mea nu este corectă.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1364,7 +1379,7 @@
       "notes": [
         {
           "number": 115,
-          "text": "15:7 moneda principală de argint a Imperiului roman, folosită timp de aprox. 500 de ani; 200 de dinari reprezentau plata pe aprox. 8 luni de zile"
+          "text": "15:7 moneda principală de argint a Imperiului roman, folosită timp de aprox. 500 de ani; 200 de dinari reprezentau plata muncii pe aprox. 8 luni de zile"
         }
       ]
     },
@@ -1378,7 +1393,8 @@
         {
           "type": "verse",
           "text": "1Când s-a înserat, ucenicii lui s-au coborât la marginea mării.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1629,7 +1645,8 @@
         {
           "type": "verse",
           "text": "1Mulţi din ucenicii lui, după ce au auzit aceste cuvinte, au zis: „Vorbirea aceasta este prea dificilă: cine poate să o suporte?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1669,7 +1686,8 @@
         {
           "type": "verse",
           "text": "8Atunci Isus a zis celor doisprezece: „Voi nu vreţi să plecaţi?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1703,7 +1721,8 @@
         {
           "type": "verse",
           "text": "1După aceste lucruri Isus străbătea Galileea; nu stătea în Iudeea, pentru că iudeii căutau să-l ucidă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1756,10 +1775,11 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1. După ce frații lui s-au urcat* la sărbătoare, s-a urcat şi el, dar nu pe faţă, ci cam pe ascuns.",
+          "text": "1După ce frații lui s-au urcat* la sărbătoare, s-a urcat şi el, dar nu pe faţă, ci cam pe ascuns.",
           "noteRefs": [
             117
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
