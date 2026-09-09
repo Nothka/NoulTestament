@@ -6439,7 +6439,8 @@
         {
           "type": "verse",
           "text": "1Domnul a zis: „Simone, Simone, iată că Satana v-a cerut să vă cearnă pe toți, cum se cerne grâul.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6488,7 +6489,8 @@
         {
           "type": "verse",
           "text": "1A ieşit afară și s-a dus, ca de obicei, pe Muntele Măslinilor. Ucenicii lui l-au urmat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6537,7 +6539,8 @@
         {
           "type": "verse",
           "text": "1Pe când vorbea el încă, iată că a apărut o mulțime. Cel ce se numea Iuda, unul din cei doisprezece, mergea în fruntea lor. El s-a apropiat de Isus, ca să-l sărute.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6581,7 +6584,8 @@
         {
           "type": "verse",
           "text": "1Au pus mâna pe Isus, și l-au dus în casa marelui preot. Iar Petru îl urma de la distanță.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6635,7 +6639,8 @@
         {
           "type": "verse",
           "text": "1Oamenii care păzeau pe Isus îl batjocoreau şi-l băteau.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6691,7 +6696,8 @@
           "text": "1Întregul grup s-a ridicat şi au dus pe Isus înaintea lui Pilat*",
           "noteRefs": [
             101
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6731,7 +6737,8 @@
         {
           "type": "verse",
           "text": "1Însă când Pilat a auzit că este menționată Galileea, a întrebat dacă omul acesta este galileean.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6775,7 +6782,8 @@
         {
           "type": "verse",
           "text": "1Pilat a strâns pe preoţii de frunte, pe fruntaşi şi pe popor",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6851,7 +6859,8 @@
           "text": "1Pe când îl duceau să-l răstignească, au pus mâna pe un anume Simon din Cirena* care se întorcea de la țară; şi i-au dat crucea, ca s-o ducă după Isus.",
           "noteRefs": [
             102
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6917,7 +6926,8 @@
         {
           "type": "verse",
           "text": "1Poporul stătea acolo şi privea. Conducătorii îşi băteau joc de el şi ziceau: „Pe alţii i-a mântuit; să se mântuiască pe sine însuşi, dacă este el Cristosul, alesul lui Dumnezeu.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6971,7 +6981,8 @@
         {
           "type": "verse",
           "text": "1Era cam pe la ora 12 ziua, și s-a făcut întuneric peste toată ţara, până la ora 3 după masa.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -7010,7 +7021,8 @@
         {
           "type": "verse",
           "text": "1Mai era și un om numit Iosif, din Arimateea, un oraș al iudeilor, om bun şi evlavios, membru al consiliului,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -7130,7 +7142,8 @@
           "text": "1Iată că doi dintre ucenici mergeau în aceeași zi la un sat, numit Emaus, care era la 60 de stadii* de Ierusalim;",
           "noteRefs": [
             104
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -7260,7 +7273,8 @@
         {
           "type": "verse",
           "text": "1Pe când vorbeau ei astfel, însuşi Isus a stat între ei şi le-a zis: „Pace vouă!”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -7324,7 +7338,7 @@
         },
         {
           "type": "verse",
-          "text": "14Şi iată că voi trimite peste voi promisiunea Tatălui meu. Dar așteptaţi în orașul Ierusalim până veţi fi îmbrăcaţi cu putere de sus.”",
+          "text": "14Şi iată că voi trimite peste voi promisiunea Tatălui meu. Dar așteptaţi în Ierusalim până veţi fi îmbrăcaţi cu putere de sus.”",
           "noteRefs": []
         },
         {
@@ -7335,7 +7349,8 @@
         {
           "type": "verse",
           "text": "15El i-a dus afară până spre Betania, și-a ridicat mâinile şi i-a binecuvântat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -7349,7 +7364,7 @@
         },
         {
           "type": "verse",
-          "text": "18Stăteau încontinuu în templu şi lăudau şi binecuvântau pe Dumnezeu. Amin.",
+          "text": "18Stăteau încontinuu în templu, lăudându-l şi binecuvântându-l pe Dumnezeu. Amin.",
           "noteRefs": []
         }
       ]
