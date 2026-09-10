@@ -1427,7 +1427,7 @@
       "notes": [
         {
           "number": 116,
-          "text": "16:4 o stadie este a opta parte dintr-o milă romană, aprox. 185 metri, deci erau cam 6 km"
+          "text": "16:4  o stadie este a opta parte dintr-o milă romană, aprox. 185 metri, deci erau cam 6 km"
         }
       ]
     },
@@ -1756,7 +1756,7 @@
         },
         {
           "type": "verse",
-          "text": "8Suiţi-vă voi la sărbătoarea aceasta. Eu încă nu mă sui la sărbătoarea aceasta, fiindcă nu mi s-a împlinit încă timpul.”",
+          "text": "8Mergeți voi la sărbătoarea aceasta. Eu încă nu merg la sărbătoarea aceasta, fiindcă nu mi s-a împlinit încă timpul.”",
           "noteRefs": []
         },
         {
@@ -1929,7 +1929,8 @@
         {
           "type": "verse",
           "text": "1În ziua de pe urmă, care era ziua cea mare a sărbătorii, Isus a stat în picioare şi a strigat: „Dacă însetează cineva, să vină la mine şi să bea.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1953,7 +1954,8 @@
         {
           "type": "verse",
           "text": "1De aceea mulți din popor, când au auzit aceste cuvinte, ziceau: „Acesta este cu adevărat profetul.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2032,7 +2034,8 @@
         {
           "type": "verse",
           "text": "1Atunci cărturarii şi fariseii i-au adus o femeie prinsă în adulter. Au pus-o în mijloc",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2094,7 +2097,8 @@
         {
           "type": "verse",
           "text": "1Apoi Isus le-a vorbit din nou şi a zis: „Eu sunt lumina lumii; cine mă urmează pe mine nu va umbla în întuneric, ci va avea lumina vieţii.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2148,7 +2152,8 @@
         {
           "type": "verse",
           "text": "1Apoi Isus le-a mai spus: „Eu mă duc, şi mă veţi căuta şi veţi muri în păcatul vostru; acolo unde mă duc eu, voi nu puteţi veni.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
