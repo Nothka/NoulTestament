@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Teofile, prima carte pe care am scris-o, era despre tot ce a început Isus să facă şi să înveţe pe oameni,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -75,7 +76,8 @@
           "text": "12Atunci, ei s-au întors în Ierusalim din muntele numit al Măslinilor, care este lângă Ierusalim, departe cât o călătorie în ziua de sabat.*",
           "noteRefs": [
             131
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -105,7 +107,8 @@
         {
           "type": "verse",
           "text": "1În zilele acelea, Petru s-a sculat în mijlocul fraţilor - numărul celor adunaţi împreună era cam de 120 - şi a zis:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -182,7 +185,8 @@
         {
           "type": "verse",
           "text": "1Când a venit ziua Cincizecimii, erau toţi împreună, într-un gând, în acelaşi loc.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -285,7 +289,8 @@
         {
           "type": "verse",
           "text": "1Atunci, Petru s-a ridicat în picioare cu cei unsprezece, a ridicat glasul şi le-a zis: „Bărbaţi iudei şi voi toţi cei care locuiţi în Ierusalim, să ştiţi lucrul acesta şi ascultaţi cuvintele mele!",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -409,7 +414,8 @@
         {
           "type": "verse",
           "text": "1După ce au auzit aceste cuvinte, ei au rămas atinşi la inimă şi au zis lui Petru şi celorlalţi apostoli: „Fraţilor, ce să facem?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -473,7 +479,8 @@
         {
           "type": "verse",
           "text": "1Petru şi Ioan se urcau împreună la templu, la ora de rugăciune: era ora 3 după masa.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -537,7 +544,8 @@
         {
           "type": "verse",
           "text": "1Când Petru a văzut lucrul acesta, el a răspuns poporului: „Bărbaţi israeliţi, de ce vă miraţi de lucrul acesta? De ce vă fixați privirea pe noi, ca şi cum prin puterea noastră sau prin cucernicia noastră am fi făcut pe omul acesta să umble?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -621,7 +629,8 @@
         {
           "type": "verse",
           "text": "1Pe când ei vorbeau poporului, au venit la ei preoţii, căpitanul templului şi saducheii,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -740,7 +749,8 @@
         {
           "type": "verse",
           "text": "1După ce au fost eliberați, ei au mers la ai lor şi le-au istorisit tot ce le-au spus preoţii de frunte şi bătrânii.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -794,7 +804,8 @@
         {
           "type": "verse",
           "text": "1Mulţimea celor ce au crezut era o inimă şi un suflet. Niciunul nu zicea că vreunul din lucrurile pe care le poseda sunt ale lui, ci aveau toate lucrurile în comun.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -833,7 +844,8 @@
         {
           "type": "verse",
           "text": "1Dar un anumit om numit Anania, împreună cu soția lui Safira și-au vândut o proprietate,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -897,7 +909,8 @@
         {
           "type": "verse",
           "text": "1Prin mâinile apostolilor se făceau multe semne şi minuni în popor. Toţi stăteau împreună în intrarea lui Solomon.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1025,7 +1038,8 @@
         {
           "type": "verse",
           "text": "1Când au auzit ei aceste cuvinte, îi tăia la inimă şi voiau să-i ucidă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1086,7 +1100,8 @@
           "text": "1În zilele acelea, când s-a înmulţit numărul ucenicilor, eleniștii* cârteau împotriva evreilor, pentru că văduvele lor erau trecute cu vederea la împărţirea ajutoarelor zilnice.",
           "noteRefs": [
             138
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1185,11 +1200,11 @@
       "notes": [
         {
           "number": 139,
-          "text": "16:3 a fost provincie a Asiei mici; Pavel provenea din Tarsul Ciliciei"
+          "text": "16:3  a fost provincie a Asiei mici; Pavel provenea din Tarsul Ciliciei"
         },
         {
           "number": 140,
-          "text": "16:3 pe timpul acela prin denumirea Asia nu se înțelegea continentul mare Asia, pe care îl luăm în considerare în prezent, ci doar o zonă mai mică, și anume, Turcia de azi, numită în prezent și Asia mică, sau era avut în vedere doar vestul Asiei mici de azi. Această explicație se aplică în toate cele 21 de locuri din NT unde apare denumirea Asia"
+          "text": "16:3  pe timpul acela prin denumirea Asia nu se înțelegea continentul mare Asia, pe care îl luăm în considerare în prezent, ci doar o zonă mai mică, și anume, Turcia de azi, numită în prezent și Asia mică, sau era avut în vedere doar vestul Asiei mici de azi. Această explicație se aplică în toate cele 21 de locuri din NT unde apare denumirea Asia"
         }
       ]
     },
@@ -1203,7 +1218,8 @@
         {
           "type": "verse",
           "text": "1Marele preot a zis: „Aşa sunt lucrurile?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1485,7 +1501,8 @@
         {
           "type": "verse",
           "text": "1Când au auzit ei aceste cuvinte, îi atingea la inimă şi scrâşneau din dinţi împotriva lui.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1525,7 +1542,8 @@
         {
           "type": "verse",
           "text": "8Saul se învoise la uciderea lui Ştefan. În ziua aceea, s-a pornit o mare persecuție împotriva adunării care era în Ierusalim în ziua aceea. Toţi, afară de apostoli, s-au împrăştiat prin părţile Iudeii şi ale Samariei.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1549,7 +1567,8 @@
         {
           "type": "verse",
           "text": "1Astfel, cei ce s-au împrăştiat, mergeau din loc în loc şi predicau cuvântul.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1579,7 +1598,8 @@
         {
           "type": "verse",
           "text": "6Dar în oraș era un om numit Simon, care practica vrăjitoria, şi uimea pe poporul Samariei, considerându-se astfel un om important.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1613,7 +1633,8 @@
         {
           "type": "verse",
           "text": "1Apostolii, care erau în Ierusalim, când au auzit că Samaria a primit Cuvântul lui Dumnezeu, au trimis la ei pe Petru şi pe Ioan.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1682,7 +1703,8 @@
         {
           "type": "verse",
           "text": "1Apoi un înger al Domnului a vorbit lui Filip şi i-a zis: „Scoală-te şi du-te spre sud, pe drumul care coboară de la Ierusalim la Gaza şi care este pustiu”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1762,11 +1784,11 @@
       "notes": [
         {
           "number": 142,
-          "text": "21:2 sau eunuc; cei mai mulți fameni erau slujitori la curțile împărătești, fiind considerați cei mai loiali împăratului. Mulți dintre ei proveneau din prizonierii de război, luați încă de la vârsta copilăriei. Datorită vitregiilor prin care au trecut nu știau de mamă, tată, frate, soră, etc. Nu se căsătoreau, deoarece, ca și copii, fuseseră supuși unei intervenții chirurgicale speciale de îndepărtare a genitalelor. În prezent această intervenție este interzisă prin legi"
+          "text": "21:2  sau eunuc; cei mai mulți fameni erau slujitori la curțile împărătești, fiind considerați cei mai loiali împăratului. Mulți dintre ei proveneau din prizonierii de război, luați încă de la vârsta copilăriei. Datorită vitregiilor prin care au trecut nu știau de mamă, tată, frate, soră, etc. Nu se căsătoreau, deoarece, ca și copii, fuseseră supuși unei intervenții chirurgicale speciale de îndepărtare a genitalelor. În prezent această intervenție este interzisă prin legi"
         },
         {
           "number": 143,
-          "text": "21:15 oraș apropriat de țărmul Mediteranei; Azot este denumirea grecească, iar în VT apare ca Asdod, fiind una din cele 5 cetăți principale ale filistenilor (Ios. 13:3)"
+          "text": "21:15  oraș apropriat de țărmul Mediteranei; Azot este denumirea grecească, iar în VT apare ca Asdod, fiind una din cele 5 cetăți principale ale filistenilor (Ios. 13:3)"
         }
       ]
     },
@@ -1780,7 +1802,8 @@
         {
           "type": "verse",
           "text": "1Dar Saul sufla încă ameninţarea şi uciderea împotriva ucenicilor Domnului. S-a dus la marele preot",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1899,7 +1922,8 @@
         {
           "type": "verse",
           "text": "1După trecerea mai multor zile, iudeii au conspirat să-l ucidă,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1956,7 +1980,8 @@
         {
           "type": "verse",
           "text": "1Adunările din toată Iudeea, Galileea şi Samaria, aveau pace și se întăreau sufleteşte. Ele se înmulțeau, trăiau în frică de Domnul și în mângăierea Duhului Sfânt.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1992,7 +2017,8 @@
           "text": "1În Iope, era o ucenică numită Tabita* nume care se traduce Dorca. Ea făcea o mulţime de fapte bune şi milostenii.",
           "noteRefs": [
             145
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2033,7 +2059,7 @@
       "notes": [
         {
           "number": 145,
-          "text": "25:1 Tabita este cuvânt aramaic, Dorca este cuvânt grecesc; ambele înseamnă căprioară sau gazelă"
+          "text": "25:1  Tabita este cuvânt aramaic, Dorca este cuvânt grecesc; ambele înseamnă căprioară sau gazelă"
         }
       ]
     },
@@ -2047,7 +2073,8 @@
         {
           "type": "verse",
           "text": "1În Cezareea era un om cu numele Corneliu, centurion al „Regimentului Italian”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2098,7 +2125,8 @@
           "text": "1A doua zi, pe când ei erau în călătorie şi se apropiau de oraș, Petru s-a urcat să se roage pe acoperişul casei,* pe la ora 3 după masa.",
           "noteRefs": [
             146
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2139,7 +2167,7 @@
       "notes": [
         {
           "number": 146,
-          "text": "27:1 acoperișul era orizontal, cu parapet de jur împrejur; pentru urcare exista scară exterioară, alipită de perete"
+          "text": "27:1  acoperișul era orizontal, cu parapet de jur împrejur; pentru urcare exista scară exterioară, alipită de perete"
         }
       ]
     },
@@ -2153,7 +2181,8 @@
         {
           "type": "verse",
           "text": "1În timp ce Petru era foarte nelămurit în sinea lui cu privire înțelesul vedeniei pe care a avut-o, iată că oamenii trimişi de Corneliu, întrebând de casa lui Simon, au stat la poartă",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2187,7 +2216,8 @@
         {
           "type": "verse",
           "text": "1Petru deci i-a chemat înăuntru şi i-a găzduit.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2297,7 +2327,8 @@
         {
           "type": "verse",
           "text": "22Pe când Petru încă rostea cuvintele acestea, s-a coborât Duhul Sfânt peste toţi cei ce ascultau cuvântul.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2331,7 +2362,8 @@
         {
           "type": "verse",
           "text": "1Apostolii şi fraţii, care erau în Iudeea, au auzit că şi neamurile au primit cuvântul lui Dumnezeu.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2424,7 +2456,7 @@
       "notes": [
         {
           "number": 147,
-          "text": "30:2 drumul spre Ierusalim este ascendent, adică urcă"
+          "text": "30:2  drumul spre Ierusalim este ascendent, adică urcă"
         }
       ]
     },
@@ -2438,7 +2470,8 @@
         {
           "type": "verse",
           "text": "1Cei ce s-au împrăştiat din cauza persecuției întâmplate cu prilejul lui Ştefan au ajuns până în Fenicia, în Cipru şi în Antiohia şi predicau cuvântul numai iudeilor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2485,7 +2518,8 @@
         {
           "type": "verse",
           "text": "9Pe timpul acela, s-au coborât nişte profeți din Ierusalim la Antiohia.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2520,7 +2554,8 @@
         {
           "type": "verse",
           "text": "1Cam în același timp, regele Irod și-a întins mâinile ca să persecute pe unii din biserică.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2623,8 +2658,9 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Irod era foarte mâniat pe cei din Tir şi din Sidon. Dar aceştia au venit toţi într-un gând la el şi, după ce au câştigat de partea lor pe Blast, care era mai mare peste camera de dormit a regelui, au cerut pace, pentru că ţara lor se hrănea din ţara împăratului.",
-          "noteRefs": []
+          "text": "1Irod era foarte supărat pe cei din Tir şi din Sidon. Dar aceştia au venit toţi într-un gând la el şi, după ce au câştigat de partea lor pe Blast, care era mai mare peste camera de dormit a regelui, au cerut pace, pentru că ţara lor se hrănea din ţara împăratului.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2663,7 +2699,8 @@
         {
           "type": "verse",
           "text": "1În adunarea din Antiohia erau nişte profeți şi învăţători: Barnaba, Simon, numit Niger, Luciu din Cirene, Manaen, fratele vitreg al tetrarhului Irod, şi Saul.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2726,7 +2763,7 @@
       "notes": [
         {
           "number": 149,
-          "text": "34: 6-8 numele Bar-Isus este în aramaică, Elima este în grecește"
+          "text": "34: 6-8  numele Bar-Isus este în aramaică, Elima este în grecește"
         }
       ]
     },
@@ -2740,7 +2777,8 @@
         {
           "type": "verse",
           "text": "1Pavel şi tovarăşii lui au pornit cu corabia din Pafos şi s-au dus la Perga în Pamfilia. Ioan s-a despărţit de ei şi s-a întors la Ierusalim.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2883,18 +2921,18 @@
         },
         {
           "type": "verse",
-          "text": "29‘Uitaţi-vă, dispreţuitorilor, miraţi-vă şi pieriţi, căci în zilele voastre am să fac o lucrare, pe care n-o veţi crede nicidecum, dacă v-ar istorisi-o cineva’.”",
+          "text": "29‘Uitaţi-vă, dispreţuitorilor, miraţi-vă şi pieriţi, căci în zilele voastre am să fac o lucrare, pe care n-o veţi crede nicidecum, dacă v-ar istorisi-o cineva”.",
           "noteRefs": []
         }
       ],
       "notes": [
         {
           "number": 150,
-          "text": "35:2 a fost provincie a Asiei mici"
+          "text": "35:2  a fost provincie a Asiei mici"
         },
         {
           "number": 151,
-          "text": "35:19 drumul spre Ierusalim este ascendent, adică urcă"
+          "text": "35:19  drumul spre Ierusalim este ascendent, adică urcă"
         }
       ]
     },
@@ -2908,7 +2946,8 @@
         {
           "type": "verse",
           "text": "1Când au ieşit afară din sinagogă, neamurile i-au rugat să le vorbească şi în sabatul viitor despre aceleaşi lucruri.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2980,7 +3019,8 @@
         {
           "type": "verse",
           "text": "1În Iconia, ei au intrat împreună în sinagoga iudeilor şi au vorbit în aşa fel încât o mare mulţime de iudei şi de greci au crezut.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3032,7 +3072,8 @@
         {
           "type": "verse",
           "text": "1În Listra era un om fără putere în picioare, olog din naştere, care nu a umblat niciodată.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3096,7 +3137,8 @@
         {
           "type": "verse",
           "text": "1Dar unii iudei din Antiohia şi Iconia au venit acolo, și, după ce au convins mulțimea, l-au lovit pe Pavel cu pietre, și l-au târât afară din cetate, crezând că a murit.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3155,7 +3197,8 @@
         {
           "type": "verse",
           "text": "1Câţiva oameni veniţi din Iudeea învăţau pe fraţi în felul acesta: „Dacă nu sunteţi circumciși după obiceiul lui Moise, nu puteţi fi mântuiţi”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3269,7 +3312,8 @@
         {
           "type": "verse",
           "text": "1Atunci li s-a părut potrivit apostolilor, bătrânilor şi întregii adunări, și au găsit cu cale să aleagă câţiva dintre ei şi să-i trimită la Antiohia, împreună cu Pavel şi Barnaba. Au ales pe Iuda, zis şi Barsaba, şi pe Sila, oameni văzuți bine între fraţi.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3318,7 +3362,8 @@
         {
           "type": "verse",
           "text": "1Deci ei, după ce au fost trimiși, au mers la Antiohia. Au adunat mulțimea, și le-au dat scrisoarea.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3351,7 +3396,7 @@
       "notes": [
         {
           "number": 154,
-          "text": "42:5 acest verset 5 nu apare în unele manuscrise vechi"
+          "text": "42:5  acest verset 5 nu apare în unele manuscrise vechi"
         }
       ]
     },
@@ -3409,7 +3454,8 @@
         {
           "type": "verse",
           "text": "1Apoi, Pavel s-a dus la Derbe şi la Listra; și iată că acolo era un ucenic numit Timotei, fiul unei iudeice credincioase şi al unui tată grec.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3465,15 +3511,15 @@
       "notes": [
         {
           "number": 155,
-          "text": "44:6 a fost provincie a Asiei mici, locuită de gali"
+          "text": "44:6  a fost provincie a Asiei mici, locuită de gali"
         },
         {
           "number": 156,
-          "text": "44:6 pe timpul acela prin denumirea Asia nu se înțelegea continentul mare Asia pe care îl luăm în considerare în prezent, ci doar o zonă mai mică, și anume Turcia de azi, numită în prezent și Asia mică, sau doar vestul Asiei mici de azi. Această explicație se aplică în toate cele 21 de locuri din NT unde apare denumirea Asia"
+          "text": "44:6  pe timpul acela prin denumirea Asia nu se înțelegea continentul mare Asia pe care îl luăm în considerare în prezent, ci doar o zonă mai mică, și anume Turcia de azi, numită în prezent și Asia mică, sau doar vestul Asiei mici de azi. Această explicație se aplică în toate cele 21 de locuri din NT unde apare denumirea Asia"
         },
         {
           "number": 157,
-          "text": "44:6 Misia și Bitinia au fost provincii ale Asiei mici"
+          "text": "44:6  Misia și Bitinia au fost provincii ale Asiei mici"
         }
       ]
     },
@@ -3487,7 +3533,8 @@
         {
           "type": "verse",
           "text": "1După ce am pornit din Troa, am mers cu corabia direct la Samotracia şi a doua zi ne-am oprit la Neapolis;",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3521,7 +3568,8 @@
         {
           "type": "verse",
           "text": "1Pe când mergeam la rugăciune, am întâlnit o sclavă, care avea un duh de ghicire, prin care aducea mult câştig stăpânilor ei.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3575,7 +3623,8 @@
         {
           "type": "verse",
           "text": "1Dar pe la miezul nopţii, Pavel şi Sila se rugau şi cântau imnuri lui Dumnezeu, iar deținuții îi ascultau.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3634,7 +3683,8 @@
         {
           "type": "verse",
           "text": "1Când s-a făcut ziuă, dregătorii au trimis sergenții să spună temnicerului: „Dă drumul oamenilor acelora”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3673,7 +3723,8 @@
         {
           "type": "verse",
           "text": "1Pavel şi Sila au trecut prin Amfipoli şi Apolonia şi au venit în Tesalonic, unde era o sinagogă iudaică.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3727,7 +3778,8 @@
         {
           "type": "verse",
           "text": "1Fraţii au trimis îndată, noaptea, pe Pavel şi pe Sila la Bereea. Când au sosit, au intrat în sinagoga iudeilor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3761,7 +3813,8 @@
         {
           "type": "verse",
           "text": "1Cei ce însoțeau pe Pavel l-au dus până la Atena. Apoi s-au întors având sarcina de a transmite lui Sila şi lui Timotei porunca să meargă cât mai repede la el.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3880,7 +3933,8 @@
         {
           "type": "verse",
           "text": "1După aceea, Pavel a plecat din Atena la Corint.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3946,7 +4000,8 @@
           "text": "1Pe când Galion era guvernator al Ahaiei* iudeii s-au ridicat cu un gând împotriva lui Pavel, l-au dus înaintea scaunului de judecată",
           "noteRefs": [
             158
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3977,7 +4032,7 @@
       "notes": [
         {
           "number": 158,
-          "text": "53:1 partea de sud a Greciei, devenită provincie romană, având capitala la Corint. Denumirea Ahaia apare de 11 ori în NT"
+          "text": "53:1  partea de sud a Greciei, devenită provincie romană, având capitala la Corint. Denumirea Ahaia apare de 11 ori în NT"
         }
       ]
     },
@@ -3991,7 +4046,8 @@
         {
           "type": "verse",
           "text": "1Pavel a mai rămas destul de mult timp în Corint. În urmă, şi-a luat rămas bun de la fraţi şi a plecat cu corabia spre Siria, împreună cu Priscila şi Acuila, după ce şi-a tuns capul în Chencrea, căci făcuse o promisiune.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4020,11 +4076,11 @@
       "notes": [
         {
           "number": 159,
-          "text": "54:5 drumul spre Ierusalim este ascendent, adică urcă"
+          "text": "54:5  drumul spre Ierusalim este ascendent, adică urcă"
         },
         {
           "number": 160,
-          "text": "54:5 drumul este descendent, adică coboară"
+          "text": "54:5  drumul este descendent, adică coboară"
         }
       ]
     },
@@ -4038,7 +4094,8 @@
         {
           "type": "verse",
           "text": "1După ce a petrecut câtva timp acolo, Pavel a plecat şi a călătorit din loc în loc, prin zona Galatiei şi Frigiei, ca să întărească pe toţi ucenicii.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4079,7 +4136,8 @@
           "text": "1Pe când Apolo era în Corint, Pavel, după ce a trecut prin zona de sus a Asiei* a ajuns la Efes. Aici, a întâlnit pe câţiva ucenici",
           "noteRefs": [
             161
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4129,7 +4187,8 @@
         {
           "type": "verse",
           "text": "1Apoi Pavel a intrat în sinagogă, unde a vorbit cu ei, cu îndrăzneală, timp de trei luni despre lucrurile privitoare la Împărăţia lui Dumnezeu şi căuta să-i convingă pe cei care-l ascultau.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4165,7 +4224,8 @@
           "text": "1Dar niște iudei, exorciști* itineranți, și-au luat răspunderea să cheme numele Domnului Isus peste cei ce aveau duhuri rele, zicând: „Vă poruncim, prin Isus, pe care-l vesteşte Pavel.”",
           "noteRefs": [
             162
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4217,7 +4277,7 @@
         },
         {
           "number": 163,
-          "text": "58:7 Probabil este drahma grecească. Era un preț enorm, plata pe aprox. 160 de ani de muncă a unei persoane"
+          "text": "58:7  probabil este drahma grecească. Era un preț enorm, plata pe aprox. 160 de ani de muncă a unei persoane"
         }
       ]
     },
@@ -4231,7 +4291,8 @@
         {
           "type": "verse",
           "text": "1Pe timpul acela, s-a făcut o mare agitație cu privire la Calea Domnului.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4379,7 +4440,8 @@
         {
           "type": "verse",
           "text": "1În ziua dintâi a săptămânii, când ucenicii erau adunaţi împreună ca să frângă pâinea, Pavel, care intenționa să plece a doua zi, a vorbit ucenicilor şi şi-a lungit vorbirea până la miezul nopţii.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4418,7 +4480,8 @@
         {
           "type": "verse",
           "text": "1Noi am mers înaintea lui Pavel la corabie şi am plecat spre Asos, intenționând să-l luăm pe Pavel la bord acolo; căci el a aranjat să meargă acolo pe uscat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4447,7 +4510,8 @@
         {
           "type": "verse",
           "text": "1Însă din Milet, Pavel a trimis la Efes şi a chemat pe bătrânii adunării.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4565,8 +4629,9 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "După ce ne-am despărțit de ei, am plecat pe apă şi ne-am dus direct la Cos, apoi a doua zi la Rodos, şi de-acolo la Patara. Am găsit o corabie care mergea în Fenicia, ne-am urcat în ea şi am plecat. Am trecut pe lângă insula Cipru, am lăsat-o la stânga şi ne-am îndreptat spre Siria, apoi am coborât în Tir, unde trebuia să se descarce corabia. Acolo, am găsit pe ucenici şi am rămas şapte zile. Ei, prin Duhul, îi ziceau lui Pavel să nu se urce la Ierusalim. Dar când s-au împlinit zilele, am plecat şi",
-          "noteRefs": []
+          "text": "1După ce ne-am despărțit de ei, am plecat pe apă şi ne-am dus direct la Cos, apoi a doua zi la Rodos, şi de-acolo la Patara. Am găsit o corabie care mergea în Fenicia, ne-am urcat în ea şi am plecat. Am trecut pe lângă insula Cipru, am lăsat-o la stânga şi ne-am îndreptat spre Siria, apoi am coborât în Tir, unde trebuia să se descarce corabia. Acolo, am găsit pe ucenici şi am rămas şapte zile. Ei, prin Duhul, îi ziceau lui Pavel să nu se urce la Ierusalim. Dar când s-au împlinit zilele, am plecat şi",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "paragraph",
@@ -4585,7 +4650,8 @@
         {
           "type": "verse",
           "text": "1După ce ne-am terminat călătoria pe mare, începută la Tir, am sosit la Ptolemaida, unde am salutat pe fraţi şi am rămas la ei o zi.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4607,7 +4673,8 @@
           "text": "4Deoarece am stat acolo câteva zile, un profet numit Agab s-a coborât* din Iudeea",
           "noteRefs": [
             164
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4645,11 +4712,11 @@
       "notes": [
         {
           "number": 164,
-          "text": "65:4 drumul este descendent, adică coboară"
+          "text": "65:4  drumul este descendent, adică coboară"
         },
         {
           "number": 165,
-          "text": "65:9 drumul este ascendent, adică urcă"
+          "text": "65:9  drumul este ascendent, adică urcă"
         }
       ]
     },
@@ -4663,7 +4730,8 @@
         {
           "type": "verse",
           "text": "1Când am ajuns la Ierusalim, fraţii ne-au primit cu bucurie.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4717,7 +4785,8 @@
         {
           "type": "verse",
           "text": "1Către sfârşitul celor şapte zile, iudeii din Asia, când au văzut pe Pavel în templu, au agitat tot poporul, au pus mâinile pe el",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4776,7 +4845,8 @@
         {
           "type": "verse",
           "text": "1Tocmai când era să fie băgat în cetăţuie, Pavel a zis căpitanului: „Îmi este permis să-ţi spun ceva?” Căpitanul a răspuns: „Ştii greceşte?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4805,7 +4875,8 @@
         {
           "type": "verse",
           "text": "1Fraţilor şi părinţilor, ascultaţi acum apărarea mea pe care o prezint în faţa voastră!”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4968,7 +5039,8 @@
         {
           "type": "verse",
           "text": "1Dar în ziua următoare, fiindcă dorea să cunoască adevăratul motiv pentru care era acuzat de iudei, l-a dezlegat şi a poruncit să se adune preoţii de frunte şi tot consiliul, apoi a adus pe Pavel jos şi l-a adus înaintea lor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -5037,7 +5109,8 @@
         {
           "type": "verse",
           "text": "1La ziuă, iudeii au complotat şi s-au legat cu blestem că nu vor mânca, nici nu vor bea până nu vor ucide pe Pavel.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
