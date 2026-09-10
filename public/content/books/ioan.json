@@ -5095,7 +5095,8 @@
           "text": "1Dar Toma, zis Didimus,* unul din cei doisprezece, nu era cu ei când a venit Isus.",
           "noteRefs": [
             129
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -5130,7 +5131,8 @@
         {
           "type": "verse",
           "text": "7Isus a mai făcut înaintea ucenicilor săi multe alte semne care nu sunt scrise în cartea aceasta.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -5155,7 +5157,8 @@
         {
           "type": "verse",
           "text": "1După aceea Isus s-a mai descoperit ucenicilor săi la Marea Tiberiadei. Iată cum s-a descoperit:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -5228,7 +5231,7 @@
       "notes": [
         {
           "number": 130,
-          "text": "63:8 aprox. 100 de metri"
+          "text": "63:8   aprox. 100 de metri"
         }
       ]
     },
@@ -5242,7 +5245,8 @@
         {
           "type": "verse",
           "text": "1După ce au servit micul dejun, Isus a zis lui Simon Petru: „Simone, fiul lui Iona, mă iubeşti tu mai mult decât aceştia?” El i-a răspuns: Da, Doamne, știi că am afecțiune pentru tine.” Isus i-a zis: „Paşte mieluşeii mei.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -5292,7 +5296,8 @@
         {
           "type": "verse",
           "text": "10Ucenicul acesta este cel care mărturisește aceste lucruri şi care le-a scris. Şi ştim că mărturia lui este adevărată.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
