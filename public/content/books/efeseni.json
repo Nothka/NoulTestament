@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Pavel, apostol al lui Isus Cristos, prin voia lui Dumnezeu, către sfinţii care sunt în Efes şi credincioşii în Cristos Isus:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -28,7 +29,8 @@
         {
           "type": "verse",
           "text": "3Binecuvântat să fie Dumnezeu, Tatăl Domnului nostru, Isus Cristos, care ne-a binecuvântat cu toate binecuvântările spirituale, în locurile cereşti, în Cristos.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -87,7 +89,8 @@
         {
           "type": "verse",
           "text": "1Voi, după ce aţi auzit cuvântul adevărului – Evanghelia mântuirii voastre - aţi crezut în el şi aţi fost sigilaţi cu Duhul Sfânt, care fusese promis",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -225,7 +228,8 @@
         {
           "type": "verse",
           "text": "1Dar acum, în Cristos Isus, voi, care mai înainte eraţi depărtaţi, aţi fost apropiaţi prin sângele lui Cristos.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
