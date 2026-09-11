@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Pavel, deținut al lui Isus Cristos, şi fratele Timotei către preaiubitul Filimon, tovarăşul nostru de lucru,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -33,7 +34,8 @@
         {
           "type": "verse",
           "text": "4Mulţumesc totdeauna Dumnezeului meu, ori de câte ori îmi aduc aminte de tine în rugăciunile mele,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -62,7 +64,8 @@
         {
           "type": "verse",
           "text": "1De aceea, deși am suficientă îndrăzneală în Cristos să-ţi poruncesc ce trebuie să faci,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -134,7 +137,8 @@
         {
           "type": "verse",
           "text": "16Epafra, tovarăşul meu de detenție în Cristos Isus, te salută;",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
