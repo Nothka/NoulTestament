@@ -288,7 +288,8 @@
         {
           "type": "verse",
           "text": "1Din această cauză, eu, Pavel, deținutul lui Isus Cristos pentru voi, Neamurilor…,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
