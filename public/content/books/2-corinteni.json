@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Pavel, apostol al lui Isus Cristos, prin voia lui Dumnezeu, şi fratele nostru Timotei, către adunarea lui Dumnezeu care este în Corint şi către toţi sfinţii, care sunt în toată Ahaia:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -28,7 +29,8 @@
         {
           "type": "verse",
           "text": "3Binecuvântat să fie Dumnezeu, Tatăl Domnului nostru Isus Cristos, Părintele îndurărilor şi Dumnezeul tuturor mângâierilor,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -77,7 +79,8 @@
         {
           "type": "verse",
           "text": "1Lauda noastră este aceasta: mărturia pe care ne-o dă conștiința noastră că ne-am purtat în lume, şi mai ales faţă de voi, cu o sfinţenie şi curăţie de inimă date de Dumnezeu, bizuindu-ne nu pe o înţelepciune lumească, ci pe harul lui Dumnezeu.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -136,7 +139,8 @@
         {
           "type": "verse",
           "text": "1Iau pe Dumnezeu martor pentru sufletul meu că n-am mai venit până acum la Corint tocmai ca să vă cruţ.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -175,7 +179,8 @@
         {
           "type": "verse",
           "text": "1Iar dacă cineva a cauzat întristare, nu m-a întristat numai pe mine, ci pe voi toţi; cel puţin în parte, ca să nu spun prea mult.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
