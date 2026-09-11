@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Pavel, apostol al lui Cristos Isus, prin voia lui Dumnezeu, după promisiunea vieţii care este în Cristos Isus,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -28,7 +29,8 @@
         {
           "type": "verse",
           "text": "3Mulţumesc lui Dumnezeu, pe care îl servesc cu o conștiință curată, la fel ca strămoşii mei, că te amintesc fără încetare în rugăciunile mele, zi şi noapte.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -62,7 +64,8 @@
         {
           "type": "verse",
           "text": "1Așa că să nu-ţi fie ruşine de mărturisirea Domnului nostru, nici de mine, deținutul lui; ci suferă pentru Evanghelie, prin puterea lui Dumnezeu,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -104,7 +107,8 @@
           "text": "8După cum știi, toți cei din Asia* m-au părăsit; printre alţii şi Figel şi Ermogen.",
           "noteRefs": [
             192
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -139,7 +143,8 @@
         {
           "type": "verse",
           "text": "1Tu dar, copilul meu, întăreşte-te în harul care este în Cristos Isus.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -194,7 +199,8 @@
         {
           "type": "verse",
           "text": "11Adevărată este afirmația aceasta: „Dacă am murit împreună cu el, vom şi trăi împreună cu el.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -228,7 +234,8 @@
         {
           "type": "verse",
           "text": "1Însă evită vorbăriile goale şi lumeşti; căci cei ce se țin de ele vor duce la și mai multă necinstire de Dumnezeu,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -292,7 +299,8 @@
         {
           "type": "verse",
           "text": "1Să ştii aceasta: în zilele din urmă vor fi timpuri dificile.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -386,7 +394,8 @@
         {
           "type": "verse",
           "text": "1De aceea îți poruncesc înaintea lui Dumnezeu şi înaintea lui Cristos Isus, care are să judece viii şi morţii, la arătarea sa şi a Împărăţiei sale:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -435,7 +444,8 @@
         {
           "type": "verse",
           "text": "1Străduiește-te să vii curând la mine,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -486,7 +496,7 @@
         },
         {
           "type": "paragraph",
-          "text": "(4:19)",
+          "text": "",
           "noteRefs": []
         },
         {
