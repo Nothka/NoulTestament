@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Pavel, rob al lui Dumnezeu şi apostol al lui Isus Cristos potrivit cu credinţa aleşilor lui Dumnezeu şi cunoştinţa adevărului, care este în acord cu evlavia,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -38,7 +39,8 @@
         {
           "type": "verse",
           "text": "5Te-am lăsat în Creta cu scopul de a face rânduială unde nu s-a făcut, şi de a aşeza bătrâni în fiecare oraș, după cum ţi-am poruncit:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -72,7 +74,8 @@
         {
           "type": "verse",
           "text": "1În adevăr, mai ales printre cei circumciși, sunt mulţi nesupuşi, palavragii şi înșelători,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -116,7 +119,8 @@
         {
           "type": "verse",
           "text": "1Tu, însă, învață lucruri care corespund cu învăţătura sănătoasă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -200,7 +204,8 @@
         {
           "type": "verse",
           "text": "1Adu-le aminte să fie supuşi dregătorilor şi autorităților, să-i asculte, să fie gata să facă orice lucru bun,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -249,7 +254,8 @@
         {
           "type": "verse",
           "text": "1Dar de întrebările nebune, de înşirările de genealogii, de dispute şi ciorovăieli privitoare la lege, fereşte-te, căci sunt nefolositoare şi fără valoare.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -279,7 +285,8 @@
         {
           "type": "verse",
           "text": "7Toţi cei ce sunt cu mine îţi trimit sănătate. Salută pe cei care ne iubesc în credinţă. Harul să fie cu voi toţi! Amin.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         }
       ]
     }
