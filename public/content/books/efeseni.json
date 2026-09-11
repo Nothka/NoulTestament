@@ -487,7 +487,8 @@
         {
           "type": "verse",
           "text": "1Iată dar, ce vă spun şi mărturisesc eu, în Domnul: să nu mai trăiţi cum trăiesc ceilalți dintre Neamuri, în gândirea lor ușuratică,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -750,7 +751,8 @@
         {
           "type": "verse",
           "text": "1Copii, ascultaţi în Domnul de părinţii voştri, căci este corect.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -774,7 +776,8 @@
         {
           "type": "verse",
           "text": "1Robilor, ascultaţi de stăpânii voştri pământeşti cu frică şi cutremur, în curăţie de inimă, ca de Cristos.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -808,7 +811,8 @@
         {
           "type": "verse",
           "text": "1În încheiere, fraţilor, fiți tari în Domnul şi în puterea tăriei lui.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
