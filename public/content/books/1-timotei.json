@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Pavel, apostol al lui Isus Cristos după porunca lui Dumnezeu, Mântuitorul nostru, şi a Domnului Isus Cristos, speranța noastră,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -132,7 +133,8 @@
         {
           "type": "verse",
           "text": "1Vă îndemn dar, ca în primul rând, să faceţi rugăciuni, cereri, mijlociri, și mulţumiri pentru toţi oamenii,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -218,7 +220,8 @@
           "text": "1Iată o afirmație bună: „Dacă aspiră cineva să fie supraveghetor* aspiră la un lucru bun”.",
           "noteRefs": [
             190
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -270,7 +273,8 @@
           "text": "1La fel slujitorii* trebuie să fie cinstiţi, nu cu două feţe, nu băutori de mult vin, nu lacomi de bani,",
           "noteRefs": [
             191
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -330,7 +334,8 @@
         {
           "type": "verse",
           "text": "1Dar Duhul spune clar că, în timpurile din urmă, unii vor cădea de la credinţă, și vor da atenție duhurilor înşelătoare, şi învăţăturilor demonilor,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -419,7 +424,8 @@
         {
           "type": "verse",
           "text": "1Nu mustra cu asprime pe un om mai bătrân, ci sfătuieşte-l ca pe un tată; pe tineri sfătuieşte-i ca pe nişte fraţi;",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -508,7 +514,8 @@
         {
           "type": "verse",
           "text": "1Bătrânii care conduc bine să fie consideraţi că merită cinstire dublă, mai ales cei ce lucrează din greu la vestire şi învăţătură.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -537,7 +544,7 @@
         },
         {
           "type": "paragraph",
-          "text": "(5:22)",
+          "text": "",
           "noteRefs": []
         },
         {
@@ -572,7 +579,8 @@
         {
           "type": "verse",
           "text": "1Toţi cei ce sunt sub jugul sclaviei să considere pe stăpânii lor demni de toată cinstea, ca numele lui Dumnezeu şi învăţătura să nu fie vorbite de rău.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -591,7 +599,8 @@
         {
           "type": "verse",
           "text": "1Dacă învaţă cineva pe oameni altă învăţătură şi nu consimte la cuvintele sănătoase ale Domnului nostru Isus Cristos şi la învăţătura care duce la evlavie,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -615,7 +624,8 @@
         {
           "type": "verse",
           "text": "1Negreşit, evlavia însoţită de mulţumire este un mare câştig.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -649,7 +659,8 @@
         {
           "type": "verse",
           "text": "1Iar tu, om al lui Dumnezeu, fugi de aceste lucruri şi caută dreptatea, evlavia, credinţa, dragostea, răbdarea, blândeţea.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -693,18 +704,19 @@
         },
         {
           "type": "heading",
-          "text": "Încheiere",
+          "text": "",
           "noteRefs": []
         },
         {
           "type": "paragraph",
-          "text": "(6:20)",
+          "text": "",
           "noteRefs": []
         },
         {
           "type": "verse",
           "text": "10Timotee, păzeşte ce ţi s-a încredinţat; fereşte-te de discuțiile goale şi de contrazicerile celei care - în mod fals - este numită cunoştinţă, dar pe care unii declară că o au,",
-          "noteRefs": []
+          "noteRefs": [],
+          "spaceBefore": 0
         },
         {
           "type": "verse",
