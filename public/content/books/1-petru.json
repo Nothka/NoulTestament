@@ -12,8 +12,9 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Petru, apostol al lui Isus Cristos, către aleşii care trăiesc ca străini în Diaspora, prin Pont, Galatia, Capadocia, Asia şi Bitinia,",
-          "noteRefs": []
+          "text": "1Petru, apostol al lui Isus Cristos, către aleşii care trăiesc ca străini în Diaspora, prin Pont, Galatia, Capadocia, Asia şi Bitinia,",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -28,7 +29,8 @@
         {
           "type": "verse",
           "text": "3Binecuvântat să fie Dumnezeu, Tatăl Domnului nostru Isus Cristos, care, prin mila sa cea mare, ne-a născut din nou, prin învierea lui Isus Cristos din morţi, pentru o speranță vie",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -87,7 +89,8 @@
         {
           "type": "verse",
           "text": "1De aceea pregătiți-vă gândirea pentru acțiune. Fiți veghetori, şi puneţi-vă toată speranța în harul, care vă va fi adus la arătarea lui Isus Cristos.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -166,7 +169,8 @@
         {
           "type": "verse",
           "text": "1Daţi deci la o parte orice răutate, orice înşelăciune, ipocrizie, gelozie şi orice fel de calomnii!",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -235,7 +239,8 @@
         {
           "type": "verse",
           "text": "1Fiţi supuşi oricărei stăpâniri omeneşti, din cauza Domnului: atât regelui, ca înalt conducător,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -265,7 +270,8 @@
         {
           "type": "verse",
           "text": "6Slugilor, fiţi supuse stăpânilor voştri cu tot respectul, nu numai celor ce sunt buni şi blânzi, ci şi celor dificili.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -314,7 +320,8 @@
         {
           "type": "verse",
           "text": "1La fel şi voi, soţiilor, supuneţi-vă soţilor voştri, astfel încât, chiar dacă unii dintre ei sunt neascultători față de cuvânt, să fie câştigaţi fără cuvânt, prin purtarea soţiilor lor,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -353,8 +360,9 @@
         },
         {
           "type": "paragraph",
-          "text": "(3:8)",
-          "noteRefs": []
+          "text": "",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -418,7 +426,8 @@
         {
           "type": "verse",
           "text": "1Cristos, de asemenea, a suferit odată pentru păcate, el, cel drept, pentru cei nelegiuiţi, ca să ne aducă la Dumnezeu. El a fost ucis în trup, dar a fost înviat în duh,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -452,7 +461,8 @@
         {
           "type": "verse",
           "text": "1Astfel dar, fiindcă Cristos a suferit pentru noi, în trup, înarmaţi-vă şi voi cu acelaşi fel de gândire. Căci cel ce a suferit în trup a sfârşit-o cu păcatul;",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -516,7 +526,8 @@
         {
           "type": "verse",
           "text": "1Preaiubiţilor, nu vă miraţi de suferința fierbinte din mijlocul vostru, care a venit peste voi, ca să vă încerce, ca de ceva ciudat, care a dat peste voi.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -565,7 +576,8 @@
         {
           "type": "verse",
           "text": "1Sfătuiesc pe bătrânii voștri, eu, care sunt un confrate bătrân ca şi ei, un martor al suferințelor lui Cristos şi părtaş al gloriei care va fi descoperită:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -590,7 +602,8 @@
         {
           "type": "verse",
           "text": "5Tot aşa şi voi, tinerilor, fiţi supuşi celor bătrâni. Şi toţi în legăturile voastre să fiţi împodobiţi cu smerenie. Căci „Dumnezeu este împotriva celor mândri, dar celor smeriţi le dă har”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -629,8 +642,9 @@
         },
         {
           "type": "verse",
-          "text": "12V-am scris aceste puţine rânduri prin Silvan, care cred că este un frate credincios, ca să vă sfătuiesc şi să vă adeveresc că adevăratul har al lui Dumnezeu este harul acesta, de care v-aţi alipit.",
-          "noteRefs": []
+          "text": "12V-am scris aceste puţine rânduri prin Silvan, despre care cred că este un frate credincios, ca să vă sfătuiesc şi să vă adeveresc că adevăratul har al lui Dumnezeu este harul acesta, de care v-aţi alipit.",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
