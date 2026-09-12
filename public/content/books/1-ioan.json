@@ -12,12 +12,12 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Ce era de la început, ce am auzit, ce am văzut cu ochii noştri, ce am privit şi ce am pipăit cu mâinile noastre cu privire la",
+          "text": "1Ce era de la început, ce am auzit, ce am văzut cu ochii noştri, ce am privit şi ce am pipăit cu mâinile noastre cu privire la Cuvântul vieții -",
           "noteRefs": []
         },
         {
           "type": "heading",
-          "text": "Cuvântul vieţii, -",
+          "text": "",
           "noteRefs": []
         },
         {
@@ -259,7 +259,8 @@
         {
           "type": "verse",
           "text": "1Vedeţi ce mare dragoste ne-a dăruit Tatăl, să ne numim copii ai lui Dumnezeu! Şi suntem. Lumea nu ne cunoaşte, pentru că nu l-a cunoscut nici pe el.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -279,7 +280,8 @@
         {
           "type": "verse",
           "text": "4Oricine înfăptuiește păcat înfăptuiește şi fărădelege, căci păcatul este fărădelege.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -293,7 +295,7 @@
         },
         {
           "type": "verse",
-          "text": "7Copilaşilor, nimeni să nu vă înşele! Cine înfăptuieşte dreptatea este drept, după cum el însuşi este drept.",
+          "text": "7Copilaşilor, nimeni să nu vă înşele! Cine înfăptuieşte dreptatea este drept, după cum Dumnezeu însuşi este drept.",
           "noteRefs": []
         },
         {
