@@ -575,7 +575,8 @@
         {
           "type": "verse",
           "text": "1Isus străbătea toată Galileea, învăţând în sinagogi, predicând Evanghelia Împărăţiei, şi vindecând orice boală şi orice suferinţă care era în popor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1825,7 +1826,8 @@
         {
           "type": "verse",
           "text": "6Pe când orbii plecau, iată că au adus la Isus un mut demonizat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2478,7 +2480,8 @@
         {
           "type": "verse",
           "text": "1Atunci i-au adus un demonizat orb şi mut; şi Isus l-a vindecat, aşa că mutul vorbea şi vedea.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2944,7 +2947,7 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Împărăţia cerurilor se mai aseamănă cu o comoară ascunsă într-un teren, pe care un om o găseşte, și o ascunde. În bucuria lui, se duce şi vinde tot ce are, şi cumpără terenul acela.",
+          "text": "1Împărăţia cerurilor se mai aseamănă cu o comoară ascunsă într-un teren, pe care un om o găseşte, și o ascunde. În bucuria lui, se duce, vinde tot ce are, şi cumpără terenul acela.",
           "noteRefs": [],
           "align": "justify"
         },
@@ -3501,7 +3504,8 @@
         {
           "type": "verse",
           "text": "1Fariseii şi Saducheii au mers la Isus, şi, ca să-l ispitească, i-au cerut să le arate un semn din cer.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3510,12 +3514,12 @@
         },
         {
           "type": "verse",
-          "text": "3Şi dimineaţa, ziceţi: ”Astăzi o să fie furtună, căci cerul este roşu-posomorât.` Făţarnicilor, aspectul cerului ştiţi să-l deosebiţi, dar semnele timpurilor nu le puteţi deosebi?",
+          "text": "3Şi dimineaţa, ziceţi: „Astăzi o să fie furtună, căci cerul este roşu-posomorât ”. Făţarnicilor, aspectul cerului ştiţi să-l deosebiţi, dar semnele timpurilor nu le puteţi deosebi?",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "4O generație vicleană şi adulteră cere un semn; nu i se va da alt semn decât semnul profetului Iona.” Apoi i-a lăsat şi a plecat.",
+          "text": "4O generație vicleană şi adulteră cere un semn; nu i se va da alt semn decât semnul profetului Iona”. Apoi i-a lăsat şi a plecat.",
           "noteRefs": []
         },
         {
@@ -4237,7 +4241,7 @@
         },
         {
           "type": "verse",
-          "text": "2El i-a răspuns: „De ce mă numești bun?: Nimeni nu este bun decât unul, adică Dumnezeu. Însă, dacă vrei să intri în viaţă, păzeşte poruncile.„",
+          "text": "2El i-a răspuns: „De ce mă numești bun? Nimeni nu este bun decât unul, adică Dumnezeu. Însă, dacă vrei să intri în viaţă, păzeşte poruncile.„",
           "noteRefs": []
         },
         {
@@ -4297,7 +4301,8 @@
         {
           "type": "verse",
           "text": "1Atunci Petru i-a zis: „Iată că noi am lăsat tot, şi te-am urmat; ce răsplată vom avea?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4326,7 +4331,8 @@
         {
           "type": "verse",
           "text": "1Căci Împărăţia cerurilor se aseamănă cu un propietar al unei gospodării, care a ieşit dimineaţa devreme, să-şi angajeze lucrători la vie.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4342,7 +4348,7 @@
         },
         {
           "type": "verse",
-          "text": "4„Duceţi-vă şi voi în via mea`, le-a zis el „şi vă voi da ce va fi cu dreptul.` Şi s-au dus.",
+          "text": "4„Duceţi-vă şi voi în via mea” le-a zis el „şi vă voi da ce va fi cu dreptul”. Şi s-au dus.",
           "noteRefs": []
         },
         {
@@ -4352,12 +4358,12 @@
         },
         {
           "type": "verse",
-          "text": "6Când a ieşit pe la ora 5 după masa a găsit pe alţii stând în piaţă, şi le-a zis:,De ce staţi aici toată ziua fără lucru?`",
+          "text": "6Când a ieşit pe la ora 5 după masa a găsit pe alţii stând în piaţă, şi le-a zis:„De ce staţi aici toată ziua fără lucru?”",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "7Ei i-au răspuns:,Pentru că nu ne-a angajat nimeni.`,Duceţi-vă şi voi în via mea - le-a zis el - şi veţi primi dreptul vostru.`",
+          "text": "7Ei i-au răspuns:„Pentru că nu ne-a angajat nimeni”. „Duceţi-vă şi voi în via mea - le-a zis el - şi veţi primi dreptul vostru.”",
           "noteRefs": []
         },
         {
@@ -4382,12 +4388,12 @@
         },
         {
           "type": "verse",
-          "text": "12şi ziceau:,Aceştia de pe urmă n-au lucrat decât o oră, şi la plată i-ai făcut deopotrivă cu noi, care am suferit greul şi căldura înnăbușitoare.`",
+          "text": "12şi ziceau:,Aceştia de pe urmă n-au lucrat decât o oră, şi la plată i-ai făcut deopotrivă cu noi, care am suferit greul şi căldura înnăbușitoare.",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "13Dar el a răspuns, unuia dintre ei:,Prietene, nu-ţi fac nicio nedreptate; nu te-ai tocmit cu mine cu un dinar?",
+          "text": "13Dar el a răspuns, unuia dintre ei:„Prietene, nu-ţi fac nicio nedreptate; nu te-ai tocmit cu mine cu un dinar?",
           "noteRefs": []
         },
         {
@@ -4397,7 +4403,7 @@
         },
         {
           "type": "verse",
-          "text": "15Nu este legal să fac ce vreau cu ce-i al meu? Ori este ochiul tău rău, fiindcă eu sunt bun?`",
+          "text": "15Nu este legal să fac ce vreau cu ce-i al meu? Ori este ochiul tău rău, fiindcă eu sunt bun?",
           "noteRefs": []
         },
         {
@@ -4444,7 +4450,8 @@
         {
           "type": "verse",
           "text": "1Atunci mama fiilor lui Zebedei s-a apropiat de Isus împreună cu fiii ei, şi a îngenunchiat, vrând să-i ceară un anumit lucru.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4686,7 +4693,8 @@
         {
           "type": "verse",
           "text": "1Isus a mers în templu; şi, pe când învăţa poporul, au venit la el preoţii de frunte şi bătrânii poporului, şi i-au zis: „Cu ce autoritate faci tu aceste lucruri? Cine ți-a dat autoritatea aceasta?„",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4695,12 +4703,12 @@
         },
         {
           "type": "verse",
-          "text": "3Botezul lui Ioan de unde venea? Din cer, sau dela oameni?„ Dar ei vorbeau între ei şi ziceau: „Dacă vom răspunde:,Din cer,` ne va spune:,Atunci de ce nu l-aţi crezut?`",
+          "text": "3Botezul lui Ioan de unde venea? Din cer, sau dela oameni?„ Dar ei vorbeau între ei şi ziceau: „Dacă vom răspunde: „Din cer” ne va spune: „Atunci de ce nu l-aţi crezut?”",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "4Şi dacă vom răspunde:,De la oameni,` ne temem de popor, pentru că toţi consideră pe Ioan ca profet.”",
+          "text": "4Şi dacă vom răspunde:„De la oameni ne temem de popor, pentru că toţi consideră pe Ioan ca profet.”",
           "noteRefs": []
         },
         {
@@ -4915,7 +4923,8 @@
         {
           "type": "verse",
           "text": "1Atunci fariseii s-au dus şi s-au sfătuit cum să-l prindă cu vorba.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -5326,7 +5335,8 @@
         {
           "type": "verse",
           "text": "1Ierusalime, Ierusalime, care omori pe profeți şi ucizi cu pietre pe cei trimişi la tine! De câte ori am vrut să strâng pe copiii tăi cum îşi strânge găina puii sub aripi, şi n-aţi vrut!",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6840,7 +6850,7 @@
           "type": "verse",
           "text": "1După sabat, când începea să se lumineze spre ziua dintâi a săptămînii, Maria Magdalena şi cealaltă Marie au mers la mormânt.",
           "noteRefs": [],
-          "align": "justify"
+          "align": "center"
         },
         {
           "type": "verse",
