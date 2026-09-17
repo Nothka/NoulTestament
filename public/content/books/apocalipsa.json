@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Aceasta este descoperirea lui Isus Cristos, pe care i-a dat-o Dumnezeu, ca să arate servitorilor săi lucrurile care au să se întâmple în curând. El le-a trimis-o, și le-a făcut-o cunoscut prin îngerul său, trimis la servul său Ioan,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -39,13 +40,15 @@
         },
         {
           "type": "heading",
-          "text": "A lui, care ne iubeşte, care ne-a spălat de păcatele noastre cu sângele său",
+          "text": "\n\n\n\n\nA lui, care ne iubeşte, care ne-a spălat de păcatele noastre cu sângele său",
           "noteRefs": []
         },
         {
           "type": "verse",
           "text": "6şi a făcut din noi o Împărăţie şi preoţi pentru Dumnezeu, Tatăl său; ale lui să fie gloria şi puterea în vecii vecilor! Amin.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify",
+          "spaceBefore": 1.5
         },
         {
           "type": "verse",
@@ -75,7 +78,8 @@
         {
           "type": "verse",
           "text": "1Eu, Ioan, fratele vostru, care sunt partener cu voi la necaz, la Împărăţie şi la răbdarea în Isus Cristos, mă aflam pe insula Patmos, din cauza cuvântului lui Dumnezeu şi din cauza mărturiei lui Isus Cristos.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -152,7 +156,8 @@
         {
           "type": "verse",
           "text": "1Îngerului adunării din Efes scrie-i: ‘Iată ce zice cel ce ţine cele şapte stele în mâna dreaptă şi cel ce umblă prin mijlocul celor şapte sfeşnice de aur:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -196,7 +201,8 @@
         {
           "type": "verse",
           "text": "1Îngerului adunării din Smirna scrie-i: ‘Cel dintâi şi cel de pe urmă, cel ce a fost mort şi a înviat, spune aceste lucruri:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -225,7 +231,8 @@
         {
           "type": "verse",
           "text": "1Îngerului adunării din Pergam scrie-i: ‘Cel ce are sabia ascuţită cu două tăişuri spune aceste lucruri:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -264,7 +271,8 @@
         {
           "type": "verse",
           "text": "1Îngerului adunării din Tiatira scrie-i: ‘Fiul lui Dumnezeu, cel care are ochii ca o flacără de foc şi ale cărui picioare sunt ca arama lustruită spune aceste lucruri:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -338,7 +346,8 @@
         {
           "type": "verse",
           "text": "1Îngerului adunării din Sardes scrie-i: ‘Iată ce spune cel ce are cele şapte Spirite ale lui Dumnezeu şi cele şapte stele: „Ştiu faptele tale: că îţi merge numele că trăieşti, dar eşti mort.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -377,7 +386,8 @@
         {
           "type": "verse",
           "text": "1Îngerului adunării din Filadelfia scrie-i: ‘Iată ce zice cel sfânt, cel adevărat, cel ce ţine cheia lui David, cel ce deschide şi nimeni nu va închide, cel ce închide şi nimeni nu va deschide:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -421,7 +431,8 @@
         {
           "type": "verse",
           "text": "1Îngerului adunării din Laodiceea scrie-i: ‘Cel ce este Amin, Cel Credincios, Martorul adevărat, Începutul creației lui Dumnezeu, spune aceste lucruri:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -475,7 +486,8 @@
         {
           "type": "verse",
           "text": "1După acestea, m-am uitat şi iată că în cer era o ușă deschisă. Glasul cel dintâi, pe care-l auzisem ca sunetul unei trâmbiţe şi care vorbea cu mine, mi-a zis: „Urcă-te aici şi-ţi voi arăta ce are să se întâmple după aceste lucruri!”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -495,7 +507,8 @@
         {
           "type": "verse",
           "text": "4Împrejurul tronului stăteau alte douăzeci şi patru de tronuri şi pe aceste tronuri stăteau douăzeci şi patru de bătrâni, îmbrăcaţi în haine albe şi pe capete aveau cununi de aur.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -515,7 +528,8 @@
         {
           "type": "paragraph",
           "text": "În mijlocul tronului şi împrejurul lui stăteau patru ființe vii, pline cu ochi pe dinainte şi pe dinapoi.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -554,7 +568,8 @@
         {
           "type": "verse",
           "text": "1Apoi am văzut în mâna dreaptă a celui ce şedea pe tron o carte, scrisă pe dinăuntru şi pe dinafară, sigilată cu şapte sigilii.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -584,7 +599,8 @@
         {
           "type": "verse",
           "text": "6Şi la mijloc, între tron şi cele patru făpturi vii, şi între bătrâni, am văzut stând în picioare un Miel. Părea înjunghiat şi avea şapte coarne şi şapte ochi, care sunt cele şapte Duhuri ale lui Dumnezeu, trimise în tot pământul.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -614,7 +630,8 @@
         {
           "type": "verse",
           "text": "11M-am uitat şi, împrejurul tronului, în jurul făpturilor vii, şi în jurul bătrânilor, am auzit ceva ca glasul multor îngeri. Numărul lor era de zece mii de ori, zece mii, şi mii de mii.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -643,7 +660,8 @@
         {
           "type": "verse",
           "text": "1Am văzut pe Miel rupând cel dintâi din cele şapte sigilii, şi am auzit pe una din cele patru făpturi vii zicând cu un glas ca de tunet: „Vino şi vezi!”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -737,7 +755,8 @@
         {
           "type": "verse",
           "text": "1După aceea am văzut patru îngeri care stăteau în picioare în cele patru colţuri ale pământului. Ei ţineau cele patru vânturi ale pământului, ca să nu sufle vânt pe pământ, nici pe mare, nici peste vreun copac.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -786,7 +805,8 @@
         {
           "type": "verse",
           "text": "1După aceste lucruri m-am uitat şi iată că era o mare mulțime pe care nu putea s-o numere nimeni, din toate națiunile, triburile, popoarele şi limbile, care stătea în picioare înaintea scaunului de domnie şi înaintea Mielului, îmbrăcaţi în haine albe, cu ramuri de finic în mâini",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -840,7 +860,8 @@
         {
           "type": "verse",
           "text": "1Când Mielul a rupt al şaptelea sigiliu, s-a făcut în cer o tăcere de aproximativ o jumătate de oră.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -879,7 +900,8 @@
         {
           "type": "verse",
           "text": "1Cei şapte îngeri, care aveau cele şapte trâmbiţe, s-au pregătit să sune din ele.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1047,7 +1069,8 @@
         {
           "type": "verse",
           "text": "1Apoi am văzut un alt înger puternic, care se pogora din cer, învăluit într-un nor. Pe capul lui era un curcubeu. Faţa lui era ca soarele şi picioarele lui erau ca nişte stâlpi de foc.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1111,7 +1134,8 @@
         {
           "type": "verse",
           "text": "1Apoi mi s-a dat o trestie asemenea unui baston. Cineva mi-a spus: „Scoală-te şi măsoară templul lui Dumnezeu, altarul, şi pe cei ce se închină în el.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1190,7 +1214,8 @@
         {
           "type": "verse",
           "text": "1Îngerul, al şaptelea a sunat din trâmbiţă, și în cer s-au auzit glasuri puternice, care ziceau: „Împărăţia lumii a trecut în mâinile Domnului nostru şi ale Cristosului său. Şi el va împărăţi în vecii vecilor.”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1224,7 +1249,8 @@
         {
           "type": "verse",
           "text": "1În cer s-a arătat un semn mare: o femeie învăluită în soare, cu luna sub picioare şi cu o cunună de douăsprezece stele pe cap.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1263,7 +1289,8 @@
         {
           "type": "verse",
           "text": "1În cer s-a făcut război. Mihail şi îngerii lui s-au luptat cu dragonul. Dragonul cu îngerii lui s-au luptat şi ei,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1332,7 +1359,8 @@
         {
           "type": "verse",
           "text": "1Apoi am stat pe nisipul mării, și am văzut o fiară cu zece coarne şi şapte capete ridicându-se din mare; pe coarne avea zece cununi şi pe capete avea nume de hulă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1391,7 +1419,8 @@
         {
           "type": "verse",
           "text": "1Apoi am văzut ridicându-se din pământ o altă fiară, care avea două coarne ca de miel şi vorbea ca un balaur.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1440,7 +1469,8 @@
         {
           "type": "verse",
           "text": "1Apoi m-am uitat şi iată că Mielul stătea pe Muntele Sionului, şi împreună cu el stăteau o sută patruzeci şi patru de mii, care aveau scris pe frunte numele său şi numele Tatălui său.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1474,7 +1504,8 @@
         {
           "type": "verse",
           "text": "1Apoi am văzut un înger care zbura prin mijlocul cerului cu o Evanghelie veşnică, ca s-o vestească celor care locuiesc pe pământ, oricărui neam, oricărui trib, oricărei limbi și oricărui popor.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1566,7 +1597,8 @@
         {
           "type": "verse",
           "text": "1Apoi am văzut pe cer un alt semn mare şi minunat: şapte îngeri care aveau ultimile şapte plăgi, căci cu ele s-a încheiat mânia lui Dumnezeu.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1595,7 +1627,8 @@
         {
           "type": "verse",
           "text": "1După aceea, am văzut deschizându-se în cer templul, cortul mărturiei.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1748,7 +1781,8 @@
         {
           "type": "verse",
           "text": "1Apoi unul din cei şapte îngeri care ţineau cele şapte vase a venit de a vorbit cu mine şi mi-a zis: „Vino aici. Îţi voi arăta judecata curvei celei mari, care şade pe multe ape.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1855,7 +1889,8 @@
         {
           "type": "verse",
           "text": "1După aceea, am văzut coborându-se din cer un alt înger, care avea mare autoritate, şi pământul s-a luminat de gloria lui.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1989,7 +2024,8 @@
         {
           "type": "verse",
           "text": "1După aceste lucruri, am auzit ceva ca o voce puternică, a unei mari mulțimi, care zicea: „Aleluia! Dumnezeului nostru îi aparțin mântuirea, puterea, și gloria;",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
