@@ -12,7 +12,7 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Ce era de la început, ce am auzit, ce am văzut cu ochii noştri, ce am privit şi ce am pipăit cu mâinile noastre cu privire la Cuvântul vieții -",
+          "text": "1Ce era de la început, ce am auzit, ce am văzut cu ochii noştri, ce am privit şi ce am pipăit cu mâinile noastre cu privire la Cuvântul vieții,",
           "noteRefs": []
         },
         {
@@ -23,7 +23,8 @@
         {
           "type": "verse",
           "text": "2pentru că viaţa a fost arătată şi noi am văzut-o şi mărturisim despre ea şi vă vestim viaţa veşnică, viaţă care era la Tatăl şi care ne-a fost arătată -",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -43,7 +44,8 @@
         {
           "type": "verse",
           "text": "5Vestea pe care am auzit-o de la el şi pe care v-o predicăm este că Dumnezeu e lumină şi în el nu este întuneric deloc.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -82,7 +84,8 @@
         {
           "type": "verse",
           "text": "1Copilaşilor, vă scriu aceste lucruri pentru ca voi să nu păcătuiţi. Dar, dacă cineva a păcătuit, avem la Tatăl un apărător, pe Isus Cristos, cel drept.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -117,7 +120,8 @@
         {
           "type": "verse",
           "text": "7Fraţilor, nu vă scriu o poruncă nouă, ci o poruncă veche, pe care aţi avut-o de la început. Porunca aceasta veche este cuvântul, pe care l-aţi auzit de la început.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -151,7 +155,8 @@
         {
           "type": "verse",
           "text": "1Vă scriu, copilaşilor, fiindcă păcatele vă sunt iertate pentru numele lui.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -190,7 +195,8 @@
         {
           "type": "verse",
           "text": "1Copilaşilor, acesta este timpul de pe urmă, și după cum aţi auzit că are să vină Anticrist, să ştiţi că acum s-au ridicat mulţi anticrişti. Prin aceasta cunoaştem că este ora de pe urmă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -325,7 +331,8 @@
         {
           "type": "verse",
           "text": "1Căci mesajul, pe care l-aţi auzit de la început este acesta: să ne iubim unii pe alţii;",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -404,7 +411,8 @@
         {
           "type": "verse",
           "text": "1Preaiubiţilor, să nu vă încredeți în orice spirit, ci să cercetaţi spiritele dacă sunt de la Dumnezeu; căci în lume au ieşit mulţi profeți mincinoşi.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -443,7 +451,8 @@
         {
           "type": "verse",
           "text": "1Preaiubiţilor, să ne iubim unii pe alţii, căci dragostea este de la Dumnezeu; oricine iubeşte este născut din Dumnezeu şi cunoaşte pe Dumnezeu.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -552,7 +561,8 @@
         {
           "type": "verse",
           "text": "1Isus Cristos, este acela care a venit cu apă şi cu sânge; nu numai cu apă, ci cu apă şi cu sânge; iar Spiritul este cel ce mărturiseşte despre lucrul acesta, pentru că Spiritul este adevărul.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -609,7 +619,8 @@
         {
           "type": "verse",
           "text": "1Îndrăzneala pe care o avem la el este că dacă cerem ceva după voia lui, el ne ascultă.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
