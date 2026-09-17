@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Prezbiterul către preaiubitul Gaius, pe care îl iubesc într-adevăr. Preaiubitule, mă rog pentru prosperitatea ta în toate lucrurile, și pentru sănătatea ta, așa cum prosperă sufletul tău.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",

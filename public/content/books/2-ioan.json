@@ -15,7 +15,8 @@
           "text": "1Prezbiterul către aleasa doamnă* şi către copiii ei, pe care-i iubesc în adevăr, şi nu numai eu, ci toţi cei care cunosc și iubesc adevărul,",
           "noteRefs": [
             198
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -35,7 +36,8 @@
         {
           "type": "verse",
           "text": "4Mă bucur foarte mult să aflu că unii din copiii tăi umblă în adevăr, așa cum ne-a poruncit Tatăl.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
