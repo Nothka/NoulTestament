@@ -1346,7 +1346,8 @@
         {
           "type": "verse",
           "text": "1Toate lucrurile sunt permise, dar nu toate sunt de folos. Toate lucrurile sunt permise, dar nu toate zidesc.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1843,7 +1844,8 @@
         {
           "type": "verse",
           "text": "1Urmăriţi dragostea şi doriți sincer darurile spirituale, dar mai ales să profețiţi.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2271,7 +2273,8 @@
         {
           "type": "verse",
           "text": "1Dar va zice cineva: „Cum învie morţii? Şi cu ce trup se vor întoarce?”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2458,7 +2461,8 @@
         {
           "type": "verse",
           "text": "1Vegheaţi! Fiţi tari în credinţă! Fiţi curajoși! Fiți puternici!",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
