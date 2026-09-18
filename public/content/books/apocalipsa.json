@@ -2055,7 +2055,8 @@
         {
           "type": "verse",
           "text": "6Şi am auzit ceva ca o voce de mulțime mare, ca vuietul unor ape multe, și ca bubuitul unor tunete puternice, care zicea: „Aleluia! Domnul, Dumnezeul nostru cel Atotputernic, domnește.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2089,7 +2090,8 @@
         {
           "type": "verse",
           "text": "1Apoi am văzut cerul deschis şi iată că s-a arătat un cal alb, iar cel ce sta pe el se numea „Cel credincios” şi „Cel adevărat”; el judecă şi se luptă cu dreptate.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2155,7 +2157,8 @@
           "text": "1Apoi am văzut coborându-se din cer un înger, care ţinea în mână cheia Adâncului* şi un lanţ mare.",
           "noteRefs": [
             207
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2200,7 +2203,8 @@
         {
           "type": "verse",
           "text": "1După cei o mie de ani, Satana va fi eliberat",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2254,7 +2258,8 @@
         {
           "type": "verse",
           "text": "1Apoi am văzut un cer nou şi un pământ nou, pentru că cerul dintâi, pământul dintâi şi marea nu mai erau.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2303,7 +2308,8 @@
         {
           "type": "verse",
           "text": "1Apoi unul din cei şapte îngeri, care ţineau cele şapte cupe pline cu cele din urmă şapte urgii, a venit şi a vorbit cu mine şi mi-a zis: „Vino să-ţi arăt mireasa, soția Mielului!”",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2460,11 +2466,12 @@
         {
           "type": "verse",
           "text": "8Eu, Ioan, am auzit şi am văzut lucrurile acestea. Şi după ce le-am auzit şi le-am văzut, m-am aruncat la picioarele îngerului care mi le arăta, să mă închin lui.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
-          "text": "9Dar el mi-a zis: „Nu e voie să faci aceasta! Eu sunt slujitor împreună cu tine şi cu fraţii tăi, profeții, şi cu cei ce țin cuvintele din cartea aceasta. Închină-te lui Dumnezeu.”",
+          "text": "9Dar el mi-a zis: „Nu e voie să faci aceasta! Eu sunt slujitor împreună cu tine şi cu fraţii tăi, profeții, şi cu cei ce țin cuvintele din cartea aceasta. Închină-te lui Dumnezeu”.",
           "noteRefs": []
         }
       ]
@@ -2479,11 +2486,12 @@
         {
           "type": "verse",
           "text": "1Apoi mi-a zis: „Să nu sigilezi cuvintele profeției din cartea aceasta, căci timpul este aproape.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
-          "text": "2Cine acționează cu nedreptate, să acționeze cu nedreptate şi mai departe. Cine este întinat să se întineze şi mai departe. Cine este fără vină să continue şi mai departe în nevinovăție. Și cine este sfânt să continue și mai departe să fie sfânt!”",
+          "text": "2Cine face răul, să facă răul şi mai departe. Cine este întinat să se întineze şi mai departe. Cine este fără vină să continue şi mai departe în nevinovăție. Și cine este sfânt să continue și mai departe să fie sfânt!”",
           "noteRefs": []
         },
         {
@@ -2523,8 +2531,9 @@
         },
         {
           "type": "paragraph",
-          "text": "(22:18)",
-          "noteRefs": []
+          "text": "",
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
