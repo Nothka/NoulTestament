@@ -164,7 +164,8 @@
         {
           "type": "verse",
           "text": "1Însă modul vostru de viață să fie demn de Evanghelia lui Cristos, pentru ca, fie că voi veni să vă văd, fie că voi fi absent, să",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "paragraph",
