@@ -69,7 +69,8 @@
         {
           "type": "verse",
           "text": "1Voi înşivă ştiţi, fraţilor, că venirea noastră la voi n-a fost fără rost,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -168,7 +169,8 @@
         {
           "type": "verse",
           "text": "1Noi, fraţilor, fiind despărțiţi de voi un scurt timp – în persoană, dar nu cu inima – am încercat cu atât mai mult să vă vedem fața, având o mare dorință, deoarece, într-adevăr am dorit să venim la voi;",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -337,7 +339,8 @@
         {
           "type": "verse",
           "text": "1Nu voim, fraţilor, să fiţi neinformați cu privire la cei care au adormit, ca să nu vă întristaţi ca ceilalţi, care n-au nici o speranță.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
