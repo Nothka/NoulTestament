@@ -351,7 +351,7 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Circumcizia,* negreşit, este de utilă, dacă ești împlinitor al legii, dar, dacă tu calci legea, tăierea ta împrejur ajunge netăiere împrejur.",
+          "text": "1Circumcizia,* negreşit, este utilă, dacă ești împlinitor al legii, dar, dacă tu calci legea, tăierea ta împrejur ajunge netăiere împrejur.",
           "noteRefs": [
             175
           ],
@@ -770,7 +770,8 @@
         {
           "type": "verse",
           "text": "1De aceea, după cum printr-un singur om a intrat păcatul în lume şi prin păcat a intrat moartea, şi astfel moartea a trecut asupra tuturor oamenilor, din cauză că toţi au păcătuit…",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -909,7 +910,8 @@
         {
           "type": "verse",
           "text": "1Deci ce urmează mai departe? Să păcătuim pentru că nu mai suntem sub lege, ci sub har? Nu, niciodată.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1619,7 +1621,8 @@
         {
           "type": "verse",
           "text": "1Dar cum vor chema pe acela în care n-au crezut? Şi cum vor crede în acela despre care n-au auzit? Şi cum vor auzi despre el fără vestitor?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2090,7 +2093,8 @@
         {
           "type": "verse",
           "text": "1Acceptați pe cel care este slab în credinţă, și nu discutați despre părerile îndoielnice.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2385,7 +2389,8 @@
         {
           "type": "verse",
           "text": "1Din această cauză am fost împiedicat de multe ori să vin la voi.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2544,7 +2549,8 @@
         {
           "type": "verse",
           "text": "1Vă implor fraţilor, să fiți atenți la cei ce fac dezbinări şi tulburare, contrar învăţăturii pe care aţi primit-o, și să vă îndepărtaţi de ei.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
