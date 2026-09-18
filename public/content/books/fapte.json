@@ -944,7 +944,8 @@
         {
           "type": "verse",
           "text": "1Însă marele preot şi toţi cei ce erau împreună cu el - adică gruparea Saducheilor - s-au sculat plini de gelozie,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1146,7 +1147,8 @@
         {
           "type": "verse",
           "text": "1Cuvântul lui Dumnezeu se răspândea tot mai mult, și numărul ucenicilor se înmulţea mult în Ierusalim. O mare mulţime de preoţi acceptau credinţa.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3410,7 +3412,8 @@
         {
           "type": "verse",
           "text": "1După câteva zile, Pavel a zis lui Barnaba: „Să ne întoarcem şi să îi vizităm pe fraţii din toate orașele în care am vestit Cuvântul Domnului, ca să vedem ce mai fac”.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -3854,7 +3857,8 @@
         {
           "type": "verse",
           "text": "8Pavel a stat în picioare în mijlocul Areopagului şi a zis: „Bărbaţi atenieni!, observ că sunteți foarte religioși în toate privinţele.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -4396,7 +4400,8 @@
         {
           "type": "verse",
           "text": "1După ce a încetat agitația, Pavel a chemat pe ucenici şi, după ce le-a dat sfaturi,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "paragraph",
@@ -4985,7 +4990,8 @@
         {
           "type": "verse",
           "text": "1Ei l-au ascultat până la cuvântul acesta. Dar atunci şi-au ridicat glasul şi au zis: „Ia",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "paragraph",
@@ -6084,7 +6090,8 @@
           "text": "1După o şedere de trei luni, am pornit cu o corabie din Alexandria, care iernase în insulă şi care purta emblema ”Frații Gemeni.”*",
           "noteRefs": [
             173
-          ]
+          ],
+          "align": "justify"
         },
         {
           "type": "verse",
