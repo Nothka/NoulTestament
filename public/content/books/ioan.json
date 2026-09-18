@@ -1903,7 +1903,7 @@
         },
         {
           "type": "verse",
-          "text": "26Iudeii au zis între ei: „Unde are de gând să se ducă omul acesta, ca să nu-l putem găsi? Doar nu are de gând să se ducă la cei din diaspora, printre greci, şi să înveţe pe greci?",
+          "text": "26Iudeii au zis între ei: „Unde are de gând să meargă omul acesta, ca să nu-l putem găsi? Doar nu are de gând să  meargă la cei din diaspora, printre greci, şi să înveţe pe greci?",
           "noteRefs": []
         },
         {
@@ -2151,13 +2151,13 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Apoi Isus le-a mai spus: „Eu mă duc, şi mă veţi căuta şi veţi muri în păcatul vostru; acolo unde mă duc eu, voi nu puteţi veni.”",
+          "text": "1Apoi Isus le-a mai spus: „Eu plec, iar voi mă veţi căuta şi veţi muri în păcatul vostru; acolo unde merg eu, voi nu puteţi veni.”",
           "noteRefs": [],
           "align": "justify"
         },
         {
           "type": "verse",
-          "text": "2Atunci iudeii au zis: „Doar nu se va omorî, de zice: „Unde mă duc eu, voi nu puteţi veni”!”",
+          "text": "2Atunci iudeii au zis: „Doar nu se va omorî, de zice: „Unde merg eu, voi nu puteţi veni”!”",
           "noteRefs": []
         },
         {
@@ -2207,7 +2207,8 @@
         {
           "type": "verse",
           "text": "1Pe când spunea Isus aceste lucruri, mulţi au crezut în el.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2276,7 +2277,7 @@
         },
         {
           "type": "verse",
-          "text": "15Voi aveţi de tată pe diavolul; şi vreţi să împliniţi dorințele tatălui vostru. El de la început a fost ucigaş; şi nu stă în adevăr, pentru că în el nu este adevăr. Ori de câte ori",
+          "text": "15Voi aveţi de tată pe diavolul, şi vreţi să împliniţi dorințele tatălui vostru. El de la început a fost ucigaş; şi nu practică adevărul, pentru că în el nu este adevăr. Ori de câte ori",
           "noteRefs": []
         },
         {
@@ -2411,7 +2412,7 @@
         },
         {
           "type": "verse",
-          "text": "7şi i-a zis: „Du-te de te spală în scăldătoarea Siloam”, care tradus înseamnă: Trimis. El s-a dus, s-a spălat şi s-a întors văzând bine.",
+          "text": "7şi i-a zis: „Mergi și te spală în scăldătoarea Siloam”, (care tradus înseamnă: trimis). El s-a dus, s-a spălat şi s-a întors văzând bine.",
           "noteRefs": []
         },
         {
@@ -3073,7 +3074,7 @@
         },
         {
           "type": "verse",
-          "text": "42Ştiam că totdeauna mă asculţi; dar vorbesc astfel pentru poporul care stă împrejur, ca să creadă că tu m-ai trimis.”",
+          "text": "42Ştiam că întotdeauna mă asculţi; dar vorbesc astfel pentru poporul care stă împrejur, ca să creadă că tu m-ai trimis.”",
           "noteRefs": []
         },
         {
@@ -3236,7 +3237,7 @@
         },
         {
           "type": "verse",
-          "text": "8Pe săraci îi aveţi totdeauna cu voi, dar pe mine nu mă aveţi totdeauna.”",
+          "text": "8Pe săraci îi aveţi întotdeauna cu voi, dar pe mine nu mă aveţi întotdeauna”.",
           "noteRefs": []
         },
         {
@@ -4469,7 +4470,7 @@
         },
         {
           "type": "verse",
-          "text": "6Când le-a zis Isus: „Eu sunt acela”, ei s-au dat înapoi şi au căzut la pământ.",
+          "text": "6Când Isus le-a zis : „Eu sunt acela”, ei s-au dat înapoi şi au căzut la pământ.",
           "noteRefs": []
         },
         {
@@ -4508,7 +4509,7 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Grupa soldaților, căpitanul lor şi gardienii iudeilor, au prins deci pe Isus şi l-au legat.",
+          "text": "1Grupul soldaților, căpitanul lor şi gardienii iudeilor, au prins deci pe Isus şi l-au legat.",
           "noteRefs": [],
           "align": "justify"
         },
