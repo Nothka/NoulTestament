@@ -4962,7 +4962,7 @@
         },
         {
           "type": "verse",
-          "text": "8Miraţi de cuvintele acestea, ei l-au lăsat, şi au plecat.”",
+          "text": "8Când au auzit cuvintele acestea, l-au lăsat, şi au plecat.”",
           "noteRefs": []
         }
       ],
@@ -5037,7 +5037,7 @@
         },
         {
           "type": "verse",
-          "text": "11Mulțimea care-l asculta, era uimit[ de învăţătura lui.",
+          "text": "11Mulțimea care-l asculta, era uimită de învăţătura lui.",
           "noteRefs": []
         }
       ]
@@ -6472,7 +6472,7 @@
           "type": "verse",
           "text": "1Isus a ajuns înaintea guvernatorului; iar guvernatorul l-a întrebat: „Eşti tu,Regele iudeilor?” Isus i-a răspuns: „Este așa cum spui.„",
           "noteRefs": [],
-          "align": "justify"
+          "align": "center"
         },
         {
           "type": "verse",
@@ -6486,7 +6486,7 @@
         },
         {
           "type": "verse",
-          "text": "4Isus nu i-a răspuns niciun cuvânt, aşa că guvernatorul se mira foarte mult. Condamnarea la moarte a Mântuitorului (vineri dimineața)",
+          "text": "4Isus nu i-a răspuns niciun cuvânt, aşa că guvernatorul se mira foarte mult. \n\n_Condamnarea la moarte a Mântuitorului (vineri dimineața)_ \n\n",
           "noteRefs": []
         },
         {
@@ -6560,7 +6560,7 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Soldații guvernatorului au dus pe Isus în pretoriu, şi au adunat în jurul lui toată grupa soldaților.",
+          "text": "1Soldații guvernatorului au dus pe Isus în sala de judecată, şi au adunat în jurul lui toată grupa soldaților.",
           "noteRefs": [],
           "align": "justify"
         },
