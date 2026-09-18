@@ -249,7 +249,8 @@
         {
           "type": "verse",
           "text": "5Începem noi din nou să ne recomandăm pe noi înșine? Sau nu cumva avem nevoie, ca unii, de scrisori de laudă către voi sau de la voi?",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -781,7 +782,8 @@
         {
           "type": "verse",
           "text": "1Mai mult fraţilor, vă facem cunoscut harul pe care l-a dat Dumnezeu în adunările Macedoniei,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1342,7 +1344,8 @@
         {
           "type": "verse",
           "text": "1Am ajuns nebun prin a mă lăuda, căci voi m-aţi obligat. Dar voi trebuia să mă lăudaţi, căci, măcar că nu sunt nimic, totuşi n-am fost cu nimic inferior în comparație cu aceşti apostoli aşa de deosebiți.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
