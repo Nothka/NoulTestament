@@ -29,7 +29,8 @@
         {
           "type": "verse",
           "text": "3După cum te-am îndemnat la plecarea mea în Macedonia, - te îndemn din nou - să rămâi",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "paragraph",
@@ -545,7 +546,8 @@
         {
           "type": "paragraph",
           "text": "",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",

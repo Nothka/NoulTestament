@@ -99,7 +99,8 @@
         {
           "type": "verse",
           "text": "1De aceea, ar trebui să dăm atenție mai mare lucrurilor pe care le-am auzit, ca nu cumva să ne abatem de la ele.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1281,7 +1282,8 @@
         {
           "type": "verse",
           "text": "4Prin credinţă a adus Abel lui Dumnezeu o jertfă mai bună decât Cain, și a primit mărturia că este drept, căci Dumnezeu a primit darurile lui. Şi prin ea vorbeşte el încă, măcar că este mort.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -1640,7 +1642,8 @@
         {
           "type": "verse",
           "text": "1Continuaţi în dragostea frăţească.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
