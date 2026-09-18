@@ -4091,7 +4091,7 @@
         },
         {
           "type": "verse",
-          "text": "3„Doamne”, i-a răspuns vierul, „mai lasă-l şi anul acesta; o să-l sap de jur împrejur şi o să-i pun gunoi la rădăcină.",
+          "text": "3„Doamne”, i-a răspuns viticultorul, „mai lasă-l şi anul acesta; o să-l sap de jur împrejur şi o să-i pun gunoi la rădăcină.",
           "noteRefs": []
         },
         {
@@ -4116,7 +4116,7 @@
         },
         {
           "type": "verse",
-          "text": "2Şi acolo era o femeie stăpânită de 18 ani de un duh de infirmitate; era încovoiată şi nu putea nicidecum să-şi îndrepte spatele.",
+          "text": "2Acolo era o femeie stăpânită de 18 ani de un duh de infirmitate; era încovoiată şi nu putea nicidecum să-şi îndrepte spatele.",
           "noteRefs": []
         },
         {
@@ -4463,7 +4463,7 @@
         },
         {
           "type": "verse",
-          "text": "5Pentru ca nu cumva, după ce i-a pus temelia, să nu-l poată sfârşi, şi toţi cei ce-l vor vedea să înceapă să râdă de el",
+          "text": "5Pentru ca nu cumva, după ce i-a pus temelia, să nu-l poată termina, şi toţi cei ce-l vor vedea să înceapă să râdă de el",
           "noteRefs": []
         },
         {
@@ -4726,7 +4726,7 @@
         },
         {
           "type": "verse",
-          "text": "4Ştiu ce o să fac, pentru ca, atunci când voi fi scos din administrație, ei să mă primească în casele lor.”",
+          "text": "4Ştiu ce o să fac, pentru ca, atunci când voi fi scos din administrație, oamenii să mă primească în casele lor.”",
           "noteRefs": []
         },
         {
@@ -4992,7 +4992,7 @@
         },
         {
           "type": "verse",
-          "text": "3şi-au ridicat glasul şi au zis: „Isuse, Învăţătorule, ai milă de noi!”",
+          "text": "3şi-au ridicat vocea şi au zis: „Isuse, Învăţătorule, ai milă de noi!”",
           "noteRefs": []
         },
         {
@@ -5002,7 +5002,7 @@
         },
         {
           "type": "verse",
-          "text": "5Unul din ei, când s-a văzut vindecat, s-a întors, lăudând pe Dumnezeu cu glas tare.",
+          "text": "5Unul din ei, când s-a văzut vindecat, s-a întors, lăudând pe Dumnezeu cu voce tare.",
           "noteRefs": []
         },
         {
@@ -5232,7 +5232,8 @@
         {
           "type": "verse",
           "text": "1De asemenea i-au adus nişte copilaşi, ca să se atingă de ei. Dar ucenicii, când au",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "paragraph",
@@ -6183,7 +6184,8 @@
         {
           "type": "verse",
           "text": "1Atunci vor vedea pe Fiul omului venind pe un nor cu putere şi glorie mare.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6228,7 +6230,8 @@
         {
           "type": "verse",
           "text": "8Aveți grijă de voi înşivă, ca nu cumva să vi se încarce inimile cu îmbuibare de mâncare şi băutură şi cu îngrijorările acestei vieţi, şi astfel ziua aceea să vină pe neașteptate peste voi.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6262,7 +6265,8 @@
         {
           "type": "verse",
           "text": "1Sărbătoarea Azimelor, numită Paştile, se apropia.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -6301,7 +6305,8 @@
         {
           "type": "verse",
           "text": "1Ziua sărbătorii Azimelor, în care trebuiau jertfite Paştile, a sosit.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -7077,7 +7082,8 @@
         {
           "type": "verse",
           "text": "1Dar în ziua întâi a săptămânii, femeile acestea, şi altele împreună cu ele, au venit la mormânt, dimineaţa devreme, şi au adus miresmele pe care le pregătiseră.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
