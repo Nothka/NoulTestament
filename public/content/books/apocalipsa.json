@@ -40,7 +40,7 @@
         },
         {
           "type": "heading",
-          "text": "\n\n\n\n\nA lui, care ne iubeşte, care ne-a spălat de păcatele noastre cu sângele său",
+          "text": "\n\n\n\n\nA celui care ne iubeşte, care ne-a eliberat de păcatele noastre cu sângele său",
           "noteRefs": []
         },
         {
@@ -2426,7 +2426,8 @@
         {
           "type": "verse",
           "text": "1Apoi mi-a arătat râul apei vieţii, limpede precum cristalul, care venea din tronul lui Dumnezeu şi al Mielului,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -2521,7 +2522,7 @@
         },
         {
           "type": "verse",
-          "text": "8Spiritul şi mireasa zic: „Vino!” Cine aude să zică: „Vino!” Celui care îi este sete, și dorește să ia apa vieții în dar să vină!",
+          "text": "8Spiritul şi mireasa zic: „Vino!” Cine aude să zică: „Vino!” Celui care îi este sete, și dorește să ia apa vieții în dar, să vină!",
           "noteRefs": []
         },
         {
