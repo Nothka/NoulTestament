@@ -78,7 +78,8 @@
         {
           "type": "verse",
           "text": "1Fraţilor, vă aduc la cunoștință că Evanghelia predicată de mine nu este de origine omenească,",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -165,7 +166,8 @@
         {
           "type": "verse",
           "text": "1Apoi, după o perioadă de 14 ani, m-am urcat din nou la Ierusalim împreună cu Barnaba şi am luat cu mine şi pe Tit.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -795,7 +797,8 @@
         {
           "type": "verse",
           "text": "1Fraţilor, chiar dacă un om ar cădea deodată în vreo greşeală, voi, care sunteţi spirituali, să-l ridicaţi cu duhul blândeţii. Şi ia seama la tine însuţi ca să nu fii ispitit şi tu.",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
