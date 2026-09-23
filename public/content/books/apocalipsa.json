@@ -1653,17 +1653,20 @@
         {
           "type": "verse",
           "text": "6Cel dintâi s-a dus şi a vărsat vasul lui pe pământ. Şi o rană rea şi dureroasă a lovit pe oamenii care aveau semnul fiarei şi care se închinau imaginii ei.",
-          "noteRefs": []
+          "noteRefs": [],
+          "spaceBefore": 0.75
         },
         {
           "type": "verse",
           "text": "7Al doilea a vărsat vasul lui în mare. Şi marea s-a făcut sânge, ca sângele unui om mort. Şi a murit orice făptură vie, și chiar tot ce era în mare.",
-          "noteRefs": []
+          "noteRefs": [],
+          "spaceBefore": 0.75
         },
         {
           "type": "verse",
           "text": "8Al treilea a vărsat vasul lui în râuri şi în izvoarele apelor. Şi apele s-au făcut sânge.",
-          "noteRefs": []
+          "noteRefs": [],
+          "spaceBefore": 0.75
         },
         {
           "type": "verse",
