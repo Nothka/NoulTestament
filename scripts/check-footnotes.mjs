@@ -71,7 +71,11 @@ ok('the marker sits where the cursor was', after.slice(0, 31).endsWith('*'), JSO
 const callout = await page.locator('.passage-editor-preview-pane .note-callout').count();
 ok('the preview shows the callout', callout === 1, `count=${callout}`);
 
-await page.locator('.passage-editor').screenshot({ path: process.env.OUT ?? 'footnote.png' });
+// A picture is only saved when one is asked for, so the check can run on its own.
+if (process.env.OUT) {
+  await page.locator('.passage-editor').screenshot({ path: process.env.OUT });
+  console.log(`saved ${process.env.OUT}`);
+}
 if (errors.length) console.log('\nerrors:\n  ' + errors.join('\n  '));
 console.log(fails ? `\n${fails} FAILED` : '\nALL PASS');
 await browser.close();
