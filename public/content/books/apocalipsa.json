@@ -1675,7 +1675,8 @@
         {
           "type": "verse",
           "text": "12Al patrulea a vărsat vasul lui peste soare, și soarelui i s-a dat să ardă pe oameni cu focul lui.",
-          "noteRefs": []
+          "noteRefs": [],
+          "spaceBefore": 0.75
         },
         {
           "type": "verse",
@@ -1685,7 +1686,8 @@
         {
           "type": "verse",
           "text": "14Al cincilea a vărsat vasul lui peste scaunul de domnie al fiarei, și împărăţia fiarei a fost acoperită de întuneric. Oamenii îşi muşcau limbile de durere,",
-          "noteRefs": []
+          "noteRefs": [],
+          "spaceBefore": 0.75
         },
         {
           "type": "verse",
@@ -1695,7 +1697,8 @@
         {
           "type": "verse",
           "text": "16Al şaselea a vărsat vasul lui peste râul cel mare, Eufrat, și apa lui a secat, ca să fie pregătită calea regilor care vin de la răsărit.",
-          "noteRefs": []
+          "noteRefs": [],
+          "spaceBefore": 0.75
         },
         {
           "type": "verse",
@@ -1722,7 +1725,8 @@
         {
           "type": "verse",
           "text": "21Al şaptelea a vărsat vasul lui în văzduh. Şi din templu, din scaunul de domnie, a ieşit un glas tare, care zicea: „S-a terminat!”",
-          "noteRefs": []
+          "noteRefs": [],
+          "spaceBefore": 0.75
         },
         {
           "type": "verse",
