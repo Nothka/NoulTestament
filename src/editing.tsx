@@ -983,6 +983,32 @@ function computeEditGroups(drafts: BlockDraft[], fields: PassageField[]): EditGr
   return groups;
 }
 
+/**
+ * The verse a row with no number of its own belongs to: the nearest verse above
+ * it, looking past a subtitle placed in the middle of that verse.
+ *
+ * A verse interrupted by a subtitle has to stay two blocks. A block is drawn
+ * where it sits in the list, so folding the second half into the first would
+ * carry it above the subtitle and undo the placement that was wanted. What the
+ * editor can do is stop calling such a row a problem and say whose text it is.
+ *
+ * Returns the verse number, and whether a subtitle stands between the two.
+ */
+function continuedVerse(drafts: BlockDraft[], index: number) {
+  let underSubtitle = false;
+
+  for (let position = index - 1; position >= 0; position -= 1) {
+    if (drafts[position].label.startsWith('Subtitlu')) {
+      underSubtitle = true;
+      continue;
+    }
+
+    return { number: drafts[position].verseNumber, underSubtitle };
+  }
+
+  return { number: '', underSubtitle };
+}
+
 /** The verse number a row's text currently begins with, if it still has one. */
 function leadingVerseNumber(text: string) {
   return text.match(/^(\d{1,3})/u)?.[1] ?? '';
@@ -2314,6 +2340,12 @@ export function PassageEditor({
                 && drafts[only].verseNumber === ''
                 && !drafts[only].label.startsWith('Subtitlu');
               const canJoinUp = strayRow && only > 0 && !drafts[only - 1].label.startsWith('Subtitlu');
+              const belongsTo = strayRow ? continuedVerse(drafts, only) : { number: '', underSubtitle: false };
+              const strayNote = !belongsTo.number
+                ? 'Acest rând nu are număr de verset.'
+                : belongsTo.underSubtitle
+                  ? `Face parte din versetul ${belongsTo.number}, care continuă sub subtitlu.`
+                  : `Face parte din versetul ${belongsTo.number}.`;
 
               return group.kind === 'single' ? (
                 <div
@@ -2321,7 +2353,7 @@ export function PassageEditor({
                   key={drafts[only].address}
                 >
                   <textarea
-                    aria-label={drafts[group.indices[0]].label}
+                    aria-label={belongsTo.number ? strayNote : drafts[group.indices[0]].label}
                     className={`passage-editor-input${drafts[group.indices[0]].label.startsWith('Subtitlu') ? ' is-heading' : ''}${activeIndex === group.indices[0] ? ' is-active' : ''}`}
                     onChange={(event) => setField(group.indices[0], { text: event.target.value })}
                     onFocus={() => setActiveIndex(group.indices[0])}
@@ -2342,7 +2374,7 @@ export function PassageEditor({
 
                   {strayRow ? (
                       <div className="passage-editor-row-actions">
-                        <span>Acest rând nu are număr de verset.</span>
+                        <span>{strayNote}</span>
                         {canJoinUp ? (
                           <button
                             onClick={() => onMergeRow(changedEdits(), drafts[only])}

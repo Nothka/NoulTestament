@@ -64,6 +64,23 @@ const dialog = page.locator('.passage-editor');
 await dialog.waitFor({ timeout: 15000 });
 await page.waitForTimeout(400);           // let the auto-grow settle
 
+// FOCUS_TEXT clicks into the box holding that text first, for anything the
+// editor only shows on the row being edited.
+if (process.env.FOCUS_TEXT) {
+  const box = page.locator('.passage-editor-input', { hasText: '' }).filter({
+    has: page.locator('xpath=.'),
+  });
+  const count = await box.count();
+  for (let i = 0; i < count; i += 1) {
+    const value = await box.nth(i).inputValue();
+    if (value.includes(process.env.FOCUS_TEXT)) {
+      await box.nth(i).click();
+      await page.waitForTimeout(250);
+      break;
+    }
+  }
+}
+
 await dialog.screenshot({ path: outFile });
 
 // The left pane on its own is usually what matters, so save it too.
