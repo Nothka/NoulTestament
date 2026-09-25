@@ -899,11 +899,24 @@ function fieldFromDraft(draft: BlockDraft): PassageField {
  * marker-recovery below only works when every block in a group carries a
  * findable number.
  */
-type EditGroup = { kind: 'flow' | 'single'; indices: number[] };
+type EditGroup = {
+  kind: 'flow' | 'single';
+  indices: number[];
+  /**
+   * Which paragraph of the finished page this box belongs to. Several boxes can
+   * share one: a block with no number of its own has to be edited in a box by
+   * itself, but on the page it is still the same paragraph as the verses around
+   * it. Boxes that share a paragraph are drawn flush against each other, so the
+   * editing pane shows the same shape the reader will see instead of implying a
+   * break that is not there.
+   */
+  paragraph: number;
+};
 
 function computeEditGroups(drafts: BlockDraft[], fields: PassageField[]): EditGroup[] {
   const groups: EditGroup[] = [];
   let current: number[] = [];
+  let paragraph = 0;
 
   /**
    * A block with no number of its own cannot be found again once several
@@ -923,7 +936,7 @@ function computeEditGroups(drafts: BlockDraft[], fields: PassageField[]): EditGr
 
     const flushRun = () => {
       if (run.length > 0) {
-        groups.push({ kind: 'flow', indices: run });
+        groups.push({ kind: 'flow', indices: run, paragraph });
         run = [];
       }
     };
@@ -931,7 +944,7 @@ function computeEditGroups(drafts: BlockDraft[], fields: PassageField[]): EditGr
     current.forEach((index) => {
       if (drafts[index].verseNumber === '') {
         flushRun();
-        groups.push({ kind: 'single', indices: [index] });
+        groups.push({ kind: 'single', indices: [index], paragraph });
         return;
       }
 
@@ -941,12 +954,16 @@ function computeEditGroups(drafts: BlockDraft[], fields: PassageField[]): EditGr
     flushRun();
 
     current = [];
+    // Splitting around a numberless block above does not start a new paragraph;
+    // reaching here does, because this run of blocks has ended.
+    paragraph += 1;
   };
 
   drafts.forEach((draft, index) => {
     if (draft.label.startsWith('Subtitlu') || draft.hidden) {
       flush();
-      groups.push({ kind: 'single', indices: [index] });
+      groups.push({ kind: 'single', indices: [index], paragraph });
+      paragraph += 1;
       return;
     }
 
@@ -1403,6 +1420,13 @@ export function PassageEditor({
   // Textareas auto-grow to their content, like a document rather than a form
   // — kept imperative because it has to re-run after every kind of edit
   // (typing, the blank-row button, bold/italic), not just onChange.
+  //
+  // Deliberately on every render rather than on `fields`, and last of the
+  // effects, so it measures whatever the boxes actually hold now. A flowing box
+  // is uncontrolled, so its text can change without `fields` changing in the
+  // same pass; a box left at its one-row default while holding a whole
+  // paragraph would then clip its text, because these boxes hide their overflow
+  // instead of scrolling.
   useEffect(() => {
     for (const area of [...areaRefs.current, ...Object.values(flowRefs.current)]) {
       if (area) {
@@ -1410,7 +1434,7 @@ export function PassageEditor({
         area.style.height = `${area.scrollHeight}px`;
       }
     }
-  }, [fields]);
+  });
 
   function setField(index: number, patch: Partial<PassageField>) {
     setFields((current) => current.map((field, i) => (i === index ? { ...field, ...patch } : field)));
@@ -2270,9 +2294,15 @@ export function PassageEditor({
 
         <div className="passage-editor-body">
           <div className="passage-editor-fields">
-            {editGroups.map((group) => (
-              group.kind === 'single' ? (
-                <div className="passage-editor-field" key={drafts[group.indices[0]].address}>
+            {editGroups.map((group, groupOrder) => {
+              // Flush against the next box when the page will run them into one
+              // paragraph, so the pane never shows a gap the reader will not get.
+              const continued = editGroups[groupOrder + 1]?.paragraph === group.paragraph
+                ? ' is-continued'
+                : '';
+
+              return group.kind === 'single' ? (
+                <div className={`passage-editor-field${continued}`} key={drafts[group.indices[0]].address}>
                   <textarea
                     aria-label={drafts[group.indices[0]].label}
                     className={`passage-editor-input${drafts[group.indices[0]].label.startsWith('Subtitlu') ? ' is-heading' : ''}${activeIndex === group.indices[0] ? ' is-active' : ''}`}
@@ -2324,7 +2354,7 @@ export function PassageEditor({
                     ) : null}
                 </div>
               ) : (
-                <div className="passage-editor-field passage-editor-flow-field" key={groupKey(group)}>
+                <div className={`passage-editor-field passage-editor-flow-field${continued}`} key={groupKey(group)}>
                   <textarea
                     aria-label={group.indices.length === 1
                       ? `Verset ${drafts[group.indices[0]].verseNumber}`
@@ -2340,8 +2370,8 @@ export function PassageEditor({
                     rows={1}
                   />
                 </div>
-              )
-            ))}
+              );
+            })}
           </div>
 
           {showPreview ? (

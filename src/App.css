@@ -1233,6 +1233,14 @@ sup.note-callout {
   padding: 12px 20px 20px;
 }
 
+/* Two boxes that the page will run into one paragraph are drawn touching, so
+   the editing pane does not imply a break the reader will never see. This
+   happens wherever a block has no verse number of its own: it needs a box to
+   itself to be edited, but it is still the same paragraph as its neighbours. */
+.passage-editor-field.is-continued {
+  margin-bottom: 0;
+}
+
 /* A row the flowing text cannot absorb says so, and offers the two ways out.
    Quiet by default so a passage full of ordinary verses stays calm. */
 .passage-editor-row-actions {
