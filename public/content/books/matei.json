@@ -37,7 +37,7 @@
         },
         {
           "type": "verse",
-          "text": "6Iese a fost tatăl regelui David; \nRegele David a fost tatăl lui Solomon, din văduva lui Urie;",
+          "text": "6Iese a fost tatăl regelui David; Regele David a fost tatăl lui Solomon, din văduva lui Urie;",
           "noteRefs": [],
           "spaceBefore": 0.75
         },
@@ -89,14 +89,14 @@
         },
         {
           "type": "verse",
-          "text": "16Iacov a fost tatăl lui Iosif, bărbatul Mariei, din care s-a născut Isus, care se numește Cristos.\n\n\n\n",
+          "text": "16Iacov a fost tatăl lui Iosif, bărbatul Mariei, din care s-a născut Isus, care se numește Cristos.\n\n\n",
           "noteRefs": []
         },
         {
           "type": "verse",
           "text": "17Deci, toate generațiile de la Avraam până la David, sunt patrusprezece; apoi, de la David până la deportarea în Babilon sunt patrusprezece generații; şi de la deportarea în Babilon până la Cristos, sunt patrusprezece generații.",
           "noteRefs": [],
-          "spaceBefore": 0.75
+          "spaceBefore": 0
         }
       ]
     },
