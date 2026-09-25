@@ -2301,8 +2301,20 @@ export function PassageEditor({
                 ? ' is-continued'
                 : '';
 
+              const only = group.indices[0];
+              // A row with no number of its own cannot join the flowing text
+              // around it, so it gets the two ways out. Never offered above a
+              // heading: joining body text onto a title would ruin both.
+              const strayRow = group.kind === 'single'
+                && drafts[only].verseNumber === ''
+                && !drafts[only].label.startsWith('Subtitlu');
+              const canJoinUp = strayRow && only > 0 && !drafts[only - 1].label.startsWith('Subtitlu');
+
               return group.kind === 'single' ? (
-                <div className={`passage-editor-field${continued}`} key={drafts[group.indices[0]].address}>
+                <div
+                  className={`passage-editor-field${continued}${strayRow ? ' has-row-actions' : ''}`}
+                  key={drafts[only].address}
+                >
                   <textarea
                     aria-label={drafts[group.indices[0]].label}
                     className={`passage-editor-input${drafts[group.indices[0]].label.startsWith('Subtitlu') ? ' is-heading' : ''}${activeIndex === group.indices[0] ? ' is-active' : ''}`}
@@ -2323,17 +2335,12 @@ export function PassageEditor({
                     value={fields[group.indices[0]].text}
                   />
 
-                  {/* A row with no number of its own cannot join the flowing
-                      text around it, and is almost always a fragment that was
-                      split off the verse above during the original conversion.
-                      These two buttons are how it gets put back, or removed. */}
-                  {drafts[group.indices[0]].verseNumber === ''
-                    && !drafts[group.indices[0]].label.startsWith('Subtitlu') ? (
+                  {strayRow ? (
                       <div className="passage-editor-row-actions">
                         <span>Acest rând nu are număr de verset.</span>
-                        {group.indices[0] > 0 ? (
+                        {canJoinUp ? (
                           <button
-                            onClick={() => onMergeRow(changedEdits(), drafts[group.indices[0]])}
+                            onClick={() => onMergeRow(changedEdits(), drafts[only])}
                             title="Mută textul acestui rând la sfârșitul rândului de deasupra"
                             type="button"
                           >
@@ -2343,7 +2350,7 @@ export function PassageEditor({
                         <button
                           onClick={() => {
                             if (window.confirm('Ștergi acest rând? Poți anula din „Modificările tale”.')) {
-                              onDeleteRow(changedEdits(), drafts[group.indices[0]]);
+                              onDeleteRow(changedEdits(), drafts[only]);
                             }
                           }}
                           type="button"

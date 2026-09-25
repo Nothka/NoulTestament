@@ -1241,6 +1241,22 @@ sup.note-callout {
   margin-bottom: 0;
 }
 
+/* The field is a flex row, so anything added next to the box becomes a column
+   beside it and squeezes the text to nothing. A row carrying the buttons below
+   stacks instead, and stretches so the box keeps the full width. */
+.passage-editor-field.has-row-actions {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* `flex: 1` means "grow along the main axis", which in a column is the height —
+   it would fight the height the auto-grow sets from the content. Down this
+   branch the box sizes itself and simply takes the full width. */
+.passage-editor-field.has-row-actions .passage-editor-input {
+  flex: none;
+  width: 100%;
+}
+
 /* A row the flowing text cannot absorb says so, and offers the two ways out.
    Quiet by default so a passage full of ordinary verses stays calm. */
 .passage-editor-row-actions {
