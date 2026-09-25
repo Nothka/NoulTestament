@@ -1233,6 +1233,17 @@ sup.note-callout {
   padding: 12px 20px 20px;
 }
 
+/* Said only when a button could not do what was asked, so it never just sits
+   there doing nothing. */
+.passage-editor-hint {
+  margin: 6px 0 0;
+  border-left: 3px solid #cc5500;
+  background: #fdf6ee;
+  padding: 6px 10px;
+  color: #8a5a2b;
+  font-size: 0.85rem;
+}
+
 /* Two boxes that the page will run into one paragraph are drawn touching, so
    the editing pane does not imply a break the reader will never see. This
    happens wherever a block has no verse number of its own: it needs a box to

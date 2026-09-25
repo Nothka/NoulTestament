@@ -34,11 +34,24 @@ await page.waitForTimeout(400);
 
 ok('passage has no notes to start with', await page.locator('.passage-editor-notes').count() === 0);
 
-// put the cursor inside the first box, 30 characters in
+// Pressed before the cursor is anywhere: it must say why, not sit there.
+const addNoteEarly = page.getByRole('button', { name: '+ Notă' });
+ok('the button is pressable even before the cursor is placed', await addNoteEarly.isEnabled());
+await addNoteEarly.click();
+await page.waitForTimeout(200);
+const hint = await page.locator('.passage-editor-hint').innerText().catch(() => '');
+ok('pressing it with no cursor explains itself', hint.includes('cursorul'), JSON.stringify(hint));
+ok('and it created nothing', await page.locator('.passage-editor-notes li').count() === 0);
+
+// Click into the text the way a person does, and take the caret the browser
+// actually put there — no scripted selection, so this exercises the same path
+// the editor really gets.
 const box = page.locator('.passage-editor-input').first();
 await box.click();
-await box.evaluate((el) => { el.setSelectionRange(30, 30); el.dispatchEvent(new Event('click', { bubbles: true })); });
+await page.waitForTimeout(150);
+const caret = await box.evaluate((el) => el.selectionStart);
 const before = await box.inputValue();
+ok('clicking put the caret somewhere inside the text', caret > 0 && caret < before.length, `caret=${caret}`);
 
 const addNote = page.getByRole('button', { name: '+ Notă' });
 ok('the "+ Notă" button is enabled', await addNote.isEnabled());
@@ -65,7 +78,11 @@ ok('typing goes straight into the note', noteValue === 'Explicație de probă.',
 const after = await page.locator('.passage-editor-input').first().inputValue();
 ok('a * marker was put into the text', after.includes('*') && !before.includes('*'),
    JSON.stringify(after.slice(20, 50)));
-ok('the marker sits where the cursor was', after.slice(0, 31).endsWith('*'), JSON.stringify(after.slice(25, 35)));
+// The marker goes in at the caret's offset inside its own verse, and that verse
+// starts at a known place in the combined text — so in the box as a whole the
+// star must land exactly where the caret was.
+ok('the marker sits exactly where the cursor was', after[caret] === '*',
+   `caret=${caret} got=${JSON.stringify(after.slice(caret - 8, caret + 3))}`);
 
 // preview shows the callout
 const callout = await page.locator('.passage-editor-preview-pane .note-callout').count();

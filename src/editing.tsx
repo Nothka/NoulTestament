@@ -1311,6 +1311,16 @@ export function PassageEditor({
   // caret cannot simply stay where it was; it is placed by an effect below.
   const mergeCaretRef = useRef<number | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  /**
+   * Where the cursor last was, in which row and how far into that row's own
+   * text. Remembered as it moves rather than read when a toolbar button is
+   * pressed: pressing a button takes the focus out of the box, and the click
+   * event does not reliably arrive at all, so the caret read at that moment can
+   * be stale or gone. `onSelect` is what tracks it — it fires for a click, a
+   * drag and the arrow keys alike.
+   */
+  const [cursorSpot, setCursorSpot] = useState<{ index: number; offset: number } | null>(null);
+  const [noteHint, setNoteHint] = useState('');
   // Whole-passage selection, for applying one formatting choice to every
   // verse at once (e.g. "Margini egale" for a whole genealogy). Individual
   // per-verse selection does not exist any more now that verses can share a
@@ -1617,40 +1627,23 @@ export function PassageEditor({
    * across the whole New Testament is then redone by the caller.
    */
   function addFootnoteAtCursor() {
-    if (activeIndex === null) {
+    // Never silently does nothing: if there is nowhere to put the marker it
+    // says so, because a button that looks pressable and then ignores the press
+    // reads as the tool being broken.
+    if (cursorSpot === null) {
+      setNoteHint('Pune întâi cursorul în text, acolo unde vrei să apară semnul notei.');
       return;
     }
 
-    const draft = drafts[activeIndex];
-    let offset: number;
+    const draft = drafts[cursorSpot.index];
 
-    if (activeGroup && activeIsFlow) {
-      const textarea = flowRefs.current[groupKey(activeGroup)];
-
-      if (!textarea) {
-        return;
-      }
-
-      const { slot, start } = locateFlowCursor(
-        textarea.value, groupVerseNumbers(activeGroup), textarea.selectionStart,
-      );
-
-      if (activeGroup.indices[slot] !== activeIndex) {
-        return;
-      }
-
-      offset = textarea.selectionStart - start;
-    } else {
-      const area = areaRefs.current[activeIndex];
-
-      if (!area) {
-        return;
-      }
-
-      offset = area.selectionStart;
+    if (!draft || draft.verseNumber === '') {
+      setNoteHint('Notele se pun în textul unui verset. Pune cursorul într-un verset.');
+      return;
     }
 
-    onAddFootnote(changedEdits(), draft, offset);
+    setNoteHint('');
+    onAddFootnote(changedEdits(), draft, cursorSpot.offset);
   }
 
   /**
@@ -1950,10 +1943,19 @@ export function PassageEditor({
   }
 
   /** Which verse a flowing group's textarea currently has its cursor in — drives the active-row indicator and Enter's spacing target. */
-  function updateActiveFromFlow(group: EditGroup, textarea: HTMLTextAreaElement) {
-    const { slot } = locateFlowCursor(textarea.value, groupVerseNumbers(group), textarea.selectionStart);
+  /** Records the row the cursor is in and clears any standing hint. */
+  function rememberCursor(index: number, offset: number) {
+    setActiveIndex(index);
+    setCursorSpot({ index, offset: Math.max(0, offset) });
+    setNoteHint('');
+  }
 
-    setActiveIndex(group.indices[slot]);
+  function updateActiveFromFlow(group: EditGroup, textarea: HTMLTextAreaElement) {
+    const { slot, start } = locateFlowCursor(
+      textarea.value, groupVerseNumbers(group), textarea.selectionStart,
+    );
+
+    rememberCursor(group.indices[slot], textarea.selectionStart - start);
   }
 
   function onFlowChange(group: EditGroup, textarea: HTMLTextAreaElement) {
@@ -2241,7 +2243,7 @@ export function PassageEditor({
             + Spațiu
           </button>
           <button
-            disabled={selectedIndices.length > 0 || activeIndex === null || drafts[activeIndex]?.verseNumber === ''}
+            disabled={selectedIndices.length > 0}
             onClick={addFootnoteAtCursor}
             title="Adaugă o notă de subsol în locul unde este cursorul. Notele se renumerotează singure, în tot Noul Testament."
             type="button"
@@ -2318,6 +2320,8 @@ export function PassageEditor({
           </label>
         </div>
 
+        {noteHint ? <p className="passage-editor-hint">{noteHint}</p> : null}
+
         <div className="passage-editor-body-controls">
           <label className="passage-editor-select-all">
             <input
@@ -2377,6 +2381,7 @@ export function PassageEditor({
                     onChange={(event) => setField(group.indices[0], { text: event.target.value })}
                     onFocus={() => setActiveIndex(group.indices[0])}
                     onKeyDown={(event) => onFieldKeyDown(group.indices[0], event)}
+                    onSelect={(event) => rememberCursor(group.indices[0], event.currentTarget.selectionStart)}
                     ref={(el) => { areaRefs.current[group.indices[0]] = el; }}
                     rows={1}
                     style={{
@@ -2425,10 +2430,9 @@ export function PassageEditor({
                     className={`passage-editor-input passage-editor-flow${group.indices.includes(activeIndex ?? -1) ? ' is-active' : ''}`}
                     defaultValue={groupCombinedText(group)}
                     onChange={(event) => onFlowChange(group, event.currentTarget)}
-                    onClick={(event) => updateActiveFromFlow(group, event.currentTarget)}
                     onFocus={(event) => updateActiveFromFlow(group, event.currentTarget)}
                     onKeyDown={(event) => onFlowKeyDown(group, event)}
-                    onKeyUp={(event) => updateActiveFromFlow(group, event.currentTarget)}
+                    onSelect={(event) => updateActiveFromFlow(group, event.currentTarget)}
                     ref={(el) => { flowRefs.current[groupKey(group)] = el; }}
                     rows={1}
                   />
