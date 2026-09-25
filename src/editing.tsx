@@ -2305,7 +2305,12 @@ export function PassageEditor({
               // A row with no number of its own cannot join the flowing text
               // around it, so it gets the two ways out. Never offered above a
               // heading: joining body text onto a title would ruin both.
+              // Shown only while this row is the one being edited. These boxes
+              // often sit inside a paragraph the page runs together, and a
+              // permanent strip of buttons between them would put back exactly
+              // the break the flush layout above is there to remove.
               const strayRow = group.kind === 'single'
+                && activeIndex === only
                 && drafts[only].verseNumber === ''
                 && !drafts[only].label.startsWith('Subtitlu');
               const canJoinUp = strayRow && only > 0 && !drafts[only - 1].label.startsWith('Subtitlu');

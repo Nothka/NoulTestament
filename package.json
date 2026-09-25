@@ -8,7 +8,8 @@
     "build": "node scripts/validate-content.mjs && tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json && vite build",
     "preview": "vite preview",
     "validate:content": "node scripts/validate-content.mjs",
-    "fix:quotes": "node scripts/fix-quotes.mjs"
+    "fix:quotes": "node scripts/fix-quotes.mjs",
+    "shot:editor": "node scripts/shot-editor.mjs"
   },
   "dependencies": {
     "react": "^19.2.7",
@@ -19,6 +20,7 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
+    "playwright": "^1.63.0",
     "typescript": "^6.0.3",
     "vite": "^8.0.16"
   }
