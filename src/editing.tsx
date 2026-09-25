@@ -1262,10 +1262,12 @@ export function PassageEditor({
   passageLabel,
   drafts,
   noteDrafts,
+  focusNote,
   hasPreviousPassage,
   hasNextPassage,
   onAddFootnote,
   onCancel,
+  onNoteFocused,
   onDeleteRow,
   onMergeRow,
   onSave,
@@ -1282,8 +1284,10 @@ export function PassageEditor({
     edits: Array<{ draft: BlockDraft; edit: BlockEdit }>,
     target: BlockDraft,
     offset: number,
-    text: string,
   ) => void;
+  /** A note just added, to put the cursor in so its explanation can be typed. */
+  focusNote: number | null;
+  onNoteFocused: () => void;
   onCancel: () => void;
   onDeleteRow: (edits: Array<{ draft: BlockDraft; edit: BlockEdit }>, target: BlockDraft) => void;
   onMergeRow: (edits: Array<{ draft: BlockDraft; edit: BlockEdit }>, target: BlockDraft) => void;
@@ -1292,6 +1296,7 @@ export function PassageEditor({
 }) {
   const [fields, setFields] = useState<PassageField[]>(() => drafts.map(fieldFromDraft));
   const [noteTexts, setNoteTexts] = useState<string[]>(() => noteDrafts.map((draft) => draft.text));
+  const noteAreaRefs = useRef<Array<HTMLTextAreaElement | null>>([]);
   const areaRefs = useRef<Array<HTMLTextAreaElement | null>>([]);
   // One shared textarea per flowing group of verses, keyed by the group's
   // own indices (e.g. "0,1,2") — a plain ref map rather than an array
@@ -1645,17 +1650,31 @@ export function PassageEditor({
       offset = area.selectionStart;
     }
 
-    const text = window.prompt(
-      `Scrie explicația notei de subsol (va fi pusă la ${draft.label.toLowerCase()}):`,
-      '',
-    );
+    onAddFootnote(changedEdits(), draft, offset);
+  }
 
-    if (text === null || !text.trim()) {
+  /**
+   * A note added from the toolbar arrives with no words yet, so the cursor is
+   * put straight into it down in the notes list — the same move a word
+   * processor makes when it inserts a footnote. The editor remounts on the
+   * insert (its key counts the notes), which is why the note to focus is
+   * handed in rather than remembered here.
+   */
+  useEffect(() => {
+    if (focusNote === null) {
       return;
     }
 
-    onAddFootnote(changedEdits(), draft, offset, text.trim());
-  }
+    const area = noteAreaRefs.current[focusNote];
+
+    if (area) {
+      area.focus();
+      area.scrollIntoView({ block: 'center' });
+    }
+
+    onNoteFocused();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   /**
    * The "+ Spațiu" button: adds space above or below the row the cursor is
@@ -2453,6 +2472,8 @@ export function PassageEditor({
                     onChange={(event) => setNoteTexts((current) => current.map(
                       (value, position) => (position === index ? event.target.value : value),
                     ))}
+                    placeholder="Scrie explicația notei…"
+                    ref={(el) => { noteAreaRefs.current[index] = el; }}
                     rows={2}
                     value={noteTexts[index]}
                   />

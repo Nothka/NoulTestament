@@ -24,7 +24,7 @@ import {
   type StoredWork,
 } from './editing';
 import { insertNote, mergeBlockIntoPrevious, removeBlock } from './passage-edits.js';
-import { renumberAllNotes } from './footnote-numbering.js';
+import { noteIndexAt, renumberAllNotes } from './footnote-numbering.js';
 import {
   blockStyle,
   effectiveParagraphAlign,
@@ -146,6 +146,9 @@ function App() {
   const [editorMode, setEditorMode] = useState<EditorMode>('text');
   const [pendingAddress, setPendingAddress] = useState<string | null>(null);
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  // A note just added, so the passage editor can put the cursor in it once it
+  // has remounted around the new note.
+  const [pendingNoteFocus, setPendingNoteFocus] = useState<number | null>(null);
   const [published, setPublished] = useState<PublishedChange[] | null>(null);
   const [loadingPublished, setLoadingPublished] = useState(false);
   const dirtyPaths = [...new Set(changes.map((change) => change.path))];
@@ -460,21 +463,41 @@ function App() {
     );
   }
 
+  /**
+   * Adds a footnote marker where the cursor is and an empty note to go with it,
+   * then puts the cursor in that note so the explanation is typed in place. The
+   * number is not asked for and cannot be typed: it comes from the note's
+   * position in the reading order of the whole New Testament, which is redone
+   * across every book on each insert.
+   */
   function addPassageFootnote(
     edits: Array<{ draft: BlockDraft; edit: BlockEdit }>,
     target: BlockDraft,
     offset: number,
-    text: string,
   ) {
     const index = Number(target.address.split(':')[2]);
+    const [, targetPassageId] = target.address.split(':');
+    const passage = data?.books
+      .flatMap((book) => book.passages)
+      .find((candidate) => candidate.id === targetPassageId);
+
+    if (!passage) {
+      return;
+    }
+
+    // Markers standing before the cursor: the position the new note takes
+    // among this passage's notes. Read from the blocks as they are now.
+    const noteIndex = noteIndexAt(passage.blocks, index, offset);
 
     restructurePassage(
       edits,
       target,
-      (passage) => insertNote(passage, index, offset, text) as Passage,
+      (candidate) => insertNote(candidate, index, offset, '') as Passage,
       '(notă de subsol adăugată)',
       true,
     );
+
+    setPendingNoteFocus(noteIndex);
   }
 
   function savePassage(edits: Array<{ draft: BlockDraft; edit: BlockEdit }>) {
@@ -1213,8 +1236,10 @@ function App() {
           drafts={passagePanel.drafts}
           hasNextPassage={passagePanel.nextPassageId !== null}
           hasPreviousPassage={passagePanel.previousPassageId !== null}
+          focusNote={pendingNoteFocus}
           noteDrafts={passagePanel.noteDrafts}
           onAddFootnote={addPassageFootnote}
+          onNoteFocused={() => setPendingNoteFocus(null)}
           onCancel={() => setPassageId(null)}
           onDeleteRow={deletePassageRow}
           onMergeRow={mergePassageRow}

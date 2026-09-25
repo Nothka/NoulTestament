@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "validate:content": "node scripts/validate-content.mjs",
     "fix:quotes": "node scripts/fix-quotes.mjs",
-    "shot:editor": "node scripts/shot-editor.mjs"
+    "shot:editor": "node scripts/shot-editor.mjs",
+    "check:footnotes": "node scripts/check-footnotes.mjs"
   },
   "dependencies": {
     "react": "^19.2.7",
