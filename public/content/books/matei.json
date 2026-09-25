@@ -12,52 +12,53 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Lista strămoșilor lui Isus Cristos fiul lui David, fiul lui Avraam:",
+          "text": "1Lista strămoșilor lui Isus Cristos fiul lui David, fiul lui Avraam:\n",
+          "noteRefs": [],
+          "align": "justify"
+        },
+        {
+          "type": "verse",
+          "text": "2Avraam a fost tatăl lui Isaac;\nIsaac a fost tatăl lui Iacov;\nIacov a fost tatăl lui Iuda şi al fraţilor lui;\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "2Avraam a fost tatăl lui Isaac; Isaac a fost tatăl lui Iacov; Iacov a fost tatăl lui Iuda şi al fraţilor lui;",
+          "text": "3Iuda a fost tatăl lui Perez şi Zara, din Tamar;\nPerez a fost tatăl lui Esrom;\nEsrom a fost tatăl lui Aram;\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "3Iuda a fost tatăl lui Perez şi Zara, din Tamar; Perez a fost tatăl lui Esrom; Esrom a fost tatăl lui Aram;",
+          "text": "4Aram a fost tatăl lui Aminadab;\nAminadab a fost tatăl lui Naason;\nNaason a fost tatăl lui Salmon;\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "4Aram a fost tatăl lui Aminadab; Aminadab a fost tatăl lui Naason; Naason a fost tatăl lui Salmon;",
+          "text": "5Salmon a fost tatăl lui Boaz, din Rahab;\nBoaz a fost tatăl lui Obed, din Rut;\nObed a fost tatăl lui Iese;\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "5Salmon a fost tatăl lui Boaz, din Rahab; Boaz a fost tatăl lui Obed, din Rut; Obed a fost tatăl lui Iese;",
+          "text": "6Iese a fost tatăl regelui David;\n\nRegele David a fost tatăl lui Solomon, din văduva lui Urie;\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "6Iese a fost tatăl regelui David; \n\nRegele David a fost tatăl lui Solomon, din văduva lui Urie;",
+          "text": "7Solomon a fost tatăl lui Roboam;\nRoboam a fost tatăl lui Abia;\nAbia a fost tatăl lui Asa;\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "7Solomon a fost tatăl lui Roboam; Roboam a fost tatăl lui Abia; Abia a fost tatăl lui Asa;",
+          "text": "8Asa a fost tatăl lui Iosafat;\nIosafat a fost tatăl lui Ioram;\nIoram a fost tatăl lui Ozia;\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "8Asa a fost tatăl lui Iosafat; Iosafat a fost tatăl lui Ioram; Ioram a fost tatăl lui Ozia;",
+          "text": "9Ozia a fost tatăl lui Ioatam;\nIoatam a fost tatăl lui Ahaz;\nAhaz a fost tatăl lui Ezechia;\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "9Ozia a fost tatăl lui Ioatam; Ioatam a fost tatăl lui Ahaz; Ahaz a fost tatăl lui Ezechia;",
-          "noteRefs": []
-        },
-        {
-          "type": "verse",
-          "text": "10Ezechia a fost tatăl lui Manase; Manase a fost tatăl lui Amon; Amon a fost tatăl lui Iosia;",
+          "text": "10Ezechia a fost tatăl lui Manase;\nManase a fost tatăl lui Amon;\nAmon a fost tatăl lui Iosia;\n",
           "noteRefs": []
         },
         {
@@ -67,28 +68,28 @@
         },
         {
           "type": "verse",
-          "text": "12După deportarea în Babilon Iehonia a fost tatăl lui Salatiel; Salatiel a fost tatăl lui Zorobabel;",
+          "text": "12După deportarea în Babilon Iehonia a fost tatăl lui Salatiel;\nSalatiel a fost tatăl lui Zorobabel;\n",
           "noteRefs": [],
           "spaceBefore": 0.75
         },
         {
           "type": "verse",
-          "text": "13Zorobabel a fost tatăl lui Abiud; Abiud a fost tatăl lui Eliachim; Eliachim a fost tatăl lui Azor;",
+          "text": "13Zorobabel a fost tatăl lui Abiud;\nAbiud a fost tatăl lui Eliachim;\nEliachim a fost tatăl lui Azor;\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "14Azor a fost tatăl lui Țadoc; Țadoc a fost tatăl lui Achim; Achim a fost tatăl lui Eliud;",
+          "text": "14Azor a fost tatăl lui Țadoc;\nȚadoc a fost tatăl lui Achim;\nAchim a fost tatăl lui Eliud;\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "15Eliud a fost tatăl lui Eleazar; Eleazar a fost tatăl lui Matan; Matan a fost tatăl lui Iacov;",
+          "text": "15Eliud a fost tatăl lui Eleazar;\nEleazar a fost tatăl lui Matan;\nMatan a fost tatăl lui Iacov;\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "16Iacov a fost tatăl lui Iosif, bărbatul Mariei, din care s-a născut Isus, care se numește Cristos.\n\n\n\n",
+          "text": "16Iacov a fost tatăl lui Iosif, bărbatul Mariei, din care s-a născut Isus, care se numește Cristos.\n\n",
           "noteRefs": []
         },
         {
@@ -352,12 +353,7 @@
         },
         {
           "type": "verse",
-          "text": "7Dar când a văzut pe mulţi din farisei şi din saduchei că vin să primească botezul lui, le-",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "a zis: „Pui de năpârci, cine v-a prevenit să fugiţi de mânia viitoare?",
+          "text": "7Dar când a văzut pe mulţi din farisei şi din saduchei că vin să primească botezul lui, le- a zis: „Pui de năpârci, cine v-a prevenit să fugiţi de mânia viitoare?",
           "noteRefs": []
         },
         {
@@ -465,12 +461,7 @@
         },
         {
           "type": "verse",
-          "text": "6şi i-a zis: „Dacă eşti Fiul lui Dumnezeu, aruncă-te jos; căci este scris: _„El va porunci îngerilor săi să vegheze asupra ta; şi ei te vor lua pe mâini, ca nu cumva să te loveşti cu piciorul de vreo piatră”_.7 De asemenea",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "este scris„, a zis Isus: _„Să nu ispiteşti pe Domnul, Dumnezeul tău”._",
+          "text": "6şi i-a zis: „Dacă eşti Fiul lui Dumnezeu, aruncă-te jos; căci este scris: _„El va porunci îngerilor săi să vegheze asupra ta; şi ei te vor lua pe mâini, ca nu cumva să te loveşti cu piciorul de vreo piatră”_.7 De asemenea este scris„, a zis Isus: _„Să nu ispiteşti pe Domnul, Dumnezeul tău”._",
           "noteRefs": []
         },
         {
@@ -701,12 +692,7 @@
         },
         {
           "type": "verse",
-          "text": "4Tot aşa să lumineze şi lumina voastră înaintea oamenilor, ca ei să vadă faptele",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "voastre bune, şi să laude pe Tatăl vostru, care este în ceruri.",
+          "text": "4Tot aşa să lumineze şi lumina voastră înaintea oamenilor, ca ei să vadă faptele voastre bune, şi să laude pe Tatăl vostru, care este în ceruri.",
           "noteRefs": []
         }
       ]
@@ -1196,12 +1182,7 @@
         },
         {
           "type": "verse",
-          "text": "6Să nu daţi câinilor cele sfinte, şi să nu aruncaţi perlele voastre înaintea porcilor, ca",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "nu cumva să le calce în picioare, şi să se întoarcă să vă sfâșie.",
+          "text": "6Să nu daţi câinilor cele sfinte, şi să nu aruncaţi perlele voastre înaintea porcilor, ca nu cumva să le calce în picioare, şi să se întoarcă să vă sfâșie.",
           "noteRefs": []
         }
       ]
@@ -2725,14 +2706,9 @@
         },
         {
           "type": "verse",
-          "text": "10Ucenicii s-au apropiat de el, şi i-au zis: „De ce le vorbeşti în parabole?” 11 Isus le-a răspuns: „Pentru că vouă v-a fost dat să",
+          "text": "10Ucenicii s-au apropiat de el, şi i-au zis: „De ce le vorbeşti în parabole?” 11 Isus le-a răspuns: „Pentru că vouă v-a fost dat să cunoaşteţi secretele Împărăţiei cerurilor, iar lor nu le-a fost dat.",
           "noteRefs": [],
           "align": "justify"
-        },
-        {
-          "type": "paragraph",
-          "text": "cunoaşteţi secretele Împărăţiei cerurilor, iar lor nu le-a fost dat.",
-          "noteRefs": []
         },
         {
           "type": "verse",
@@ -3867,12 +3843,7 @@
         },
         {
           "type": "verse",
-          "text": "6Dar, ca să nu-i facem să se poticnească, du-te la mare, aruncă undiţa, şi trage afară primul peşte pe care îl prinzi; deschide-i",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "gura, şi vei găsi în ea un stater,* pe care ia-l şi dă-li-l lor, pentru mine şi pentru tine.”",
+          "text": "6Dar, ca să nu-i facem să se poticnească, du-te la mare, aruncă undiţa, şi trage afară primul peşte pe care îl prinzi; deschide-i gura, şi vei găsi în ea un stater,* pe care ia-l şi dă-li-l lor, pentru mine şi pentru tine.”",
           "noteRefs": [
             22
           ]
@@ -4475,12 +4446,7 @@
         },
         {
           "type": "verse",
-          "text": "6Isus i-a chemat, şi le-a zis: „Ştiţi că conducătorii popoarelor domnesc peste ele,",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "şi mai marii lor își arată autoritatea asupra lor.",
+          "text": "6Isus i-a chemat, şi le-a zis: „Ştiţi că conducătorii popoarelor domnesc peste ele, şi mai marii lor își arată autoritatea asupra lor.",
           "noteRefs": []
         },
         {
@@ -5415,12 +5381,7 @@
         },
         {
           "type": "verse",
-          "text": "17Evanghelia aceasta a Împărăţiei va fi predicată în toată lumea, ca să fie mărturie",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "tuturor popoarelor, și atunci va veni sfârşitul.",
+          "text": "17Evanghelia aceasta a Împărăţiei va fi predicată în toată lumea, ca să fie mărturie tuturor popoarelor, și atunci va veni sfârşitul.",
           "noteRefs": []
         },
         {
@@ -6928,12 +6889,7 @@
         },
         {
           "type": "verse",
-          "text": "5Deci soldații au luat banii, şi au făcut cum li s-a spus. Zvonul acesta s-a răspândit",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "pretutindeni, printre Iudei, și continuă până în ziua de azi.*",
+          "text": "5Deci soldații au luat banii, şi au făcut cum li s-a spus. Zvonul acesta s-a răspândit pretutindeni, printre Iudei, și continuă până în ziua de azi.*",
           "noteRefs": [
             42
           ]

@@ -39,16 +39,15 @@
           "noteRefs": []
         },
         {
-          "type": "heading",
-          "text": "\n\n\n\n\nA celui care ne iubeşte, care ne-a eliberat de păcatele noastre cu sângele său",
+          "type": "paragraph",
+          "text": "A celui care ne iubeşte, care ne-a eliberat de păcatele noastre cu sângele său",
           "noteRefs": []
         },
         {
           "type": "verse",
           "text": "6şi a făcut din noi o Împărăţie şi preoţi pentru Dumnezeu, Tatăl său; ale lui să fie gloria şi puterea în vecii vecilor! Amin.",
           "noteRefs": [],
-          "align": "justify",
-          "spaceBefore": 1.5
+          "align": "justify"
         },
         {
           "type": "verse",
@@ -296,12 +295,7 @@
         },
         {
           "type": "verse",
-          "text": "6Voi lovi cu moartea pe copiii ei, și toate adunările vor cunoaşte că eu sunt cel care",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "cercetez mintea şi inima, şi voi răsplăti fiecăruia din voi după faptele lui.",
+          "text": "6Voi lovi cu moartea pe copiii ei, și toate adunările vor cunoaşte că eu sunt cel care cercetez mintea şi inima, şi voi răsplăti fiecăruia din voi după faptele lui.",
           "noteRefs": []
         },
         {
@@ -870,12 +864,7 @@
         },
         {
           "type": "verse",
-          "text": "3Apoi a venit un alt înger, care s-a oprit în faţa altarului, cu o cădelniţă de aur. I s-a dat",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "tămâie multă, ca s-o aducă, împreună cu rugăciunile tuturor sfinţilor, pe altarul de aur, care este înaintea tronului.",
+          "text": "3Apoi a venit un alt înger, care s-a oprit în faţa altarului, cu o cădelniţă de aur. I s-a dat tămâie multă, ca s-o aducă, împreună cu rugăciunile tuturor sfinţilor, pe altarul de aur, care este înaintea tronului.",
           "noteRefs": []
         },
         {
@@ -1647,18 +1636,18 @@
         },
         {
           "type": "verse",
-          "text": "5Am auzit un glas tare, care venea din templu şi care zicea celor şapte îngeri: „Duceţi-vă şi vărsaţi pe pământ cele şapte vase ale mâniei lui Dumnezeu!”",
+          "text": "5Am auzit un glas tare, care venea din templu şi care zicea celor şapte îngeri: „Duceţi-vă şi vărsaţi pe pământ cele şapte vase ale mâniei lui Dumnezeu!”\n",
           "noteRefs": []
         },
         {
           "type": "verse",
-          "text": "6Cel dintâi s-a dus şi a vărsat vasul lui pe pământ. Şi o rană rea şi dureroasă a lovit pe oamenii care aveau semnul fiarei şi care se închinau imaginii ei.",
+          "text": "6Cel dintâi s-a dus şi a vărsat vasul lui pe pământ. Şi o rană rea şi dureroasă a lovit pe oamenii care aveau semnul fiarei şi care se închinau imaginii ei.\n",
           "noteRefs": [],
           "spaceBefore": 0.75
         },
         {
           "type": "verse",
-          "text": "7Al doilea a vărsat vasul lui în mare. Şi marea s-a făcut sânge, ca sângele unui om mort. Şi a murit orice făptură vie, și chiar tot ce era în mare.",
+          "text": "7Al doilea a vărsat vasul lui în mare. Şi marea s-a făcut sânge, ca sângele unui om mort. Şi a murit orice făptură vie, și chiar tot ce era în mare.\n",
           "noteRefs": [],
           "spaceBefore": 0.75
         },
@@ -1680,7 +1669,7 @@
         },
         {
           "type": "verse",
-          "text": "11Şi am auzit altarul zicând: „Da, Doamne Dumnezeule atotputernic, adevărate şi drepte sunt judecăţile tale!”",
+          "text": "11Şi am auzit altarul zicând: „Da, Doamne Dumnezeule atotputernic, adevărate şi drepte sunt judecăţile tale!”\n",
           "noteRefs": []
         },
         {
@@ -1690,7 +1679,7 @@
         },
         {
           "type": "verse",
-          "text": "13Oamenii au fost încălziți de o arşiţă mare şi au hulit numele lui Dumnezeu care are stăpânire peste aceste plăgi şi nu s-au pocăit ca să-i dea glorie.",
+          "text": "13Oamenii au fost încălziți de o arşiţă mare şi au hulit numele lui Dumnezeu care are stăpânire peste aceste plăgi şi nu s-au pocăit ca să-i dea glorie.\n",
           "noteRefs": []
         },
         {
@@ -1700,7 +1689,7 @@
         },
         {
           "type": "verse",
-          "text": "15și au hulit pe Dumnezeul cerului din cauza durerilor lor şi din cauza rănilor lor rele şi nu s-au pocăit de faptele lor.",
+          "text": "15și au hulit pe Dumnezeul cerului din cauza durerilor lor şi din cauza rănilor lor rele şi nu s-au pocăit de faptele lor.\n",
           "noteRefs": []
         },
         {
@@ -1725,7 +1714,7 @@
         },
         {
           "type": "verse",
-          "text": "20Spiritele cele rele i-au strâns în locul care în ebraică se numește Armaghedon.*",
+          "text": "20Spiritele cele rele i-au strâns în locul care în ebraică se numește Armaghedon.*\n",
           "noteRefs": [
             204
           ]
@@ -1737,12 +1726,7 @@
         },
         {
           "type": "verse",
-          "text": "22Au urmat fulgere, sunete și tunete şi s-a făcut un mare cutremur de pământ, aşa de puternic cum n-a fost de când sunt oameni",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "pe pământ - un cutremur aşa de mare și puternic.",
+          "text": "22Au urmat fulgere, sunete și tunete şi s-a făcut un mare cutremur de pământ, aşa de puternic cum n-a fost de când sunt oameni pe pământ - un cutremur aşa de mare și puternic.",
           "noteRefs": []
         },
         {
@@ -1957,12 +1941,7 @@
         },
         {
           "type": "verse",
-          "text": "14Roadele atât de dorite sufletului tău s-au dus de la tine. Toate lucrurile alese,",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "strălucite, sunt pierdute pentru tine şi nu le vei mai găsi deloc.",
+          "text": "14Roadele atât de dorite sufletului tău s-au dus de la tine. Toate lucrurile alese, strălucite, sunt pierdute pentru tine şi nu le vei mai găsi deloc.",
           "noteRefs": []
         },
         {
@@ -2346,12 +2325,7 @@
         },
         {
           "type": "verse",
-          "text": "8Orașul era în patru colţuri şi lungimea ei era cât lărgimea. A măsurat orașul cu trestia şi a",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "găsit aproape douăsprezece mii de stadii.* Lungimea, lărgimea şi înălţimea erau egale.",
+          "text": "8Orașul era în patru colţuri şi lungimea ei era cât lărgimea. A măsurat orașul cu trestia şi a găsit aproape douăsprezece mii de stadii.* Lungimea, lărgimea şi înălţimea erau egale.",
           "noteRefs": [
             208
           ]
@@ -2532,12 +2506,6 @@
           "type": "heading",
           "text": "Prevenire și încheiere",
           "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "",
-          "noteRefs": [],
-          "align": "justify"
         },
         {
           "type": "verse",

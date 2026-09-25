@@ -905,16 +905,40 @@ function computeEditGroups(drafts: BlockDraft[], fields: PassageField[]): EditGr
   const groups: EditGroup[] = [];
   let current: number[] = [];
 
+  /**
+   * A block with no number of its own cannot be found again once several
+   * verses share one box, so it has to sit in a box by itself. What it must
+   * not do is drag its neighbours in with it: an entire chapter used to fall
+   * back to one-box-per-verse because a single stray fragment somewhere in it
+   * had no number, which took every bit of ordinary typing away from the very
+   * passages that most needed fixing. The run is split around the stray block
+   * instead, so the verses on either side of it still flow.
+   */
   const flush = () => {
     if (current.length === 0) {
       return;
     }
 
-    if (current.every((index) => drafts[index].verseNumber !== '')) {
-      groups.push({ kind: 'flow', indices: current });
-    } else {
-      current.forEach((index) => groups.push({ kind: 'single', indices: [index] }));
-    }
+    let run: number[] = [];
+
+    const flushRun = () => {
+      if (run.length > 0) {
+        groups.push({ kind: 'flow', indices: run });
+        run = [];
+      }
+    };
+
+    current.forEach((index) => {
+      if (drafts[index].verseNumber === '') {
+        flushRun();
+        groups.push({ kind: 'single', indices: [index] });
+        return;
+      }
+
+      run.push(index);
+    });
+
+    flushRun();
 
     current = [];
   };
@@ -1194,22 +1218,37 @@ export function PassageEditor({
   passageId,
   passageLabel,
   drafts,
+  noteDrafts,
   hasPreviousPassage,
   hasNextPassage,
+  onAddFootnote,
   onCancel,
+  onDeleteRow,
+  onMergeRow,
   onSave,
   onNavigatePassage,
 }: {
   passageId: string;
   passageLabel: string;
   drafts: BlockDraft[];
+  /** This passage's footnotes, edited here rather than on the reader's page. */
+  noteDrafts: BlockDraft[];
   hasPreviousPassage: boolean;
   hasNextPassage: boolean;
+  onAddFootnote: (
+    edits: Array<{ draft: BlockDraft; edit: BlockEdit }>,
+    target: BlockDraft,
+    offset: number,
+    text: string,
+  ) => void;
   onCancel: () => void;
+  onDeleteRow: (edits: Array<{ draft: BlockDraft; edit: BlockEdit }>, target: BlockDraft) => void;
+  onMergeRow: (edits: Array<{ draft: BlockDraft; edit: BlockEdit }>, target: BlockDraft) => void;
   onSave: (edits: Array<{ draft: BlockDraft; edit: BlockEdit }>) => void;
   onNavigatePassage: (direction: -1 | 1, edits: Array<{ draft: BlockDraft; edit: BlockEdit }>) => void;
 }) {
   const [fields, setFields] = useState<PassageField[]>(() => drafts.map(fieldFromDraft));
+  const [noteTexts, setNoteTexts] = useState<string[]>(() => noteDrafts.map((draft) => draft.text));
   const areaRefs = useRef<Array<HTMLTextAreaElement | null>>([]);
   // One shared textarea per flowing group of verses, keyed by the group's
   // own indices (e.g. "0,1,2") — a plain ref map rather than an array
@@ -1490,7 +1529,82 @@ export function PassageEditor({
       });
     });
 
+    // A footnote's explanation rides along on the same save as the verses, so
+    // one "Salvează pasajul" covers the text and the notes under it together.
+    noteDrafts.forEach((draft, index) => {
+      if (noteTexts[index] === draft.text) {
+        return;
+      }
+
+      edits.push({
+        draft,
+        edit: {
+          text: noteTexts[index],
+          size: draft.size,
+          align: draft.align,
+          spaceBefore: draft.spaceBefore,
+          spaceAfter: draft.spaceAfter,
+          hidden: draft.hidden,
+          offsetX: draft.offsetX,
+          offsetY: draft.offsetY,
+        },
+      });
+    });
+
     return edits;
+  }
+
+  /**
+   * Adds a footnote where the cursor is. The marker goes into the text as a
+   * lone `*`, exactly as every existing note is written, and the explanation is
+   * added to the passage at the position that marker falls in — so the numbers
+   * follow the text rather than the order the notes were typed in. Numbering
+   * across the whole New Testament is then redone by the caller.
+   */
+  function addFootnoteAtCursor() {
+    if (activeIndex === null) {
+      return;
+    }
+
+    const draft = drafts[activeIndex];
+    let offset: number;
+
+    if (activeGroup && activeIsFlow) {
+      const textarea = flowRefs.current[groupKey(activeGroup)];
+
+      if (!textarea) {
+        return;
+      }
+
+      const { slot, start } = locateFlowCursor(
+        textarea.value, groupVerseNumbers(activeGroup), textarea.selectionStart,
+      );
+
+      if (activeGroup.indices[slot] !== activeIndex) {
+        return;
+      }
+
+      offset = textarea.selectionStart - start;
+    } else {
+      const area = areaRefs.current[activeIndex];
+
+      if (!area) {
+        return;
+      }
+
+      offset = area.selectionStart;
+    }
+
+    const text = window.prompt(
+      `Scrie explicația notei de subsol (va fi pusă la ${draft.label.toLowerCase()}):`,
+      '',
+    );
+
+    if (text === null || !text.trim()) {
+      return;
+    }
+
+    onAddFootnote(changedEdits(), draft, offset, text.trim());
   }
 
   /**
@@ -1728,6 +1842,27 @@ export function PassageEditor({
       if (drafts[index].verseNumber !== '' && area && area.selectionStart === 0 && area.selectionEnd === 0) {
         event.preventDefault();
         addBlankRow(index);
+      }
+
+      return;
+    }
+
+    // Backspace at the very start of a row with no number of its own joins it
+    // to the row above, the same reflex that joins two rows inside the flowing
+    // text — except here the two rows are separate blocks, so it is a real
+    // structural change rather than a spacing one.
+    if (
+      !modifier
+      && event.key === 'Backspace'
+      && index > 0
+      && drafts[index].verseNumber === ''
+      && !drafts[index].label.startsWith('Subtitlu')
+    ) {
+      const area = areaRefs.current[index];
+
+      if (area && area.selectionStart === 0 && area.selectionEnd === 0) {
+        event.preventDefault();
+        onMergeRow(changedEdits(), drafts[index]);
       }
 
       return;
@@ -2037,6 +2172,14 @@ export function PassageEditor({
             + Spațiu
           </button>
           <button
+            disabled={selectedIndices.length > 0 || activeIndex === null || drafts[activeIndex]?.verseNumber === ''}
+            onClick={addFootnoteAtCursor}
+            title="Adaugă o notă de subsol în locul unde este cursorul. Notele se renumerotează singure, în tot Noul Testament."
+            type="button"
+          >
+            + Notă
+          </button>
+          <button
             className="block-toolbar-clear"
             disabled={formatTargets.length === 0}
             onClick={applyClearFormatting}
@@ -2149,6 +2292,36 @@ export function PassageEditor({
                     }}
                     value={fields[group.indices[0]].text}
                   />
+
+                  {/* A row with no number of its own cannot join the flowing
+                      text around it, and is almost always a fragment that was
+                      split off the verse above during the original conversion.
+                      These two buttons are how it gets put back, or removed. */}
+                  {drafts[group.indices[0]].verseNumber === ''
+                    && !drafts[group.indices[0]].label.startsWith('Subtitlu') ? (
+                      <div className="passage-editor-row-actions">
+                        <span>Acest rând nu are număr de verset.</span>
+                        {group.indices[0] > 0 ? (
+                          <button
+                            onClick={() => onMergeRow(changedEdits(), drafts[group.indices[0]])}
+                            title="Mută textul acestui rând la sfârșitul rândului de deasupra"
+                            type="button"
+                          >
+                            ⤒ Lipește de rândul de deasupra
+                          </button>
+                        ) : null}
+                        <button
+                          onClick={() => {
+                            if (window.confirm('Ștergi acest rând? Poți anula din „Modificările tale”.')) {
+                              onDeleteRow(changedEdits(), drafts[group.indices[0]]);
+                            }
+                          }}
+                          type="button"
+                        >
+                          ✕ Șterge rândul
+                        </button>
+                      </div>
+                    ) : null}
                 </div>
               ) : (
                 <div className="passage-editor-field passage-editor-flow-field" key={groupKey(group)}>
@@ -2188,6 +2361,32 @@ export function PassageEditor({
             </div>
           ) : null}
         </div>
+
+        {/* The passage's footnotes, editable here beside the text they explain.
+            Their numbers are not editable: a note's number is its place in the
+            reading order of the whole New Testament, which the software works
+            out itself every time a note is added or removed. */}
+        {noteDrafts.length > 0 ? (
+          <section className="passage-editor-notes">
+            <h3>Note de subsol din acest pasaj</h3>
+
+            <ul>
+              {noteDrafts.map((draft, index) => (
+                <li key={draft.address}>
+                  <span className="passage-editor-note-number">*{draft.label.replace(/^Nota /u, '')}</span>
+                  <textarea
+                    aria-label={draft.label}
+                    onChange={(event) => setNoteTexts((current) => current.map(
+                      (value, position) => (position === index ? event.target.value : value),
+                    ))}
+                    rows={2}
+                    value={noteTexts[index]}
+                  />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
         {versesMissingNumbers.length > 0 ? (
           <p className="block-editor-warning">

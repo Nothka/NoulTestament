@@ -222,23 +222,8 @@
   hyphens: auto;
 }
 
-.genealogy-lines {
-  margin-top: 1.55rem;
-}
 
-.genealogy-line {
-  margin: 0;
-  line-height: 1.32;
-}
 
-.genealogy-line sup {
-  position: relative;
-  top: -0.32em;
-  margin-right: var(--verse-number-gap, 1px);
-  font-size: 0.62em;
-  font-weight: 700;
-  line-height: 0;
-}
 
 .verse-fragment,
 .text-fragment {
@@ -1178,7 +1163,7 @@ sup.note-callout {
  * Every row gets the same baseline gap regardless of its own spacing, so
  * the passage always reads as evenly spaced by default. A row with its own
  * "Spațiu înainte/după" set (an intentional larger break, e.g. before a new
- * movement within a genealogy) adds on top of this rather than replacing
+ * movement inside a passage) adds on top of this rather than replacing
  * it — the deliberate exception stays visible without the ordinary rows
  * looking uneven.
  */
@@ -1246,6 +1231,79 @@ sup.note-callout {
   margin: 14px -20px -20px;
   background: #ffffff;
   padding: 12px 20px 20px;
+}
+
+/* A row the flowing text cannot absorb says so, and offers the two ways out.
+   Quiet by default so a passage full of ordinary verses stays calm. */
+.passage-editor-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 2px;
+  color: #8a5a2b;
+  font-size: 0.78rem;
+}
+
+.passage-editor-row-actions button {
+  border: 1px solid #e0c9ae;
+  border-radius: 5px;
+  background: #fdf6ee;
+  cursor: pointer;
+  padding: 2px 8px;
+  color: #8a5a2b;
+  font-size: 0.78rem;
+}
+
+.passage-editor-row-actions button:hover {
+  border-color: #cc5500;
+  color: #cc5500;
+}
+
+/* The passage's footnotes, under the text they explain. The number is shown
+   but never editable — it is the note's place in the whole New Testament's
+   reading order, which the software recomputes on its own. */
+.passage-editor-notes {
+  margin-top: 16px;
+  border-top: 1px solid #e6e0d6;
+  padding-top: 12px;
+}
+
+.passage-editor-notes h3 {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.passage-editor-notes ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.passage-editor-notes li {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.passage-editor-note-number {
+  flex: 0 0 auto;
+  padding-top: 6px;
+  color: #cc5500;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.passage-editor-notes textarea {
+  flex: 1 1 auto;
+  border: 1px solid #ddd6ca;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  resize: vertical;
 }
 
 /* Two columns need real width to stay readable; below that, stack the

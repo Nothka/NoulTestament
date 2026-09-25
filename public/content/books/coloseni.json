@@ -27,19 +27,8 @@
         },
         {
           "type": "verse",
-          "text": "4căci am auzit despre credința voastră în Isus",
+          "text": "4căci am auzit despre credința voastră în Isus Cristos, și despre dragostea pe care o aveți față de toți sfinții,",
           "noteRefs": []
-        },
-        {
-          "type": "heading",
-          "text": "Cristos, și despre dragostea pe care o aveți",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "față de toți sfinții,",
-          "noteRefs": [],
-          "align": "justify"
         },
         {
           "type": "verse",
@@ -147,14 +136,9 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Mă bucur acum în suferinţele mele pentru voi, şi în trupul meu completez ce",
+          "text": "1Mă bucur acum în suferinţele mele pentru voi, şi în trupul meu completez ce lipseşte suferinţelor lui Cristos, pentru trupul lui, care este adunarea,",
           "noteRefs": [],
           "align": "justify"
-        },
-        {
-          "type": "paragraph",
-          "text": "lipseşte suferinţelor lui Cristos, pentru trupul lui, care este adunarea,",
-          "noteRefs": []
         },
         {
           "type": "verse",

@@ -23,7 +23,8 @@ import {
   type PublishedChange,
   type StoredWork,
 } from './editing';
-import { removeBlock } from './passage-edits.js';
+import { insertNote, mergeBlockIntoPrevious, removeBlock } from './passage-edits.js';
+import { renumberAllNotes } from './footnote-numbering.js';
 import {
   blockStyle,
   effectiveParagraphAlign,
@@ -289,10 +290,18 @@ function App() {
       return null;
     }
 
+    // The passage's footnotes, as ordinary drafts, so their text is edited and
+    // saved through the exact same path a verse is rather than needing the
+    // reader's page and a second dialog.
+    const noteDrafts = (passage.notes ?? [])
+      .map((_, index) => draftFor(`note:${passageId}:${index}`))
+      .filter((entry): entry is BlockDraft => entry !== null);
+
     const passageIndex = book.passages.findIndex((p) => p.id === passageId);
 
     return {
       drafts,
+      noteDrafts,
       passageId,
       passageLabel: `Pasajul ${passage.number} (${passage.reference})`,
       previousPassageId: passageIndex > 0 ? book.passages[passageIndex - 1].id : null,
@@ -357,6 +366,115 @@ function App() {
     setData(next);
     setPublishStatus({ kind: 'idle', message: '' });
     setChanges((current) => mergeChangeRecords(current, records));
+  }
+
+  /**
+   * Structural edits made from the passage screen: joining a stray row into the
+   * verse above it, removing a row, or adding a footnote. Whatever else is
+   * staged in the passage is committed first, in one pass, exactly the way
+   * Prev/Next already does, so reaching for one of these never throws away what
+   * was typed. The passage stays open; its editor remounts because the block or
+   * note count in its key changed.
+   */
+  function restructurePassage(
+    edits: Array<{ draft: BlockDraft; edit: BlockEdit }>,
+    target: BlockDraft,
+    change: (passage: Passage) => Passage,
+    summary: string,
+    renumberNotes = false,
+  ) {
+    if (!data) {
+      return;
+    }
+
+    const [, targetPassageId] = target.address.split(':');
+    let next = data;
+
+    const records = edits.map(({ draft, edit }) => {
+      next = applyTextEdit(next, draft, edit);
+      return { target: draft, record: describeDraft(draft, edit) };
+    });
+
+    next = applyPassageChange(next, targetPassageId, change);
+
+    if (renumberNotes) {
+      const { books, changedIds } = renumberAllNotes(next.books);
+      const ownBookId = next.books.find(
+        (book) => book.passages.some((passage) => passage.id === targetPassageId),
+      )?.id;
+
+      next = { ...next, books };
+
+      // A note added anywhere shifts every callout after it, in every later
+      // book. Only a recorded change makes a file publish, so each book the
+      // renumbering reached is recorded in its own right.
+      for (const id of changedIds) {
+        if (id === ownBookId) {
+          continue;
+        }
+
+        records.push({
+          target: { ...target, address: `notes:${id}`, path: `public/content/books/${id}.json`, text: '' },
+          record: {
+            label: 'Renumerotarea notelor',
+            where: id,
+            current: 'notele au fost renumerotate',
+            currentLook: lookOf(target),
+          },
+        });
+      }
+    }
+
+    setData(next);
+    setPublishStatus({ kind: 'idle', message: '' });
+    setChanges((current) => mergeChangeRecords(current, [
+      ...records,
+      {
+        target,
+        record: {
+          label: target.label, where: targetPassageId, current: summary, currentLook: lookOf(target),
+        },
+      },
+    ]));
+  }
+
+  function mergePassageRow(edits: Array<{ draft: BlockDraft; edit: BlockEdit }>, target: BlockDraft) {
+    const index = Number(target.address.split(':')[2]);
+
+    restructurePassage(
+      edits,
+      target,
+      (passage) => mergeBlockIntoPrevious(passage, index) as Passage,
+      '(lipit de rândul de deasupra)',
+    );
+  }
+
+  function deletePassageRow(edits: Array<{ draft: BlockDraft; edit: BlockEdit }>, target: BlockDraft) {
+    const index = Number(target.address.split(':')[2]);
+
+    restructurePassage(
+      edits,
+      target,
+      (passage) => removeBlock(passage, index) as Passage,
+      '(șters)',
+    );
+  }
+
+  function addPassageFootnote(
+    edits: Array<{ draft: BlockDraft; edit: BlockEdit }>,
+    target: BlockDraft,
+    offset: number,
+    text: string,
+  ) {
+    const index = Number(target.address.split(':')[2]);
+
+    restructurePassage(
+      edits,
+      target,
+      (passage) => insertNote(passage, index, offset, text) as Passage,
+      '(notă de subsol adăugată)',
+      true,
+    );
   }
 
   function savePassage(edits: Array<{ draft: BlockDraft; edit: BlockEdit }>) {
@@ -1088,11 +1206,18 @@ function App() {
           // Remounts on a passage switch — a fresh passage's `drafts` must
           // never be read against local field state staged for a different
           // one, or a different-length one, for even one render.
-          key={passageId}
+          // Also remounts when a structural edit changes how many rows or
+          // notes the passage has, so staged field state is never read against
+          // a different-length `drafts`.
+          key={`${passageId}:${passagePanel.drafts.length}:${passagePanel.noteDrafts.length}`}
           drafts={passagePanel.drafts}
           hasNextPassage={passagePanel.nextPassageId !== null}
           hasPreviousPassage={passagePanel.previousPassageId !== null}
+          noteDrafts={passagePanel.noteDrafts}
+          onAddFootnote={addPassageFootnote}
           onCancel={() => setPassageId(null)}
+          onDeleteRow={deletePassageRow}
+          onMergeRow={mergePassageRow}
           onNavigatePassage={navigatePassage}
           onSave={savePassage}
           passageId={passagePanel.passageId}

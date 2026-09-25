@@ -114,12 +114,7 @@
         },
         {
           "type": "verse",
-          "text": "6căci ştiţi că nu cu lucruri pieritoare, cu argint sau cu aur, aţi fost răscumpăraţi din",
-          "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "felul deşert de vieţuire pe care l-ați moştenit de la părinţii voştri,",
+          "text": "6căci ştiţi că nu cu lucruri pieritoare, cu argint sau cu aur, aţi fost răscumpăraţi din felul deşert de vieţuire pe care l-ați moştenit de la părinţii voştri,",
           "noteRefs": []
         },
         {
@@ -357,12 +352,6 @@
           "type": "heading",
           "text": "Despre relații în general",
           "noteRefs": []
-        },
-        {
-          "type": "paragraph",
-          "text": "",
-          "noteRefs": [],
-          "align": "justify"
         },
         {
           "type": "verse",

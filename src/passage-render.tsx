@@ -4,9 +4,12 @@ import { renderTextWithNotes, trimVerseTextStart } from './markup';
 /**
  * The rendering logic in this file is the single source of truth for how a
  * passage's blocks turn into the page a reader sees — verses flowing
- * together into shared paragraphs, alignment applying to the whole flowed
- * run rather than one block at a time, and Matei 1's genealogy splitting its
- * own lines. Both the live reading page and the passage editor's preview
+ * together into shared paragraphs, row breaks coming from the text itself,
+ * and alignment applying to the whole flowed run rather than one block at a
+ * time. Every passage goes through the same path, Matei 1's genealogy
+ * included: its rows are stored as real breaks in the text, the way any
+ * other row break is, rather than being derived from its punctuation at
+ * render time. Both the live reading page and the passage editor's preview
  * pane render through these exact functions, so the preview can never drift
  * from what actually gets published — a mismatch there previously made
  * "Margini egale" look nothing like the real page once several verses
@@ -159,18 +162,6 @@ export function PassageBlocks({
    */
   editable?: boolean;
 }) {
-  if (passageId === 'matei-1') {
-    return (
-      <GenealogyBlocks
-        blocks={blocks}
-        passageId={passageId}
-        allBlocks={allBlocks}
-        notes={notes}
-        editable={editable}
-      />
-    );
-  }
-
   const addressFor = (block: ContentBlock) => (editable ? blockAddress(passageId, allBlocks, block) : undefined);
 
   const groupedBlocks = groupPassageBlocks(blocks);
@@ -355,154 +346,3 @@ function InlineBlock({ block, noteRefs, address }: { block: ContentBlock; noteRe
   );
 }
 
-export function GenealogyBlocks({
-  blocks,
-  passageId,
-  allBlocks = blocks,
-  notes = [],
-  editable = true,
-}: {
-  blocks: ContentBlock[];
-  passageId: string;
-  allBlocks?: ContentBlock[];
-  notes?: Footnote[];
-  editable?: boolean;
-}) {
-  const addressFor = (block: ContentBlock) => (editable ? blockAddress(passageId, allBlocks, block) : undefined);
-
-  return (
-    <div className="genealogy-lines">
-      {blocks.flatMap((block, blockIndex) => {
-        if (block.hidden) {
-          return [];
-        }
-
-        if (block.type === 'heading') {
-          return [
-            <h4
-              className="inline-heading"
-              data-edit={addressFor(block)}
-              key={`${passageId}-${blockIndex}`}
-              style={blockStyle(block)}
-            >
-              {renderTextWithNotes(block.text, getResolvedNoteRefsForBlock(block, allBlocks, notes))}
-            </h4>,
-          ];
-        }
-
-        const lines = splitGenealogyText(block.text);
-
-        return lines.map((line, lineIndex) => (
-          <p
-            className="genealogy-line"
-            data-edit={addressFor(block)}
-            key={`${passageId}-${blockIndex}-${lineIndex}`}
-            style={genealogyLineStyle(block, allBlocks, lineIndex, lines.length)}
-          >
-            {lineIndex === 0 ? (
-              <GenealogyLine text={line} noteRefs={getResolvedNoteRefsForBlock(block, allBlocks, notes)} />
-            ) : (
-              <GenealogyLine text={line} />
-            )}
-          </p>
-        ));
-      })}
-    </div>
-  );
-}
-
-export function genealogyLineLayout(
-  block: ContentBlock,
-  allBlocks: ContentBlock[],
-  lineIndex: number,
-  lineCount: number,
-) {
-  return {
-    ...block,
-    align: effectiveParagraphAlign(allBlocks, allBlocks.indexOf(block)),
-    // One stored verse can produce several genealogy lines. Its gap belongs
-    // around the verse, not around every semicolon clause.
-    spaceBefore: lineIndex === 0 ? block.spaceBefore : undefined,
-    spaceAfter: lineIndex === lineCount - 1 ? block.spaceAfter : undefined,
-  };
-}
-
-function genealogyLineStyle(
-  block: ContentBlock,
-  allBlocks: ContentBlock[],
-  lineIndex: number,
-  lineCount: number,
-) {
-  const layout = genealogyLineLayout(block, allBlocks, lineIndex, lineCount);
-  const style = blockStyle(layout) ?? {};
-
-  if (layout.align === 'justify') {
-    style.textAlignLast = 'justify';
-  }
-
-  return Object.keys(style).length > 0 ? style : undefined;
-}
-
-function GenealogyLine({ noteRefs = [], text }: { noteRefs?: number[]; text: string }) {
-  const match = text.match(/^(\d{1,3})(.*)$/su);
-
-  if (!match) {
-    return renderTextWithNotes(text, noteRefs);
-  }
-
-  return (
-    <>
-      <sup>{match[1]}</sup>
-      {renderTextWithNotes(trimVerseTextStart(match[2]), noteRefs)}
-    </>
-  );
-}
-
-export function splitGenealogyText(text: string) {
-  // Keep leading/interior newlines: the editor uses two of them for one blank
-  // row. Splitting on `;\s*` used to consume the exact break the customer had
-  // inserted between two genealogy clauses.
-  const normalizedText = text.trimEnd();
-  const verseMatch = normalizedText.match(/^(\d{1,3})(.*)$/su);
-
-  if (!verseMatch) {
-    return splitAtSemicolons(normalizedText);
-  }
-
-  const [, verseNumber, verseText] = verseMatch;
-  const parts = splitAtSemicolons(verseText);
-
-  if (parts.length === 0) {
-    return [normalizedText];
-  }
-
-  return parts.map((part, index) => (index === 0 ? `${verseNumber}${part}` : part));
-}
-
-function splitAtSemicolons(text: string) {
-  return text
-    .split(';')
-    .map((line, index, lines) => {
-      const content = index === 0 ? line : genealogyContinuationStart(line);
-
-      return index < lines.length - 1 ? `${content};` : content;
-    })
-    .filter((line) => line.replace(/;$/u, '').trim().length > 0);
-}
-
-/**
- * A semicolon already starts the next genealogy clause on a new rendered line.
- * Therefore the first typed newline represents that normal break; only further
- * newlines become visibly blank rows.
- */
-function genealogyContinuationStart(text: string) {
-  const leading = text.match(/^[\t ]*((?:\r?\n[\t ]*)+)/u);
-
-  if (!leading) {
-    return trimVerseTextStart(text);
-  }
-
-  const newlineCount = leading[1].match(/\r?\n/gu)?.length ?? 0;
-
-  return `${'\n'.repeat(Math.max(0, newlineCount - 1))}${text.slice(leading[0].length)}`;
-}
