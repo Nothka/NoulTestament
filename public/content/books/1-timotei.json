@@ -28,9 +28,14 @@
         },
         {
           "type": "verse",
-          "text": "3După cum te-am îndemnat la plecarea mea în Macedonia, - te îndemn din nou - să rămâi în Efes, ca să instruieşti pe unii oameni, să nu înveţe pe alţii altă învăţătură",
+          "text": "3După cum te-am îndemnat la plecarea mea în Macedonia, - te îndemn din nou - să rămâi",
           "noteRefs": [],
           "align": "justify"
+        },
+        {
+          "type": "paragraph",
+          "text": "în Efes, ca să instruieşti pe unii oameni, să nu înveţe pe alţii altă învăţătură",
+          "noteRefs": []
         },
         {
           "type": "verse",
@@ -539,9 +544,16 @@
           "noteRefs": []
         },
         {
+          "type": "paragraph",
+          "text": "",
+          "noteRefs": [],
+          "align": "justify"
+        },
+        {
           "type": "verse",
           "text": "6Să nu-ţi pui mâinile peste nimeni cu grabă şi să nu te faci părtaş păcatelor altora; pe tine însuţi păstrează-te curat.",
-          "noteRefs": []
+          "noteRefs": [],
+          "spaceBefore": 0
         },
         {
           "type": "verse",
@@ -691,6 +703,16 @@
         {
           "type": "verse",
           "text": "9ca astfel să-şi adune pentru timpul viitor o bună temelie, pentru a putea să pună mâna pe viaţa veșnică.",
+          "noteRefs": []
+        },
+        {
+          "type": "heading",
+          "text": "",
+          "noteRefs": []
+        },
+        {
+          "type": "paragraph",
+          "text": "",
           "noteRefs": []
         },
         {
