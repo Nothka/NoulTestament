@@ -13,7 +13,8 @@
         {
           "type": "verse",
           "text": "1Lista strămoșilor lui Isus Cristos fiul lui David, fiul lui Avraam:",
-          "noteRefs": []
+          "noteRefs": [],
+          "align": "justify"
         },
         {
           "type": "verse",
