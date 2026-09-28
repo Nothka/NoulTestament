@@ -96,7 +96,8 @@
         {
           "type": "verse",
           "text": "17Deci, toate generațiile de la Avraam până la David, sunt patrusprezece; apoi, de la David până la deportarea în Babilon sunt patrusprezece generații; şi de la deportarea în Babilon până la Cristos, sunt patrusprezece generații.",
-          "noteRefs": []
+          "noteRefs": [],
+          "spaceBefore": 0
         }
       ]
     },
