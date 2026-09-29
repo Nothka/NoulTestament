@@ -14,7 +14,7 @@
           "type": "verse",
           "text": "1La început era Cuvântul,* şi Cuvântul era cu Dumnezeu, şi Cuvântul era Dumnezeu.",
           "noteRefs": [
-            105
+            110
           ],
           "align": "justify"
         },
@@ -95,8 +95,11 @@
         },
         {
           "type": "verse",
-          "text": "17Căci Legea a fost dată prin Moise, dar harul şi adevărul s-au înfăptuit prin Isus Cristos.",
-          "noteRefs": []
+          "text": "17Căci Legea a fost dată prin Moise, dar harul şi adevărul s-au înfăptuit prin Isus* Cristos*.",
+          "noteRefs": [
+            111,
+            112
+          ]
         },
         {
           "type": "verse",
@@ -106,8 +109,16 @@
       ],
       "notes": [
         {
-          "number": 105,
+          "number": 110,
           "text": "1:1 unele vechi manuscrise, au în acest loc, și în următoarele: „Fiul”; acesta este mai ușor de înțeles și de acceptat"
+        },
+        {
+          "number": 111,
+          "text": "Isus este forma grecească a numelui ebraic Iesua, care înseamnă: Dumnezeu mântuiește. Iesua provine din vechiul nume ebraic Iosua."
+        },
+        {
+          "number": 112,
+          "text": "Cristos este cuvânt grecesc; el este echivalentul cuvântului ebraic Mesia, care înseamnă: Unsul lui Dumnezeu, sau Cel uns. Mesia și Cristos nu sunt nume proprii, ci titluri."
         }
       ]
     },
@@ -238,7 +249,7 @@
           "type": "verse",
           "text": "4Isus s-a întors, şi când i-a văzut că merg după el, le-a zis: „Ce căutaţi?” Ei i-au răspuns: „Rabi,* care se traduce prin:,Învăţătorule unde locuieşti?”",
           "noteRefs": [
-            106
+            113
           ]
         },
         {
@@ -255,14 +266,14 @@
           "type": "verse",
           "text": "7El, cel dintâi, a găsit pe fratele său Simon şi i-a zis: „Noi am găsit pe Mesia” care se traduce prin: Cristos.*",
           "noteRefs": [
-            107
+            114
           ]
         },
         {
           "type": "verse",
           "text": "8Şi l-a adus la Isus. Isus l-a privit şi i-a zis: „Tu eşti Simon, fiul lui Iona; tu te vei numi Chifa” care se traduce prin: Petru.*",
           "noteRefs": [
-            108
+            115
           ]
         },
         {
@@ -313,15 +324,15 @@
       ],
       "notes": [
         {
-          "number": 106,
+          "number": 113,
           "text": "4:4 este cuvânt ebraic"
         },
         {
-          "number": 107,
+          "number": 114,
           "text": "4:7 Mesia este cuvânt ebraic; Cristos este cuvânt grecesc; ambele se traduc în românește prin: Cel Uns, sau Unsul lui Dumnezeu"
         },
         {
-          "number": 108,
+          "number": 115,
           "text": "4:8 Chifa este nume aramaic; Petru este nume grecesc; ambele se traduc în românește prin: piatră"
         }
       ]
@@ -353,7 +364,7 @@
           "type": "verse",
           "text": "4Isus i-a răspuns: „Femeie* ce are aceasta de-a face cu tine și cu mine? Nu mi-a sosit încă timpul.”",
           "noteRefs": [
-            109
+            116
           ]
         },
         {
@@ -399,7 +410,7 @@
       ],
       "notes": [
         {
-          "number": 109,
+          "number": 116,
           "text": "5:4 pe timpul acela, acest apelativ nu era lipsit de respect; echivalentul de azi este: doamnă"
         }
       ]
@@ -415,7 +426,7 @@
           "type": "verse",
           "text": "1Paştele iudeilor era aproape, iar Isus s-a urcat* la Ierusalim.",
           "noteRefs": [
-            110
+            117
           ],
           "align": "justify"
         },
@@ -488,7 +499,7 @@
       ],
       "notes": [
         {
-          "number": 110,
+          "number": 117,
           "text": "6:1 drumul spre Ierusalim este ascendent, adică urcă"
         }
       ]
@@ -805,7 +816,7 @@
           "type": "verse",
           "text": "21„Femeie” * i-a zis Isus, „crede-mă că vine timpul când nu vă veţi închina Tatălui, nici pe muntele acesta, nici în Ierusalim.",
           "noteRefs": [
-            111
+            118
           ]
         },
         {
@@ -827,7 +838,7 @@
           "type": "verse",
           "text": "25„Ştiu”, i-a zis femeia, „că are să vină Mesia, căruia i se mai zice Cristos.* Când va veni el, are să ne spună toate lucrurile.”",
           "noteRefs": [
-            112
+            119
           ]
         },
         {
@@ -838,11 +849,11 @@
       ],
       "notes": [
         {
-          "number": 111,
+          "number": 118,
           "text": "9:21 echivalentul actual al acestui cuvânt este: doamnă"
         },
         {
-          "number": 112,
+          "number": 119,
           "text": "9:25 Mesia este cuvânt ebraic, Cristos este cuvânt grecesc, ambele se traduc prin: Cel uns, sau Unsul lui Dumnezeu"
         }
       ]
@@ -1018,7 +1029,7 @@
           "type": "verse",
           "text": "1După aceste lucruri a fost o sărbătoare a iudeilor, şi Isus s-a urcat* la Ierusalim.",
           "noteRefs": [
-            113
+            120
           ],
           "align": "justify"
         },
@@ -1036,7 +1047,7 @@
           "type": "verse",
           "text": "4(Căci un înger al Domnului se cobora, din când în când, în scăldătoare şi tulbura apa. Şi cel dintâi care se cobora în ea, după tulburarea apei, se făcea sănătos, orice boală ar fi avut).*",
           "noteRefs": [
-            114
+            121
           ]
         },
         {
@@ -1102,11 +1113,11 @@
       ],
       "notes": [
         {
-          "number": 113,
+          "number": 120,
           "text": "12:1 drumul spre Ierusalim este ascendent, adică urcă"
         },
         {
-          "number": 114,
+          "number": 121,
           "text": "12:4 cele mai timpurii și mai importante manuscrise nu conțin acest verset"
         }
       ]
@@ -1328,7 +1339,7 @@
           "type": "verse",
           "text": "7Filip i-a răspuns: „Pâinile pe care le-am putea cumpăra cu două sute de dinari* nu sunt suficiente ca fiecare să primească puţin din ele.”",
           "noteRefs": [
-            115
+            122
           ]
         },
         {
@@ -1374,7 +1385,7 @@
       ],
       "notes": [
         {
-          "number": 115,
+          "number": 122,
           "text": "15:7 moneda principală de argint a Imperiului roman, folosită timp de aprox. 500 de ani; 200 de dinari reprezentau plata muncii pe aprox. 8 luni de zile"
         }
       ]
@@ -1406,7 +1417,7 @@
           "type": "verse",
           "text": "4După ce au vâslit cam 25 sau 30 de stadii* văd pe Isus umblând pe mare şi apropiindu-se de corabie. Şi s-au înfricoşat.",
           "noteRefs": [
-            116
+            123
           ]
         },
         {
@@ -1422,7 +1433,7 @@
       ],
       "notes": [
         {
-          "number": 116,
+          "number": 123,
           "text": "16:4  o stadie este a opta parte dintr-o milă romană, aprox. 185 metri, deci erau cam 6 km"
         }
       ]
@@ -1769,7 +1780,7 @@
           "type": "verse",
           "text": "1După ce frații lui s-au urcat* la sărbătoare, s-a urcat şi el, dar nu pe faţă, ci cam pe ascuns.",
           "noteRefs": [
-            117
+            124
           ],
           "align": "justify"
         },
@@ -1906,7 +1917,7 @@
       ],
       "notes": [
         {
-          "number": 117,
+          "number": 124,
           "text": "20:1 drumul spre Ierusalim este ascendent, adică urcă, la fel în versetul 5"
         }
       ]
@@ -2063,7 +2074,7 @@
           "type": "verse",
           "text": "8Isus s-a ridicat, a văzut-o și a întrebat-o: „Femeie* unde sunt acuzatorii tăi? Nimeni nu te-a condamnat?”",
           "noteRefs": [
-            118
+            125
           ]
         },
         {
@@ -2074,7 +2085,7 @@
       ],
       "notes": [
         {
-          "number": 118,
+          "number": 125,
           "text": "23:8 echivalentul actual este: doamnă"
         }
       ]
@@ -2929,7 +2940,7 @@
           "type": "verse",
           "text": "16Atunci Toma, numit și Didimus* a zis celorlalţi ucenici: „Haidem să mergem şi noi să murim cu el!",
           "noteRefs": [
-            119
+            126
           ]
         },
         {
@@ -2941,7 +2952,7 @@
           "type": "verse",
           "text": "18Fiindcă Betania era aproape de Ierusalim, cam la 15 stadii*",
           "noteRefs": [
-            120
+            127
           ]
         },
         {
@@ -3087,11 +3098,11 @@
       ],
       "notes": [
         {
-          "number": 119,
+          "number": 126,
           "text": "33:16 atât aramaicul Toma, cât și grecescul Didimus se traduc prin: geamăn"
         },
         {
-          "number": 120,
+          "number": 127,
           "text": "33:18 o stadie este a opta parte dintr-o milă romană, aprox. 185 de metri; deci 15 stadii sunt aprox. 2,8 km"
         }
       ]
@@ -3153,7 +3164,7 @@
           "type": "verse",
           "text": "9Insă Paştele iudeilor era aproape. Mulţi oameni din zona aceea s-au urcat* la Ierusalim, înainte de Paşti, ca să se curăţească.",
           "noteRefs": [
-            121
+            128
           ],
           "align": "justify"
         },
@@ -3170,7 +3181,7 @@
       ],
       "notes": [
         {
-          "number": 121,
+          "number": 128,
           "text": "34:9 drumul spre Ierusalim este ascendent, adică urcă"
         }
       ]
@@ -3197,7 +3208,7 @@
           "type": "verse",
           "text": "3Maria a luat o livră* de parfum pur, foarte scump, a uns picioarele lui Isus şi i le-a şters cu părul ei; şi casa s-a umplut de aroma parfumului.",
           "noteRefs": [
-            122
+            129
           ]
         },
         {
@@ -3209,7 +3220,7 @@
           "type": "verse",
           "text": "5„De ce nu s-a vândut acest parfum cu trei sute de dinari* şi să se fi dat săracilor?”",
           "noteRefs": [
-            123
+            130
           ]
         },
         {
@@ -3245,11 +3256,11 @@
       ],
       "notes": [
         {
-          "number": 122,
+          "number": 129,
           "text": "35:3 aprox. 340 grame"
         },
         {
-          "number": 123,
+          "number": 130,
           "text": "35:5 această sumă era plata muncii pe aprox. un an de zile"
         }
       ]
@@ -3271,7 +3282,7 @@
           "type": "verse",
           "text": "2au luat ramuri de finic şi i-au ieşit în întâmpinare, strigând: „Osana* Binecuvântat este cel ce vine în numele Domnului, Regele lui Israel!",
           "noteRefs": [
-            124
+            131
           ]
         },
         {
@@ -3307,7 +3318,7 @@
       ],
       "notes": [
         {
-          "number": 124,
+          "number": 131,
           "text": "36:2 expresia Osana este de origine ebraică și înseamnă: izbăvește-ne te rugăm"
         }
       ]
@@ -3323,7 +3334,7 @@
           "type": "verse",
           "text": "1Mai erau și nişte greci, printre cei care s-au urcat* să se închine la sărbătoare,",
           "noteRefs": [
-            125
+            132
           ],
           "align": "justify"
         },
@@ -3410,7 +3421,7 @@
       ],
       "notes": [
         {
-          "number": 125,
+          "number": 132,
           "text": "37:1 drumul spre Ierusalim este ascendent, adică urcă"
         }
       ]
@@ -3818,7 +3829,7 @@
           "type": "verse",
           "text": "2Şi eu voi ruga pe Tatăl, şi el vă va da un alt Ajutor* care să rămână cu voi întotdeauna;",
           "noteRefs": [
-            126
+            133
           ]
         },
         {
@@ -3899,7 +3910,7 @@
       ],
       "notes": [
         {
-          "number": 126,
+          "number": 133,
           "text": "43:2 în grecește este: paracletos, care se traduce prin: mângâietor, ajutor, mijlocitor, susținător, alinător"
         }
       ]
@@ -4596,7 +4607,7 @@
           "type": "verse",
           "text": "4Atunci Pilat le-a zis: „Luaţi-l voi şi judecaţi-l după legea voastră.” „Este ilegal ca noi să ucidem pe cineva”, i-au zis iudeii.*",
           "noteRefs": [
-            127
+            134
           ]
         },
         {
@@ -4647,7 +4658,7 @@
       ],
       "notes": [
         {
-          "number": 127,
+          "number": 134,
           "text": "54:4 conform legilor romane doar guvernatorul roman, care avea și calitatea de judecător suprem în provincie, avea dreptul legal de a condamna pe cineva la moarte"
         }
       ]
@@ -4884,7 +4895,7 @@
           "type": "verse",
           "text": "2Nicodim, care la început s-a dus la Isus noaptea, a venit şi el şi a adus un amestec de aproape o sută de livre romane* de smirnă şi de aloe.",
           "noteRefs": [
-            128
+            135
           ]
         },
         {
@@ -4905,7 +4916,7 @@
       ],
       "notes": [
         {
-          "number": 128,
+          "number": 135,
           "text": "58:2 aprox. 33 de kg."
         }
       ]
@@ -5066,7 +5077,7 @@
           "type": "verse",
           "text": "1Dar Toma, zis Didimus,* unul din cei doisprezece, nu era cu ei când a venit Isus.",
           "noteRefs": [
-            129
+            136
           ],
           "align": "justify"
         },
@@ -5114,7 +5125,7 @@
       ],
       "notes": [
         {
-          "number": 129,
+          "number": 136,
           "text": "62:1 Toma este nume aramaic, iar Didimus este nume grecesc; ambele înseamnă geamăn"
         }
       ]
@@ -5166,7 +5177,7 @@
           "type": "verse",
           "text": "8Ceilalţi ucenici au venit cu corăbioara, trăgând plasa cu peşti, pentru că nu erau departe de ţărm decât cam la două sute de coţi*",
           "noteRefs": [
-            130
+            137
           ]
         },
         {
@@ -5202,7 +5213,7 @@
       ],
       "notes": [
         {
-          "number": 130,
+          "number": 137,
           "text": "63:8   aprox. 100 de metri"
         }
       ]

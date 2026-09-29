@@ -111,7 +111,7 @@
           "type": "verse",
           "text": "19Îngerul i-a răspuns: „Eu sunt Gabriel* care stau înaintea lui Dumnezeu. Am fost trimis să-ţi vorbesc şi să-ţi aduc această veste bună.",
           "noteRefs": [
-            69
+            73
           ]
         },
         {
@@ -147,7 +147,7 @@
       ],
       "notes": [
         {
-          "number": 69,
+          "number": 73,
           "text": "1:19 este nume ebraic și se traduce prin: Dumnezeu este tăria mea"
         }
       ]
@@ -187,8 +187,10 @@
         },
         {
           "type": "verse",
-          "text": "6Şi iată că vei concepe în abdomenul tău şi vei naşte un Fiu, căruia îi vei pune numele Isus.",
-          "noteRefs": []
+          "text": "6Şi iată că vei concepe în abdomenul tău şi vei naşte un Fiu, căruia îi vei pune numele Isus*.",
+          "noteRefs": [
+            74
+          ]
         },
         {
           "type": "verse",
@@ -224,6 +226,12 @@
           "type": "verse",
           "text": "13Maria a spus: „Iată servitoarea Domnului; facă-mi-se după cuvântul tău”. Apoi îngerul a plecat de la ea.",
           "noteRefs": []
+        }
+      ],
+      "notes": [
+        {
+          "number": 74,
+          "text": "Isus este forma grecească a numelui ebraic Iesua, care înseamnă: Dumnezeu mântuiește. Iesua provine din vechiul nume ebraic Iosua."
         }
       ]
     },
@@ -484,7 +492,7 @@
           "type": "verse",
           "text": "1În zilele acelea s-a dat un decret de la Cezar August* să se înregistreze toată lumea.",
           "noteRefs": [
-            70
+            75
           ],
           "align": "justify"
         },
@@ -502,7 +510,7 @@
           "type": "verse",
           "text": "4Iosif s-a urcat* şi el din Galileea, din orașul Nazaret, ca să se meargă în Iudeea, în orașul lui David, numit Betleem – pentru că era din casa şi din seminţia lui David –",
           "noteRefs": [
-            71
+            76
           ]
         },
         {
@@ -523,11 +531,11 @@
       ],
       "notes": [
         {
-          "number": 70,
+          "number": 75,
           "text": "6:1 ambele aceste titluri au fost atribuite împăraților romani"
         },
         {
-          "number": 71,
+          "number": 76,
           "text": "6:4 drumul spre Iudeea este în general ascendent, adică urcă"
         }
       ]
@@ -559,7 +567,7 @@
           "type": "verse",
           "text": "4astăzi, în orașul lui David, vi s-a născut un Mântuitor, care este Cristos* Domnul.",
           "noteRefs": [
-            72
+            77
           ]
         },
         {
@@ -610,7 +618,7 @@
       ],
       "notes": [
         {
-          "number": 72,
+          "number": 77,
           "text": "7:4 Cristos este cuvânt grecesc; el este echivalentul cuvântului ebraic Mesia care înseamnă Unsul lui Dumnezeu, sau Cel uns.  Mesia și Cristos nu sunt nume proprii ci titluri."
         }
       ]
@@ -658,7 +666,7 @@
           "type": "verse",
           "text": "6Lui i-a fost descoperit de Duhul Sfânt că nu va vedea moartea, până nu va vedea pe Cristosul Domnului*.",
           "noteRefs": [
-            73
+            78
           ]
         },
         {
@@ -740,7 +748,7 @@
       ],
       "notes": [
         {
-          "number": 73,
+          "number": 78,
           "text": "8:6   Cristos este cuvânt grecesc, fiind echivalentul cuvântului ebraic Mesia, iar echivalentul românesc este Unsul lui Dumnezeu, sau Cel uns. Mesia și Cristos nu sunt nume proprii ci titluri"
         }
       ]
@@ -762,7 +770,7 @@
           "type": "verse",
           "text": "2Când a fost el de doisprezece ani, s-au urcat* la Ierusalim, după obiceiul sărbătorii.",
           "noteRefs": [
-            74
+            79
           ]
         },
         {
@@ -818,7 +826,7 @@
       ],
       "notes": [
         {
-          "number": 74,
+          "number": 79,
           "text": "9:2 drumul spre Ierusalim este, în general ascendent, adică urcă"
         }
       ]
@@ -834,8 +842,8 @@
           "type": "verse",
           "text": "1În anul al cincisprezecelea al domniei lui Tiberiu Cezar – pe când Pilat din Pont era guvernator în Iudeea, Irod tetrarh* al Galileei, Filip, fratele lui, tetrarh al Ituriei şi al Trahonitei, Lisania, tetrarh al Abilenei,*",
           "noteRefs": [
-            75,
-            76
+            80,
+            81
           ],
           "align": "justify"
         },
@@ -843,7 +851,7 @@
           "type": "verse",
           "text": "2şi în zilele marilor preoţi Ana şi Caiafa* – cuvântul lui Dumnezeu a vorbit lui Ioan, fiul lui Zaharia, în pustiu.",
           "noteRefs": [
-            77
+            82
           ]
         },
         {
@@ -935,7 +943,7 @@
           "type": "verse",
           "text": "19Dar tetrarhul Irod,* care era mustrat de Ioan pentru Irodiada, soția fratelui său Filip, şi pentru toate relele pe care le făcuse,",
           "noteRefs": [
-            78
+            83
           ]
         },
         {
@@ -946,19 +954,19 @@
       ],
       "notes": [
         {
-          "number": 75,
+          "number": 80,
           "text": "10:1 Irod Antipa a fost fiul lui Irod cel mare; a fost principe peste un sfert din regatul lui Irod cel mare, care a fost împărțit fiilor săi. A domnit între 4 î. Hr. - 39 d. Hr."
         },
         {
-          "number": 76,
+          "number": 81,
           "text": "10:1 Ituria, Trahonita și Abilena erau ținuturi de lângă Marea Galileei"
         },
         {
-          "number": 77,
+          "number": 82,
           "text": "10:2 Ana a fost mare preot între anii 6-15 d. Cr., iar Caiafa, ginerele lui Ana, a fost mare preot între anii 18-36 d. Cr., el fiind ajutat de Ana, socrul lui"
         },
         {
-          "number": 78,
+          "number": 83,
           "text": "10:19 principe, împreună cu alții trei"
         }
       ]
@@ -1438,7 +1446,7 @@
           "type": "verse",
           "text": "7Şi iată că nişte oameni purtau un paralitic pe o targă* şi căutau să-l ducă înăuntru, ca să-l pună înaintea lui.",
           "noteRefs": [
-            79
+            84
           ]
         },
         {
@@ -1484,7 +1492,7 @@
       ],
       "notes": [
         {
-          "number": 79,
+          "number": 84,
           "text": "16:7 se mai poate traduce: saltea, rogojină"
         }
       ]
@@ -1915,7 +1923,7 @@
           "type": "verse",
           "text": "2Un sclav al unui centurion* la care acesta ţinea foarte mult, era bolnav pe moarte.",
           "noteRefs": [
-            80
+            85
           ]
         },
         {
@@ -1961,7 +1969,7 @@
       ],
       "notes": [
         {
-          "number": 80,
+          "number": 85,
           "text": "25:2 ofițer roman, comandant peste 100 de militari"
         }
       ]
@@ -1977,7 +1985,7 @@
           "type": "verse",
           "text": "1La scurt timp după aceea, Isus mergea către un oraș numit Nain.* Împreună cu el mergeau unii din ucenicii lui şi o mulțime mare.",
           "noteRefs": [
-            81
+            86
           ],
           "align": "justify"
         },
@@ -2014,7 +2022,7 @@
       ],
       "notes": [
         {
-          "number": 81,
+          "number": 86,
           "text": "26:1 o localitate mică aflată la aprox. 10 km SE de Nazaret"
         }
       ]
@@ -2142,7 +2150,7 @@
           "type": "verse",
           "text": "1Unul din farisei a rugat pe Isus să mănânce la el. Isus a intrat în casa fariseului şi stătea rezemat la masă*",
           "noteRefs": [
-            82
+            87
           ],
           "align": "justify"
         },
@@ -2170,7 +2178,7 @@
           "type": "verse",
           "text": "6„Un cămătar avea doi datornici: unul îi era dator cu cinci sute de dinari* iar celălalt cu cincizeci.",
           "noteRefs": [
-            83
+            88
           ]
         },
         {
@@ -2221,11 +2229,11 @@
       ],
       "notes": [
         {
-          "number": 82,
+          "number": 87,
           "text": "28:1 pe timpul acela oamenii stăteau întinși pe rogojini în jurul unei mese joase. Se rezemau pe cotul stâng și se serveau cu mâna dreaptă"
         },
         {
-          "number": 83,
+          "number": 88,
           "text": "28:6 moneda de argint principală a Imperiului roman folosită timp de aprox. 500 de ani; dinarul era, în general, câștigul unui lucrător pe o zi de muncă"
         }
       ]
@@ -2433,7 +2441,7 @@
           "type": "verse",
           "text": "6Demonii îl rugau pe Isus să nu le poruncească să se ducă în Adânc*",
           "noteRefs": [
-            84
+            89
           ]
         },
         {
@@ -2479,7 +2487,7 @@
       ],
       "notes": [
         {
-          "number": 84,
+          "number": 89,
           "text": "32:6 în grecește este Abyssos, considerat de grecii antici, dar și de unele scrieri iudaice antice ca fiind un loc subteran de pedeapsă; această explicație se aplică aici, și în toate celelalte locuri în care apare cuvântul Adânc; excepție face 2 Petru 2:4, deoarece acolo, în grecește, este Tartarus, un alt loc subteran de pedeapsă, considerat de grecii antici a fi mai jos decât Abyssos. Cuvântul Adânc apare în acest NT românesc de 10 ori: Lc. 8:31, Rom. 10:7, 2 Petru 2:4, Apoc. 9:1, 2, 11, 11:7, 17:8, 20:1,3; de 9 ori el provine din Abyssos, iar la 2 Petru 2:4 provine din Tartarus."
         }
       ]
@@ -3178,7 +3186,7 @@
           "type": "verse",
           "text": "6Isus a luat din nou cuvântul şi a zis: „Un om se cobora* din Ierusalim la Ierihon. A căzut între nişte tâlhari, care l-au dezbrăcat, l-au jefuit de tot, l-au bătut zdravăn, au plecat şi l-au lăsat pe jumătate mort.",
           "noteRefs": [
-            85
+            90
           ]
         },
         {
@@ -3205,7 +3213,7 @@
           "type": "verse",
           "text": "11A doua zi, când a pornit la drum, a scos doi dinari* i-a dat hangiului, şi i-a zis: „Ai grijă de el, şi orice vei mai cheltui îţi voi da înapoi la întoarcere.”",
           "noteRefs": [
-            86
+            91
           ]
         },
         {
@@ -3221,11 +3229,11 @@
       ],
       "notes": [
         {
-          "number": 85,
+          "number": 90,
           "text": "44:6 drumul de la Ierusalim la Ierihon coboară destul de abrupt. La Ierusalim sunt 700 m deasupra nivelului mării, iar la Ierihon sunt 400 m sub nivelul mării, deci o diferență de altitudine de circa 1100 m; de aceea este folosit verbul a coborî"
         },
         {
-          "number": 86,
+          "number": 91,
           "text": "44:11 moneda de argint principală a Imperiului roman, folosită timp de aprox. 500 de ani; ziua de muncă era plătită, în general, cu 1 dinar"
         }
       ]
@@ -3353,7 +3361,7 @@
           "type": "verse",
           "text": "2Dar unii spuneau: „El scoate demonii cu Beelzebul,* prințul demonilor.",
           "noteRefs": [
-            87
+            92
           ]
         },
         {
@@ -3439,7 +3447,7 @@
       ],
       "notes": [
         {
-          "number": 87,
+          "number": 92,
           "text": "47:2 o altă denumire a Diavolului"
         }
       ]
@@ -3647,14 +3655,14 @@
           "type": "verse",
           "text": "2Am să vă arat de cine să vă temeţi. Temeţi-vă de acela care, după ce a ucis, are puterea să arunce în gheenă* da, vă spun, de el să vă temeţi.",
           "noteRefs": [
-            88
+            93
           ]
         },
         {
           "type": "verse",
           "text": "3Nu se vând oare cinci vrăbii cu doi assarioni?* Totuşi niciuna din ele nu este uitată de Dumnezeu.",
           "noteRefs": [
-            89
+            94
           ]
         },
         {
@@ -3695,11 +3703,11 @@
       ],
       "notes": [
         {
-          "number": 88,
+          "number": 93,
           "text": "51:2 provine din ebraicul Ghe-Hinom, care înseamnă Valea lui Hinom. Acolo canaaniții își aduceau pe copiii lor ca jertfă zeului Moloh; apoi acea vale de la marginea Ierusalimului a devenit groapa de gunoi a orașului, unde focul ardea permanent"
         },
         {
-          "number": 89,
+          "number": 94,
           "text": "51:3 monedă romană de bronz de mică valoare; un assarion era câștigul pentru aprox. o oră de lucru"
         }
       ]
@@ -3846,14 +3854,14 @@
           "type": "verse",
           "text": "3Ferice de robii aceia pe care stăpânul îi va găsi veghind la venirea lui! Adevărat vă spun că el se va încinge, îi va pune să se încline la masă* şi se va apropia să le slujească.",
           "noteRefs": [
-            90
+            95
           ]
         },
         {
           "type": "verse",
           "text": "4Fie că vine la a doua strajă din noapte,* fie că vine la a treia strajă, ferice de robii aceia, dacă-i va găsi veghind!",
           "noteRefs": [
-            91
+            96
           ]
         },
         {
@@ -3869,11 +3877,11 @@
       ],
       "notes": [
         {
-          "number": 90,
+          "number": 95,
           "text": "54:3 pe timpul acela nu stăteau pe scaune la masă, ci se înclinau, pe rogojini, în poziție orizontală, în jurul unei mese joase"
         },
         {
-          "number": 91,
+          "number": 96,
           "text": "54:4 a doua strajă era între orele 9 -12 seara; a treia strajă era între orele 12-3 dimineața"
         }
       ]
@@ -4000,13 +4008,13 @@
           "type": "verse",
           "text": "6Îţi spun că nu vei ieşi de acolo până nu vei plăti ultimul lepton.”*",
           "noteRefs": [
-            92
+            97
           ]
         }
       ],
       "notes": [
         {
-          "number": 92,
+          "number": 97,
           "text": "57:6 monedă grecească de cupru/alamă de mică valoare, 1/100 dintr-o drahmă"
         }
       ]
@@ -4529,7 +4537,7 @@
           "type": "verse",
           "text": "1Sau care femeie, dacă are zece drahme* şi pierde una din ele, nu aprinde o lumină, nu mătură casa şi nu caută cu atenție până când o găseşte?",
           "noteRefs": [
-            93
+            98
           ],
           "align": "justify"
         },
@@ -4546,7 +4554,7 @@
       ],
       "notes": [
         {
-          "number": 93,
+          "number": 98,
           "text": "69:1 monedă grecească de argint, aprox. egală cu dinarul roman"
         }
       ]
@@ -4723,7 +4731,7 @@
           "type": "verse",
           "text": "9Şi eu vă zic: faceţi-vă prieteni cu ajutorul bogăţiei* nedrepte, pentru ca atunci când veţi muri, să vă primească în corturile veşnice.",
           "noteRefs": [
-            94
+            99
           ]
         },
         {
@@ -4749,7 +4757,7 @@
       ],
       "notes": [
         {
-          "number": 94,
+          "number": 99,
           "text": "71:9 în manuscrisele grecești este mamonas, cuvânt aramaic pentru bogăție"
         }
       ]
@@ -4821,7 +4829,7 @@
           "type": "verse",
           "text": "5Din Locuinţa morţilor* din chinuri, şi-a ridicat ochii în sus, a văzut de departe pe Avraam şi pe Lazăr la pieptul lui,",
           "noteRefs": [
-            95
+            100
           ]
         },
         {
@@ -4867,7 +4875,7 @@
       ],
       "notes": [
         {
-          "number": 95,
+          "number": 100,
           "text": "73:5 în grecește este: hades"
         }
       ]
@@ -5404,7 +5412,7 @@
           "type": "verse",
           "text": "4A alergat înainte şi s-a urcat într-un dud* ca să-l vadă; pentru că pe drumul acela avea să treacă.",
           "noteRefs": [
-            96
+            101
           ]
         },
         {
@@ -5440,7 +5448,7 @@
       ],
       "notes": [
         {
-          "number": 96,
+          "number": 101,
           "text": "84:4 sau sicomor"
         }
       ]
@@ -5467,7 +5475,7 @@
           "type": "verse",
           "text": "3A chemat zece din robii săi, le-a dat zece mine* şi le-a zis: „Faceți comerț cu ele până mă voi întoarce.”",
           "noteRefs": [
-            97
+            102
           ]
         },
         {
@@ -5548,7 +5556,7 @@
       ],
       "notes": [
         {
-          "number": 97,
+          "number": 102,
           "text": "85:3 monedă grecească de argint sau uneori, chiar de aur; o mină era egală cu circa 100 de drahme, deci era câștigul pentru aprox. 100 de zile de muncă"
         }
       ]
@@ -5816,7 +5824,7 @@
           "type": "verse",
           "text": "3Este corect să plătim impozit cezarului* sau nu?”",
           "noteRefs": [
-            98
+            103
           ]
         },
         {
@@ -5828,7 +5836,7 @@
           "type": "verse",
           "text": "5Arătaţi-mi un dinar* A cui imagine şi inscripție sunt pe el?” Ei au răspuns: „Ale cezarului”.",
           "noteRefs": [
-            99
+            104
           ]
         },
         {
@@ -5844,11 +5852,11 @@
       ],
       "notes": [
         {
-          "number": 98,
+          "number": 103,
           "text": "90:3 titlu dat împăratului roman"
         },
         {
-          "number": 99,
+          "number": 104,
           "text": "90:5 moneda de argint principală a Imperiului roman folosită timp de aprox. 500 de ani; ziua de muncă era plătită, în general, cu un dinar"
         }
       ]
@@ -5991,7 +5999,7 @@
           "type": "verse",
           "text": "5A văzut şi pe o văduvă săracă, aruncând acolo doi leptoni*",
           "noteRefs": [
-            100
+            105
           ]
         },
         {
@@ -6007,7 +6015,7 @@
       ],
       "notes": [
         {
-          "number": 100,
+          "number": 105,
           "text": "92:5 monedă grecească de cupru/alamă, de mică valoare; 1/100 dintr-o drahmă"
         }
       ]
@@ -6671,7 +6679,7 @@
           "type": "verse",
           "text": "1Întregul grup s-a ridicat şi au dus pe Isus înaintea lui Pilat*",
           "noteRefs": [
-            101
+            106
           ],
           "align": "justify"
         },
@@ -6698,7 +6706,7 @@
       ],
       "notes": [
         {
-          "number": 101,
+          "number": 106,
           "text": "104:1 Pilat a fost guvernatorul roman al Iudeei între 26-36 d. Hr."
         }
       ]
@@ -6834,7 +6842,7 @@
           "type": "verse",
           "text": "1Pe când îl duceau să-l răstignească, au pus mâna pe un anume Simon din Cirena* care se întorcea de la țară; şi i-au dat crucea, ca s-o ducă după Isus.",
           "noteRefs": [
-            102
+            107
           ],
           "align": "justify"
         },
@@ -6872,7 +6880,7 @@
           "type": "verse",
           "text": "8Când au ajuns la locul numit „Craniul”* l-au răstignit acolo, pe el şi pe făcătorii de rele: unul la dreapta, şi altul la stânga.",
           "noteRefs": [
-            103
+            108
           ]
         },
         {
@@ -6883,11 +6891,11 @@
       ],
       "notes": [
         {
-          "number": 102,
+          "number": 107,
           "text": "107:1 oraș în nordul Africii, pe teritoriul Libiei de azi"
         },
         {
-          "number": 103,
+          "number": 108,
           "text": "107:8 este echivalentul românesc al aramaicului Golgota"
         }
       ]
@@ -7118,7 +7126,7 @@
           "type": "verse",
           "text": "1Iată că doi dintre ucenici mergeau în aceeași zi la un sat, numit Emaus, care era la 60 de stadii* de Ierusalim;",
           "noteRefs": [
-            104
+            109
           ],
           "align": "justify"
         },
@@ -7235,7 +7243,7 @@
       ],
       "notes": [
         {
-          "number": 104,
+          "number": 109,
           "text": "112:1 o stadie este a opta parte dintr-o milă romană, aprox. 185 de metri, deci 60 de stadii, sunt aprox. 11 km"
         }
       ]

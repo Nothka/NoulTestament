@@ -12,8 +12,11 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Acesta este începutul Evangheliei lui Isus Cristos, Fiul lui Dumnezeu.",
-          "noteRefs": [],
+          "text": "1Acesta este începutul Evangheliei lui Isus* Cristos*, Fiul lui Dumnezeu.",
+          "noteRefs": [
+            45,
+            46
+          ],
           "align": "justify"
         },
         {
@@ -50,6 +53,16 @@
           "type": "verse",
           "text": "8Eu, v-am botezat în apă; dar el vă va boteza în Duhul Sfânt.",
           "noteRefs": []
+        }
+      ],
+      "notes": [
+        {
+          "number": 45,
+          "text": "Isus este forma grecească a numelui ebraic Iesua, care înseamnă: Dumnezeu mântuiește. Iesua provine din vechiul nume ebraic Iosua."
+        },
+        {
+          "number": 46,
+          "text": "Cristos este cuvânt grecesc; el este echivalentul cuvântului ebraic Mesia, care înseamnă: Unsul lui Dumnezeu, sau Cel uns. Mesia și Cristos nu sunt nume proprii, ci titluri."
         }
       ]
     },
@@ -405,7 +418,7 @@
           "type": "verse",
           "text": "4Cărturarii şi fariseii* cînd l-au văzut mâncând cu vameşii şi cu păcătoşii, au zis ucenicilor lui: „De ce mănâncă el şi bea cu vameşii şi cu păcătoşii?”",
           "noteRefs": [
-            43
+            47
           ]
         },
         {
@@ -416,7 +429,7 @@
       ],
       "notes": [
         {
-          "number": 43,
+          "number": 47,
           "text": "7:4 cărturarii erau cei care cunoșteau bine Legea si îi învățau pe alții; fariseii erau o grupare religioasă care se străduiau să respecte Legea în toate amănuntele ei"
         }
       ]
@@ -539,13 +552,13 @@
           "type": "verse",
           "text": "6Fariseii au ieşit afară, şi au uneltit îndată cu irodienii* cum să-l distrugă.",
           "noteRefs": [
-            44
+            48
           ]
         }
       ],
       "notes": [
         {
-          "number": 44,
+          "number": 48,
           "text": "10:6 erau o grupare care îl susținea pe regele Irod"
         }
       ]
@@ -622,7 +635,7 @@
           "type": "verse",
           "text": "5Iacov, fiul lui Zebedei; şi Ioan, fratele lui Iacov, cărora le-a pus numele Boanerghes* care se traduce prin: „fiii Tunetului;”",
           "noteRefs": [
-            45
+            49
           ]
         },
         {
@@ -638,7 +651,7 @@
       ],
       "notes": [
         {
-          "number": 45,
+          "number": 49,
           "text": "12:5 cuvânt de origine haldeiană /ebraică/aramaică"
         }
       ]
@@ -665,7 +678,7 @@
           "type": "verse",
           "text": "3Şi cărturarii, care au venit din Ierusalim, ziceau: „Este stăpânit de Beelzebul*, scoate demonii cu ajutorul domnului demonilor”",
           "noteRefs": [
-            46
+            50
           ]
         },
         {
@@ -711,7 +724,7 @@
       ],
       "notes": [
         {
-          "number": 46,
+          "number": 50,
           "text": "13:3 un alt nume al Diavolului; prințul demonilor, vezi și Mt. 12:24"
         }
       ]
@@ -1033,7 +1046,7 @@
           "type": "verse",
           "text": "1Au ajuns de cealaltă parte a mării, în zona gherasenilor.*",
           "noteRefs": [
-            47
+            51
           ],
           "align": "justify"
         },
@@ -1131,17 +1144,17 @@
           "type": "verse",
           "text": "20El a plecat, şi a început să vestească prin Decapole* ce lucruri mari a făcut Isus pentru el, și toţi se minunau.",
           "noteRefs": [
-            48
+            52
           ]
         }
       ],
       "notes": [
         {
-          "number": 47,
+          "number": 51,
           "text": "20:1 locuitori din Gherasa, unul din orașele zonei Decapolis"
         },
         {
-          "number": 48,
+          "number": 52,
           "text": "20:20 înseamnă cele zece orașe; acestea erau așezate la est de Iordan în dreptul Galileei, sau mai la nord, și erau orientate spre limba și cultura greacă"
         }
       ]
@@ -1265,7 +1278,7 @@
           "type": "verse",
           "text": "21A prins-o de mână, şi i-a zis: „Talita cumi*, care se traduce prin: „Fetiţo, scoală-te, îţi spun!”",
           "noteRefs": [
-            49
+            53
           ]
         },
         {
@@ -1281,7 +1294,7 @@
       ],
       "notes": [
         {
-          "number": 49,
+          "number": 53,
           "text": "21:21 aceste două cuvinte sunt ebraice și/sau aramaice"
         }
       ]
@@ -1418,7 +1431,7 @@
           "type": "verse",
           "text": "8Totuşi a venit o zi potrivită, când Irod îşi sărbătorea ziua naşterii, şi a ținut o petrecere pentru nobilii săi, comandanții militari* şi fruntaşii Galileei.",
           "noteRefs": [
-            50
+            54
           ]
         },
         {
@@ -1464,7 +1477,7 @@
       ],
       "notes": [
         {
-          "number": 50,
+          "number": 54,
           "text": "24:8 în grecește este chiliarchos; ofițer roman, comandant peste 1000 de militari"
         }
       ]
@@ -1516,7 +1529,7 @@
           "type": "verse",
           "text": "8„Daţi-le voi să mănânce”, le-a răspuns Isus. Dar ei i-au zis: „Oare să ne ducem să cumpărăm pâini de două sute de dinari*, ca să le dăm să mănânce?”",
           "noteRefs": [
-            51
+            55
           ]
         },
         {
@@ -1557,7 +1570,7 @@
       ],
       "notes": [
         {
-          "number": 51,
+          "number": 55,
           "text": "25:8 moneda principală, de argint, a Imperiului roman, folosită timp de aprox. 500 de ani; ziua de muncă era plătită, în general, cu un dinar. Un dinar valora 1/25 din aureus, cea mai mare monedă de aur a Imperiului roman"
         }
       ]
@@ -1589,7 +1602,7 @@
           "type": "verse",
           "text": "4A văzut pe ucenici că se necăjesc cu vâslirea, căci vântul le era împotrivă. Şi într-a patra gardă din noapte, * a mers la ei, umblând pe mare, şi voia să treacă pe lângă ei.",
           "noteRefs": [
-            52
+            56
           ]
         },
         {
@@ -1615,7 +1628,7 @@
       ],
       "notes": [
         {
-          "number": 52,
+          "number": 56,
           "text": "26:4 între orele 3-6 dimineața"
         }
       ]
@@ -1722,7 +1735,7 @@
           "type": "verse",
           "text": "12şi nu-l mai lăsaţi să facă nimic pentru tatăl sau pentru mama sa.*",
           "noteRefs": [
-            53
+            57
           ]
         },
         {
@@ -1733,7 +1746,7 @@
       ],
       "notes": [
         {
-          "number": 53,
+          "number": 57,
           "text": "28:12 cuvântul corban este în limba ebraică, și/sau aramaică și înseamnă: dăruit lui Dumnezeu. Unii oameni declarau că nu au nimic cu ce să ajute pe părinții lor în vârstă, deoarece tot ce au, este deja “corban”, adică dăruit lui Dumnezeu"
         }
       ]
@@ -1861,7 +1874,7 @@
           "type": "verse",
           "text": "11Apoi și-a ridicat ochii spre cer, a suspinat, şi i-a zis: „Efata”* care se traduce prin: „Deschide-te!”",
           "noteRefs": [
-            54
+            58
           ]
         },
         {
@@ -1882,7 +1895,7 @@
       ],
       "notes": [
         {
-          "number": 54,
+          "number": 58,
           "text": "30:11 cuvânt ebraic și/sau aramaic"
         }
       ]
@@ -1953,7 +1966,7 @@
           "type": "verse",
           "text": "1Isus a intrat imediat în corabie cu ucenicii săi, şi a mers în zona Dalmanutei*",
           "noteRefs": [
-            55
+            59
           ],
           "align": "justify"
         },
@@ -2015,7 +2028,7 @@
       ],
       "notes": [
         {
-          "number": 55,
+          "number": 59,
           "text": "32:1 nu se cunoaște cu exactitate locul acestui oraș"
         }
       ]
@@ -2073,7 +2086,7 @@
           "type": "verse",
           "text": "8El i-a întrebat: „Dar voi cine ziceți că sunt?`` Petru i-a răspuns: „Tu eşti Cristosul!”.*",
           "noteRefs": [
-            56
+            60
           ]
         },
         {
@@ -2084,7 +2097,7 @@
       ],
       "notes": [
         {
-          "number": 56,
+          "number": 60,
           "text": "33:8 adică Unsul lui Dumnezeu"
         }
       ]
@@ -2760,7 +2773,7 @@
           "type": "verse",
           "text": "6Isus l-a întrebat: „Ce vrei să fac pentru tine?” „Rabuni”* i-a răspuns orbul, „să-mi primesc vederea”.",
           "noteRefs": [
-            57
+            61
           ]
         },
         {
@@ -2771,7 +2784,7 @@
       ],
       "notes": [
         {
-          "number": 57,
+          "number": 61,
           "text": "44:6 cuvânt aramaic și/sau ebraic, care înseamnă: Învățătorule"
         }
       ]
@@ -2828,7 +2841,7 @@
           "type": "verse",
           "text": "9Cei ce mergeau înainte şi cei ce veneau după Isus, strigau: „Osana* Binecuvântat este cel ce vine în Numele Domnului!",
           "noteRefs": [
-            58
+            62
           ]
         },
         {
@@ -2865,7 +2878,7 @@
       ],
       "notes": [
         {
-          "number": 58,
+          "number": 62,
           "text": "45:9 este expresie ebraică și se traduce prin: izbăvește-ne, te rugăm"
         }
       ]
@@ -3087,7 +3100,7 @@
           "type": "verse",
           "text": "3Să plătim sau să nu plătim?” Isus le-a cunoscut ipocrizia, şi le-a răspuns: „De ce mă ispitiţi? Aduceţi-mi un dinar* ca să-l văd”.",
           "noteRefs": [
-            59
+            63
           ]
         },
         {
@@ -3103,7 +3116,7 @@
       ],
       "notes": [
         {
-          "number": 59,
+          "number": 63,
           "text": "50:3 moneda principală, de argint, a Imperiului roman, folosită timp de aprox. 500 de ani; ziua de muncă era plătită, în general, cu un dinar"
         }
       ]
@@ -3266,7 +3279,7 @@
           "type": "verse",
           "text": "5A venit şi o văduvă săracă, şi a aruncat doi leptoni* care fac un codrant.",
           "noteRefs": [
-            60
+            64
           ]
         },
         {
@@ -3282,7 +3295,7 @@
       ],
       "notes": [
         {
-          "number": 60,
+          "number": 64,
           "text": "53:5 monedă grecească de aramă, de mică valoare, 1/100 dintr-o drahmă"
         }
       ]
@@ -3535,7 +3548,7 @@
           "type": "verse",
           "text": "3Pe când şedea Isus la masă, în Betania, în casa lui Simon leprosul, a venit o femeie, care avea un vas de alabastru* cu parfum de nard curat, foarte scump; ea a spart vasul, și a turnat parfumul pe capul lui Isus.",
           "noteRefs": [
-            61
+            65
           ],
           "align": "justify"
         },
@@ -3548,7 +3561,7 @@
           "type": "verse",
           "text": "5S-ar fi putut vinde cu mai mult de trei sute de dinari,* şi să se dea săracilor.” Așa că murmurau împotriva ei.",
           "noteRefs": [
-            62
+            66
           ]
         },
         {
@@ -3589,11 +3602,11 @@
       ],
       "notes": [
         {
-          "number": 61,
+          "number": 65,
           "text": "57:3 varietate de ghips, cu aspect de marmură"
         },
         {
-          "number": 62,
+          "number": 66,
           "text": "57:5 aceasta era plata unui lucrător pe aprox. un an de zile"
         }
       ]
@@ -3750,7 +3763,7 @@
           "type": "verse",
           "text": "5El zicea: „Ava,* care tradus este: Tată, ție toate lucrurile îţi sunt posibile; te rog să îndepărtezi de la mine paharul acesta! Totuşi facă-se nu ce doresc eu, ci ce doreşti tu”.",
           "noteRefs": [
-            63
+            67
           ]
         },
         {
@@ -3786,7 +3799,7 @@
       ],
       "notes": [
         {
-          "number": 63,
+          "number": 67,
           "text": "60:5 cuvânt cu caracter afectiv, de origine haldeiană/ebraică/aramaică; se traduce prin: tată, tăticule"
         }
       ]
@@ -3918,7 +3931,7 @@
           "type": "verse",
           "text": "12Aţi auzit blasfemia. Ce vi se pare?” Toţi l-au condamnat* să fie pedepsit cu moartea.",
           "noteRefs": [
-            64
+            68
           ]
         },
         {
@@ -3929,7 +3942,7 @@
       ],
       "notes": [
         {
-          "number": 64,
+          "number": 68,
           "text": "62:12 era o condamnare fictivă, nu se putea pune în aplicare, deoarece legea romană, prevedea că doar guvernatorul roman care in acelasi timp era și judecator suprem in provincie, putea lua o asemenea decizie"
         }
       ]
@@ -4116,7 +4129,7 @@
           "type": "verse",
           "text": "1Au obligat pe un trecător, care se întorcea de la țară, numit Simon din Cirene,* tatăl lui Alexandru și al lui Ruf, să meargă cu ei, ca să ducă crucea.",
           "noteRefs": [
-            65
+            69
           ],
           "align": "justify"
         },
@@ -4124,7 +4137,7 @@
           "type": "verse",
           "text": "2L-au adus la locul numit Golgota* care se traduce prin: Locul craniului.",
           "noteRefs": [
-            66
+            70
           ]
         },
         {
@@ -4180,11 +4193,11 @@
       ],
       "notes": [
         {
-          "number": 65,
+          "number": 69,
           "text": "66:1 oraș antic important din nordul Africii, respectiv Libia de azi, întemeiat pe la 630 în. Cr. de greci. Era capitala regiunii numite Cirenaica. A devenit cunoscut pentru bogăția sa, și ca centru al filozofiei grecești, iar credința creștină a găsit teren prielnic acolo. Un număr însemnat de iudei s-au stabilit acolo în antichitate. În prezent mai există doar ruine ale fostului oraș. Această explicație se aplică și în celelalte cazuri unde apare denumirea Cirene: Lc. 23:26, Fapte 2:10, 6:9, 11:20, 13:1"
         },
         {
-          "number": 66,
+          "number": 70,
           "text": "66:2 este cuvânt ebraic și/sau aramaic"
         }
       ]
@@ -4206,7 +4219,7 @@
           "type": "verse",
           "text": "2La ora 3 după masa, Isus a strigat cu voce tare: „Eloi, Eloi, lama sabactani”* cuvinte care se traduc prin: „Dumnezeul meu, Dumnezeul meu, de ce m-ai părăsit?”",
           "noteRefs": [
-            67
+            71
           ]
         },
         {
@@ -4247,7 +4260,7 @@
       ],
       "notes": [
         {
-          "number": 67,
+          "number": 71,
           "text": "67:2 sunt cuvinte ebraice și/sau aramaice"
         }
       ]
@@ -4353,7 +4366,7 @@
           "type": "verse",
           "text": "1(După* ce Isus a înviat, dimineaţa devreme în prima zi a săptămânii, s-a arătat mai întâi Mariei Magdalena, din care scosese şapte demoni.",
           "noteRefs": [
-            68
+            72
           ],
           "align": "justify"
         },
@@ -4422,7 +4435,7 @@
       ],
       "notes": [
         {
-          "number": 68,
+          "number": 72,
           "text": "70:1 acest text de la 70:1 până la sfârșit este așezat în paranteze, deoarece unele manuscrise vechi nu îl conțin"
         }
       ]

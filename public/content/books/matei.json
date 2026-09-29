@@ -12,8 +12,11 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Lista strămoșilor lui Isus Cristos fiul lui David, fiul lui Avraam:\n",
-          "noteRefs": [],
+          "text": "1Lista strămoșilor lui Isus* Cristos* fiul lui David, fiul lui Avraam:\n",
+          "noteRefs": [
+            1,
+            2
+          ],
           "align": "justify"
         },
         {
@@ -98,6 +101,16 @@
           "text": "17Deci, toate generațiile de la Avraam până la David, sunt patrusprezece; apoi, de la David până la deportarea în Babilon sunt patrusprezece generații; şi de la deportarea în Babilon până la Cristos, sunt patrusprezece generații.",
           "noteRefs": []
         }
+      ],
+      "notes": [
+        {
+          "number": 1,
+          "text": "Isus este forma grecească a numelui ebraic Iesua, care înseamnă: Dumnezeu mântuiește. Iesua provine din vechiul nume ebraic Iosua."
+        },
+        {
+          "number": 2,
+          "text": "Cristos este cuvânt grecesc; el este echivalentul cuvântului ebraic Mesia, care înseamnă: Unsul lui Dumnezeu, sau Cel uns. Mesia și Cristos nu sunt nume proprii, ci titluri."
+        }
       ]
     },
     {
@@ -168,7 +181,7 @@
           "type": "verse",
           "text": "1După ce s-a născut Isus în Betleemul Iudeei, în zilele regelui Irod, iată că au venit la Ierusalim nişte oameni înțelepți din est,*",
           "noteRefs": [
-            1
+            3
           ],
           "align": "justify"
         },
@@ -230,7 +243,7 @@
       ],
       "notes": [
         {
-          "number": 1,
+          "number": 3,
           "text": "3:1 cuvântul grecesc este magoi; acest cuvânt grecesc poate proveni din persanul magus, și astfel putem considera că magii au venit probabil din Iranul de azi"
         }
       ]
@@ -406,7 +419,7 @@
           "type": "verse",
           "text": "3Isus i-a răspuns: „Lasă-mă acum, căci aşa se cade să împlinim tot ce este corect.”* Atunci Ioan l-a lăsat.",
           "noteRefs": [
-            2
+            4
           ]
         },
         {
@@ -422,7 +435,7 @@
       ],
       "notes": [
         {
-          "number": 2,
+          "number": 4,
           "text": "6:3 cuvântul grecesc este dikaiosyne, care se traduce prin: ceea ce este drept înaintea lui Dumnezeu, ceea ce corespunde cu standardele lui Dumnezeu, a fi corect înaintea lui Dumnezeu, dreptate, justiție, neprihănire, corectitudine, etc. Pentru a ajuta la o înțelegere mai ușoară a noțiunii de dreptate, justiție, neprihănire, corectitudine, etc. putem menționa că ea este înrudită cu capacitatea morală, aceea care îl ajută pe om să distingă între bine și rău, și să aleagă binele. Această explicație se aplică aici, și în toate locurile din NT unde apare: dreptate, neprihănire, corectitudine, etc."
         }
       ]
@@ -579,13 +592,13 @@
           "type": "verse",
           "text": "3După el a mers o mare mulțime din Galileea, din Decapolis*, din Ierusalim, din Iudeea şi de dincolo de Iordan.",
           "noteRefs": [
-            3
+            5
           ]
         }
       ],
       "notes": [
         {
-          "number": 3,
+          "number": 5,
           "text": "10:3 Decapolis este cuvânt grecesc care se traduce prin: zece orașe; acestea se aflau la est de Iordan, în dreptul Galileei, și se numeau: Damasc, Canatha, Dion, Hippos, Rafana, Gadara, Scythopolis (singurul la vest de Iordan), Pella, Gherasa și Filadelfia. Acestea erau orientate spre limba și cultura greacă."
         }
       ]
@@ -627,7 +640,7 @@
           "type": "verse",
           "text": "6Ferice de cei flămânzi şi însetaţi după dreptate,* căci ei vor fi săturaţi!",
           "noteRefs": [
-            4
+            6
           ]
         },
         {
@@ -663,7 +676,7 @@
       ],
       "notes": [
         {
-          "number": 4,
+          "number": 6,
           "text": "11:6 cuvântul grecesc este dikaiosyne, care se traduce prin: ceea ce este drept înaintea lui Dumnezeu, ceea ce corespunde cu standardele lui Dumnezeu, a fi corect înaintea lui Dumnezeu, dreptate, justiție, neprihănire, corectitudine, etc. Pentru a ajuta la o înțelegere mai ușoară a noțiunii de dreptate, justiție, neprihănire, corectitudine, etc. putem menționa că ea este înrudită cu capacitatea morală, aceea care îl ajută pe om să distingă între bine și rău, și să aleagă binele. Această explicație se aplică aici și în toate locurile din NT unde apare: dreptate, neprihănire, corectitudine, etc."
         }
       ]
@@ -725,13 +738,13 @@
           "type": "verse",
           "text": "4Căci vă spun că, dacă corectitudinea* voastră nu va depăși corectitudinea cărturarilor şi a fariseilor, cu niciun chip nu veţi intra în Împărăţia cerurilor.",
           "noteRefs": [
-            5
+            7
           ]
         }
       ],
       "notes": [
         {
-          "number": 5,
+          "number": 7,
           "text": "13:4 cuvântul grecesc este dikaiosyne, care se traduce prin: ceea ce este drept înaintea lui Dumnezeu, ceea ce corespunde cu standardele lui Dumnezeu, a fi corect înaintea lui Dumnezeu, dreptate, justiție, neprihănire, corectitudine, etc. Pentru a ajuta la o înțelegere mai ușoară a noțiunii de dreptate, justiție, neprihănire, corectitudine, etc. putem menționa că ea este înrudită cu capacitatea morală, aceea care îl ajută pe om să distingă între bine și rău, și să aleagă binele. Această explicație se aplică aici, și în toate locurile din NT unde apare: dreptate, neprihănire, corectitudine, etc."
         }
       ]
@@ -753,7 +766,7 @@
           "type": "verse",
           "text": "2Dar Eu vă spun că ori şi cine se mânie pe fratele său, fără motiv, se află în pericol de a fi judecat; şi oricine va zice fratelui său: ‘prostule!’* va fi sub pericolul pedepsei Soborului; iar oricine-i va zice: ‘nebunule’, va fi sub pericolul focului gheenei.",
           "noteRefs": [
-            6
+            8
           ]
         },
         {
@@ -775,17 +788,17 @@
           "type": "verse",
           "text": "6Adevărat îţi spun că nu vei ieşi de acolo până nu vei plăti cel din urmă codrant*.",
           "noteRefs": [
-            7
+            9
           ]
         }
       ],
       "notes": [
         {
-          "number": 6,
+          "number": 8,
           "text": "14:2 cuvânt aramaic care denotă disprețul"
         },
         {
-          "number": 7,
+          "number": 9,
           "text": "14:6 monedă romană de aramă, de mică valoare, 1/64 dintr-un dinar"
         }
       ]
@@ -862,13 +875,13 @@
           "type": "verse",
           "text": "5Ci da al vostru să fie da, și nu al vostru să fie nu. Orice cuvânt în plus față de acestea, vine dela cel rău*.",
           "noteRefs": [
-            8
+            10
           ]
         }
       ],
       "notes": [
         {
-          "number": 8,
+          "number": 10,
           "text": "16:5 se referă la acele situații in care oamenii sunt dispuși să adauge da-ului sau nu-ului lor un jurământ"
         }
       ]
@@ -1382,7 +1395,7 @@
           "type": "verse",
           "text": "5Când Isus a intrat în Capernaum, a venit la el un centurion,* cerându-i ajutorul",
           "noteRefs": [
-            9
+            11
           ],
           "align": "justify"
         },
@@ -1455,7 +1468,7 @@
       ],
       "notes": [
         {
-          "number": 9,
+          "number": 11,
           "text": "26:5 ofițer roman, comandant peste 100 de militari"
         }
       ]
@@ -1588,7 +1601,7 @@
           "type": "verse",
           "text": "9Şi iată că i-au adus un slăbănog, care zăcea pe o saltea.* Isus le-a văzut credinţa, şi a zis slăbănogului: „Îndrăzneşte, fiule! Păcatele îţi sînt iertate!",
           "noteRefs": [
-            10
+            12
           ]
         },
         {
@@ -1624,7 +1637,7 @@
       ],
       "notes": [
         {
-          "number": 10,
+          "number": 12,
           "text": "29:9 sau rogojină, targă"
         }
       ]
@@ -1995,7 +2008,7 @@
           "type": "verse",
           "text": "10Ajunge ucenicului să fie ca învăţătorul lui, şi robului să fie ca domnul lui. Dacă pe Stăpînul casei l-au numit Beelzebul*, cu cât mai mult vor numi aşa, pe cei din casa lui?",
           "noteRefs": [
-            11
+            13
           ]
         },
         {
@@ -2023,7 +2036,7 @@
           "type": "verse",
           "text": "14Nu se vând oare două vrăbii cu un assarion?* Totuşi, nici una din ele nu cade pe pământ fără voia Tatălui vostru.",
           "noteRefs": [
-            12
+            14
           ]
         },
         {
@@ -2111,11 +2124,11 @@
       ],
       "notes": [
         {
-          "number": 11,
+          "number": 13,
           "text": "36:10 o altă denumire a Diavolului, considerat prințul demonilor, vezi Mt. 12:24"
         },
         {
-          "number": 12,
+          "number": 14,
           "text": "36:14 monedă romană de bronz, de mică valoare;1/16 dintr-un dinar"
         }
       ]
@@ -2259,7 +2272,7 @@
           "type": "verse",
           "text": "8Şi tu, Capernaume, vei fi înălţat oare până la cer? Vei coborî până la Locuinţa morţilor*. Căci dacă ar fi fost făcute în Sodoma minunile, care au fost făcute în tine, ea ar fi continuat să existe pînă în ziua de astăzi.",
           "noteRefs": [
-            13
+            15
           ]
         },
         {
@@ -2312,7 +2325,7 @@
       ],
       "notes": [
         {
-          "number": 13,
+          "number": 15,
           "text": "38:8 expresia Locuința morților din NT provine din grecescul Hades. Pe de altă parte expresia Locuința morților din VT provine din ebraicul Șeol. Ca o remarcă, traducătorii Septuagintei au fost primii care au tradus ebraicul Șeol prin grecescul Hades. Ambele aceste cuvinte au tocmai acest înțeles, și anume locul celor plecați din viața pămîntească. În NT grecesc Hades apare de aprox. 11 ori. În 10 din aceste cazuri și anume în Mt. 11:23, 16:8, Lc. 10:15, 16:23, Fapte 2:27, 31 Apoc. 1:18, 6:8, 20:13 Hades este tradus prin Locuința morților, iar în 1Cor. 15:55 este tradus prin moarte (în traducerea Cornilescu)"
         }
       ]
@@ -2479,7 +2492,7 @@
           "type": "verse",
           "text": "3Când au auzit Fariseii lucrul acesta, au zis: „Omul acesta nu scoate demonii decât cu Beelzebul,* prințul demonilor!”",
           "noteRefs": [
-            14
+            16
           ],
           "align": "justify"
         },
@@ -2551,7 +2564,7 @@
       ],
       "notes": [
         {
-          "number": 14,
+          "number": 16,
           "text": "42:3 o altă denumire a Diavolului"
         }
       ]
@@ -3037,7 +3050,7 @@
           "type": "verse",
           "text": "1Pe timpul acela, tetrarhul Irod* a auzit vorbindu-se despre Isus, şi a zis slujitorilor săi: ”Acesta este Ioan Botezătorul! A înviat din morţi, de aceea acționează aceste puteri prin el.”",
           "noteRefs": [
-            15
+            17
           ],
           "align": "justify"
         },
@@ -3089,7 +3102,7 @@
       ],
       "notes": [
         {
-          "number": 15,
+          "number": 17,
           "text": "52:1 principe peste un sfert de regat"
         }
       ]
@@ -3176,7 +3189,7 @@
           "type": "verse",
           "text": "4În a patra gardă a nopții,* Isus a venit la ei, umblând pe mare.",
           "noteRefs": [
-            16
+            18
           ]
         },
         {
@@ -3237,7 +3250,7 @@
       ],
       "notes": [
         {
-          "number": 16,
+          "number": 18,
           "text": "54:4 între orele 3-6 dimineața; la evrei au existat 3 gărzi de aprox. 4 ore fiecare, iar la romani erau 4 gărzi de aprox. 3 ore fiecare"
         }
       ]
@@ -3279,7 +3292,7 @@
           "type": "verse",
           "text": "6și astfel omul acela nu mai este obligat să cinstească pe tatăl său sau pe mama sa. Aţi anulat astfel porunca lui Dumnezeu din cauza tradiției voastre.*",
           "noteRefs": [
-            17
+            19
           ]
         },
         {
@@ -3300,7 +3313,7 @@
       ],
       "notes": [
         {
-          "number": 17,
+          "number": 19,
           "text": "55:6 exista pe timpul acela o practică la unii evrei. Ei invitau acasă la ei un preot, căruia i se cerea să facă o slujbă prin care să declare că tot ce există în casa aceea aparține lui Dumnezeu. În felul acesta se considera că proprietarul casei nu mai avea obligația să ajute părinții lui în vârstă, deoarece el nu mai poseda nimic, considerându-se că toate din casa aceea aparțineau lui Dumnezeu."
         }
       ]
@@ -3558,7 +3571,7 @@
           "type": "verse",
           "text": "1Isus a mers în zona Cezareii lui Filip* şi a întrebat pe ucenicii săi: „Cine zic oamenii că sunt eu, Fiul omului?”",
           "noteRefs": [
-            18
+            20
           ],
           "align": "justify"
         },
@@ -3586,8 +3599,8 @@
           "type": "verse",
           "text": "6Eu îţi spun: tu eşti Petru,* şi pe această piatră * voi zidi adunarea mea, şi porţile Locuinţei morţilor nu o vor birui.",
           "noteRefs": [
-            19,
-            20
+            21,
+            22
           ]
         },
         {
@@ -3603,15 +3616,15 @@
       ],
       "notes": [
         {
-          "number": 18,
+          "number": 20,
           "text": "60:1 se află în nordul Galileei"
         },
         {
-          "number": 19,
+          "number": 21,
           "text": "60:6 în greceşte: petros"
         },
         {
-          "number": 20,
+          "number": 22,
           "text": "60:7 în greceşte: petra"
         }
       ]
@@ -3828,7 +3841,7 @@
           "type": "verse",
           "text": "3Când au ajuns în Capernaum, cei ce strângeau didrahma* au venit la Petru, şi i-au zis: „Învăţătorul vostru nu plăteşte didrahma?”",
           "noteRefs": [
-            21
+            23
           ],
           "align": "justify"
         },
@@ -3846,17 +3859,17 @@
           "type": "verse",
           "text": "6Dar, ca să nu-i facem să se poticnească, du-te la mare, aruncă undiţa, şi trage afară primul peşte pe care îl prinzi; deschide-i gura, şi vei găsi în ea un stater,* pe care ia-l şi dă-li-l lor, pentru mine şi pentru tine.”",
           "noteRefs": [
-            22
+            24
           ]
         }
       ],
       "notes": [
         {
-          "number": 21,
+          "number": 23,
           "text": "65:3 monedă grecească de argint, egală cu 2 drahme, aprox. 2 dinari romani, sau jumătate de siclu de argint, adică plata pentru 2 zile de muncă; didrahma era donația anuală specifică pentru templu, pentru o persoană."
         },
         {
-          "number": 22,
+          "number": 24,
           "text": "65:6 monedă grecească de argint, egală cu 2 didrahme, sau 4 drahme, aprox. 4 dinari romani, deci donația anuală specifică pentru templu, pentru 2 persoane."
         }
       ]
@@ -4028,7 +4041,7 @@
           "type": "verse",
           "text": "4A început să facă socoteala, şi i-au adus pe unul, care îi datora zece mii de talanți*",
           "noteRefs": [
-            23
+            25
           ]
         },
         {
@@ -4050,7 +4063,7 @@
           "type": "verse",
           "text": "8Robul acela, când a ieşit afară, a întâlnit pe unul din tovarăşii lui de slujbă, care-i era dator o sută de dinari.* A pus mâna pe el, şi-l strângea de gât, zicând:„Plăteşte-mi ce-mi eşti dator”.",
           "noteRefs": [
-            24
+            26
           ]
         },
         {
@@ -4091,11 +4104,11 @@
       ],
       "notes": [
         {
-          "number": 23,
+          "number": 25,
           "text": "70:4 o sumă extraordinar de mare, era nevoie să lucrezi pentru ea inimaginabil de mult, câteva mii de vieți omenești."
         },
         {
-          "number": 24,
+          "number": 26,
           "text": "70:8 moneda de argint principală a Imperiului roman folosită timp de aprox. 500 de ani. Ziua de muncă era plătită, în general, cu un dinar. Valoarea dinarului era de 1/25 din aureus, cea mai mare monedă de aur a Imperiului roman."
         }
       ]
@@ -4167,7 +4180,7 @@
           "type": "verse",
           "text": "12Fiindcă sunt fameni,* care s-au născut aşa din abdomenul mamei lor; sunt fameni, care au fost făcuţi fameni de oameni; şi sunt fameni, care singuri s-au făcut fameni de dragul Împărăţiei cerurilor. Cine poate să primească lucrul acesta, să-l primească.”",
           "noteRefs": [
-            25
+            27
           ]
         },
         {
@@ -4193,7 +4206,7 @@
       ],
       "notes": [
         {
-          "number": 25,
+          "number": 27,
           "text": "71:12 numiți și eunuci; erau slujitori la curțile împărătești, și erau considerați cei mai loiali împăratului. Mulți dintre ei erau prizonieri de război, luați de la vârsta copilăriei. Nu se căsătoreau, deoarece ca și copii, fuseseră supuși unei intervenții chirurgicale speciale de îndepărtare a genitalelor. În prezent această intervenție este interzisă prin legi"
         }
       ]
@@ -4310,7 +4323,7 @@
           "type": "verse",
           "text": "2S-a învoit cu lucrătorii cu câte un dinar pe zi* şi i-a trimis la vie.",
           "noteRefs": [
-            26
+            28
           ]
         },
         {
@@ -4386,7 +4399,7 @@
       ],
       "notes": [
         {
-          "number": 26,
+          "number": 28,
           "text": "74:2 moneda principală, de argint, a Imperiului roman folosită timp de aprox. 500 de ani; ziua de muncă era plătită, în general cu un dinar. Valoarea dinarului era de 1/25 din aureus, cea mai mare monedă de aur a Imperiului roman"
         }
       ]
@@ -4559,13 +4572,13 @@
           "type": "verse",
           "text": "9Mulțimea care mergea înaintea lui Isus şi cea care venea din urmă, strigau: „Osana,* Fiul lui David! Binecuvântat este cel ce vine în numele Domnului! Osana, în cerurile prea înalte!”",
           "noteRefs": [
-            27
+            29
           ]
         }
       ],
       "notes": [
         {
-          "number": 27,
+          "number": 29,
           "text": "77:9 este cuvânt ebraic și se traduce prin: Izbăvește-ne, te rugăm"
         }
       ]
@@ -4912,7 +4925,7 @@
           "type": "verse",
           "text": "5Arătaţi-mi banul impozitului.„ Ei i-au adus un dinar.*",
           "noteRefs": [
-            28
+            30
           ]
         },
         {
@@ -4924,7 +4937,7 @@
           "type": "verse",
           "text": "7„Ale Cezarului* i-au răspuns ei. Atunci el le-a zis: „Daţi dar Cezarului ce este al Cezarului, şi lui Dumnezeu ce este al lui Dumnezeu!”",
           "noteRefs": [
-            29
+            31
           ]
         },
         {
@@ -4935,11 +4948,11 @@
       ],
       "notes": [
         {
-          "number": 28,
+          "number": 30,
           "text": "84:5 moneda principală, de argint, a Imperiului roman, folosită timp de aprox. 500 de ani; ziua de muncă era plătită, în general, cu un dinar"
         },
         {
-          "number": 29,
+          "number": 31,
           "text": "84:7 titlu dat împăraților romani"
         }
       ]
@@ -5186,7 +5199,7 @@
           "type": "verse",
           "text": "3Vai de voi, cărturari şi farisei făţarnici! Pentru că voi călătoriţi pe mare şi pe uscat, ca să faceţi un prozelit* iar, după ce a ajuns prozelit, faceţi din el un fiu al gheenei, de două ori mai rău decât sunteţi voi înşivă.",
           "noteRefs": [
-            30
+            32
           ]
         },
         {
@@ -5287,7 +5300,7 @@
       ],
       "notes": [
         {
-          "number": 30,
+          "number": 32,
           "text": "89:3 cei dintre neamuri care au primit credința, în felul Vechiului Testament"
         }
       ]
@@ -5525,7 +5538,7 @@
           "type": "verse",
           "text": "17Să ştiţi că, dacă ar şti stăpânul casei la care gardă* din noapte va veni hoţul, ar veghea şi n-ar lăsa să-i spargă casa.",
           "noteRefs": [
-            31
+            33
           ]
         },
         {
@@ -5577,7 +5590,7 @@
       ],
       "notes": [
         {
-          "number": 31,
+          "number": 33,
           "text": "91:17 la evrei au existat 3 gărzi de aprox. 4 ore fiecare, iar la romani erau 4 gărzi de aprox. 3 ore fiecare"
         }
       ]
@@ -5674,7 +5687,7 @@
           "type": "verse",
           "text": "2Unuia i-a dat cinci talanți* altuia doi, și altuia unul; fiecăruia după capacitatea lui. Apoi a plecat în călătorie.",
           "noteRefs": [
-            32
+            34
           ]
         },
         {
@@ -5755,7 +5768,7 @@
       ],
       "notes": [
         {
-          "number": 32,
+          "number": 34,
           "text": "93:2 un talant este egal cu aprox. 6.000 de dinari, deci câștigul pe aprox. 20 de ani de muncă"
         }
       ]
@@ -5872,7 +5885,7 @@
           "type": "verse",
           "text": "3Atunci preoţii de frunte, cărturarii şi bătrânii poporului s-au strâns în curtea marelui preot care se numea Caiafa.*",
           "noteRefs": [
-            33
+            35
           ]
         },
         {
@@ -5888,7 +5901,7 @@
       ],
       "notes": [
         {
-          "number": 33,
+          "number": 35,
           "text": "95:3 Caiafa a fost mare preot între anii 18-36 d. Cr. El era ginerele fostului mare preot Ana, care avut funcția între anii 6-15 d. Cr. fiind destituit de romani"
         }
       ]
@@ -5910,7 +5923,7 @@
           "type": "verse",
           "text": "2a venit la el o femeie cu un vas de alabastru* cu parfum foarte scump; şi, în timp ce stătea el la masă, ea a turnat parfumul pe capul lui.",
           "noteRefs": [
-            34
+            36
           ]
         },
         {
@@ -5946,7 +5959,7 @@
       ],
       "notes": [
         {
-          "number": 34,
+          "number": 36,
           "text": "96:2 varietate de ghips, cu aspect de marmură"
         }
       ]
@@ -5993,7 +6006,7 @@
           "type": "verse",
           "text": "7La sosirea serii, Isus s-a așezat* la masă cu cei doisprezece ucenici ai săi.",
           "noteRefs": [
-            35
+            37
           ]
         },
         {
@@ -6024,7 +6037,7 @@
       ],
       "notes": [
         {
-          "number": 35,
+          "number": 37,
           "text": "97:7 pe timpul acela se așezau la masă în poziție culcată, pe rogojini puse pe vatră, în jurul unei mese joase, cu capul sprijinit pe mâna stângă, și se serveau cu mâna dreaptă"
         }
       ]
@@ -6110,7 +6123,7 @@
           "type": "verse",
           "text": "1Atunci Isus a mers cu ei într-un loc numit Ghetsimani,* şi a zis ucenicilor: „Şedeţi aici pînă voi merge acolo să mă rog”.",
           "noteRefs": [
-            36
+            38
           ],
           "align": "justify"
         },
@@ -6167,7 +6180,7 @@
       ],
       "notes": [
         {
-          "number": 36,
+          "number": 38,
           "text": "100:1 este cuvânt ebraic și se traduce prin: presă de măsline"
         }
       ]
@@ -6214,7 +6227,7 @@
           "type": "verse",
           "text": "7Crezi că n-aş putea să rog pe Tatăl meu, care mi-ar pune la dispoziție chiar acum mai mult de douăsprezece legiuni* de îngeri?",
           "noteRefs": [
-            37
+            39
           ]
         },
         {
@@ -6235,7 +6248,7 @@
       ],
       "notes": [
         {
-          "number": 37,
+          "number": 39,
           "text": "101:7 legiunea romană avea aprox. 6000 de soldați"
         }
       ]
@@ -6402,7 +6415,7 @@
           "type": "verse",
           "text": "6Iată de ce locul acela a fost numit până în ziua de azi* „Terenul Sângelui.”",
           "noteRefs": [
-            38
+            40
           ]
         },
         {
@@ -6418,7 +6431,7 @@
       ],
       "notes": [
         {
-          "number": 38,
+          "number": 40,
           "text": "104:6 formularea „ziua de azi” nu se referă la ziua în care cititorul citește textul evangheliei, ci la ziua în care s-a scris evanghelia de prima dată"
         }
       ]
@@ -6559,7 +6572,7 @@
           "type": "verse",
           "text": "1Pe când ieşeau afară din oraș, au întâlnit pe un om din Cirene* pe nume Simon, şi l-au obligat să meargă cu ei, ca să ducă crucea lui Isus.",
           "noteRefs": [
-            39
+            41
           ],
           "align": "justify"
         },
@@ -6567,7 +6580,7 @@
           "type": "verse",
           "text": "2Când au ajuns la un loc numit Golgota,* care se traduce prin: „Locul craniului” și",
           "noteRefs": [
-            40
+            42
           ]
         },
         {
@@ -6598,11 +6611,11 @@
       ],
       "notes": [
         {
-          "number": 39,
+          "number": 41,
           "text": "107:1 oraș antic important din nordul Africii, respectiv Libia de azi, întemeiat pe la 630 în. Cr. de greci. Era capitala regiunii antice numită Cirenaica. A devenit cunoscut pentru bogăția sa, și ca centru al filozofiei grecești, iar credința creștină a găsit teren prielnic acolo. Un număr însemnat de iudei s-au stabilit acolo în antichitate. In prezent mai există doar ruine ale fostului oraș"
         },
         {
-          "number": 40,
+          "number": 42,
           "text": "107:2 acesta este cuvânt ebraic și/sau aramaic"
         }
       ]
@@ -6664,7 +6677,7 @@
           "type": "verse",
           "text": "2Cam pe la ora 3 după masa, Isus a strigat cu glas tare, spunând: „Eli, Eli, Lama Sabactani?”* ceea ce se traduce prin: „Dumnezeul meu, Dumnezeul meu, pentru ce m-ai părăsit?”",
           "noteRefs": [
-            41
+            43
           ]
         },
         {
@@ -6690,7 +6703,7 @@
       ],
       "notes": [
         {
-          "number": 41,
+          "number": 43,
           "text": "109:2 acestea sunt cuvinte ebraice și/sau aramaice"
         }
       ]
@@ -6892,13 +6905,13 @@
           "type": "verse",
           "text": "5Deci soldații au luat banii, şi au făcut cum li s-a spus. Zvonul acesta s-a răspândit pretutindeni, printre Iudei, și continuă până în ziua de azi.*",
           "noteRefs": [
-            42
+            44
           ]
         }
       ],
       "notes": [
         {
-          "number": 42,
+          "number": 44,
           "text": "113:5 formularea „ziua de azi” nu se referă la ziua în care cititorul citește textul evangheliei, ci la ziua în care s-a scris evanghelia aceasta de prima dată"
         }
       ]
