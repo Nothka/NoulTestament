@@ -167,7 +167,7 @@
         },
         {
           "type": "verse",
-          "text": "8căci au dat adevărul lui Dumnezeu pe minciună şi s-au închinat și au slujit creaturii în locul Creatorului, care este binecuvântat pe veci! Amin. 9 Din cauza aceasta, Dumnezeu i-a lăsat în voia unor patimi josnice. Căci femeile lor au schimbat funcțiunea lor naturală într-una care este împotriva naturii.",
+          "text": "8căci au dat adevărul lui Dumnezeu pe minciună şi s-au închinat și au slujit creaturii în locul Creatorului, care este binecuvântat pe veci! Amin. \n9 Din cauza aceasta, Dumnezeu i-a lăsat în voia unor patimi josnice. Căci femeile lor au schimbat funcțiunea lor naturală într-una care este împotriva naturii.",
           "noteRefs": []
         },
         {
@@ -405,7 +405,7 @@
         },
         {
           "type": "verse",
-          "text": "3Şi ce dacă unii n-au crezut? Necredinţa lor va anula credincioşia lui Dumnezeu?",
+          "text": "3Şi ce dacă unii n-au crezut? Va anula necredinţa lor credincioşia lui Dumnezeu?",
           "noteRefs": []
         },
         {
@@ -430,7 +430,7 @@
         },
         {
           "type": "verse",
-          "text": "8Şi de ce să nu zicem, după cum se spune - în mod defăimător - că noi afirmăm: „Hai să facem răul ca să rezulte binele din el?” Cei care vorbesc așa au parte de o condamnare corectă.",
+          "text": "8Şi de ce să nu zicem, după cum se spune - în mod defăimător - că noi afirmăm: „Hai să facem răul ca să rezulte binele din el?” Cei care vorbesc așa au parte de o condamnare justă.",
           "noteRefs": []
         }
       ]
@@ -444,7 +444,7 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1Ce urmează atunci? Suntem noi mai buni decât ei? Nu, nicidecum. Căci am prevenit anterior atât pe iudei, cât și pe greci, că toți sunt sub păcat.",
+          "text": "1Ce urmează atunci? Suntem noi mai buni decât ei? Nu, nicidecum. Căci am afirmat anterior că atât iudeii, cât și grecii sunt sub păcat.",
           "noteRefs": [],
           "align": "justify"
         },
@@ -735,7 +735,7 @@
         },
         {
           "type": "verse",
-          "text": "7Pentru un om îndreptățit cu greu ar muri cineva, dar pentru o persoană bună, cineva poate ar îndrăzni să moară.",
+          "text": "7Pentru un om îndreptățit cu greu ar muri cineva, iar pentru un om bun, cineva ar îndrăzni probabil să moară.",
           "noteRefs": []
         },
         {
