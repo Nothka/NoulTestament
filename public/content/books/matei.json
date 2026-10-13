@@ -6758,8 +6758,10 @@
       "blocks": [
         {
           "type": "verse",
-          "text": "1La venirea serii, a venit un om bogat din Arimateea, numit Iosif, care era şi el ucenic al lui Isus.",
-          "noteRefs": [],
+          "text": "1La venirea serii, a venit un om bogat din Arimateea*, numit Iosif, care era şi el ucenic al lui Isus.",
+          "noteRefs": [
+            44
+          ],
           "align": "justify"
         },
         {
@@ -6812,6 +6814,12 @@
           "type": "verse",
           "text": "10Ei au plecat cu garda, şi au asigurat mormântul, prin sigilarea pietrei.",
           "noteRefs": []
+        }
+      ],
+      "notes": [
+        {
+          "number": 44,
+          "text": "Arimateea este una din cele câteva localități menționate în NT, a căror poziție nu se cunoaște cu exactitate. Se apreciază totuși că Arimateea se află la oarecare distanță nord de Ierusalim. Eusebiu din Cezareea o menționează în scrierea sa numită Onomasticon."
         }
       ]
     },
@@ -6906,13 +6914,13 @@
           "type": "verse",
           "text": "5Deci soldații au luat banii, şi au făcut cum li s-a spus. Zvonul acesta s-a răspândit pretutindeni, printre Iudei, și continuă până în ziua de azi.*",
           "noteRefs": [
-            44
+            45
           ]
         }
       ],
       "notes": [
         {
-          "number": 44,
+          "number": 45,
           "text": "113:5 formularea „ziua de azi” nu se referă la ziua în care cititorul citește textul evangheliei, ci la ziua în care s-a scris evanghelia aceasta de prima dată"
         }
       ]

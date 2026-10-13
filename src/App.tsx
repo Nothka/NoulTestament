@@ -130,7 +130,6 @@ function App() {
   const [data, setData] = useState<TestamentData | null>(null);
   const [selectedSectionId, setSelectedSectionId] = useState(defaultSectionId);
   const [hasError, setHasError] = useState(false);
-  const [isNoticeVisible, setIsNoticeVisible] = useState(true);
 
   const isMobile = useIsMobile();
   const isEditorRoute = typeof window !== 'undefined' && window.location.pathname.startsWith('/edit');
@@ -1250,23 +1249,6 @@ function App() {
         />
       ) : null}
 
-      {isNoticeVisible && !isEditing ? (
-        <aside aria-live="polite" className="site-notice" role="status">
-          <p>
-            Vă rugăm să ne scuzați, aranjarea notițelor și a textului este încă în lucru, lucrăm la
-            finalizarea aranjării textului pentru a ajunge la un aspect satisfăcător
-          </p>
-
-          <button
-            aria-label="Închide notificarea"
-            className="site-notice-close"
-            onClick={() => setIsNoticeVisible(false)}
-            type="button"
-          >
-            ×
-          </button>
-        </aside>
-      ) : null}
 
       <header className="document-header">
         <h1>
